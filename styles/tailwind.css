@@ -21,10 +21,33 @@
   scrollbar-color: darkgray;
 }
 
-@layer components {
+@layer base {
+  h1 {
+    @apply text-5xl font-medium leading-7;
+  }
+  h2 {
+    @apply text-[40px] font-medium leading-[72px];
+  }
+  h3 {
+    @apply text-[32px] font-medium leading-[56px];
+  }
+  h4 {
+    @apply text-2xl font-bold leading-[42px];
+  }
+  h5 {
+    @apply text-xl font-bold leading-9;
+  }
+  h6 {
+    @apply text-base font-bold leading-7;
+  }
   body {
+    font-family: 'Josefin Sans', sans-serif;
     @apply bg-mainBg-500 text-white;
   }
+}
+
+@layer components {
+
   /* to disapear the blue highligting on mobile ontouch */
   .no-select-a-tag {
     -webkit-tap-highlight-color: transparent;
@@ -37,5 +60,23 @@
   }
   .no-select-a-tag:focus {
     outline: none !important;
+  }
+
+
+ 
+  .subtitle1 {
+    @apply text-base font-medium leading-7;
+  }
+  .subtitle2 {
+    @apply text-sm font-medium leading-6;
+  }
+  .subtitle3 {
+    @apply text-xs font-medium leading-5;
+  }
+  .button1 {
+    @apply text-base font-bold leading-7;
+  }
+  .button2 {
+    @apply text-sm font-bold leading-6;
   }
 }
