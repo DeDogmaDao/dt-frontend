@@ -1,0 +1,41 @@
+@import "tailwindcss/base";
+
+@import "tailwindcss/components";
+
+@import "tailwindcss/utilities";
+
+@import "../src/components/_components.css";
+
+
+
+/* chrome */
+*::-webkit-scrollbar {
+  width: 0.5rem;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: darkgray;
+}
+/* firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: darkgray;
+}
+
+@layer components {
+  body {
+    @apply bg-mainBg-500 text-white;
+  }
+  /* to disapear the blue highligting on mobile ontouch */
+  .no-select-a-tag {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  .no-select-a-tag:focus {
+    outline: none !important;
+  }
+}

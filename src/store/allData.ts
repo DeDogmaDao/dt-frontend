@@ -1,0 +1,60 @@
+import {
+  faDiscord,
+  faInstagram,
+  faLinkedin,
+  faTwitter,
+  faYoutube,
+  IconDefinition,
+} from "@fortawesome/free-brands-svg-icons";
+// type
+import { faqType } from "../types/propTypes";
+
+
+
+
+// 
+// 
+// 
+// 
+export const helloWorld: string = "Hello we are good to go!";
+
+export const footerData: { icon: IconDefinition; href: string }[] = [
+  {
+    icon: faDiscord,
+    href: "https://www.discord.com",
+  },
+  {
+    icon: faYoutube,
+    href: "www.discord.com",
+  },
+  {
+    icon: faLinkedin,
+    href: "www.discord.com",
+  },
+  {
+    icon: faTwitter,
+    href: "www.discord.com",
+  },
+  {
+    icon: faInstagram,
+    href: "www.discord.com",
+  },
+];
+
+export const faqData: faqType[] = [
+  { question: "What is nepoleia?", answer: "we dont know yet" },
+  {
+    question: "Can I use the platform without buying an NFT?",
+    answer: "we dont know yet",
+  },
+  { question: "Why does this NFT have value?", answer: "we dont know yet" },
+  {
+    question: "What blockchain are you operating on?",
+    answer: "we dont know yet",
+  },
+  {
+    question: "What type of wallet do I need to buy one of Lonely Shadows NFT?",
+    answer: "we dont know yet",
+  },
+  { question: "when is the launch? ", answer: "we dont know yet" },
+];
