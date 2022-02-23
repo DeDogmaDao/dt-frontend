@@ -34,7 +34,7 @@ const Header: React.FC = () => {
       hovered: false,
     },
     {
-      ref: "/all-nfts",
+      ref: "/gallery",
       text: "All NFTS",
       hovered: false,
     },
