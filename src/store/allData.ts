@@ -7,15 +7,12 @@ import {
   IconDefinition,
 } from "@fortawesome/free-brands-svg-icons";
 // type
-import { faqType } from "../types/propTypes";
+import { faqType, teamType } from "../types/propTypes";
 
-
-
-
-// 
-// 
-// 
-// 
+//
+//
+//
+//
 export const helloWorld: string = "Hello we are good to go!";
 
 export const footerData: { icon: IconDefinition; href: string }[] = [
@@ -57,4 +54,79 @@ export const faqData: faqType[] = [
     answer: "we dont know yet",
   },
   { question: "when is the launch? ", answer: "we dont know yet" },
+];
+
+export const teamData: teamType[] = [
+  {
+    name: "Member1",
+    role: "Graphic designer",
+    image: "/media/team/member1.png",
+  },
+  { name: "Member2", role: "ui/ux designer", image: "/media/team/member2.png" },
+  { name: "Member3", role: "backend dev", image: "/media/team/member3.png" },
+  {
+    name: "Member1",
+    role: "Graphic designer",
+    image: "/media/team/member1.png",
+  },
+  {
+    name: "Member2",
+    role: "Graphic designer",
+    image: "/media/team/member2.png",
+  },
+  {
+    name: "Member3",
+    role: "Graphic designer",
+    image: "/media/team/member3.png",
+  },
+  {
+    name: "Member1",
+    role: "Graphic designer",
+    image: "/media/team/member1.png",
+  },
+  {
+    name: "Member1",
+    role: "Graphic designer",
+    image: "/media/team/member2.png",
+  },
+  {
+    name: "Member1",
+    role: "Graphic designer",
+    image: "/media/team/member1.png",
+  },
+  {
+    name: "Member1",
+    role: "Graphic designer",
+    image: "/media/team/member1.png",
+  },
+  {
+    name: "Member1",
+    role: "Graphic designer",
+    image: "/media/team/member3.png",
+  },
+  {
+    name: "Member1",
+    role: "Graphic designer",
+    image: "/media/team/member1.png",
+  },
+  {
+    name: "Member1",
+    role: "Graphic designer",
+    image: "/media/team/member1.png",
+  },
+  {
+    name: "Member1",
+    role: "Graphic designer",
+    image: "/media/team/member2.png",
+  },
+  {
+    name: "Member1",
+    role: "Graphic designer",
+    image: "/media/team/member1.png",
+  },
+  {
+    name: "Member1",
+    role: "Graphic designer",
+    image: "/media/team/member3.png",
+  },
 ];
