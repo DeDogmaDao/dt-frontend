@@ -1,49 +1,46 @@
 import { useEffect, useRef, useState } from "react";
 
 interface props {
-    allData:any;
-    initialQuantity: number;
-    Item: React.FC<{data:any}>;
+  allData: any;
+  initialQuantity: number;
+  Item: React.FC<{ data: any }>;
 }
-const Carosel:React.FC<props> = ({allData,initialQuantity,Item}) => {
-
-    const rightLeftScroll = useRef<HTMLDivElement>(null);
+const Carosel: React.FC<props> = ({ allData, initialQuantity, Item }) => {
+  const rightLeftScroll = useRef<HTMLDivElement>(null);
   const wastefulCover = useRef<HTMLDivElement>(null);
   const [showMore, setShowMore] = useState({
     quantity: initialQuantity,
   });
   const [isPlaying, setIsPlaying] = useState(true);
+  const [rtl, setRtl] = useState(false);
 
-   //check to see if we are in small device or large one to decide how many data should load
-   let isSmallDevice= false;
-   
+  //check to see if we are in small device or large one to decide how many data should load
+  let isSmallDevice = false;
 
-
-   // START of  carosel : isdown check the mouse key down , startx is the scrill left at the beggining of mouse key down and scroll left is the current scroll left
+  // START of  carosel : isdown check the mouse key down , startx is the scrill left at the beggining of mouse key down and scroll left is the current scroll left
   let isDown = false;
-  let startx:number, scrollLeft:number;
-
+  let startx: number, scrollLeft: number;
 
   useEffect(() => {
-    isSmallDevice =  document.documentElement.clientWidth <= 768;
+    isSmallDevice = document.documentElement.clientWidth <= 768;
+    if (!isPlaying) return;
+    const interval = setInterval(() => {
+      rightLeftScroll.current!.scrollLeft =
+        rightLeftScroll.current!.scrollLeft + 1;
+    }, 47);
 
-    if(!isPlaying) return;
-    const interval = setInterval(()=>{
-      rightLeftScroll.current!.scrollLeft = rightLeftScroll.current!.scrollLeft  + 1;
-    },10)
-  
     return () => {
-      clearInterval(interval)
-    }
-  }, [isPlaying])
+      clearInterval(interval);
+    };
+  }, [isPlaying]);
 
   //on mouse down we set startx and scrollLeft , then we update scrollLeft later but we dont update startx bcs it is constant from a click down to click up
-  const caroselMouseDownHandler = (e:any) => {
+  const caroselMouseDownHandler = (e: any) => {
     e.preventDefault();
     isDown = true;
     startx = e.pageX - rightLeftScroll.current!.offsetLeft;
     scrollLeft = rightLeftScroll.current!.scrollLeft;
-    setIsPlaying(false)
+    setIsPlaying(false);
   };
 
   //we put wastfullCover to avoid triger click action . bcs click happen wen we mouse down and mouse up on the same object
@@ -64,7 +61,7 @@ const Carosel:React.FC<props> = ({allData,initialQuantity,Item}) => {
     setShowMore({ quantity: allData.length });
   };
 
-  const caroselMouseMoveHandler = (e:any) => {
+  const caroselMouseMoveHandler = (e: any) => {
     if (!isDown) return;
     e.preventDefault();
     const x = e.pageX - rightLeftScroll.current!.offsetLeft;
@@ -123,42 +120,43 @@ const Carosel:React.FC<props> = ({allData,initialQuantity,Item}) => {
     }
   };
 
-
   const snapStyle = isSmallDevice
-  ? {
-      scrollSnapType: "x mandatory",
-      scrollPaddingInline: "50px",
-    }
-  : {};
-  
-    
-    return (
-        <>
-        <div>
-          <div className="carosel-parent my-20">
-            <div
-              style={snapStyle}
-              className="carosel"
-              ref={rightLeftScroll}
-              onTouchEnd={caroselTouchHandler}
-              onMouseDown={caroselMouseDownHandler}
-              onMouseLeave={caroselMouseLeaveHandler}
-              onMouseUp={caroselMouseUpHandler}
-              onMouseMove={caroselMouseMoveHandler}
-            >
-              <div>
-                {allData
-                  .filter((_:any, index:number) => showMore.quantity - 1 >= index)
-                  .map((data:any, index:number) => {
-                    return <Item data={data} />;
-                  })}
-                <div ref={wastefulCover} className="wasteful-cover"></div>
-              </div>
+    ? {
+        scrollSnapType: "x mandatory",
+        scrollPaddingInline: "50px",
+      }
+    : {};
+
+  return (
+    <>
+      <div>
+        <div className="carosel-parent my-20">
+          <div
+            style={snapStyle}
+            className="carosel"
+            ref={rightLeftScroll}
+            onTouchEnd={caroselTouchHandler}
+            onTouchStart={() => setIsPlaying(false)}
+            onMouseDown={caroselMouseDownHandler}
+            onMouseLeave={caroselMouseLeaveHandler}
+            onMouseUp={caroselMouseUpHandler}
+            onMouseMove={caroselMouseMoveHandler}
+          >
+            <div>
+              {allData
+                .filter(
+                  (_: any, index: number) => showMore.quantity - 1 >= index
+                )
+                .map((data: any, index: number) => {
+                  return <Item data={data} />;
+                })}
+              <div ref={wastefulCover} className="wasteful-cover"></div>
             </div>
           </div>
         </div>
-        </>
-    );
-}
+      </div>
+    </>
+  );
+};
 
 export default Carosel;
