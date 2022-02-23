@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 interface props {
     allData:any;
@@ -12,34 +12,51 @@ const Carosel:React.FC<props> = ({allData,initialQuantity,Item}) => {
   const [showMore, setShowMore] = useState({
     quantity: initialQuantity,
   });
+  const [isPlaying, setIsPlaying] = useState(true);
 
    //check to see if we are in small device or large one to decide how many data should load
-   const isSmallDevice = document.documentElement.clientWidth <= 768;
+   let isSmallDevice= false;
+   
 
 
-   // START of slider : isdown check the mouse key down , startx is the scrill left at the beggining of mouse key down and scroll left is the current scroll left
+   // START of  carosel : isdown check the mouse key down , startx is the scrill left at the beggining of mouse key down and scroll left is the current scroll left
   let isDown = false;
   let startx:number, scrollLeft:number;
 
+
+  useEffect(() => {
+    isSmallDevice =  document.documentElement.clientWidth <= 768;
+
+    if(!isPlaying) return;
+    const interval = setInterval(()=>{
+      rightLeftScroll.current!.scrollLeft = rightLeftScroll.current!.scrollLeft  + 1;
+    },10)
+  
+    return () => {
+      clearInterval(interval)
+    }
+  }, [isPlaying])
+
   //on mouse down we set startx and scrollLeft , then we update scrollLeft later but we dont update startx bcs it is constant from a click down to click up
-  const recSliderMouseDownHandler = (e:any) => {
+  const caroselMouseDownHandler = (e:any) => {
     e.preventDefault();
     isDown = true;
     startx = e.pageX - rightLeftScroll.current!.offsetLeft;
     scrollLeft = rightLeftScroll.current!.scrollLeft;
+    setIsPlaying(false)
   };
 
   //we put wastfullCover to avoid triger click action . bcs click happen wen we mouse down and mouse up on the same object
   //... so this 0 opacity cover help us to don't mouse up at the same object
-  const recSliderMouseLeaveHandler = () => {
+  const caroselMouseLeaveHandler = () => {
     isDown = false;
     wastefulCover.current!.style.display = "none";
   };
 
   //we put wastfullCover to avoid triger click action . bcs click happen wen we mouse down and mouse up on the same object
   //... so this 0 opacity cover help us to don't mouse up at the same object
-  // we also update the state, we load all the data if user dragging the slider
-  const recSliderMouseUpHandler = () => {
+  // we also update the state, we load all the data if user dragging the carosel
+  const caroselMouseUpHandler = () => {
     isDown = false;
 
     wastefulCover.current!.style.display = "none";
@@ -47,7 +64,7 @@ const Carosel:React.FC<props> = ({allData,initialQuantity,Item}) => {
     setShowMore({ quantity: allData.length });
   };
 
-  const recSliderMouseMoveHandler = (e:any) => {
+  const caroselMouseMoveHandler = (e:any) => {
     if (!isDown) return;
     e.preventDefault();
     const x = e.pageX - rightLeftScroll.current!.offsetLeft;
@@ -59,10 +76,10 @@ const Carosel:React.FC<props> = ({allData,initialQuantity,Item}) => {
   //in scroll handler btn we use our magic number to manage the scroll by using math.round
   //...we also load more data if user click on the right button. the number of new data is depend on size of the device
   const rightScrollHandler = () => {
-    let recLeft = rightLeftScroll.current!.scrollLeft;
+    let caroselLeft = rightLeftScroll.current!.scrollLeft;
     rightLeftScroll.current!.scrollTo({
       top: 0,
-      left: recLeft + 200,
+      left: caroselLeft + 200,
       behavior: "smooth",
     });
     if (
@@ -79,10 +96,10 @@ const Carosel:React.FC<props> = ({allData,initialQuantity,Item}) => {
 
   //like the right handler but we dont load new data as it make sense
   const leftScrollHandler = () => {
-    let recLeft = rightLeftScroll.current!.scrollLeft;
+    let caroselLeft = rightLeftScroll.current!.scrollLeft;
     rightLeftScroll.current!.scrollTo({
       top: 0,
-      left: recLeft - 200,
+      left: caroselLeft - 200,
       behavior: "smooth",
     });
   };
@@ -91,11 +108,11 @@ const Carosel:React.FC<props> = ({allData,initialQuantity,Item}) => {
   //.
   //..
   //...
-  const recTouchHandler = () => {
-    let recLeft = rightLeftScroll.current!.scrollLeft;
-    let recWidth = rightLeftScroll.current!.scrollWidth;
+  const caroselTouchHandler = () => {
+    let caroselLeft = rightLeftScroll.current!.scrollLeft;
+    let caroselWidth = rightLeftScroll.current!.scrollWidth;
 
-    if (recLeft / recWidth < 0.5) {
+    if (caroselLeft / caroselWidth < 0.5) {
       if (
         isSmallDevice
           ? showMore.quantity < allData.length + 1
@@ -106,26 +123,28 @@ const Carosel:React.FC<props> = ({allData,initialQuantity,Item}) => {
     }
   };
 
+
   const snapStyle = isSmallDevice
-    ? {
-        scrollSnapType: "x mandatory",
-        scrollPaddingInline: "50px",
-      }
-    : {};
+  ? {
+      scrollSnapType: "x mandatory",
+      scrollPaddingInline: "50px",
+    }
+  : {};
+  
     
     return (
         <>
         <div>
-          <div className="recommendation-parent">
+          <div className="carosel-parent my-20">
             <div
               style={snapStyle}
-              className="recommendation"
+              className="carosel"
               ref={rightLeftScroll}
-              onTouchEnd={recTouchHandler}
-              onMouseDown={recSliderMouseDownHandler}
-              onMouseLeave={recSliderMouseLeaveHandler}
-              onMouseUp={recSliderMouseUpHandler}
-              onMouseMove={recSliderMouseMoveHandler}
+              onTouchEnd={caroselTouchHandler}
+              onMouseDown={caroselMouseDownHandler}
+              onMouseLeave={caroselMouseLeaveHandler}
+              onMouseUp={caroselMouseUpHandler}
+              onMouseMove={caroselMouseMoveHandler}
             >
               <div>
                 {allData
