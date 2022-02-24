@@ -6,7 +6,7 @@ const FAQ: React.FC = () => {
   return (
     <motion.ul
       layout
-      className="flex flex-col justify-center items-center mx-auto w-full h-full bg-secondary-800/40 mt-96 gap-y-14 py-12"
+      className="flex flex-col justify-center items-center mx-auto w-full h-full bg-secondary-800/40 mt-96 gap-y-1 py-12"
     >
       <LayoutGroup >
         {faqData.map((data) => {
