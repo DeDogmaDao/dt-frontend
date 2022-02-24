@@ -8,26 +8,32 @@ const DiscordBtn: React.FC = () => {
     <motion.button
       onHoverStart={() => controls.start("visible")}
       onHoverEnd={() => controls.start("hidden")}
-      className="relative w-[180px] h-[40px] flex justify-center items-center gap-x-5 bg-primary-500 hover:bg-opacity-90 hover:scale-110 duration-500 text-blackPrime font-bold text-xl"
+      onTapStart={() => controls.start("visible")}
+      onTapCancel={() => controls.start("hidden")}
+      className=" relative w-[180px] h-[50px] flex justify-center items-center gap-x-5 bg-primary-500 hover:bg-opacity-90 hover:scale-110 duration-500 text-blackPrime font-bold text-xl rounded-2xl overflow-hidden"
     >
       <motion.svg
         width="180px"
-        height="40px"
-        viewBox="0 0 180 40"
-        className="absolute top-0 left-0 z-0"
+        height="50px"
+        viewBox="0 0 180 50"
+        className="absolute top-0 left-0 z-0 overflow-visible"
       >
-        <motion.polyline
+        <motion.rect
+          x="0"
+          y="0"
+          width="180"
+          height="50"
+          rx="15"
+          strokeWidth={6}
+          stroke="white"
+          fill="none"
           initial="hidden"
           animate={controls}
           variants={discordBtnAni}
-          points="179,1 179,39 1,39 1,1 179,1"
-          strokeWidth={5}
-          stroke={"#fff"}
-          fill="none"
-          className="bg-gray-500"
         />
       </motion.svg>
-      Join Discord <FontAwesomeIcon icon={faArrowRight} />
+      Join Discord
+      <span className="animate-bounceX"><FontAwesomeIcon icon={faArrowRight} /></span>
     </motion.button>
   );
 };
