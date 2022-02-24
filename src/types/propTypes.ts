@@ -1,4 +1,5 @@
 import { IconDefinition } from "@fortawesome/free-brands-svg-icons";
+import { ReactElement } from "react";
 
 export interface faqType {
   question: string;
@@ -11,4 +12,14 @@ export interface teamType {
   image: string;
 }
 
-export interface socialType { icon: IconDefinition; href: string; color:string; };
+export interface socialType {
+  icon: IconDefinition;
+  href: string;
+  color: string;
+}
+
+export interface tabType {
+  name: string;
+  image: string;
+  desc: ReactElement<any, any>;
+}
