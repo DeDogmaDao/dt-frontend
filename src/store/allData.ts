@@ -4,10 +4,9 @@ import {
   faLinkedin,
   faTwitter,
   faYoutube,
-  IconDefinition,
 } from "@fortawesome/free-brands-svg-icons";
 // type
-import { faqType, teamType } from "../types/propTypes";
+import { faqType, socialType, teamType } from "../types/propTypes";
 
 //
 //
@@ -15,7 +14,7 @@ import { faqType, teamType } from "../types/propTypes";
 //
 export const helloWorld: string = "Hello we are good to go!";
 
-export const footerData: { icon: IconDefinition; href: string }[] = [
+export const footerData: socialType[] = [
   {
     icon: faDiscord,
     href: "https://www.discord.com",
