@@ -79,7 +79,7 @@ module.exports = {
         800: "#121315",
         900: "#09090a",
       },
-      disabledBtn: "#42526E",
+      disabled: "#42526E",
       disabledText: "#CBD1DA",
     }),
     columns: {
