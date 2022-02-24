@@ -7,7 +7,7 @@ const Footer: React.FC = () => {
         <p className="ml-40">&copy;2022 Nepoleia. ALL RIGHTS RESERVED</p>
         <ul className="flex justify-center items-center gap-x-3 mr-40">
           {footerData.map((data) => {
-            return <Social data={data} />
+            return <Social data={data} />;
           })}
         </ul>
       </footer>

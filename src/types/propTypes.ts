@@ -11,4 +11,4 @@ export interface teamType {
   image: string;
 }
 
-export interface socialType { icon: IconDefinition; href: string };
+export interface socialType { icon: IconDefinition; href: string; color:string; };

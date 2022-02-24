@@ -18,22 +18,27 @@ export const footerData: socialType[] = [
   {
     icon: faDiscord,
     href: "https://www.discord.com",
+    color: "#e4405f",
   },
   {
     icon: faYoutube,
     href: "www.discord.com",
+    color: "#3b5999",
   },
   {
     icon: faLinkedin,
     href: "www.discord.com",
+    color: "#e4405f",
   },
   {
     icon: faTwitter,
     href: "www.discord.com",
+    color: "#cd201f",
   },
   {
     icon: faInstagram,
     href: "www.discord.com",
+    color: "#0077B5",
   },
 ];
 
