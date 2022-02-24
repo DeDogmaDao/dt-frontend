@@ -14,12 +14,12 @@ const EachFAQ: React.FC<props> = ({ data }) => {
   return (
     <motion.li
       layout
-      className="w-9/12 flex flex-col justify-center items-center  cursor-pointer group"
-      onClick={() => setIsExpanded((prev) => !prev)}
+      className="w-9/12 flex flex-col justify-center items-center group"
     >
       <motion.div
         layout
-        className="w-full flex justify-between items-center rounded-3xl px-5 !h-24"
+        className="w-full flex justify-between items-center rounded-3xl px-5 !h-24 cursor-pointer"
+        onClick={() => setIsExpanded((prev) => !prev)}
       >
         <h3 className="text-3xl duration-500 group-hover:text-secondary-200">
           {data.question}
