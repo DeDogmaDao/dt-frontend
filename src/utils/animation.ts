@@ -18,3 +18,22 @@ export const socialAni: Variants = {
     },
   },
 };
+
+export const discordBtnAni: Variants = {
+  hidden: {
+    pathLength: 0,
+    pathOffset:0,
+    transition: {
+      duration: 1,
+      ease: "easeInOut",
+    },
+  },
+  visible: {
+    pathLength: 1,
+    pathOffset:1,
+    transition: {
+      duration: 1,
+      ease: "easeInOut",
+    },
+  },
+};

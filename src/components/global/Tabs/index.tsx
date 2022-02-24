@@ -1,6 +1,6 @@
 import { createRef, Ref, useRef } from "react";
 import { tabsData } from "../../../store/allData";
-import Button from "../Button/Button";
+import Button from "../Buttons/Button";
 
 const Tabs: React.FC = () => {
   const ref: Ref<HTMLButtonElement> = createRef();
