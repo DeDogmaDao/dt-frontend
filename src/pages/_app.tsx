@@ -12,6 +12,7 @@ import Footer from "../components/layout/Footer";
 import "../../styles/tailwind.css";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import Head from "next/head";
+import Layout from "../components/layout/Layout";
 
 fontawesomeConfig.autoAddCss = false;
 
@@ -22,11 +23,9 @@ function MyApp({ Component, pageProps }: AppProps) {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
       </Head>
-      <Header />
-      <Main>
+      <Layout>
         <Component {...pageProps} />
-      </Main>
-      <Footer />
+      </Layout>
     </>
   );
 }
