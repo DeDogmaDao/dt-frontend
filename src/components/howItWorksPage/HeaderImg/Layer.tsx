@@ -7,8 +7,8 @@ interface props {
   index: number;
 }
 const Layer: React.FC<props> = ({ data, top, index }) => {
-  const scales = data.image === "2.png" ? `scale(${1 - top / 100})` : "";
-  const translates = -top * index + index * 35;
+  const scales = data.image === "3.png" ? `scale(${1 - top / 100})` : "";
+  const translates = (35-top)* index;
   const styles = {
     transform: `translateY(${translates}px) ${scales}`,
   };

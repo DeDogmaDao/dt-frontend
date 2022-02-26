@@ -253,8 +253,4 @@ export const layersData: layersType[] = [
     image: "7.png",
     speed: 1,
   },
-  {
-    image: "8.png",
-    speed: 1,
-  },
 ];
