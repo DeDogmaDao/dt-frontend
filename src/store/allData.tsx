@@ -6,7 +6,13 @@ import {
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
 // type
-import { faqType, socialType, tabType, teamType } from "../types/propTypes";
+import {
+  faqType,
+  layersType,
+  socialType,
+  tabType,
+  teamType,
+} from "../types/propTypes";
 
 //
 //
@@ -139,36 +145,116 @@ export const tabsData: tabType[] = [
   {
     name: "tab1",
     image: "/media/team/member1.png",
-    desc: <div>HUMANS is creating an all-in-one platform for AI-based creation and governance with an initial focus on synthetic media.<br/>
-    HUMANS is creating an all-in-one platform for AI-based creation and governance with an initial focus on synthetic media.<br/>
-    HUMANS is creating an all-in-one platform for AI-based creation and governance with an initial focus on synthetic media.</div>,
+    desc: (
+      <div>
+        HUMANS is creating an all-in-one platform for AI-based creation and
+        governance with an initial focus on synthetic media.
+        <br />
+        HUMANS is creating an all-in-one platform for AI-based creation and
+        governance with an initial focus on synthetic media.
+        <br />
+        HUMANS is creating an all-in-one platform for AI-based creation and
+        governance with an initial focus on synthetic media.
+      </div>
+    ),
   },
   {
     name: "tab2",
     image: "/media/team/member2.png",
-    desc: <div>HUMANS is creating an all-in-one platform for AI-based creation and governance with an initial focus on synthetic media.<br/>
-    HUMANS is creating an all-in-one platform for AI-based creation and governance with an initial focus on synthetic media.<br/>
-    HUMANS is creating an all-in-one platform for AI-based creation and governance with an initial focus on synthetic media.</div>,
+    desc: (
+      <div>
+        HUMANS is creating an all-in-one platform for AI-based creation and
+        governance with an initial focus on synthetic media.
+        <br />
+        HUMANS is creating an all-in-one platform for AI-based creation and
+        governance with an initial focus on synthetic media.
+        <br />
+        HUMANS is creating an all-in-one platform for AI-based creation and
+        governance with an initial focus on synthetic media.
+      </div>
+    ),
   },
   {
     name: "tab3",
     image: "/media/team/member3.png",
-    desc: <div>HUMANS is creating an all-in-one platform for AI-based creation and governance with an initial focus on synthetic media.<br/>
-    HUMANS is creating an all-in-one platform for AI-based creation and governance with an initial focus on synthetic media.<br/>
-    HUMANS is creating an all-in-one platform for AI-based creation and governance with an initial focus on synthetic media.</div>,
+    desc: (
+      <div>
+        HUMANS is creating an all-in-one platform for AI-based creation and
+        governance with an initial focus on synthetic media.
+        <br />
+        HUMANS is creating an all-in-one platform for AI-based creation and
+        governance with an initial focus on synthetic media.
+        <br />
+        HUMANS is creating an all-in-one platform for AI-based creation and
+        governance with an initial focus on synthetic media.
+      </div>
+    ),
   },
   {
     name: "tab4",
     image: "/media/team/member2.png",
-    desc: <div>HUMANS is creating an all-in-one platform for AI-based creation and governance with an initial focus on synthetic media.<br/>
-    HUMANS is creating an all-in-one platform for AI-based creation and governance with an initial focus on synthetic media.<br/>
-    HUMANS is creating an all-in-one platform for AI-based creation and governance with an initial focus on synthetic media.</div>,
+    desc: (
+      <div>
+        HUMANS is creating an all-in-one platform for AI-based creation and
+        governance with an initial focus on synthetic media.
+        <br />
+        HUMANS is creating an all-in-one platform for AI-based creation and
+        governance with an initial focus on synthetic media.
+        <br />
+        HUMANS is creating an all-in-one platform for AI-based creation and
+        governance with an initial focus on synthetic media.
+      </div>
+    ),
   },
   {
     name: "tab5",
     image: "/media/team/member1.png",
-    desc: <div>HUMANS is creating an all-in-one platform for AI-based creation and governance with an initial focus on synthetic media.<br/>
-    HUMANS is creating an all-in-one platform for AI-based creation and governance with an initial focus on synthetic media.<br/>
-    HUMANS is creating an all-in-one platform for AI-based creation and governance with an initial focus on synthetic media.</div>,
+    desc: (
+      <div>
+        HUMANS is creating an all-in-one platform for AI-based creation and
+        governance with an initial focus on synthetic media.
+        <br />
+        HUMANS is creating an all-in-one platform for AI-based creation and
+        governance with an initial focus on synthetic media.
+        <br />
+        HUMANS is creating an all-in-one platform for AI-based creation and
+        governance with an initial focus on synthetic media.
+      </div>
+    ),
+  },
+];
+
+export const layersData: layersType[] = [
+  {
+    image: "1",
+    speed: 1,
+  },
+  {
+    image: "2",
+    speed: 1,
+  },
+  {
+    image: "3",
+    speed: 1,
+  },
+  {
+    image: "4",
+    speed: 1,
+  },
+  {
+    image: "5",
+    speed: 1,
+  },
+  {
+    image: "6",
+    speed: 1,
+  },
+  {
+    image: "7",
+    speed: 1,
+  },
+  {
+    image: "8",
+    speed: 1,
   },
 ];

@@ -23,3 +23,9 @@ export interface tabType {
   image: string;
   desc: ReactElement<any, any>;
 }
+
+
+export interface layersType {
+  image:string;
+  speed:number;
+}
