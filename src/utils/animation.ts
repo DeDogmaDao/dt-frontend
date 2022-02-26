@@ -37,3 +37,23 @@ export const discordBtnAni: Variants = {
     },
   },
 };
+
+
+export const gateLine2:any = {
+  hidden:(custom:number)=> ({
+    pathLength: 0,
+    pathOffset: 1,
+    transitionEnd:{
+      strokeLinecap: "butt",
+    },
+    transition: { duration: custom, delay: 0, ease: "linear" },
+  }),
+  visible:(custom:number) =>( {
+    pathLength: 1,
+    pathOffset: 0,
+    transitionEnd:{
+      strokeLinecap: "square",
+    },
+    transition: { duration: custom, delay: 0, ease: "linear" },
+  }),
+};
