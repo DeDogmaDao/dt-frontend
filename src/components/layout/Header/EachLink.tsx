@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
+import { navHoverAni } from "../../../utils/animation";
 
 export interface Links {
   ref: string;
@@ -46,12 +47,26 @@ const EachLink: React.FC<props> = ({ headLink, navHovered, navHovering }) => {
           {headLink.text}
         </a>
       </Link>
-      {condition && (
-        <motion.div
-          className="absolute -bottom-4 left-0 right-0 bg-primary-500 w-full h-1 mx-auto rounded-xl"
-          layoutId="underline"
-        ></motion.div>
-      )}
+      <AnimatePresence>
+        {condition && (
+          <>
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              exit="hidden"
+              variants={navHoverAni}
+              className="absolute -top-2 left-[-30%]  bg-primary-500 w-[120%] h-px ml-0"
+            ></motion.div>
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              exit="hidden"
+              variants={navHoverAni}
+              className="absolute -bottom-2 right-[-30%]  bg-primary-500 w-[120%] h-px mr-0"
+            ></motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </motion.li>
   );
 };

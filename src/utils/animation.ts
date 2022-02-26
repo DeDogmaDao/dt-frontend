@@ -39,6 +39,25 @@ export const discordBtnAni: Variants = {
 };
 
 
+export const navHoverAni:Variants= {
+  hidden: {
+    width: 0,
+    opacity:0,
+    transition: {
+      duration: 0.7,
+    },
+  },
+  visible: {
+    width: "130%",
+    opacity:1,
+    transition: {
+      duration: 0.7,
+    },
+  }
+}
+
+
+
 export const gateLine2:any = {
   hidden:(custom:number)=> ({
     pathLength: 0,
