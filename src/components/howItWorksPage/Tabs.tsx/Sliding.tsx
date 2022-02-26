@@ -14,8 +14,6 @@ const Carosel: React.FC<props> = ({ allData, Item }) => {
     isSmallDevice = document.documentElement.clientWidth <= 768;
   }, []);
 
-
-
   const snapStyle = isSmallDevice
     ? {
         scrollSnapType: "x mandatory",
@@ -27,20 +25,11 @@ const Carosel: React.FC<props> = ({ allData, Item }) => {
     <>
       <div>
         <div className="carosel-parent my-20">
-          <div
-            style={snapStyle}
-            className="carosel"
-            ref={rightLeftScroll}
-          >
+          <div style={snapStyle} className="carosel" ref={rightLeftScroll}>
             <div>
-              {allData
-                .filter(
-                  (_: any, index: number) => showMore.quantity - 1 >= index
-                )
-                .map((data: any, index: number) => {
-                  return <Item data={data} />;
-                })}
-              <div ref={wastefulCover} className="wasteful-cover"></div>
+              {allData.map((data: any, index: number) => {
+                return <Item data={data} />;
+              })}
             </div>
           </div>
         </div>
