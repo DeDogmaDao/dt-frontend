@@ -1,19 +1,24 @@
 import { LayoutGroup } from "framer-motion";
-import { createRef, Ref, useCallback, useRef, useState } from "react";
+import { useState } from "react";
 import { allTabs, tabData } from "../../../store/allData";
 import Card from "./Card";
 import EachGroup from "./EachGroup";
+import EachTab from "./EachTab";
 import Sliding from "./Sliding";
 const Tabs: React.FC = () => {
-  const [tabs, setTabs] = useState([ ...allTabs ]);
-console.log(tabs);
+  const [tabs, setTabs] = useState([...allTabs]);
   return (
     <div className="flex flex-col justify-between items-center h-full w-full">
       <div className="h-20 flex justify-center items-center gap-x-10 text-2xl">
         <LayoutGroup id="tabGroup">
           {tabs.map((data) => {
             return (
-              <EachGroup tabs={tabs} name={data.tabGroup} activeGroup={data.activeGroup} setTabs={setTabs} />
+              <EachGroup
+                tabs={tabs}
+                name={data.tabGroup}
+                activeGroup={data.activeGroup}
+                setTabs={setTabs}
+              />
             );
           })}
         </LayoutGroup>
@@ -27,6 +32,20 @@ console.log(tabs);
           );
         })}
       </div>
+
+      {tabs.map((tab) => {
+        <div className="h-20 flex justify-center items-center gap-x-10 text-2xl">
+          <LayoutGroup id="eachTab">
+            {tabs.map((data) => {
+              return (
+                <EachTab
+                
+                />
+              );
+            })}
+          </LayoutGroup>
+        </div>;
+      })}
     </div>
   );
 };

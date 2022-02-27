@@ -32,5 +32,5 @@ export interface layersType {
 export interface tabsType {
   tabGroup: string;
   activeGroup: boolean;
-  tabInfo: { isActive: boolean; data: tabType[] }[];
-};
+  tabInfo: { isActive: boolean; data: tabType[] };
+}

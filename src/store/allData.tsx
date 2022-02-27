@@ -324,30 +324,13 @@ export const tabData: tabType[] = [
 export const allTabs: tabsType[] = [
   {
     tabGroup: "Gods",
-    activeGroup:true,
-    tabInfo: [
-      { isActive: true, data: tabData },
-      { isActive: false, data: tabData },
-      { isActive: false, data: tabData },
-      { isActive: false, data: tabData },
-      { isActive: false, data: tabData },
-      { isActive: true, data: tabData },
-      { isActive: false, data: tabData },
-      { isActive: false, data: tabData },
-      { isActive: false, data: tabData },
-      { isActive: false, data: tabData },
-    ],
+    activeGroup: true,
+    tabInfo: { isActive: true, data: tabData },
   },
   {
     tabGroup: "human",
-    activeGroup:false,
-    tabInfo: [
-      { isActive: true, data: tabData },
-      { isActive: false, data: tabData },
-      { isActive: false, data: tabData },
-      { isActive: false, data: tabData },
-      { isActive: false, data: tabData },
-    ],
+    activeGroup: false,
+    tabInfo: { isActive: true, data: tabData },
   },
 ];
 
