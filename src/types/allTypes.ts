@@ -8,7 +8,7 @@ export interface faqType {
 
 export interface teamType {
   name: string;
-  role: string;
+  role?: string;
   image: string;
 }
 
@@ -29,3 +29,4 @@ export interface layersType {
   image:string;
   speed:number;
 }
+

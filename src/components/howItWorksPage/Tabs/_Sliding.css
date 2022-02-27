@@ -6,7 +6,7 @@
       @apply relative block mx-auto overflow-hidden rounded-md h-full w-full;
       .sliding {
         scrollbar-width:none;
-        @apply flex justify-between items-center h-full overflow-x-auto;
+        @apply flex justify-between items-center h-full overflow-x-scroll overflow-y-hidden;
         > div {
           @apply flex flex-row relative gap-x-5;
           .wasteful-cover {

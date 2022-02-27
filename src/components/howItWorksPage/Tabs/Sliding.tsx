@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from "react";
 
 interface props {
   allData: any;
-  initialQuantity: number;
   Item: React.FC<{ data: any }>;
 }
 const Sliding: React.FC<props> = ({ allData, Item }) => {
@@ -24,7 +23,7 @@ const Sliding: React.FC<props> = ({ allData, Item }) => {
   return (
     <>
       <div>
-        <div className="sliding-parent my-20">
+        <div className="sliding-parent">
           <div style={snapStyle} className="sliding" ref={rightLeftScroll}>
             <div>
               {allData.map((data: any, index: number) => {
