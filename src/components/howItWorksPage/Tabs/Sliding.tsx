@@ -5,7 +5,7 @@ interface props {
   initialQuantity: number;
   Item: React.FC<{ data: any }>;
 }
-const Carosel: React.FC<props> = ({ allData, Item }) => {
+const Sliding: React.FC<props> = ({ allData, Item }) => {
   const rightLeftScroll = useRef<HTMLDivElement>(null);
 
   let isSmallDevice = false;
@@ -24,8 +24,8 @@ const Carosel: React.FC<props> = ({ allData, Item }) => {
   return (
     <>
       <div>
-        <div className="carosel-parent my-20">
-          <div style={snapStyle} className="carosel" ref={rightLeftScroll}>
+        <div className="sliding-parent my-20">
+          <div style={snapStyle} className="sliding" ref={rightLeftScroll}>
             <div>
               {allData.map((data: any, index: number) => {
                 return <Item data={data} />;
@@ -38,4 +38,4 @@ const Carosel: React.FC<props> = ({ allData, Item }) => {
   );
 };
 
-export default Carosel;
+export default Sliding;

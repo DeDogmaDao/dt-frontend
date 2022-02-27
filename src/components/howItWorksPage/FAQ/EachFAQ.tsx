@@ -2,7 +2,7 @@ import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { faqType } from "../../../types/propTypes";
+import { faqType } from "../../../types/allTypes";
 
 interface props {
   data: faqType;

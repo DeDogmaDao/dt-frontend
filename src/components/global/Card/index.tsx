@@ -1,4 +1,4 @@
-import { teamType } from "../../../types/propTypes";
+import { teamType } from "../../../types/allTypes";
 
 interface props {
     data:teamType;

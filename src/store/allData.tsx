@@ -12,7 +12,7 @@ import {
   socialType,
   tabType,
   teamType,
-} from "../types/propTypes";
+} from "../types/allTypes";
 
 //
 //

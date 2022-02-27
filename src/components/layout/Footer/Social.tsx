@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { socialType } from "../../../types/propTypes";
+import { socialType } from "../../../types/allTypes";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import { socialAni } from "../../../utils/animation";
