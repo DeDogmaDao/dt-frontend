@@ -10,6 +10,7 @@ import {
   faqType,
   layersType,
   socialType,
+  tabsType,
   tabType,
   teamType,
 } from "../types/allTypes";
@@ -141,7 +142,7 @@ export const teamData: teamType[] = [
   },
 ];
 
-export const tabsData: tabType[] = [
+export const tabData: tabType[] = [
   {
     name: "tab1",
     image: "/media/team/member1.png",
@@ -317,6 +318,36 @@ export const tabsData: tabType[] = [
         governance with an initial focus on synthetic media.
       </div>
     ),
+  },
+];
+
+export const allTabs: tabsType[] = [
+  {
+    tabGroup: "Gods",
+    activeGroup:true,
+    tabInfo: [
+      { isActive: true, data: tabData },
+      { isActive: false, data: tabData },
+      { isActive: false, data: tabData },
+      { isActive: false, data: tabData },
+      { isActive: false, data: tabData },
+      { isActive: true, data: tabData },
+      { isActive: false, data: tabData },
+      { isActive: false, data: tabData },
+      { isActive: false, data: tabData },
+      { isActive: false, data: tabData },
+    ],
+  },
+  {
+    tabGroup: "human",
+    activeGroup:false,
+    tabInfo: [
+      { isActive: true, data: tabData },
+      { isActive: false, data: tabData },
+      { isActive: false, data: tabData },
+      { isActive: false, data: tabData },
+      { isActive: false, data: tabData },
+    ],
   },
 ];
 

@@ -24,9 +24,13 @@ export interface tabType {
   desc: ReactElement<any, any>;
 }
 
-
 export interface layersType {
-  image:string;
-  speed:number;
+  image: string;
+  speed: number;
 }
 
+export interface tabsType {
+  tabGroup: string;
+  activeGroup: boolean;
+  tabInfo: { isActive: boolean; data: tabType[] }[];
+};

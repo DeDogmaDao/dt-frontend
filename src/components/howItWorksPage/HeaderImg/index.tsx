@@ -7,7 +7,6 @@ const HeaderImg: React.FC = () => {
   const [top, setTop] = useState(0);
   const topTransform = () => {
     setTop(window.scrollY / 15);
-    console.log(top);
   };
   useEffect(() => {
     window.addEventListener("scroll", topTransform);

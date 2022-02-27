@@ -1,19 +1,18 @@
 @layer components {
-    .sliding::-webkit-scrollbar {
-      display: none;
-    }
-    .sliding-parent {
-      @apply relative block mx-auto overflow-hidden rounded-md h-full w-full;
-      .sliding {
-        scrollbar-width:none;
-        @apply flex justify-between items-center h-full overflow-x-scroll overflow-y-hidden;
-        > div {
-          @apply flex flex-row relative gap-x-5;
-          .wasteful-cover {
-            @apply absolute top-0 left-0 h-full w-full opacity-0 hidden cursor-pointer;
-          }
+  .sliding::-webkit-scrollbar {
+    display: none;
+  }
+  .sliding-parent {
+    @apply relative block mx-auto overflow-hidden rounded-md h-full w-full;
+    .sliding {
+      scrollbar-width: none;
+      @apply flex justify-between items-center h-full overflow-x-scroll overflow-y-hidden;
+      > div {
+        @apply flex flex-row relative gap-x-5;
+        .wasteful-cover {
+          @apply absolute top-0 left-0 h-full w-full opacity-0 hidden cursor-pointer;
         }
       }
     }
   }
-  
+}
