@@ -145,7 +145,7 @@ export const teamData: teamType[] = [
 export const tabData: tabType[] = [
   {
     activeCard: true,
-    name: "tab1",
+    name: "tab0",
     image: "/media/team/member1.png",
     desc: (
       <div>
@@ -173,7 +173,7 @@ export const tabData: tabType[] = [
   },
   {
     activeCard: false,
-    name: "tab1",
+    name: "tab2",
     image: "/media/team/member1.png",
     desc: (
       <div>
@@ -187,7 +187,7 @@ export const tabData: tabType[] = [
   },
   {
     activeCard: false,
-    name: "tab1",
+    name: "tab3",
     image: "/media/team/member1.png",
     desc: (
       <div>
@@ -201,7 +201,7 @@ export const tabData: tabType[] = [
   },
   {
     activeCard: false,
-    name: "tab1",
+    name: "tab4",
     image: "/media/team/member1.png",
     desc: (
       <div>
@@ -215,7 +215,7 @@ export const tabData: tabType[] = [
   },
   {
     activeCard: false,
-    name: "tab1",
+    name: "tab5",
     image: "/media/team/member1.png",
     desc: (
       <div>
@@ -229,7 +229,7 @@ export const tabData: tabType[] = [
   },
   {
     activeCard: false,
-    name: "tab1",
+    name: "tab6",
     image: "/media/team/member1.png",
     desc: (
       <div>
@@ -243,7 +243,7 @@ export const tabData: tabType[] = [
   },
   {
     activeCard: false,
-    name: "tab1",
+    name: "tab7",
     image: "/media/team/member1.png",
     desc: (
       <div>
@@ -257,7 +257,7 @@ export const tabData: tabType[] = [
   },
   {
     activeCard: false,
-    name: "tab1",
+    name: "tab8",
     image: "/media/team/member1.png",
     desc: (
       <div>
@@ -271,7 +271,7 @@ export const tabData: tabType[] = [
   },
   {
     activeCard: false,
-    name: "tab1",
+    name: "tab9",
     image: "/media/team/member1.png",
     desc: (
       <div>
@@ -285,21 +285,7 @@ export const tabData: tabType[] = [
   },
   {
     activeCard: false,
-    name: "tab1",
-    image: "/media/team/member1.png",
-    desc: (
-      <div>
-        HUMANS is creating an all-in-one platform for AI-based creation and
-        governance with an initial focus on synthetic media.
-        <br />
-        HUMANS is creating an all-in-one platform for AI-based creation and
-        governance with an initial focus on synthetic media.
-      </div>
-    ),
-  },
-  {
-    activeCard: false,
-    name: "tab1",
+    name: "tab10",
     image: "/media/team/member1.png",
     desc: (
       <div>

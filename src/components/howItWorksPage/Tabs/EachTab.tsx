@@ -15,6 +15,7 @@ const EachTab: React.FC<props> = ({
   setTabs,
   tabs,
 }) => {
+
   const clickHandler = () => {
     const newCard = [...tabs].map((tab) => {
       if (tab.tabGroup === group) {
