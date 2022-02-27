@@ -8,7 +8,7 @@ import Sliding from "./Sliding";
 const Tabs: React.FC = () => {
   const [tabs, setTabs] = useState([...allTabs]);
   return (
-    <div className="flex flex-col justify-between items-center h-full w-full">
+    <div className="flex flex-col justify-between items-center h-full w-full my-80 py-96">
       <div className="h-20 flex justify-center items-center gap-x-10 text-2xl">
         <LayoutGroup id="tabGroup">
           {tabs.map((data) => {
@@ -34,17 +34,24 @@ const Tabs: React.FC = () => {
       </div>
 
       {tabs.map((tab) => {
-        <div className="h-20 flex justify-center items-center gap-x-10 text-2xl">
-          <LayoutGroup id="eachTab">
-            {tabs.map((data) => {
-              return (
-                <EachTab
-                
-                />
-              );
-            })}
-          </LayoutGroup>
-        </div>;
+        if (!tab.activeGroup) return null;
+        return (
+          <div className="h-20 flex justify-center items-center gap-x-10 text-2xl">
+            <LayoutGroup id="eachTab">
+              {tab.tabInfo.map((data) => {
+                return (
+                  <EachTab
+                    group={tab.tabGroup}
+                    name={data.name}
+                    activeCard={data.activeCard}
+                    tabs={tabs}
+                    setTabs={setTabs}
+                  />
+                );
+              })}
+            </LayoutGroup>
+          </div>
+        );
       })}
     </div>
   );

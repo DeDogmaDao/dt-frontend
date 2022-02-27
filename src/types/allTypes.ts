@@ -18,19 +18,21 @@ export interface socialType {
   color: string;
 }
 
-export interface tabType {
-  name: string;
-  image: string;
-  desc: ReactElement<any, any>;
-}
 
 export interface layersType {
   image: string;
   speed: number;
 }
 
+export interface tabType {
+  activeCard:boolean;
+  name: string;
+  image: string;
+  desc: ReactElement<any, any>;
+}
+
 export interface tabsType {
   tabGroup: string;
   activeGroup: boolean;
-  tabInfo: { isActive: boolean; data: tabType[] };
+  tabInfo: tabType[] ;
 }
