@@ -144,7 +144,7 @@ export const teamData: teamType[] = [
 
 export const godTabData: tabType[] = [
   {
-    activeCard: true,
+    activeCard: false,
     name: "tab0",
     image: "/media/team/member1.png",
     desc: (
@@ -228,7 +228,7 @@ export const godTabData: tabType[] = [
     ),
   },
   {
-    activeCard: false,
+    activeCard: true,
     name: "tab6",
     image: "/media/team/member1.png",
     desc: (
@@ -300,7 +300,7 @@ export const godTabData: tabType[] = [
 ];
 export const humanTabData: tabType[] = [
   {
-    activeCard: true,
+    activeCard: false,
     name: "tab0",
     image: "/media/team/member3.png",
     desc: (
@@ -328,7 +328,7 @@ export const humanTabData: tabType[] = [
     ),
   },
   {
-    activeCard: false,
+    activeCard: true,
     name: "tab2",
     image: "/media/team/member3.png",
     desc: (
