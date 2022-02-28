@@ -1,6 +1,6 @@
 import { LayoutGroup } from "framer-motion";
-import { useRef, useState } from "react";
-import { allTabs, tabData } from "../../../store/allData";
+import { useEffect, useRef, useState } from "react";
+import { allTabs } from "../../../store/allData";
 import Card from "./Card";
 import EachGroup from "./EachGroup";
 import EachTab from "./EachTab";
@@ -8,6 +8,15 @@ import Sliding from "./Sliding";
 const Tabs: React.FC = () => {
   const [tabs, setTabs] = useState([...allTabs]);
   const cardRef = useRef<HTMLDivElement>(null);
+  const [deviceWidth, setDeviceWidth] = useState(0);
+  let isSmallDevice = false;
+  const halfCardWidth = 160;
+
+  useEffect(() => {
+    setDeviceWidth(document.documentElement.offsetWidth);
+    isSmallDevice = deviceWidth <= 768;
+  }, []);
+
   return (
     <div className="flex flex-col justify-between items-center h-full w-full my-80 py-96">
       <div className="h-20 flex justify-center items-center gap-x-10 text-2xl">
@@ -24,14 +33,17 @@ const Tabs: React.FC = () => {
           })}
         </LayoutGroup>
       </div>
-      <div className="flex justify-center items-center gap-x-5 bg-mainBg-500 px-1 rounded-md">
-        {tabData.map((data) => {
-          return (
-            <>
-              <Sliding cardRef={cardRef} Item={Card} allData={tabData} />
-            </>
-          );
-        })}
+      <div className="w-full h-full bg-mainBg-500 ">
+        <Sliding
+          cardRef={cardRef}
+          tabs={tabs}
+          deviceWidth={deviceWidth}
+          halfCardWidth={halfCardWidth}
+        >
+          {tabs[0].tabInfo.map((data) => {
+            return <Card cardRef={cardRef} data={data} />;
+          })}
+        </Sliding>
       </div>
 
       {tabs.map((tab) => {

@@ -33,19 +33,8 @@ const EachTab: React.FC<props> = ({
     });
     setTabs(newCard);
 
-
   };
-  useEffect(() => {
-    setTimeout(() => {
-      
-      if(activeCard === true){
-        cardRef.current!.scrollIntoView({
-          behavior: "smooth", block: "end", inline: "nearest"
-        });
-        console.log(cardRef.current)
-      }
-    }, 100);
-  }, [tabs])
+
   
   return (
     <button

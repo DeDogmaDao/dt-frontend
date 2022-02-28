@@ -142,7 +142,7 @@ export const teamData: teamType[] = [
   },
 ];
 
-export const tabData: tabType[] = [
+export const godTabData: tabType[] = [
   {
     activeCard: true,
     name: "tab0",
@@ -298,17 +298,89 @@ export const tabData: tabType[] = [
     ),
   },
 ];
+export const humanTabData: tabType[] = [
+  {
+    activeCard: true,
+    name: "tab0",
+    image: "/media/team/member3.png",
+    desc: (
+      <div>
+        HUMANS is creating an all-in-one platform for AI-based creation and
+        governance with an initial focus on synthetic media.
+        <br />
+        HUMANS is creating an all-in-one platform for AI-based creation and
+        governance with an initial focus on synthetic media.
+      </div>
+    ),
+  },
+  {
+    activeCard: false,
+    name: "tab1",
+    image: "/media/team/member3.png",
+    desc: (
+      <div>
+        HUMANS is creating an all-in-one platform for AI-based creation and
+        governance with an initial focus on synthetic media.
+        <br />
+        HUMANS is creating an all-in-one platform for AI-based creation and
+        governance with an initial focus on synthetic media.
+      </div>
+    ),
+  },
+  {
+    activeCard: false,
+    name: "tab2",
+    image: "/media/team/member3.png",
+    desc: (
+      <div>
+        HUMANS is creating an all-in-one platform for AI-based creation and
+        governance with an initial focus on synthetic media.
+        <br />
+        HUMANS is creating an all-in-one platform for AI-based creation and
+        governance with an initial focus on synthetic media.
+      </div>
+    ),
+  },
+  {
+    activeCard: false,
+    name: "tab3",
+    image: "/media/team/member3.png",
+    desc: (
+      <div>
+        HUMANS is creating an all-in-one platform for AI-based creation and
+        governance with an initial focus on synthetic media.
+        <br />
+        HUMANS is creating an all-in-one platform for AI-based creation and
+        governance with an initial focus on synthetic media.
+      </div>
+    ),
+  },
+  {
+    activeCard: false,
+    name: "tab4",
+    image: "/media/team/member3.png",
+    desc: (
+      <div>
+        HUMANS is creating an all-in-one platform for AI-based creation and
+        governance with an initial focus on synthetic media.
+        <br />
+        HUMANS is creating an all-in-one platform for AI-based creation and
+        governance with an initial focus on synthetic media.
+      </div>
+    ),
+  },
+];
 
 export const allTabs: tabsType[] = [
   {
     tabGroup: "Gods",
     activeGroup: true,
-    tabInfo: tabData,
+    tabInfo: godTabData,
   },
   {
     tabGroup: "human",
     activeGroup: false,
-    tabInfo: tabData,
+    tabInfo: humanTabData,
   },
 ];
 

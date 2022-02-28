@@ -1,37 +1,38 @@
 import { RefObject, useEffect, useRef, useState } from "react";
+import { tabsType } from "../../../types/allTypes";
 
 interface props {
-  allData: any;
-  Item: React.FC<{ data: any; cardRef:RefObject<HTMLDivElement> }>;
   cardRef: RefObject<HTMLDivElement>;
-
+  tabs: tabsType[];
+  halfCardWidth:number;
+  deviceWidth:number;
 }
-const Sliding: React.FC<props> = ({ allData, Item, cardRef }) => {
+const Sliding: React.FC<props> = ({tabs,cardRef,halfCardWidth, deviceWidth, children}) => {
   const rightLeftScroll = useRef<HTMLDivElement>(null);
 
-  let isSmallDevice = false;
 
   useEffect(() => {
-    isSmallDevice = document.documentElement.clientWidth <= 768;
-  }, []);
-
-  const snapStyle = isSmallDevice
-    ? {
-        scrollSnapType: "x mandatory",
-        scrollPaddingInline: "50px",
-      }
-    : {};
+    setTimeout(() => {
+      rightLeftScroll.current!.scrollTo({
+        top: 0,
+        left: cardRef.current?.clientWidth,
+        behavior: "smooth",
+      });
+    }, 1);
+  }, [tabs]);
 
   return (
     <>
-      <div>
-        <div className="sliding-parent">
-          <div style={snapStyle} className="sliding" ref={rightLeftScroll}>
-            <div>
-              {allData.map((data: any, index: number) => {
-                return <Item data={data} cardRef={cardRef}  />;
-              })}
-            </div>
+      <div className="relative block w-screen overflow-visible z-110 h-[500px] mx-auto">
+        <div
+          className="absolute top-0 left-0 w-full h-[500px] flex overflow-x-scroll bg-secText/20"
+          ref={rightLeftScroll}
+        >
+          <div
+            className="flex"
+            style={{ margin: "0 " + (deviceWidth / 2 - halfCardWidth) + "px" }}
+          >
+            {children}
           </div>
         </div>
       </div>
