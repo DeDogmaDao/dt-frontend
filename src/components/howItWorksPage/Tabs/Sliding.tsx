@@ -4,18 +4,21 @@ import { tabsType } from "../../../types/allTypes";
 interface props {
   cardRef: RefObject<HTMLDivElement>;
   tabs: tabsType[];
-  halfCardWidth:number;
-  deviceWidth:number;
 }
-const Sliding: React.FC<props> = ({tabs,cardRef,halfCardWidth, deviceWidth, children}) => {
+const Sliding: React.FC<props> = ({ tabs, cardRef, children }) => {
   const rightLeftScroll = useRef<HTMLDivElement>(null);
-
+  const [deviceWidth, setDeviceWidth] = useState(0);
+  let isSmallDevice = false;
+  const halfCardWidth = 160;
 
   useEffect(() => {
+    setDeviceWidth(window.innerWidth);
+    isSmallDevice = deviceWidth <= 768;
     setTimeout(() => {
       rightLeftScroll.current!.scrollTo({
         top: 0,
-        left: cardRef.current?.clientWidth,
+        left:
+          cardRef.current!.offsetLeft - window.innerWidth / 2 + halfCardWidth,
         behavior: "smooth",
       });
     }, 1);

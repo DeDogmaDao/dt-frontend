@@ -8,14 +8,6 @@ import Sliding from "./Sliding";
 const Tabs: React.FC = () => {
   const [tabs, setTabs] = useState([...allTabs]);
   const cardRef = useRef<HTMLDivElement>(null);
-  const [deviceWidth, setDeviceWidth] = useState(0);
-  let isSmallDevice = false;
-  const halfCardWidth = 160;
-
-  useEffect(() => {
-    setDeviceWidth(document.documentElement.offsetWidth);
-    isSmallDevice = deviceWidth <= 768;
-  }, []);
 
   return (
     <div className="flex flex-col justify-between items-center h-full w-full my-80 py-96">
@@ -37,8 +29,7 @@ const Tabs: React.FC = () => {
         <Sliding
           cardRef={cardRef}
           tabs={tabs}
-          deviceWidth={deviceWidth}
-          halfCardWidth={halfCardWidth}
+
         >
           {tabs[0].tabInfo.map((data) => {
             return <Card cardRef={cardRef} data={data} />;
