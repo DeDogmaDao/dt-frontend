@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { RefObject, useEffect } from "react";
 import { tabsType } from "../../../types/allTypes";
 
 interface props {
@@ -7,6 +8,7 @@ interface props {
   activeCard: boolean;
   setTabs: any;
   tabs: tabsType[];
+  cardRef: RefObject<HTMLDivElement>;
 }
 const EachTab: React.FC<props> = ({
   group,
@@ -14,8 +16,8 @@ const EachTab: React.FC<props> = ({
   activeCard,
   setTabs,
   tabs,
+  cardRef,
 }) => {
-
   const clickHandler = () => {
     const newCard = [...tabs].map((tab) => {
       if (tab.tabGroup === group) {
@@ -30,7 +32,21 @@ const EachTab: React.FC<props> = ({
       return tab;
     });
     setTabs(newCard);
+
+
   };
+  useEffect(() => {
+    setTimeout(() => {
+      
+      if(activeCard === true){
+        cardRef.current!.scrollIntoView({
+          behavior: "smooth", block: "end", inline: "nearest"
+        });
+        console.log(cardRef.current)
+      }
+    }, 100);
+  }, [tabs])
+  
   return (
     <button
       className="relative flex justify-center items-center"

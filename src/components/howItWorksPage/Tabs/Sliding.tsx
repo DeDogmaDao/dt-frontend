@@ -1,10 +1,12 @@
-import { useEffect, useRef, useState } from "react";
+import { RefObject, useEffect, useRef, useState } from "react";
 
 interface props {
   allData: any;
-  Item: React.FC<{ data: any }>;
+  Item: React.FC<{ data: any; cardRef:RefObject<HTMLDivElement> }>;
+  cardRef: RefObject<HTMLDivElement>;
+
 }
-const Sliding: React.FC<props> = ({ allData, Item }) => {
+const Sliding: React.FC<props> = ({ allData, Item, cardRef }) => {
   const rightLeftScroll = useRef<HTMLDivElement>(null);
 
   let isSmallDevice = false;
@@ -27,7 +29,7 @@ const Sliding: React.FC<props> = ({ allData, Item }) => {
           <div style={snapStyle} className="sliding" ref={rightLeftScroll}>
             <div>
               {allData.map((data: any, index: number) => {
-                return <Item data={data} />;
+                return <Item data={data} cardRef={cardRef}  />;
               })}
             </div>
           </div>
