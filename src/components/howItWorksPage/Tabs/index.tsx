@@ -29,10 +29,9 @@ const Tabs: React.FC = () => {
         <Sliding
           cardRef={cardRef}
           tabs={tabs}
-
         >
-          {tabs[0].tabInfo.map((data) => {
-            return <Card cardRef={cardRef} data={data} />;
+          {tabs[0].tabInfo.map((data, index) => {
+            return <Card cardRef={cardRef} data={data} index={index} tabInfo={tabs[0].tabInfo} />;
           })}
         </Sliding>
       </div>
