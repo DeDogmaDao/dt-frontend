@@ -20,9 +20,6 @@ const HeaderImg: React.FC = () => {
       {layersData.map((data, index) => {
         return <Layer top={top} index={index} data={data} />;
       })}
-      <div className="bg-gradient-to-b from-transparent via-mainBg-500 to-mainBg-500 w-full h-[450px] absolute left-0 
-      top-[calc(25%+392px)] "
-      style={{ transform: `translateY(${(35-top)*15}px)`}} />
       <h2 className="absolute top-56 left-1/2 -ml-56">Nepoleia is sold out!</h2>
       <div className="absolute top-96 left-1/2 -ml-32">
         <DiscordBtn />{" "}
