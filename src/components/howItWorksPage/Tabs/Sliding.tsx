@@ -27,10 +27,14 @@ const Sliding: React.FC<props> = ({ tabs, cardRef, children }) => {
   return (
     <>
       <div className="sliding-parent">
-        <div className="sliding" ref={rightLeftScroll} style={{ touchAction: "none" }}>
+        <div
+          className="sliding"
+          ref={rightLeftScroll}
+          style={{ touchAction: "none" }}
+        >
           <div
             className="flex my-20"
-            style={{ marginInline: (deviceWidth / 2 - halfCardWidth) + "px" }}
+            style={{ marginInline: deviceWidth / 2 - halfCardWidth + "px" }}
           >
             {children}
           </div>

@@ -27,15 +27,18 @@ const Tabs: React.FC = () => {
       </div>
       <div className="w-full h-full bg-mainBg-500 ">
         <Sliding cardRef={cardRef} tabs={tabs}>
-          {tabs[0].tabInfo.map((data, index) => {
-            return (
-              <Card
-                cardRef={cardRef}
-                data={data}
-                index={index}
-                tabInfo={tabs[0].tabInfo}
-              />
-            );
+          {tabs.map((tab) => {
+            return tab.tabInfo.map((data, index) => {
+              if (!tab.activeGroup) return null;
+              return (
+                <Card
+                  cardRef={cardRef}
+                  data={data}
+                  index={index}
+                  tabInfo={tab.tabInfo}
+                />
+              );
+            });
           })}
         </Sliding>
       </div>
