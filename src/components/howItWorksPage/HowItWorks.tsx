@@ -23,7 +23,26 @@ const HowItWorks: React.FC = () => {
 
       <div className="relative h-screen w-screen my-80 flex justify-center items-center">
         <img src="/media/junks/Door.png" className="h-full" />
-        <motion.img src="/media/team/member1.png" className="absolute w-16 -bottom-5  left-[43%]" style={{transform:"rotateX(69deg) skew(-19deg)"}} />
+        <motion.img
+          src="/media/team/member1.png"
+          className="absolute w-16 -bottom-5  left-[43%]"
+          style={{ transform: "rotateX(69deg) skew(-19deg)" }}
+        />
+        <motion.img
+          src="/media/team/member2.png"
+          className="absolute w-16 -bottom-5  left-[50%]"
+          style={{ transform: "rotateX(69deg) rotateZ(-12deg)" }}
+        />
+        <motion.img
+          src="/media/team/member3.png"
+          className="absolute w-10 bottom-7  left-[45%]"
+          style={{ transform: "rotateX(69deg) skew(-19deg)" }}
+        />
+        <motion.img
+          src="/media/team/member1.png"
+          className="absolute w-10 bottom-7  left-[50%]"
+          style={{ transform: "rotateX(69deg) skew(11deg)" }}
+        />
       </div>
 
       <Carosel allData={teamClone} Item={Card} initialQuantity={100} />
