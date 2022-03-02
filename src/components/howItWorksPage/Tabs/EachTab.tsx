@@ -32,22 +32,22 @@ const EachTab: React.FC<props> = ({
       return tab;
     });
     setTabs(newCard);
-
   };
 
-  
   return (
     <button
-      className="relative flex justify-center items-center"
+      className={`relative flex justify-center items-center min-w-[80px] h-14 duration-500 ${
+        activeCard ? "text-blackPrime" : ""
+      }`}
       onClick={clickHandler}
     >
-      {name}
       {activeCard && (
         <motion.div
           layoutId="eachTab"
-          className="absolute left-0 bottom-0 w-full h-1 bg-primary-500"
+          className="absolute left-0 bottom-0 w-full h-full bg-white z-0 rounded-full shadow-cycle shadow-slate-200 "
         ></motion.div>
       )}
+      <h4 className="z-10">{name}</h4>
     </button>
   );
 };

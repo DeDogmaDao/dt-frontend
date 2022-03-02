@@ -26,12 +26,16 @@ const Tabs: React.FC = () => {
         </LayoutGroup>
       </div>
       <div className="w-full h-full bg-mainBg-500 ">
-        <Sliding
-          cardRef={cardRef}
-          tabs={tabs}
-        >
+        <Sliding cardRef={cardRef} tabs={tabs}>
           {tabs[0].tabInfo.map((data, index) => {
-            return <Card cardRef={cardRef} data={data} index={index} tabInfo={tabs[0].tabInfo} />;
+            return (
+              <Card
+                cardRef={cardRef}
+                data={data}
+                index={index}
+                tabInfo={tabs[0].tabInfo}
+              />
+            );
           })}
         </Sliding>
       </div>
@@ -39,7 +43,7 @@ const Tabs: React.FC = () => {
       {tabs.map((tab) => {
         if (!tab.activeGroup) return null;
         return (
-          <div className="h-20 flex justify-center items-center gap-x-10 text-2xl">
+          <div className="h-16 flex justify-center items-center gap-x-0 text-2xl bg-mainBg-700 rounded-full">
             <LayoutGroup id="eachTab">
               {tab.tabInfo.map((data) => {
                 return (
