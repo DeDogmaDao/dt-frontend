@@ -1,6 +1,4 @@
 import { layersType } from "../../../types/allTypes";
-import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
 interface props {
   data: layersType;
   top: number;
