@@ -86,7 +86,7 @@ export const gameCardFirstAni: Variants = {
     translateX: "0px",
     translateY: "0px",
     transition: {
-      duration: 0.5,
+      duration: 0.1,
       delay: custom * 0.1,
     },
   }),

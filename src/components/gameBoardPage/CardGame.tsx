@@ -9,7 +9,8 @@ interface props {
 }
 
 const CardGame: React.FC<props> = ({ data, index }) => {
-  const column = Math.ceil((index + 1) / 10);
+  //   const column = Math.ceil((index + 1) / 10);
+  const column = (index % 5) + 1;
   const [cardColumn, setCardColumn] = useState(column);
 
   return (
@@ -18,13 +19,13 @@ const CardGame: React.FC<props> = ({ data, index }) => {
       animate="visible"
       variants={gameCardFirstAni}
       custom={index}
-      className=" w-20 flex flex-col justify-center items-center text-white absolute duration-500"
+      className="transform-gpu w-20 flex flex-col justify-center items-center text-white absolute duration-500"
       style={{
-        left: 50 + (cardColumn % 2) * 170 + (index % 10) * 5,
-        top: 50 + (Math.floor(cardColumn / 2 + 0.5) -1)* 150,
+        left: 50 + (cardColumn % 2) * 170 + index,
+        top: 150 + (Math.floor(cardColumn / 2 + 0.5) - 1) * 150 + index,
       }}
     >
-      <img className="w-full object-contain" src={data.image} loading="lazy" />
+      <img className="w-full object-contain duration-500 hover:ring-2 hover:ring-blue-500 hover:scale-110" src={data.image} loading="lazy" />
       {/* <p className="text-4xl text-primary-500">{data.name}</p> */}
     </motion.div>
   );
