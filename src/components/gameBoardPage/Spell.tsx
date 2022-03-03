@@ -9,7 +9,7 @@ const Spell: React.FC<props> = ({ spell }) => {
       className="rounded-full bg-yellow-500 absolute"
       style={{
         left: 5 + column * 5,
-        top: 5 + Math.floor(spell / 3) * 5,
+        top: 5 + Math.floor(spell / 3) * 10,
         width: 3,
         height: 3,
       }}
