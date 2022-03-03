@@ -22,7 +22,7 @@ export const socialAni: Variants = {
 export const discordBtnAni: Variants = {
   hidden: {
     pathLength: 0,
-    pathOffset:0,
+    pathOffset: 0,
     transition: {
       duration: 1,
       ease: "easeInOut",
@@ -30,7 +30,7 @@ export const discordBtnAni: Variants = {
   },
   visible: {
     pathLength: 1,
-    pathOffset:1,
+    pathOffset: 1,
     transition: {
       duration: 1,
       ease: "easeInOut",
@@ -38,41 +38,56 @@ export const discordBtnAni: Variants = {
   },
 };
 
-
-export const navHoverAni:Variants= {
+export const navHoverAni: Variants = {
   hidden: {
     width: 0,
-    opacity:0,
+    opacity: 0,
     transition: {
       duration: 0.7,
     },
   },
   visible: {
     width: "130%",
-    opacity:1,
+    opacity: 1,
     transition: {
       duration: 0.7,
     },
-  }
-}
+  },
+};
 
-
-
-export const gateLine2:any = {
-  hidden:(custom:number)=> ({
+export const gateLine2: any = {
+  hidden: (custom: number) => ({
     pathLength: 0,
     pathOffset: 1,
-    transitionEnd:{
+    transitionEnd: {
       strokeLinecap: "butt",
     },
     transition: { duration: custom, delay: 0, ease: "linear" },
   }),
-  visible:(custom:number) =>( {
+  visible: (custom: number) => ({
     pathLength: 1,
     pathOffset: 0,
-    transitionEnd:{
+    transitionEnd: {
       strokeLinecap: "square",
     },
     transition: { duration: custom, delay: 0, ease: "linear" },
+  }),
+};
+
+export const gameCardFirstAni: Variants = {
+  hidden: {
+    translateX: "2500px",
+    translateY: "2500px",
+    transition: {
+      duration: 0.5,
+    },
+  },
+  visible: (custom: number) => ({
+    translateX: "0px",
+    translateY: "0px",
+    transition: {
+      duration: 0.5,
+      delay: custom * 0.1,
+    },
   }),
 };
