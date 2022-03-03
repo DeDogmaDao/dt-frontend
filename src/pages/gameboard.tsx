@@ -1,7 +1,6 @@
 import Head from "next/head";
 import { Fragment } from "react";
 import GameBoard from "../components/gameBoardPage/GameBoard";
-import { helloWorld } from "../store/allData";
 
 export default function gameboard(): JSX.Element {
   return (

@@ -18,14 +18,13 @@ export interface socialType {
   color: string;
 }
 
-
 export interface layersType {
   image: string;
   speed: number;
 }
 
 export interface tabType {
-  activeCard:boolean;
+  activeCard: boolean;
   name: string;
   image: string;
   desc: ReactElement<any, any>;
@@ -34,5 +33,12 @@ export interface tabType {
 export interface tabsType {
   tabGroup: string;
   activeGroup: boolean;
-  tabInfo: tabType[] ;
+  tabInfo: tabType[];
+}
+
+export interface gameCardType {
+  name: string;
+  image: string;
+  spellGroup: string;
+  spellValue: number;
 }
