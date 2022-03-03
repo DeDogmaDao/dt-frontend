@@ -26,18 +26,18 @@ const CardGame: React.FC<props> = ({ data, index }) => {
         top: 150 + (Math.floor(cardColumn / 2 + 0.5) - 1) * 150 + index,
       }}
     >
-      <img
-        className="w-full object-contain duration-500 hover:ring-2 hover:ring-blue-500 hover:scale-110"
-        src={data.image}
-        loading="lazy"
-      />
-      {/* <p className="text-4xl text-primary-500">{data.name}</p> */}
-      <div className="w-full h-full absolute top-0 left-0">
+      <div className="w-full h-full flex flex-col justify-center items-center relative duration-500 hover:ring-2 hover:ring-blue-500 hover:scale-110">
         <div className="w-full h-full relative">
           {spells.map((spell) => {
             return <Spell spell={spell} />;
           })}
         </div>
+        <img
+          className="w-full object-contain "
+          src={data.image}
+          loading="lazy"
+        />
+        {/* <p className="text-4xl text-primary-500">{data.name}</p> */}
       </div>
     </motion.div>
   );
