@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
-import { RefObject, useEffect } from "react";
+import { RefObject } from "react";
 import { tabsType } from "../../../types/allTypes";
-
+import deepClone from 'lodash/cloneDeep';
 interface props {
   group: string;
   name: string;
@@ -19,7 +19,8 @@ const EachTab: React.FC<props> = ({
   cardRef,
 }) => {
   const clickHandler = () => {
-    const newCard = [...tabs].map((tab) => {
+    const clonedState = deepClone(tabs);
+    const newCard = clonedState.map((tab) => {
       if (tab.tabGroup === group) {
         tab.tabInfo.forEach((item) => {
           if (item.name === name) {

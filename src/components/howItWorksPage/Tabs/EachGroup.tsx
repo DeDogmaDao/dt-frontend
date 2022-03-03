@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { tabsType } from "../../../types/allTypes";
 import underLine from "../../images/Union.png";
+import deepClone from 'lodash/cloneDeep';
 
 interface props {
   name: string;
@@ -10,7 +11,8 @@ interface props {
 }
 const EachGroup: React.FC<props> = ({ name, activeGroup, setTabs, tabs }) => {
   const clickHandler = () => {
-    const newGroup = [...tabs].map((tab) => {
+    const clonedState = deepClone(tabs);
+    const newGroup = clonedState.map((tab) => {
       if (tab.tabGroup === name) {
         tab.activeGroup = true;
       } else {
