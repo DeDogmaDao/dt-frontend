@@ -10,8 +10,8 @@ interface props {
 }
 const CardGame: React.FC<props> = ({ data, index }) => {
   //   const column = Math.ceil((index + 1) / 10);
-  const column = (index % 5) + 1;
   const spells = Array.from(Array(data.spellValue).keys());
+  const column = (index % 4) + 1;
   const [cardColumn, setCardColumn] = useState(column);
 
   return (
