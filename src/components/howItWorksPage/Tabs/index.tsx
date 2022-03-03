@@ -5,8 +5,9 @@ import Card from "./Card";
 import EachGroup from "./EachGroup";
 import EachTab from "./EachTab";
 import Sliding from "./Sliding";
+
 const Tabs: React.FC = () => {
-  const [tabs, setTabs] = useState([...allTabs]);
+  const [tabs, setTabs] = useState(allTabs);
   const cardRef = useRef<HTMLDivElement>(null);
 
   return (
