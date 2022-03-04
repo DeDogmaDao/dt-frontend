@@ -113,10 +113,11 @@ export const spellAni: Variants = {
   hidden: {
     opacity: 0,
   },
-  visible: (custom) =>  ({
+  visible: (custom) => ({
     translate: "(400px,400px,0)",
     transition: {
-      duration: 0.5, delay: custom * 0.1
+      duration: 0.5,
+      delay: custom * 0.1,
     },
   }),
 };

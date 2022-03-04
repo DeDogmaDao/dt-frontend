@@ -10,7 +10,12 @@ interface props {
   isStarted: number | null;
   setIsStarted: Dispatch<SetStateAction<number | null>>;
 }
-const CardGame: React.FC<props> = ({ data, index, isStarted, setIsStarted }) => {
+const CardGame: React.FC<props> = ({
+  data,
+  index,
+  isStarted,
+  setIsStarted,
+}) => {
   //   const column = Math.ceil((index + 1) / 10);
   const spells = Array.from(Array(data.spellValue).keys());
   const column = (index % 4) + 1;
@@ -18,14 +23,14 @@ const CardGame: React.FC<props> = ({ data, index, isStarted, setIsStarted }) => 
   const [stage, setStage] = useState(0);
 
   const cardAnimHandler = () => {
-    if(index === 51 && isStarted === null){
-      setIsStarted(0)
+    if (index === 51 && isStarted === null) {
+      setIsStarted(0);
     }
-  }
+  };
 
   const timeToFlip = isStarted === index;
-  let variant:Variants;
-  if(timeToFlip){
+  let variant: Variants;
+  if (timeToFlip) {
     variant = newGameCardAni;
   } else {
     variant = gameCardFirstAni;
