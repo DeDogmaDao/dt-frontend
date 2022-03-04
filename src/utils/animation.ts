@@ -104,7 +104,7 @@ export const newGameCardAni: Variants = {
     translateY: "100px",
     transition: {
       duration: 0.1,
-      delay: custom * 0.1,
+      delay: 0.1,
     },
   }),
 };
@@ -113,7 +113,7 @@ export const spellAni: Variants = {
   hidden: {
     translateX: "0px",
     translateY: "0px",
-    },
+  },
   visible: (custom) => ({
     translateX: `${30 * (custom + 1)}px`,
     translateY: "150px",
