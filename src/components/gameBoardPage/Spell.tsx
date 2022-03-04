@@ -1,8 +1,10 @@
 import { motion } from "framer-motion";
+import { spellAni } from "../../utils/animation";
 interface props {
   spell: number;
+  stage:number;
 }
-const Spell: React.FC<props> = ({ spell }) => {
+const Spell: React.FC<props> = ({ spell, stage }) => {
   const column = (spell % 3) + 1;
   return (
     <motion.div
@@ -13,6 +15,10 @@ const Spell: React.FC<props> = ({ spell }) => {
         width: 3,
         height: 3,
       }}
+      custom={spell}
+      variants={ stage === 1 ? spellAni : {}}
+      initial="hidden"
+      animate="visible"
     ></motion.div>
   );
 };

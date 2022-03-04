@@ -91,3 +91,32 @@ export const gameCardFirstAni: Variants = {
     },
   }),
 };
+export const newGameCardAni: Variants = {
+  hidden: {
+    translateX: "0px",
+    translateY: "0px",
+    transition: {
+      duration: 0.5,
+    },
+  },
+  visible: (custom: number) => ({
+    translateX: "500px",
+    translateY: "100px",
+    transition: {
+      duration: 0.1,
+      delay: custom * 0.1,
+    },
+  }),
+};
+
+export const spellAni: Variants = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: (custom) =>  ({
+    translate: "(400px,400px,0)",
+    transition: {
+      duration: 0.5, delay: custom * 0.1
+    },
+  }),
+};

@@ -1,24 +1,42 @@
-import { motion } from "framer-motion";
-import { useState } from "react";
+import { motion, Variants } from "framer-motion";
+import { Dispatch, SetStateAction, useState } from "react";
 import { gameCardType } from "../../types/allTypes";
-import { gameCardFirstAni } from "../../utils/animation";
+import { gameCardFirstAni, newGameCardAni } from "../../utils/animation";
 import Spell from "./Spell";
 
 interface props {
   data: gameCardType;
   index: number;
+  isStarted: number | null;
+  setIsStarted: Dispatch<SetStateAction<number | null>>;
 }
-const CardGame: React.FC<props> = ({ data, index }) => {
+const CardGame: React.FC<props> = ({ data, index, isStarted, setIsStarted }) => {
   //   const column = Math.ceil((index + 1) / 10);
   const spells = Array.from(Array(data.spellValue).keys());
   const column = (index % 4) + 1;
   const [cardColumn, setCardColumn] = useState(column);
+  const [stage, setStage] = useState(0);
+
+  const cardAnimHandler = () => {
+    if(index === 51 && isStarted === null){
+      setIsStarted(0)
+    }
+  }
+
+  const timeToFlip = isStarted === index;
+  let variant:Variants;
+  if(timeToFlip){
+    variant = newGameCardAni;
+  } else {
+    variant = gameCardFirstAni;
+  }
 
   return (
     <motion.div
+      onAnimationComplete={cardAnimHandler}
       initial="hidden"
       animate="visible"
-      variants={gameCardFirstAni}
+      variants={variant}
       custom={index}
       className="transform-gpu w-20 flex flex-col justify-center items-center text-white absolute duration-500"
       style={{
@@ -26,10 +44,10 @@ const CardGame: React.FC<props> = ({ data, index }) => {
         top: 150 + (Math.floor(cardColumn / 2 + 0.5) - 1) * 150 + index,
       }}
     >
-      <div className="w-full h-full flex flex-col justify-center items-center relative duration-500 hover:ring-2 hover:ring-blue-500 hover:scale-110">
+      <div className="w-full h-full flex flex-col justify-center items-center relative duration-500 hover:ring-2 hover:-translate-y-5 hover:ring-blue-500 hover:scale-110">
         <div className="w-full h-full relative">
           {spells.map((spell) => {
-            return <Spell spell={spell} />;
+            return <Spell spell={spell} stage={stage} />;
           })}
         </div>
         <img
