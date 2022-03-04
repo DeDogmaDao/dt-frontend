@@ -2,9 +2,9 @@ import { motion } from "framer-motion";
 import { spellAni } from "../../utils/animation";
 interface props {
   spell: number;
-  stage: number;
+  isFliped?: boolean;
 }
-const Spell: React.FC<props> = ({ spell, stage }) => {
+const Spell: React.FC<props> = ({ spell, isFliped }) => {
   const column = (spell % 3) + 1;
   return (
     <motion.div
@@ -16,7 +16,7 @@ const Spell: React.FC<props> = ({ spell, stage }) => {
         height: 3,
       }}
       custom={spell}
-      variants={stage === 1 ? spellAni : {}}
+      variants={isFliped ? spellAni : {}}
       initial="hidden"
       animate="visible"
     ></motion.div>

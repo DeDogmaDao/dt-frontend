@@ -3,6 +3,7 @@ import { Dispatch, SetStateAction, useState } from "react";
 import { gameCardType } from "../../types/allTypes";
 import { gameCardFirstAni, newGameCardAni } from "../../utils/animation";
 import Spell from "./Spell";
+import isEqual from "lodash/isEqual";
 
 interface props {
   data: gameCardType;
@@ -16,24 +17,27 @@ const CardGame: React.FC<props> = ({
   isStarted,
   setIsStarted,
 }) => {
-  //   const column = Math.ceil((index + 1) / 10);
   const spells = Array.from(Array(data.spellValue).keys());
   const column = (index % 4) + 1;
   const [cardColumn, setCardColumn] = useState(column);
-  const [stage, setStage] = useState(0);
+  const [animVariant, setAnimVariant] = useState<Variants>(gameCardFirstAni);
+  const [isFliped, setIsFliped] = useState(0);
 
   const cardAnimHandler = () => {
     if (index === 51 && isStarted === null) {
       setIsStarted(0);
     }
+    if (isStarted === index) {
+      setTimeout(() => {
+        // @ts-ignore
+        setIsStarted((prevState) => prevState + 1);
+      }, 1000);
+    }
   };
 
-  const timeToFlip = isStarted === index;
-  let variant: Variants;
-  if (timeToFlip) {
-    variant = newGameCardAni;
-  } else {
-    variant = gameCardFirstAni;
+  if (index === isStarted && isStarted !== null && isFliped === 0) {
+    setIsFliped(1);
+    setAnimVariant(newGameCardAni);
   }
 
   return (
@@ -41,7 +45,7 @@ const CardGame: React.FC<props> = ({
       onAnimationComplete={cardAnimHandler}
       initial="hidden"
       animate="visible"
-      variants={variant}
+      variants={animVariant}
       custom={index}
       className="transform-gpu w-20 flex flex-col justify-center items-center text-white absolute duration-500"
       style={{
@@ -52,7 +56,7 @@ const CardGame: React.FC<props> = ({
       <div className="w-full h-full flex flex-col justify-center items-center relative duration-500 hover:ring-2 hover:-translate-y-5 hover:ring-blue-500 hover:scale-110">
         <div className="w-full h-full relative">
           {spells.map((spell) => {
-            return <Spell spell={spell} stage={stage} />;
+            return <Spell spell={spell} />;
           })}
         </div>
         <img
