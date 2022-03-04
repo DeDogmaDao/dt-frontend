@@ -3,7 +3,6 @@ import { Dispatch, SetStateAction, useState } from "react";
 import { gameCardType } from "../../types/allTypes";
 import { gameCardFirstAni, newGameCardAni } from "../../utils/animation";
 import Spell from "./Spell";
-import isEqual from "lodash/isEqual";
 
 interface props {
   data: gameCardType;
@@ -21,8 +20,9 @@ const CardGame: React.FC<props> = ({
   const column = (index % 4) + 1;
   const [cardColumn, setCardColumn] = useState(column);
   const [animVariant, setAnimVariant] = useState<Variants>(gameCardFirstAni);
-  const [isFliped, setIsFliped] = useState(0);
+  const [isFliped, setIsFliped] = useState(false);
 
+  // starting
   const cardAnimHandler = () => {
     if (index === 51 && isStarted === null) {
       setIsStarted(0);
@@ -31,12 +31,13 @@ const CardGame: React.FC<props> = ({
       setTimeout(() => {
         // @ts-ignore
         setIsStarted((prevState) => prevState + 1);
-      }, 1000);
+      }, 3000);
     }
   };
 
-  if (index === isStarted && isStarted !== null && isFliped === 0) {
-    setIsFliped(1);
+  // flipping
+  if (index === isStarted && isStarted !== null && !isFliped) {
+    setIsFliped(true);
     setAnimVariant(newGameCardAni);
   }
 
@@ -56,7 +57,7 @@ const CardGame: React.FC<props> = ({
       <div className="w-full h-full flex flex-col justify-center items-center relative duration-500 hover:ring-2 hover:-translate-y-5 hover:ring-blue-500 hover:scale-110">
         <div className="w-full h-full relative">
           {spells.map((spell) => {
-            return <Spell spell={spell} />;
+            return <Spell spell={spell} isFliped={isFliped} />;
           })}
         </div>
         <img
