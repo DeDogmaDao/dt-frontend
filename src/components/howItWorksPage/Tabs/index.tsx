@@ -1,4 +1,4 @@
-import { LayoutGroup } from "framer-motion";
+import { AnimatePresence, LayoutGroup } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { allTabs } from "../../../store/allData";
 import Card from "./Card";

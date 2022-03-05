@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { RefObject } from "react";
 import { tabsType } from "../../../types/allTypes";
 import deepClone from 'lodash/cloneDeep';
+import { eachTabAni } from "../../../utils/animation";
 interface props {
   group: string;
   name: string;
@@ -45,6 +46,10 @@ const EachTab: React.FC<props> = ({
       {activeCard && (
         <motion.div
           layoutId="eachTab"
+          initial="hidden"
+          animate="visible"
+          exit="out"
+          variants={eachTabAni}
           className="absolute left-0 bottom-0 w-full h-full bg-white z-0 rounded-full shadow-cycle shadow-slate-200 "
         ></motion.div>
       )}

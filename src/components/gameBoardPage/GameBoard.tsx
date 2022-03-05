@@ -18,7 +18,7 @@ const GameBoard: React.FC = () => {
           );
         })}
       </div>
-      <div className="w-2/3 h-full bg-red-800"></div>
+      <div className="w-2/3 h-full bg-red-900"></div>
     </div>
   );
 };
