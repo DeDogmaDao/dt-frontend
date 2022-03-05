@@ -50,6 +50,18 @@ const CardGame: React.FC<props> = ({
       setIsShowed(false);
     }
   }
+  let styles: any = {};
+  if (hiddenShow === true) {
+    styles = {
+      left: 50 + ((cardColumn % 2) * 170 + index),
+      top: 150 + ((Math.floor(cardColumn / 2 + 0.5) - 1) * 150 + index),
+    };
+  } else {
+    styles = {
+      left: 50 + index * 5,
+      top: 50,
+    };
+  }
 
   if (!isShowed) return null;
   return (
@@ -61,10 +73,7 @@ const CardGame: React.FC<props> = ({
       variants={animVariant}
       custom={index}
       className="transform-gpu w-20 flex flex-col justify-center items-center text-white absolute z-10"
-      style={{
-        left: 50 + ((cardColumn % 2) * 170 + index),
-        top: 150 + ((Math.floor(cardColumn / 2 + 0.5) - 1) * 150 + index),
-      }}
+      style={styles}
     >
       <div className="w-full h-full flex flex-col justify-center items-center relative duration-500 hover:ring-2 hover:-translate-y-5 hover:ring-blue-500 hover:scale-110">
         <div className="w-full h-full relative">
