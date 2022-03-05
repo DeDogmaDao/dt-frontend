@@ -27,7 +27,7 @@ const GameBoard: React.FC = () => {
             src="/media/bg/game2.png"
             className="absolute top-0 left-0 w-full h-full"
           />
-          <div className="absolute left-[30%] top-[40%] flex justify-center items-center">
+          <div className="absolute left-[30%] top-[40%] w-full h-full">
             <div className="relative w-full h-full">
               {gameCardData.map((data, index) => {
                 return (

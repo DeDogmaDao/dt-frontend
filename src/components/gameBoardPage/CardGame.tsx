@@ -23,7 +23,7 @@ const CardGame: React.FC<props> = ({
   const spells = Array.from(Array(data.spellValue).keys());
   const column = (index % 4) + 1;
   const [cardColumn, setCardColumn] = useState(column);
-  // const [animVariant, setAnimVariant] = useState<Variants>(gameCardFirstAni);
+  const [animVariant, setAnimVariant] = useState<Variants>(gameCardFirstAni);
   const [isFliped, setIsFliped] = useState(false);
   const [isShowed, setIsShowed] = useState(hiddenShow);
 
@@ -43,7 +43,7 @@ const CardGame: React.FC<props> = ({
   // flipping
   if (index === isStarted && isStarted !== null && !isFliped) {
     setIsFliped(true);
-    // setAnimVariant(newGameCardAni);
+    setAnimVariant(newGameCardAni);
     if (hiddenShow === false) {
       setIsShowed(true);
     } else {
@@ -58,7 +58,7 @@ const CardGame: React.FC<props> = ({
       onAnimationComplete={cardAnimHandler}
       initial="hidden"
       animate="visible"
-      variants={gameCardFirstAni}
+      variants={animVariant}
       custom={index}
       className="transform-gpu w-20 flex flex-col justify-center items-center text-white absolute z-10"
       style={{
@@ -77,7 +77,6 @@ const CardGame: React.FC<props> = ({
           src={data.image}
           loading="lazy"
         />
-        {/* <p className="text-4xl text-primary-500">{data.name}</p> */}
       </div>
     </motion.div>
   );
