@@ -37,6 +37,7 @@ export interface tabsType {
 }
 
 export interface gameCardType {
+  id:string;
   name: string;
   image: string;
   spellGroup: string;

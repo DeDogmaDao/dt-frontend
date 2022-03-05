@@ -7,14 +7,14 @@ interface props {
 }
 const Spell: React.FC<props> = ({ spell, isFliped }) => {
   const column = (spell % 3) + 1;
-  const [animVariant, setAnimVariant] = useState<Variants>({});
-  useEffect(() => {
-    if(isFliped){
-      setTimeout(() => {
-        setAnimVariant(spellAni);
-      }, 500);
-    }
-  }, [isFliped])
+  // const [animVariant, setAnimVariant] = useState<Variants>({});
+  // useEffect(() => {
+  //   if(isFliped){
+  //     setTimeout(() => {
+  //       setAnimVariant(spellAni);
+  //     }, 500);
+  //   }
+  // }, [isFliped])
   return (
     <motion.div
       className="rounded-full bg-yellow-500 absolute"
@@ -25,7 +25,6 @@ const Spell: React.FC<props> = ({ spell, isFliped }) => {
         height: 3,
       }}
       custom={spell}
-      variants={animVariant}
       initial="hidden"
       animate="visible"
     ></motion.div>
