@@ -4,7 +4,8 @@ import { gameCardData } from "../../store/allData";
 import CardGame from "./CardGame";
 
 const GameBoard: React.FC = () => {
-  const spells = Array.from(Array(37).keys());
+  const spells = Array.from(Array(40).keys());
+  const topSpells = Array.from(Array(10).keys());
   const [turnNumber, setTurnNumber] = useState<number | null>(null);
   return (
     <LayoutGroup>
@@ -26,18 +27,45 @@ const GameBoard: React.FC = () => {
         </div>
         <div className="w-2/3 h-full bg-red-900 flex justify-center items-start relative z-10">
           <img
-            src="/media/bg/game2.png"
+            src="/media/bg/game1.png"
             className="absolute top-0 left-0 w-full h-full"
           />
-          <div className="w-[202px] h-[318px] bg-blue-500/20 absolute top-[201px] right-[411px] z-100"></div>
-          <div className="w-[325px] h-[318px] bg-red-500/20 absolute top-[201px] right-[349px] z-100">
+          <div className="w-[171px] h-[53px]  absolute top-[113px] right-[424px] z-100 bg-green-500/10">
+            {topSpells.map((spell) => {
+              return (
+                <div
+                  className="rounded-full bg-yellow-500 absolute"
+                  style={{
+                    right: 0 + spell * (70 / 10),
+                    bottom: 0 + spell * (56 / 10),
+                    width: 3,
+                    height: 3,
+                  }}
+                ></div>
+              );
+            })}
+            {topSpells.map((spell) => {
+              return (
+                <div
+                  className="rounded-full bg-yellow-500 absolute"
+                  style={{
+                    right: 170 - spell * (69 / 10),
+                    bottom: 0 + spell * (56 / 10),
+                    width: 3,
+                    height: 3,
+                  }}
+                ></div>
+              );
+            })}
+          </div>
+          <div className="w-[338px] h-[345px]  absolute top-[202px] right-[343px] z-100 bg-red-500/10">
             <div className="relative w-full h-full">
               {spells.map((spell) => {
                 return (
                   <div
                     className="rounded-full bg-yellow-500 absolute"
                     style={{
-                      right: 0 + spell * (62 / 37),
+                      right: 0 + spell * (63 / 37),
                       bottom: 0 + spell * (323 / 37),
                       width: 3,
                       height: 3,
@@ -50,7 +78,7 @@ const GameBoard: React.FC = () => {
                   <div
                     className="rounded-full bg-yellow-500 absolute"
                     style={{
-                      right: 323 - spell * (65 / 37),
+                      right: 334 - spell * (65 / 37),
                       bottom: 0 + spell * (323 / 37),
                       width: 3,
                       height: 3,
