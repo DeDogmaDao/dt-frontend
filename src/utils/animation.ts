@@ -74,7 +74,7 @@ export const gateLine2: any = {
   }),
 };
 
-export const gameCardFirstAni: Variants = {
+export const gameCardAni: Variants = {
   hidden: {
     translateX: "1500px",
     translateY: "1500px",
@@ -86,10 +86,17 @@ export const gameCardFirstAni: Variants = {
     translateX: "0px",
     translateY: "0px",
     transition: {
-      duration: 0.01,
+      duration: 0.1,
       delay: custom * 0.1,
     },
   }),
+  stage1: {
+    left:100,
+    top:"70%",
+    transition: {
+      duration: 0.5,
+    },
+  }
 };
 export const newGameCardAni: Variants = {
   hidden: (custom) => ({

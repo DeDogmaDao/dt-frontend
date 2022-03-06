@@ -1,95 +1,86 @@
-import { motion, Variants } from "framer-motion";
-import { Dispatch, SetStateAction, useState } from "react";
+import { motion, useAnimation, Variants } from "framer-motion";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { gameCardType } from "../../types/allTypes";
-import { gameCardFirstAni, newGameCardAni } from "../../utils/animation";
+import { gameCardAni, newGameCardAni } from "../../utils/animation";
 import Spell from "./Spell";
 
 interface props {
   data: gameCardType;
   index: number;
-  isStarted: number | null;
-  setIsStarted: Dispatch<SetStateAction<number | null>>;
   layoutID: string;
-  hiddenShow: boolean;
+  turnNumber: number | null;
+  setTurnNumber: Dispatch<SetStateAction<number | null>>;
+  arrayLength: number;
 }
 const CardGame: React.FC<props> = ({
   data,
   index,
-  isStarted,
-  setIsStarted,
   layoutID,
-  hiddenShow,
+  turnNumber,
+  setTurnNumber,
+  arrayLength,
 }) => {
   const spells = Array.from(Array(data.spellValue).keys());
   const column = (index % 4) + 1;
-  const [cardColumn, setCardColumn] = useState(column);
-  const [animVariant, setAnimVariant] = useState<Variants>(gameCardFirstAni);
-  const [isFliped, setIsFliped] = useState(false);
-  const [isShowed, setIsShowed] = useState(hiddenShow);
-  const [stage, setStage] = useState(0)
-  // starting
+  const [stage, setStage] = useState(0);
+  const aniControls = useAnimation();
+
+  useEffect(() => {
+    aniControls.start("visible");
+  }, [aniControls]);
+
+  // Handler
   const cardAnimHandler = () => {
-    if (index === 51 && isStarted === null) {
-      setIsStarted(0);
+    if (turnNumber === null && index === arrayLength - 1) {
+      setTurnNumber(0);
     }
-    if (isStarted === index) {
+    if (turnNumber === index) {
       setTimeout(() => {
-        // @ts-ignore
-        setIsStarted((prevState) => prevState + 1);
-      }, 1);
+        setTurnNumber((prevState) => {
+          if (prevState !== null) {
+            return prevState + 1;
+          }
+          return null;
+        });
+      }, 2000);
     }
   };
 
-  // flipping
-  if (index === isStarted && !isFliped) {
-    setIsFliped(true);
-    setAnimVariant(newGameCardAni);
-    if (hiddenShow === false) {
-      setIsShowed(true);
-    } else {
-      setIsShowed(false);
+  if (turnNumber === index) {
+    if (stage === 0) {
+      setStage(1);
+    }
+    if (stage === 1) {
+      aniControls.start("stage1");
     }
   }
-  let styles: any = {};
-  if (stage === 0) {
-    styles = {
-      left: 50 + ((cardColumn % 2) * 170 + index),
-      top: 150 + ((Math.floor(cardColumn / 2 + 0.5) - 1) * 150 + index),
-    };
-  }
-  if(stage===1) {
-    styles = {
-      left: 50,
-      top: "70%",
-    };
-  }
-  if(stage===2) {
-    styles = {
-      left: 50 + index * 10,
-      top: 0,
-    };
-  }
 
-  if (!isShowed) return null;
+  const styles = {
+    left: 50 + ((column % 2) * 170 + index),
+    top: 150 + ((Math.floor(column / 2 + 0.5) - 1) * 150 + index),
+  };
+
   return (
     <motion.div
-    layout
+      layout
       onAnimationComplete={cardAnimHandler}
       initial="hidden"
-      animate="visible"
-      variants={animVariant}
+      animate={aniControls}
+      variants={gameCardAni}
       custom={index}
       className="w-20 flex flex-col justify-center items-center text-white absolute z-10"
       style={styles}
     >
-      <motion.div layoutId={layoutID} transition={{duration:1}} className="w-full h-full flex flex-col justify-center items-center relative">
-        <motion.div  className="w-full h-full relative">
+      <motion.div
+        transition={{ duration: 1 }}
+        className="w-full h-full flex flex-col justify-center items-center relative"
+      >
+        <motion.div className="w-full h-full relative">
           {spells.map((spell) => {
-            return <Spell spell={spell} isFliped={isFliped} />;
+            return <Spell spell={spell} isFliped={false} />;
           })}
         </motion.div>
         <motion.img
-          
           className="w-full object-contain"
           src={data.image}
           loading="lazy"

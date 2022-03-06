@@ -4,7 +4,7 @@ import { gameCardData } from "../../store/allData";
 import CardGame from "./CardGame";
 
 const GameBoard: React.FC = () => {
-  const [isStarted, setIsStarted] = useState<number | null>(null);
+  const [turnNumber, setTurnNumber] = useState<number | null>(null);
   return (
     <LayoutGroup>
       <div className="flex justify-between items-center w-screen h-[calc(900/1920*100vw)]">
@@ -13,24 +13,22 @@ const GameBoard: React.FC = () => {
             return (
               <CardGame
                 layoutID={"cardGame" + data.id}
-                hiddenShow={true}
                 data={data}
                 index={index}
-                isStarted={isStarted}
-                setIsStarted={setIsStarted}
+                turnNumber={turnNumber}
+                setTurnNumber={setTurnNumber}
+                arrayLength={gameCardData.length}
               />
             );
           })}
-          <div className="w-28 h-36 absolute bottom-40 left-1/2 -ml-14 bg-red-500/50">
-
-          </div>
+          <div className="w-28 h-36 absolute bottom-40 left-1/2 -ml-14 bg-red-500/50"></div>
         </div>
         <div className="w-2/3 h-full bg-red-900 flex justify-center items-start relative z-10">
           <img
             src="/media/bg/game2.png"
             className="absolute top-0 left-0 w-full h-full"
           />
-          <div className="absolute left-[30%] top-[85%] w-full h-full">
+          <div className="absolute left-[30%] top-[8%] w-full h-full">
             <div
               className="relative w-full h-full"
               style={{
@@ -39,18 +37,18 @@ const GameBoard: React.FC = () => {
                 perspectiveOrigin: "center",
               }}
             >
-              {gameCardData.map((data, index) => {
+              {/* {gameCardData.map((data, index) => {
                 return (
                   <CardGame
                     layoutID={"cardGame" + data.id}
-                    hiddenShow={false}
                     data={data}
                     index={index}
-                    isStarted={isStarted}
-                    setIsStarted={setIsStarted}
+                    turnNumber={turnNumber}
+                    setTurnNumber={setTurnNumber}
+                    arrayLength={gameCardData.length}
                   />
                 );
-              })}
+              })} */}
             </div>
           </div>
         </div>
