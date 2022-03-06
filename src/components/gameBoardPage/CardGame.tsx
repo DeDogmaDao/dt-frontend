@@ -46,12 +46,16 @@ const CardGame: React.FC<props> = ({
     }
   };
 
+  // Stages
   if (turnNumber === index) {
     if (stage === 0) {
       setStage(1);
     }
     if (stage === 1) {
       aniControls.start("stage1");
+      setTimeout(() => {
+        setStage(2);
+      }, 2000);
     }
   }
 
