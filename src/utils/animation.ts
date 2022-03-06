@@ -92,10 +92,10 @@ export const gameCardFirstAni: Variants = {
   }),
 };
 export const newGameCardAni: Variants = {
-  hidden:(custom)=>({
-
-    rotateX:"0deg",
-    rotateZ:"0deg",
+  hidden: (custom) => ({
+    rotateX: "0deg",
+    rotateZ: "0deg",
+    rotateY: "0deg",
     transition: {
       duration: 0.5,
     },
@@ -103,14 +103,14 @@ export const newGameCardAni: Variants = {
   visible: (custom: number) => ({
     x: 0,
     y: custom,
-    z:custom*2,
-    rotateX:"25deg",
-    rotateZ:"-25deg",
-    scale:0.5,
+    z: custom * 2,
+    rotateX: "25deg",
+    rotateZ: "-25deg",
+    scale: 0.5,
     transition: {
       duration: 0.5,
       delay: 0.1,
-      type:"keyframes",
+      type: "keyframes",
     },
   }),
 };

@@ -26,7 +26,7 @@ const CardGame: React.FC<props> = ({
   const [animVariant, setAnimVariant] = useState<Variants>(gameCardFirstAni);
   const [isFliped, setIsFliped] = useState(false);
   const [isShowed, setIsShowed] = useState(hiddenShow);
-
+  const [stage, setStage] = useState(0)
   // starting
   const cardAnimHandler = () => {
     if (index === 51 && isStarted === null) {
@@ -41,7 +41,7 @@ const CardGame: React.FC<props> = ({
   };
 
   // flipping
-  if (index === isStarted && isStarted !== null && !isFliped) {
+  if (index === isStarted && !isFliped) {
     setIsFliped(true);
     setAnimVariant(newGameCardAni);
     if (hiddenShow === false) {
@@ -51,12 +51,19 @@ const CardGame: React.FC<props> = ({
     }
   }
   let styles: any = {};
-  if (hiddenShow === true) {
+  if (stage === 0) {
     styles = {
       left: 50 + ((cardColumn % 2) * 170 + index),
       top: 150 + ((Math.floor(cardColumn / 2 + 0.5) - 1) * 150 + index),
     };
-  } else {
+  }
+  if(stage===1) {
+    styles = {
+      left: 50,
+      top: "70%",
+    };
+  }
+  if(stage===2) {
     styles = {
       left: 50 + index * 10,
       top: 0,

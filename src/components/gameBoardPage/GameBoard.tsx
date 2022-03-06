@@ -7,8 +7,7 @@ const GameBoard: React.FC = () => {
   const [isStarted, setIsStarted] = useState<number | null>(null);
   return (
     <LayoutGroup>
-      <div className="flex justify-between items-center w-screen h-[calc(900/1920*100vw)]"
-      >
+      <div className="flex justify-between items-center w-screen h-[calc(900/1920*100vw)]">
         <div className="w-1/3 h-full bg-green-900 flex justify-center items-start flex-wrap relative z-10">
           {gameCardData.map((data, index) => {
             return (
@@ -22,6 +21,9 @@ const GameBoard: React.FC = () => {
               />
             );
           })}
+          <div className="w-28 h-36 absolute bottom-40 left-1/2 -ml-14 bg-red-500/50">
+
+          </div>
         </div>
         <div className="w-2/3 h-full bg-red-900 flex justify-center items-start relative z-10">
           <img
@@ -29,8 +31,14 @@ const GameBoard: React.FC = () => {
             className="absolute top-0 left-0 w-full h-full"
           />
           <div className="absolute left-[30%] top-[85%] w-full h-full">
-            <div className="relative w-full h-full"
-            style={{transformStyle:"preserve-3d", perspective:"500px",perspectiveOrigin:"center"}}>
+            <div
+              className="relative w-full h-full"
+              style={{
+                transformStyle: "preserve-3d",
+                perspective: "500px",
+                perspectiveOrigin: "center",
+              }}
+            >
               {gameCardData.map((data, index) => {
                 return (
                   <CardGame
