@@ -36,7 +36,7 @@ const CardGame: React.FC<props> = ({
       setTimeout(() => {
         // @ts-ignore
         setIsStarted((prevState) => prevState + 1);
-      }, 3000);
+      }, 1);
     }
   };
 
@@ -58,35 +58,36 @@ const CardGame: React.FC<props> = ({
     };
   } else {
     styles = {
-      left: 50 + index * 5,
-      top: 50,
+      left: 50 + index * 10,
+      top: 0,
     };
   }
 
   if (!isShowed) return null;
   return (
     <motion.div
-      layoutId={layoutID}
+    layout
       onAnimationComplete={cardAnimHandler}
       initial="hidden"
       animate="visible"
       variants={animVariant}
       custom={index}
-      className="transform-gpu w-20 flex flex-col justify-center items-center text-white absolute z-10"
+      className="w-20 flex flex-col justify-center items-center text-white absolute z-10"
       style={styles}
     >
-      <div className="w-full h-full flex flex-col justify-center items-center relative duration-500 hover:ring-2 hover:-translate-y-5 hover:ring-blue-500 hover:scale-110">
-        <div className="w-full h-full relative">
+      <motion.div layoutId={layoutID} transition={{duration:1}} className="w-full h-full flex flex-col justify-center items-center relative">
+        <motion.div  className="w-full h-full relative">
           {spells.map((spell) => {
             return <Spell spell={spell} isFliped={isFliped} />;
           })}
-        </div>
-        <img
-          className="w-full object-contain "
+        </motion.div>
+        <motion.img
+          
+          className="w-full object-contain"
           src={data.image}
           loading="lazy"
         />
-      </div>
+      </motion.div>
     </motion.div>
   );
 };
