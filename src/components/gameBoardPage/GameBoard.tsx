@@ -1,29 +1,18 @@
-import { AnimateSharedLayout, LayoutGroup } from "framer-motion";
+import { LayoutGroup } from "framer-motion";
 import { useState } from "react";
 import { gameCardData } from "../../store/allData";
 import CardGame from "./CardGame";
 import DoorSpells from "./DoorSpells";
-
-const spells: number[] = Array.from(Array(40).keys());
-const topSpells: number[] = Array.from(Array(10).keys());
-const bottomPosition = {
-  top: 118.5,
-  right: 428.5,
-  width: 420,
-  height: 202,
-};
-const bottomRightSpell = {
-  bottom: 22.75,
-  right: 4.4,
-  width: 0.2,
-  height: 0.2,
-};
-const bottomLeftSpell = {
-  bottom: 22.75,
-  right: 4.55,
-  width: 0.2,
-  height: 0.2,
-};
+import {
+  bottomSpells,
+  topSpells,
+  bottomPosition,
+  topPosition,
+  bottomLeftSpell,
+  bottomRightSpell,
+  topLeftSpell,
+  topRightSpell,
+} from "../../utils/game";
 
 const GameBoard: React.FC = () => {
   const [turnNumber, setTurnNumber] = useState<number | null>(null);
@@ -50,42 +39,27 @@ const GameBoard: React.FC = () => {
             src="/media/bg/game1.png"
             className="absolute top-0 left-0 w-full h-full"
           />
-          <div className="w-[171px] h-[53px]  absolute top-[113px] right-[424px] z-100 bg-green-500/10">
-            {topSpells.map((spell) => {
-              return (
-                <div
-                  className="rounded-full bg-yellow-500 absolute"
-                  style={{
-                    right: 0 + spell * (70 / 10),
-                    bottom: 0 + spell * (56 / 10),
-                    width: 3,
-                    height: 3,
-                  }}
-                ></div>
-              );
-            })}
-            {topSpells.map((spell) => {
-              return (
-                <div
-                  className="rounded-full bg-yellow-500 absolute"
-                  style={{
-                    right: 170 - spell * (69 / 10),
-                    bottom: 0 + spell * (56 / 10),
-                    width: 3,
-                    height: 3,
-                  }}
-                ></div>
-              );
-            })}
-          </div>
+
           <DoorSpells
-            spells={spells}
+            spells={topSpells}
+            right={0}
+            containerPosition={topPosition}
+            spellPosition={topRightSpell}
+          />
+          <DoorSpells
+            spells={topSpells}
+            right={(213 / 1920) * 100}
+            containerPosition={topPosition}
+            spellPosition={topLeftSpell}
+          />
+          <DoorSpells
+            spells={bottomSpells}
             right={0}
             containerPosition={bottomPosition}
             spellPosition={bottomRightSpell}
           />
           <DoorSpells
-            spells={spells}
+            spells={bottomSpells}
             right={(419 / 1920) * 100}
             containerPosition={bottomPosition}
             spellPosition={bottomLeftSpell}
