@@ -28,7 +28,7 @@ const DoorSpells: React.FC<props> = ({
     height: spellPosition.height + "vw",
   });
   return (
-    <div className="absolute z-100 bg-red-500/30" style={containerStyles}>
+    <div className="absolute z-100 " style={containerStyles}>
       <div className="relative w-full h-full">
         {spells.map((spell) => {
           return (
