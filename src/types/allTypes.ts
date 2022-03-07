@@ -37,9 +37,22 @@ export interface tabsType {
 }
 
 export interface gameCardType {
-  id:string;
+  id: string;
   name: string;
   image: string;
   spellGroup: string;
   spellValue: number;
+}
+
+export interface topRightPosition {
+  right: number;
+  top: number;
+  width: number;
+  height: number;
+}
+export interface bottomRightPosition {
+  right: number;
+  bottom: number;
+  width: number;
+  height: number;
 }

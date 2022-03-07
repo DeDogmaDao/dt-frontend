@@ -3,9 +3,10 @@ import { useState } from "react";
 import { gameCardData } from "../../store/allData";
 import CardGame from "./CardGame";
 
+const spells:number[] = Array.from(Array(40).keys());
+const topSpells:number[] = Array.from(Array(10).keys());
+
 const GameBoard: React.FC = () => {
-  const spells = Array.from(Array(40).keys());
-  const topSpells = Array.from(Array(10).keys());
   const [turnNumber, setTurnNumber] = useState<number | null>(null);
   return (
     <LayoutGroup>
@@ -58,17 +59,25 @@ const GameBoard: React.FC = () => {
               );
             })}
           </div>
-          <div className="w-[338px] h-[345px]  absolute top-[202px] right-[343px] z-100 bg-red-500/10">
+          <div
+            className="absolute z-100 bg-red-500/30"
+            style={{
+              width: `${(420 / 1920) * 100}vw`,
+              right: `${(429 / 1920) * 100}vw`,
+              height: `${(202 / 900) * 100}vw`,
+              top: `${(118 / 900) * 100}vw`,
+            }}
+          >
             <div className="relative w-full h-full">
               {spells.map((spell) => {
                 return (
                   <div
                     className="rounded-full bg-yellow-500 absolute"
                     style={{
-                      right: 0 + spell * (63 / 37),
-                      bottom: 0 + spell * (323 / 37),
-                      width: 3,
-                      height: 3,
+                      right: 0 + spell * (4.1 / 37) + "vw",
+                      bottom: 0 + spell * (21.1 / 37) + "vw",
+                      width: 0.2 + "vw",
+                      height: 0.2 + "vw",
                     }}
                   ></div>
                 );
@@ -78,10 +87,10 @@ const GameBoard: React.FC = () => {
                   <div
                     className="rounded-full bg-yellow-500 absolute"
                     style={{
-                      right: 334 - spell * (65 / 37),
-                      bottom: 0 + spell * (323 / 37),
-                      width: 3,
-                      height: 3,
+                      right: (415 / 1920) * 100 - spell * (4.1 / 37) + "vw",
+                      bottom: 0 + spell * (21.1 / 37) + "vw",
+                      width: 0.2 + "vw",
+                      height: 0.2 + "vw",
                     }}
                   ></div>
                 );
