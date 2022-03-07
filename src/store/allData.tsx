@@ -430,7 +430,7 @@ export const gameCardData: gameCardType[] = [
     name: "Zeus",
     image: "/media/team/member1.png",
     spellGroup: "blue",
-    spellValue: 7,
+    spellValue: 3,
   },
   {
     id: "2",
@@ -451,7 +451,7 @@ export const gameCardData: gameCardType[] = [
     name: "Laya",
     image: "/media/team/member1.png",
     spellGroup: "blue",
-    spellValue: 4,
+    spellValue: 1,
   },
   {
     id: "5",
@@ -472,7 +472,7 @@ export const gameCardData: gameCardType[] = [
     name: "Peter pan",
     image: "/media/team/member1.png",
     spellGroup: "yellow",
-    spellValue: 5,
+    spellValue: 3,
   },
   {
     id: "8",
@@ -486,7 +486,7 @@ export const gameCardData: gameCardType[] = [
     name: "Zeus",
     image: "/media/team/member1.png",
     spellGroup: "blue",
-    spellValue: 7,
+    spellValue: 1,
   },
   {
     id: "10",
@@ -507,7 +507,7 @@ export const gameCardData: gameCardType[] = [
     name: "Laya",
     image: "/media/team/member1.png",
     spellGroup: "blue",
-    spellValue: 4,
+    spellValue: 2,
   },
   {
     id: "13",
@@ -528,7 +528,7 @@ export const gameCardData: gameCardType[] = [
     name: "Peter pan",
     image: "/media/team/member1.png",
     spellGroup: "yellow",
-    spellValue: 5,
+    spellValue: 3,
   },
   {
     id: "16",
@@ -542,7 +542,7 @@ export const gameCardData: gameCardType[] = [
     name: "Zeus",
     image: "/media/team/member1.png",
     spellGroup: "blue",
-    spellValue: 7,
+    spellValue: 1,
   },
   {
     id: "18",
@@ -563,7 +563,7 @@ export const gameCardData: gameCardType[] = [
     name: "Laya",
     image: "/media/team/member1.png",
     spellGroup: "blue",
-    spellValue: 4,
+    spellValue: 3,
   },
   {
     id: "21",
@@ -584,7 +584,7 @@ export const gameCardData: gameCardType[] = [
     name: "Peter pan",
     image: "/media/team/member1.png",
     spellGroup: "yellow",
-    spellValue: 5,
+    spellValue: 1,
   },
   {
     id: "24",
@@ -598,7 +598,7 @@ export const gameCardData: gameCardType[] = [
     name: "Zeus",
     image: "/media/team/member1.png",
     spellGroup: "blue",
-    spellValue: 7,
+    spellValue: 2,
   },
   {
     id: "26",
@@ -619,7 +619,7 @@ export const gameCardData: gameCardType[] = [
     name: "Laya",
     image: "/media/team/member1.png",
     spellGroup: "blue",
-    spellValue: 4,
+    spellValue: 3,
   },
   {
     id: "29",
@@ -640,7 +640,7 @@ export const gameCardData: gameCardType[] = [
     name: "Peter pan",
     image: "/media/team/member1.png",
     spellGroup: "yellow",
-    spellValue: 5,
+    spellValue: 1,
   },
   {
     id: "32",
@@ -654,7 +654,7 @@ export const gameCardData: gameCardType[] = [
     name: "Zeus",
     image: "/media/team/member1.png",
     spellGroup: "blue",
-    spellValue: 7,
+    spellValue: 1,
   },
   {
     id: "34",
@@ -675,7 +675,7 @@ export const gameCardData: gameCardType[] = [
     name: "Laya",
     image: "/media/team/member1.png",
     spellGroup: "blue",
-    spellValue: 4,
+    spellValue: 3,
   },
   {
     id: "37",
@@ -696,7 +696,7 @@ export const gameCardData: gameCardType[] = [
     name: "Peter pan",
     image: "/media/team/member1.png",
     spellGroup: "yellow",
-    spellValue: 5,
+    spellValue: 2,
   },
   {
     id: "40",
@@ -710,7 +710,7 @@ export const gameCardData: gameCardType[] = [
     name: "Zeus",
     image: "/media/team/member1.png",
     spellGroup: "blue",
-    spellValue: 7,
+    spellValue: 2,
   },
   {
     id: "42",
@@ -752,7 +752,7 @@ export const gameCardData: gameCardType[] = [
     name: "Peter pan",
     image: "/media/team/member1.png",
     spellGroup: "yellow",
-    spellValue: 5,
+    spellValue: 1,
   },
   {
     id: "48",
@@ -780,7 +780,7 @@ export const gameCardData: gameCardType[] = [
     name: "Peter pan",
     image: "/media/team/member1.png",
     spellGroup: "yellow",
-    spellValue: 5,
+    spellValue: 1,
   },
   {
     id: "52",

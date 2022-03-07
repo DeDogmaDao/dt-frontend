@@ -16,6 +16,7 @@ import {
 
 const GameBoard: React.FC = () => {
   const [turnNumber, setTurnNumber] = useState<number | null>(null);
+  const [spellNumber, setSpellNumber] = useState({ yellow: 0, blue: 0 });
   return (
     <LayoutGroup>
       <div className="flex justify-between items-center w-screen h-[calc(900/1920*100vw)]">
