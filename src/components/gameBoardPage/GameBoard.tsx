@@ -49,24 +49,28 @@ const GameBoard: React.FC = () => {
             right={0}
             containerPosition={topPosition}
             spellPosition={topRightSpell}
+            spellNumber={spellNumber}
           />
           <DoorSpells
             spells={topSpells}
             right={(213 / 1920) * 100}
             containerPosition={topPosition}
             spellPosition={topLeftSpell}
+            spellNumber={spellNumber}
           />
           <DoorSpells
             spells={bottomSpells}
             right={0}
             containerPosition={bottomPosition}
             spellPosition={bottomRightSpell}
+            spellNumber={spellNumber}
           />
           <DoorSpells
             spells={bottomSpells}
             right={(419 / 1920) * 100}
             containerPosition={bottomPosition}
             spellPosition={bottomLeftSpell}
+            spellNumber={spellNumber}
           />
 
           <div className="absolute left-[30%] top-[8%] w-full h-full">

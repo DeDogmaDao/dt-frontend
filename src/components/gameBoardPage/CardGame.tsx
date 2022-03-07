@@ -30,7 +30,6 @@ const CardGame: React.FC<props> = ({
   const column = (cardIndex % 4) + 1;
   const [stage, setStage] = useState(0);
   const aniControls = useAnimation();
-  
 
   useEffect(() => {
     aniControls.start("visible");
@@ -109,6 +108,7 @@ const CardGame: React.FC<props> = ({
                 spellIndex={index}
                 data={data}
                 gameCardData={gameCardData}
+                spellNumber={spellNumber}
               />
             );
           })}

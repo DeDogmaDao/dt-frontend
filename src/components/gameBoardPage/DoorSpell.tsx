@@ -1,17 +1,26 @@
-import { bottomRightPosition } from "../../types/allTypes";
+import { bottomRightPosition, spellNumber } from "../../types/allTypes";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 interface props {
   spells: number[];
   spell: number;
   spellPosition: bottomRightPosition;
   right: number;
+  spellNumber: spellNumber;
 }
 const DoorSpell: React.FC<props> = ({
   spells,
   spell,
   right,
   spellPosition,
+  spellNumber,
 }) => {
+  const [isShowed, setIsShowed] = useState(false);
+
+
+
+
+
   const spellStyles = (spell: number) => ({
     right:
       right === 0
@@ -24,12 +33,27 @@ const DoorSpell: React.FC<props> = ({
 
   const idFirstPart = right === 0 ? "blue" : "yellow";
   const idSecondPart = spells.length > 20 ? spell + 1 : spell + 41;
+
+
+
+  
+  useEffect(() => {
+    if(isShowed === false && idSecondPart <= spellNumber[idFirstPart]){
+      setIsShowed(true)
+    }
+  }, [spellNumber])
+  
+
+
+
   return (
     <div className="rounded-full bg-white absolute" style={spellStyles(spell)}>
-      <motion.div
-        layoutId={`${idFirstPart}${idSecondPart}`}
-        className="w-full h-full rounded-full bg-yellow-500"
-      ></motion.div>
+      {isShowed && (
+        <motion.div
+          layoutId={`${idFirstPart}${idSecondPart}`}
+          className="w-full h-full rounded-full bg-yellow-500"
+        ></motion.div>
+      )}
     </div>
   );
 };
