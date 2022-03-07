@@ -18,7 +18,6 @@ import { spellNumber } from "../../types/allTypes";
 const GameBoard: React.FC = () => {
   const [turnNumber, setTurnNumber] = useState<number | null>(null);
   const [spellNumber, setSpellNumber] = useState<spellNumber>({ yellow: 0, blue: 0 });
-  console.log(spellNumber);
   return (
     <LayoutGroup>
       <div className="flex justify-between items-center w-screen h-[calc(900/1920*100vw)]">
@@ -28,10 +27,10 @@ const GameBoard: React.FC = () => {
               <CardGame
                 layoutID={"cardGame" + data.id}
                 data={data}
-                index={index}
+                cardIndex={index}
                 turnNumber={turnNumber}
                 setTurnNumber={setTurnNumber}
-                arrayLength={gameCardData.length}
+                gameCardData={gameCardData}
                 spellNumber={spellNumber}
                 setSpellNumber={setSpellNumber}
               />
