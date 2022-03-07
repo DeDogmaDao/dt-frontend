@@ -1,4 +1,5 @@
 import { bottomRightPosition, topRightPosition } from "../../types/allTypes";
+import DoorSpell from "./DoorSpell";
 
 interface props {
   spells: number[];
@@ -18,24 +19,13 @@ const DoorSpells: React.FC<props> = ({
     height: `${(containerPosition.height / 900) * 100}vw`,
     top: `${(containerPosition.top / 900) * 100}vw`,
   };
-  const spellStyles = (spell: number) => ({
-    right:
-      right === 0
-        ? right + spell * (spellPosition.right / spells.length) + "vw"
-        : right - spell * (spellPosition.right / spells.length) + "vw",
-    bottom: 0 + spell * (spellPosition.bottom / spells.length) + "vw",
-    width: spellPosition.width + "vw",
-    height: spellPosition.height + "vw",
-  });
+
   return (
     <div className="absolute z-100 " style={containerStyles}>
       <div className="relative w-full h-full">
         {spells.map((spell) => {
           return (
-            <div
-              className="rounded-full bg-yellow-500 absolute"
-              style={spellStyles(spell)}
-            ></div>
+            <DoorSpell spells={spells} spell={spell} spellPosition={spellPosition} right={right} />
           );
         })}
       </div>
