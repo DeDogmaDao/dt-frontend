@@ -13,10 +13,12 @@ import {
   topLeftSpell,
   topRightSpell,
 } from "../../utils/game";
+import { spellNumber } from "../../types/allTypes";
 
 const GameBoard: React.FC = () => {
   const [turnNumber, setTurnNumber] = useState<number | null>(null);
-  const [spellNumber, setSpellNumber] = useState({ yellow: 0, blue: 0 });
+  const [spellNumber, setSpellNumber] = useState<spellNumber>({ yellow: 0, blue: 0 });
+  console.log(spellNumber);
   return (
     <LayoutGroup>
       <div className="flex justify-between items-center w-screen h-[calc(900/1920*100vw)]">
@@ -30,6 +32,8 @@ const GameBoard: React.FC = () => {
                 turnNumber={turnNumber}
                 setTurnNumber={setTurnNumber}
                 arrayLength={gameCardData.length}
+                spellNumber={spellNumber}
+                setSpellNumber={setSpellNumber}
               />
             );
           })}

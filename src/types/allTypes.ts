@@ -56,3 +56,8 @@ export interface bottomRightPosition {
   width: number;
   height: number;
 }
+
+export interface spellNumber {
+  yellow:number;
+  blue:number;
+}

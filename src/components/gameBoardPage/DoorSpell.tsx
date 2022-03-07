@@ -1,5 +1,5 @@
 import { bottomRightPosition } from "../../types/allTypes";
-
+import { motion } from "framer-motion";
 interface props {
   spells: number[];
   spell: number;
@@ -21,13 +21,16 @@ const DoorSpell: React.FC<props> = ({
     width: spellPosition.width + "vw",
     height: spellPosition.height + "vw",
   });
+
+  const idFirstPart = right === 0 ? "blue" : "yellow";
+  const idSecondPart = spells.length > 20 ? spell + 1 : spell + 41;
   return (
-    <div
-      className="rounded-full bg-white absolute"
-      style={spellStyles(spell)}
-    >
-        <div className="w-full h-full rounded-full bg-yellow-500"></div>
-        </div>
+    <div className="rounded-full bg-white absolute" style={spellStyles(spell)}>
+      <motion.div
+        layoutId={`${idFirstPart}${idSecondPart}`}
+        className="w-full h-full rounded-full bg-yellow-500"
+      ></motion.div>
+    </div>
   );
 };
 

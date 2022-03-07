@@ -1,6 +1,6 @@
 import { motion, useAnimation, Variants } from "framer-motion";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
-import { gameCardType } from "../../types/allTypes";
+import { gameCardType, spellNumber } from "../../types/allTypes";
 import { gameCardAni, newGameCardAni } from "../../utils/animation";
 import Spell from "./Spell";
 
@@ -11,6 +11,8 @@ interface props {
   turnNumber: number | null;
   setTurnNumber: Dispatch<SetStateAction<number | null>>;
   arrayLength: number;
+  spellNumber: spellNumber;
+  setSpellNumber: Dispatch<SetStateAction<spellNumber>>;
 }
 const CardGame: React.FC<props> = ({
   data,
@@ -19,7 +21,11 @@ const CardGame: React.FC<props> = ({
   turnNumber,
   setTurnNumber,
   arrayLength,
+  spellNumber,
+  setSpellNumber,
 }) => {
+  // states
+  const [once, setOnce] = useState(false);
   const spells = Array.from(Array(data.spellValue).keys());
   const column = (index % 4) + 1;
   const [stage, setStage] = useState(0);
@@ -42,7 +48,7 @@ const CardGame: React.FC<props> = ({
           }
           return null;
         });
-      }, 2000);
+      }, 3000);
     }
   };
 
@@ -51,11 +57,33 @@ const CardGame: React.FC<props> = ({
     if (stage === 0) {
       setStage(1);
     }
-    if (stage === 1) {
+    if (stage === 1 && !once) {
       aniControls.start("stage1");
       setTimeout(() => {
+        if (data.spellGroup === "yellow") {
+          spells.forEach((el, index) => {
+            setTimeout(() => {
+              setSpellNumber((prevState) => ({
+                ...prevState,
+                yellow: prevState.yellow + 1,
+              }));
+            }, 100 * index);
+          });
+        } else {
+          spells.forEach((el, index) => {
+            setTimeout(() => {
+              setSpellNumber((prevState) => ({
+                ...prevState,
+                blue: prevState.blue + 1,
+              }));
+            }, 100 * index);
+          });
+        }
+      }, 1000);
+      setTimeout(() => {
         setStage(2);
-      }, 2000);
+      }, 3000);
+      setOnce(true);
     }
   }
 
