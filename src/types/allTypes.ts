@@ -41,7 +41,8 @@ export interface gameCardType {
   name: string;
   image: string;
   spellGroup: string;
-  spellValue: number;
+  spellValue: number[];
+  total: number;
 }
 
 export interface topRightPosition {
