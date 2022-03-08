@@ -124,15 +124,14 @@ export const newGameCardAni: Variants = {
 
 export const spellAni: Variants = {
   hidden: {
-    translateX: "0px",
-    translateY: "0px",
+    translateX: "50px",
+    translateY: "50px",
   },
   visible: (custom) => ({
-    translateX: `${30 * (custom + 1)}px`,
-    translateY: "150px",
+    translateX: `0px`,
+    translateY: "0px",
     transition: {
-      duration: 0.5,
-      delay: custom * 0.1,
+      duration: 1.5,
     },
   }),
 };
@@ -157,3 +156,4 @@ export const eachTabAni: Variants = {
     },
   },
 };
+

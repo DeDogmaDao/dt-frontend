@@ -21,7 +21,7 @@ const Spell: React.FC<props> = ({
   spellNumber,
 }) => {
   const column = (spell % 3) + 1;
-  const [spellNum, setSpellNum] = useState(0);
+  const [spellNum, setSpellNum] = useState<number | null>(null);
   const [isShowed, setIsShowed] = useState(true);
   // const [animVariant, setAnimVariant] = useState<Variants>({});
   // useEffect(() => {
@@ -43,7 +43,7 @@ const Spell: React.FC<props> = ({
   }, []);
 
   useEffect(() => {
-    if (isShowed === true) {
+    if (isShowed === true && spellNum !== null) {
       let globSpellNumber = 0;
       if (data.spellGroup === "yellow") {
         globSpellNumber = spellNumber.yellow;
@@ -53,6 +53,7 @@ const Spell: React.FC<props> = ({
       }
       if (spellNum <= globSpellNumber) {
         setIsShowed(false);
+        console.log("spell : " + `${data.spellGroup}${spellNum}`);
       }
     }
   }, [spellNumber]);
@@ -70,7 +71,11 @@ const Spell: React.FC<props> = ({
       {isShowed && (
         <motion.div
           layoutId={`${data.spellGroup}${spellNum}`}
-          className="w-full h-full rounded-full bg-yellow-500"
+          transition={{ duration: 3, ease: "linear" }}
+          initial="hidden"
+          animate="visible"
+          variants={spellAni}
+          className="w-full h-full rounded-full bg-yellow-500 z-110"
         ></motion.div>
       )}
     </div>

@@ -1,6 +1,7 @@
 import { bottomRightPosition, spellNumber } from "../../types/allTypes";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import { spellAni } from "../../utils/animation";
 interface props {
   spells: number[];
   spell: number;
@@ -40,6 +41,7 @@ const DoorSpell: React.FC<props> = ({
   useEffect(() => {
     if(isShowed === false && idSecondPart <= spellNumber[idFirstPart]){
       setIsShowed(true)
+      console.log("doorSpell : " + `${idFirstPart}${idSecondPart}`)
     }
   }, [spellNumber])
   
@@ -51,6 +53,10 @@ const DoorSpell: React.FC<props> = ({
       {isShowed && (
         <motion.div
           layoutId={`${idFirstPart}${idSecondPart}`}
+          transition={{ duration: 3, ease: "linear" }}
+          initial="hidden"
+          animate="visible"
+          variants={spellAni}
           className="w-full h-full rounded-full bg-yellow-500"
         ></motion.div>
       )}
