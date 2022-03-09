@@ -63,12 +63,12 @@ const CardGame: React.FC<props> = ({
         if (data.spellGroup === "yellow") {
           setSpellNumber((prevState) => ({
             ...prevState,
-            yellow: prevState.yellow + data.spellValue,
+            yellow: prevState.yellow + data.spellValue.length,
           }));
         } else {
           setSpellNumber((prevState) => ({
             ...prevState,
-            blue: prevState.blue + data.spellValue,
+            blue: prevState.blue + data.spellValue.length,
           }));
         }
       }, 1000);
