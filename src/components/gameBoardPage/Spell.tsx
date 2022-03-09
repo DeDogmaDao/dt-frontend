@@ -1,76 +1,40 @@
 import { motion, Variants } from "framer-motion";
 import { useEffect, useState } from "react";
-import { gameCardType, spellNumber } from "../../types/allTypes";
+import {
+  bottomRightPosition,
+  gameCardType,
+  spellNumber,
+} from "../../types/allTypes";
 import { spellAni } from "../../utils/animation";
 interface props {
-  spell: number;
-  isFliped: boolean;
-  cardIndex: number;
   spellIndex: number;
-  gameCardData: gameCardType[];
-  data: gameCardType;
   spellNumber: spellNumber;
+  spellGroup: string;
+  showOrHidden: boolean;
+  spellStyles: bottomRightPosition;
 }
 const Spell: React.FC<props> = ({
-  spell,
-  isFliped,
-  cardIndex,
   spellIndex,
-  gameCardData,
-  data,
   spellNumber,
+  spellGroup,
+  showOrHidden,
+  spellStyles,
 }) => {
-  const column = (spell % 3) + 1;
-  const [spellNum, setSpellNum] = useState<number | null>(null);
-  const [isShowed, setIsShowed] = useState(true);
-  // const [animVariant, setAnimVariant] = useState<Variants>({});
-  // useEffect(() => {
-  //   if(isFliped){
-  //     setTimeout(() => {
-  //       setAnimVariant(spellAni);
-  //     }, 500);
-  //   }
-  // }, [isFliped])
-  useEffect(() => {
-    let sum = 0;
-    for (let i = 0; i < cardIndex; i++) {
-      if (data.spellGroup === gameCardData[i].spellGroup) {
-        sum = sum + gameCardData[i].spellValue;
-      }
-    }
-    sum = sum + spellIndex + 1;
-    setSpellNum(sum);
-  }, []);
+  const [isShowed, setIsShowed] = useState(showOrHidden);
+  const [once, setOnce] = useState(false);
 
   useEffect(() => {
-    if (isShowed === true && spellNum !== null) {
-      let globSpellNumber = 0;
-      if (data.spellGroup === "yellow") {
-        globSpellNumber = spellNumber.yellow;
-      }
-      if (data.spellGroup === "blue") {
-        globSpellNumber = spellNumber.blue;
-      }
-      if (spellNum <= globSpellNumber) {
-        setIsShowed(false);
-        console.log("spell : " + `${data.spellGroup}${spellNum}`);
-      }
+    if (once === false && spellNumber[spellGroup] >= spellIndex) {
+      setIsShowed((prevState) => !prevState);
+      setOnce(true);
     }
   }, [spellNumber]);
 
   return (
-    <div
-      className="rounded-full bg-white absolute"
-      style={{
-        left: 5 + column * 5,
-        top: 5 + Math.floor(spell / 3) * 10,
-        width: 3,
-        height: 3,
-      }}
-    >
+    <div className="rounded-full bg-white absolute" style={spellStyles}>
       {isShowed && (
         <motion.div
-          layoutId={`${data.spellGroup}${spellNum}`}
+          layoutId={`${spellGroup}${spellIndex}`}
           transition={{ duration: 3, ease: "linear" }}
           initial="hidden"
           animate="visible"

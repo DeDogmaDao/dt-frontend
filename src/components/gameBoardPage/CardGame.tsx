@@ -17,7 +17,6 @@ interface props {
 const CardGame: React.FC<props> = ({
   data,
   cardIndex,
-  layoutID,
   turnNumber,
   setTurnNumber,
   gameCardData,
@@ -26,7 +25,6 @@ const CardGame: React.FC<props> = ({
 }) => {
   // states
   const [once, setOnce] = useState(false);
-  const spells = Array.from(Array(data.spellValue).keys());
   const column = (cardIndex % 4) + 1;
   const [stage, setStage] = useState(0);
   const aniControls = useAnimation();
@@ -83,6 +81,15 @@ const CardGame: React.FC<props> = ({
     left: 50 + ((column % 2) * 170 + cardIndex),
     top: 150 + ((Math.floor(column / 2 + 0.5) - 1) * 150 + cardIndex),
   };
+  const spellStyles = (spellIndex: number) => {
+    const column = (spellIndex % 3) + 1;
+    return {
+      right: 70 - column * 5,
+      bottom: -50 + Math.floor(spellIndex / 3) * 10,
+      width: 0.2 + "vw",
+      height: 0.2 + "vw",
+    };
+  };
   return (
     <motion.div
       layout
@@ -99,16 +106,14 @@ const CardGame: React.FC<props> = ({
         className="w-full h-full flex flex-col justify-center items-center relative"
       >
         <motion.div className="w-full h-full relative">
-          {spells.map((spell, index) => {
+          {data.spellValue.map((spell) => {
             return (
               <Spell
-                spell={spell}
-                isFliped={false}
-                cardIndex={cardIndex}
-                spellIndex={index}
-                data={data}
-                gameCardData={gameCardData}
+                spellIndex={data.total - data.spellValue.length + spell}
                 spellNumber={spellNumber}
+                spellGroup={data.spellGroup}
+                showOrHidden={true}
+                spellStyles={spellStyles(spell)}
               />
             );
           })}

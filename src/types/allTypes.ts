@@ -52,13 +52,13 @@ export interface topRightPosition {
   height: number;
 }
 export interface bottomRightPosition {
-  right: number;
-  bottom: number;
-  width: number;
-  height: number;
+  right: number | string;
+  bottom: number | string;
+  width: number | string;
+  height: number | string;
 }
 
 export interface spellNumber {
-  yellow:number;
-  blue:number;
+  [yellow: string]: number;
+  blue: number;
 }
