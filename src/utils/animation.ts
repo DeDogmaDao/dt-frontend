@@ -91,12 +91,12 @@ export const gameCardAni: Variants = {
     },
   }),
   stage1: {
-    left:100,
-    top:"70%",
+    left: 100,
+    top: "70%",
     transition: {
       duration: 0.5,
     },
-  }
+  },
 };
 export const newGameCardAni: Variants = {
   hidden: (custom) => ({
@@ -124,14 +124,18 @@ export const newGameCardAni: Variants = {
 
 export const spellAni: Variants = {
   hidden: {
-    translateX: "50px",
-    translateY: "50px",
+    x: 100,
+    y: 100,
+    scale:1
   },
   visible: (custom) => ({
-    translateX: `0px`,
-    translateY: "0px",
+    x: 0,
+    y: 0,
+    scale:[2, 3, 1],
     transition: {
-      duration: 1.5,
+      times:[0.1,0.9,0.2],
+      duration: 2,
+      delay: custom * 0.2, type:"spring", stiffness:500
     },
   }),
 };
@@ -156,4 +160,3 @@ export const eachTabAni: Variants = {
     },
   },
 };
-
