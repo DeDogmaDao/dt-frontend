@@ -35,10 +35,8 @@ const Spell: React.FC<props> = ({
       {isShowed && (
         <motion.div
           layoutId={`${spellGroup}${spellIndex}`}
-          transition={{ duration: 3, ease: "linear" }}
-          initial="hidden"
-          animate="visible"
-          variants={spellAni}
+          transition={{ duration: 1 }}
+
           className="w-full h-full rounded-full bg-yellow-500 z-110"
         ></motion.div>
       )}

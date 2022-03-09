@@ -46,7 +46,7 @@ const CardGame: React.FC<props> = ({
           }
           return null;
         });
-      }, 3000);
+      }, 6000);
     }
   };
 
@@ -58,21 +58,14 @@ const CardGame: React.FC<props> = ({
     if (stage === 1 && !once) {
       aniControls.start("stage1");
       setTimeout(() => {
-        if (data.spellGroup === "yellow") {
-          setSpellNumber((prevState) => ({
-            ...prevState,
-            yellow: prevState.yellow + data.spellValue.length,
-          }));
-        } else {
-          setSpellNumber((prevState) => ({
-            ...prevState,
-            blue: prevState.blue + data.spellValue.length,
-          }));
-        }
+        setSpellNumber((prevState)=>({
+          ...prevState,
+          [data.spellGroup]:data.total
+        }))
       }, 1000);
       setTimeout(() => {
         setStage(2);
-      }, 3000);
+      }, 9000);
       setOnce(true);
     }
   }
