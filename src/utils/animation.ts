@@ -124,18 +124,20 @@ export const newGameCardAni: Variants = {
 
 export const spellAni: Variants = {
   hidden: {
-    x: 100,
-    y: 100,
-    scale:1
+    x: 50,
+    y: 50,
+    scale: 1,
   },
   visible: (custom) => ({
     x: 0,
     y: 0,
-    scale:[2, 3, 1],
+    scale: [2, 3, 1],
     transition: {
-      times:[0.1,0.9,0.2],
+      times: [0.1, 0.9, 0.2],
       duration: 2,
-      delay: custom * 0.2, type:"spring", stiffness:500
+      delay: custom * 0.3,
+      type: "spring",
+      stiffness: 300,
     },
   }),
 };
