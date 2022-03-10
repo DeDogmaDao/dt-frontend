@@ -30,6 +30,7 @@ const Spell: React.FC<props> = ({
     }
   }, [spellNumber]);
 
+  const color = spellGroup === "yellow" ? "yellow" : "#00FFFF";
   return (
     <div className="rounded-full bg-white absolute" style={spellStyles}>
       {isShowed && (
@@ -40,8 +41,9 @@ const Spell: React.FC<props> = ({
           initial="hidden"
           animate="visible"
           variants={spellAni}
-          custom={spellIndex%3}
-          className="w-full h-full rounded-full bg-yellow-500 z-110"
+          custom={{num:spellIndex%3, color:color}}
+          className="w-full h-full rounded-full z-110"
+          style={{backgroundColor:color}}
         ></motion.div>
       )}
     </div>

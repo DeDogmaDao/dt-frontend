@@ -133,9 +133,9 @@ export const spellAni: Variants = {
     y: 0,
     scale: [2, 3, 1],
     boxShadow: [
-      "0px 0px 5px 5px yellow",
-      "0px 0px 2px 2px yellow",
-      "0px 0px 0px 0px yellow",
+      `0px 0px 5px 5px ${custom.color}`,
+      `0px 0px 2px 2px ${custom.color}`,
+      `0px 0px 0px 0px ${custom.color}`,
     ],
     transition: {
       boxShadow: {
@@ -145,7 +145,7 @@ export const spellAni: Variants = {
       default: {
         times: [0.1, 0.9, 0.2],
         duration: 2,
-        delay: custom * 0.3,
+        delay: custom.num * 0.3,
         type: "spring",
         stiffness: 300,
         mass: 5,
