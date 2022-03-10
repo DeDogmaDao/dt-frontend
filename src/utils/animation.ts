@@ -124,29 +124,34 @@ export const newGameCardAni: Variants = {
 
 export const spellAni: Variants = {
   hidden: {
-    x: 50,
-    y: 50,
+    x: -90,
+    y: -90,
     scale: 1,
   },
   visible: (custom) => ({
     x: 0,
     y: 0,
     scale: [2, 3, 1],
-    boxShadow:["0px 0px 5px 5px yellow","0px 0px 2px 2px yellow","0px 0px 0px 0px yellow"],
+    boxShadow: [
+      "0px 0px 5px 5px yellow",
+      "0px 0px 2px 2px yellow",
+      "0px 0px 0px 0px yellow",
+    ],
     transition: {
-      boxShadow:{
+      boxShadow: {
         times: [0.5, 0.5, 0.9],
-        duration: 3,
+        duration: 4,
       },
-      default:{
-      times: [0.1, 0.9, 0.2],
-      duration: 2,
-      delay: custom * 0.3,
-      type: "spring",
-      stiffness: 300,
-      mass:5,
-      damping:30
-    },}
+      default: {
+        times: [0.1, 0.9, 0.2],
+        duration: 2,
+        delay: custom * 0.3,
+        type: "spring",
+        stiffness: 300,
+        mass: 5,
+        damping: 30,
+      },
+    },
   }),
 };
 
