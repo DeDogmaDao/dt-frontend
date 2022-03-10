@@ -432,6 +432,8 @@ export const gameCardData: gameCardType[] = [
     spellGroup: "blue",
     spellValue: [1, 2, 3],
     total: 3,
+    communityNum: Math.round(Math.random() * 9),
+    individualNum: Math.round(Math.random() * 99),
   },
   {
     id: "2",
@@ -440,6 +442,8 @@ export const gameCardData: gameCardType[] = [
     spellGroup: "blue",
     spellValue: [1, 2, 3],
     total: 6,
+    communityNum: Math.round(Math.random() * 9),
+    individualNum: Math.round(Math.random() * 99),
   },
   {
     id: "3",
@@ -448,6 +452,8 @@ export const gameCardData: gameCardType[] = [
     spellGroup: "yellow",
     spellValue: [1, 2],
     total: 2,
+    communityNum: Math.round(Math.random() * 9),
+    individualNum: Math.round(Math.random() * 99),
   },
   {
     id: "4",
@@ -456,6 +462,8 @@ export const gameCardData: gameCardType[] = [
     spellGroup: "blue",
     spellValue: [1],
     total: 7,
+    communityNum: Math.round(Math.random() * 9),
+    individualNum: Math.round(Math.random() * 99),
   },
   {
     id: "5",
@@ -464,6 +472,8 @@ export const gameCardData: gameCardType[] = [
     spellGroup: "yellow",
     spellValue: [1],
     total: 3,
+    communityNum: Math.round(Math.random() * 9),
+    individualNum: Math.round(Math.random() * 99),
   },
   {
     id: "6",
@@ -472,6 +482,8 @@ export const gameCardData: gameCardType[] = [
     spellGroup: "blue",
     spellValue: [1, 2],
     total: 9,
+    communityNum: Math.round(Math.random() * 9),
+    individualNum: Math.round(Math.random() * 99),
   },
   {
     id: "7",
@@ -480,6 +492,8 @@ export const gameCardData: gameCardType[] = [
     spellGroup: "yellow",
     spellValue: [1, 2, 3],
     total: 6,
+    communityNum: Math.round(Math.random() * 9),
+    individualNum: Math.round(Math.random() * 99),
   },
   {
     id: "8",
@@ -488,6 +502,8 @@ export const gameCardData: gameCardType[] = [
     spellGroup: "yellow",
     spellValue: [1, 2, 3],
     total: 9,
+    communityNum: Math.round(Math.random() * 9),
+    individualNum: Math.round(Math.random() * 99),
   },
   {
     id: "9",
@@ -496,6 +512,8 @@ export const gameCardData: gameCardType[] = [
     spellGroup: "blue",
     spellValue: [1],
     total: 10,
+    communityNum: Math.round(Math.random() * 9),
+    individualNum: Math.round(Math.random() * 99),
   },
   {
     id: "10",
@@ -504,6 +522,8 @@ export const gameCardData: gameCardType[] = [
     spellGroup: "blue",
     spellValue: [1, 2, 3],
     total: 13,
+    communityNum: Math.round(Math.random() * 9),
+    individualNum: Math.round(Math.random() * 99),
   },
   {
     id: "11",
@@ -512,6 +532,8 @@ export const gameCardData: gameCardType[] = [
     spellGroup: "yellow",
     spellValue: [1, 2],
     total: 11,
+    communityNum: Math.round(Math.random() * 9),
+    individualNum: Math.round(Math.random() * 99),
   },
   {
     id: "12",
@@ -520,6 +542,8 @@ export const gameCardData: gameCardType[] = [
     spellGroup: "blue",
     spellValue: [1, 2],
     total: 15,
+    communityNum: Math.round(Math.random() * 9),
+    individualNum: Math.round(Math.random() * 99),
   },
   {
     id: "13",
@@ -528,6 +552,8 @@ export const gameCardData: gameCardType[] = [
     spellGroup: "yellow",
     spellValue: [1],
     total: 12,
+    communityNum: Math.round(Math.random() * 9),
+    individualNum: Math.round(Math.random() * 99),
   },
   {
     id: "14",
@@ -536,6 +562,8 @@ export const gameCardData: gameCardType[] = [
     spellGroup: "blue",
     spellValue: [1, 2],
     total: 17,
+    communityNum: Math.round(Math.random() * 9),
+    individualNum: Math.round(Math.random() * 99),
   },
   {
     id: "15",
@@ -544,6 +572,8 @@ export const gameCardData: gameCardType[] = [
     spellGroup: "yellow",
     spellValue: [1, 2, 3],
     total: 15,
+    communityNum: Math.round(Math.random() * 9),
+    individualNum: Math.round(Math.random() * 99),
   },
   {
     id: "16",
@@ -552,6 +582,8 @@ export const gameCardData: gameCardType[] = [
     spellGroup: "yellow",
     spellValue: [1, 2, 3],
     total: 18,
+    communityNum: Math.round(Math.random() * 9),
+    individualNum: Math.round(Math.random() * 99),
   },
   {
     id: "17",
@@ -560,6 +592,8 @@ export const gameCardData: gameCardType[] = [
     spellGroup: "blue",
     spellValue: [1],
     total: 18,
+    communityNum: Math.round(Math.random() * 9),
+    individualNum: Math.round(Math.random() * 99),
   },
   {
     id: "18",
@@ -568,6 +602,8 @@ export const gameCardData: gameCardType[] = [
     spellGroup: "blue",
     spellValue: [1, 2, 3],
     total: 21,
+    communityNum: Math.round(Math.random() * 9),
+    individualNum: Math.round(Math.random() * 99),
   },
   {
     id: "19",
@@ -576,6 +612,8 @@ export const gameCardData: gameCardType[] = [
     spellGroup: "yellow",
     spellValue: [1, 2],
     total: 20,
+    communityNum: Math.round(Math.random() * 9),
+    individualNum: Math.round(Math.random() * 99),
   },
   {
     id: "20",
@@ -584,6 +622,8 @@ export const gameCardData: gameCardType[] = [
     spellGroup: "blue",
     spellValue: [1, 2, 3],
     total: 24,
+    communityNum: Math.round(Math.random() * 9),
+    individualNum: Math.round(Math.random() * 99),
   },
   {
     id: "21",
@@ -592,6 +632,8 @@ export const gameCardData: gameCardType[] = [
     spellGroup: "yellow",
     spellValue: [1],
     total: 21,
+    communityNum: Math.round(Math.random() * 9),
+    individualNum: Math.round(Math.random() * 99),
   },
   {
     id: "22",
@@ -600,6 +642,8 @@ export const gameCardData: gameCardType[] = [
     spellGroup: "blue",
     spellValue: [1, 2],
     total: 26,
+    communityNum: Math.round(Math.random() * 9),
+    individualNum: Math.round(Math.random() * 99),
   },
   {
     id: "23",
@@ -608,6 +652,8 @@ export const gameCardData: gameCardType[] = [
     spellGroup: "yellow",
     spellValue: [1],
     total: 22,
+    communityNum: Math.round(Math.random() * 9),
+    individualNum: Math.round(Math.random() * 99),
   },
   {
     id: "24",
@@ -616,6 +662,8 @@ export const gameCardData: gameCardType[] = [
     spellGroup: "yellow",
     spellValue: [1, 2, 3],
     total: 25,
+    communityNum: Math.round(Math.random() * 9),
+    individualNum: Math.round(Math.random() * 99),
   },
   {
     id: "25",
@@ -624,6 +672,8 @@ export const gameCardData: gameCardType[] = [
     spellGroup: "blue",
     spellValue: [1, 2],
     total: 28,
+    communityNum: Math.round(Math.random() * 9),
+    individualNum: Math.round(Math.random() * 99),
   },
   {
     id: "26",
@@ -632,6 +682,8 @@ export const gameCardData: gameCardType[] = [
     spellGroup: "blue",
     spellValue: [1, 2, 3],
     total: 31,
+    communityNum: Math.round(Math.random() * 9),
+    individualNum: Math.round(Math.random() * 99),
   },
   {
     id: "27",
@@ -640,6 +692,8 @@ export const gameCardData: gameCardType[] = [
     spellGroup: "yellow",
     spellValue: [1, 2],
     total: 27,
+    communityNum: Math.round(Math.random() * 9),
+    individualNum: Math.round(Math.random() * 99),
   },
   {
     id: "28",
@@ -648,6 +702,8 @@ export const gameCardData: gameCardType[] = [
     spellGroup: "blue",
     spellValue: [1, 2, 3],
     total: 34,
+    communityNum: Math.round(Math.random() * 9),
+    individualNum: Math.round(Math.random() * 99),
   },
   {
     id: "29",
@@ -656,6 +712,8 @@ export const gameCardData: gameCardType[] = [
     spellGroup: "yellow",
     spellValue: [1],
     total: 28,
+    communityNum: Math.round(Math.random() * 9),
+    individualNum: Math.round(Math.random() * 99),
   },
   {
     id: "30",
@@ -664,14 +722,18 @@ export const gameCardData: gameCardType[] = [
     spellGroup: "blue",
     spellValue: [1, 2],
     total: 36,
+    communityNum: Math.round(Math.random() * 9),
+    individualNum: Math.round(Math.random() * 99),
   },
   {
     id: "31",
     name: "Peter pan",
     image: "/media/team/member1.png",
     spellGroup: "yellow",
-    spellValue: [1,2,3],
+    spellValue: [1, 2, 3],
     total: 31,
+    communityNum: Math.round(Math.random() * 9),
+    individualNum: Math.round(Math.random() * 99),
   },
   {
     id: "32",
@@ -680,6 +742,8 @@ export const gameCardData: gameCardType[] = [
     spellGroup: "yellow",
     spellValue: [1, 2, 3],
     total: 34,
+    communityNum: Math.round(Math.random() * 9),
+    individualNum: Math.round(Math.random() * 99),
   },
   {
     id: "33",
@@ -688,6 +752,8 @@ export const gameCardData: gameCardType[] = [
     spellGroup: "blue",
     spellValue: [1],
     total: 37,
+    communityNum: Math.round(Math.random() * 9),
+    individualNum: Math.round(Math.random() * 99),
   },
   {
     id: "34",
@@ -696,6 +762,8 @@ export const gameCardData: gameCardType[] = [
     spellGroup: "blue",
     spellValue: [1, 2, 3],
     total: 40,
+    communityNum: Math.round(Math.random() * 9),
+    individualNum: Math.round(Math.random() * 99),
   },
   {
     id: "35",
@@ -704,6 +772,8 @@ export const gameCardData: gameCardType[] = [
     spellGroup: "yellow",
     spellValue: [1, 2],
     total: 36,
+    communityNum: Math.round(Math.random() * 9),
+    individualNum: Math.round(Math.random() * 99),
   },
   {
     id: "36",
@@ -712,14 +782,18 @@ export const gameCardData: gameCardType[] = [
     spellGroup: "blue",
     spellValue: [1, 2, 3],
     total: 43,
+    communityNum: Math.round(Math.random() * 9),
+    individualNum: Math.round(Math.random() * 99),
   },
   {
     id: "37",
     name: "Hero",
     image: "/media/team/member2.png",
     spellGroup: "yellow",
-    spellValue: [1,2,3],
+    spellValue: [1, 2, 3],
     total: 39,
+    communityNum: Math.round(Math.random() * 9),
+    individualNum: Math.round(Math.random() * 99),
   },
   {
     id: "38",
@@ -728,6 +802,8 @@ export const gameCardData: gameCardType[] = [
     spellGroup: "blue",
     spellValue: [1, 2],
     total: 45,
+    communityNum: Math.round(Math.random() * 9),
+    individualNum: Math.round(Math.random() * 99),
   },
   {
     id: "39",
@@ -736,6 +812,8 @@ export const gameCardData: gameCardType[] = [
     spellGroup: "yellow",
     spellValue: [1, 2],
     total: 41,
+    communityNum: Math.round(Math.random() * 9),
+    individualNum: Math.round(Math.random() * 99),
   },
   {
     id: "40",
@@ -744,6 +822,8 @@ export const gameCardData: gameCardType[] = [
     spellGroup: "yellow",
     spellValue: [1, 2, 3],
     total: 44,
+    communityNum: Math.round(Math.random() * 9),
+    individualNum: Math.round(Math.random() * 99),
   },
   {
     id: "41",
@@ -752,6 +832,8 @@ export const gameCardData: gameCardType[] = [
     spellGroup: "blue",
     spellValue: [1, 2],
     total: 47,
+    communityNum: Math.round(Math.random() * 9),
+    individualNum: Math.round(Math.random() * 99),
   },
   {
     id: "42",
@@ -760,6 +842,8 @@ export const gameCardData: gameCardType[] = [
     spellGroup: "blue",
     spellValue: [1, 2, 3],
     total: 50,
+    communityNum: Math.round(Math.random() * 9),
+    individualNum: Math.round(Math.random() * 99),
   },
   {
     id: "43",
@@ -768,6 +852,8 @@ export const gameCardData: gameCardType[] = [
     spellGroup: "yellow",
     spellValue: [1, 2],
     total: 46,
+    communityNum: Math.round(Math.random() * 9),
+    individualNum: Math.round(Math.random() * 99),
   },
   {
     id: "44",
@@ -776,6 +862,8 @@ export const gameCardData: gameCardType[] = [
     spellGroup: "blue",
     spellValue: [1],
     total: 51,
+    communityNum: Math.round(Math.random() * 9),
+    individualNum: Math.round(Math.random() * 99),
   },
   {
     id: "45",
@@ -784,6 +872,8 @@ export const gameCardData: gameCardType[] = [
     spellGroup: "yellow",
     spellValue: [1, 2],
     total: 48,
+    communityNum: Math.round(Math.random() * 9),
+    individualNum: Math.round(Math.random() * 99),
   },
   {
     id: "46",
@@ -792,6 +882,8 @@ export const gameCardData: gameCardType[] = [
     spellGroup: "blue",
     spellValue: [1],
     total: 52,
+    communityNum: Math.round(Math.random() * 9),
+    individualNum: Math.round(Math.random() * 99),
   },
   {
     id: "47",
@@ -800,6 +892,8 @@ export const gameCardData: gameCardType[] = [
     spellGroup: "yellow",
     spellValue: [1],
     total: 49,
+    communityNum: Math.round(Math.random() * 9),
+    individualNum: Math.round(Math.random() * 99),
   },
   {
     id: "48",
@@ -808,6 +902,8 @@ export const gameCardData: gameCardType[] = [
     spellGroup: "yellow",
     spellValue: [1, 2, 3],
     total: 52,
+    communityNum: Math.round(Math.random() * 9),
+    individualNum: Math.round(Math.random() * 99),
   },
   {
     id: "49",
@@ -816,6 +912,8 @@ export const gameCardData: gameCardType[] = [
     spellGroup: "yellow",
     spellValue: [1],
     total: 53,
+    communityNum: Math.round(Math.random() * 9),
+    individualNum: Math.round(Math.random() * 99),
   },
   {
     id: "50",
@@ -824,6 +922,8 @@ export const gameCardData: gameCardType[] = [
     spellGroup: "blue",
     spellValue: [1, 2],
     total: 54,
+    communityNum: Math.round(Math.random() * 9),
+    individualNum: Math.round(Math.random() * 99),
   },
   {
     id: "51",
@@ -832,6 +932,8 @@ export const gameCardData: gameCardType[] = [
     spellGroup: "yellow",
     spellValue: [1],
     total: 54,
+    communityNum: Math.round(Math.random() * 9),
+    individualNum: Math.round(Math.random() * 99),
   },
   {
     id: "52",
@@ -840,5 +942,11 @@ export const gameCardData: gameCardType[] = [
     spellGroup: "yellow",
     spellValue: [1, 2, 3],
     total: 57,
+    communityNum: Math.round(Math.random() * 9),
+    individualNum: Math.round(Math.random() * 99),
   },
 ];
+
+gameCardData.forEach((el) => {
+  console.log(el.communityNum, el.individualNum);
+});

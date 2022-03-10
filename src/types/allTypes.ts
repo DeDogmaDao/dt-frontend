@@ -43,6 +43,8 @@ export interface gameCardType {
   spellGroup: string;
   spellValue: number[];
   total: number;
+  communityNum:number;
+  individualNum: number;
 }
 
 export interface topRightPosition {
