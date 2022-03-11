@@ -388,39 +388,43 @@ export const allTabs: tabsType[] = [
 export const layersData: layersType[] = [
   {
     image: "1.webp",
-    speed: 1,
+    speed: 2,
+    top:-300
   },
   {
     image: "2.webp",
-    speed: 1,
+    speed: 3,
+    top:-700
   },
   {
     image: "3.webp",
-    speed: 1,
+    speed: 5,
+    top:-400
   },
   {
     image: "4.webp",
-    speed: 1,
+    speed: 4,
+    top:-450
   },
   {
     image: "5.webp",
-    speed: 1,
+    speed: 5,
+    top:-400
   },
   {
     image: "6.webp",
-    speed: 1,
+    speed: 5,
+    top:-350
   },
   {
     image: "7.webp",
-    speed: 1,
+    speed: 7,
+    top:-300
   },
   {
     image: "8.webp",
-    speed: 1,
-  },
-  {
-    image: "9.webp",
-    speed: 1,
+    speed: 8,
+    top:-280
   },
 ];
 

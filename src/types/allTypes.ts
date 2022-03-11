@@ -21,6 +21,7 @@ export interface socialType {
 export interface layersType {
   image: string;
   speed: number;
+  top:number;
 }
 
 export interface tabType {
