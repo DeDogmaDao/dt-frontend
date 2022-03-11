@@ -389,41 +389,41 @@ export const layersData: layersType[] = [
   {
     image: "1.webp",
     speed: 2,
-    top:-300
-  },
-  {
-    image: "2.webp",
-    speed: 3,
-    top:-700
-  },
-  {
-    image: "3.webp",
-    speed: 5,
     top:-400
   },
   {
-    image: "4.webp",
+    image: "2.webp",
     speed: 4,
+    top:-800
+  },
+  {
+    image: "3.webp",
+    speed: 6,
+    top:-500
+  },
+  {
+    image: "4.webp",
+    speed: 8,
     top:-450
   },
   {
     image: "5.webp",
-    speed: 5,
+    speed: 10,
     top:-400
   },
   {
     image: "6.webp",
-    speed: 5,
+    speed: 12,
     top:-350
   },
   {
     image: "7.webp",
-    speed: 7,
+    speed: 14,
     top:-300
   },
   {
     image: "8.webp",
-    speed: 8,
+    speed: 16,
     top:-280
   },
 ];
