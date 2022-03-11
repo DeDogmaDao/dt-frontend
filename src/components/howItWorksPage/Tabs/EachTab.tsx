@@ -17,7 +17,6 @@ const EachTab: React.FC<props> = ({
   activeCard,
   setTabs,
   tabs,
-  cardRef,
 }) => {
   const clickHandler = () => {
     const clonedState = deepClone(tabs);
