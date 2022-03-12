@@ -5,7 +5,7 @@ interface props {
   index: number;
 }
 const Layer: React.FC<props> = ({ data, top, index }) => {
-  const scales = data.image === "4.png" ? `scale(${1 - top / 100})` : "";
+  const scales = data.image === "3.png" || data.image === "4.png" ? `scale(${1 - top / 100})` : "";
   const translates = ( data.top- top * data.speed);
   const styles = {
     transform: `translateY(${translates}px) ${scales}`,
@@ -15,7 +15,7 @@ const Layer: React.FC<props> = ({ data, top, index }) => {
     <img
       src={"/media/layers/" + data.image}
       style={styles}
-      className={` transform-gpu w-full h-full ${
+      className={` transform-gpu w-full ${
         index === 0 ? "" : "absolute left-0 top-0 "
       }
       `}
