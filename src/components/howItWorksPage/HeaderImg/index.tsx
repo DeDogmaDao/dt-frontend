@@ -2,18 +2,20 @@ import { useEffect, useState } from "react";
 import { layersData } from "../../../store/allData";
 import DiscordBtn from "../../global/Buttons/DiscordBtn";
 import Layer from "./Layer";
+import throttle from "lodash/throttle";
 
 const HeaderImg: React.FC = () => {
   const [top, setTop] = useState(0);
   const topTransform = () => {
     setTop(window.scrollY / 15);
   };
+  console.log(top);
   useEffect(() => {
-    window.addEventListener("scroll", topTransform);
+    window.addEventListener("scroll", throttle(topTransform, 10));
     return () => {
-      window.removeEventListener("scroll", topTransform);
+      window.removeEventListener("scroll", throttle(topTransform, 10));
     };
-  }, [top]);
+  }, []);
 
   return (
     <div className="w-full h-full flex justify-center items-center relative -mt-16">

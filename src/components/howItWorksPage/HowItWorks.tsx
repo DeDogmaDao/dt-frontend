@@ -12,7 +12,7 @@ const HowItWorks:React.FC = () => {
 
     return(
         <>
-        {/* <HeaderImg /> */}
+        <HeaderImg />
 
         <SecOne />
         <Carosel allData={teamClone} Item={Card} initialQuantity={100} />
