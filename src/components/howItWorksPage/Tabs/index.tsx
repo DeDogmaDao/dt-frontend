@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { allTabs } from "../../../store/allData";
 import EachGroup from "./EachGroup";
 import EachTab from "./EachTab";
+import TabData from "./TabData";
 
 const Tabs: React.FC = () => {
   const [tabs, setTabs] = useState(allTabs);
@@ -32,7 +33,11 @@ const Tabs: React.FC = () => {
       </div>
       <div className="w-[673px] h-[302px] bg-mainBg-500 mt-16 ">
         {/* sliding goes here */}
-        <div className="w-full h-full bg-red-300"></div>
+        {tabs.map(group=>{
+          return group.tabInfo.map(data => {
+          return <TabData data={data} activeGroup={group.activeGroup} />  
+          })
+        })}
       </div>
 
       {tabs.map((tab) => {
