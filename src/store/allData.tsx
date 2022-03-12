@@ -387,45 +387,46 @@ export const allTabs: tabsType[] = [
 
 export const layersData: layersType[] = [
   {
-    image: "1.webp",
-    speed: 2,
-    top:-400
+    image: "1.png",
+    speed: 5,
+    top:0
   },
   {
-    image: "2.webp",
-    speed: 4,
-    top:-800
+    image: "2.png",
+    speed: 5,
+    top:0
   },
   {
-    image: "3.webp",
-    speed: 6,
+    image: "3.png",
+    speed: 10,
+    top:0
+  },
+  {
+    image: "4.png",
+    speed: 15,
     top:-500
   },
   {
-    image: "4.webp",
-    speed: 8,
+    image: "5.png",
+    speed: 20,
+    top:-500
+  },
+  {
+    image: "6.png",
+    speed: 25,
+    top:-580
+  },
+  {
+    image: "7.png",
+    speed: 30,
+    top:-500
+  },
+  {
+    image: "8.png",
+    speed: 35,
     top:-450
   },
-  {
-    image: "5.webp",
-    speed: 10,
-    top:-400
-  },
-  {
-    image: "6.webp",
-    speed: 12,
-    top:-350
-  },
-  {
-    image: "7.webp",
-    speed: 14,
-    top:-300
-  },
-  {
-    image: "8.webp",
-    speed: 16,
-    top:-280
-  },
+
 ];
 
 export const gameCardData: gameCardType[] = [

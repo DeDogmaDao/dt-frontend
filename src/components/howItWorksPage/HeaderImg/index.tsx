@@ -22,10 +22,10 @@ const HeaderImg: React.FC = () => {
       {layersData.map((data, index) => {
         return <Layer top={top} index={index} data={data} />;
       })}
-      <h2 className="absolute top-56 left-1/2 -ml-56">Nepoleia is sold out!</h2>
+      {/* <h2 className="absolute top-56 left-1/2 -ml-56">Nepoleia is sold out!</h2>
       <div className="absolute top-96 left-1/2 -ml-32">
-        <DiscordBtn />{" "}
-      </div>
+        <DiscordBtn />
+      </div> */}
     </div>
   );
 };
