@@ -3,13 +3,13 @@ import { RefObject } from "react";
 import { tabsType } from "../../../types/allTypes";
 import deepClone from 'lodash/cloneDeep';
 import { eachTabAni } from "../../../utils/animation";
+import { useMediaQuery } from "../../../hooks/useMediaQuery";
 interface props {
   group: string;
   name: string;
   activeCard: boolean;
   setTabs: any;
   tabs: tabsType[];
-  cardRef: RefObject<HTMLDivElement>;
 }
 const EachTab: React.FC<props> = ({
   group,
@@ -18,6 +18,9 @@ const EachTab: React.FC<props> = ({
   setTabs,
   tabs,
 }) => {
+
+  // const isSmallDevice = useMediaQuery(746);
+
   const clickHandler = () => {
     const clonedState = deepClone(tabs);
     const newCard = clonedState.map((tab) => {
