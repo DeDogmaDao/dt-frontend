@@ -7,7 +7,7 @@ import throttle from "lodash/throttle";
 const HeaderImg: React.FC = () => {
   const [top, setTop] = useState(0);
   const topTransform = () => {
-    setTop(window.scrollY / 30);
+    setTop(window.scrollY / 15);
   };
   console.log(top);
   useEffect(() => {
@@ -18,7 +18,7 @@ const HeaderImg: React.FC = () => {
   }, []);
 
   return (
-    <div className="w-full h-[1607px] flex justify-center items-start relative -mt-16">
+    <div className="w-full h-[1607px] flex justify-center items-start relative -mt-16 !overflow-hidden">
       {layersData.map((data, index) => {
         return <Layer top={top} index={index} data={data} />;
       })}
