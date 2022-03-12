@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { tabsType, tabType } from "../../../types/allTypes";
 import deepClone from "lodash/cloneDeep";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
+import { faAngleDown, faCheck } from "@fortawesome/free-solid-svg-icons";
 
 interface props {
   data: tabType[];
@@ -53,12 +53,15 @@ const SelectBox: React.FC<props> = ({ data, tabs, setTabs, group }) => {
       className="w-52 h-8 text-xs flex justify-between px-5 items-center rounded-3xl border-b-2 relative hover:border-primary-500 duration-500"
       onClick={btnClickHandler}
     >
-        
-      {data.map(
-        (item) => item.activeCard && <p className="">{item.name}</p>
-      )}
+      {data.map((item) => item.activeCard && <p className="">{item.name}</p>)}
 
-        <span className={`duration-500 ${isExpanded ? "scale-y-[-1]": "scale-y-100"}`}><FontAwesomeIcon icon={faAngleDown} /></span>
+      <span
+        className={`duration-500 ${
+          isExpanded ? "scale-y-[-1]" : "scale-y-100"
+        }`}
+      >
+        <FontAwesomeIcon icon={faAngleDown} />
+      </span>
       <div
         className=" absolute top-full mt-1 left-0 w-full  overflow-y-scroll flex flex-col bg-secondary-900 duration-300 rounded-lg"
         style={{ height: isExpanded ? 200 : 0 }}
@@ -66,10 +69,13 @@ const SelectBox: React.FC<props> = ({ data, tabs, setTabs, group }) => {
         {data.map((option) => {
           return (
             <span
-              className=" text-white text-xs rounded-md py-2 mx-1 text-left pl-3 hover:bg-secondary-700"
+              className={`flex justify-between items-center text-white text-xs rounded-md py-2 mx-1 px-3 hover:bg-secondary-700 ${
+                option.activeCard ? "bg-secondary-700" : ""
+              }`}
               onClick={() => optionClickHandler(option.name)}
             >
               {option.name}
+              {option.activeCard && <FontAwesomeIcon icon={faCheck} />}
             </span>
           );
         })}
