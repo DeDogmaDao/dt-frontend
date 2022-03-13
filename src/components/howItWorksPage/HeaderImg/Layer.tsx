@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { layersType } from "../../../types/allTypes";
 interface props {
   data: layersType;
@@ -5,21 +6,50 @@ interface props {
   index: number;
 }
 const Layer: React.FC<props> = ({ data, top, index }) => {
-  const scales = data.image !== "1.png" && data.image !== "2.png" ? `scale(${1 - top / 100})` : "";
-  const translates = ( data.top - top * data.speed);
-  const styles = {
-    transform: `translateY(${translates}px) ${scales}`,
-  };
+  const scales = top / 100;
+  const translates = (-top * data.speed);
+
+  let styles = {};
+  if (index === 0) {
+    styles = {
+      transform: `translateY(${translates}vw)`,
+      top: data.top + "vw",
+    };
+  }
+  if (index === 1) {
+    styles = {
+      transform: `translateY(${translates}vw)`,
+      top: data.top + "vw",
+    };
+  }
+  if (index === 2) {
+    styles = {
+      transform: `translateY(${translates}vw) scale(${1 - scales*10})`,
+      top: data.top + "vw",
+    };
+  }
+  if (index === 3) {
+    styles = {
+      transform: `translateY(${translates}vw) scale(${1 - scales})`,
+      top: data.top + "vw",
+    };
+  }
+  if (index === 4) {
+    styles = {
+      transform: `translateY(${translates}vw) scale(${1 - scales})`,
+      left: "-15%",
+      top: data.top + "vw",
+      marginLeft: "0vw",
+      width: "140vw",
+      maxWidth: "140vw",
+    };
+  }
 
   return (
     <img
       src={"/media/layers/" + data.image}
       style={styles}
-      className={` transform-gpu w-full  ${
-        index === 0 ? "" : "absolute left-0 top-0"
-      }
-      ${data.image === "5.png" ? "left-1/2 ml-[-20vw] w-[140vw] !max-w-[140vw]" : ""}
-      `}
+      className={`transform-gpu w-full absolute`}
     />
   );
 };

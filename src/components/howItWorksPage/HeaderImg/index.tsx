@@ -7,9 +7,9 @@ import throttle from "lodash/throttle";
 const HeaderImg: React.FC = () => {
   const [top, setTop] = useState(0);
   const topTransform = () => {
-    setTop(window.scrollY / 15);
+    setTop(window.scrollY / 300);
   };
-  console.log(top);
+
   useEffect(() => {
     window.addEventListener("scroll", throttle(topTransform, 10));
     return () => {
@@ -18,7 +18,8 @@ const HeaderImg: React.FC = () => {
   }, []);
 
   return (
-    <div className="w-full h-[1607px] flex justify-center items-start relative -mt-16 !overflow-hidden">
+    <div className="w-full h-[1000px] flex justify-center items-start relative -mt-16 !overflow-hidden"
+    style={{transform:`translateY(${-top*50})`}}>
       {layersData.map((data, index) => {
         return <Layer top={top} index={index} data={data} />;
       })}
