@@ -6,7 +6,7 @@ interface props {
   index: number;
 }
 const Layer: React.FC<props> = ({ data, top, index }) => {
-  const scales = top / 100;
+  const scales = top / 10;
   const translates = (-top * data.speed);
 
   let styles = {};
@@ -24,7 +24,7 @@ const Layer: React.FC<props> = ({ data, top, index }) => {
   }
   if (index === 2) {
     styles = {
-      transform: `translateY(${translates}vw) scale(${1 - scales*10})`,
+      transform: `translateY(${translates}vw) scale(${1 - scales*5})`,
       top: data.top + "vw",
     };
   }
