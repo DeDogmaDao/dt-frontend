@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { tabsType, tabType } from "../../../types/allTypes";
 import deepClone from "lodash/cloneDeep";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -13,6 +13,8 @@ interface props {
 
 const SelectBox: React.FC<props> = ({ data, tabs, setTabs, group }) => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(5);
+  const optionListRef = useRef<HTMLDivElement>(null);
   const btnClickHandler = () => {
     setIsExpanded((prevState) => !prevState);
   };
@@ -21,9 +23,10 @@ const SelectBox: React.FC<props> = ({ data, tabs, setTabs, group }) => {
     const clonedState = deepClone(tabs);
     const newCard = clonedState.map((tab) => {
       if (tab.tabGroup === group) {
-        tab.tabInfo.forEach((item) => {
+        tab.tabInfo.forEach((item, index) => {
           if (item.name === name) {
             item.activeCard = true;
+            setActiveIndex(index);
           } else {
             item.activeCard = false;
           }
@@ -39,7 +42,12 @@ const SelectBox: React.FC<props> = ({ data, tabs, setTabs, group }) => {
       setIsExpanded(false);
     }
   };
+
   useEffect(() => {
+    if (isExpanded === true) {
+      optionListRef.current!.scrollTop = (activeIndex - 2) * 32;
+    }
+    // click outside to close select box
     window.addEventListener("click", windowClickHandler);
 
     return () => {
@@ -63,8 +71,9 @@ const SelectBox: React.FC<props> = ({ data, tabs, setTabs, group }) => {
         <FontAwesomeIcon icon={faAngleDown} />
       </span>
       <div
-        className=" absolute top-full mt-1 left-0 w-full  overflow-y-scroll flex flex-col bg-secondary-900 duration-300 rounded-lg"
-        style={{ height: isExpanded ? 200 : 0 }}
+        ref={optionListRef}
+        className="select-box-container absolute top-full mt-2 left-0 w-full  overflow-y-scroll flex flex-col bg-secondary-900 duration-300 rounded-md"
+        style={{ height: isExpanded ? 150 : 0 }}
       >
         {data.map((option) => {
           return (
