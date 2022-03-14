@@ -34,21 +34,19 @@ const Tabs: React.FC = () => {
           })}
         </LayoutGroup>
       </div>
-      <div className="w-[673px] h-[302px] bg-mainBg-500 mt-16 ">
+      <div className="w-[673px] h-[302px] bg-mainBg-500 mt-16 relative">
         {/* sliding goes here */}
-          {tabs.map((group, groupIndex) => {
-            return group.tabInfo.map((data, index) => {
-              console.log(data.name + index + groupIndex);
-              return (
-                <TabData
-                  key={data.name + index + groupIndex}
-                  keyPresence={data.name + index + groupIndex}
-                  data={data}
-                  activeGroup={group.activeGroup}
-                />
-              );
-            });
-          })}
+        {tabs.map((group, groupIndex) => {
+          return group.tabInfo.map((data, index) => {
+            return (
+              <TabData
+                key={data.name + index + groupIndex}
+                data={data}
+                activeGroup={group.activeGroup}
+              />
+            );
+          });
+        })}
       </div>
 
       {tabs.map((tab) => {

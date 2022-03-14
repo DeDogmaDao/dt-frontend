@@ -5,19 +5,17 @@ import { tabImageContainerAni } from "../../../utils/animation";
 interface props {
   data: tabType;
   activeGroup: boolean;
-  keyPresence: string;
 }
-const TabData: React.FC<props> = ({ data, activeGroup, keyPresence }) => {
+const TabData: React.FC<props> = ({ data, activeGroup }) => {
   return (
     <>
-      <AnimatePresence>
+      <AnimatePresence exitBeforeEnter>
         {data.activeCard && activeGroup && (
-          <motion.div className="w-full h-full flex justify-center items-start gap-36">
+          <motion.div className="w-full h-full flex justify-center items-start gap-36 absolute top-0 left-0">
             <motion.div
               initial="hidden"
               animate="visible"
               exit="out"
-              key={keyPresence}
               variants={tabImageContainerAni}
               className="h-full w-[300px] relative"
             >
