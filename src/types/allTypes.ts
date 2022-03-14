@@ -28,6 +28,8 @@ export interface tabType {
   activeCard: boolean;
   name: string;
   image: string;
+  image2?: string;
+  image3?: string;
   desc: ReactElement<any, any>;
 }
 
