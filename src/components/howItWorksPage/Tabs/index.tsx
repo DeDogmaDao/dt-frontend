@@ -10,9 +10,12 @@ const Tabs: React.FC = () => {
   const [tabs, setTabs] = useState(allTabs);
 
   return (
-    <div className="flex flex-col justify-start items-center h-[1270px] w-full relative">
+    <div className="flex flex-col justify-start items-center h-[1270px] w-full relative gap-y-10">
       <img src="/media/junks/tabs.png" className="absolute right-0 bottom-0" />
-      <img src="/media/junks/tabs.png" className="absolute left-0 scale-x-[-1] bottom-0" />
+      <img
+        src="/media/junks/tabs.png"
+        className="absolute left-0 scale-x-[-1] bottom-0"
+      />
       <h2 className="mt-16 text-3xl">CHOOSE YOUR CARDS</h2>
       <h5 className="mt-12 text-xs underline">
         There are two types in Nepoleia:
@@ -33,16 +36,31 @@ const Tabs: React.FC = () => {
       </div>
       <div className="w-[673px] h-[302px] bg-mainBg-500 mt-16 ">
         {/* sliding goes here */}
-        {tabs.map(group=>{
-          return group.tabInfo.map(data => {
-          return <TabData data={data} activeGroup={group.activeGroup} />  
-          })
-        })}
+          {tabs.map((group, groupIndex) => {
+            return group.tabInfo.map((data, index) => {
+              console.log(data.name + index + groupIndex);
+              return (
+                <TabData
+                  key={data.name + index + groupIndex}
+                  keyPresence={data.name + index + groupIndex}
+                  data={data}
+                  activeGroup={group.activeGroup}
+                />
+              );
+            });
+          })}
       </div>
 
       {tabs.map((tab) => {
         if (!tab.activeGroup) return null;
-        return <SelectBox data={tab.tabInfo} tabs={tabs} setTabs={setTabs} group={tab.tabGroup} />
+        return (
+          <SelectBox
+            data={tab.tabInfo}
+            tabs={tabs}
+            setTabs={setTabs}
+            group={tab.tabGroup}
+          />
+        );
         // return (
         //   <div className="h-11 flex justify-center items-center gap-x-0 text-2xl bg-mainBg-700 rounded-full mt-8">
         //     <LayoutGroup id="eachTab">

@@ -175,3 +175,26 @@ export const eachTabAni: Variants = {
     },
   },
 };
+
+export const tabImageContainerAni: Variants = {
+  hidden: {
+    x: -100,
+    opacity: 0,
+  },
+  visible: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.3,
+      type: "spring",
+      delay:0.2
+    },
+  },
+  out: {
+    x: 100,
+    opacity: 0,
+    transition: {
+      duration: 0.2,
+    },
+  },
+};
