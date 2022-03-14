@@ -18,7 +18,7 @@ const HeaderImg: React.FC = () => {
   }, []);
 
   return (
-    <div className="w-full h-[1000px] flex justify-center items-start relative -mt-16 !overflow-hidden"
+    <div className="w-full h-[70vw] flex justify-center items-start relative -mt-16 !overflow-hidden"
     style={{transform:`translateY(${-top*50})`}}>
       {layersData.map((data, index) => {
         return <Layer top={top} index={index} data={data} />;
