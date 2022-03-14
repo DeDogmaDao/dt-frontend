@@ -51,32 +51,32 @@ const Tabs: React.FC = () => {
 
       {tabs.map((tab) => {
         if (!tab.activeGroup) return null;
-        return (
-          <SelectBox
-            data={tab.tabInfo}
-            tabs={tabs}
-            setTabs={setTabs}
-            group={tab.tabGroup}
-          />
-        );
         // return (
-        //   <div className="h-11 flex justify-center items-center gap-x-0 text-2xl bg-mainBg-700 rounded-full mt-8">
-        //     <LayoutGroup id="eachTab">
-        //       {tab.tabInfo.map((data) => {
-        //         return (
-        //           <EachTab
-        //             group={tab.tabGroup}
-        //             name={data.name}
-        //             activeCard={data.activeCard}
-        //             tabs={tabs}
-        //             setTabs={setTabs}
-        //             cardRef={cardRef}
-        //           />
-        //         );
-        //       })}
-        //     </LayoutGroup>
-        //   </div>
+        //   <SelectBox
+        //     data={tab.tabInfo}
+        //     tabs={tabs}
+        //     setTabs={setTabs}
+        //     group={tab.tabGroup}
+        //   />
         // );
+        return (
+          <div className="h-11 flex justify-center items-center gap-x-0 text-2xl mt-8 relative">
+            <LayoutGroup id="eachTab">
+              {tab.tabInfo.map((data) => {
+                return (
+                  <EachTab
+                    group={tab.tabGroup}
+                    name={data.name}
+                    activeCard={data.activeCard}
+                    tabs={tabs}
+                    setTabs={setTabs}
+                  />
+                );
+              })}
+            </LayoutGroup>
+            <div className="absolute bottom-[-9px] w-[110%]  h-0.5 mx-auto z-100 bg-primText"></div>
+          </div>
+        );
       })}
     </div>
   );

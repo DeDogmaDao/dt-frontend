@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import { RefObject } from "react";
 import { tabsType } from "../../../types/allTypes";
-import deepClone from 'lodash/cloneDeep';
-import { eachTabAni } from "../../../utils/animation";
+import deepClone from "lodash/cloneDeep";
+import underLine from "../../images/Union.png";
 import { useMediaQuery } from "../../../hooks/useMediaQuery";
 interface props {
   group: string;
@@ -18,7 +18,6 @@ const EachTab: React.FC<props> = ({
   setTabs,
   tabs,
 }) => {
-
   // const isSmallDevice = useMediaQuery(746);
 
   const clickHandler = () => {
@@ -40,20 +39,18 @@ const EachTab: React.FC<props> = ({
 
   return (
     <button
-      className={`relative flex justify-center items-center min-w-[80px] h-14 duration-500 ${
-        activeCard ? "text-blackPrime" : ""
+      className={`relative flex justify-center items-center min-w-[80px] h-14 duration-500 
       }`}
       onClick={clickHandler}
     >
       {activeCard && (
-        <motion.div
-          layoutId="eachTab"
-          initial="hidden"
-          animate="visible"
-          exit="out"
-          variants={eachTabAni}
-          className="absolute left-0 bottom-0 w-full h-full bg-white z-0 rounded-full shadow-cycle shadow-slate-200 "
-        ></motion.div>
+        <motion.img
+          src={underLine.src}
+          layoutId={"tabGroup"}
+          className={
+            "absolute left-0 -bottom-4 w-20 h-10 flex justify-center items-start"
+          }
+        />
       )}
       <h4 className="z-10">{name}</h4>
     </button>

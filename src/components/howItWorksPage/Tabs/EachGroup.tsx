@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { tabsType } from "../../../types/allTypes";
-import underLine from "../../images/Union.png";
 import deepClone from 'lodash/cloneDeep';
+import { tabEachGroupAni } from "../../../utils/animation";
 
 interface props {
   name: string;
@@ -29,13 +29,15 @@ const EachGroup: React.FC<props> = ({ name, activeGroup, setTabs, tabs }) => {
     >
       {name}
       {activeGroup && (
-        <motion.img
-          src={underLine.src}
-          layoutId={"tabGroup"}
-          className={
-            "absolute left-0 -bottom-3 w-20 h-3 flex justify-center items-start"
-          }
-        />
+                <motion.div
+                  layoutId="eachTab"
+                  initial="hidden"
+                  animate="visible"
+                  exit="out"
+                  variants={tabEachGroupAni}
+                  className="absolute left-0 bottom-0 w-full h-full bg-white z-0 rounded-full shadow-cycle shadow-slate-200 "
+                ></motion.div>
+        
       )}
     </button>
   );

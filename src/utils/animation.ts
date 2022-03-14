@@ -155,7 +155,7 @@ export const spellAni: Variants = {
   }),
 };
 
-export const eachTabAni: Variants = {
+export const tabEachGroupAni: Variants = {
   hidden: {
     width: "200%",
     transition: {
