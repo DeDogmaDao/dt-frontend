@@ -58,7 +58,9 @@ const SelectBox: React.FC<props> = ({ data, tabs, setTabs, group }) => {
   return (
     <button
       id="tab-select-box"
-      className="w-52 h-8 text-xs flex justify-between px-5 items-center rounded-3xl border-b-2 relative hover:border-primary-500 duration-500"
+      className={`w-52 h-8 text-xs flex justify-between px-5 items-center rounded-3xl border-b-2 relative hover:border-primary-500 duration-500 ${
+        isExpanded ? "border-primary-500" : ""
+      }`}
       onClick={btnClickHandler}
     >
       {data.map((item) => item.activeCard && <p className="">{item.name}</p>)}
