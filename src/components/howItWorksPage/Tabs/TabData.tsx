@@ -2,6 +2,7 @@ import { tabType } from "../../../types/allTypes";
 import { AnimatePresence, motion } from "framer-motion";
 import {
   tabDescContainerAni,
+  tabImageAni,
   tabImageContainerAni,
 } from "../../../utils/animation";
 
@@ -22,23 +23,29 @@ const TabData: React.FC<props> = ({ data, activeGroup }) => {
               variants={tabImageContainerAni}
               className="h-full w-[300px] relative"
             >
-              <img
+              <motion.div className="w-[300px] absolute -bottom-7 -left-10 h-[50%] bg-primary-700 rounded-tl-full rounded-tr-full z-20"></motion.div>
+              <motion.img
+                variants={tabImageAni}
+                custom={0}
                 src={data.image}
-                className="absolute top-0 left-0 h-full w-[225px] z-10 -translate-y-10 drop-shadow-[0px_10px_20px_rgba(255,255,255,0.5)]"
+                className="absolute bottom-0 left-0 h-full w-[225px] z-10 -translate-y-10 drop-shadow-[0px_10px_20px_rgba(255,255,255,0.5)]"
               />
               {data.image2 && (
-                <img
+                <motion.img
+                  variants={tabImageAni}
+                  custom={1}
                   src={data.image2}
-                  className="absolute top-0 left-0 h-full w-[225px] translate-x-32 rotate-[30deg] scale-75 drop-shadow-[0px_10px_20px_rgba(255,255,255,0.5)]"
+                  className="absolute bottom-0 left-0 h-full w-[225px] translate-x-32 rotate-[30deg] scale-75 drop-shadow-[0px_10px_20px_rgba(255,255,255,0.5)]"
                 />
               )}
               {data.image3 && (
-                <img
+                <motion.img
+                  variants={tabImageAni}
+                  custom={2}
                   src={data.image3}
-                  className="absolute top-0 left-0 h-full w-[225px] -translate-x-32 rotate-[-30deg] scale-75 drop-shadow-[0px_10px_20px_rgba(255,255,255,0.5)]"
+                  className="absolute bottom-0 left-0 h-full w-[225px] -translate-x-32 rotate-[-30deg] scale-75 drop-shadow-[0px_10px_20px_rgba(255,255,255,0.5)]"
                 />
               )}
-              <div className="w-[300px] absolute -bottom-7 -left-10 h-[50%] bg-primary-700 rounded-tl-full rounded-tr-full z-20"></div>
             </motion.div>
             <motion.div
               initial="hidden"

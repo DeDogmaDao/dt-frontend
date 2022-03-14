@@ -188,6 +188,8 @@ export const tabImageContainerAni: Variants = {
     transition: {
       duration: 0.3,
       type: "spring",
+      when: "beforeChildren",
+      staggerChildren: 0.2,
     },
   },
   out: {
@@ -218,4 +220,18 @@ export const tabDescContainerAni: Variants = {
       duration: 0.3,
     },
   },
+};
+export const tabImageAni: Variants = {
+  hidden: (custom) => ({
+    height: 0,
+    opacity: 0.2,
+  }),
+  visible: (custom) => ({
+    height: "100%",
+    opacity: 1,
+    transition: {
+      duration: 0.3,
+      type: "spring",
+    },
+  }),
 };
