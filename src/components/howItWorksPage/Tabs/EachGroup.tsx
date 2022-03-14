@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { tabsType } from "../../../types/allTypes";
-import deepClone from 'lodash/cloneDeep';
+import deepClone from "lodash/cloneDeep";
 import { tabEachGroupAni } from "../../../utils/animation";
 
 interface props {
@@ -24,20 +24,22 @@ const EachGroup: React.FC<props> = ({ name, activeGroup, setTabs, tabs }) => {
   };
   return (
     <button
-      className="relative flex justify-center items-center"
+      className={`relative flex justify-center items-center p-3`}
       onClick={clickHandler}
     >
-      {name}
+      <p className={`text-3xl z-10 ${activeGroup && "text-blackPrime"}`}>
+        {name}
+      </p>
       {activeGroup && (
-                <motion.div
-                  layoutId="eachTab"
-                  initial="hidden"
-                  animate="visible"
-                  exit="out"
-                  variants={tabEachGroupAni}
-                  className="absolute left-0 bottom-0 w-full h-full bg-white z-0 rounded-full shadow-cycle shadow-slate-200 "
-                ></motion.div>
-        
+        <motion.div
+          layoutId="eachTab"
+          initial="hidden"
+          animate="visible"
+          exit="out"
+          variants={tabEachGroupAni}
+          className={`absolute left-0 bottom-0 w-full h-full bg-primText z-0 rounded-full shadow-cycle shadow-slate-200
+          `}
+        ></motion.div>
       )}
     </button>
   );
