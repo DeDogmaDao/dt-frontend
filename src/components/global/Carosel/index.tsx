@@ -12,14 +12,14 @@ const Carosel: React.FC<props> = ({ allData, initialQuantity, Item }) => {
     quantity: initialQuantity,
   });
   const [isPlaying, setIsPlaying] = useState(true);
-  const [rtl, setRtl] = useState(false);
 
   //check to see if we are in small device or large one to decide how many data should load
   let isSmallDevice = false;
 
   // START of  carosel : isdown check the mouse key down , startx is the scrill left at the beggining of mouse key down and scroll left is the current scroll left
-  let isDown = false;
-  let startx: number, scrollLeft: number;
+  const [isDown, setIsDown] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
 
   useEffect(() => {
     isSmallDevice = document.documentElement.clientWidth <= 768;
@@ -37,16 +37,16 @@ const Carosel: React.FC<props> = ({ allData, initialQuantity, Item }) => {
   //on mouse down we set startx and scrollLeft , then we update scrollLeft later but we dont update startx bcs it is constant from a click down to click up
   const caroselMouseDownHandler = (e: any) => {
     e.preventDefault();
-    isDown = true;
-    startx = e.pageX - rightLeftScroll.current!.offsetLeft;
-    scrollLeft = rightLeftScroll.current!.scrollLeft;
+    setIsDown(true);
+    setStartX(e.pageX - rightLeftScroll.current!.offsetLeft);
+    setScrollLeft(rightLeftScroll.current!.scrollLeft);
     setIsPlaying(false);
   };
 
   //we put wastfullCover to avoid triger click action . bcs click happen wen we mouse down and mouse up on the same object
   //... so this 0 opacity cover help us to don't mouse up at the same object
   const caroselMouseLeaveHandler = () => {
-    isDown = false;
+    setIsDown(false);
     wastefulCover.current!.style.display = "none";
   };
 
@@ -54,7 +54,7 @@ const Carosel: React.FC<props> = ({ allData, initialQuantity, Item }) => {
   //... so this 0 opacity cover help us to don't mouse up at the same object
   // we also update the state, we load all the data if user dragging the carosel
   const caroselMouseUpHandler = () => {
-    isDown = false;
+    setIsDown(false);
 
     wastefulCover.current!.style.display = "none";
 
@@ -65,7 +65,7 @@ const Carosel: React.FC<props> = ({ allData, initialQuantity, Item }) => {
     if (!isDown) return;
     e.preventDefault();
     const x = e.pageX - rightLeftScroll.current!.offsetLeft;
-    const walk = (x - startx) * 1.5;
+    const walk = (x - startX) * 1.5;
     rightLeftScroll.current!.scrollLeft = scrollLeft - walk;
     wastefulCover.current!.style.display = "block";
   };
