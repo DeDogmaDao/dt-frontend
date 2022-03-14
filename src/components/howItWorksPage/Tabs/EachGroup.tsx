@@ -24,16 +24,16 @@ const EachGroup: React.FC<props> = ({ name, activeGroup, setTabs, tabs }) => {
   };
   return (
     <button
-      className={`relative flex justify-center items-center p-3`}
+      className={`relative flex justify-center items-center p-4`}
       onClick={clickHandler}
     >
-      <p className={`text-3xl z-10 ${activeGroup && "text-blackPrime"}`}>
+      <p className={`text-sm font-normal z-10 ${activeGroup && "text-blackPrime"}`}>
         {name}
       </p>
       {activeGroup && (
         <motion.div
           layoutId="eachGroup"
-          className={`absolute left-0 bottom-0 w-full h-full bg-primText z-0 rounded-full shadow-cycle shadow-slate-200
+          className={`absolute flex justify-center items-center w-full h-7 bg-primText z-0 rounded-full shadow-cycle shadow-slate-200
           `}
         ></motion.div>
       )}

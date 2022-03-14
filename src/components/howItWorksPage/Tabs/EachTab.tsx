@@ -52,7 +52,7 @@ const EachTab: React.FC<props> = ({
           }
         />
       )}
-      <h4 className="z-10">{name}</h4>
+      <h4 className="z-10 text-sm">{name}</h4>
     </button>
   );
 };
