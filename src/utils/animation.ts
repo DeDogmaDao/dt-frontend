@@ -157,7 +157,7 @@ export const spellAni: Variants = {
 
 export const tabEachGroupAni: Variants = {
   hidden: {
-    width: "200%",
+    width: "50%",
     transition: {
       duration: 0.5,
     },

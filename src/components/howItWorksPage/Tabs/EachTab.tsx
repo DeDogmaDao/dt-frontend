@@ -46,7 +46,7 @@ const EachTab: React.FC<props> = ({
       {activeCard && (
         <motion.img
           src={underLine.src}
-          layoutId={"tabGroup"}
+          layoutId={"eachGroup"}
           className={
             "absolute left-0 -bottom-4 w-20 h-10 flex justify-center items-start"
           }

@@ -32,11 +32,7 @@ const EachGroup: React.FC<props> = ({ name, activeGroup, setTabs, tabs }) => {
       </p>
       {activeGroup && (
         <motion.div
-          layoutId="eachTab"
-          initial="hidden"
-          animate="visible"
-          exit="out"
-          variants={tabEachGroupAni}
+          layoutId="eachGroup"
           className={`absolute left-0 bottom-0 w-full h-full bg-primText z-0 rounded-full shadow-cycle shadow-slate-200
           `}
         ></motion.div>

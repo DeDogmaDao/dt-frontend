@@ -21,7 +21,7 @@ const Tabs: React.FC = () => {
         There are two types in Nepoleia:
       </h5>
       <div className="h-11 flex justify-center items-center gap-x-10 text-2xl mt-4">
-        <LayoutGroup id="tabGroup">
+        <LayoutGroup id="eachGroup">
           {tabs.map((data) => {
             return (
               <EachGroup
