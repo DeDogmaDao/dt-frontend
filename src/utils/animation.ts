@@ -176,6 +176,7 @@ export const eachTabAni: Variants = {
   },
 };
 
+// page: howItWorks / comp: Tabs
 export const tabImageContainerAni: Variants = {
   hidden: {
     translateY: -200,
@@ -191,6 +192,27 @@ export const tabImageContainerAni: Variants = {
   },
   out: {
     translateY: 200,
+    opacity: 0,
+    transition: {
+      duration: 0.3,
+    },
+  },
+};
+export const tabDescContainerAni: Variants = {
+  hidden: {
+    translateX: 200,
+    opacity: 0.2,
+  },
+  visible: {
+    translateX: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.3,
+      type: "spring",
+    },
+  },
+  out: {
+    translateX: -50,
     opacity: 0,
     transition: {
       duration: 0.3,

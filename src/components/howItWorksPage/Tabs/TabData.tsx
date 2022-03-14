@@ -1,6 +1,9 @@
 import { tabType } from "../../../types/allTypes";
 import { AnimatePresence, motion } from "framer-motion";
-import { tabImageContainerAni } from "../../../utils/animation";
+import {
+  tabDescContainerAni,
+  tabImageContainerAni,
+} from "../../../utils/animation";
 
 interface props {
   data: tabType;
@@ -37,10 +40,16 @@ const TabData: React.FC<props> = ({ data, activeGroup }) => {
               )}
               <div className="w-[300px] absolute -bottom-7 -left-10 h-[50%] bg-primary-700 rounded-tl-full rounded-tr-full z-20"></div>
             </motion.div>
-            <div className="flex flex-col gap-y-8 w-[385px]">
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              exit="out"
+              variants={tabDescContainerAni}
+              className="flex flex-col gap-y-8 w-[385px]"
+            >
               <h4 className="text-2xl">{data.name}</h4>
               <div className="w-full">{data.desc}</div>
-            </div>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
