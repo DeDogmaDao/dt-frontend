@@ -179,6 +179,10 @@ export const tabEachGroupAni: Variants = {
 export const tabGroupAni: Variants = {
   hidden: {
     rotateY: "0deg",
+    transition: {
+      type: "spring",
+      stiffness: 200,
+    },
   },
   right: {
     rotateY: "15deg",
@@ -192,7 +196,6 @@ export const tabGroupAni: Variants = {
       duration: 0.3,
     },
   },
-
 };
 
 // page: howItWorks / comp: Tabs
