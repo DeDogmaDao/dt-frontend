@@ -185,18 +185,35 @@ export const tabGroupAni: Variants = {
     },
   },
   right: {
-    rotateY: "15deg",
+    rotateY: "20deg",
     transition: {
       duration: 0.3,
     },
   },
   left: {
-    rotateY: "-15deg",
+    rotateY: "-20deg",
     transition: {
       duration: 0.3,
     },
   },
 };
+
+export const tabBlastAni:Variants = {
+  hidden: {
+    scale:0,
+    opacity:0.5,
+  },
+  visible:{
+    scale:3.5,
+    opacity:0,
+    transition:{
+      duration:0.8,
+      delay:0.2,
+      ease:[.45,.73,.4,.9]
+    },
+
+  },
+}
 
 // page: howItWorks / comp: Tabs
 export const tabImageContainerAni: Variants = {
