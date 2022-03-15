@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { allTabs } from "../../../store/allData";
 import EachGroup from "./EachGroup";
 import EachTab from "./EachTab";
+import Group from "./Group";
 import SelectBox from "./SelectBox";
 import TabData from "./TabData";
 
@@ -20,9 +21,7 @@ const Tabs: React.FC = () => {
       <h5 className="mt-12 text-xs underline">
         There are two types in Nepoleia:
       </h5>
-      <motion.div
-      whileTap={{rotateY:"40deg", transition:{duration:0.1}}}
-      className="h-11 flex justify-center items-center gap-x-3 text-2xl mt-4 bg-secondary-800 rounded-full px-3">
+      <Group tabs={tabs}>
         <LayoutGroup id="eachGroup">
           {tabs.map((data) => {
             return (
@@ -35,7 +34,7 @@ const Tabs: React.FC = () => {
             );
           })}
         </LayoutGroup>
-      </motion.div>
+      </Group>
       <div className="w-[673px] h-[302px] bg-mainBg-500 mt-16 relative">
         {/* sliding goes here */}
         {tabs.map((group, groupIndex) => {

@@ -176,6 +176,25 @@ export const tabEachGroupAni: Variants = {
   },
 };
 
+export const tabGroupAni: Variants = {
+  hidden: {
+    rotateY: "0deg",
+  },
+  right: {
+    rotateY: "15deg",
+    transition: {
+      duration: 0.3,
+    },
+  },
+  left: {
+    rotateY: "-15deg",
+    transition: {
+      duration: 0.3,
+    },
+  },
+
+};
+
 // page: howItWorks / comp: Tabs
 export const tabImageContainerAni: Variants = {
   hidden: {
