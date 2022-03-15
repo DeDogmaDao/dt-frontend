@@ -9,12 +9,12 @@ const Group: React.FC<props> = ({ children, tabs }) => {
   const controls = useAnimation();
   useEffect(() => {
     if (tabs[0].activeGroup === true) {
-      controls.start("left").then(()=>{
-          controls.start("hidden")
-      })
+      controls.start("left").then(() => {
+        controls.start("hidden");
+      });
     } else {
-      controls.start("right").then(()=>{
-          controls.start("hidden")
+      controls.start("right").then(() => {
+        controls.start("hidden");
       });
     }
   }, [tabs[0].activeGroup]);

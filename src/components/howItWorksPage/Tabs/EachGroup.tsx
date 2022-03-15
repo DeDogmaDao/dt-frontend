@@ -49,7 +49,7 @@ const EachGroup: React.FC<props> = ({ name, activeGroup, setTabs, tabs }) => {
 
           <motion.div
             layoutId="eachGroup"
-            transition={{type:"spring", stiffness:150}}
+            transition={{ type: "spring", stiffness: 150 }}
             className={`absolute flex justify-center items-center w-full h-7 bg-primText z-0 rounded-full shadow-cycle shadow-slate-200
           `}
           ></motion.div>

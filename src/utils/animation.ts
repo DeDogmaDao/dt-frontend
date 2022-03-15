@@ -198,22 +198,21 @@ export const tabGroupAni: Variants = {
   },
 };
 
-export const tabBlastAni:Variants = {
+export const tabBlastAni: Variants = {
   hidden: {
-    scale:0,
-    opacity:0.5,
+    scale: 0,
+    opacity: 0.5,
   },
-  visible:{
-    scale:3.5,
-    opacity:0,
-    transition:{
-      duration:0.8,
-      delay:0.2,
-      ease:[.45,.73,.4,.9]
+  visible: {
+    scale: 3.5,
+    opacity: 0,
+    transition: {
+      duration: 0.8,
+      delay: 0,
+      ease: [0.45, 0.73, 0.4, 0.9],
     },
-
   },
-}
+};
 
 // page: howItWorks / comp: Tabs
 export const tabImageContainerAni: Variants = {
