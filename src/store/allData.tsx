@@ -398,27 +398,27 @@ export const allTabs: tabsType[] = [
 export const layersData: layersType[] = [
   {
     image: "1.png",
-    speed: 2,
+    speed: 10,
     top:0
   },
   {
     image: "2.png",
-    speed: 30,
-    top:-10
+    speed: 5,
+    top:0
   },
   {
     image: "3.png",
-    speed: 6,
+    speed: 0,
     top:-28
   },
   {
     image: "4.png",
-    speed: 10,
+    speed: -0.2,
     top:-28
   },
   {
     image: "5.png",
-    speed: 20,
+    speed: 4.5,
     top:-28
   },
 

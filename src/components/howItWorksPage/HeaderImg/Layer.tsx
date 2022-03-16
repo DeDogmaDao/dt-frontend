@@ -12,8 +12,11 @@ const Layer: React.FC<props> = ({ data, top, index }) => {
   let styles = {};
   if (index === 0) {
     styles = {
-      transform: `translateY(${translates}vw)`,
+      transform: `translateY(${translates}vw) scale(${1 - scales})`,
       top: data.top + "vw",
+      width: "140vw",
+      maxWidth: "140vw",
+      height:1200/1920 * 100 + "vw",
     };
   }
   if (index === 1) {
@@ -37,9 +40,7 @@ const Layer: React.FC<props> = ({ data, top, index }) => {
   if (index === 4) {
     styles = {
       transform: `translateY(${translates}vw) scale(${1 - scales})`,
-      left: "-15%",
       top: data.top + "vw",
-      marginLeft: "0vw",
       width: "140vw",
       maxWidth: "140vw",
     };
