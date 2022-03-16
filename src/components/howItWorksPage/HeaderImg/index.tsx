@@ -41,13 +41,13 @@ const HeaderImg: React.FC = () => {
   useEffect(() => {
     const throttleScroll = throttle(topTransformScroll, 10);
     const throttleWheel = throttle((e) => topTransformWheel(e), 20);
+    window.addEventListener("scroll", throttleScroll);
 
     if (isScrollNormal === false) {
       window.addEventListener("mousewheel", throttleWheel, { passive: false });
       window.addEventListener("DOMMouseScroll", throttleWheel, {
         passive: false,
       });
-      window.addEventListener("scroll", throttleScroll);
     }
 
     return () => {
