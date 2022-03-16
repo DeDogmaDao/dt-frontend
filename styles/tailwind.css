@@ -23,6 +23,9 @@
 }
 
 @layer base {
+  html {
+  scroll-behavior:smooth;
+  }
   h1 {
     @apply text-5xl font-medium leading-7;
   }
