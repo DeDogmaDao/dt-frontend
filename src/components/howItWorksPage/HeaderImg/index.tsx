@@ -34,10 +34,19 @@ const HeaderImg: React.FC = () => {
       throttle((e) => topTransform(e), 10),
       { passive: false }
     );
+    window.addEventListener(
+      "DOMMouseScroll",
+      throttle((e) => topTransform(e), 10),
+      { passive: false }
+    );
     window.addEventListener("scroll", throttle(topTransformScroll, 10));
     return () => {
       window.removeEventListener(
         "mousewheel",
+        throttle((e) => topTransform(e), 10)
+      );
+      window.removeEventListener(
+        "DOMMouseScroll",
         throttle((e) => topTransform(e), 10)
       );
       window.removeEventListener("scroll", throttle(topTransformScroll, 10));
