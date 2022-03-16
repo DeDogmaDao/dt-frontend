@@ -27,3 +27,22 @@ export const delay = (ms: number) => {
 //     await delay(2000);
 //   }
 // }
+
+export const topTransformWheel = (evt: any) => {
+  evt.preventDefault();
+  var direction = evt.detail < 0 || evt.wheelDelta > 0 ? 1 : -1;
+
+  if (direction > 0) {
+    window.scrollTo({
+      top: window.scrollY - 30,
+      left: 0,
+      behavior: "smooth",
+    });
+  } else {
+    window.scrollTo({
+      top: window.scrollY + 30,
+      left: 0,
+      behavior: "smooth",
+    });
+  }
+};
