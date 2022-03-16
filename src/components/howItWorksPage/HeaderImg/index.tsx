@@ -6,7 +6,7 @@ import throttle from "lodash/throttle";
 
 const HeaderImg: React.FC = () => {
   const [top, setTop] = useState(0);
-  const topTransform = (evt: any) => {
+  const topTransformWheel = (evt: any) => {
     evt.preventDefault();
     var direction = evt.detail < 0 || evt.wheelDelta > 0 ? 1 : -1;
 
@@ -29,27 +29,17 @@ const HeaderImg: React.FC = () => {
   };
 
   useEffect(() => {
-    window.addEventListener(
-      "mousewheel",
-      throttle((e) => topTransform(e), 10),
-      { passive: false }
-    );
-    window.addEventListener(
-      "DOMMouseScroll",
-      throttle((e) => topTransform(e), 10),
-      { passive: false }
-    );
-    window.addEventListener("scroll", throttle(topTransformScroll, 10));
+    const throttleScroll = throttle(topTransformScroll, 10);
+    const throttleWheel = throttle((e) => topTransformWheel(e), 20);
+    window.addEventListener("mousewheel", throttleWheel, { passive: false });
+    window.addEventListener("DOMMouseScroll", throttleWheel, {
+      passive: false,
+    });
+    window.addEventListener("scroll", throttleScroll);
     return () => {
-      window.removeEventListener(
-        "mousewheel",
-        throttle((e) => topTransform(e), 10)
-      );
-      window.removeEventListener(
-        "DOMMouseScroll",
-        throttle((e) => topTransform(e), 10)
-      );
-      window.removeEventListener("scroll", throttle(topTransformScroll, 10));
+      window.removeEventListener("mousewheel", throttleWheel);
+      window.removeEventListener("DOMMouseScroll", throttleWheel);
+      window.removeEventListener("scroll", throttleScroll);
     };
   }, []);
 
