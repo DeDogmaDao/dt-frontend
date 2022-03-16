@@ -408,7 +408,7 @@ export const layersData: layersType[] = [
   },
   {
     image: "3.png",
-    speed: 0,
+    speed: -5,
     top:-28
   },
   {
