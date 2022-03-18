@@ -60,7 +60,7 @@ const HeaderImg: React.FC = () => {
   return (
     <div
       ref={layerContainerRef}
-      className="w-full h-[80vw] bg-red-700 flex justify-center items-start relative -mt-16 !overflow-hidden"
+      className="w-full h-[80vw]  flex justify-center items-start relative -mt-16 !overflow-hidden"
     >
       {layersData.map((data, index) => {
         return <Layer top={top} index={index} data={data} />;
@@ -71,11 +71,11 @@ const HeaderImg: React.FC = () => {
       </div>
       <span
         ref={greenRef}
-        className="w-full h-1 bg-green-500 absolute top-[30vw] left-0 z-100"
+        className="w-full h-1  absolute top-[30vw] left-0 z-100"
       ></span>
       <span
         ref={yellowRef}
-        className="w-full h-1 bg-yellow-500 absolute top-[75vw] left-0 z-100"
+        className="w-full h-1  absolute top-[75vw] left-0 z-100"
       ></span>
     </div>
   );
