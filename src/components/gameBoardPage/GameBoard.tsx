@@ -23,12 +23,12 @@ const GameBoard: React.FC = () => {
   });
   return (
     <LayoutGroup>
-      <div className="flex justify-between items-center w-screen h-[calc(900/1920*100vw)]">
-        <div className="w-1/3 h-full bg-green-900 flex justify-center items-start flex-wrap relative z-100">
-          <img
-            src="/media/bg/game2.jpg"
-            className="absolute top-0 left-0 w-full h-full"
-          />
+      <div className="flex justify-between items-center w-screen h-[calc(900/1920*100vw)] relative">
+        <img
+          src="/media/bg/game.jpg"
+          className="absolute top-0 left-0 w-full h-full"
+        />
+        <div className="w-1/3 h-full flex justify-center items-start flex-wrap relative z-10">
           {gameCardData.map((data, index) => {
             return (
               <CardGame
@@ -45,12 +45,7 @@ const GameBoard: React.FC = () => {
           })}
           <div className="w-[12vw] h-[17vw] absolute top-[15vw] left-[13.2vw] -ml-14 bg-red-500/50"></div>
         </div>
-        <div className="w-2/3 h-full bg-red-900 flex justify-center items-start relative z-10">
-          <img
-            src="/media/bg/game1.png"
-            className="absolute top-0 left-0 w-full h-full"
-          />
-
+        <div className="w-2/3 h-full  flex justify-center items-start relative z-10">
           <DoorSpells
             spells={topSpells}
             right={0}
