@@ -23,12 +23,20 @@ const GameBoard: React.FC = () => {
   });
   return (
     <LayoutGroup>
-      <div className="flex justify-between items-center w-screen h-[calc(900/1920*100vw)] relative">
+      <div
+        className="flex justify-between items-center w-screen h-[calc(900/1920*100vw)] relative"
+
+      >
         <img
           src="/media/bg/game.jpg"
           className="absolute top-0 left-0 w-full h-full"
         />
-        <div className="w-1/3 h-full flex justify-center items-start flex-wrap relative z-10">
+        <div className="w-1/3 h-full flex justify-center items-start flex-wrap relative z-10"
+                      style={{
+                        transformStyle: "preserve-3d",
+                        perspective: "500px",
+                        perspectiveOrigin: "center",
+                      }}>
           {gameCardData.map((data, index) => {
             return (
               <CardGame
@@ -76,14 +84,7 @@ const GameBoard: React.FC = () => {
           />
 
           <div className="absolute left-[30%] top-[8%] w-full h-full">
-            <div
-              className="relative w-full h-full"
-              style={{
-                transformStyle: "preserve-3d",
-                perspective: "500px",
-                perspectiveOrigin: "center",
-              }}
-            >
+            <div className="relative w-full h-full">
               {/* {gameCardData.map((data, index) => {
                 return (
                   <CardGame
