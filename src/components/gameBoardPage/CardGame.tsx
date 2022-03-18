@@ -62,7 +62,7 @@ const CardGame: React.FC<props> = ({
           ...prevState,
           [data.spellGroup]: data.total,
         }));
-      }, 2500);
+      }, 1000);
       setTimeout(() => {
         setStage(2);
       }, 9000);
@@ -73,6 +73,7 @@ const CardGame: React.FC<props> = ({
   const styles = {
     left: 6.55 + (column % 3) * 6.7 + "vw",
     top: 4 + cardIndex / 50 + "vw",
+    zIndex:cardIndex
   };
   const spellStyles = (spellIndex: number) => {
     const column = (spellIndex % 3) + 1;
