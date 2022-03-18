@@ -77,8 +77,8 @@ const CardGame: React.FC<props> = ({
   const spellStyles = (spellIndex: number) => {
     const column = (spellIndex % 3) + 1;
     return {
-      right: 70 - column * 5,
-      bottom: -50 + Math.floor(spellIndex / 3) * 10,
+      right: 5 - column * 0.5 + "vw",
+      bottom: -5 + Math.floor(spellIndex / 3) * 0.5 + "vw",
       width: 0.2 + "vw",
       height: 0.2 + "vw",
     };
@@ -91,7 +91,7 @@ const CardGame: React.FC<props> = ({
       animate={aniControls}
       variants={gameCardAni}
       custom={cardIndex}
-      className="w-20 flex flex-col justify-center items-center text-white absolute z-10"
+      className="w-[5.15vw] flex flex-col justify-center items-center text-white absolute z-10"
       style={styles}
     >
       <motion.div
