@@ -62,7 +62,7 @@ const CardGame: React.FC<props> = ({
           ...prevState,
           [data.spellGroup]: data.total,
         }));
-      }, 1000);
+      }, 2500);
       setTimeout(() => {
         setStage(2);
       }, 9000);
@@ -85,14 +85,15 @@ const CardGame: React.FC<props> = ({
   };
   return (
     <motion.div
-      layout
+      
       onAnimationComplete={cardAnimHandler}
       initial="hidden"
       animate={aniControls}
       variants={gameCardAni}
-      custom={cardIndex}
+      custom={{cardIndex:cardIndex,styles:styles}}
       className="w-[5.15vw] flex flex-col justify-center items-center text-white absolute z-10"
       style={styles}
+      
     >
       <motion.div
         transition={{ duration: 1 }}

@@ -43,7 +43,7 @@ const GameBoard: React.FC = () => {
               />
             );
           })}
-          <div className="w-28 h-36 absolute bottom-40 left-1/2 -ml-14 bg-red-500/50"></div>
+          <div className="w-[12vw] h-[17vw] absolute top-[15vw] left-[13.2vw] -ml-14 bg-red-500/50"></div>
         </div>
         <div className="w-2/3 h-full bg-red-900 flex justify-center items-start relative z-10">
           <img

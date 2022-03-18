@@ -82,21 +82,24 @@ export const gameCardAni: Variants = {
       duration: 0.5,
     },
   },
-  visible: (custom: number) => ({
+  visible: (custom: { cardIndex: number; styles: any }) => ({
     translateX: "0px",
     translateY: "0px",
     transition: {
       duration: 0.1,
-      delay: custom * 0.1 + 2,
+      delay: custom.cardIndex * 0.1 + 2,
     },
   }),
-  stage1: {
-    left: 100,
-    top: "70%",
+  stage1: (custom: { cardIndex: number; styles: any }) => ({
+    left: [custom.styles.left, "20vw", "13vw"],
+    scale: [1, 1.5, 2.5],
+    top: [custom.styles.top, "-5vw", "20vw"],
     transition: {
       duration: 0.5,
+      times: [0, 0.8, 1],
+      ease: "easeInOut",
     },
-  },
+  }),
 };
 export const newGameCardAni: Variants = {
   hidden: (custom) => ({
