@@ -25,7 +25,7 @@ const CardGame: React.FC<props> = ({
 }) => {
   // states
   const [once, setOnce] = useState(false);
-  const column = (cardIndex % 4) + 1;
+  const column = (cardIndex % 3) + 1;
   const [stage, setStage] = useState(0);
   const aniControls = useAnimation();
 
@@ -58,10 +58,10 @@ const CardGame: React.FC<props> = ({
     if (stage === 1 && !once) {
       aniControls.start("stage1");
       setTimeout(() => {
-        setSpellNumber((prevState)=>({
+        setSpellNumber((prevState) => ({
           ...prevState,
-          [data.spellGroup]:data.total
-        }))
+          [data.spellGroup]: data.total,
+        }));
       }, 1000);
       setTimeout(() => {
         setStage(2);
@@ -71,8 +71,8 @@ const CardGame: React.FC<props> = ({
   }
 
   const styles = {
-    left: 50 + ((column % 2) * 170 + cardIndex),
-    top: 150 + ((Math.floor(column / 2 + 0.5) - 1) * 150 + cardIndex),
+    left: 6.55 + (column % 3) * 6.7 + "vw",
+    top: 4 + cardIndex / 50 + "vw",
   };
   const spellStyles = (spellIndex: number) => {
     const column = (spellIndex % 3) + 1;
