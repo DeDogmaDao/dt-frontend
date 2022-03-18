@@ -37,7 +37,7 @@ const Spell: React.FC<props> = ({
         <motion.div
           layoutId={`${spellGroup}${spellIndex}`}
           // @ts-ignore
-          transition={{ duration: 5, ease:[.92,.08,.59,.88], type:"spring", stiffness:(spellIndex%3+1) * 200, mass:10, damping:40, velocity:-10 }}
+          transition={{ duration: 5, ease:[.92,.08,.59,.88], type:"spring", stiffness:(spellIndex%3+1) * 200 *(Math.floor(Math.random()*4 + 7)/10), mass:10 * (Math.floor(Math.random()*4 + 7)/10), damping:40 * (Math.floor(Math.random()*4 + 7)/10), velocity:-10 }}
           initial="hidden"
           animate="visible"
           variants={spellAni}

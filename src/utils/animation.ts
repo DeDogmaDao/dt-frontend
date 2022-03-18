@@ -95,15 +95,15 @@ export const gameCardAni: Variants = {
     z: [-0.1, -0.1, 20],
     scale: [1, 1.5, 2.5],
     top: [custom.styles.top, "-5.5vw", "20vw"],
-    rotateY:["0deg","0deg","180deg"],
+    rotateY: ["0deg", "0deg", "180deg"],
     transition: {
       duration: 0.7,
       times: [0, 0.5, 1],
       ease: "easeOut",
     },
-    transitionEnd:{
-      z:0
-    }
+    transitionEnd: {
+      z: 0,
+    },
   }),
 };
 export const newGameCardAni: Variants = {
@@ -132,14 +132,14 @@ export const newGameCardAni: Variants = {
 
 export const spellAni: Variants = {
   hidden: {
-    x: -90,
-    y: -90,
+    x: 0,
+    y: 0,
     scale: 1,
   },
   visible: (custom) => ({
-    x: 0,
-    y: 0,
-    scale: [2, 3, 1],
+    x: [0, 20 * custom.num, 0],
+    y: [0, -20 * custom.num, 0],
+    scale: [1.5, 2.5, 1],
     boxShadow: [
       `0px 0px 5px 5px ${custom.color}`,
       `0px 0px 2px 2px ${custom.color}`,
@@ -147,11 +147,11 @@ export const spellAni: Variants = {
     ],
     transition: {
       boxShadow: {
-        times: [0.5, 0.5, 0.9],
+        times: [0.3, 0.6, 1],
         duration: 4,
       },
       default: {
-        times: [0.1, 0.9, 0.2],
+        times: [0.3, 0.6, 1],
         duration: 2,
         delay: custom.num * 0.3,
         type: "spring",
