@@ -95,7 +95,7 @@ export const gameCardAni: Variants = {
     z: [-0.1, -0.1, 20],
     scale: [1, 1.5, 2.5],
     top: [custom.styles.top, "-5.5vw", "20vw"],
-    rotateY: ["0deg", "0deg", "180deg"],
+    rotateY: ["0deg", "0deg", "360deg"],
     transition: {
       duration: 0.7,
       times: [0, 0.5, 1],

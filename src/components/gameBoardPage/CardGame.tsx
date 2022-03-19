@@ -117,6 +117,12 @@ const CardGame: React.FC<props> = ({
           src={data.image}
           loading="lazy"
         />
+        <motion.span layoutId="communityNum" className="absolute bottom-0 left-[0.3vw] ">
+          {data.communityNum}
+        </motion.span>
+        <motion.span layoutId="individualNum" className="absolute bottom-0 right-[0.5vw] ">
+          {data.individualNum}
+        </motion.span>
       </motion.div>
     </motion.div>
   );
