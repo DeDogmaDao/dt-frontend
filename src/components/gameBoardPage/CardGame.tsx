@@ -2,6 +2,7 @@ import { motion, useAnimation, Variants } from "framer-motion";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { gameCardType, spellNumber } from "../../types/allTypes";
 import { gameCardAni, newGameCardAni } from "../../utils/animation";
+import CardNum from "./CardNum";
 import Spell from "./Spell";
 
 interface props {
@@ -83,17 +84,25 @@ const CardGame: React.FC<props> = ({
       height: 0.2 + "vw",
     };
   };
+
+  const communityNumStyles: React.CSSProperties = {
+    left: "0.3vw",
+    bottom: "0vw",
+  };
+  const individualNumStyles: React.CSSProperties = {
+    right: "0.5vw",
+    bottom: "0vw",
+  };
+
   return (
     <motion.div
-      
       onAnimationComplete={cardAnimHandler}
       initial="hidden"
       animate={aniControls}
       variants={gameCardAni}
-      custom={{cardIndex:cardIndex,styles:styles}}
+      custom={{ cardIndex: cardIndex, styles: styles }}
       className="w-[5.15vw] flex flex-col justify-center items-center text-white absolute z-10"
       style={styles}
-      
     >
       <motion.div
         transition={{ duration: 1 }}
@@ -117,12 +126,12 @@ const CardGame: React.FC<props> = ({
           src={data.image}
           loading="lazy"
         />
-        <motion.span layoutId="communityNum" className="absolute bottom-0 left-[0.3vw] ">
-          {data.communityNum}
-        </motion.span>
-        <motion.span layoutId="individualNum" className="absolute bottom-0 right-[0.5vw] ">
-          {data.individualNum}
-        </motion.span>
+        {stage === 1 && (
+          <>
+            <CardNum num={data.communityNum} styles={communityNumStyles} layoutID="communityNum" showHidden={true} />
+            <CardNum num={data.individualNum} styles={individualNumStyles} layoutID="individualNum" showHidden={true} />
+          </>
+        )}
       </motion.div>
     </motion.div>
   );
