@@ -14,6 +14,7 @@ import {
   topRightSpell,
 } from "../../utils/game";
 import { spellNumber } from "../../types/allTypes";
+import Calculation from "./Calculation";
 
 const GameBoard: React.FC = () => {
   const [turnNumber, setTurnNumber] = useState<number | null>(null);
@@ -52,6 +53,7 @@ const GameBoard: React.FC = () => {
             );
           })}
           <div className="w-[12vw] h-[17vw] absolute top-[15vw] left-[13.2vw] -ml-14 bg-red-500/50"></div>
+          <Calculation />
         </div>
         <div className="w-2/3 h-full  flex justify-center items-start relative z-10">
           <DoorSpells

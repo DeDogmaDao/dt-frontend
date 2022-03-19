@@ -47,7 +47,7 @@ const CardGame: React.FC<props> = ({
           }
           return null;
         });
-      }, 6000);
+      }, 9000);
     }
   };
 
