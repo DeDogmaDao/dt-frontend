@@ -48,6 +48,7 @@ export interface gameCardType {
   total: number;
   communityNum:number;
   individualNum: number;
+  cardNum:number;
 }
 
 export interface topRightPosition {
