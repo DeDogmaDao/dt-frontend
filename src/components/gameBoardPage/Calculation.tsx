@@ -14,7 +14,9 @@ const Calculation: React.FC<props> = ({ firstCardNum }) => {
       </motion.div>
       <div className="flex flex-col justify-center items-center absolute left-[7vw] bottom-[2.2vw] text-4xl">
         <div className="flex justify-between">
-          <div>12</div> × <div>6</div> + <div>7987</div> = <div>10</div>
+          <motion.div>12</motion.div> ×
+          <motion.div layoutId="communityNum">6</motion.div> +
+          <motion.div layoutId="individualNum">7987</motion.div> = <div>10</div>
         </div>
 
         <div className="flex justify-between">

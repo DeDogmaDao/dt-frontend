@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 
 interface props {
-  num: number;
+  num?: number;
   styles: React.CSSProperties;
   layoutID: string;
   showHidden: boolean;
