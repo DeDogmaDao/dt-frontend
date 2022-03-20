@@ -13,7 +13,7 @@ import {
   topLeftSpell,
   topRightSpell,
 } from "../../utils/game";
-import { spellNumber } from "../../types/allTypes";
+import { gameCardType, spellNumber } from "../../types/allTypes";
 import Calculation from "./Calculation";
 
 import { motion } from "framer-motion";
@@ -24,6 +24,7 @@ const GameBoard: React.FC = () => {
     yellow: 0,
     blue: 0,
   });
+  const [currentCard, setCurrentCard] = useState<gameCardType | null>(null);
   return (
     <LayoutGroup>
       <div className="flex justify-between items-center w-screen h-[calc(900/1920*100vw)] relative">
@@ -50,11 +51,12 @@ const GameBoard: React.FC = () => {
                 gameCardData={gameCardData}
                 spellNumber={spellNumber}
                 setSpellNumber={setSpellNumber}
+                setCurrentCard={setCurrentCard}
               />
             );
           })}
           <div className="w-[12vw] h-[17vw] absolute top-[15vw] left-[13.2vw] -ml-14 bg-red-500/50"></div>
-          <Calculation firstCardNum={gameCardData[0].cardNum} />
+          <Calculation firstCardNum={gameCardData[0].cardNum} currentCard={currentCard} />
         </div>
         <div className="w-2/3 h-full  flex justify-center items-start relative z-10">
           <DoorSpells

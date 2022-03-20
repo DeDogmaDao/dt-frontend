@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 interface props {
   num?: number;
@@ -12,6 +12,14 @@ const CardNum: React.FC<props> = ({ num, styles, layoutID, showHidden }) => {
   const [isShowing, setIsShowing] = useState(showHidden);
   const [once, setOnce] = useState(false);
 
+  useEffect(() => {
+    
+    setTimeout(() => {
+      setIsShowing((prevState)=>!prevState)
+    }, 2000);
+
+  }, [])
+  
   
   return (
     <>

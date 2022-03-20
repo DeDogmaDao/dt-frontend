@@ -14,6 +14,7 @@ interface props {
   setTurnNumber: Dispatch<SetStateAction<number | null>>;
   spellNumber: spellNumber;
   setSpellNumber: Dispatch<SetStateAction<spellNumber>>;
+  setCurrentCard: Dispatch<SetStateAction<gameCardType | null>>;
 }
 const CardGame: React.FC<props> = ({
   data,
@@ -23,6 +24,7 @@ const CardGame: React.FC<props> = ({
   gameCardData,
   spellNumber,
   setSpellNumber,
+  setCurrentCard
 }) => {
   // states
   const [once, setOnce] = useState(false);
@@ -40,6 +42,7 @@ const CardGame: React.FC<props> = ({
       setTurnNumber(0);
     }
     if (turnNumber === cardIndex) {
+      setCurrentCard(data);
       setTimeout(() => {
         setTurnNumber((prevState) => {
           if (prevState !== null) {
@@ -128,8 +131,18 @@ const CardGame: React.FC<props> = ({
         />
         {stage === 1 && (
           <>
-            <CardNum num={data.communityNum} styles={communityNumStyles} layoutID="communityNum" showHidden={true} />
-            <CardNum num={data.individualNum} styles={individualNumStyles} layoutID="individualNum" showHidden={true} />
+            <CardNum
+              num={data.communityNum}
+              styles={communityNumStyles}
+              layoutID="communityNum"
+              showHidden={true}
+            />
+            <CardNum
+              num={data.individualNum}
+              styles={individualNumStyles}
+              layoutID="individualNum"
+              showHidden={true}
+            />
           </>
         )}
       </motion.div>
