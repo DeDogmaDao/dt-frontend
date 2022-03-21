@@ -6,14 +6,8 @@ interface props {
   currentCard: gameCardType | null;
 }
 
-const communityNumStyles: React.CSSProperties = {
-  left: "0vw",
-  bottom: "0vw",
-};
-const individualNumStyles: React.CSSProperties = {
-  right: "0vw",
-  bottom: "0vw",
-};
+const communityNumStyles: React.CSSProperties = {};
+const individualNumStyles: React.CSSProperties = {};
 
 const Calculation: React.FC<props> = ({ firstCardNum, currentCard }) => {
   const communityControls = useAnimation();
@@ -28,9 +22,12 @@ const Calculation: React.FC<props> = ({ firstCardNum, currentCard }) => {
       </motion.div>
       <div className="flex flex-col justify-start items-center absolute left-[6.5vw] bottom-[2.6vw] text-4xl bg-red-400 w-[20vw] h-[5vw]">
         <div className="flex justify-between w-full">
-          <div className="w-full bg-lime-300 "></div>
-          ×
-          <motion.div className="w-full bg-purple-300 relative flex justify-center items-center" initial="hidden" animate={communityControls}>
+          <div className="w-full bg-lime-300 "></div>×
+          <motion.div
+            className="w-full bg-purple-300 relative flex justify-center items-center"
+            initial="hidden"
+            animate={communityControls}
+          >
             <CardNum
               num={currentCard?.communityNum}
               styles={communityNumStyles}
@@ -39,7 +36,11 @@ const Calculation: React.FC<props> = ({ firstCardNum, currentCard }) => {
             />
           </motion.div>
           +
-          <motion.div className="w-full bg-blue-300 relative" initial="hidden" animate={individualControls}>
+          <motion.div
+            className="w-full bg-blue-300 relative flex justify-center items-center"
+            initial="hidden"
+            animate={individualControls}
+          >
             <CardNum
               num={currentCard?.individualNum}
               styles={individualNumStyles}
