@@ -137,8 +137,8 @@ export const spellAni: Variants = {
     scale: 1,
   },
   visible: (custom) => ({
-    x: [-50 * custom.num, 100 * custom.num, 0],
-    y: [50 * custom.num, -100 * custom.num, 0],
+    x: [-50 * (custom.num%3), 50 * (custom.num%3), 0],
+    y: [50 * (custom.num%3), -50 * (custom.num%3), 0],
     scale: [1.5, 2.5, 1],
     boxShadow: [
       `0px 0px 5px 5px ${custom.color}`,
@@ -153,7 +153,7 @@ export const spellAni: Variants = {
       default: {
         times: [0.3, 0.6, 1],
         duration: 2,
-        delay: custom.num * 0.3,
+        delay: (custom.num%3) * 0.3,
         type: "spring",
         stiffness: 300,
         mass: 5,

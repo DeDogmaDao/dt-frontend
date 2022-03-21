@@ -41,7 +41,7 @@ const Spell: React.FC<props> = ({
           initial="hidden"
           animate="visible"
           variants={spellAni}
-          custom={{num:spellIndex%3, color:color}}
+          custom={{num:spellIndex, color:color}}
           className="w-full h-full rounded-full z-110"
           style={{backgroundColor:color}}
         ></motion.div>
