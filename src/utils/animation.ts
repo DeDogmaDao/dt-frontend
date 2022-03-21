@@ -286,13 +286,9 @@ export const tabImageAni: Variants = {
 export const calcFirstResultAni:Variants = {
   hidden:{
     opacity:0,
-    left:0,
-    top:0,
   },
   visible: {
     opacity: 1,
-    left:0,
-    top:0,
     transition:{
       duration:5
     }

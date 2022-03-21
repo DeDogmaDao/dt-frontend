@@ -62,16 +62,17 @@ const Calculation: React.FC<props> = ({ firstCardNum, currentCard }) => {
           =
         </div>
         <div className="w-[7vw] h-[2.5vw] bg-orange-300 absolute left-[15vw] top-0 text-center">
-          <motion.div
-            className="relative flex justify-center items-center h-full w-full"
-            initial="hidden"
-            animate="visible"
-            variants={calcFirstResultAni}
-          >
-            {currentCard &&
-              currentCard?.cardNum * currentCard?.communityNum +
+          {currentCard && (
+            <motion.div
+              className="relative flex justify-center items-center h-full w-full"
+              initial="hidden"
+              animate="visible"
+              variants={calcFirstResultAni}
+            >
+              {currentCard?.cardNum * currentCard?.communityNum +
                 currentCard?.individualNum}
-          </motion.div>
+            </motion.div>
+          )}
         </div>
 
         <div className="w-[6.5vw] h-[2.5vw] bg-green-300 absolute left-[0vw] top-[2.5vw] text-center"></div>
