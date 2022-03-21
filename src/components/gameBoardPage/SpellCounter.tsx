@@ -1,5 +1,5 @@
 import { AnimatePresence, motion, MotionStyle } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { numsList } from "../../store/allData";
 import { spellNumber } from "../../types/allTypes";
 import { spellCounterAni } from "../../utils/animation";
@@ -28,6 +28,28 @@ const styles = (spellGroup: string): MotionStyle => {
 
 const SpellCounter: React.FC<props> = ({ spellNumber, spellGroup }) => {
   const [nums, setNums] = useState(numsList);
+
+  useEffect(() => {
+    const activeIndex = nums.findIndex((el) => el.active === true);
+    setTimeout(() => {
+      for (let i = activeIndex; i < spellNumber[spellGroup]; i++) {
+        setTimeout(() => {
+          const newNums = nums.map((el, index) => {
+            let returnValue = { ...el };
+
+            if (index === 1 + i) {
+              returnValue.active = true;
+            } else {
+              returnValue.active = false;
+            }
+            return returnValue;
+          });
+          setNums(newNums);
+        }, (i - activeIndex) * 500);
+      }
+    }, 3000);
+  }, [spellNumber[spellGroup]]);
+
   return (
     <motion.div
       style={styles(spellGroup)}
@@ -38,14 +60,14 @@ const SpellCounter: React.FC<props> = ({ spellNumber, spellGroup }) => {
           return (
             <>
               <AnimatePresence exitBeforeEnter>
-                {spellNumber[spellGroup] === num && (
+                {num.active && (
                   <motion.span
                     initial="hidden"
                     animate="visible"
                     exit="out"
                     variants={spellCounterAni}
                   >
-                    {num}
+                    {num.number}
                   </motion.span>
                 )}
               </AnimatePresence>

@@ -68,3 +68,8 @@ export interface spellNumber {
   [yellow: string]: number;
   blue: number;
 }
+
+export interface counterNumType {
+  number: number;
+  active: boolean;
+}

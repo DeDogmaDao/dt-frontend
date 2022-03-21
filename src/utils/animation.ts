@@ -282,40 +282,35 @@ export const tabImageAni: Variants = {
   }),
 };
 
-
-export const calcFirstResultAni:Variants = {
-  hidden:{
-    opacity:0,
+export const calcFirstResultAni: Variants = {
+  hidden: {
+    opacity: 0,
   },
   visible: {
     opacity: 1,
-    transition:{
-      duration:5
-    }
-  }
-}
-
+    transition: {
+      duration: 5,
+    },
+  },
+};
 
 export const spellCounterAni: Variants = {
-hidden: {
-  opacity:0,
-  scale:0.5,
-  y:30
-},
-visible:{
-  opacity:1,
-  scale:1,
-  y:0,
-  transition:{
-    duration:0.5
-  }
-},
-out:{
-  opacity:0,
-  scale:0.5,
-  y:-30,
-  transition:{
-    duration:0.5
-  }
-}
-}
+  hidden: {
+    opacity: 0,
+    y: 30,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.4,
+    },
+  },
+  out: {
+    opacity: 0,
+    y: -30,
+    transition: {
+      duration: 0.4,
+    },
+  },
+};

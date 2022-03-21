@@ -7,6 +7,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 // type
 import {
+  counterNumType,
   faqType,
   gameCardType,
   layersType,
@@ -999,4 +1000,15 @@ export const gameCardData: gameCardType[] = [
 ];
 
 
-export const numsList:number[] = Array.from(Array(100).keys());
+export const numsList:counterNumType[] = Array.from(Array(100).keys()).map((el)=>{
+  if(el === 0){
+    return {
+      number:el,
+      active:true
+    }
+  }
+  return {
+      number:el,
+      active:false
+  }
+});
