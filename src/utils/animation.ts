@@ -294,3 +294,28 @@ export const calcFirstResultAni:Variants = {
     }
   }
 }
+
+
+export const spellCounterAni: Variants = {
+hidden: {
+  opacity:0.3,
+  scale:0.5,
+  y:10
+},
+visible:{
+  opacity:1,
+  scale:1,
+  y:0,
+  transition:{
+    duration:1
+  }
+},
+out:{
+  opacity:0.3,
+  scale:0.5,
+  y:-10,
+  transition:{
+    duration:1
+  }
+}
+}

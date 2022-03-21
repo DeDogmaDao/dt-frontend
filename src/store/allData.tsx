@@ -997,3 +997,6 @@ export const gameCardData: gameCardType[] = [
     cardNum: Math.floor(Math.random() * 5250 + 1),
   },
 ];
+
+
+export const numsList:number[] = Array.from(Array(100).keys());
