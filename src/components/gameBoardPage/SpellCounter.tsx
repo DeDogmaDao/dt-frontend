@@ -15,8 +15,10 @@ const styles = (spellGroup: string): MotionStyle => {
       top: "26vw",
       rotateZ: "52deg",
       rotateY: "95deg",
-      scaleY:0.8,
-      fontSize:"1.5vw"
+      scaleY: 0.8,
+      fontSize: "1.5vw",
+      textShadow: "0px 0px 30px yellow",
+      color: "yellow",
     };
   }
   return {
@@ -25,7 +27,9 @@ const styles = (spellGroup: string): MotionStyle => {
     scale: 0.8,
     rotateZ: "40deg",
     rotateY: "-90deg",
-    fontSize:"1.7vw"
+    fontSize: "1.7vw",
+    textShadow: "0px 0px 30px #00FFFF",
+    color: "#00FFFF",
   };
 };
 
@@ -58,7 +62,7 @@ const SpellCounter: React.FC<props> = ({ spellNumber, spellGroup }) => {
       style={styles(spellGroup)}
       className=" w-[3vw] h-[3vw] absolute flex justify-center items-center overflow-hidden "
     >
-      <motion.div className="flex flex-col justify-center items-center w-full h-full -rotate-45">
+      <motion.div className="relative flex justify-center items-center w-full h-full -rotate-45">
         {nums.map((num) => {
           return (
             <>
@@ -69,6 +73,7 @@ const SpellCounter: React.FC<props> = ({ spellNumber, spellGroup }) => {
                     animate="visible"
                     exit="out"
                     variants={spellCounterAni}
+                    className="absolute"
                   >
                     {num.number}
                   </motion.span>

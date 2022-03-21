@@ -296,21 +296,20 @@ export const calcFirstResultAni: Variants = {
 
 export const spellCounterAni: Variants = {
   hidden: {
-    opacity: 0,
-    y: 30,
+    translateY: 100,
   },
   visible: {
-    opacity: 1,
-    y: 0,
+    translateY: 0,
     transition: {
       duration: 0.4,
+      ease: "easeOut",
     },
   },
   out: {
-    opacity: 0,
-    y: -30,
+    translateY: -100,
     transition: {
       duration: 0.4,
+      ease: "easeOut",
     },
   },
 };
