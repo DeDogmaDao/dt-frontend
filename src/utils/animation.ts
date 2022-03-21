@@ -137,8 +137,8 @@ export const spellAni: Variants = {
     scale: 1,
   },
   visible: (custom) => ({
-    x: [0, 20 * custom.num, 0],
-    y: [0, -20 * custom.num, 0],
+    x: [-50 * custom.num, 100 * custom.num, 0],
+    y: [50 * custom.num, -100 * custom.num, 0],
     scale: [1.5, 2.5, 1],
     boxShadow: [
       `0px 0px 5px 5px ${custom.color}`,
