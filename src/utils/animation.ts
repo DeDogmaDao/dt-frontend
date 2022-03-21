@@ -298,24 +298,24 @@ export const calcFirstResultAni:Variants = {
 
 export const spellCounterAni: Variants = {
 hidden: {
-  opacity:0.3,
+  opacity:0,
   scale:0.5,
-  y:10
+  y:30
 },
 visible:{
   opacity:1,
   scale:1,
   y:0,
   transition:{
-    duration:1
+    duration:0.5
   }
 },
 out:{
-  opacity:0.3,
+  opacity:0,
   scale:0.5,
-  y:-10,
+  y:-30,
   transition:{
-    duration:1
+    duration:0.5
   }
 }
 }
