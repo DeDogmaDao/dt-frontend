@@ -1,10 +1,9 @@
-import { AnimatePresence, LayoutGroup, motion } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import {  LayoutGroup } from "framer-motion";
+import { useState } from "react";
 import { allTabs } from "../../../store/allData";
 import EachGroup from "./EachGroup";
 import EachTab from "./EachTab";
 import Group from "./Group";
-import SelectBox from "./SelectBox";
 import TabData from "./TabData";
 
 const Tabs: React.FC = () => {

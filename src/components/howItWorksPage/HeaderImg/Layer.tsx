@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { layersType } from "../../../types/allTypes";
 interface props {
   data: layersType;

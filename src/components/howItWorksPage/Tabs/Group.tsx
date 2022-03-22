@@ -1,5 +1,5 @@
 import { motion, useAnimation } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { tabsType } from "../../../types/allTypes";
 import { tabGroupAni } from "../../../utils/animation";
 interface props {

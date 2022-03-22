@@ -16,7 +16,6 @@ import {
 import { gameCardType, spellNumber } from "../../types/allTypes";
 import Calculation from "./Calculation";
 
-import { motion } from "framer-motion";
 import SpellCounter from "./SpellCounter";
 
 const GameBoard: React.FC = () => {

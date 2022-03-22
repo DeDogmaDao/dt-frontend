@@ -1,7 +1,7 @@
-import { motion, useAnimation, Variants } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { gameCardType, spellNumber } from "../../types/allTypes";
-import { gameCardAni, newGameCardAni } from "../../utils/animation";
+import { gameCardAni } from "../../utils/animation";
 import CardNum from "./CardNum";
 import Spell from "./Spell";
 

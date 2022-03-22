@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { tabsType } from "../../../types/allTypes";
 import deepClone from "lodash/cloneDeep";
-import { tabBlastAni, tabEachGroupAni } from "../../../utils/animation";
+import { tabBlastAni } from "../../../utils/animation";
 
 interface props {
   name: string;
