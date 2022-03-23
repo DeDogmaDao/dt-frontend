@@ -24,8 +24,7 @@ const Calculation: React.FC<props> = ({
   transferNum,
   setTransferNum,
 }) => {
-  const communityControls = useAnimation();
-  const individualControls = useAnimation();
+
   const [showNum, setShowNum] = useState(true);
   const [layId, setLayId] = useState({
     community: "communityNum",
@@ -40,7 +39,7 @@ const Calculation: React.FC<props> = ({
           community: "",
           individual: "",
         });
-      }, 5000);
+      }, 8000);
     }
   }, [currentCard]);
 
@@ -79,17 +78,19 @@ const Calculation: React.FC<props> = ({
               ></motion.div>
 
               <motion.div
- {...framer}
+                {...framer}
                 variants={calcFadeAni}
                 className="w-[1.5vw] h-[2.5vw] bg-gray-300 absolute left-[4.5vw] top-0 text-center"
               >
                 ×
               </motion.div>
-              <div className="w-[3vw] h-[2.5vw] bg-blue-300 absolute left-[6vw] top-0 text-center">
+              <motion.div
+                {...framer}
+                variants={calcFadeAni}
+                className="w-[3vw] h-[2.5vw] bg-blue-300 absolute left-[6vw] top-0 text-center"
+              >
                 <motion.div
                   className="w-full h-full relative flex justify-center items-center"
-                  initial="hidden"
-                  animate={communityControls}
                 >
                   <CardNum
                     num={currentCard?.communityNum}
@@ -99,16 +100,20 @@ const Calculation: React.FC<props> = ({
                     transferNum={transferNum}
                   />
                 </motion.div>
-              </div>
-              <div className="w-[1.5vw] h-[2.5vw] bg-gray-300 absolute left-[9vw] top-0 text-center">
+              </motion.div>
+              <motion.div
+                {...framer}
+                variants={calcFadeAni}
+                className="w-[1.5vw] h-[2.5vw] bg-gray-300 absolute left-[9vw] top-0 text-center"
+              >
                 +
-              </div>
-              <div className="w-[3vw] h-[2.5vw] bg-purple-300 absolute left-[10.5vw] top-0 text-center">
-                <motion.div
-                  className="w-full h-full relative flex justify-center items-center"
-                  initial="hidden"
-                  animate={individualControls}
-                >
+              </motion.div>
+              <motion.div
+                {...framer}
+                variants={calcFadeAni}
+                className="w-[3vw] h-[2.5vw] bg-purple-300 absolute left-[10.5vw] top-0 text-center"
+              >
+                <motion.div className="w-full h-full relative flex justify-center items-center">
                   <CardNum
                     num={currentCard?.individualNum}
                     styles={individualNumStyles}
@@ -117,23 +122,27 @@ const Calculation: React.FC<props> = ({
                     transferNum={transferNum}
                   />
                 </motion.div>
-              </div>
-              <div className="w-[1.5vw] h-[2.5vw] bg-gray-300 absolute left-[13.5vw] top-0 text-center">
+              </motion.div>
+              <motion.div
+                {...framer}
+                variants={calcFadeAni}
+                className="w-[1.5vw] h-[2.5vw] bg-gray-300 absolute left-[13.5vw] top-0 text-center"
+              >
                 =
-              </div>
-              <div className="w-[7vw] h-[2.5vw] bg-orange-300 absolute left-[15vw] top-0 text-center">
-                {currentCard && (
-                  <motion.div
-                    className="relative flex justify-center items-center h-full w-full"
-                    initial="hidden"
-                    animate="visible"
-                    variants={calcFirstResultAni}
-                  >
+              </motion.div>
+              {currentCard && transferNum ===true && (
+              <motion.div
+                {...framer}
+                variants={calcFirstResultAni}
+                
+                className="w-[7vw] h-[2.5vw] bg-orange-300 absolute left-[15vw] top-0 text-center"
+              >
+                  <div className="relative flex justify-center items-center h-full w-full">
                     {currentCard?.cardNum * currentCard?.communityNum +
                       currentCard?.individualNum}
-                  </motion.div>
+                  </div>
+              </motion.div>
                 )}
-              </div>
             </>
           )}
         </AnimatePresence>
