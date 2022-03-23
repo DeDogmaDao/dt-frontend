@@ -25,6 +25,9 @@ const GameBoard: React.FC = () => {
     blue: 0,
   });
   const [currentCard, setCurrentCard] = useState<gameCardType | null>(null);
+
+  const [transferNum, setTransferNum] = useState(false);
+
   return (
     <LayoutGroup>
       <div className="flex justify-between items-center w-screen h-[calc(900/1920*100vw)] relative">
@@ -53,6 +56,9 @@ const GameBoard: React.FC = () => {
                 spellNumber={spellNumber}
                 setSpellNumber={setSpellNumber}
                 setCurrentCard={setCurrentCard}
+                transferNum={transferNum}
+                setTransferNum={setTransferNum}
+
               />
             );
           })}
@@ -60,6 +66,8 @@ const GameBoard: React.FC = () => {
           <Calculation
             firstCardNum={gameCardData[0].cardNum}
             currentCard={currentCard}
+            transferNum={transferNum}
+            setTransferNum={setTransferNum}
           />
         </div>
         <div

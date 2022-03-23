@@ -15,6 +15,8 @@ interface props {
   spellNumber: spellNumber;
   setSpellNumber: Dispatch<SetStateAction<spellNumber>>;
   setCurrentCard: Dispatch<SetStateAction<gameCardType | null>>;
+  transferNum: boolean;
+  setTransferNum: Dispatch<SetStateAction<boolean>>;
 }
 const CardGame: React.FC<props> = ({
   data,
@@ -24,7 +26,9 @@ const CardGame: React.FC<props> = ({
   gameCardData,
   spellNumber,
   setSpellNumber,
-  setCurrentCard
+  setCurrentCard,
+  transferNum,
+  setTransferNum,
 }) => {
   // states
   const [once, setOnce] = useState(false);
@@ -58,6 +62,9 @@ const CardGame: React.FC<props> = ({
   if (turnNumber === cardIndex) {
     if (stage === 0) {
       setStage(1);
+      setTimeout(() => {
+        setTransferNum(true);
+      }, 1900);
     }
     if (stage === 1 && !once) {
       aniControls.start("stage1");
@@ -68,6 +75,7 @@ const CardGame: React.FC<props> = ({
         }));
       }, 1000);
       setTimeout(() => {
+        setTransferNum(false)
         setStage(2);
       }, 9000);
       setOnce(true);
@@ -129,19 +137,21 @@ const CardGame: React.FC<props> = ({
           src={data.image}
           loading="lazy"
         />
-        {stage === 1 && (
+        {(stage === 1 ) && (
           <>
             <CardNum
               num={data.communityNum}
               styles={communityNumStyles}
               layoutID="communityNum"
               showHidden={true}
+              transferNum={transferNum}
             />
             <CardNum
               num={data.individualNum}
               styles={individualNumStyles}
               layoutID="individualNum"
               showHidden={true}
+              transferNum={transferNum}
             />
           </>
         )}

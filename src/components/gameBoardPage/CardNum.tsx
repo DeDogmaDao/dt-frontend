@@ -6,19 +6,21 @@ interface props {
   styles: React.CSSProperties;
   layoutID: string;
   showHidden: boolean;
+  transferNum: boolean;
 }
 
-const CardNum: React.FC<props> = ({ num, styles, layoutID, showHidden }) => {
+const CardNum: React.FC<props> = ({ num, styles, layoutID, showHidden,transferNum }) => {
   const [isShowing, setIsShowing] = useState(showHidden);
   const [once, setOnce] = useState(false);
 
   useEffect(() => {
     
-    setTimeout(() => {
+    if(transferNum===true){
       setIsShowing((prevState)=>!prevState)
-    }, 2000);
+    }
+    
 
-  }, [])
+  }, [transferNum])
   
   
   return (
