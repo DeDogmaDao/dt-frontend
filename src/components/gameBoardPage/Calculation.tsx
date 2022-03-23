@@ -59,12 +59,14 @@ setTimeout(() => {
         {firstCardNum}
       </motion.div>
       <div className="flex flex-col justify-start items-center absolute left-[5.5vw] bottom-[2.6vw] text-2xl bg-red-400 w-[22vw] h-[5vw]">
+      {showNum && (
+        <>
         <div className="w-[4.5vw] h-[2.5vw] bg-lime-300 absolute left-0 top-0"></div>
         <div className="w-[1.5vw] h-[2.5vw] bg-gray-300 absolute left-[4.5vw] top-0 text-center">
           ×
         </div>
         <div className="w-[3vw] h-[2.5vw] bg-blue-300 absolute left-[6vw] top-0 text-center">
-          {showNum && (
+          
             <motion.div
               className="w-full h-full relative flex justify-center items-center"
               initial="hidden"
@@ -78,13 +80,11 @@ setTimeout(() => {
                 transferNum={transferNum}
               />
             </motion.div>
-          )}
         </div>
         <div className="w-[1.5vw] h-[2.5vw] bg-gray-300 absolute left-[9vw] top-0 text-center">
           +
         </div>
         <div className="w-[3vw] h-[2.5vw] bg-purple-300 absolute left-[10.5vw] top-0 text-center">
-          {showNum && (
             <motion.div
               className="w-full h-full relative flex justify-center items-center"
               initial="hidden"
@@ -98,7 +98,6 @@ setTimeout(() => {
                 transferNum={transferNum}
               />
             </motion.div>
-          )}
         </div>
         <div className="w-[1.5vw] h-[2.5vw] bg-gray-300 absolute left-[13.5vw] top-0 text-center">
           =
@@ -116,6 +115,8 @@ setTimeout(() => {
             </motion.div>
           )}
         </div>
+        </>
+        )}
 
         <div className="w-[6.5vw] h-[2.5vw] bg-green-300 absolute left-[0vw] top-[2.5vw] text-center"></div>
         <div className="w-[1.5vw] h-[2.5vw] bg-gray-300 absolute left-[6.5vw] top-[2.5vw] text-center">
