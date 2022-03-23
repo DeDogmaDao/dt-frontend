@@ -147,7 +147,7 @@ const Calculation: React.FC<props> = ({
           )}
         </AnimatePresence>
 
-        <div className="w-[6.5vw] h-[2.5vw] bg-green-300 absolute left-[0vw] top-[2.5vw] text-center"></div>
+        <div className="w-[6.5vw] h-[2.5vw] bg-green-300/20 absolute left-[0vw] top-[2.5vw] text-center"></div>
         <div className="w-[1.5vw] h-[2.5vw] bg-gray-300 absolute left-[6.5vw] top-[2.5vw] text-center">
           %
         </div>

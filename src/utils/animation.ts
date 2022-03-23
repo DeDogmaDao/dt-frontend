@@ -325,14 +325,18 @@ export const calcFadeAni: Variants = {
 };
 export const calcFirstResultAni: Variants = {
   hidden: {
-    opacity: 0
+    opacity: 0,
+    left:"15vw",
+    top:"0vw",
   },
   visible: {
-    opacity: 1 ,
+    opacity: [0,1,1,1] ,
+    left:["15vw","15vw","0vw","0vw"],
+    top:["0vw","0vw","2.5vw","2.5vw"],
       transition: {
-      duration: 0.5,
+        times:[0,0.3,0.8,1],
+      duration: 2.5,
       delay:1,
-      ease: "easeInOut",
     },
   },
   out: {
