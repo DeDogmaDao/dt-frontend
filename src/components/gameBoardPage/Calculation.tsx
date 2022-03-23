@@ -147,15 +147,20 @@ const Calculation: React.FC<props> = ({
           )}
         </AnimatePresence>
 
-        <div className="w-[6.5vw] h-[2.5vw] bg-green-300/20 absolute left-[0vw] top-[2.5vw] text-center"></div>
-        <div className="w-[1.5vw] h-[2.5vw] bg-gray-300 absolute left-[6.5vw] top-[2.5vw] text-center">
+        <motion.div    {...framer}
+                variants={calcFadeAni} className="w-[6.5vw] h-[2.5vw] bg-green-300/20 absolute left-[0vw] top-[2.5vw] text-center"></motion.div>
+        <motion.div    {...framer}
+                variants={calcFadeAni} className="w-[1.5vw] h-[2.5vw] bg-gray-300 absolute left-[6.5vw] top-[2.5vw] text-center">
           %
-        </div>
-        <div className="w-[5.5vw] h-[2.5vw] bg-red-300 absolute left-[8vw] top-[2.5vw] text-center"></div>
-        <div className="w-[1.5vw] h-[2.5vw] bg-gray-300 absolute left-[13.5vw] top-[2.5vw] text-center">
+        </motion.div>
+        <motion.div    {...framer}
+                variants={calcFadeAni} className="w-[5.5vw] h-[2.5vw] bg-red-300 absolute left-[8vw] top-[2.5vw] text-center"></motion.div>
+        <motion.div    {...framer}
+                variants={calcFadeAni} className="w-[1.5vw] h-[2.5vw] bg-gray-300 absolute left-[13.5vw] top-[2.5vw] text-center">
           %
-        </div>
-        <div className="w-[7vw] h-[2.5vw] bg-blue-300 absolute left-[15vw] top-[2.5vw] text-center"></div>
+        </motion.div>
+        <motion.div    {...framer}
+                variants={calcFadeAni} className="w-[7vw] h-[2.5vw] bg-blue-300 absolute left-[15vw] top-[2.5vw] text-center"></motion.div>
       </motion.div>
     </>
   );
