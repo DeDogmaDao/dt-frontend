@@ -313,3 +313,24 @@ export const spellCounterAni: Variants = {
     },
   },
 };
+export const calcFadeAni: Variants = {
+  hidden: {
+    opacity: 0
+  },
+  visible: {
+    opacity: 1 ,
+      transition: {
+      duration: 0.5,
+      ease: "easeInOut",
+    },
+  },
+  out: {
+    opacity: 0,
+    transition: {
+      duration: 0.5,
+      ease: "easeInOut",
+    },
+  },
+};
+
+
