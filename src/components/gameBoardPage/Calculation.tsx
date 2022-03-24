@@ -107,7 +107,7 @@ const Calculation: React.FC<props> = ({
 
   return (
     <>
-      {showNum === false && (
+      {calcStage === null && (
         <motion.div
           layoutId={resultLayoutId.sideCard}
           className="absolute left-[3vw] top-[22vw] bg-blue-900 text-white p-3"
