@@ -137,8 +137,8 @@ export const spellAni: Variants = {
     scale: 1,
   },
   visible: (custom) => ({
-    x: [-50 * (custom.num%3), 50 * (custom.num%3), 0],
-    y: [50 * (custom.num%3), -50 * (custom.num%3), 0],
+    x: [-50 * (custom.num % 3), 50 * (custom.num % 3), 0],
+    y: [50 * (custom.num % 3), -50 * (custom.num % 3), 0],
     scale: [1.5, 2.5, 1],
     boxShadow: [
       `0px 0px 5px 5px ${custom.color}`,
@@ -153,7 +153,7 @@ export const spellAni: Variants = {
       default: {
         times: [0.3, 0.6, 1],
         duration: 2,
-        delay: (custom.num%3) * 0.3,
+        delay: (custom.num % 3) * 0.3,
         type: "spring",
         stiffness: 300,
         mass: 5,
@@ -282,8 +282,6 @@ export const tabImageAni: Variants = {
   }),
 };
 
-
-
 export const spellCounterAni: Variants = {
   hidden: {
     translateY: 100,
@@ -305,13 +303,13 @@ export const spellCounterAni: Variants = {
 };
 export const calcFadeAni: Variants = {
   hidden: {
-    opacity: 0
+    opacity: 0,
   },
   visible: {
-    opacity: 1 ,
-      transition: {
+    opacity: 1,
+    transition: {
       duration: 0.5,
-      delay:0.5,
+      delay: 0.5,
       ease: "easeInOut",
     },
   },
@@ -324,19 +322,14 @@ export const calcFadeAni: Variants = {
   },
 };
 export const calcFirstResultAni: Variants = {
-  hidden: {
-    opacity: 0,
-    left:"15vw",
-    top:"0vw",
-  },
+  hidden: (custom) => ({
+    opacity: custom,
+  }),
   visible: {
-    opacity: [0,1,1,1] ,
-    left:["15vw","15vw","0vw","0vw"],
-    top:["0vw","0vw","2.5vw","2.5vw"],
-      transition: {
-        times:[0,0.3,0.8,1],
-      duration: 2.5,
-      delay:1,
+    opacity: 1,
+    transition: {
+      duration: 0.7,
+      delay: 1,
     },
   },
   out: {
@@ -347,7 +340,27 @@ export const calcFirstResultAni: Variants = {
     },
   },
 };
-
-
-
-
+// export const calcFirstResultAni: Variants = {
+//   hidden: {
+//     opacity: 0,
+//     left:"15vw",
+//     top:"0vw",
+//   },
+//   visible: {
+//     opacity: [0,1,1,1] ,
+//     left:["15vw","15vw","0vw","0vw"],
+//     top:["0vw","0vw","2.5vw","2.5vw"],
+//       transition: {
+//         times:[0,0.3,0.8,1],
+//       duration: 2.5,
+//       delay:1,
+//     },
+//   },
+//   out: {
+//     opacity: 0,
+//     transition: {
+//       duration: 0.5,
+//       ease: "easeInOut",
+//     },
+//   },
+// };

@@ -150,28 +150,40 @@ const Calculation: React.FC<props> = ({
               >
                 =
               </motion.div>
-              {currentCard && transferNum === true && (
-                <motion.div
-                  {...framer}
-                  variants={calcFirstResultAni}
-                  className="w-[7vw] h-[2.5vw] bg-orange-300 absolute left-[15vw] top-0 text-center"
-                >
-                  <div className="relative flex justify-center items-center h-full w-full">
+              <motion.div
+                layoutId="calcFirstResult"
+                variants={calcFirstResultAni}
+                {...framer}
+                custom={0}
+                className="w-[7vw] h-[2.5vw]  absolute left-[15vw] top-0 text-center"
+              >
+                {currentCard && transferNum === true && (
+                  <motion.div className="relative flex justify-center items-center h-full w-full">
                     {currentCard?.cardNum * currentCard?.communityNum +
                       currentCard?.individualNum}
-                  </div>
-                </motion.div>
-              )}
+                  </motion.div>
+                )}
+              </motion.div>
             </>
           )}
-
+        </AnimatePresence>
+        <AnimatePresence>
           {calcStage === 1 && (
             <>
               <motion.div
+                variants={calcFirstResultAni}
                 {...framer}
-                variants={calcFadeAni}
-                className="w-[6.5vw] h-[2.5vw] bg-green-300/20 absolute left-[0vw] top-[2.5vw] text-center"
-              ></motion.div>
+                custom={1}
+                layoutId="calcFirstResult"
+                className="w-[7vw] h-[2.5vw]  absolute left-[0vw] top-[2.5vw] text-center"
+              >
+                {currentCard && transferNum === true && (
+                  <motion.div className="relative flex justify-center items-center h-full w-full">
+                    {currentCard?.cardNum * currentCard?.communityNum +
+                      currentCard?.individualNum}
+                  </motion.div>
+                )}
+              </motion.div>
               <motion.div
                 {...framer}
                 variants={calcFadeAni}
