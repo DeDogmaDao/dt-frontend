@@ -96,12 +96,13 @@ const Calculation: React.FC<props> = ({
             <>
               <motion.div
                 layoutId="cardNum"
-                className="w-[4.5vw] h-[2.5vw] bg-lime-300 absolute left-0 top-0"
+                className="w-[4.5vw] h-[2.5vw] bg-lime-300/20 absolute left-0 top-0"
               ></motion.div>
 
               <motion.div
                 {...framer}
                 variants={calcFadeAni}
+                custom={1}
                 className="w-[1.5vw] h-[2.5vw] bg-gray-300 absolute left-[4.5vw] top-0 text-center"
               >
                 ×
@@ -124,6 +125,7 @@ const Calculation: React.FC<props> = ({
               <motion.div
                 {...framer}
                 variants={calcFadeAni}
+                custom={2}
                 className="w-[1.5vw] h-[2.5vw] bg-gray-300 absolute left-[9vw] top-0 text-center"
               >
                 +
@@ -145,6 +147,7 @@ const Calculation: React.FC<props> = ({
               </motion.div>
               <motion.div
                 {...framer}
+                custom={3}
                 variants={calcFadeAni}
                 className="w-[1.5vw] h-[2.5vw] bg-gray-300 absolute left-[13.5vw] top-0 text-center"
               >
@@ -186,6 +189,7 @@ const Calculation: React.FC<props> = ({
               </motion.div>
               <motion.div
                 {...framer}
+                custom={1}
                 variants={calcFadeAni}
                 className="w-[1.5vw] h-[2.5vw] bg-gray-300 absolute left-[6.5vw] top-[2.5vw] text-center"
               >
@@ -193,11 +197,13 @@ const Calculation: React.FC<props> = ({
               </motion.div>
               <motion.div
                 {...framer}
+                custom={2}
                 variants={calcFadeAni}
                 className="w-[5.5vw] h-[2.5vw] bg-red-300 absolute left-[8vw] top-[2.5vw] text-center"
               ></motion.div>
               <motion.div
                 {...framer}
+                custom={3}
                 variants={calcFadeAni}
                 className="w-[1.5vw] h-[2.5vw] bg-gray-300 absolute left-[13.5vw] top-[2.5vw] text-center"
               >
@@ -205,6 +211,7 @@ const Calculation: React.FC<props> = ({
               </motion.div>
               <motion.div
                 {...framer}
+                custom={4}
                 variants={calcFadeAni}
                 className="w-[7vw] h-[2.5vw] bg-blue-300 absolute left-[15vw] top-[2.5vw] text-center"
               ></motion.div>
