@@ -1,10 +1,9 @@
 import { AnimatePresence, motion, useAnimation } from "framer-motion";
-import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 import { gameCardType } from "../../types/allTypes";
 import { calcFadeAni, calcFirstResultAni } from "../../utils/animation";
 import CardNum from "./CardNum";
 interface props {
-  firstCardNum: number;
   currentCard: gameCardType | null;
   transferNum: boolean;
   setTransferNum: Dispatch<SetStateAction<boolean>>;
@@ -19,7 +18,6 @@ const framer = {
 };
 
 const Calculation: React.FC<props> = ({
-  firstCardNum,
   currentCard,
   transferNum,
   setTransferNum,
@@ -29,8 +27,15 @@ const Calculation: React.FC<props> = ({
     community: "communityNum",
     individual: "individualNum",
   });
+  const [resultLayoutId, setResultLayoutId] = useState({
+    sideCard: "sideCardNum",
+    firstLine: "sideCardNum",
+    secondLine: "",
+  });
 
   const [calcStage, setCalcStage] = useState<null | number>(null);
+
+  const resultRef = useRef<null | number>(null);
 
   useEffect(() => {
     if (currentCard !== null) {
@@ -42,6 +47,10 @@ const Calculation: React.FC<props> = ({
           individual: "",
         });
       }, 8000);
+
+      resultRef.current =
+        currentCard.cardNum * currentCard.communityNum +
+        currentCard.individualNum;
     }
   }, [currentCard]);
 
@@ -77,14 +86,35 @@ const Calculation: React.FC<props> = ({
     }
   }, [transferNum]);
 
+  useEffect(() => {
+    if (calcStage === null) {
+      setResultLayoutId({
+        sideCard: "sideCardNum",
+        firstLine: "sideCardNum",
+        secondLine: "",
+      });
+    }
+    if (calcStage === 0) {
+      setTimeout(() => {
+        setResultLayoutId({
+          sideCard: "sideCardNum",
+          firstLine: "",
+          secondLine: "sideCardNum",
+        });
+      }, 2000);
+    }
+  }, [calcStage]);
+
   return (
     <>
-      <motion.div
-        layoutId="cardNum"
-        className="absolute left-[3vw] top-[22vw] bg-blue-900 text-white p-3"
-      >
-        {firstCardNum}
-      </motion.div>
+      {showNum === false && (
+        <motion.div
+          layoutId={resultLayoutId.sideCard}
+          className="absolute left-[3vw] top-[22vw] bg-blue-900 text-white p-3"
+        >
+          {currentCard && currentCard.cardNum}
+        </motion.div>
+      )}
       <motion.div
         initial="hidden"
         animate="visible"
@@ -95,9 +125,11 @@ const Calculation: React.FC<props> = ({
           {showNum && calcStage === 0 && (
             <>
               <motion.div
-                layoutId="cardNum"
+                layoutId={resultLayoutId.firstLine}
                 className="w-[4.5vw] h-[2.5vw] bg-lime-300/20 absolute left-0 top-0"
-              ></motion.div>
+              >
+                {currentCard && currentCard.cardNum}
+              </motion.div>
 
               <motion.div
                 {...framer}
@@ -162,8 +194,7 @@ const Calculation: React.FC<props> = ({
               >
                 {currentCard && transferNum === true && (
                   <motion.div className="relative flex justify-center items-center h-full w-full">
-                    {currentCard?.cardNum * currentCard?.communityNum +
-                      currentCard?.individualNum}
+                    {resultRef.current}
                   </motion.div>
                 )}
               </motion.div>
@@ -182,8 +213,7 @@ const Calculation: React.FC<props> = ({
               >
                 {currentCard && transferNum === true && (
                   <motion.div className="relative flex justify-center items-center h-full w-full">
-                    {currentCard?.cardNum * currentCard?.communityNum +
-                      currentCard?.individualNum}
+                    {resultRef.current}
                   </motion.div>
                 )}
               </motion.div>
@@ -200,21 +230,26 @@ const Calculation: React.FC<props> = ({
                 custom={2}
                 variants={calcFadeAni}
                 className="w-[5.5vw] h-[2.5vw] bg-red-300 absolute left-[8vw] top-[2.5vw] text-center"
-              ></motion.div>
+              >
+                5250
+              </motion.div>
               <motion.div
                 {...framer}
                 custom={3}
                 variants={calcFadeAni}
                 className="w-[1.5vw] h-[2.5vw] bg-gray-300 absolute left-[13.5vw] top-[2.5vw] text-center"
               >
-                %
+                =
               </motion.div>
               <motion.div
                 {...framer}
                 custom={4}
                 variants={calcFadeAni}
+                layoutId={resultLayoutId.secondLine}
                 className="w-[7vw] h-[2.5vw] bg-blue-300 absolute left-[15vw] top-[2.5vw] text-center"
-              ></motion.div>
+              >
+                {resultRef.current && resultRef.current % 5250}
+              </motion.div>
             </>
           )}
         </AnimatePresence>
