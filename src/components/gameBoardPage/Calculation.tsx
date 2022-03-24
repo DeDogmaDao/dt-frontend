@@ -2,6 +2,7 @@ import { AnimatePresence, motion, useAnimation } from "framer-motion";
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 import { gameCardType } from "../../types/allTypes";
 import { calcFadeAni, calcFirstResultAni } from "../../utils/animation";
+import CalcItem from "./CalcItem";
 import CardNum from "./CardNum";
 interface props {
   currentCard: gameCardType | null;
@@ -124,135 +125,116 @@ const Calculation: React.FC<props> = ({
         <AnimatePresence>
           {showNum && calcStage === 0 && (
             <>
-              <motion.div
+              <CalcItem
                 {...framer}
-                variants={calcFirstResultAni}
-                custom={1}
-                layoutId={resultLayoutId.firstLine}
-                className="w-[4.5vw] h-[2.5vw] bg-lime-300/0 absolute left-0 top-0"
+                framerVariant={calcFirstResultAni}
+                framerCustom={1}
+                framerLayoutId={resultLayoutId.firstLine}
+                tailwindClasses="w-[4.5vw] h-[2.5vw] bg-lime-300/0 left-0 top-0"
               >
                 {currentCard && currentCard.cardNum}
-              </motion.div>
+              </CalcItem>
 
-              <motion.div
-                {...framer}
-                variants={calcFadeAni}
-                custom={1}
-                className="w-[1.5vw] h-[2.5vw] bg-gray-300/0 absolute left-[4.5vw] top-0 text-center"
+              <CalcItem
+                framerVariant={calcFadeAni}
+                framerCustom={1}
+                tailwindClasses="w-[1.5vw] h-[2.5vw] bg-gray-300/0 left-[4.5vw] top-0"
               >
                 ×
-              </motion.div>
-              <motion.div
-                {...framer}
-                variants={calcFadeAni}
-                className="w-[3vw] h-[2.5vw] bg-blue-300/0 absolute left-[6vw] top-0 text-center"
+              </CalcItem>
+              <CalcItem
+                framerVariant={calcFadeAni}
+                tailwindClasses="w-[3vw] h-[2.5vw] bg-blue-300/0 left-[6vw] top-0"
               >
-                <motion.div className="w-full h-full relative flex justify-center items-center">
-                  <CardNum
-                    num={currentCard?.communityNum}
-                    styles={communityNumStyles}
-                    layoutID={layId.community}
-                    showHidden={false}
-                    transferNum={transferNum}
-                  />
-                </motion.div>
-              </motion.div>
-              <motion.div
-                {...framer}
-                variants={calcFadeAni}
-                custom={2}
-                className="w-[1.5vw] h-[2.5vw] bg-gray-300/0 absolute left-[9vw] top-0 text-center"
+                <CardNum
+                  num={currentCard?.communityNum}
+                  styles={communityNumStyles}
+                  layoutID={layId.community}
+                  showHidden={false}
+                  transferNum={transferNum}
+                />
+              </CalcItem>
+              <CalcItem
+                framerVariant={calcFadeAni}
+                framerCustom={2}
+                tailwindClasses="w-[1.5vw] h-[2.5vw] bg-gray-300/0 left-[9vw] top-0"
               >
                 +
-              </motion.div>
-              <motion.div
-                {...framer}
-                variants={calcFadeAni}
-                className="w-[3vw] h-[2.5vw] bg-purple-300/0 absolute left-[10.5vw] top-0 text-center"
+              </CalcItem>
+              <CalcItem
+                framerVariant={calcFadeAni}
+                tailwindClasses="w-[3vw] h-[2.5vw] bg-purple-300/0 left-[10.5vw] top-0"
               >
-                <motion.div className="w-full h-full relative flex justify-center items-center">
-                  <CardNum
-                    num={currentCard?.individualNum}
-                    styles={individualNumStyles}
-                    layoutID={layId.individual}
-                    showHidden={false}
-                    transferNum={transferNum}
-                  />
-                </motion.div>
-              </motion.div>
-              <motion.div
-                {...framer}
-                custom={3}
-                variants={calcFadeAni}
-                className="w-[1.5vw] h-[2.5vw] bg-gray-300/0 absolute left-[13.5vw] top-0 text-center"
+                <CardNum
+                  num={currentCard?.individualNum}
+                  styles={individualNumStyles}
+                  layoutID={layId.individual}
+                  showHidden={false}
+                  transferNum={transferNum}
+                />
+              </CalcItem>
+              <CalcItem
+                framerVariant={calcFadeAni}
+                framerCustom={3}
+                tailwindClasses="w-[1.5vw] h-[2.5vw] bg-gray-300/0 left-[13.5vw] top-0"
               >
                 =
-              </motion.div>
-              <motion.div
-                layoutId="calcFirstResult"
-                variants={calcFirstResultAni}
-                {...framer}
-                custom={0}
-                className="w-[7vw] h-[2.5vw]  absolute left-[15vw] top-0 text-center"
-              >
-                {currentCard && transferNum === true && (
-                  <motion.div className="relative flex justify-center items-center h-full w-full">
-                    {resultRef.current}
-                  </motion.div>
-                )}
-              </motion.div>
+              </CalcItem>
+              {currentCard && transferNum === true && (
+                <CalcItem
+                  framerVariant={calcFirstResultAni}
+                  framerLayoutId="calcFirstResult"
+                  framerCustom={0}
+                  tailwindClasses="w-[7vw] h-[2.5vw] left-[15vw] top-0"
+                >
+                  {resultRef.current}
+                </CalcItem>
+              )}
             </>
           )}
         </AnimatePresence>
         <AnimatePresence>
           {calcStage === 1 && (
             <>
-              <motion.div
-                variants={calcFirstResultAni}
-                {...framer}
-                custom={1}
-                layoutId="calcFirstResult"
-                className="w-[7vw] h-[2.5vw]  absolute left-[0vw] top-[2.5vw] text-center"
-              >
-                {currentCard && transferNum === true && (
-                  <motion.div className="relative flex justify-center items-center h-full w-full">
-                    {resultRef.current}
-                  </motion.div>
-                )}
-              </motion.div>
-              <motion.div
-                {...framer}
-                custom={1}
-                variants={calcFadeAni}
-                className="w-[1.5vw] h-[2.5vw] bg-gray-300/0 absolute left-[6.5vw] top-[2.5vw] text-center"
+              {currentCard && transferNum === true && (
+                <CalcItem
+                  framerVariant={calcFirstResultAni}
+                  framerCustom={1}
+                  framerLayoutId="calcFirstResult"
+                  tailwindClasses="w-[7vw] h-[2.5vw] left-[0vw] top-[2.5vw]"
+                >
+                  {resultRef.current}
+                </CalcItem>
+              )}
+              <CalcItem
+                framerVariant={calcFadeAni}
+                framerCustom={1}
+                tailwindClasses="w-[1.5vw] h-[2.5vw] bg-gray-300/0 left-[6.5vw] top-[2.5vw]"
               >
                 %
-              </motion.div>
-              <motion.div
-                {...framer}
-                custom={2}
-                variants={calcFadeAni}
-                className="w-[5.5vw] h-[2.5vw] bg-red-300/0 absolute left-[8vw] top-[2.5vw] text-center"
+              </CalcItem>
+              <CalcItem
+                framerVariant={calcFadeAni}
+                framerCustom={2}
+                tailwindClasses="w-[5.5vw] h-[2.5vw] bg-red-300/0 left-[8vw] top-[2.5vw]"
               >
                 5250
-              </motion.div>
-              <motion.div
-                {...framer}
-                custom={3}
-                variants={calcFadeAni}
-                className="w-[1.5vw] h-[2.5vw] bg-gray-300/0 absolute left-[13.5vw] top-[2.5vw] text-center"
+              </CalcItem>
+              <CalcItem
+                framerVariant={calcFadeAni}
+                framerCustom={3}
+                tailwindClasses="w-[1.5vw] h-[2.5vw] bg-gray-300/0 left-[13.5vw] top-[2.5vw]"
               >
                 =
-              </motion.div>
-              <motion.div
-                {...framer}
-                custom={4}
-                variants={calcFadeAni}
-                layoutId={resultLayoutId.secondLine}
-                className="w-[7vw] h-[2.5vw] bg-blue-300/0 absolute left-[15vw] top-[2.5vw] text-center"
+              </CalcItem>
+              <CalcItem
+                framerCustom={4}
+                framerVariant={calcFadeAni}
+                framerLayoutId={resultLayoutId.secondLine}
+                tailwindClasses="w-[7vw] h-[2.5vw] bg-blue-300/0 left-[15vw] top-[2.5vw]"
               >
                 {resultRef.current && resultRef.current % 5250}
-              </motion.div>
+              </CalcItem>
             </>
           )}
         </AnimatePresence>
