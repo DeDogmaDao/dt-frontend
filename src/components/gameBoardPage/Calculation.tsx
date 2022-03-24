@@ -24,7 +24,6 @@ const Calculation: React.FC<props> = ({
   transferNum,
   setTransferNum,
 }) => {
-
   const [showNum, setShowNum] = useState(true);
   const [layId, setLayId] = useState({
     community: "communityNum",
@@ -89,9 +88,7 @@ const Calculation: React.FC<props> = ({
                 variants={calcFadeAni}
                 className="w-[3vw] h-[2.5vw] bg-blue-300 absolute left-[6vw] top-0 text-center"
               >
-                <motion.div
-                  className="w-full h-full relative flex justify-center items-center"
-                >
+                <motion.div className="w-full h-full relative flex justify-center items-center">
                   <CardNum
                     num={currentCard?.communityNum}
                     styles={communityNumStyles}
@@ -130,37 +127,51 @@ const Calculation: React.FC<props> = ({
               >
                 =
               </motion.div>
-              {currentCard && transferNum ===true && (
-              <motion.div
-                {...framer}
-                variants={calcFirstResultAni}
-                
-                className="w-[7vw] h-[2.5vw] bg-orange-300 absolute left-[15vw] top-0 text-center"
-              >
+              {currentCard && transferNum === true && (
+                <motion.div
+                  {...framer}
+                  variants={calcFirstResultAni}
+                  className="w-[7vw] h-[2.5vw] bg-orange-300 absolute left-[15vw] top-0 text-center"
+                >
                   <div className="relative flex justify-center items-center h-full w-full">
                     {currentCard?.cardNum * currentCard?.communityNum +
                       currentCard?.individualNum}
                   </div>
-              </motion.div>
-                )}
+                </motion.div>
+              )}
             </>
           )}
         </AnimatePresence>
 
-        <motion.div    {...framer}
-                variants={calcFadeAni} className="w-[6.5vw] h-[2.5vw] bg-green-300/20 absolute left-[0vw] top-[2.5vw] text-center"></motion.div>
-        <motion.div    {...framer}
-                variants={calcFadeAni} className="w-[1.5vw] h-[2.5vw] bg-gray-300 absolute left-[6.5vw] top-[2.5vw] text-center">
+        <motion.div
+          {...framer}
+          variants={calcFadeAni}
+          className="w-[6.5vw] h-[2.5vw] bg-green-300/20 absolute left-[0vw] top-[2.5vw] text-center"
+        ></motion.div>
+        <motion.div
+          {...framer}
+          variants={calcFadeAni}
+          className="w-[1.5vw] h-[2.5vw] bg-gray-300 absolute left-[6.5vw] top-[2.5vw] text-center"
+        >
           %
         </motion.div>
-        <motion.div    {...framer}
-                variants={calcFadeAni} className="w-[5.5vw] h-[2.5vw] bg-red-300 absolute left-[8vw] top-[2.5vw] text-center"></motion.div>
-        <motion.div    {...framer}
-                variants={calcFadeAni} className="w-[1.5vw] h-[2.5vw] bg-gray-300 absolute left-[13.5vw] top-[2.5vw] text-center">
+        <motion.div
+          {...framer}
+          variants={calcFadeAni}
+          className="w-[5.5vw] h-[2.5vw] bg-red-300 absolute left-[8vw] top-[2.5vw] text-center"
+        ></motion.div>
+        <motion.div
+          {...framer}
+          variants={calcFadeAni}
+          className="w-[1.5vw] h-[2.5vw] bg-gray-300 absolute left-[13.5vw] top-[2.5vw] text-center"
+        >
           %
         </motion.div>
-        <motion.div    {...framer}
-                variants={calcFadeAni} className="w-[7vw] h-[2.5vw] bg-blue-300 absolute left-[15vw] top-[2.5vw] text-center"></motion.div>
+        <motion.div
+          {...framer}
+          variants={calcFadeAni}
+          className="w-[7vw] h-[2.5vw] bg-blue-300 absolute left-[15vw] top-[2.5vw] text-center"
+        ></motion.div>
       </motion.div>
     </>
   );
