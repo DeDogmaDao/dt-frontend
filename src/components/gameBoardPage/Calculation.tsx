@@ -30,10 +30,13 @@ const Calculation: React.FC<props> = ({
     individual: "individualNum",
   });
 
+  const [calcStage, setCalcStage] = useState<null | number>(null);
+
   useEffect(() => {
     if (currentCard !== null) {
       setTimeout(() => {
         setShowNum(false);
+        setCalcStage(null);
         setLayId({
           community: "",
           individual: "",
@@ -43,14 +46,34 @@ const Calculation: React.FC<props> = ({
   }, [currentCard]);
 
   useEffect(() => {
-    if (transferNum === false) {
+    // for first card
+    if (transferNum === false && currentCard === null) {
       setTimeout(() => {
+        setCalcStage(0);
+        setShowNum(true);
+        setLayId({
+          community: "communityNum",
+          individual: "individualNum",
+        });
+      }, 2000 + 6500);
+      setTimeout(() => {
+        setCalcStage(1);
+      }, 5000 + 7000);
+    }
+
+    // for second card and more
+    if (transferNum === false && currentCard) {
+      setTimeout(() => {
+        setCalcStage(0);
         setShowNum(true);
         setLayId({
           community: "communityNum",
           individual: "individualNum",
         });
       }, 2000);
+      setTimeout(() => {
+        setCalcStage(1);
+      }, 5000);
     }
   }, [transferNum]);
 
@@ -69,7 +92,7 @@ const Calculation: React.FC<props> = ({
         className="flex flex-col justify-start items-center absolute left-[5.5vw] bottom-[2.6vw] text-2xl bg-red-400 w-[22vw] h-[5vw]"
       >
         <AnimatePresence>
-          {showNum && (
+          {showNum && calcStage === 0 && (
             <>
               <motion.div
                 layoutId="cardNum"
@@ -141,37 +164,41 @@ const Calculation: React.FC<props> = ({
               )}
             </>
           )}
-        </AnimatePresence>
 
-        <motion.div
-          {...framer}
-          variants={calcFadeAni}
-          className="w-[6.5vw] h-[2.5vw] bg-green-300/20 absolute left-[0vw] top-[2.5vw] text-center"
-        ></motion.div>
-        <motion.div
-          {...framer}
-          variants={calcFadeAni}
-          className="w-[1.5vw] h-[2.5vw] bg-gray-300 absolute left-[6.5vw] top-[2.5vw] text-center"
-        >
-          %
-        </motion.div>
-        <motion.div
-          {...framer}
-          variants={calcFadeAni}
-          className="w-[5.5vw] h-[2.5vw] bg-red-300 absolute left-[8vw] top-[2.5vw] text-center"
-        ></motion.div>
-        <motion.div
-          {...framer}
-          variants={calcFadeAni}
-          className="w-[1.5vw] h-[2.5vw] bg-gray-300 absolute left-[13.5vw] top-[2.5vw] text-center"
-        >
-          %
-        </motion.div>
-        <motion.div
-          {...framer}
-          variants={calcFadeAni}
-          className="w-[7vw] h-[2.5vw] bg-blue-300 absolute left-[15vw] top-[2.5vw] text-center"
-        ></motion.div>
+          {calcStage === 1 && (
+            <>
+              <motion.div
+                {...framer}
+                variants={calcFadeAni}
+                className="w-[6.5vw] h-[2.5vw] bg-green-300/20 absolute left-[0vw] top-[2.5vw] text-center"
+              ></motion.div>
+              <motion.div
+                {...framer}
+                variants={calcFadeAni}
+                className="w-[1.5vw] h-[2.5vw] bg-gray-300 absolute left-[6.5vw] top-[2.5vw] text-center"
+              >
+                %
+              </motion.div>
+              <motion.div
+                {...framer}
+                variants={calcFadeAni}
+                className="w-[5.5vw] h-[2.5vw] bg-red-300 absolute left-[8vw] top-[2.5vw] text-center"
+              ></motion.div>
+              <motion.div
+                {...framer}
+                variants={calcFadeAni}
+                className="w-[1.5vw] h-[2.5vw] bg-gray-300 absolute left-[13.5vw] top-[2.5vw] text-center"
+              >
+                %
+              </motion.div>
+              <motion.div
+                {...framer}
+                variants={calcFadeAni}
+                className="w-[7vw] h-[2.5vw] bg-blue-300 absolute left-[15vw] top-[2.5vw] text-center"
+              ></motion.div>
+            </>
+          )}
+        </AnimatePresence>
       </motion.div>
     </>
   );
