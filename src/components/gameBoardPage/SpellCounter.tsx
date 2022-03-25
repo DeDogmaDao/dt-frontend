@@ -14,7 +14,7 @@ const styles = (spellGroup: string): MotionStyle => {
       right: "54.3vw",
       top: "26vw",
       rotateZ: "52deg",
-      rotateY: "95deg",
+      rotateY: "45deg",
       scaleY: 0.8,
       fontSize: "1.5vw",
       textShadow: "0px 0px 30px yellow",
@@ -26,7 +26,7 @@ const styles = (spellGroup: string): MotionStyle => {
     top: "26vw",
     scale: 0.8,
     rotateZ: "40deg",
-    rotateY: "-90deg",
+    rotateY: "-45deg",
     fontSize: "1.7vw",
     textShadow: "0px 0px 30px #00FFFF",
     color: "#00FFFF",
@@ -52,7 +52,7 @@ const SpellCounter: React.FC<props> = ({ spellNumber, spellGroup }) => {
             return returnValue;
           });
           setNums(newNums);
-        }, (i - activeIndex) * 500);
+        }, (i - activeIndex) * 300);
       }
     }, 3000);
   }, [spellNumber[spellGroup]]);
