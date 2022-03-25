@@ -1,7 +1,7 @@
 import { motion, Variants } from "framer-motion";
 interface props {
   tailwindClasses: string;
-  framerVariant: Variants;
+  framerVariant?: Variants;
   framerCustom?: any;
   framerLayoutId?: string;
 }

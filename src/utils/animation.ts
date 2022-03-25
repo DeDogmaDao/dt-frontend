@@ -340,6 +340,18 @@ export const calcFirstResultAni: Variants = {
     },
   },
 };
+export const calcCardSideAni:Variants = {
+  hidden: {
+    opacity:0,
+  },
+  visible:{
+    opacity:1,
+    transition:{
+      duration:1,
+      delay:7
+    }
+  }
+}
 // export const calcFirstResultAni: Variants = {
 //   hidden: {
 //     opacity: 0,

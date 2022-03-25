@@ -65,6 +65,7 @@ const GameBoard: React.FC = () => {
           <div className="w-[12vw] h-[17vw] absolute top-[15vw] left-[13.2vw] -ml-14 bg-red-500/50"></div>
           <Calculation
             currentCard={currentCard}
+            firstCardNum={gameCardData[0].cardNum}
             transferNum={transferNum}
             setTransferNum={setTransferNum}
           />

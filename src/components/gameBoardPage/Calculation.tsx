@@ -1,11 +1,12 @@
 import { AnimatePresence, motion, useAnimation } from "framer-motion";
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 import { gameCardType } from "../../types/allTypes";
-import { calcFadeAni, calcFirstResultAni } from "../../utils/animation";
+import { calcCardSideAni, calcFadeAni, calcFirstResultAni } from "../../utils/animation";
 import CalcItem from "./CalcItem";
 import CardNum from "./CardNum";
 interface props {
   currentCard: gameCardType | null;
+  firstCardNum:number;
   transferNum: boolean;
   setTransferNum: Dispatch<SetStateAction<boolean>>;
 }
@@ -22,6 +23,7 @@ const Calculation: React.FC<props> = ({
   currentCard,
   transferNum,
   setTransferNum,
+  firstCardNum
 }) => {
   const [showNum, setShowNum] = useState(true);
   const [layId, setLayId] = useState({
@@ -108,13 +110,19 @@ const Calculation: React.FC<props> = ({
 
   return (
     <>
-      {calcStage === null && (
-        <motion.div
-          layoutId={resultLayoutId.sideCard}
-          className="absolute left-[3vw] top-[22vw] bg-blue-900/0 text-white p-3"
+        <CalcItem
+        framerVariant={calcCardSideAni}
+          tailwindClasses="absolute left-[3vw] top-[20.5vw] bg-blue-900/0 text-white p-3"
         >
-          {currentCard && currentCard.cardNum}
-        </motion.div>
+          {firstCardNum}
+        </CalcItem>
+      {showNum === false && (
+        <CalcItem
+          framerLayoutId={resultLayoutId.sideCard}
+          tailwindClasses="absolute left-[3vw] top-[22vw] bg-blue-900/0 text-white p-3"
+        >
+          {resultRef.current && resultRef.current % 5250}
+        </CalcItem>
       )}
       <motion.div
         initial="hidden"
