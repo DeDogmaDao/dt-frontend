@@ -76,19 +76,18 @@ const CardGame: React.FC<props> = ({
         }));
       }, 1000);
       setTimeout(() => {
-        setTransferNum(false)
+        setTransferNum(false);
         setStage(2);
       }, 9000);
       setOnce(true);
     }
-    
-    if(stage===2 && !onceStage2){
+
+    if (stage === 2 && !onceStage2) {
       setTimeout(() => {
         aniControls.start("stage2");
       }, 500);
       setOnceStage2(true);
     }
-    
   }
 
   const styles = {
@@ -122,13 +121,19 @@ const CardGame: React.FC<props> = ({
       variants={gameCardAni}
       custom={{ cardIndex: cardIndex, styles: styles }}
       className="w-[5.15vw] flex flex-col justify-center items-center text-white absolute z-10"
-      style={styles}
+      style={{
+        ...styles,
+        transformStyle: "preserve-3d",
+        perspective: "1000px",
+        perspectiveOrigin: "50% 50%",
+      }}
     >
       <motion.div
         transition={{ duration: 1 }}
+        style={{ transformStyle: "preserve-3d" }}
         className="w-full h-full flex flex-col justify-center items-center relative"
       >
-        <motion.div className="w-full h-full relative">
+        <motion.div className="w-full h-full relative z-110">
           {data.spellValue.map((spell) => {
             return (
               <Spell
@@ -142,11 +147,15 @@ const CardGame: React.FC<props> = ({
           })}
         </motion.div>
         <motion.img
-          className="w-full object-contain"
-          src={data.image}
-          loading="lazy"
+          style={{ translateZ: "-1px" }}
+          className="w-full object-contain absolute top-0 left-0"
+          src={"/media/team/member3.png"}
         />
-        {(stage === 1 ) && (
+        <motion.img
+          className="w-full object-contain absolute top-0 left-0"
+          src={data.image}
+        />
+        {stage === 1 && (
           <>
             <CardNum
               num={data.communityNum}

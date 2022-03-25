@@ -78,6 +78,7 @@ export const gameCardAni: Variants = {
   hidden: {
     translateX: "1500px",
     translateY: "1500px",
+    rotateY:"0deg",
     transition: {
       duration: 0.5,
     },
@@ -85,19 +86,20 @@ export const gameCardAni: Variants = {
   visible: (custom: { cardIndex: number; styles: any }) => ({
     translateX: "0px",
     translateY: "0px",
+    rotateY:"180deg",
     transition: {
       duration: 0.1,
       delay: custom.cardIndex * 0.1 + 2,
     },
   }),
   stage1: (custom: { cardIndex: number; styles: any }) => ({
-    left: [custom.styles.left, "13.2vw", "14vw", "19vw","13vw"],
+    left: [custom.styles.left, "13.2vw", "14vw", "30vw","13vw"],
     z: [-0.1, -0.1,50, 100,0],
     scale: [1, 1.5,1.5, 2.5,2.5],
-    top: [custom.styles.top, "-5.5vw","-5vw", "15vw","20vw"],
-    rotateY: ["0deg", "0deg","0deg", "-90deg","-180deg"],
+    top: [custom.styles.top, "-5.5vw","-5vw", "19vw","20vw"],
+    rotateY: ["180deg", "180deg","180deg", "90deg","0deg"],
     transition: {
-      duration: 0.7,
+      duration: 2.8,
       times: [0, 0.3,0.5, 0.7,1],
       ease: "easeOut",
     },
