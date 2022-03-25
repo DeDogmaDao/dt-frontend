@@ -37,11 +37,11 @@ const GameBoard: React.FC = () => {
         />
 
         <div
-          className="w-1/3 h-full flex justify-center items-start flex-wrap relative z-10"
+          className="w-full h-full flex justify-center items-start flex-wrap relative z-10"
           style={{
             transformStyle: "preserve-3d",
-            perspective: "500px",
-            perspectiveOrigin: "60% 20%",
+            perspective: "2000px",
+            perspectiveOrigin: "65% 50%",
           }}
         >
           <motion.img
@@ -90,15 +90,7 @@ const GameBoard: React.FC = () => {
             transferNum={transferNum}
             setTransferNum={setTransferNum}
           />
-        </div>
-        <div
-          className="w-2/3 h-full  flex justify-center items-start relative z-10"
-          style={{
-            transformStyle: "preserve-3d",
-            perspective: "500px",
-            perspectiveOrigin: "center",
-          }}
-        >
+
           <DoorSpells
             spells={topSpells}
             right={0}

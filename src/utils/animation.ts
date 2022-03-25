@@ -91,18 +91,15 @@ export const gameCardAni: Variants = {
     },
   }),
   stage1: (custom: { cardIndex: number; styles: any }) => ({
-    left: [custom.styles.left, "13.2vw", "13vw"],
-    z: [-0.1, -0.1, 20],
-    scale: [1, 1.5, 2.5],
-    top: [custom.styles.top, "-5.5vw", "20vw"],
-    rotateY: ["0deg", "0deg", "360deg"],
+    left: [custom.styles.left, "13.2vw", "14vw", "19vw","13vw"],
+    z: [-0.1, -0.1,50, 100,0],
+    scale: [1, 1.5,1.5, 2.5,2.5],
+    top: [custom.styles.top, "-5.5vw","-5vw", "15vw","20vw"],
+    rotateY: ["0deg", "0deg","0deg", "-90deg","-180deg"],
     transition: {
       duration: 0.7,
-      times: [0, 0.5, 1],
+      times: [0, 0.3,0.5, 0.7,1],
       ease: "easeOut",
-    },
-    transitionEnd: {
-      z: 0,
     },
   }),
   
