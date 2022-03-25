@@ -78,7 +78,7 @@ export const gameCardAni: Variants = {
   hidden: {
     translateX: "1500px",
     translateY: "1500px",
-    rotateY:"0deg",
+    rotateY: "0deg",
     transition: {
       duration: 0.5,
     },
@@ -86,35 +86,35 @@ export const gameCardAni: Variants = {
   visible: (custom: { cardIndex: number; styles: any }) => ({
     translateX: "0px",
     translateY: "0px",
-    rotateY:"180deg",
+    rotateY: "180deg",
     transition: {
       duration: 0.1,
       delay: custom.cardIndex * 0.1 + 2,
     },
   }),
   stage1: (custom: { cardIndex: number; styles: any }) => ({
-    left: [custom.styles.left, "13.2vw", "14vw", "30vw","13vw"],
-    z: [-0.1, -0.1,50, 100,0],
-    scale: [1, 1.5,1.5, 2.5,2.5],
-    top: [custom.styles.top, "-5.5vw","-5vw", "19vw","20vw"],
-    rotateY: ["180deg", "180deg","180deg", "270deg","360deg"],
+    left: [custom.styles.left, "13.2vw", "14vw", "13vw", "13vw"],
+    z: [-0.1, -0.1, 50, 100, 0],
+    scale: [1, 1.5, 1.5, 2.5, 2.5],
+    top: [custom.styles.top, "-5.5vw", "-5vw", "19vw", "20vw"],
+    rotateY: ["180deg", "180deg", "180deg", "270deg", "360deg"],
     transition: {
       duration: 0.8,
-      times: [0, 0.3,0.5, 0.7,1],
+      times: [0, 0.3, 0.5, 0.7, 1],
       ease: "easeOut",
     },
   }),
-  
-  stage2:{
-    left:["13vw","50vw"],
-    rotateY:["0deg", "20deg"],
-    scale:[1,0.3],
+
+  stage2: {
+    left: ["13vw", "50vw"],
+    rotateY: ["0deg", "20deg"],
+    scale: [1, 0.3],
     transition: {
       duration: 0.7,
       times: [0, 1],
       ease: "easeOut",
     },
-  }
+  },
 };
 export const newGameCardAni: Variants = {
   hidden: (custom) => ({
@@ -315,7 +315,7 @@ export const calcFadeAni: Variants = {
   hidden: {
     opacity: 0,
   },
-  visible:(custom)=> ({
+  visible: (custom) => ({
     opacity: 1,
     transition: {
       duration: 0.5,
@@ -350,18 +350,18 @@ export const calcFirstResultAni: Variants = {
     },
   },
 };
-export const calcCardSideAni:Variants = {
+export const calcCardSideAni: Variants = {
   hidden: {
-    opacity:0,
+    opacity: 0,
   },
-  visible:{
-    opacity:1,
-    transition:{
-      duration:1,
-      delay:7
-    }
-  }
-}
+  visible: {
+    opacity: 1,
+    transition: {
+      duration: 1,
+      delay: 7,
+    },
+  },
+};
 // export const calcFirstResultAni: Variants = {
 //   hidden: {
 //     opacity: 0,
