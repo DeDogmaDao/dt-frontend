@@ -105,6 +105,17 @@ export const gameCardAni: Variants = {
       z: 0,
     },
   }),
+  
+  stage2:{
+    left:["13vw","50vw"],
+    rotateY:["0deg", "20deg"],
+    scale:[1,0.3],
+    transition: {
+      duration: 0.7,
+      times: [0, 1],
+      ease: "easeOut",
+    },
+  }
 };
 export const newGameCardAni: Variants = {
   hidden: (custom) => ({

@@ -1,4 +1,4 @@
-import { AnimatePresence, motion, useAnimation } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 import { gameCardType } from "../../types/allTypes";
 import { calcCardSideAni, calcFadeAni, calcFirstResultAni } from "../../utils/animation";

@@ -32,6 +32,7 @@ const CardGame: React.FC<props> = ({
 }) => {
   // states
   const [once, setOnce] = useState(false);
+  const [onceStage2, setOnceStage2] = useState(false);
   const column = (cardIndex % 3) + 1;
   const [stage, setStage] = useState(0);
   const aniControls = useAnimation();
@@ -80,6 +81,14 @@ const CardGame: React.FC<props> = ({
       }, 9000);
       setOnce(true);
     }
+    
+    if(stage===2 && !onceStage2){
+      setTimeout(() => {
+        aniControls.start("stage2");
+      }, 500);
+      setOnceStage2(true);
+    }
+    
   }
 
   const styles = {

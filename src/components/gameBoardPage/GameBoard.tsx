@@ -1,4 +1,4 @@
-import { LayoutGroup } from "framer-motion";
+import { LayoutGroup, motion } from "framer-motion";
 import { useState } from "react";
 import { gameCardData } from "../../store/allData";
 import CardGame from "./CardGame";
@@ -41,9 +41,31 @@ const GameBoard: React.FC = () => {
           style={{
             transformStyle: "preserve-3d",
             perspective: "500px",
-            perspectiveOrigin: "center",
+            perspectiveOrigin: "60% 20%",
           }}
         >
+          <motion.img
+            style={{
+              rotateX: "-30deg",
+              rotateZ: "-1deg",
+              rotateY: "-3deg",
+              scaleX: 0.7,
+              scaleY: 0.9,
+            }}
+            className="w-[5.15vw] object-contain absolute left-[48vw] top-[40vw]"
+            src={"/media/team/member3.png"}
+            loading="lazy"
+          />
+          <motion.div
+            style={{
+              rotateX: "-30deg",
+              rotateZ: "-1deg",
+              rotateY: "-3deg",
+              scaleX: 0.7,
+              scaleY: 0.9,
+            }}
+            className="absolute left-[67vw] top-[20vw] h-96 w-1 bg-green-400"
+          ></motion.div>
           {gameCardData.map((data, index) => {
             return (
               <CardGame
@@ -58,7 +80,6 @@ const GameBoard: React.FC = () => {
                 setCurrentCard={setCurrentCard}
                 transferNum={transferNum}
                 setTransferNum={setTransferNum}
-
               />
             );
           })}
