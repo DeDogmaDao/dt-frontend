@@ -106,23 +106,48 @@ export const gameCardAni: Variants = {
   }),
 
   stage2: (custom) => {
-    const translateValues =
-      custom.spellGroup === "yellow"
-        ? ((1015.7 - 71 - 19.2 - (custom.spellNumber.yellow / 60) * 300) /
-            1920) *
-          100
-        : ((1015.7 + 19.2 + (custom.spellNumber.blue / 60) * 300) /
-            1920) *100;
-    const scaleXValues = custom.spellGroup === "yellow" ? 0.2 : 0.2;
-    const scaleYValues = custom.spellGroup === "yellow" ? 0.2 : 0.2;
+    // const scaleXValues = custom.spellGroup === "yellow" ? 0.2 : 0.2;
+    // const scaleYValues = custom.spellGroup === "yellow" ? 0.2 : 0.2;
+    const midLine = 1015.7;
+    const convertToVW = (1 / 1920) * 100;
+    const styleFn = (
+      gapX: number,
+      left: boolean,
+      scale: number,
+      translateY: number,
+      rotateX: number
+    ) => {
+      const translateXValue = left
+        ? (midLine - custom.spellNumber.yellowCardCount * gapX) * convertToVW
+        : (midLine + 5 + (custom.spellNumber.blueCardCount - 1) * gapX) *
+          convertToVW;
+      const scaleValue = scale;
+      const translateYValue = translateY;
+      const rotateXValue = rotateX;
+      return [translateXValue, translateYValue, rotateXValue, scaleValue];
+    };
+    let transX = 0,
+      transY = 0,
+      scales = 0,
+      rotates = 0;
+
+    if (custom.spellGroup === "yellow") {
+      if (custom.spellNumber.yellowCardCount <= 8) {
+        [transX, transY, rotates, scales] = styleFn(75, true, 0.7, 22, 95);
+      }
+    }
+    if (custom.spellGroup === "blue") {
+      if (custom.spellNumber.blueCardCount <= 8) {
+        [transX, transY, rotates, scales] = styleFn(75, false, 0.7, 22, 95);
+      }
+    }
 
     return {
-      translateX: translateValues + "vw",
-      translateY:"21.5vw",
-      rotateX: "110deg",
-      rotateY:"0deg",
-      scaleX: scaleXValues,
-      scaleY: scaleYValues,
+      translateX: transX + "vw",
+      translateY: transY + "vw",
+      rotateX: rotates + "deg",
+      rotateY: "0deg",
+      scale: scales,
       transition: {
         duration: 0.7,
         ease: "easeOut",
