@@ -1,12 +1,16 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 import { gameCardType } from "../../types/allTypes";
-import { calcCardSideAni, calcFadeAni, calcFirstResultAni } from "../../utils/animation";
+import {
+  calcCardSideAni,
+  calcFadeAni,
+  calcFirstResultAni,
+} from "../../utils/animation";
 import CalcItem from "./CalcItem";
 import CardNum from "./CardNum";
 interface props {
   currentCard: gameCardType | null;
-  firstCardNum:number;
+  firstCardNum: number;
   transferNum: boolean;
   setTransferNum: Dispatch<SetStateAction<boolean>>;
 }
@@ -23,7 +27,7 @@ const Calculation: React.FC<props> = ({
   currentCard,
   transferNum,
   setTransferNum,
-  firstCardNum
+  firstCardNum,
 }) => {
   const [showNum, setShowNum] = useState(true);
   const [layId, setLayId] = useState({
@@ -51,9 +55,12 @@ const Calculation: React.FC<props> = ({
         });
       }, 8000);
 
-      resultRef.current =
-        currentCard.cardNum * currentCard.communityNum +
-        currentCard.individualNum;
+      // there is an issue here************** come back to fix it (resultRef.current)
+      setTimeout(() => {
+        resultRef.current =
+          currentCard.cardNum * currentCard.communityNum +
+          currentCard.individualNum;
+      }, 1000);
     }
   }, [currentCard]);
 
@@ -110,12 +117,12 @@ const Calculation: React.FC<props> = ({
 
   return (
     <>
-        <CalcItem
+      <CalcItem
         framerVariant={calcCardSideAni}
-          tailwindClasses="absolute left-[3vw] top-[20.5vw] bg-blue-900/0 text-white p-3"
-        >
-          {firstCardNum}
-        </CalcItem>
+        tailwindClasses="absolute left-[3vw] top-[20.5vw] bg-blue-900/0 text-white p-3"
+      >
+        {firstCardNum}
+      </CalcItem>
       {showNum === false && (
         <CalcItem
           framerLayoutId={resultLayoutId.sideCard}
