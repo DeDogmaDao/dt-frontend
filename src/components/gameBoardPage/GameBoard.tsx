@@ -40,31 +40,61 @@ const GameBoard: React.FC = () => {
           className="w-full h-full flex justify-center items-start flex-wrap relative z-10"
           style={{
             transformStyle: "preserve-3d",
-            perspective: "1000px",
-            perspectiveOrigin: "65% 50%",
+            perspective: "500px",
+            perspectiveOrigin: "66.66% 50%",
           }}
         >
           <motion.img
             style={{
-              rotateX: "-30deg",
-              rotateZ: "-1deg",
-              rotateY: "-3deg",
-              scaleX: 0.7,
-              scaleY: 0.9,
+              rotateX: "-85deg",
+              rotateZ: "0deg",
+              rotateY: "0deg",
+              scaleY:3,
+              scaleX:0.7,
+              translateX:(997.44-71)/1920 * 100+"vw",
+              translateY:"21.5vw",
+
             }}
-            className="w-[5.15vw] object-contain absolute left-[48vw] top-[40vw]"
+            className="w-[5.15vw] object-contain absolute left-[13vw] top-[20vw]"
+            src={"/media/team/member3.png"}
+            loading="lazy"
+          />
+          <motion.img
+            style={{
+              rotateX: "-85deg",
+              rotateZ: "0deg",
+              rotateY: "0deg",
+              scaleY:3,
+              scaleX:0.7,
+              translateX:"53.95vw",
+              translateY:"21.5vw"
+
+            }}
+            className="w-[5.15vw] object-contain absolute left-[13vw] top-[20vw]"
             src={"/media/team/member3.png"}
             loading="lazy"
           />
           <motion.div
             style={{
-              rotateX: "-30deg",
-              rotateZ: "-1deg",
-              rotateY: "-3deg",
+              rotateX: "0deg",
+              rotateZ: "0deg",
+              rotateY: "0deg",
               scaleX: 0.7,
               scaleY: 0.9,
             }}
-            className="absolute left-[67vw] top-[20vw] h-96 w-1 bg-green-400"
+            className="absolute left-[66.65vw] top-[16vw] h-96 w-px bg-green-400"
+          ></motion.div>
+          <motion.div
+            style={{
+              rotateX: "-72deg",
+              rotateZ: "0deg",
+              rotateY: "0deg",
+              scaleX: 0.7,
+              scaleY: 0.9,
+              translateX:"53.65vw",
+              translateY:"9.4vw"
+            }}
+            className="absolute left-[13vw] top-[20vw] h-96 w-px bg-purple-400"
           ></motion.div>
           {gameCardData.map((data, index) => {
             return (

@@ -105,8 +105,8 @@ export const gameCardAni: Variants = {
     },
   }),
 
-  stage2: {
-    left: ["13vw", "50vw"],
+  stage2:(custom)=> ({
+    translateX: ["0vw", "40vw"],
     rotateY: ["0deg", "20deg"],
     scale: [1, 0.3],
     transition: {
@@ -114,7 +114,7 @@ export const gameCardAni: Variants = {
       times: [0, 1],
       ease: "easeOut",
     },
-  },
+  }),
 };
 export const newGameCardAni: Variants = {
   hidden: (custom) => ({
