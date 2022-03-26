@@ -85,7 +85,7 @@ const CardGame: React.FC<props> = ({
     if (stage === 2 && !onceStage2) {
       setTimeout(() => {
         aniControls.start("stage2");
-      }, 500);
+      }, 200);
       setOnceStage2(true);
     }
   }
