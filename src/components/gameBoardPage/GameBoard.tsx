@@ -23,6 +23,8 @@ const GameBoard: React.FC = () => {
   const [spellNumber, setSpellNumber] = useState<spellNumber>({
     yellow: 0,
     blue: 0,
+    yellowCardCount:0,
+    blueCardCount:0
   });
   const [currentCard, setCurrentCard] = useState<gameCardType | null>(null);
 

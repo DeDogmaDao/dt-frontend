@@ -72,6 +72,7 @@ const CardGame: React.FC<props> = ({
       setTimeout(() => {
         setSpellNumber((prevState) => ({
           ...prevState,
+          [data.spellGroup+"CardCount"]:prevState[data.spellGroup+"CardCount"] + 1,
           [data.spellGroup]: data.total,
         }));
       }, 1000);

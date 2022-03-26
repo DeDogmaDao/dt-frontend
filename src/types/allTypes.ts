@@ -67,6 +67,8 @@ export interface bottomRightPosition {
 export interface spellNumber {
   [yellow: string]: number;
   blue: number;
+  yellowCardCount:number;
+  blueCardCount:number;
 }
 
 export interface counterNumType {
