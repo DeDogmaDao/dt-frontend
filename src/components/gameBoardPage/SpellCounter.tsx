@@ -17,7 +17,7 @@ const styles = (spellGroup: string): MotionStyle => {
       rotateY: "45deg",
       scaleY: 0.8,
       fontSize: "1.5vw",
-      textShadow: "0px 0px 30px yellow",
+      textShadow: "0px 0px 10px yellow",
       color: "yellow",
     };
   }
@@ -28,7 +28,7 @@ const styles = (spellGroup: string): MotionStyle => {
     rotateZ: "40deg",
     rotateY: "-45deg",
     fontSize: "1.7vw",
-    textShadow: "0px 0px 30px #00FFFF",
+    textShadow: "0px 0px 10px #00FFFF",
     color: "#00FFFF",
   };
 };
