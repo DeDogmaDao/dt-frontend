@@ -44,9 +44,9 @@ const GameBoard: React.FC = () => {
             perspectiveOrigin: "66.66% 50%",
           }}
         >
-          <motion.img
+          {/* <motion.img
             style={{
-              rotateX: "-85deg",
+              rotateX: "-78deg",
               rotateZ: "0deg",
               rotateY: "0deg",
               scaleY:3,
@@ -61,7 +61,7 @@ const GameBoard: React.FC = () => {
           />
           <motion.img
             style={{
-              rotateX: "-85deg",
+              rotateX: "-78deg",
               rotateZ: "0deg",
               rotateY: "0deg",
               scaleY:3,
@@ -73,7 +73,7 @@ const GameBoard: React.FC = () => {
             className="w-[5.15vw] object-contain absolute left-[13vw] top-[20vw]"
             src={"/media/team/member3.png"}
             loading="lazy"
-          />
+          /> */}
           <motion.div
             style={{
               rotateX: "0deg",
@@ -86,7 +86,7 @@ const GameBoard: React.FC = () => {
           ></motion.div>
           <motion.div
             style={{
-              rotateX: "-72deg",
+              rotateX: "90deg",
               rotateZ: "0deg",
               rotateY: "0deg",
               scaleX: 0.7,
@@ -94,7 +94,7 @@ const GameBoard: React.FC = () => {
               translateX:"53.65vw",
               translateY:"9.4vw"
             }}
-            className="absolute left-[13vw] top-[20vw] h-96 w-px bg-purple-400"
+            className="absolute left-[13vw] top-[19vw] h-[30vw] w-px bg-purple-400"
           ></motion.div>
           {gameCardData.map((data, index) => {
             return (

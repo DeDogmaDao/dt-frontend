@@ -108,12 +108,12 @@ export const gameCardAni: Variants = {
   stage2: (custom) => {
     const translateValues =
       custom.spellGroup === "yellow"
-        ? ((1015.7 - 71 - 19.2 - (custom.spellNumber.yellow / 60) * 1000) /
+        ? ((1015.7 - 71 - 19.2 - (custom.spellNumber.yellow / 60) * 300) /
             1920) *
           100
-        : ((1015.7 + 19.2 + (custom.spellNumber.blue / 60) * 1000) /
+        : ((1015.7 + 19.2 + (custom.spellNumber.blue / 60) * 300) /
             1920) *100;
-    const scaleXValues = custom.spellGroup === "yellow" ? 0.23 : 0.23;
+    const scaleXValues = custom.spellGroup === "yellow" ? 0.2 : 0.2;
     const scaleYValues = custom.spellGroup === "yellow" ? 0.2 : 0.2;
 
     return {
