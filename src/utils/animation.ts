@@ -105,16 +105,30 @@ export const gameCardAni: Variants = {
     },
   }),
 
-  stage2:(custom)=> ({
-    translateX: ["0vw", "40vw"],
-    rotateY: ["0deg", "20deg"],
-    scale: [1, 0.3],
-    transition: {
-      duration: 0.7,
-      times: [0, 1],
-      ease: "easeOut",
-    },
-  }),
+  stage2: (custom) => {
+    const translateValues =
+      custom.spellGroup === "yellow"
+        ? ((1015.7 - 71 - 19.2 - (custom.spellNumber.yellow / 60) * 1000) /
+            1920) *
+          100
+        : ((1015.7 + 19.2 + (custom.spellNumber.blue / 60) * 1000) /
+            1920) *100;
+    const scaleXValues = custom.spellGroup === "yellow" ? 0.23 : 0.23;
+    const scaleYValues = custom.spellGroup === "yellow" ? 0.2 : 0.2;
+
+    return {
+      translateX: translateValues + "vw",
+      translateY:"21.5vw",
+      rotateX: "110deg",
+      rotateY:"0deg",
+      scaleX: scaleXValues,
+      scaleY: scaleYValues,
+      transition: {
+        duration: 0.7,
+        ease: "easeOut",
+      },
+    };
+  },
 };
 export const newGameCardAni: Variants = {
   hidden: (custom) => ({

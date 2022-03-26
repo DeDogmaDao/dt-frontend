@@ -40,7 +40,7 @@ const GameBoard: React.FC = () => {
           className="w-full h-full flex justify-center items-start flex-wrap relative z-10"
           style={{
             transformStyle: "preserve-3d",
-            perspective: "500px",
+            perspective: "55vw",
             perspectiveOrigin: "66.66% 50%",
           }}
         >

@@ -119,7 +119,12 @@ const CardGame: React.FC<props> = ({
       initial="hidden"
       animate={aniControls}
       variants={gameCardAni}
-      custom={{ cardIndex: cardIndex, styles: styles }}
+      custom={{
+        cardIndex: cardIndex,
+        styles: styles,
+        spellGroup: data.spellGroup,
+        spellNumber: spellNumber,
+      }}
       className="w-[5.15vw] flex flex-col justify-center items-center text-white absolute z-10"
       style={{
         ...styles,
@@ -151,10 +156,7 @@ const CardGame: React.FC<props> = ({
           className="w-full object-contain absolute top-0 left-0"
           src={"/media/team/member3.png"}
         />
-        <motion.img
-          className="w-full object-contain"
-          src={data.image}
-        />
+        <motion.img className="w-full object-contain" src={data.image} />
         {stage === 1 && (
           <>
             <CardNum
