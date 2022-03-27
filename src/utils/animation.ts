@@ -115,49 +115,73 @@ export const gameCardAni: Variants = {
       left: boolean,
       scale: number,
       translateY: number,
-      rotateX: number
+      rotateX: number,
+      translateZ: number = 0
     ) => {
       const translateXValue = left
-        ? (midLine - (custom.spellNumber.yellowCardCount % 9) * gapX) *
+        ? (midLine - ((custom.spellNumber.yellowCardCount - 1) % 2 + 1) * gapX) *
           convertToVW
-        : (midLine + 5 + ((custom.spellNumber.blueCardCount % 9) - 1) * gapX) *
+        : (midLine + ((custom.spellNumber.blueCardCount - 1) % 2) * gapX) *
           convertToVW;
       const scaleValue = scale;
       const translateYValue = translateY;
       const rotateXValue = rotateX;
-      return [translateXValue, translateYValue, rotateXValue, scaleValue];
+      const translateZValue = translateZ;
+      return [
+        translateXValue,
+        translateYValue,
+        rotateXValue,
+        scaleValue,
+        translateZValue,
+      ];
     };
     let transX = 0,
       transY = 0,
+      transZ = 0,
       scales = 0,
       rotates = 0;
 
     if (custom.spellGroup === "yellow") {
-      if (custom.spellNumber.yellowCardCount <= 8) {
+      if (custom.spellNumber.yellowCardCount <= 2) {
         [transX, transY, rotates, scales] = styleFn(75, true, 0.7, 22, 95);
       }
       if (
         custom.spellNumber.yellowCardCount <= 20 &&
-        custom.spellNumber.yellowCardCount > 8
+        custom.spellNumber.yellowCardCount > 2
       ) {
-        [transX, transY, rotates, scales] = styleFn(30, true, 0.3, 19.5, 110);
+        [transX, transY, rotates, scales, transZ] = styleFn(
+          35,
+          true,
+          0.4,
+          20.5,
+          110,
+          -1
+        );
       }
     }
     if (custom.spellGroup === "blue") {
-      if (custom.spellNumber.blueCardCount <= 8) {
+      if (custom.spellNumber.blueCardCount <= 2) {
         [transX, transY, rotates, scales] = styleFn(75, false, 0.7, 22, 95);
       }
       if (
         custom.spellNumber.blueCardCount <= 20 &&
-        custom.spellNumber.blueCardCount > 8
+        custom.spellNumber.blueCardCount > 2
       ) {
-        [transX, transY, rotates, scales] = styleFn(30, false, 0.3, 19.5, 110);
+        [transX, transY, rotates, scales, transZ] = styleFn(
+          35,
+          false,
+          0.4,
+          20.5,
+          110,
+          -1
+        );
       }
     }
 
     return {
       translateX: transX + "vw",
       translateY: transY + "vw",
+      translateZ: transZ + "vw",
       rotateX: rotates + "deg",
       rotateY: "0deg",
       scale: scales,
