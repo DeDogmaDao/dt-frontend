@@ -361,6 +361,18 @@ export const tabImageContainerAni: Variants = {
     },
   },
 };
+export const tabImageButtomAni:Variants = {
+  hidden:{
+    rotate:"0deg"
+  },
+  visible:{
+    rotate:"180deg",
+    transition:{
+      duration:1.5,
+      ease:"easeOut"
+    }
+  }
+}
 export const tabDescContainerAni: Variants = {
   hidden: {
     translateX: 200,

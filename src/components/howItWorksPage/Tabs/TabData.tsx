@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import {
   tabDescContainerAni,
   tabImageAni,
+  tabImageButtomAni,
   tabImageContainerAni,
 } from "../../../utils/animation";
 
@@ -23,7 +24,10 @@ const TabData: React.FC<props> = ({ data, activeGroup }) => {
               variants={tabImageContainerAni}
               className="h-full w-[300px] relative"
             >
-              <motion.div className="w-[300px] opacity-30 absolute -bottom-7 -left-10 h-[50%] bg-primary-700 rounded-tl-full rounded-tr-full z-20"></motion.div>
+              <motion.div className="w-[300px] absolute -bottom-7 -left-10 h-[50%]  rounded-tl-full rounded-tr-full z-20 overflow-hidden">
+                <motion.img variants={tabImageButtomAni}               initial="hidden"
+              animate="visible" src={'/media/junks/tabCycle.png'}  />
+              </motion.div>
               <motion.img
                 variants={tabImageAni}
                 custom={0}
