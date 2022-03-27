@@ -118,8 +118,9 @@ export const gameCardAni: Variants = {
       rotateX: number
     ) => {
       const translateXValue = left
-        ? (midLine - custom.spellNumber.yellowCardCount * gapX) * convertToVW
-        : (midLine + 5 + (custom.spellNumber.blueCardCount - 1) * gapX) *
+        ? (midLine - (custom.spellNumber.yellowCardCount % 9) * gapX) *
+          convertToVW
+        : (midLine + 5 + ((custom.spellNumber.blueCardCount % 9) - 1) * gapX) *
           convertToVW;
       const scaleValue = scale;
       const translateYValue = translateY;
@@ -135,10 +136,22 @@ export const gameCardAni: Variants = {
       if (custom.spellNumber.yellowCardCount <= 8) {
         [transX, transY, rotates, scales] = styleFn(75, true, 0.7, 22, 95);
       }
+      if (
+        custom.spellNumber.yellowCardCount <= 20 &&
+        custom.spellNumber.yellowCardCount > 8
+      ) {
+        [transX, transY, rotates, scales] = styleFn(30, true, 0.3, 19.5, 110);
+      }
     }
     if (custom.spellGroup === "blue") {
       if (custom.spellNumber.blueCardCount <= 8) {
         [transX, transY, rotates, scales] = styleFn(75, false, 0.7, 22, 95);
+      }
+      if (
+        custom.spellNumber.blueCardCount <= 20 &&
+        custom.spellNumber.blueCardCount > 8
+      ) {
+        [transX, transY, rotates, scales] = styleFn(30, false, 0.3, 19.5, 110);
       }
     }
 
