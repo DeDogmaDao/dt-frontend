@@ -161,7 +161,7 @@ export const gameCardAni: Variants = {
         );
       }
       if (
-        custom.spellNumber.yellowCardCount <= 16 &&
+        custom.spellNumber.yellowCardCount <= 24 &&
         custom.spellNumber.yellowCardCount > 8
       ) {
         [transX, transY, rotates, scales, transZ] = styleFn(
@@ -177,12 +177,12 @@ export const gameCardAni: Variants = {
         );
       }
       if (
-        custom.spellNumber.yellowCardCount <= 27 &&
-        custom.spellNumber.yellowCardCount > 16
+        custom.spellNumber.yellowCardCount <= 51 &&
+        custom.spellNumber.yellowCardCount > 24
       ){
         [transX, transY, rotates, scales, transZ] = styleFn(
           27,
-          16,
+          24,
           midLineThirdtRow,
           23,
           true,
@@ -207,7 +207,7 @@ export const gameCardAni: Variants = {
         );
       }
       if (
-        custom.spellNumber.blueCardCount <= 16 &&
+        custom.spellNumber.blueCardCount <= 24 &&
         custom.spellNumber.blueCardCount > 8
       ) {
         [transX, transY, rotates, scales, transZ] = styleFn(
@@ -223,12 +223,12 @@ export const gameCardAni: Variants = {
         );
       }
       if (
-        custom.spellNumber.blueCardCount <= 27 &&
-        custom.spellNumber.blueCardCount > 16
+        custom.spellNumber.blueCardCount <= 51 &&
+        custom.spellNumber.blueCardCount > 24
       ) {
         [transX, transY, rotates, scales, transZ] = styleFn(
           27,
-          16,
+          24,
           midLineThirdtRow,
           23,
           false,
