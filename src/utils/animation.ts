@@ -110,6 +110,7 @@ export const gameCardAni: Variants = {
     // const scaleYValues = custom.spellGroup === "yellow" ? 0.2 : 0.2;
     const midLineFirstRow = 1016;
     const midLineSecondtRow = 1000;
+    const midLineThirdtRow = 992;
     const convertToVW = (1 / 1920) * 100;
     const styleFn = (
       devide:number,
@@ -147,9 +148,9 @@ export const gameCardAni: Variants = {
       rotates = 0;
 
     if (custom.spellGroup === "yellow") {
-      if (custom.spellNumber.yellowCardCount <= 8) {
+      if (custom.spellNumber.yellowCardCount <= 1) {
         [transX, transY, rotates, scales] = styleFn(
-          8,
+          1,
           0,
           midLineFirstRow,
           75,
@@ -160,12 +161,12 @@ export const gameCardAni: Variants = {
         );
       }
       if (
-        custom.spellNumber.yellowCardCount <= 20 &&
-        custom.spellNumber.yellowCardCount > 8
+        custom.spellNumber.yellowCardCount <= 2 &&
+        custom.spellNumber.yellowCardCount > 1
       ) {
         [transX, transY, rotates, scales, transZ] = styleFn(
-          16,
-          8,
+          1,
+          1,
           midLineSecondtRow,
           43,
           true,
@@ -173,13 +174,29 @@ export const gameCardAni: Variants = {
           20.5,
           110,
           -1.5
+        );
+      }
+      if (
+        custom.spellNumber.yellowCardCount <= 3 &&
+        custom.spellNumber.yellowCardCount > 2
+      ){
+        [transX, transY, rotates, scales, transZ] = styleFn(
+          3,
+          2,
+          midLineThirdtRow,
+          25,
+          true,
+          0.2,
+          20,
+          130,
+          -3.5
         );
       }
     }
     if (custom.spellGroup === "blue") {
-      if (custom.spellNumber.blueCardCount <= 8) {
+      if (custom.spellNumber.blueCardCount <= 1) {
         [transX, transY, rotates, scales] = styleFn(
-          8,
+          1,
           0,
           midLineFirstRow,
           75,
@@ -190,12 +207,12 @@ export const gameCardAni: Variants = {
         );
       }
       if (
-        custom.spellNumber.blueCardCount <= 20 &&
-        custom.spellNumber.blueCardCount > 8
+        custom.spellNumber.blueCardCount <= 2 &&
+        custom.spellNumber.blueCardCount > 1
       ) {
         [transX, transY, rotates, scales, transZ] = styleFn(
-          16,
-          8,
+          1,
+          1,
           midLineSecondtRow,
           43,
           false,
@@ -203,6 +220,22 @@ export const gameCardAni: Variants = {
           20.5,
           110,
           -1.5
+        );
+      }
+      if (
+        custom.spellNumber.blueCardCount <= 5 &&
+        custom.spellNumber.blueCardCount > 2
+      ) {
+        [transX, transY, rotates, scales, transZ] = styleFn(
+          3,
+          2,
+          midLineThirdtRow,
+          23,
+          false,
+          0.2,
+          20,
+          130,
+          -3.5
         );
       }
     }
