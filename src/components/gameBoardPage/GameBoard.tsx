@@ -37,6 +37,10 @@ const GameBoard: React.FC = () => {
           src="/media/bg/game.jpg"
           className="absolute top-0 left-0 w-full h-full"
         />
+        <img
+          src="/snap.jpg"
+          className="absolute top-[21.8vw] left-[60vw] w-[13vw] opacity-50"
+        />
 
         <div
           className="w-full h-full flex justify-center items-start flex-wrap relative z-10"
