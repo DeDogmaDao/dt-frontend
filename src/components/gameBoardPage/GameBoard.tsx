@@ -39,7 +39,7 @@ const GameBoard: React.FC = () => {
         />
         <img
           src="/snap.jpg"
-          className="absolute top-[21.8vw] left-[60vw] w-[13vw] opacity-50"
+          className="absolute top-[22vw] left-[61vw] w-[11.3vw] h-[5vw] opacity-50"
         />
 
         <div
