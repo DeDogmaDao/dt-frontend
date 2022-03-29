@@ -23,8 +23,8 @@ const GameBoard: React.FC = () => {
   const [spellNumber, setSpellNumber] = useState<spellNumber>({
     yellow: 0,
     blue: 0,
-    yellowCardCount:0,
-    blueCardCount:0
+    yellowCardCount: 0,
+    blueCardCount: 0,
   });
   const [currentCard, setCurrentCard] = useState<gameCardType | null>(null);
 
@@ -46,58 +46,6 @@ const GameBoard: React.FC = () => {
             perspectiveOrigin: "66.66% 50%",
           }}
         >
-          {/* <motion.img
-            style={{
-              rotateX: "-78deg",
-              rotateZ: "0deg",
-              rotateY: "0deg",
-              scaleY:3,
-              scaleX:0.7,
-              translateX:(997.44-71)/1920 * 100+"vw",
-              translateY:"21.5vw",
-
-            }}
-            className="w-[5.15vw] object-contain absolute left-[13vw] top-[20vw]"
-            src={"/media/team/member3.png"}
-            loading="lazy"
-          />
-          <motion.img
-            style={{
-              rotateX: "-78deg",
-              rotateZ: "0deg",
-              rotateY: "0deg",
-              scaleY:3,
-              scaleX:0.7,
-              translateX:"53.95vw",
-              translateY:"21.5vw"
-
-            }}
-            className="w-[5.15vw] object-contain absolute left-[13vw] top-[20vw]"
-            src={"/media/team/member3.png"}
-            loading="lazy"
-          /> */}
-          <motion.div
-            style={{
-              rotateX: "0deg",
-              rotateZ: "0deg",
-              rotateY: "0deg",
-              scaleX: 0.7,
-              scaleY: 0.9,
-            }}
-            className="absolute left-[66.65vw] top-[16vw] h-96 w-px bg-green-400"
-          ></motion.div>
-          <motion.div
-            style={{
-              rotateX: "90deg",
-              rotateZ: "0deg",
-              rotateY: "0deg",
-              scaleX: 0.7,
-              scaleY: 0.9,
-              translateX:"53.65vw",
-              translateY:"9.4vw"
-            }}
-            className="absolute left-[13vw] top-[19vw] h-[30vw] w-px bg-purple-400"
-          ></motion.div>
           {gameCardData.map((data, index) => {
             return (
               <CardGame
@@ -115,7 +63,6 @@ const GameBoard: React.FC = () => {
               />
             );
           })}
-          {/* <div className="w-[12vw] h-[17vw] absolute top-[15vw] left-[13.2vw] -ml-14 bg-red-500/50"></div> */}
           <Calculation
             currentCard={currentCard}
             firstCardNum={gameCardData[0].cardNum}
@@ -154,23 +101,6 @@ const GameBoard: React.FC = () => {
 
           <SpellCounter spellNumber={spellNumber} spellGroup="yellow" />
           <SpellCounter spellNumber={spellNumber} spellGroup="blue" />
-
-          <div className="absolute left-[30%] top-[8%] w-full h-full">
-            <div className="relative w-full h-full">
-              {/* {gameCardData.map((data, index) => {
-                return (
-                  <CardGame
-                    layoutID={"cardGame" + data.id}
-                    data={data}
-                    index={index}
-                    turnNumber={turnNumber}
-                    setTurnNumber={setTurnNumber}
-                    arrayLength={gameCardData.length}
-                  />
-                );
-              })} */}
-            </div>
-          </div>
         </div>
       </div>
     </LayoutGroup>
