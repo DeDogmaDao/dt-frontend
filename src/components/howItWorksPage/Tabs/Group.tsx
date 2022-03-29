@@ -5,34 +5,6 @@ import { tabGroupAni } from "../../../utils/animation";
 interface props {
   tabs: tabsType[];
 }
-console.log("object");
-console.log("object");
-console.log("object");
-console.log("object");
-console.log("object");
-console.log("object");
-console.log("object");
-console.log("object");
-console.log("object");
-console.log("object");
-console.log("object");
-console.log("object");
-console.log("object");
-console.log("object");
-console.log("object");
-console.log("object");
-console.log("object");
-console.log("object");
-console.log("object");
-console.log("object");
-console.log("object");
-console.log("object");
-console.log("object");
-console.log("object");
-console.log("object");
-console.log("object");
-console.log("object");
-console.log("object");
 const Group: React.FC<props> = ({ children, tabs }) => {
   const controls = useAnimation();
   useEffect(() => {
