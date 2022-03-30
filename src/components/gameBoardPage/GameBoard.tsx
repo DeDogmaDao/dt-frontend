@@ -37,17 +37,16 @@ const GameBoard: React.FC = () => {
           src="/media/game/main.png"
           className="absolute top-0 left-0 w-full h-full z-10"
         />
-        <div className="absolute  top-[10.53vw] left-[59.05vw] w-[15.29vw] h-[26vw] bg-red-500">
+        <div className="absolute  top-[10.53vw] left-[59.05vw] w-[15.391vw] h-[26vw] bg-red-500">
           <div className="relative w-full h-full">
             <img
-              src="/media/game/leftDoor.png"
-              className="absolute bottom-0 left-0 w-[7.7vw] h-full z-0"
-            />
-            <img
-              src="/media/game/rightDoor.png"
+              src="/media/game/door.png"
               className="absolute bottom-0 right-0 w-[7.7vw] h-full z-0 "
             />
-
+            <img
+              src="/media/game/door.png"
+              className="absolute bottom-0 left-0 w-[7.7vw] h-full z-0 scale-x-[-1]"
+            />
           </div>
         </div>
 
