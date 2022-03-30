@@ -34,13 +34,22 @@ const GameBoard: React.FC = () => {
     <LayoutGroup>
       <div className="flex justify-between items-center w-screen h-[calc(900/1920*100vw)] relative">
         <img
-          src="/media/bg/game.jpg"
-          className="absolute top-0 left-0 w-full h-full"
+          src="/media/game/main.png"
+          className="absolute top-0 left-0 w-full h-full z-10"
         />
-        <img
-          src="/snap.jpg"
-          className="absolute top-[22vw] left-[61vw] w-[11.3vw] h-[5vw] opacity-50"
-        />
+        <div className="absolute z-0  top-[10.4vw] left-[58.72vw] w-[16vw] h-[26vw] bg-red-500">
+          <div className="relative w-full h-full">
+            <img
+              src="/media/game/door.png"
+              className="absolute bottom-0 left-0 w-[8vw] h-full z-0"
+            />
+            <img
+              src="/media/game/door.png"
+              className="absolute bottom-0 right-0 w-[8vw] h-full z-0 scale-x-[-1]"
+            />
+
+          </div>
+        </div>
 
         <div
           className="w-full h-full flex justify-center items-start flex-wrap relative z-10"
