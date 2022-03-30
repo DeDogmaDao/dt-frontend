@@ -37,33 +37,17 @@ const GameBoard: React.FC = () => {
           src="/media/game/main.png"
           className="absolute top-0 left-0 w-full h-full z-10"
         />
-        <div className="absolute  top-[10.4vw] left-[58.77vw] w-[15.9vw] h-[26vw] bg-red-500">
+        <div className="absolute  top-[10.53vw] left-[59.05vw] w-[15.29vw] h-[26vw] bg-red-500">
           <div className="relative w-full h-full">
             <img
-              src="/media/game/door.png"
-              className="absolute bottom-0 left-0 w-[8vw] h-full z-0"
+              src="/media/game/leftDoor.png"
+              className="absolute bottom-0 left-0 w-[7.7vw] h-full z-0"
             />
             <img
-              src="/media/game/door.png"
-              className="absolute bottom-0 right-0 w-[8vw] h-full z-0 scale-x-[-1]"
+              src="/media/game/rightDoor.png"
+              className="absolute bottom-0 right-0 w-[7.7vw] h-full z-0 "
             />
-            <div className="absolute top-[12.3vw] left-1/2 ml-[-1vw] w-[2vw] h-[2vw]  z-10">
-              <div className="relative w-full h-full">
-                <img
-                  src="/media/game/ring.png"
-                  className="absolute bottom-0 left-0 w-full h-full"
-                />
 
-                <img
-                  src="/media/game/pin.png"
-                  className="absolute top-[-0.2vw] left-1/2 ml-[-0.33vw] w-[0.66vw] z-10"
-                />
-                <img
-                  src="/media/game/pin.png"
-                  className="absolute bottom-[-0.2vw] left-1/2 ml-[-0.33vw] w-[0.66vw] z-10 scale-y-[-1]"
-                />
-              </div>
-            </div>
           </div>
         </div>
 
