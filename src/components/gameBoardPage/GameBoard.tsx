@@ -47,7 +47,15 @@ const GameBoard: React.FC = () => {
               src="/media/game/door.png"
               className="absolute bottom-0 right-0 w-[8vw] h-full z-0 scale-x-[-1]"
             />
+            <div className="absolute top-[12.3vw] left-1/2 ml-[-1vw] w-[2vw] h-[2vw] bg-green-500 z-10">
+              <div className="relative w-full h-full">
+            <img
+              src="/media/game/ring.png"
+              className="absolute bottom-0 right-0 w-full h-full"
+            />
 
+              </div>
+            </div>
           </div>
         </div>
 
