@@ -18,13 +18,13 @@ const Door: React.FC<props> = ({ spellNumber }) => {
 
   useEffect(() => {
     setTimeout(() => {
-      const plusOrMinus = spellNumber.blue - spellNumber.yellow > 0 ? -1 : 1;
-      const delta: number = 10;
+      const plusOrMinus = spellNumber.blue - spellNumber.yellow >= 0 ? -1 : 1;
+      const delta: number = spellNumber.blue - spellNumber.yellow;
       setStyles({
         ring: { translateX: delta / 3 + "vw" },
-        topPin: { translateY: (plusOrMinus * Math.pow(delta, 2)) / 28 + "vw" },
+        topPin: { translateY: (plusOrMinus * Math.pow(delta, 2)) / 350 + "vw" },
         bottomPin: {
-          translateY: (plusOrMinus * -Math.pow(delta, 2)) / 35 + "vw",
+          translateY: (plusOrMinus * -Math.pow(delta, 2)) / 400 + "vw",
         },
       });
     }, 3000);
