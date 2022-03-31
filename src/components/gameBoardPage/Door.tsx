@@ -1,6 +1,7 @@
 import { motion, MotionStyle } from "framer-motion";
 import { useEffect, useState } from "react";
 import { spellNumber } from "../../types/allTypes";
+import { doorRingAni } from "../../utils/animation";
 import RingPin from "./RingPin";
 
 interface props {
@@ -19,7 +20,23 @@ const Door: React.FC<props> = ({ spellNumber }) => {
           src="/media/game/door.png"
           className="absolute bottom-0 left-0 w-[7.7vw] h-full z-0 scale-x-[-1]"
         />
-      <RingPin spellNumber={spellNumber} />
+        <RingPin spellNumber={spellNumber} />
+
+        {spellNumber.blue === spellNumber.yellow && (
+          <motion.svg className="absolute overflow-visible top-[13.17vw] left-[7.65vw] z-0">
+            <motion.circle
+              initial="hidden"
+              animate="visible"
+              variants={doorRingAni}
+              cx="0"
+              cy="0"
+              r="0.68vw"
+              stroke="#16FBFF"
+              strokeWidth="0.4vw"
+              fill="none"
+            />
+          </motion.svg>
+        )}
       </div>
     </div>
   );

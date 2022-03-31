@@ -515,27 +515,16 @@ export const calcCardSideAni: Variants = {
     },
   },
 };
-// export const calcFirstResultAni: Variants = {
-//   hidden: {
-//     opacity: 0,
-//     left:"15vw",
-//     top:"0vw",
-//   },
-//   visible: {
-//     opacity: [0,1,1,1] ,
-//     left:["15vw","15vw","0vw","0vw"],
-//     top:["0vw","0vw","2.5vw","2.5vw"],
-//       transition: {
-//         times:[0,0.3,0.8,1],
-//       duration: 2.5,
-//       delay:1,
-//     },
-//   },
-//   out: {
-//     opacity: 0,
-//     transition: {
-//       duration: 0.5,
-//       ease: "easeInOut",
-//     },
-//   },
-// };
+
+export const doorRingAni: Variants = {
+  hidden: {
+    pathLength: 0,
+  },
+  visible: {
+    pathLength: 1,
+    transition: {
+      duration: 2,
+      delay: 5,
+    },
+  },
+};
