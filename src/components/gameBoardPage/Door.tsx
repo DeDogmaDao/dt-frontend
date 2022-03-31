@@ -19,8 +19,8 @@ const Door: React.FC<props> = ({ spellNumber }) => {
           src="/media/game/door.png"
           className="absolute bottom-0 left-0 w-[7.7vw] h-full z-0 scale-x-[-1]"
         />
-      </div>
       <RingPin spellNumber={spellNumber} />
+      </div>
     </div>
   );
 };

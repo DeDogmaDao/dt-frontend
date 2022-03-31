@@ -47,6 +47,7 @@ const RingPin: React.FC<props> = ({ spellNumber }) => {
           src="/media/game/pin.png"
           className="absolute bottom-[-0.6vw] left-1/2 ml-[-0.33vw] w-[0.66vw] z-10 duration-2000"
         />
+
       </div>
     </motion.div>
   );
