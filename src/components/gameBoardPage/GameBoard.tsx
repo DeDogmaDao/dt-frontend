@@ -38,7 +38,7 @@ const GameBoard: React.FC = () => {
           src="/media/game/main.png"
           className="absolute top-0 left-0 w-full h-full z-10"
         />
-        <Door />
+        <Door spellNumber={spellNumber} />
 
         <div
           className="w-full h-full flex justify-center items-start flex-wrap relative z-10"
