@@ -31,6 +31,8 @@ const GameBoard: React.FC = () => {
 
   const [transferNum, setTransferNum] = useState(false);
 
+  const [isWinner, setIsWinner] = useState(false);
+
   return (
     <LayoutGroup>
       <div className="flex justify-between items-center w-screen h-[calc(900/1920*100vw)] relative">
@@ -62,6 +64,8 @@ const GameBoard: React.FC = () => {
                 setCurrentCard={setCurrentCard}
                 transferNum={transferNum}
                 setTransferNum={setTransferNum}
+                setIsWinner={setIsWinner}
+                isWinner={isWinner}
               />
             );
           })}

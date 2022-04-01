@@ -17,6 +17,8 @@ interface props {
   setCurrentCard: Dispatch<SetStateAction<gameCardType | null>>;
   transferNum: boolean;
   setTransferNum: Dispatch<SetStateAction<boolean>>;
+  isWinner: boolean;
+  setIsWinner: Dispatch<SetStateAction<boolean>>;
 }
 const CardGame: React.FC<props> = ({
   data,
@@ -29,6 +31,8 @@ const CardGame: React.FC<props> = ({
   setCurrentCard,
   transferNum,
   setTransferNum,
+  isWinner,
+  setIsWinner,
 }) => {
   // states
   const [once, setOnce] = useState(false);
@@ -46,7 +50,7 @@ const CardGame: React.FC<props> = ({
     if (turnNumber === null && cardIndex === gameCardData.length - 1) {
       setTurnNumber(0);
     }
-    if (turnNumber === cardIndex) {
+    if (turnNumber === cardIndex && isWinner === false) {
       setCurrentCard(data);
       setTimeout(() => {
         setTurnNumber((prevState) => {
@@ -61,6 +65,9 @@ const CardGame: React.FC<props> = ({
 
   // Stages
   if (turnNumber === cardIndex) {
+    if (isWinner === false && data.isWinner === true) {
+      setIsWinner(true);
+    }
     if (stage === 0) {
       setStage(1);
       setTimeout(() => {
@@ -72,7 +79,8 @@ const CardGame: React.FC<props> = ({
       setTimeout(() => {
         setSpellNumber((prevState) => ({
           ...prevState,
-          [data.spellGroup+"CardCount"]:prevState[data.spellGroup+"CardCount"] + 1,
+          [data.spellGroup + "CardCount"]:
+            prevState[data.spellGroup + "CardCount"] + 1,
           [data.spellGroup]: data.total,
         }));
       }, 1000);
