@@ -1,5 +1,5 @@
 import { LayoutGroup, motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { gameCardData } from "../../store/allData";
 import CardGame from "./CardGame";
 import DoorSpells from "./DoorSpells";
@@ -33,6 +33,17 @@ const GameBoard: React.FC = () => {
 
   const [isWinner, setIsWinner] = useState(false);
 
+  useEffect(() => {
+    if (isWinner === true) {
+      setTimeout(() => {
+        setSpellNumber((prevState) => ({
+          ...prevState,
+          ["yellow"]: 200,
+          ["blue"]: 200,
+        }));
+      }, 6000);
+    }
+  }, [isWinner]);
   return (
     <LayoutGroup>
       <div className="flex justify-between items-center w-screen h-[calc(900/1920*100vw)] relative">
