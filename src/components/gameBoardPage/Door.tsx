@@ -17,7 +17,11 @@ const Door: React.FC<props> = ({ spellNumber, isWinner }) => {
   const doorAnimControls = useAnimation();
 
   useEffect(()=>{
-    doorAnimControls.start("visible");
+    if(isWinner === true){
+      setTimeout(() => {
+        doorAnimControls.start("visible");
+      }, 9000);
+    }
   },[isWinner])
 
   return (
