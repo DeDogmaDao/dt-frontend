@@ -35,13 +35,15 @@ const GameBoard: React.FC = () => {
 
   useEffect(() => {
     if (isWinner === true) {
-      setTimeout(() => {
-        setSpellNumber((prevState) => ({
-          ...prevState,
-          ["yellow"]: 200,
-          ["blue"]: 200,
-        }));
-      }, 6000);
+      for (let i = 1; i < 3; i++) {
+        setTimeout(() => {
+          setSpellNumber((prevState) => ({
+            ...prevState,
+            ["yellow"]: 50 + 10*i,
+            ["blue"]: 50+ 10*i,
+          }));
+        }, 6000 + i*100);
+      }
     }
   }, [isWinner]);
   return (
@@ -116,8 +118,16 @@ const GameBoard: React.FC = () => {
             spellNumber={spellNumber}
           />
 
-          <SpellCounter spellNumber={spellNumber} spellGroup="yellow" isWinner={isWinner} />
-          <SpellCounter spellNumber={spellNumber} spellGroup="blue" isWinner={isWinner} />
+          <SpellCounter
+            spellNumber={spellNumber}
+            spellGroup="yellow"
+            isWinner={isWinner}
+          />
+          <SpellCounter
+            spellNumber={spellNumber}
+            spellGroup="blue"
+            isWinner={isWinner}
+          />
         </div>
       </div>
     </LayoutGroup>
