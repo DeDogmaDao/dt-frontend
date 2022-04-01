@@ -449,20 +449,20 @@ export const spellCounterAni: Variants = {
   hidden: {
     translateY: 100,
   },
-  visible: {
+  visible: (custom)=>({
     translateY: 0,
     transition: {
-      duration: 0.4,
+      duration: custom,
       ease: "easeOut",
     },
-  },
-  out: {
+  }),
+  out: (custom)=>({
     translateY: -100,
     transition: {
-      duration: 0.4,
+      duration: custom,
       ease: "easeOut",
     },
-  },
+  }),
 };
 export const calcFadeAni: Variants = {
   hidden: {

@@ -7,6 +7,7 @@ import { spellCounterAni } from "../../utils/animation";
 interface props {
   spellNumber: spellNumber;
   spellGroup: string;
+  isWinner: boolean;
 }
 const styles = (spellGroup: string): MotionStyle => {
   if (spellGroup === "yellow") {
@@ -33,13 +34,18 @@ const styles = (spellGroup: string): MotionStyle => {
   };
 };
 
-const SpellCounter: React.FC<props> = ({ spellNumber, spellGroup }) => {
+const SpellCounter: React.FC<props> = ({
+  spellNumber,
+  spellGroup,
+  isWinner,
+}) => {
   const [nums, setNums] = useState(numsList);
 
   useEffect(() => {
     const activeIndex = nums.findIndex((el) => el.active === true);
+    const timeBetweenTwoCounts = isWinner ? 50 : 300;
     setTimeout(() => {
-      for (let i = activeIndex; i < spellNumber[spellGroup]; i++) {
+      for (let i = activeIndex; i < spellNumber[spellGroup] && i <= 50; i++) {
         setTimeout(() => {
           const newNums = nums.map((el, index) => {
             let returnValue = { ...el };
@@ -51,8 +57,10 @@ const SpellCounter: React.FC<props> = ({ spellNumber, spellGroup }) => {
             }
             return returnValue;
           });
-          setNums(newNums);
-        }, (i - activeIndex) * 300);
+          if (i <= 49) {
+            setNums(newNums);
+          }
+        }, (i - activeIndex) * timeBetweenTwoCounts);
       }
     }, 3000);
   }, [spellNumber[spellGroup]]);
@@ -73,6 +81,7 @@ const SpellCounter: React.FC<props> = ({ spellNumber, spellGroup }) => {
                     animate="visible"
                     exit="out"
                     variants={spellCounterAni}
+                    custom={isWinner ? 0.05 : 0.4}
                     className="absolute"
                   >
                     {num.number}

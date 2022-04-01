@@ -116,8 +116,8 @@ const GameBoard: React.FC = () => {
             spellNumber={spellNumber}
           />
 
-          <SpellCounter spellNumber={spellNumber} spellGroup="yellow" />
-          <SpellCounter spellNumber={spellNumber} spellGroup="blue" />
+          <SpellCounter spellNumber={spellNumber} spellGroup="yellow" isWinner={isWinner} />
+          <SpellCounter spellNumber={spellNumber} spellGroup="blue" isWinner={isWinner} />
         </div>
       </div>
     </LayoutGroup>
