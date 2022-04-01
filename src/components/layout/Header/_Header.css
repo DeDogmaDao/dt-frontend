@@ -1,0 +1,18 @@
+@layer components {
+  .header-container {
+    z-index: 100;
+    @apply w-full flex flex-col sm:flex-row justify-evenly items-center relative mt-10;
+    > h1 {
+      @apply text-3xl font-black whitespace-nowrap text-white hover:text-primary-400 duration-2000 absolute left-12;
+    }
+    ul {
+      @apply h-full w-auto flex justify-between ssm:justify-center items-stretch sm:text-base gap-x-12;
+      > li {
+        @apply relative w-full h-full ssm:w-auto text-center;
+        > a {
+          @apply duration-700 w-full h-full ssm:w-auto flex justify-center items-center cursor-pointer;
+        }
+      }
+    }
+  }
+}
