@@ -1,21 +1,39 @@
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
+import { useEffect } from "react";
 import { spellNumber } from "../../types/allTypes";
-import { doorRingAni } from "../../utils/animation";
+import {
+  doorRingAni,
+  doorToLefttAnimation,
+  doorToRightAnimation,
+} from "../../utils/animation";
 import RingPin from "./RingPin";
 
 interface props {
   spellNumber: spellNumber;
+  isWinner: boolean;
 }
 
-const Door: React.FC<props> = ({ spellNumber }) => {
+const Door: React.FC<props> = ({ spellNumber, isWinner }) => {
+  const doorAnimControls = useAnimation();
+
+  useEffect(()=>{
+    doorAnimControls.start("visible");
+  },[isWinner])
+
   return (
     <div className="absolute  top-[10.53vw] left-[59.05vw] w-[15.391vw] h-[26vw] bg-red-500">
       <div className="relative w-full h-full">
-        <img
+        <motion.img
+          initial="hidden"
+          animate={doorAnimControls}
+          variants={doorToRightAnimation}
           src="/media/game/door.png"
           className="absolute bottom-0 right-0 w-[7.7vw] h-full z-0 "
         />
-        <img
+        <motion.img
+          initial="hidden"
+          animate={doorAnimControls}
+          variants={doorToLefttAnimation}
           src="/media/game/door.png"
           className="absolute bottom-0 left-0 w-[7.7vw] h-full z-0 scale-x-[-1]"
         />

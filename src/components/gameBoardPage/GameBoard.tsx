@@ -40,7 +40,7 @@ const GameBoard: React.FC = () => {
           src="/media/game/main.png"
           className="absolute top-0 left-0 w-full h-full z-10"
         />
-        <Door spellNumber={spellNumber} />
+        <Door spellNumber={spellNumber} isWinner={isWinner} />
 
         <div
           className="w-full h-full flex justify-center items-start flex-wrap relative z-10"

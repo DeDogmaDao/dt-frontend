@@ -528,3 +528,31 @@ export const doorRingAni: Variants = {
     },
   },
 };
+
+export const doorToRightAnimation: Variants = {
+  hidden: {
+    translateX: "0vw",
+  },
+  visible: {
+    translateX: "8vw",
+    transition: {
+      duration: 3,
+      mass: 10,
+      ease: "easeIn",
+    },
+  },
+};
+export const doorToLefttAnimation: Variants = {
+  hidden: {
+    translateX: "0vw",
+    scaleX: "-1",
+  },
+  visible: {
+    translateX: "-8vw",
+    transition: {
+      duration: 3,
+      mass: 10,
+      ease: "easeIn",
+    },
+  },
+};
