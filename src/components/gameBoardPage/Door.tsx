@@ -1,5 +1,4 @@
-import { motion, MotionStyle } from "framer-motion";
-import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import { spellNumber } from "../../types/allTypes";
 import { doorRingAni } from "../../utils/animation";
 import RingPin from "./RingPin";

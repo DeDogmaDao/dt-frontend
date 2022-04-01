@@ -49,6 +49,7 @@ export interface gameCardType {
   communityNum:number;
   individualNum: number;
   cardNum:number;
+  isWinner:boolean;
 }
 
 export interface topRightPosition {

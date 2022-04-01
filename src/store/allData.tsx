@@ -435,6 +435,7 @@ export const gameCardData: gameCardType[] = [
     communityNum: Math.round(Math.random() * 9),
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
+    isWinner:false,
   },
   {
     id: "2",
@@ -446,6 +447,7 @@ export const gameCardData: gameCardType[] = [
     communityNum: Math.round(Math.random() * 9),
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
+    isWinner:false,
   },
   {
     id: "3",
@@ -457,6 +459,7 @@ export const gameCardData: gameCardType[] = [
     communityNum: Math.round(Math.random() * 9),
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
+    isWinner:false,
   },
   {
     id: "4",
@@ -468,6 +471,7 @@ export const gameCardData: gameCardType[] = [
     communityNum: Math.round(Math.random() * 9),
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
+    isWinner:false,
   },
   {
     id: "5",
@@ -479,6 +483,7 @@ export const gameCardData: gameCardType[] = [
     communityNum: Math.round(Math.random() * 9),
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
+    isWinner:false,
   },
   {
     id: "6",
@@ -490,6 +495,7 @@ export const gameCardData: gameCardType[] = [
     communityNum: Math.round(Math.random() * 9),
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
+    isWinner:false,
   },
   {
     id: "7",
@@ -501,6 +507,7 @@ export const gameCardData: gameCardType[] = [
     communityNum: Math.round(Math.random() * 9),
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
+    isWinner:false,
   },
   {
     id: "8",
@@ -512,6 +519,7 @@ export const gameCardData: gameCardType[] = [
     communityNum: Math.round(Math.random() * 9),
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
+    isWinner:true,
   },
   {
     id: "9",
@@ -523,6 +531,7 @@ export const gameCardData: gameCardType[] = [
     communityNum: Math.round(Math.random() * 9),
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
+    isWinner:false,
   },
   {
     id: "10",
@@ -534,6 +543,7 @@ export const gameCardData: gameCardType[] = [
     communityNum: Math.round(Math.random() * 9),
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
+    isWinner:false,
   },
   {
     id: "11",
@@ -545,6 +555,7 @@ export const gameCardData: gameCardType[] = [
     communityNum: Math.round(Math.random() * 9),
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
+    isWinner:false,
   },
   {
     id: "12",
@@ -556,6 +567,7 @@ export const gameCardData: gameCardType[] = [
     communityNum: Math.round(Math.random() * 9),
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
+    isWinner:false,
   },
   {
     id: "13",
@@ -567,6 +579,7 @@ export const gameCardData: gameCardType[] = [
     communityNum: Math.round(Math.random() * 9),
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
+    isWinner:false,
   },
   {
     id: "14",
@@ -578,6 +591,7 @@ export const gameCardData: gameCardType[] = [
     communityNum: Math.round(Math.random() * 9),
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
+    isWinner:false,
   },
   {
     id: "15",
@@ -589,6 +603,7 @@ export const gameCardData: gameCardType[] = [
     communityNum: Math.round(Math.random() * 9),
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
+    isWinner:false,
   },
   {
     id: "16",
@@ -600,6 +615,7 @@ export const gameCardData: gameCardType[] = [
     communityNum: Math.round(Math.random() * 9),
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
+    isWinner:false,
   },
   {
     id: "17",
@@ -611,6 +627,7 @@ export const gameCardData: gameCardType[] = [
     communityNum: Math.round(Math.random() * 9),
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
+    isWinner:false,
   },
   {
     id: "18",
@@ -622,6 +639,7 @@ export const gameCardData: gameCardType[] = [
     communityNum: Math.round(Math.random() * 9),
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
+    isWinner:false,
   },
   {
     id: "19",
@@ -633,6 +651,7 @@ export const gameCardData: gameCardType[] = [
     communityNum: Math.round(Math.random() * 9),
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
+    isWinner:false,
   },
   {
     id: "20",
@@ -644,6 +663,7 @@ export const gameCardData: gameCardType[] = [
     communityNum: Math.round(Math.random() * 9),
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
+    isWinner:false,
   },
   {
     id: "21",
@@ -655,6 +675,7 @@ export const gameCardData: gameCardType[] = [
     communityNum: Math.round(Math.random() * 9),
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
+    isWinner:false,
   },
   {
     id: "22",
@@ -666,6 +687,7 @@ export const gameCardData: gameCardType[] = [
     communityNum: Math.round(Math.random() * 9),
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
+    isWinner:false,
   },
   {
     id: "23",
@@ -677,6 +699,7 @@ export const gameCardData: gameCardType[] = [
     communityNum: Math.round(Math.random() * 9),
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
+    isWinner:false,
   },
   {
     id: "24",
@@ -688,6 +711,7 @@ export const gameCardData: gameCardType[] = [
     communityNum: Math.round(Math.random() * 9),
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
+    isWinner:false,
   },
   {
     id: "25",
@@ -699,6 +723,7 @@ export const gameCardData: gameCardType[] = [
     communityNum: Math.round(Math.random() * 9),
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
+    isWinner:false,
   },
   {
     id: "26",
@@ -710,6 +735,7 @@ export const gameCardData: gameCardType[] = [
     communityNum: Math.round(Math.random() * 9),
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
+    isWinner:false,
   },
   {
     id: "27",
@@ -721,6 +747,7 @@ export const gameCardData: gameCardType[] = [
     communityNum: Math.round(Math.random() * 9),
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
+    isWinner:false,
   },
   {
     id: "28",
@@ -732,6 +759,7 @@ export const gameCardData: gameCardType[] = [
     communityNum: Math.round(Math.random() * 9),
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
+    isWinner:false,
   },
   {
     id: "29",
@@ -743,6 +771,7 @@ export const gameCardData: gameCardType[] = [
     communityNum: Math.round(Math.random() * 9),
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
+    isWinner:false,
   },
   {
     id: "30",
@@ -754,6 +783,7 @@ export const gameCardData: gameCardType[] = [
     communityNum: Math.round(Math.random() * 9),
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
+    isWinner:false,
   },
   {
     id: "31",
@@ -765,6 +795,7 @@ export const gameCardData: gameCardType[] = [
     communityNum: Math.round(Math.random() * 9),
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
+    isWinner:false,
   },
   {
     id: "32",
@@ -776,6 +807,7 @@ export const gameCardData: gameCardType[] = [
     communityNum: Math.round(Math.random() * 9),
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
+    isWinner:false,
   },
   {
     id: "33",
@@ -787,6 +819,7 @@ export const gameCardData: gameCardType[] = [
     communityNum: Math.round(Math.random() * 9),
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
+    isWinner:false,
   },
   {
     id: "34",
@@ -798,6 +831,7 @@ export const gameCardData: gameCardType[] = [
     communityNum: Math.round(Math.random() * 9),
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
+    isWinner:false,
   },
   {
     id: "35",
@@ -809,6 +843,7 @@ export const gameCardData: gameCardType[] = [
     communityNum: Math.round(Math.random() * 9),
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
+    isWinner:false,
   },
   {
     id: "36",
@@ -820,6 +855,7 @@ export const gameCardData: gameCardType[] = [
     communityNum: Math.round(Math.random() * 9),
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
+    isWinner:false,
   },
   {
     id: "37",
@@ -831,6 +867,7 @@ export const gameCardData: gameCardType[] = [
     communityNum: Math.round(Math.random() * 9),
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
+    isWinner:false,
   },
   {
     id: "38",
@@ -842,6 +879,7 @@ export const gameCardData: gameCardType[] = [
     communityNum: Math.round(Math.random() * 9),
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
+    isWinner:false,
   },
   {
     id: "39",
@@ -853,6 +891,7 @@ export const gameCardData: gameCardType[] = [
     communityNum: Math.round(Math.random() * 9),
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
+    isWinner:false,
   },
   {
     id: "40",
@@ -864,6 +903,7 @@ export const gameCardData: gameCardType[] = [
     communityNum: Math.round(Math.random() * 9),
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
+    isWinner:false,
   },
   {
     id: "41",
@@ -875,6 +915,7 @@ export const gameCardData: gameCardType[] = [
     communityNum: Math.round(Math.random() * 9),
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
+    isWinner:false,
   },
   {
     id: "42",
@@ -886,6 +927,7 @@ export const gameCardData: gameCardType[] = [
     communityNum: Math.round(Math.random() * 9),
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
+    isWinner:false,
   },
   {
     id: "43",
@@ -897,6 +939,7 @@ export const gameCardData: gameCardType[] = [
     communityNum: Math.round(Math.random() * 9),
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
+    isWinner:false,
   },
   {
     id: "44",
@@ -908,6 +951,7 @@ export const gameCardData: gameCardType[] = [
     communityNum: Math.round(Math.random() * 9),
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
+    isWinner:false,
   },
   {
     id: "45",
@@ -919,6 +963,7 @@ export const gameCardData: gameCardType[] = [
     communityNum: Math.round(Math.random() * 9),
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
+    isWinner:false,
   },
   {
     id: "46",
@@ -930,6 +975,7 @@ export const gameCardData: gameCardType[] = [
     communityNum: Math.round(Math.random() * 9),
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
+    isWinner:false,
   },
   {
     id: "47",
@@ -941,6 +987,7 @@ export const gameCardData: gameCardType[] = [
     communityNum: Math.round(Math.random() * 9),
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
+    isWinner:false,
   },
   {
     id: "48",
@@ -952,6 +999,7 @@ export const gameCardData: gameCardType[] = [
     communityNum: Math.round(Math.random() * 9),
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
+    isWinner:false,
   },
   {
     id: "49",
@@ -963,6 +1011,7 @@ export const gameCardData: gameCardType[] = [
     communityNum: Math.round(Math.random() * 9),
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
+    isWinner:false,
   },
   {
     id: "50",
@@ -974,6 +1023,7 @@ export const gameCardData: gameCardType[] = [
     communityNum: Math.round(Math.random() * 9),
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
+    isWinner:false,
   },
   {
     id: "51",
@@ -985,6 +1035,7 @@ export const gameCardData: gameCardType[] = [
     communityNum: Math.round(Math.random() * 9),
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
+    isWinner:false,
   },
   {
     id: "52",
@@ -996,6 +1047,7 @@ export const gameCardData: gameCardType[] = [
     communityNum: Math.round(Math.random() * 9),
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
+    isWinner:false,
   },
 ];
 
