@@ -32,7 +32,7 @@ const GameBoard: React.FC = () => {
   const [transferNum, setTransferNum] = useState(false);
 
   const [isWinner, setIsWinner] = useState(false);
-
+// we added here a for loop to change the behavior of spell transfer on winner animation
   useEffect(() => {
     if (isWinner === true) {
       for (let i = 1; i < 3; i++) {
