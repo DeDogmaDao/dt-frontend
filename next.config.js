@@ -7,19 +7,9 @@ module.exports = {
   // async redirects() {
   //   return [
   //     {
-  //       source: "/",
+  //       source: "/((?!(?:underconstruction)$).*$)",
   //       destination: "/underconstruction",
-  //       permanent: true,
-  //     },
-  //     {
-  //       source: "/gallery",
-  //       destination: "/underconstruction",
-  //       permanent: true,
-  //     },
-  //     {
-  //       source: "/gameboard",
-  //       destination: "/underconstruction",
-  //       permanent: true,
+  //       permanent: false,
   //     },
   //   ];
   // },
