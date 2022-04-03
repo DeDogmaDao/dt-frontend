@@ -4,12 +4,31 @@ module.exports = {
   },
   swcMinify: true,
 
+  // async redirects() {
+  //   return [
+  //     {
+  //       source: "/((?!(?:underconstruction)$).*$)",
+  //       destination: "/underconstruction",
+  //       permanent: false,
+  //     },
+  //   ];
+  // },
   async redirects() {
     return [
       {
-        source: "/((?!(?:underconstruction)$).*$)",
+        source: "/",
         destination: "/underconstruction",
-        permanent: false,
+        permanent: true,
+      },
+      {
+        source: "/gallery",
+        destination: "/underconstruction",
+        permanent: true,
+      },
+      {
+        source: "/gameboard",
+        destination: "/underconstruction",
+        permanent: true,
       },
     ];
   },
