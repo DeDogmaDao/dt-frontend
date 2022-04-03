@@ -20,10 +20,11 @@ export default function underconstruction(): JSX.Element {
 
       <div className="w-screen h-screen relative bg-black">
         <Image
-          src={"/media/junks/const.png"}
+          src={"/media/junks/ddd.png"}
           layout="responsive"
           width={1920}
           height={2041}
+          alt="ddd dedogmadao"
         />
         <div className="absolute left-0 top-[65vw] h-[55vw] w-full bg-gradient-to-b via-black from-transparent to-black"></div>
         <div className="absolute left-[6vw] top-[5vw] flex flex-col justify-center items-center font-serif ">
