@@ -10,19 +10,19 @@ import RingPin from "./RingPin";
 
 interface props {
   spellNumber: spellNumber;
-  isWinner: boolean;
+  doorStage: number;
 }
 
-const Door: React.FC<props> = ({ spellNumber, isWinner }) => {
+const Door: React.FC<props> = ({ spellNumber, doorStage }) => {
   const doorAnimControls = useAnimation();
 
   useEffect(() => {
-    if (isWinner === true) {
+    if (doorStage === 0) {
       setTimeout(() => {
         doorAnimControls.start("visible");
       }, 9000);
     }
-  }, [isWinner]);
+  }, [doorStage]);
 
   return (
     <div className="absolute  top-[10.53vw] left-[59.05vw] w-[15.391vw] h-[26vw] bg-red-500">

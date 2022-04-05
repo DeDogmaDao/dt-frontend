@@ -32,10 +32,11 @@ const GameBoard: React.FC = () => {
 
   const [transferNum, setTransferNum] = useState(false);
 
-  const [isWinner, setIsWinner] = useState(false);
+  const [doorStage, setDoorStage] = useState(-1);
+
 // we added here a for loop to change the behavior of spell transfer on winner animation
   useEffect(() => {
-    if (isWinner === true) {
+    if (doorStage === 0) {
       for (let i = 1; i < 3; i++) {
         setTimeout(() => {
           setSpellNumber((prevState) => ({
@@ -46,7 +47,7 @@ const GameBoard: React.FC = () => {
         }, 6000 + i*100);
       }
     }
-  }, [isWinner]);
+  }, [doorStage]);
   return (
     <LayoutGroup>
       <div className="flex justify-between items-center w-screen h-[calc(900/1920*100vw)] relative">
@@ -54,8 +55,8 @@ const GameBoard: React.FC = () => {
           src="/media/game/main.png"
           className="absolute top-0 left-0 w-full h-full z-10"
         />
-        <Door spellNumber={spellNumber} isWinner={isWinner} />
-        <Lightning isWinner={isWinner} />
+        <Door spellNumber={spellNumber} doorStage={doorStage} />
+        <Lightning doorStage={doorStage} />
         <div
           className="w-full h-full flex justify-center items-start flex-wrap relative z-10"
           style={{
@@ -78,8 +79,8 @@ const GameBoard: React.FC = () => {
                 setCurrentCard={setCurrentCard}
                 transferNum={transferNum}
                 setTransferNum={setTransferNum}
-                setIsWinner={setIsWinner}
-                isWinner={isWinner}
+                setDoorStage={setDoorStage}
+                doorStage={doorStage}
               />
             );
           })}
@@ -122,12 +123,12 @@ const GameBoard: React.FC = () => {
           <SpellCounter
             spellNumber={spellNumber}
             spellGroup="yellow"
-            isWinner={isWinner}
+            doorStage={doorStage}
           />
           <SpellCounter
             spellNumber={spellNumber}
             spellGroup="blue"
-            isWinner={isWinner}
+            doorStage={doorStage}
           />
         </div>
       </div>

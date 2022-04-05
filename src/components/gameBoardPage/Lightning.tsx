@@ -2,9 +2,9 @@ import { useEffect, useRef } from "react";
 import { createLightning } from "../../utils/util";
 
 interface props {
-  isWinner: boolean;
+  doorStage: number;
 }
-const Lightning: React.FC<props> = ({isWinner}) => {
+const Lightning: React.FC<props> = ({doorStage}) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   useEffect(() => {
     const aspectRatio = window.innerWidth / 1536;
@@ -54,12 +54,12 @@ const Lightning: React.FC<props> = ({isWinner}) => {
       }, 40);
     };
 
-    if(isWinner === true){
+    if(doorStage === 0){
       setTimeout(() => {
         renderLightning();
       }, 5000);
     }
-  }, [isWinner]);
+  }, [doorStage]);
   return (
     <div className="absolute top-[5.8vw] left-[51.4vw] z-110 h-[96] ">
       <canvas ref={canvasRef}></canvas>
