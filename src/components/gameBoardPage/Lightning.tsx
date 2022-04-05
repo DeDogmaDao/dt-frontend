@@ -1,7 +1,10 @@
 import { useEffect, useRef } from "react";
 import { createLightning } from "../../utils/util";
 
-const Lightning: React.FC = () => {
+interface props {
+  isWinner: boolean;
+}
+const Lightning: React.FC<props> = ({isWinner}) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   useEffect(() => {
     const aspectRatio = window.innerWidth / 1536;
@@ -50,8 +53,13 @@ const Lightning: React.FC = () => {
         requestAnimationFrame(renderLightning);
       }, 40);
     };
-    renderLightning();
-  }, []);
+
+    if(isWinner === true){
+      setTimeout(() => {
+        renderLightning();
+      }, 5000);
+    }
+  }, [isWinner]);
   return (
     <div className="absolute top-[5.8vw] left-[51.4vw] z-110 h-[96] ">
       <canvas ref={canvasRef}></canvas>
