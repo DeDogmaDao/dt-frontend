@@ -34,17 +34,17 @@ const GameBoard: React.FC = () => {
 
   const [doorStage, setDoorStage] = useState(-1);
 
-// we added here a for loop to change the behavior of spell transfer on winner animation
+  // we added here a for loop to change the behavior of spell transfer on winner animation
   useEffect(() => {
     if (doorStage === 0) {
       for (let i = 1; i < 3; i++) {
         setTimeout(() => {
           setSpellNumber((prevState) => ({
             ...prevState,
-            ["yellow"]: 50 + 10*i,
-            ["blue"]: 50+ 10*i,
+            ["yellow"]: 50 + 10 * i,
+            ["blue"]: 50 + 10 * i,
           }));
-        }, 6000 + i*100);
+        }, 6000 + i * 100);
       }
     }
   }, [doorStage]);

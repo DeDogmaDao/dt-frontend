@@ -40,10 +40,11 @@ const SpellCounter: React.FC<props> = ({
   doorStage,
 }) => {
   const [nums, setNums] = useState(numsList);
-
+  const [off, setOff] = useState(false);
   useEffect(() => {
     const activeIndex = nums.findIndex((el) => el.active === true);
     const timeBetweenTwoCounts = 300;
+    if (off) return;
     setTimeout(() => {
       for (let i = activeIndex; i < spellNumber[spellGroup] && i <= 50; i++) {
         setTimeout(() => {
@@ -63,7 +64,10 @@ const SpellCounter: React.FC<props> = ({
         }, (i - activeIndex) * timeBetweenTwoCounts);
       }
     }, 3000);
-  }, [spellNumber[spellGroup]]);
+    if (doorStage > -1) {
+      setOff(true);
+    }
+  }, [spellNumber]);
 
   return (
     <motion.div
