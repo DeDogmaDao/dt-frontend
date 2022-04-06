@@ -17,8 +17,8 @@ interface props {
   setCurrentCard: Dispatch<SetStateAction<gameCardType | null>>;
   transferNum: boolean;
   setTransferNum: Dispatch<SetStateAction<boolean>>;
-  isWinner: boolean;
-  setIsWinner: Dispatch<SetStateAction<boolean>>;
+  doorStage: number;
+  setDoorStage: Dispatch<SetStateAction<number>>;
 }
 const CardGame: React.FC<props> = ({
   data,
@@ -31,8 +31,8 @@ const CardGame: React.FC<props> = ({
   setCurrentCard,
   transferNum,
   setTransferNum,
-  isWinner,
-  setIsWinner,
+  doorStage,
+  setDoorStage,
 }) => {
   // states
   const [once, setOnce] = useState(false);
@@ -50,7 +50,7 @@ const CardGame: React.FC<props> = ({
     if (turnNumber === null && cardIndex === gameCardData.length - 1) {
       setTurnNumber(0);
     }
-    if (turnNumber === cardIndex && isWinner === false) {
+    if (turnNumber === cardIndex && doorStage === -1) {
       setCurrentCard(data);
       setTimeout(() => {
         setTurnNumber((prevState) => {
@@ -65,8 +65,8 @@ const CardGame: React.FC<props> = ({
 
   // Stages
   if (turnNumber === cardIndex) {
-    if (isWinner === false && data.isWinner === true) {
-      setIsWinner(true);
+    if (doorStage === -1 && data.isWinner === true) {
+      setDoorStage(0);
     }
     if (stage === 0) {
       setStage(1);

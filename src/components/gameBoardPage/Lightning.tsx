@@ -1,6 +1,10 @@
 import { useEffect, useRef } from "react";
+import { createLightning } from "../../utils/util";
 
-const Lightning: React.FC = () => {
+interface props {
+  doorStage: number;
+}
+const Lightning: React.FC<props> = ({doorStage}) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   useEffect(() => {
     const aspectRatio = window.innerWidth / 1536;
@@ -24,33 +28,6 @@ const Lightning: React.FC = () => {
     ctx!.fillStyle = "hsla(0, 0%, 10%, 0.2)";
 
     ctx!.globalAlpha = 1.0;
-    const createLightning = () => {
-      let segmentHeight = groundHeight - center.y;
-      let lights: { x: number; y: number }[] = [];
-      lights.push({ x: center.x, y: center.y });
-      lights.push({
-        x: Math.random() * (canvasSize - 100) + 50,
-        y: groundHeight + (Math.random() - 0.9) * 50,
-      });
-      let currDiff = maxDifference;
-      while (segmentHeight > minSegmentHeight) {
-        let newSegments: { x: number; y: number }[] = [];
-        for (let i = 0; i < lights.length - 1; i++) {
-          const start = lights[i];
-          const end = lights[i + 1];
-          const midX = (start.x + end.x) / 2;
-          const midY = (start.y + end.y) / 2;
-          const newX = midX + (Math.random() * 2 - 1) * currDiff;
-          newSegments.push(start, { x: newX, y: midY });
-        }
-        // @ts-ignore
-        newSegments.push(lights.pop());
-        lights = newSegments;
-        currDiff = currDiff / roughness;
-        segmentHeight = segmentHeight / 2;
-      }
-      return lights;
-    };
 
     const renderLightning = () => {
       ctx!.shadowBlur = 0;
@@ -58,7 +35,14 @@ const Lightning: React.FC = () => {
       ctx!.clearRect(0, 0, canvasSize, canvasSize);
       ctx!.globalCompositeOperation = "lighter";
       ctx!.shadowBlur = 15;
-      const Lightning = createLightning();
+      const Lightning = createLightning(
+        groundHeight,
+        center,
+        canvasSize,
+        maxDifference,
+        minSegmentHeight,
+        roughness
+      );
       ctx!.beginPath();
       for (let i = 0; i < Lightning.length; i++) {
         ctx!.lineTo(Lightning[i].x, Lightning[i].y);
@@ -69,8 +53,13 @@ const Lightning: React.FC = () => {
         requestAnimationFrame(renderLightning);
       }, 40);
     };
-    renderLightning();
-  }, []);
+
+    if(doorStage === 0){
+      setTimeout(() => {
+        renderLightning();
+      }, 5000);
+    }
+  }, [doorStage]);
   return (
     <div className="absolute top-[5.8vw] left-[51.4vw] z-110 h-[96] ">
       <canvas ref={canvasRef}></canvas>

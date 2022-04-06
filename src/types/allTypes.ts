@@ -21,7 +21,7 @@ export interface socialType {
 export interface layersType {
   image: string;
   speed: number;
-  top:number;
+  top: number;
 }
 
 export interface tabType {
@@ -46,10 +46,10 @@ export interface gameCardType {
   spellGroup: string;
   spellValue: number[];
   total: number;
-  communityNum:number;
+  communityNum: number;
   individualNum: number;
-  cardNum:number;
-  isWinner:boolean;
+  cardNum: number;
+  isWinner: boolean;
 }
 
 export interface topRightPosition {
@@ -68,11 +68,21 @@ export interface bottomRightPosition {
 export interface spellNumber {
   [yellow: string]: number;
   blue: number;
-  yellowCardCount:number;
-  blueCardCount:number;
+  yellowCardCount: number;
+  blueCardCount: number;
 }
 
 export interface counterNumType {
   number: number;
   active: boolean;
 }
+
+export type light = { x: number; y: number };
+export type createLightningType = (
+  grandHeight: number,
+  center: light,
+  canvasSize: number,
+  maxDifference: number,
+  minSegmentHeight: number,
+  roughness: number
+) => light[];

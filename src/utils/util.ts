@@ -1,3 +1,5 @@
+import { createLightningType } from "../types/allTypes";
+
 // shimmer effect for image placeholder
 export const shimmer = (w: number, h: number): string => `
 <svg width="${w}" height="${h}" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -45,4 +47,39 @@ export const topTransformWheel = (evt: any) => {
       behavior: "smooth",
     });
   }
+};
+
+export const createLightning: createLightningType = (
+  groundHeight,
+  center,
+  canvasSize,
+  maxDifference,
+  minSegmentHeight,
+  roughness
+) => {
+  let segmentHeight = groundHeight - center.y;
+  let lights: { x: number; y: number }[] = [];
+  lights.push({ x: center.x, y: center.y });
+  lights.push({
+    x: Math.random() * (canvasSize - 100) + 50,
+    y: groundHeight + (Math.random() - 0.9) * 50,
+  });
+  let currDiff = maxDifference;
+  while (segmentHeight > minSegmentHeight) {
+    let newSegments: { x: number; y: number }[] = [];
+    for (let i = 0; i < lights.length - 1; i++) {
+      const start = lights[i];
+      const end = lights[i + 1];
+      const midX = (start.x + end.x) / 2;
+      const midY = (start.y + end.y) / 2;
+      const newX = midX + (Math.random() * 2 - 1) * currDiff;
+      newSegments.push(start, { x: newX, y: midY });
+    }
+    // @ts-ignore
+    newSegments.push(lights.pop());
+    lights = newSegments;
+    currDiff = currDiff / roughness;
+    segmentHeight = segmentHeight / 2;
+  }
+  return lights;
 };
