@@ -6,7 +6,7 @@ import throttle from "lodash/throttle";
 import { useInView } from "react-intersection-observer";
 import { topTransformWheel } from "../../../utils/util";
 
-const HeaderImg: React.FC = () => {
+const PrevHeaderImg: React.FC = () => {
   const layerContainerRef = useRef<HTMLDivElement>(null);
   const [top, setTop] = useState(0);
   // when yellow line is on the screen then we have to change scroll behavior
@@ -81,4 +81,4 @@ const HeaderImg: React.FC = () => {
   );
 };
 
-export default HeaderImg;
+export default PrevHeaderImg;
