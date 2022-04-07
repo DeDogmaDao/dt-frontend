@@ -63,100 +63,7 @@
   }
   body {
     font-family: "Josefin Sans", sans-serif;
-    @apply bg-neutral-900 text-white;
-  }
-}
-
-@layer utilities {
-  .text-extera-large-bold {
-    font-style: normal;
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 140%;
-  }
-  .text-extera-large-medium {
-    font-style: normal;
-    font-weight: 500;
-    font-size: 24px;
-    line-height: 140%;
-  }
-  .text-extera-large-light {
-    font-style: normal;
-    font-weight: 300;
-    font-size: 24px;
-    line-height: 140%;
-  }
-  .text-large-bold {
-    font-style: normal;
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 140%;
-  }
-  .text-large-medium {
-    font-style: normal;
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 140%;
-  }
-  .text-large-light {
-    font-style: normal;
-    font-weight: 300;
-    font-size: 20px;
-    line-height: 140%;
-  }
-  .text-medium-bold {
-    font-style: normal;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 150%;
-  }
-  .text-medium-medium {
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 150%;
-  }
-  .text-medium-light {
-    font-style: normal;
-    font-weight: 300;
-    font-size: 16px;
-    line-height: 150%;
-  }
-  .text-small-bold {
-    font-style: normal;
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 150%;
-  }
-  .text-small-medium {
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 150%;
-  }
-  .text-small-light {
-    font-style: normal;
-    font-weight: 300;
-    font-size: 14px;
-    line-height: 150%;
-  }
-  .text-extra-small-bold {
-    font-style: normal;
-    font-weight: 700;
-    font-size: 12px;
-    line-height: 160%;
-  }
-  .text-extra-small-medium {
-    font-style: normal;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 160%;
-  }
-  .text-extra-small-light {
-    font-style: normal;
-    font-weight: 300;
-    font-size: 12px;
-    line-height: 160%;
+    @apply bg-neutral-900 text-neutral-50;
   }
 }
 
@@ -173,21 +80,5 @@
   }
   .no-select-a-tag:focus {
     outline: none !important;
-  }
-
-  .subtitle1 {
-    @apply text-base font-medium leading-7;
-  }
-  .subtitle2 {
-    @apply text-sm font-medium leading-6;
-  }
-  .subtitle3 {
-    @apply text-xs font-medium leading-5;
-  }
-  .button1 {
-    @apply text-base font-bold leading-7;
-  }
-  .button2 {
-    @apply text-sm font-bold leading-6;
   }
 }
