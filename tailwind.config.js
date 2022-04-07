@@ -1,3 +1,5 @@
+const plugin = require("tailwindcss/plugin");
+
 module.exports = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,css}",
@@ -1029,5 +1031,100 @@ module.exports = {
     "active",
     "disabled",
   ],
-  plugins: [],
+  plugins: [
+    plugin(function ({ addBase, addComponents, addUtilities, theme }) {
+      addComponents({
+        ".text-extera-large-bold": {
+          fontStyle: "normal",
+          fontWeight: "700",
+          fontSize: "24px",
+          lineHeight: "140%",
+        },
+        ".text-extera-large-medium": {
+          fontStyle: "normal",
+          fontWeight: "500",
+          fontSize: "24px",
+          lineHeight: "140%",
+        },
+        ".text-extera-large-light": {
+          fontStyle: "normal",
+          fontWeight: "300",
+          fontSize: "24px",
+          lineHeight: "140%",
+        },
+        ".text-large-bold": {
+          fontStyle: "normal",
+          fontWeight: "700",
+          fontSize: "20px",
+          lineHeight: "140%",
+        },
+        ".text-large-medium": {
+          fontStyle: "normal",
+          fontWeight: "500",
+          fontSize: "20px",
+          lineHeight: "140%",
+        },
+        ".text-large-light": {
+          fontStyle: "normal",
+          fontWeight: "300",
+          fontSize: "20px",
+          lineHeight: "140%",
+        },
+        ".text-medium-bold": {
+          fontStyle: "normal",
+          fontWeight: "700",
+          fontSize: "16px",
+          lineHeight: "150%",
+        },
+        ".text-medium-medium": {
+          fontStyle: "normal",
+          fontWeight: "500",
+          fontSize: "16px",
+          lineHeight: "150%",
+        },
+        ".text-medium-light": {
+          fontStyle: "normal",
+          fontWeight: "300",
+          fontSize: "16px",
+          lineHeight: "150%",
+        },
+        ".text-small-bold": {
+          fontStyle: "normal",
+          fontWeight: "700",
+          fontSize: "14px",
+          lineHeight: "150%",
+        },
+        ".text-small-medium": {
+          fontStyle: "normal",
+          fontWeight: "500",
+          fontSize: "14px",
+          lineHeight: "150%",
+        },
+        ".text-small-light": {
+          fontStyle: "normal",
+          fontWeight: "300",
+          fontSize: "14px",
+          lineHeight: "150%",
+        },
+        ".text-extra-small-bold": {
+          fontStyle: "normal",
+          fontWeight: "700",
+          fontSize: "12px",
+          lineHeight: "160%",
+        },
+        ".text-extra-small-medium": {
+          fontStyle: "normal",
+          fontWeight: "500",
+          fontSize: "12px",
+          lineHeight: "160%",
+        },
+        ".text-extra-small-light": {
+          fontStyle: "normal",
+          fontWeight: "300",
+          fontSize: "12px",
+          lineHeight: "160%",
+        },
+      });
+    }),
+  ],
 };
