@@ -11,7 +11,6 @@ const HowItWorks:React.FC = () => {
         <Carosel allData={teamClone} Item={Card} initialQuantity={100} />
         <FAQ />
         <Tabs /> */}
-        <div className="bg-gray-500 w-96 h-96"></div>
         </>
     )
 }

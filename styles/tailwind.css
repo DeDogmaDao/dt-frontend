@@ -46,7 +46,7 @@
   }
   body {
     font-family: 'Josefin Sans', sans-serif;
-    @apply bg-mainBg-500 text-white;
+    @apply bg-neutral-900 text-white;
   }
 }
 

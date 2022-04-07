@@ -34,7 +34,7 @@ const PrevTabs: React.FC = () => {
           })}
         </LayoutGroup>
       </Group>
-      <div className="w-[673px] h-[302px] bg-mainBg-500 mt-16 relative">
+      <div className="w-[673px] h-[302px] bg-neutral-500 mt-16 relative">
         {/* sliding goes here */}
         {tabs.map((group, groupIndex) => {
           return group.tabInfo.map((data, index) => {
