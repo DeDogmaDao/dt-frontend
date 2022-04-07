@@ -6,7 +6,7 @@ import EachTab from "./EachTab";
 import Group from "./Group";
 import TabData from "./TabData";
 
-const Tabs: React.FC = () => {
+const PrevTabs: React.FC = () => {
   const [tabs, setTabs] = useState(allTabs);
 
   return (
@@ -82,4 +82,4 @@ const Tabs: React.FC = () => {
   );
 };
 
-export default Tabs;
+export default PrevTabs;
