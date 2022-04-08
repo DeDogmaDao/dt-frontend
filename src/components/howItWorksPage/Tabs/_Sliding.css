@@ -3,7 +3,7 @@
         display: none;
       }
 .sliding-parent {
-    @apply relative block w-screen h-[450px] overflow-visible z-110  bg-green-400 mx-auto;
+    @apply relative block w-96 h-[450px] overflow-visible z-110  bg-green-400 mx-auto;
     .sliding {
         scrollbar-width:none;
         @apply absolute top-0 left-0 w-full h-full flex items-baseline overflow-x-scroll bg-neutral-900/50 touch-none;

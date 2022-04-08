@@ -83,11 +83,10 @@ const Sliding: React.FC<props> = ({ tabs, cardRef, children }) => {
   //..
   //...
   const caroselTouchHandler = () => {
-    let caroselLeft = rightLeftScroll.current!.scrollLeft;
-    let caroselWidth = rightLeftScroll.current!.scrollWidth;
+    // let caroselLeft = rightLeftScroll.current!.scrollLeft;
+    // let caroselWidth = rightLeftScroll.current!.scrollWidth;
 
-    if (caroselLeft / caroselWidth < 0.5) {
-    }
+
   };
 
   const snapStyle = isSmallDevice
@@ -103,7 +102,7 @@ const Sliding: React.FC<props> = ({ tabs, cardRef, children }) => {
         <div
           className="sliding"
           ref={rightLeftScroll}
-          style={{ touchAction: "none" }}
+          style={{ ...snapStyle }}
           onTouchEnd={caroselTouchHandler}
           onMouseDown={caroselMouseDownHandler}
           onMouseLeave={caroselMouseLeaveHandler}
@@ -112,7 +111,7 @@ const Sliding: React.FC<props> = ({ tabs, cardRef, children }) => {
         >
           <div
             className="flex justify-center items-center"
-            style={{ marginInline: deviceWidth / 2 - halfCardWidth + "px" }}
+            style={{ marginInline: deviceWidth / 2 - halfCardWidth + "px", scrollPadding:"50px" }}
           >
             {children}
           </div>
