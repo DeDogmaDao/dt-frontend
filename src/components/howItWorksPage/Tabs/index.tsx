@@ -37,7 +37,12 @@ const Tabs: React.FC = () => {
         {tabs.map((tab) => {
           if (!tab.activeGroup) return null;
           return (
-            <Slider setActiveIndexCard={setActiveIndexCard} tabGroup={tab.tabGroup} activeIndexCard={activeIndexCard} dataQuantity={tab.tabInfo.length}>
+            <Slider
+              setActiveIndexCard={setActiveIndexCard}
+              tabGroup={tab.tabGroup}
+              activeIndexCard={activeIndexCard}
+              dataQuantity={tab.tabInfo.length}
+            >
               {tab.tabInfo.map((data, index) => {
                 if (
                   index > activeIndexCard[tab.tabGroup] + 1 ||
@@ -47,7 +52,7 @@ const Tabs: React.FC = () => {
                 }
                 return (
                   <Card
-                  key={data.name}
+                    key={data.name}
                     cardRef={cardRef}
                     data={data}
                     index={index}

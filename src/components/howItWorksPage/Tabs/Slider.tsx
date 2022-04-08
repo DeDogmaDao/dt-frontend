@@ -31,13 +31,13 @@ const Slider: React.FC<props> = ({
   ) => {
     if (info.offset.x > 0) {
       setActiveIndexCard((prevState) => {
-        if ((prevState[tabGroup] === 0)) return { ...prevState };
+        if (prevState[tabGroup] === 0) return { ...prevState };
         return { ...prevState, [tabGroup]: prevState[tabGroup] - 1 };
       });
     }
     if (info.offset.x < 0) {
       setActiveIndexCard((prevState) => {
-        if ((prevState[tabGroup] === dataQuantity -1)) return { ...prevState };
+        if (prevState[tabGroup] === dataQuantity - 1) return { ...prevState };
         return { ...prevState, [tabGroup]: prevState[tabGroup] + 1 };
       });
     }

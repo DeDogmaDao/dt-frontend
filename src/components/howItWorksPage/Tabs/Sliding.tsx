@@ -85,8 +85,6 @@ const Sliding: React.FC<props> = ({ tabs, cardRef, children }) => {
   const caroselTouchHandler = () => {
     // let caroselLeft = rightLeftScroll.current!.scrollLeft;
     // let caroselWidth = rightLeftScroll.current!.scrollWidth;
-
-
   };
 
   const snapStyle = isSmallDevice
@@ -111,7 +109,10 @@ const Sliding: React.FC<props> = ({ tabs, cardRef, children }) => {
         >
           <div
             className="flex justify-center items-center"
-            style={{ marginInline: deviceWidth / 2 - halfCardWidth + "px", scrollPadding:"50px" }}
+            style={{
+              marginInline: deviceWidth / 2 - halfCardWidth + "px",
+              scrollPadding: "50px",
+            }}
           >
             {children}
           </div>

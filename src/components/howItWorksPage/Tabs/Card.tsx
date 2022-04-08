@@ -34,7 +34,6 @@ const Card: React.FC<props> = ({ data, cardRef, index, tabInfo }) => {
       className="h-[400px] w-[215px] flex  items-end text-white duration-300 origin-bottom"
     >
       <Image
-
         className="max-w-max object-contain"
         src={data.image}
         height="450"
