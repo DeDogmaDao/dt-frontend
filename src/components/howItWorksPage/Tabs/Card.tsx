@@ -31,7 +31,7 @@ const Card: React.FC<props> = ({ data, cardRef, index, tabInfo }) => {
   return (
     <motion.div
       ref={data.activeCard ? cardRef : eachCradRef}
-      className="min-h-[400px] min-w-[215px] flex  items-end text-white duration-300 origin-bottom"
+      className="h-[400px] w-[215px] flex  items-end text-white duration-300 origin-bottom"
     >
       <Image
 

@@ -15,6 +15,7 @@ const Tabs: React.FC = () => {
     gods: 5,
     humans: 2,
   });
+  console.log(activeIndexCard.gods);
 
   return (
     <div className="flex flex-col justify-between items-center h-full w-full my-80 py-96">
@@ -36,7 +37,7 @@ const Tabs: React.FC = () => {
         {tabs.map((tab) => {
           if (!tab.activeGroup) return null;
           return (
-            <Slider setActiveIndexCard={setActiveIndexCard}>
+            <Slider setActiveIndexCard={setActiveIndexCard} tabGroup={tab.tabGroup} activeIndexCard={activeIndexCard} dataQuantity={tab.tabInfo.length}>
               {tab.tabInfo.map((data, index) => {
                 if (
                   index > activeIndexCard[tab.tabGroup] + 1 ||
@@ -46,6 +47,7 @@ const Tabs: React.FC = () => {
                 }
                 return (
                   <Card
+                  key={data.name}
                     cardRef={cardRef}
                     data={data}
                     index={index}
