@@ -1,24 +1,31 @@
-import { motion } from "framer-motion";
+import { motion, useElementScroll } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
 const Slider: React.FC = ({ children }) => {
   const carouselRef = useRef<HTMLDivElement>(null);
-  const [width, setWidth] = useState(0);
 
-  useEffect(() => {
-    const totalScrollWidth =
-      carouselRef.current!.scrollWidth - carouselRef.current!.offsetWidth;
-    setWidth(totalScrollWidth);
-  }, []);
+//   const [width, setWidth] = useState(0);
+//   useEffect(() => {
+//     const totalScrollWidth =
+//       carouselRef.current!.scrollWidth - carouselRef.current!.offsetWidth;
+//     setWidth(carouselRef.current!.offsetWidth);
+//     console.log(carouselRef.current!.children[0].children[0].clientWidth);
+//   }, []);
   return (
-    <motion.div className="mx-[20%] ">
-      <motion.div ref={carouselRef} className="carousel overflow-hidden mx-auto bg-blue-300 ">
+    <motion.div className="">
+      <motion.div
+        ref={carouselRef}
+        className="carousel overflow-scroll mx-auto bg-blue-300 w-[750px]"
+      >
         <motion.div
-          className="inner-carousel flex bg-red-300 !scroll-p-5 !scroll-m-5" 
+          className="inner-carousel flex bg-red-300 gap-x-5"
           drag="x"
-          dragConstraints={{ right: 0, left: -width }}
-            dragElastic={0.1}
-            >
+          dragConstraints={{ right: 0, left: -0 }}
+          dragElastic={0.1}
+          dragTransition={{ bounceStiffness: 200, bounceDamping: 15 }}
+          dragMomentum={true}
+          
+        >
           {children}
         </motion.div>
       </motion.div>

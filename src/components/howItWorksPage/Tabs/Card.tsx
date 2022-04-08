@@ -31,9 +31,11 @@ const Card: React.FC<props> = ({ data, cardRef, index, tabInfo }) => {
   return (
     <motion.div
       ref={data.activeCard ? cardRef : eachCradRef}
-      className="min-h-[450px] min-w-[320px] flex  items-end text-white duration-300 origin-bottom "
+      className="min-h-[450px] min-w-[320px] flex  items-end text-white duration-300 origin-bottom"
+      style={{scrollSnapAlign:"start"}}
     >
       <Image
+
         className="max-w-max object-contain"
         src={data.image}
         height="450"

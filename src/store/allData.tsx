@@ -148,7 +148,7 @@ export const godTabData: tabType[] = [
   {
     activeCard: false,
     name: "tab0",
-    image: "/media/team/member1.png",
+    image: "/media/cyc/1.png",
     desc: (
       <div>
         HUMANS is creating an all-in-one platform for AI-based creation and
@@ -162,7 +162,7 @@ export const godTabData: tabType[] = [
   {
     activeCard: false,
     name: "tab1",
-    image: "/media/team/member1.png",
+    image: "/media/cyc/1.png",
     desc: (
       <div>
         HUMANS is creating an all-in-one platform for AI-based creation and
@@ -176,7 +176,7 @@ export const godTabData: tabType[] = [
   {
     activeCard: false,
     name: "tab2",
-    image: "/media/team/member2.png",
+    image: "/media/cyc/2.png",
     desc: (
       <div>
         HUMANS is creating an all-in-one platform for AI-based creation and
@@ -190,7 +190,7 @@ export const godTabData: tabType[] = [
   {
     activeCard: false,
     name: "tab3",
-    image: "/media/team/member1.png",
+    image: "/media/cyc/1.png",
     desc: (
       <div>
         HUMANS is creating an all-in-one platform for AI-based creation and
@@ -204,7 +204,7 @@ export const godTabData: tabType[] = [
   {
     activeCard: false,
     name: "tab4",
-    image: "/media/team/member1.png",
+    image: "/media/cyc/1.png",
     desc: (
       <div>
         HUMANS is creating an all-in-one platform for AI-based creation and
@@ -218,7 +218,7 @@ export const godTabData: tabType[] = [
   {
     activeCard: false,
     name: "tab5",
-    image: "/media/team/member2.png",
+    image: "/media/cyc/2.png",
     desc: (
       <div>
         HUMANS is creating an all-in-one platform for AI-based creation and
@@ -232,7 +232,7 @@ export const godTabData: tabType[] = [
   {
     activeCard: true,
     name: "tab6",
-    image: "/media/team/member1.png",
+    image: "/media/cyc/1.png",
     desc: (
       <div>
         HUMANS is creating an all-in-one platform for AI-based creation and
@@ -246,7 +246,7 @@ export const godTabData: tabType[] = [
   {
     activeCard: false,
     name: "tab7",
-    image: "/media/team/member1.png",
+    image: "/media/cyc/1.png",
     desc: (
       <div>
         HUMANS is creating an all-in-one platform for AI-based creation and
@@ -260,7 +260,7 @@ export const godTabData: tabType[] = [
   {
     activeCard: false,
     name: "tab8",
-    image: "/media/team/member2.png",
+    image: "/media/cyc/2.png",
     desc: (
       <div>
         HUMANS is creating an all-in-one platform for AI-based creation and
@@ -274,7 +274,7 @@ export const godTabData: tabType[] = [
   {
     activeCard: false,
     name: "tab9",
-    image: "/media/team/member1.png",
+    image: "/media/cyc/1.png",
     desc: (
       <div>
         HUMANS is creating an all-in-one platform for AI-based creation and
@@ -288,7 +288,7 @@ export const godTabData: tabType[] = [
   {
     activeCard: false,
     name: "tab10",
-    image: "/media/team/member1.png",
+    image: "/media/cyc/1.png",
     desc: (
       <div>
         HUMANS is creating an all-in-one platform for AI-based creation and
@@ -304,9 +304,9 @@ export const humanTabData: tabType[] = [
   {
     activeCard: false,
     name: "tab0",
-    image: "/media/team/member3.png",
-    image2: "/media/team/member1.png",
-    image3: "/media/team/member1.png",
+    image: "/media/cyc/3.png",
+    image2: "/media/cyc/1.png",
+    image3: "/media/cyc/1.png",
     desc: (
       <div>
         HUMANS is creating an all-in-one platform for AI-based creation and
@@ -320,9 +320,9 @@ export const humanTabData: tabType[] = [
   {
     activeCard: false,
     name: "tab1",
-    image: "/media/team/member1.png",
-    image2: "/media/team/member3.png",
-    image3: "/media/team/member3.png",
+    image: "/media/cyc/1.png",
+    image2: "/media/cyc/3.png",
+    image3: "/media/cyc/3.png",
     desc: (
       <div>
         HUMANS is creating an all-in-one platform for AI-based creation and
@@ -336,9 +336,9 @@ export const humanTabData: tabType[] = [
   {
     activeCard: true,
     name: "tab2",
-    image: "/media/team/member2.png",
-    image2: "/media/team/member1.png",
-    image3: "/media/team/member1.png",
+    image: "/media/cyc/2.png",
+    image2: "/media/cyc/1.png",
+    image3: "/media/cyc/1.png",
     desc: (
       <div>
         HUMANS is creating an all-in-one platform for AI-based creation and
@@ -352,9 +352,9 @@ export const humanTabData: tabType[] = [
   {
     activeCard: false,
     name: "tab3",
-    image: "/media/team/member3.png",
-    image2: "/media/team/member1.png",
-    image3: "/media/team/member1.png",
+    image: "/media/cyc/3.png",
+    image2: "/media/cyc/1.png",
+    image3: "/media/cyc/1.png",
     desc: (
       <div>
         HUMANS is creating an all-in-one platform for AI-based creation and
@@ -368,9 +368,9 @@ export const humanTabData: tabType[] = [
   {
     activeCard: false,
     name: "tab4",
-    image: "/media/team/member2.png",
-    image2: "/media/team/member1.png",
-    image3: "/media/team/member1.png",
+    image: "/media/cyc/2.png",
+    image2: "/media/cyc/1.png",
+    image3: "/media/cyc/1.png",
     desc: (
       <div>
         HUMANS is creating an all-in-one platform for AI-based creation and
