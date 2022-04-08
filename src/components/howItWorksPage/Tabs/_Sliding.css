@@ -1,0 +1,13 @@
+@layer components {
+    .sliding::-webkit-scrollbar {
+        display: none;
+      }
+.sliding-parent {
+    @apply relative block w-screen overflow-visible z-110 h-[500px] mx-auto;
+    .sliding {
+        scrollbar-width:none;
+        @apply absolute top-0 left-0 w-full h-[500px] flex items-end overflow-x-scroll bg-secText/20 touch-none;
+
+    }
+}
+}

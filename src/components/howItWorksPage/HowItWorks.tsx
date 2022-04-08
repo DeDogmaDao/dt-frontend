@@ -1,3 +1,4 @@
+import Tabs from "./Tabs";
 
 
 const HowItWorks:React.FC = () => {
@@ -11,6 +12,7 @@ const HowItWorks:React.FC = () => {
         <Carosel allData={teamClone} Item={Card} initialQuantity={100} />
         <FAQ />
         <Tabs /> */}
+        <Tabs />
         </>
     )
 }
