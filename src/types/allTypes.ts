@@ -86,3 +86,8 @@ export type createLightningType = (
   minSegmentHeight: number,
   roughness: number
 ) => light[];
+
+export interface activeIndexCardType {
+  [gods:string]:number;
+  humans:number;
+}

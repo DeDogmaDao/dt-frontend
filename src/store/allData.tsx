@@ -385,12 +385,12 @@ export const humanTabData: tabType[] = [
 
 export const allTabs: tabsType[] = [
   {
-    tabGroup: "Gods",
+    tabGroup: "gods",
     activeGroup: true,
     tabInfo: godTabData,
   },
   {
-    tabGroup: "human",
+    tabGroup: "humans",
     activeGroup: false,
     tabInfo: humanTabData,
   },
