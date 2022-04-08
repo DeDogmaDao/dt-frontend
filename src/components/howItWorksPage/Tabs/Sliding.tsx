@@ -33,7 +33,7 @@ const Sliding: React.FC<props> = ({ tabs, cardRef, children }) => {
           style={{ touchAction: "none" }}
         >
           <div
-            className="flex my-20"
+            className="flex justify-center items-center"
             style={{ marginInline: deviceWidth / 2 - halfCardWidth + "px" }}
           >
             {children}

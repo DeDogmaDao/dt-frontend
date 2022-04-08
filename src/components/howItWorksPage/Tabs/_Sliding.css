@@ -3,10 +3,10 @@
         display: none;
       }
 .sliding-parent {
-    @apply relative block w-screen overflow-visible z-110 h-[500px] mx-auto;
+    @apply relative block w-screen h-[450px] overflow-visible z-110  bg-green-400 mx-auto;
     .sliding {
         scrollbar-width:none;
-        @apply absolute top-0 left-0 w-full h-[500px] flex items-end overflow-x-scroll bg-neutral-900 touch-none;
+        @apply absolute top-0 left-0 w-full h-full flex items-baseline overflow-x-scroll bg-neutral-900/50 touch-none;
 
     }
 }
