@@ -65,6 +65,10 @@
     font-family: "Josefin Sans", sans-serif;
     @apply bg-neutral-900 text-neutral-50;
   }
+
+  span > img {
+    @apply pointer-events-none;
+  }
 }
 
 @layer components {

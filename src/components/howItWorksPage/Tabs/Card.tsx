@@ -1,6 +1,7 @@
 import { RefObject, useEffect, useRef, useState } from "react";
 import { tabType } from "../../../types/allTypes";
-
+import { motion } from "framer-motion";
+import Image from "next/image";
 interface props {
   data: tabType;
   cardRef: RefObject<HTMLDivElement>;
@@ -28,15 +29,19 @@ const Card: React.FC<props> = ({ data, cardRef, index, tabInfo }) => {
         transform: `scale(${scaleRatio})`,
       };
   return (
-    <div
-      style={style}
+    <motion.div
       ref={data.activeCard ? cardRef : eachCradRef}
-      className="h-[450px] w-80 flex  items-end text-white duration-300 origin-bottom pointer-events-none"
+      className="min-h-[450px] min-w-[320px] flex  items-end text-white duration-300 origin-bottom "
     >
-      <img className="w-80 object-contain" src={data.image} loading="lazy" />
+      <Image
+        className="max-w-max object-contain"
+        src={data.image}
+        height="450"
+        width="320"
+      />
       {/* <p className="text-4xl text-primary-500">{data.name}</p> */}
       {/* <div>{data.desc}</div> */}
-    </div>
+    </motion.div>
   );
 };
 
