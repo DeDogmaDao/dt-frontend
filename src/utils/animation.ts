@@ -313,6 +313,26 @@ export const spellAni: Variants = {
     },
   }),
 };
+export const eachTabAni: Variants = {
+  hidden: {
+    width: "200%",
+    transition: {
+      duration: 0.5,
+    },
+  },
+  visible: {
+    width: "100%",
+    transition: {
+      duration: 0.5,
+    },
+  },
+  out: {
+    width: "200%",
+    transition: {
+      duration: 0.5,
+    },
+  },
+};
 
 export const tabEachGroupAni: Variants = {
   hidden: {

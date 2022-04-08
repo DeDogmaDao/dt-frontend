@@ -18,7 +18,7 @@ const Card: React.FC<props> = ({ data, cardRef, index, tabInfo }) => {
   });
   useEffect(() => {
     let distance = Math.abs(activeIndex - index);
-    let ratio = (100/distance);
+    let ratio = 100 / distance;
     setScaleRatio(ratio / 130);
   }, [activeIndex]);
 
@@ -31,7 +31,7 @@ const Card: React.FC<props> = ({ data, cardRef, index, tabInfo }) => {
     <div
       style={style}
       ref={data.activeCard ? cardRef : eachCradRef}
-      className="h-[450px] w-80 flex  items-end text-white duration-700 origin-bottom"
+      className="h-[450px] w-80 flex  items-end text-white duration-300 origin-bottom"
     >
       <img className="w-80 object-contain" src={data.image} loading="lazy" />
       {/* <p className="text-4xl text-primary-500">{data.name}</p> */}
