@@ -4,6 +4,7 @@ import { allTabs } from "../../../store/allData";
 import Card from "./Card";
 import EachGroup from "./EachGroup";
 import EachTab from "./EachTab";
+import Slider from "./Slider";
 import Sliding from "./Sliding";
 
 const Tabs: React.FC = () => {
@@ -27,7 +28,7 @@ const Tabs: React.FC = () => {
         </LayoutGroup>
       </div>
       <div className="w-full h-full bg-mainBg-500 ">
-        <Sliding cardRef={cardRef} tabs={tabs}>
+        <Slider>
           {tabs.map((tab) => {
             return tab.tabInfo.map((data, index) => {
               if (!tab.activeGroup) return null;
@@ -41,7 +42,7 @@ const Tabs: React.FC = () => {
               );
             });
           })}
-        </Sliding>
+        </Slider>
       </div>
 
       {tabs.map((tab) => {

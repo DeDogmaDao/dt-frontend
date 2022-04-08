@@ -31,7 +31,7 @@ const Card: React.FC<props> = ({ data, cardRef, index, tabInfo }) => {
     <div
       style={style}
       ref={data.activeCard ? cardRef : eachCradRef}
-      className="h-[450px] w-80 flex  items-end text-white duration-300 origin-bottom"
+      className="h-[450px] w-80 flex  items-end text-white duration-300 origin-bottom pointer-events-none"
     >
       <img className="w-80 object-contain" src={data.image} loading="lazy" />
       {/* <p className="text-4xl text-primary-500">{data.name}</p> */}
