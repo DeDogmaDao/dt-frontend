@@ -33,28 +33,29 @@ const Tabs: React.FC = () => {
         </LayoutGroup>
       </div>
       <div className="w-full h-full bg-neutral-900 ">
-        <Slider>
-          {tabs.map((tab) => {
-            return tab.tabInfo.map((data, index) => {
-              if (!tab.activeGroup) return null;
-              if (
-                index > activeIndexCard[tab.tabGroup] + 1 ||
-                index < activeIndexCard[tab.tabGroup] - 1
-              ) {
-                console.log(index);
-                return null;
-              }
-              return (
-                <Card
-                  cardRef={cardRef}
-                  data={data}
-                  index={index}
-                  tabInfo={tab.tabInfo}
-                />
-              );
-            });
-          })}
-        </Slider>
+        {tabs.map((tab) => {
+          if (!tab.activeGroup) return null;
+          return (
+            <Slider setActiveIndexCard={setActiveIndexCard}>
+              {tab.tabInfo.map((data, index) => {
+                if (
+                  index > activeIndexCard[tab.tabGroup] + 1 ||
+                  index < activeIndexCard[tab.tabGroup] - 1
+                ) {
+                  return null;
+                }
+                return (
+                  <Card
+                    cardRef={cardRef}
+                    data={data}
+                    index={index}
+                    tabInfo={tab.tabInfo}
+                  />
+                );
+              })}
+            </Slider>
+          );
+        })}
       </div>
 
       {tabs.map((tab) => {
