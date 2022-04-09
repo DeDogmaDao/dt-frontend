@@ -18,7 +18,7 @@ const Tabs: React.FC = () => {
   console.log(activeIndexCard.gods);
 
   return (
-    <div className="flex flex-col justify-between items-center h-full w-full my-80 py-96">
+    <div className="flex flex-col justify-between items-center h-full w-full my-20 bg-green-500/10">
       <div className="h-20 flex justify-center items-center gap-x-10 text-2xl">
         <LayoutGroup id="tabGroup">
           {tabs.map((data) => {
@@ -38,8 +38,8 @@ const Tabs: React.FC = () => {
           if (!tab.activeGroup) return null;
           return (
             <Slider
+            tabGroup={tab.tabGroup}
               setActiveIndexCard={setActiveIndexCard}
-              tabGroup={tab.tabGroup}
               activeIndexCard={activeIndexCard}
               dataQuantity={tab.tabInfo.length}
             >
@@ -52,7 +52,10 @@ const Tabs: React.FC = () => {
                 }
                 return (
                   <Card
-                    key={data.name}
+                  key={data.name}
+                  tabGroup={tab.tabGroup}
+                  setActiveIndexCard={setActiveIndexCard}
+                  activeIndexCard={activeIndexCard}
                     cardRef={cardRef}
                     data={data}
                     index={index}
