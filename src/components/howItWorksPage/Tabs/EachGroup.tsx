@@ -25,17 +25,27 @@ const EachGroup: React.FC<props> = ({ name, activeGroup, setTabs, tabs }) => {
   };
   return (
     <button
-      className="relative flex justify-between items-center w-64 h-28 rounded-2xl overflow-hidden  bg-[url('/media/cyc/button-bg.png')] bg-cover
-      text-large-bold"
+      className="w-64 h-28 relative flex justify-center items-center"
       onClick={clickHandler}
     >
-      <span className="ml-6">{name}</span>
-      <Image
-        src={"/media/cyc/" + name + ".png"}
-        width="171"
-        height="112"
-        layout="fixed"
-      />
+      <div className="absolute top-0 left-0 w-full h-full z-0 flex justify-between items-center overflow-hidden rounded-2xl">
+        <span className="w-1/2 h-full bg-gradient-to-br from-[#F0D955] via-transparent to-transparent"></span>
+        <span className="w-1/2 h-full bg-gradient-to-br from-transparent via-transparent to-[#F0D955]"></span>
+      </div>
+      <div
+        className={`z-10 relative flex justify-between items-center w-[99%] h-[99%]  rounded-2xl overflow-hidden  bg-[url('/media/cyc/button-bg.png')] bg-cover
+      text-large-bold duration-300 backdrop-filter backdrop-blur-[1.6px]  ${
+        activeGroup ? "grayscale-0" : "grayscale"
+      }`}
+      >
+        <span className="ml-6">{name}</span>
+        <Image
+          src={"/media/cyc/" + name + ".png"}
+          width="171"
+          height="112"
+          layout="fixed"
+        />
+      </div>
     </button>
   );
 };
