@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { tabsType } from "../../../types/allTypes";
 import underLine from "../../images/Union.png";
 import deepClone from 'lodash/cloneDeep';
+import Image from "next/image";
 
 interface props {
   name: string;
@@ -24,13 +25,16 @@ const EachGroup: React.FC<props> = ({ name, activeGroup, setTabs, tabs }) => {
   };
   return (
     <button
-      className="relative flex justify-center items-center"
+      className="relative flex justify-between items-center w-64 h-28  bg-[url('/media/cyc/button-bg.png')] bg-cover
+      text-large-bold"
       onClick={clickHandler}
     >
-      {name}
+      <span className="ml-6">{name}</span>
+      <Image src="/media/cyc/gods.png" width="171" height="109" />
     </button>
   );
 };
+
 
 export default EachGroup;
 
