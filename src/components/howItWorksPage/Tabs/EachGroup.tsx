@@ -28,13 +28,18 @@ const EachGroup: React.FC<props> = ({ name, activeGroup, setTabs, tabs }) => {
       className="w-64 h-28 relative flex justify-center items-center"
       onClick={clickHandler}
     >
-      <div className="absolute top-0 left-0 w-full h-full z-0 flex justify-between items-center overflow-hidden rounded-2xl">
-        <span className="w-1/2 h-full bg-gradient-to-br from-[#F0D955] via-transparent to-transparent"></span>
-        <span className="w-1/2 h-full bg-gradient-to-br from-transparent via-transparent to-[#F0D955]"></span>
-      </div>
+      {activeGroup && (
+        <div
+          className="absolute top-0 left-0 w-full h-full z-0 flex justify-between items-center overflow-hidden rounded-2xl
+       shadow-[0px_15px_25px_1px_rgb(240,217,85,0.3)]"
+        >
+          <span className="w-1/2 h-1/2 self-start bg-gradient-to-br from-[#F0D955] via-transparent to-transparent"></span>
+          <span className="w-1/2 h-full bg-gradient-to-br from-transparent via-transparent to-[#F0D955]"></span>
+        </div>
+      )}
       <div
         className={`z-10 relative flex justify-between items-center w-[99%] h-[99%]  rounded-2xl overflow-hidden  bg-[url('/media/cyc/button-bg.png')] bg-cover
-      text-large-bold duration-300 backdrop-filter backdrop-blur-[1.6px]  ${
+      text-large-bold duration-300 backdrop-filter backdrop-blur-[1.6px]    ${
         activeGroup ? "grayscale-0" : "grayscale"
       }`}
       >
