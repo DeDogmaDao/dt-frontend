@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { tabsType } from "../../../types/allTypes";
 import underLine from "../../images/Union.png";
-import deepClone from 'lodash/cloneDeep';
+import deepClone from "lodash/cloneDeep";
 import Image from "next/image";
 
 interface props {
@@ -25,20 +25,22 @@ const EachGroup: React.FC<props> = ({ name, activeGroup, setTabs, tabs }) => {
   };
   return (
     <button
-      className="relative flex justify-between items-center w-64 h-28  bg-[url('/media/cyc/button-bg.png')] bg-cover
+      className="relative flex justify-between items-center w-64 h-28 rounded-2xl overflow-hidden  bg-[url('/media/cyc/button-bg.png')] bg-cover
       text-large-bold"
       onClick={clickHandler}
     >
       <span className="ml-6">{name}</span>
-      <Image src="/media/cyc/gods.png" width="171" height="109" />
+      <Image
+        src={"/media/cyc/" + name + ".png"}
+        width="171"
+        height="112"
+        layout="fixed"
+      />
     </button>
   );
 };
 
-
 export default EachGroup;
-
-
 
 // import { motion } from "framer-motion";
 // import { tabsType } from "../../../types/allTypes";
@@ -102,7 +104,6 @@ export default EachGroup;
 // };
 
 // export default EachGroup;
-
 
 // export const tabBlastAni: Variants = {
 //   hidden: {
