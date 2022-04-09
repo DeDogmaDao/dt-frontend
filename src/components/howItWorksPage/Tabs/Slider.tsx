@@ -35,7 +35,7 @@ const Slider: React.FC<props> = ({
         return { ...prevState, [tabGroup]: prevState[tabGroup] - 1 };
       });
     }
-    if (info.offset.x < 0) {
+    if (info.offset.x < 0 && info.offset.y > -300) {
       setActiveIndexCard((prevState) => {
         if (prevState[tabGroup] === dataQuantity - 1) return { ...prevState };
         return { ...prevState, [tabGroup]: prevState[tabGroup] + 1 };
@@ -50,15 +50,10 @@ const Slider: React.FC<props> = ({
       >
         <motion.div
           onDragEnd={(event, info) => dragHandler(event, info)}
-          className={`inner-carousel flex bg-red-300 ${
-            activeIndexCard[tabGroup] > dataQuantity / 2
-              ? "justify-start"
-              : "justify-end"
-          } `}
+          className={`inner-carousel flex relative h-[400px] bg-red-300`}
           drag="x"
           dragConstraints={{ right: 0, left: -0 }}
           dragElastic={0.03}
-          dragMomentum={true}
         >
           {children}
         </motion.div>

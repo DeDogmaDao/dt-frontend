@@ -46,13 +46,15 @@ const Card: React.FC<props> = ({
   const cardPlace = cardPlaceDetector(activeIndexCard[tabGroup], index);
   let style: MotionStyle = {
     scale: 1 - 0.3 * Math.abs(cardPlace),
+    top: 0,
+    left: 50 + cardPlace * 35 + "%",
+    marginLeft: "-107px",
   };
-
 
   return (
     <motion.div
       layoutId={index.toString()}
-      transition={{duration:0.3, stiffness:200}}
+      transition={{ duration: 0.3, stiffness: 200 }}
       style={style}
       initial={"hidden"}
       animate="visible"
@@ -60,7 +62,7 @@ const Card: React.FC<props> = ({
       variants={carouselDisplayAni}
       custom={cardPlace}
       ref={data.activeCard ? cardRef : eachCradRef}
-      className="h-[400px] w-[215px] flex  items-end text-white  origin-bottom"
+      className="h-[400px] w-[215px] flex  text-white  absolute bg-red-900"
     >
       <Image
         className=" object-contain"
