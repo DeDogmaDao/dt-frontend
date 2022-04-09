@@ -393,6 +393,20 @@ export const tabBlastAni: Variants = {
   },
 };
 
+export const carouselDisplayAni: Variants = {
+  hidden: (custom) => ({
+    x: 300 * custom,
+    scale: 0.7,
+  }),
+  visible: (custom) => ({
+    x: 0,
+    scale: 1 - 0.3 * Math.abs(custom),
+    transition: {
+      duration: 0.5,
+    },
+  }),
+};
+
 // page: howItWorks / comp: Tabs
 export const tabImageContainerAni: Variants = {
   hidden: {
@@ -469,14 +483,14 @@ export const spellCounterAni: Variants = {
   hidden: {
     translateY: 100,
   },
-  visible: (custom)=>({
+  visible: (custom) => ({
     translateY: 0,
     transition: {
       duration: custom,
       ease: "easeOut",
     },
   }),
-  out: (custom)=>({
+  out: (custom) => ({
     translateY: -100,
     transition: {
       duration: custom,
