@@ -407,8 +407,8 @@ export const carouselDisplayAni: Variants = {
   }),
   out: (custom) => ({
     position: "absolute",
-    x: 300 * custom,
-    scale: 0,
+    x: 200 * custom,
+    scale: 0.3,
     opacity: 0.5,
     transition: {
       duration: 0.3,

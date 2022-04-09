@@ -28,15 +28,6 @@ const EachGroup: React.FC<props> = ({ name, activeGroup, setTabs, tabs }) => {
       onClick={clickHandler}
     >
       {name}
-      {activeGroup && (
-        <motion.img
-          src={underLine.src}
-          layoutId={"tabGroup"}
-          className={
-            "absolute left-0 -bottom-3 w-20 h-3 flex justify-center items-start"
-          }
-        />
-      )}
     </button>
   );
 };
