@@ -47,13 +47,16 @@ const Card: React.FC<props> = ({
   let style: MotionStyle = {
     scale: 1 - 0.3 * Math.abs(cardPlace),
   };
+
+
   return (
     <motion.div
       layoutId={index.toString()}
-      transition={{duration:0.5}}
+      transition={{duration:0.3, stiffness:200}}
       style={style}
       initial={"hidden"}
       animate="visible"
+      exit={"out"}
       variants={carouselDisplayAni}
       custom={cardPlace}
       ref={data.activeCard ? cardRef : eachCradRef}

@@ -43,6 +43,7 @@ const Tabs: React.FC = () => {
               dataQuantity={tab.tabInfo.length}
             >
               <LayoutGroup>
+              <AnimatePresence>
               {tab.tabInfo.map((data, index) => {
                 if (
                   index > activeIndexCard[tab.tabGroup] + 1 ||
@@ -63,6 +64,7 @@ const Tabs: React.FC = () => {
                   />
                 );
               })}
+              </AnimatePresence>
               </LayoutGroup>
             </Slider>
           );

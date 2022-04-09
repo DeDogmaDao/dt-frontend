@@ -402,9 +402,19 @@ export const carouselDisplayAni: Variants = {
     x: 0,
     scale: 1 - 0.3 * Math.abs(custom),
     transition: {
-      duration: 0.5,
+      duration: 0.3,
     },
   }),
+  out: (custom) => ({
+    position:"absolute",
+    x: 300 * custom,
+    scale: 0,
+    opacity:0.5,
+    transition: {
+      duration: 0.1,
+    },
+  }),
+
 };
 
 // page: howItWorks / comp: Tabs

@@ -46,11 +46,11 @@ const Slider: React.FC<props> = ({
     <motion.div className="">
       <motion.div
         ref={carouselRef}
-        className="carousel overflow-hidden mx-auto bg-blue-300 w-[750px]"
+        className="carousel overflow-hidden mx-auto bg-blue-300 w-[650px]"
       >
         <motion.div
           onDragEnd={(event, info) => dragHandler(event, info)}
-          className={`inner-carousel flex bg-red-300 gap-x-5 ${
+          className={`inner-carousel flex bg-red-300 ${
             activeIndexCard[tabGroup] > dataQuantity / 2
               ? "justify-start"
               : "justify-end"
