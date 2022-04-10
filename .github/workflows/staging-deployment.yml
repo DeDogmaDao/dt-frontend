@@ -1,4 +1,4 @@
-name: Build and Deploy
+name: Staging build and deploy
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the main branch
@@ -8,14 +8,14 @@ on:
   workflow_dispatch:
     inputs:
       logLevel:
-        description: "Log level"
+        description: 'Log level'
         required: true
-        default: "info"
+        default: 'info'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  build:
+  build_and_push:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     container: node:14
@@ -29,7 +29,7 @@ jobs:
         env:
           BACKEND_URL: ${{ secrets.FRONTEND_STAGING_PUBLIC_BACKEND_STAGING_URL }}
         with:
-          name: dedogmadao/dtfrontend/frontend_staging
+          name: dedogmadao/dt-frontend/frontend_staging
           registry: ghcr.io
           username: ${{ secrets.STAGING_GITHUB_USERNAME }}
           password: ${{ secrets.GITHUB_TOKEN }}
@@ -37,15 +37,19 @@ jobs:
           buildargs: BACKEND_URL
           tags: latest
 
+  deploy:
+    needs: build_and_push
+    runs-on: ubuntu-latest
+    steps:
       - name: Deploy package to Server
         uses: fifsky/ssh-action@master
         with:
           command: |
             docker login ghcr.io -u dedogmadao -p $GITHUB_TOKEN
-            docker pull ghcr.io/dedogmadao/dtfrontend/frontend_staging:latest
+            docker pull ghcr.io/dedogmadao/dt-frontend/frontend_staging:latest
             docker stop front-staging
             docker system prune -f
-            docker run --name front-staging -dit -p 80:3000 ghcr.io/dedogmadao/dtfrontend/frontend_staging:latest
+            docker run --name front-staging -dit -p 80:3000 ghcr.io/dedogmadao/dt-frontend/frontend_staging:latest
           host: ${{ secrets.FRONTEND_STAGING_DEPLOY_HOST }}
           user: ${{ secrets.FRONTEND_STAGING_DEPLOY_USER }}
           key: ${{ secrets.STAGING_GITHUB_SSH_KEY}}
