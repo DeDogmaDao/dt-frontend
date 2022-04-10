@@ -48,7 +48,7 @@ const Card: React.FC<props> = ({
     scale: 1 - 0.3 * Math.abs(cardPlace),
     top: 0,
     left: 50 + cardPlace * 35 + "%",
-    marginLeft: "-107px",
+    marginLeft: "-110px",
   };
 
   return (

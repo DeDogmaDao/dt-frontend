@@ -1,4 +1,5 @@
 import { AnimatePresence, LayoutGroup } from "framer-motion";
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { allTabs } from "../../../store/allData";
 import { activeIndexCardType } from "../../../types/allTypes";
@@ -33,7 +34,15 @@ const Tabs: React.FC = () => {
           })}
         </LayoutGroup>
       </div>
-      <div className="w-full h-full bg-neutral-900 ">
+      <div className="w-full h-full bg-neutral-900 relative">
+        <div className="absolute top-96 left-1/2 ml-[-150px] z-30">
+          <Image
+            width="300"
+            height="250"
+            layout="intrinsic"
+            src="/media/cyc/tab-portal.png"
+          />
+        </div>
         {tabs.map((tab) => {
           if (!tab.activeGroup) return null;
           return (
@@ -75,7 +84,7 @@ const Tabs: React.FC = () => {
       {tabs.map((tab) => {
         if (!tab.activeGroup) return null;
         return (
-          <div className="h-16 flex justify-center items-center gap-x-[10px] text-2xl  rounded-full">
+          <div className="h-16 flex justify-center items-center gap-x-[10px] text-2xl  rounded-full mt-20">
             <LayoutGroup id="eachTab">
               {tab.tabInfo.map((data, index) => {
                 return (
@@ -97,18 +106,18 @@ const Tabs: React.FC = () => {
         return (
           <div className="relative w-full h-full flex justify-center items-center mt-9">
             <AnimatePresence>
-            {tab.tabInfo.map((data, index) => {
-              return (
-                <TabInfo
-                  name={data.name}
-                  titleOfHonor={data.titleOfHonor}
-                  desc={data.desc}
-                  index={index}
-                  activeIndexCard={activeIndexCard}
-                  tabGroup={tab.tabGroup}
-                />
-              );
-            })}
+              {tab.tabInfo.map((data, index) => {
+                return (
+                  <TabInfo
+                    name={data.name}
+                    titleOfHonor={data.titleOfHonor}
+                    desc={data.desc}
+                    index={index}
+                    activeIndexCard={activeIndexCard}
+                    tabGroup={tab.tabGroup}
+                  />
+                );
+              })}
             </AnimatePresence>
           </div>
         );
