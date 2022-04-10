@@ -6,8 +6,7 @@
 
 @import "../src/components/_components.css";
 
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
 
 /* chrome */
 *::-webkit-scrollbar {
@@ -24,34 +23,51 @@
 
 @layer base {
   html {
-  scroll-behavior:smooth;
+    scroll-behavior: smooth;
   }
   h1 {
-    @apply text-5xl font-medium leading-7;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 80px;
+    line-height: 120%;
   }
   h2 {
-    @apply text-[40px] font-medium leading-[72px];
+    font-style: normal;
+    font-weight: 500;
+    font-size: 56px;
+    line-height: 120%;
   }
   h3 {
-    @apply text-[32px] font-medium leading-[56px];
+    font-style: normal;
+    font-weight: 500;
+    font-size: 44px;
+    line-height: 120%;
   }
   h4 {
-    @apply text-2xl font-bold leading-[42px];
+    font-style: normal;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 120%;
   }
   h5 {
-    @apply text-xl font-bold leading-9;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 120%;
   }
   h6 {
-    @apply text-base font-bold leading-7;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 120%;
   }
   body {
-    font-family: 'Josefin Sans', sans-serif;
-    @apply bg-mainBg-500 text-white;
+    font-family: "Josefin Sans", sans-serif;
+    @apply bg-neutral-900 text-neutral-50;
   }
 }
 
 @layer components {
-
   /* to disapear the blue highligting on mobile ontouch */
   .no-select-a-tag {
     -webkit-tap-highlight-color: transparent;
@@ -64,23 +80,5 @@
   }
   .no-select-a-tag:focus {
     outline: none !important;
-  }
-
-
- 
-  .subtitle1 {
-    @apply text-base font-medium leading-7;
-  }
-  .subtitle2 {
-    @apply text-sm font-medium leading-6;
-  }
-  .subtitle3 {
-    @apply text-xs font-medium leading-5;
-  }
-  .button1 {
-    @apply text-base font-bold leading-7;
-  }
-  .button2 {
-    @apply text-sm font-bold leading-6;
   }
 }
