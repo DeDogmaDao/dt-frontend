@@ -62,7 +62,7 @@ const Card: React.FC<props> = ({
       variants={carouselDisplayAni}
       custom={cardPlace}
       ref={data.activeCard ? cardRef : eachCradRef}
-      className="h-[465px] w-[220px] flex  text-white  absolute bg-red-900"
+      className="h-[465px] w-[220px] flex  text-white  absolute "
     >
       <Image
         className=" object-contain"

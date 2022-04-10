@@ -46,11 +46,11 @@ const Slider: React.FC<props> = ({
     <motion.div className="">
       <motion.div
         ref={carouselRef}
-        className="carousel overflow-hidden mx-auto bg-blue-300 w-[900px] mt-28"
+        className="carousel overflow-hidden mx-auto w-[900px] mt-28"
       >
         <motion.div
           onDragEnd={(event, info) => dragHandler(event, info)}
-          className={`inner-carousel flex relative h-[465px] bg-red-300`}
+          className={`inner-carousel flex relative h-[465px]`}
           drag="x"
           dragConstraints={{ right: 0, left: -0 }}
           dragElastic={0.03}

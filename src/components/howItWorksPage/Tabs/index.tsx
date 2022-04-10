@@ -19,8 +19,19 @@ const Tabs: React.FC = () => {
   });
 
   return (
-    <div className="flex flex-col justify-between items-center h-full w-full my-20 ">
-      <div className=" flex justify-center items-center gap-x-24 text-2xl">
+    <div className="flex flex-col justify-between items-center h-full w-full my-20 relative">
+      <div className="absolute top-0 left-0 z-0 w-full">
+        <Image
+          width="1440"
+          height="929"
+          layout="responsive"
+          src="/media/cyc/tab-bg.png"
+        />
+      </div>
+      <h5 className="z-10 font-bold mt-36">
+        Choose your <span className="text-yellow-400">Card</span>
+      </h5>
+      <div className=" flex justify-center items-center gap-x-24 text-2xl mt-14">
         <LayoutGroup id="tabGroup">
           {tabs.map((data) => {
             return (
@@ -34,8 +45,8 @@ const Tabs: React.FC = () => {
           })}
         </LayoutGroup>
       </div>
-      <div className="w-full h-full bg-neutral-900 relative">
-        <div className="absolute top-96 left-1/2 ml-[-150px] z-30">
+      <div className="w-full h-full relative">
+        <div className="absolute top-96 left-1/2 ml-[-150px] z-30 pointer-events-none select-none">
           <Image
             width="300"
             height="250"
