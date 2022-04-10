@@ -1,3 +1,5 @@
+import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion, PanInfo, useElementScroll } from "framer-motion";
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 import { activeIndexCardType } from "../../../types/allTypes";
@@ -42,11 +44,31 @@ const Slider: React.FC<props> = ({
       });
     }
   };
+
+  const leftClickHandler = () => {
+    setActiveIndexCard((prevState) => {
+      if (prevState[tabGroup] === 0) return { ...prevState };
+      return {
+        ...prevState,
+        [tabGroup]: prevState[tabGroup] - 1,
+      };
+    });
+  };
+  const rightClickHandler = () => {
+    setActiveIndexCard((prevState) => {
+      if (prevState[tabGroup] === dataQuantity - 1) return { ...prevState };
+      return {
+        ...prevState,
+        [tabGroup]: prevState[tabGroup] + 1,
+      };
+    });
+  };
+
   return (
-    <motion.div className="">
+    <motion.div className="relative">
       <motion.div
         ref={carouselRef}
-        className="carousel overflow-hidden mx-auto w-[900px] mt-28"
+        className="carousel overflow-hidden mx-auto w-[900px] mt-28 "
       >
         <motion.div
           onDragEnd={(event, info) => dragHandler(event, info)}
@@ -58,6 +80,19 @@ const Slider: React.FC<props> = ({
           {children}
         </motion.div>
       </motion.div>
+
+      <button
+        className="absolute p-2 left-[14.5%] top-1/2 -mt-8 text-5xl text-neutral-400"
+        onClick={leftClickHandler}
+      >
+        <FontAwesomeIcon icon={faChevronLeft} />
+      </button>
+      <button
+        className="absolute p-2 right-[14.5%] top-1/2 -mt-8 text-5xl scale-x-[-1] text-neutral-400"
+        onClick={rightClickHandler}
+      >
+        <FontAwesomeIcon icon={faChevronLeft} />
+      </button>
     </motion.div>
   );
 };
