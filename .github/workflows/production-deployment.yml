@@ -38,7 +38,7 @@ jobs:
           tags: latest
   
   deploy:
-
+    needs: build_and_push
     runs-on: ubuntu-latest
 
     steps:
