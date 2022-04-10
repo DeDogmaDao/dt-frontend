@@ -39,7 +39,7 @@ const EachGroup: React.FC<props> = ({ name, activeGroup, setTabs, tabs }) => {
       )}
       <div
         className={`z-10 relative flex justify-between items-center w-[99%] h-[99%]  rounded-2xl overflow-hidden  bg-[url('/media/cyc/button-bg.png')] bg-cover
-      text-large-bold duration-300 backdrop-filter backdrop-blur-[1.6px]    ${
+      text-normal-bold duration-300 backdrop-filter backdrop-blur-[1.6px]    ${
         activeGroup ? "grayscale-0" : "grayscale"
       }`}
       >
