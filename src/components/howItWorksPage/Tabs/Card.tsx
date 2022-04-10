@@ -1,12 +1,4 @@
-import {
-  Dispatch,
-  MouseEvent,
-  RefObject,
-  SetStateAction,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
+import { Dispatch, RefObject, SetStateAction } from "react";
 import { activeIndexCardType, tabType } from "../../../types/allTypes";
 import { motion, MotionStyle } from "framer-motion";
 import Image from "next/image";
@@ -20,7 +12,7 @@ interface props {
   tabGroup: string;
   activeIndexCard: activeIndexCardType;
   setActiveIndexCard: Dispatch<SetStateAction<activeIndexCardType>>;
-  isDragged:boolean;
+  isDragged: boolean;
 }
 const Card: React.FC<props> = ({
   data,
@@ -30,18 +22,15 @@ const Card: React.FC<props> = ({
   activeIndexCard,
   setActiveIndexCard,
   tabGroup,
-  isDragged
-  
+  isDragged,
 }) => {
-  const cardClickHandler = (e:any) => {
-    if(isDragged){
+  const cardClickHandler = (e: any) => {
+    if (isDragged) {
       e.preventDefault();
       return false;
     }
-    setActiveIndexCard(prevState=>({...prevState,[tabGroup]:index}))
-  }
-
-
+    setActiveIndexCard((prevState) => ({ ...prevState, [tabGroup]: index }));
+  };
 
   const cardPlace = cardPlaceDetector(activeIndexCard[tabGroup], index);
   let style: MotionStyle = {
@@ -61,20 +50,19 @@ const Card: React.FC<props> = ({
       exit={"out"}
       variants={carouselDisplayAni}
       custom={cardPlace}
-      onClick={(e)=>cardClickHandler(e)}
-      className={`h-[465px] w-[220px] flex  text-white absolute select-none bg-red ${
+      whileHover={{ scale: activeIndexCard[tabGroup] === index ? 1 : 0.7 }}
+      onClick={(e) => cardClickHandler(e)}
+      className={`h-[465px] w-[220px] flex  text-white absolute select-none hover:cursor-pointer  ${
         activeIndexCard[tabGroup] === index ? "grayscale-0" : "grayscale"
       }`}
     >
       <Image
-      draggable={false}
+        draggable={false}
         className="object-contain"
         src={data.image}
         height="465"
         width="220"
       />
-      {/* <p className="text-4xl text-primary-500">{data.name}</p> */}
-      {/* <div>{data.desc}</div> */}
     </motion.div>
   );
 };
