@@ -38,34 +38,34 @@ const Tabs: React.FC = () => {
           if (!tab.activeGroup) return null;
           return (
             <Slider
-            tabGroup={tab.tabGroup}
+              tabGroup={tab.tabGroup}
               setActiveIndexCard={setActiveIndexCard}
               activeIndexCard={activeIndexCard}
               dataQuantity={tab.tabInfo.length}
             >
               <LayoutGroup>
-              <AnimatePresence>
-              {tab.tabInfo.map((data, index) => {
-                if (
-                  index > activeIndexCard[tab.tabGroup] + 1 ||
-                  index < activeIndexCard[tab.tabGroup] - 1
-                ) {
-                  return null;
-                }
-                return (
-                  <Card
-                  key={data.name}
-                  tabGroup={tab.tabGroup}
-                  setActiveIndexCard={setActiveIndexCard}
-                  activeIndexCard={activeIndexCard}
-                    cardRef={cardRef}
-                    data={data}
-                    index={index}
-                    tabInfo={tab.tabInfo}
-                  />
-                );
-              })}
-              </AnimatePresence>
+                <AnimatePresence>
+                  {tab.tabInfo.map((data, index) => {
+                    if (
+                      index > activeIndexCard[tab.tabGroup] + 1 ||
+                      index < activeIndexCard[tab.tabGroup] - 1
+                    ) {
+                      return null;
+                    }
+                    return (
+                      <Card
+                        key={data.name}
+                        tabGroup={tab.tabGroup}
+                        setActiveIndexCard={setActiveIndexCard}
+                        activeIndexCard={activeIndexCard}
+                        cardRef={cardRef}
+                        data={data}
+                        index={index}
+                        tabInfo={tab.tabInfo}
+                      />
+                    );
+                  })}
+                </AnimatePresence>
               </LayoutGroup>
             </Slider>
           );
@@ -77,7 +77,7 @@ const Tabs: React.FC = () => {
         return (
           <div className="h-16 flex justify-center items-center gap-x-[10px] text-2xl  rounded-full">
             <LayoutGroup id="eachTab">
-              {tab.tabInfo.map((data,index) => {
+              {tab.tabInfo.map((data, index) => {
                 return (
                   <EachTab
                     group={tab.tabGroup}
@@ -92,11 +92,24 @@ const Tabs: React.FC = () => {
           </div>
         );
       })}
-      {tabs.map(tab=>{
-        if(!tab.activeGroup) return null;
-        return(
-          <TabInfo />
-        )
+      {tabs.map((tab) => {
+        if (!tab.activeGroup) return null;
+        return (
+          <>
+            {tab.tabInfo.map((data, index) => {
+              return (
+                <TabInfo
+                  name={data.name}
+                  titleOfHonor={data.titleOfHonor}
+                  desc={data.desc}
+                  index={index}
+                  activeIndexCard={activeIndexCard}
+                  tabGroup={tab.tabGroup}
+                />
+              );
+            })}
+          </>
+        );
       })}
     </div>
   );

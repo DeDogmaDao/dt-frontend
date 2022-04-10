@@ -27,6 +27,7 @@ export interface layersType {
 export interface tabType {
   activeCard: boolean;
   name: string;
+  titleOfHonor:string;
   image: string;
   image2?: string;
   image3?: string;

@@ -1,14 +1,35 @@
-const TabInfo:React.FC = () => {
+import { ReactElement } from "react";
+import { activeIndexCardType } from "../../../types/allTypes";
 
-
-    return(<div className="flex flex-col justify-center items-center">
-        <div className="flex justify-center items-center gap-x-2">
-            <span>name</span>
-            <span>feat</span>
-        </div>
-        <div>desc Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita hic eligendi voluptas obcaecati minus animi iure dolore enim, laborum velit maiores error eius quidem ratione soluta molestias. Tenetur, eligendi fugit.</div>
-    </div>)
+interface props {
+  name: string;
+  titleOfHonor: string;
+  desc: ReactElement<any, any>;
+  index: number;
+  activeIndexCard: activeIndexCardType;
+  tabGroup: string;
 }
-
+const TabInfo: React.FC<props> = ({
+  name,
+  titleOfHonor,
+  desc,
+  index,
+  activeIndexCard,
+  tabGroup,
+}) => {
+  return (
+    <>
+      {activeIndexCard[tabGroup] === index && (
+        <div className="flex flex-col justify-center items-center">
+          <div className="flex justify-center items-center gap-x-2">
+            <span>{name}</span>
+            <p>{titleOfHonor}</p>
+          </div>
+          <div>{desc}</div>
+        </div>
+      )}
+    </>
+  );
+};
 
 export default TabInfo;

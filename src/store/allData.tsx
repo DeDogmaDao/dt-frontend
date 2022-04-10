@@ -148,6 +148,7 @@ export const godTabData: tabType[] = [
   {
     activeCard: false,
     name: "tab0",
+    titleOfHonor: "herald the stone eyes",
     image: "/media/cyc/1.png",
     desc: (
       <div>
@@ -162,6 +163,7 @@ export const godTabData: tabType[] = [
   {
     activeCard: false,
     name: "tab1",
+    titleOfHonor: "Hades “the Unseen” ",
     image: "/media/cyc/1.png",
     desc: (
       <div>
@@ -176,6 +178,7 @@ export const godTabData: tabType[] = [
   {
     activeCard: false,
     name: "tab2",
+    titleOfHonor: "herald the stone eyes",
     image: "/media/cyc/2.png",
     desc: (
       <div>
@@ -190,6 +193,7 @@ export const godTabData: tabType[] = [
   {
     activeCard: false,
     name: "tab3",
+    titleOfHonor: "Hades “the Unseen” ",
     image: "/media/cyc/1.png",
     desc: (
       <div>
@@ -204,6 +208,7 @@ export const godTabData: tabType[] = [
   {
     activeCard: false,
     name: "tab4",
+    titleOfHonor: "herald the stone eyes",
     image: "/media/cyc/1.png",
     desc: (
       <div>
@@ -218,6 +223,7 @@ export const godTabData: tabType[] = [
   {
     activeCard: false,
     name: "tab5",
+    titleOfHonor: "Hades “the Unseen” ",
     image: "/media/cyc/2.png",
     desc: (
       <div>
@@ -232,6 +238,7 @@ export const godTabData: tabType[] = [
   {
     activeCard: true,
     name: "tab6",
+    titleOfHonor: "Hades “the Unseen” ",
     image: "/media/cyc/1.png",
     desc: (
       <div>
@@ -246,6 +253,7 @@ export const godTabData: tabType[] = [
   {
     activeCard: false,
     name: "tab7",
+    titleOfHonor: "herald the stone eyes",
     image: "/media/cyc/1.png",
     desc: (
       <div>
@@ -260,6 +268,7 @@ export const godTabData: tabType[] = [
   {
     activeCard: false,
     name: "tab8",
+    titleOfHonor: "herald the stone eyes",
     image: "/media/cyc/2.png",
     desc: (
       <div>
@@ -274,6 +283,7 @@ export const godTabData: tabType[] = [
   {
     activeCard: false,
     name: "tab9",
+    titleOfHonor: "Hades “the Unseen” ",
     image: "/media/cyc/1.png",
     desc: (
       <div>
@@ -288,6 +298,7 @@ export const godTabData: tabType[] = [
   {
     activeCard: false,
     name: "tab10",
+    titleOfHonor: "herald the stone eyes",
     image: "/media/cyc/1.png",
     desc: (
       <div>
@@ -304,6 +315,7 @@ export const humanTabData: tabType[] = [
   {
     activeCard: false,
     name: "tab0",
+    titleOfHonor: "out of law citizen",
     image: "/media/cyc/3.png",
     image2: "/media/cyc/1.png",
     image3: "/media/cyc/1.png",
@@ -320,6 +332,7 @@ export const humanTabData: tabType[] = [
   {
     activeCard: false,
     name: "tab1",
+    titleOfHonor: "out of law citizen",
     image: "/media/cyc/1.png",
     image2: "/media/cyc/3.png",
     image3: "/media/cyc/3.png",
@@ -336,6 +349,7 @@ export const humanTabData: tabType[] = [
   {
     activeCard: true,
     name: "tab2",
+    titleOfHonor: "out of law citizen",
     image: "/media/cyc/2.png",
     image2: "/media/cyc/1.png",
     image3: "/media/cyc/1.png",
@@ -352,6 +366,7 @@ export const humanTabData: tabType[] = [
   {
     activeCard: false,
     name: "tab3",
+    titleOfHonor: "out of law citizen",
     image: "/media/cyc/3.png",
     image2: "/media/cyc/1.png",
     image3: "/media/cyc/1.png",
@@ -368,6 +383,7 @@ export const humanTabData: tabType[] = [
   {
     activeCard: false,
     name: "tab4",
+    titleOfHonor: "out of law citizen",
     image: "/media/cyc/2.png",
     image2: "/media/cyc/1.png",
     image3: "/media/cyc/1.png",
