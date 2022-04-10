@@ -62,7 +62,7 @@ const Card: React.FC<props> = ({
       variants={carouselDisplayAni}
       custom={cardPlace}
       ref={data.activeCard ? cardRef : eachCradRef}
-      className={`h-[465px] w-[220px] flex  text-white absolute ${
+      className={`h-[465px] w-[220px] flex  text-white absolute select-none pointer-events-none bg-red ${
         activeIndexCard[tabGroup] === index ? "grayscale-0" : "grayscale"
       }`}
     >
