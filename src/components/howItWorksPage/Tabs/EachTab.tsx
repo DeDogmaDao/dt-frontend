@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
-import { Dispatch, RefObject, SetStateAction } from "react";
-import { activeIndexCardType, tabsType } from "../../../types/allTypes";
-import deepClone from "lodash/cloneDeep";
+import { Dispatch, SetStateAction } from "react";
+import { activeIndexCardType } from "../../../types/allTypes";
 import { eachTabAni } from "../../../utils/animation";
 interface props {
   group: string;
@@ -19,23 +18,24 @@ const EachTab: React.FC<props> = ({
 }) => {
   const clickHandler = () => {
     if (index > activeIndexCard[group]) {
-      for (let i = activeIndexCard[group]; i < index; i++) {
+      for (let i = activeIndexCard[group], j = 0; i < index; i++, j++) {
         setTimeout(() => {
           setActiveIndexCard((prevState) => ({
             ...prevState,
             [group]: prevState[group] + 1,
           }));
-        }, (300 * i) / 5);
+        }, 30 * j);
       }
     }
     if (index < activeIndexCard[group]) {
-      for (let i = activeIndexCard[group]; i > index; i--) {
+      for (let i = activeIndexCard[group], j = 0; i > index; i--, j++) {
+        console.log(j);
         setTimeout(() => {
           setActiveIndexCard((prevState) => ({
             ...prevState,
             [group]: prevState[group] - 1,
           }));
-        }, (300 * i) / 5);
+        }, 30 * j);
       }
     }
   };
