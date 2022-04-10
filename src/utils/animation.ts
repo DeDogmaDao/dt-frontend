@@ -416,6 +416,31 @@ export const carouselDisplayAni: Variants = {
   }),
 };
 
+
+export const tabInfoContainerAni:Variants = {
+  hidden:{
+    y:50,
+    opacity:0
+  },
+  visible:{
+    y:0,
+    opacity:1,
+    transition:{
+      duration:0.3
+    }
+  },
+  out:{
+    opacity:0,
+    y:-10,
+    transition:{
+      duration:0.3
+    }
+  }
+
+}
+
+
+
 // page: howItWorks / comp: Tabs
 export const tabImageContainerAni: Variants = {
   hidden: {

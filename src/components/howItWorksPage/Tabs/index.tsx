@@ -95,7 +95,8 @@ const Tabs: React.FC = () => {
       {tabs.map((tab) => {
         if (!tab.activeGroup) return null;
         return (
-          <>
+          <div className="relative w-full h-full flex justify-center items-center mt-9">
+            <AnimatePresence>
             {tab.tabInfo.map((data, index) => {
               return (
                 <TabInfo
@@ -108,7 +109,8 @@ const Tabs: React.FC = () => {
                 />
               );
             })}
-          </>
+            </AnimatePresence>
+          </div>
         );
       })}
     </div>

@@ -156,14 +156,14 @@ export const godTabData: tabType[] = [
         governance with an initial focus on synthetic media.
         <br />
         HUMANS is creating an all-in-one platform for AI-based creation and
-        governance with an initial focus on synthetic media.
+        governance with an initial focus on synthetic media. focus on synthetic media. focus on synthetic media. focus on synthetic media. focus on synthetic media.
       </div>
     ),
   },
   {
     activeCard: false,
     name: "tab1",
-    titleOfHonor: "Hades “the Unseen” ",
+    titleOfHonor: "Hades the Unseen ",
     image: "/media/cyc/1.png",
     desc: (
       <div>
@@ -193,7 +193,7 @@ export const godTabData: tabType[] = [
   {
     activeCard: false,
     name: "tab3",
-    titleOfHonor: "Hades “the Unseen” ",
+    titleOfHonor: "Hades the Unseen ",
     image: "/media/cyc/1.png",
     desc: (
       <div>
@@ -223,7 +223,7 @@ export const godTabData: tabType[] = [
   {
     activeCard: false,
     name: "tab5",
-    titleOfHonor: "Hades “the Unseen” ",
+    titleOfHonor: "Hades the Unseen ",
     image: "/media/cyc/2.png",
     desc: (
       <div>
@@ -238,7 +238,7 @@ export const godTabData: tabType[] = [
   {
     activeCard: true,
     name: "tab6",
-    titleOfHonor: "Hades “the Unseen” ",
+    titleOfHonor: "Hades the Unseen ",
     image: "/media/cyc/1.png",
     desc: (
       <div>
@@ -283,7 +283,7 @@ export const godTabData: tabType[] = [
   {
     activeCard: false,
     name: "tab9",
-    titleOfHonor: "Hades “the Unseen” ",
+    titleOfHonor: "Hades the Unseen ",
     image: "/media/cyc/1.png",
     desc: (
       <div>
