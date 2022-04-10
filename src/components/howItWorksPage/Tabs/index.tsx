@@ -7,6 +7,7 @@ import EachGroup from "./EachGroup";
 import EachTab from "./EachTab";
 import Slider from "./Slider";
 import Sliding from "./Sliding";
+import TabInfo from "./TabInfo";
 
 const Tabs: React.FC = () => {
   const [tabs, setTabs] = useState(allTabs);
@@ -90,6 +91,12 @@ const Tabs: React.FC = () => {
             </LayoutGroup>
           </div>
         );
+      })}
+      {tabs.map(tab=>{
+        if(!tab.activeGroup) return null;
+        return(
+          <TabInfo />
+        )
       })}
     </div>
   );
