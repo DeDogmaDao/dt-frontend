@@ -76,15 +76,14 @@ const Tabs: React.FC = () => {
         return (
           <div className="h-16 flex justify-center items-center gap-x-[10px] text-2xl  rounded-full">
             <LayoutGroup id="eachTab">
-              {tab.tabInfo.map((data) => {
+              {tab.tabInfo.map((data,index) => {
                 return (
                   <EachTab
                     group={tab.tabGroup}
                     name={data.name}
-                    activeCard={data.activeCard}
-                    tabs={tabs}
-                    setTabs={setTabs}
-                    cardRef={cardRef}
+                    activeIndexCard={activeIndexCard}
+                    setActiveIndexCard={setActiveIndexCard}
+                    index={index}
                   />
                 );
               })}
