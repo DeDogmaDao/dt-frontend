@@ -17,7 +17,7 @@ const Tabs: React.FC = () => {
   });
 
   return (
-    <div className="flex flex-col justify-between items-center h-full w-full my-20 bg-green-500/10">
+    <div className="flex flex-col justify-between items-center h-full w-full my-20 ">
       <div className=" flex justify-center items-center gap-x-24 text-2xl">
         <LayoutGroup id="tabGroup">
           {tabs.map((data) => {
@@ -74,7 +74,7 @@ const Tabs: React.FC = () => {
       {tabs.map((tab) => {
         if (!tab.activeGroup) return null;
         return (
-          <div className="h-16 flex justify-center items-center gap-x-0 text-2xl bg-neutral-900 rounded-full">
+          <div className="h-16 flex justify-center items-center gap-x-[10px] text-2xl  rounded-full">
             <LayoutGroup id="eachTab">
               {tab.tabInfo.map((data) => {
                 return (

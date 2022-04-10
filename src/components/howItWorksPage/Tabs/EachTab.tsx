@@ -38,7 +38,7 @@ const EachTab: React.FC<props> = ({
 
   return (
     <button
-      className={`relative flex justify-center items-center min-w-[80px] h-14 duration-500 ${
+      className={`relative flex justify-center items-center w-[26px] h-[6px] bg-neutral-700 rounded-full duration-500 ${
         activeCard ? "text-blackPrime" : ""
       }`}
       onClick={clickHandler}
@@ -50,10 +50,9 @@ const EachTab: React.FC<props> = ({
           animate="visible"
           exit="out"
           variants={eachTabAni}
-          className="absolute left-0 bottom-0 w-full h-full bg-white z-0 rounded-full shadow-cycle shadow-slate-200 "
+          className="absolute left-0 bottom-0 w-full h-full bg-cyan-400 rounded-full shadow-cycle shadow-cyan-500 z-20"
         ></motion.div>
       )}
-      <h4 className="z-10">{name}</h4>
     </button>
   );
 };

@@ -317,19 +317,19 @@ export const eachTabAni: Variants = {
   hidden: {
     width: "200%",
     transition: {
-      duration: 0.5,
+      duration: 0.3,
     },
   },
   visible: {
     width: "100%",
     transition: {
-      duration: 0.5,
+      duration: 0.4,
     },
   },
   out: {
     width: "200%",
     transition: {
-      duration: 0.5,
+      duration: 0.3,
     },
   },
 };
