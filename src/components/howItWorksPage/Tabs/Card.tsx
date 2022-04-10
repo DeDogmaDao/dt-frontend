@@ -62,13 +62,13 @@ const Card: React.FC<props> = ({
       variants={carouselDisplayAni}
       custom={cardPlace}
       ref={data.activeCard ? cardRef : eachCradRef}
-      className="h-[400px] w-[215px] flex  text-white  absolute bg-red-900"
+      className="h-[465px] w-[220px] flex  text-white  absolute bg-red-900"
     >
       <Image
         className=" object-contain"
         src={data.image}
-        height="400"
-        width="215"
+        height="465"
+        width="220"
       />
       {/* <p className="text-4xl text-primary-500">{data.name}</p> */}
       {/* <div>{data.desc}</div> */}

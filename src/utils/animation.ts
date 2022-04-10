@@ -396,11 +396,11 @@ export const tabBlastAni: Variants = {
 export const carouselDisplayAni: Variants = {
   hidden: (custom) => ({
     x: 300 * custom,
-    scale: 0.7,
+    scale: 0.825,
   }),
   visible: (custom) => ({
     x: 0,
-    scale: 1 - 0.3 * Math.abs(custom),
+    scale: 1 - 0.175 * Math.abs(custom),
     transition: {
       duration: 0.3,
     },

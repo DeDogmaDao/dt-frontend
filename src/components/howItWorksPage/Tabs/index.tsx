@@ -18,7 +18,7 @@ const Tabs: React.FC = () => {
 
   return (
     <div className="flex flex-col justify-between items-center h-full w-full my-20 bg-green-500/10">
-      <div className="h-44 flex justify-center items-center gap-x-24 text-2xl">
+      <div className=" flex justify-center items-center gap-x-24 text-2xl">
         <LayoutGroup id="tabGroup">
           {tabs.map((data) => {
             return (
