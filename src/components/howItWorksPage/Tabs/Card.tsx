@@ -53,7 +53,7 @@ const Card: React.FC<props> = ({
 
   return (
     <motion.div
-      layoutId={index.toString()}
+      layoutId={index.toString() + tabGroup}
       transition={{ duration: 0.3, stiffness: 200 }}
       style={style}
       initial={"hidden"}
