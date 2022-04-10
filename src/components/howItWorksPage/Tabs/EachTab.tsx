@@ -18,9 +18,27 @@ const EachTab: React.FC<props> = ({
   index,
 }) => {
   const clickHandler = () => {
-    setActiveIndexCard((prevState) => ({ ...prevState, [group]: index }));
+    if (index > activeIndexCard[group]) {
+      for (let i = activeIndexCard[group]; i < index; i++) {
+        setTimeout(() => {
+          setActiveIndexCard((prevState) => ({
+            ...prevState,
+            [group]: prevState[group] + 1,
+          }));
+        }, (300 * i) / 5);
+      }
+    }
+    if (index < activeIndexCard[group]) {
+      for (let i = activeIndexCard[group]; i > index; i--) {
+        setTimeout(() => {
+          setActiveIndexCard((prevState) => ({
+            ...prevState,
+            [group]: prevState[group] - 1,
+          }));
+        }, (300 * i) / 5);
+      }
+    }
   };
-  console.log(activeIndexCard);
 
   return (
     <button
@@ -34,7 +52,7 @@ const EachTab: React.FC<props> = ({
           animate="visible"
           exit="out"
           variants={eachTabAni}
-          className="absolute left-0 bottom-0 w-full h-full bg-cyan-400 rounded-full shadow-cycle shadow-cyan-500 z-20"
+          className="absolute left-0 bottom-0 w-full h-full bg-cyan-400 rounded-full shadow-cycle shadow-cyan-400 z-20"
         ></motion.div>
       )}
     </button>
