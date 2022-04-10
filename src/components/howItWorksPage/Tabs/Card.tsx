@@ -62,10 +62,12 @@ const Card: React.FC<props> = ({
       variants={carouselDisplayAni}
       custom={cardPlace}
       ref={data.activeCard ? cardRef : eachCradRef}
-      className="h-[465px] w-[220px] flex  text-white  absolute "
+      className={`h-[465px] w-[220px] flex  text-white absolute ${
+        activeIndexCard[tabGroup] === index ? "grayscale-0" : "grayscale"
+      }`}
     >
       <Image
-        className=" object-contain"
+        className="object-contain"
         src={data.image}
         height="465"
         width="220"

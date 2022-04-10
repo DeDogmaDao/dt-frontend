@@ -19,7 +19,7 @@ const Tabs: React.FC = () => {
   });
 
   return (
-    <div className="flex flex-col justify-between items-center h-full w-full my-20 relative">
+    <div className="flex flex-col justify-between items-center h-full w-full my-96 relative">
       <div className="absolute top-0 left-0 z-0 w-full">
         <Image
           width="1440"
@@ -28,7 +28,7 @@ const Tabs: React.FC = () => {
           src="/media/cyc/tab-bg.png"
         />
       </div>
-      <h5 className="z-10 font-bold mt-36">
+      <h5 className="z-10 font-bold mt-40">
         Choose your <span className="text-yellow-400">Card</span>
       </h5>
       <div className=" flex justify-center items-center gap-x-24 text-2xl mt-14">
