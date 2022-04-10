@@ -27,6 +27,7 @@ export interface layersType {
 export interface tabType {
   activeCard: boolean;
   name: string;
+  titleOfHonor:string;
   image: string;
   image2?: string;
   image3?: string;
@@ -86,3 +87,8 @@ export type createLightningType = (
   minSegmentHeight: number,
   roughness: number
 ) => light[];
+
+export interface activeIndexCardType {
+  [gods: string]: number;
+  humans: number;
+}

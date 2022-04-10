@@ -1,4 +1,4 @@
-import { createLightningType } from "../types/allTypes";
+import { activeIndexCardType, createLightningType } from "../types/allTypes";
 
 // shimmer effect for image placeholder
 export const shimmer = (w: number, h: number): string => `
@@ -82,4 +82,17 @@ export const createLightning: createLightningType = (
     segmentHeight = segmentHeight / 2;
   }
   return lights;
+};
+
+export const cardPlaceDetector = (
+  activeIndexCardWithGroup: number,
+  index: number
+): number => {
+  if (activeIndexCardWithGroup > index) {
+    return -1;
+  }
+  if (activeIndexCardWithGroup < index) {
+    return 1;
+  }
+  return 0;
 };

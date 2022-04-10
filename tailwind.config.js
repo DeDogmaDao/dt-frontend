@@ -1070,6 +1070,24 @@ module.exports = {
           fontSize: "20px",
           lineHeight: "140%",
         },
+        ".text-normal-bold": {
+          fontStyle: "normal",
+          fontWeight: "700",
+          fontSize: "18px",
+          lineHeight: "150%",
+        },
+        ".text-normal-medium": {
+          fontStyle: "normal",
+          fontWeight: "500",
+          fontSize: "18px",
+          lineHeight: "150%",
+        },
+        ".text-normal-light": {
+          fontStyle: "normal",
+          fontWeight: "300",
+          fontSize: "18px",
+          lineHeight: "150%",
+        },
         ".text-medium-bold": {
           fontStyle: "normal",
           fontWeight: "700",

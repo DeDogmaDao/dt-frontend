@@ -148,21 +148,23 @@ export const godTabData: tabType[] = [
   {
     activeCard: false,
     name: "tab0",
-    image: "/media/team/member1.png",
+    titleOfHonor: "herald the stone eyes",
+    image: "/media/cyc/1.png",
     desc: (
       <div>
         HUMANS is creating an all-in-one platform for AI-based creation and
         governance with an initial focus on synthetic media.
         <br />
         HUMANS is creating an all-in-one platform for AI-based creation and
-        governance with an initial focus on synthetic media.
+        governance with an initial focus on synthetic media. focus on synthetic media. focus on synthetic media. focus on synthetic media. focus on synthetic media.
       </div>
     ),
   },
   {
     activeCard: false,
     name: "tab1",
-    image: "/media/team/member1.png",
+    titleOfHonor: "Hades the Unseen ",
+    image: "/media/cyc/1.png",
     desc: (
       <div>
         HUMANS is creating an all-in-one platform for AI-based creation and
@@ -176,7 +178,8 @@ export const godTabData: tabType[] = [
   {
     activeCard: false,
     name: "tab2",
-    image: "/media/team/member2.png",
+    titleOfHonor: "herald the stone eyes",
+    image: "/media/cyc/2.png",
     desc: (
       <div>
         HUMANS is creating an all-in-one platform for AI-based creation and
@@ -190,7 +193,8 @@ export const godTabData: tabType[] = [
   {
     activeCard: false,
     name: "tab3",
-    image: "/media/team/member1.png",
+    titleOfHonor: "Hades the Unseen ",
+    image: "/media/cyc/1.png",
     desc: (
       <div>
         HUMANS is creating an all-in-one platform for AI-based creation and
@@ -204,7 +208,8 @@ export const godTabData: tabType[] = [
   {
     activeCard: false,
     name: "tab4",
-    image: "/media/team/member1.png",
+    titleOfHonor: "herald the stone eyes",
+    image: "/media/cyc/1.png",
     desc: (
       <div>
         HUMANS is creating an all-in-one platform for AI-based creation and
@@ -218,7 +223,8 @@ export const godTabData: tabType[] = [
   {
     activeCard: false,
     name: "tab5",
-    image: "/media/team/member2.png",
+    titleOfHonor: "Hades the Unseen ",
+    image: "/media/cyc/2.png",
     desc: (
       <div>
         HUMANS is creating an all-in-one platform for AI-based creation and
@@ -232,7 +238,8 @@ export const godTabData: tabType[] = [
   {
     activeCard: true,
     name: "tab6",
-    image: "/media/team/member1.png",
+    titleOfHonor: "Hades the Unseen ",
+    image: "/media/cyc/1.png",
     desc: (
       <div>
         HUMANS is creating an all-in-one platform for AI-based creation and
@@ -246,7 +253,8 @@ export const godTabData: tabType[] = [
   {
     activeCard: false,
     name: "tab7",
-    image: "/media/team/member1.png",
+    titleOfHonor: "herald the stone eyes",
+    image: "/media/cyc/1.png",
     desc: (
       <div>
         HUMANS is creating an all-in-one platform for AI-based creation and
@@ -260,7 +268,8 @@ export const godTabData: tabType[] = [
   {
     activeCard: false,
     name: "tab8",
-    image: "/media/team/member2.png",
+    titleOfHonor: "herald the stone eyes",
+    image: "/media/cyc/2.png",
     desc: (
       <div>
         HUMANS is creating an all-in-one platform for AI-based creation and
@@ -274,7 +283,8 @@ export const godTabData: tabType[] = [
   {
     activeCard: false,
     name: "tab9",
-    image: "/media/team/member1.png",
+    titleOfHonor: "Hades the Unseen ",
+    image: "/media/cyc/1.png",
     desc: (
       <div>
         HUMANS is creating an all-in-one platform for AI-based creation and
@@ -288,7 +298,8 @@ export const godTabData: tabType[] = [
   {
     activeCard: false,
     name: "tab10",
-    image: "/media/team/member1.png",
+    titleOfHonor: "herald the stone eyes",
+    image: "/media/cyc/1.png",
     desc: (
       <div>
         HUMANS is creating an all-in-one platform for AI-based creation and
@@ -304,9 +315,10 @@ export const humanTabData: tabType[] = [
   {
     activeCard: false,
     name: "tab0",
-    image: "/media/team/member3.png",
-    image2: "/media/team/member1.png",
-    image3: "/media/team/member1.png",
+    titleOfHonor: "out of law citizen",
+    image: "/media/cyc/3.png",
+    image2: "/media/cyc/1.png",
+    image3: "/media/cyc/1.png",
     desc: (
       <div>
         HUMANS is creating an all-in-one platform for AI-based creation and
@@ -320,9 +332,10 @@ export const humanTabData: tabType[] = [
   {
     activeCard: false,
     name: "tab1",
-    image: "/media/team/member1.png",
-    image2: "/media/team/member3.png",
-    image3: "/media/team/member3.png",
+    titleOfHonor: "out of law citizen",
+    image: "/media/cyc/1.png",
+    image2: "/media/cyc/3.png",
+    image3: "/media/cyc/3.png",
     desc: (
       <div>
         HUMANS is creating an all-in-one platform for AI-based creation and
@@ -336,9 +349,10 @@ export const humanTabData: tabType[] = [
   {
     activeCard: true,
     name: "tab2",
-    image: "/media/team/member2.png",
-    image2: "/media/team/member1.png",
-    image3: "/media/team/member1.png",
+    titleOfHonor: "out of law citizen",
+    image: "/media/cyc/2.png",
+    image2: "/media/cyc/1.png",
+    image3: "/media/cyc/1.png",
     desc: (
       <div>
         HUMANS is creating an all-in-one platform for AI-based creation and
@@ -352,9 +366,10 @@ export const humanTabData: tabType[] = [
   {
     activeCard: false,
     name: "tab3",
-    image: "/media/team/member3.png",
-    image2: "/media/team/member1.png",
-    image3: "/media/team/member1.png",
+    titleOfHonor: "out of law citizen",
+    image: "/media/cyc/3.png",
+    image2: "/media/cyc/1.png",
+    image3: "/media/cyc/1.png",
     desc: (
       <div>
         HUMANS is creating an all-in-one platform for AI-based creation and
@@ -368,9 +383,10 @@ export const humanTabData: tabType[] = [
   {
     activeCard: false,
     name: "tab4",
-    image: "/media/team/member2.png",
-    image2: "/media/team/member1.png",
-    image3: "/media/team/member1.png",
+    titleOfHonor: "out of law citizen",
+    image: "/media/cyc/2.png",
+    image2: "/media/cyc/1.png",
+    image3: "/media/cyc/1.png",
     desc: (
       <div>
         HUMANS is creating an all-in-one platform for AI-based creation and
@@ -385,12 +401,12 @@ export const humanTabData: tabType[] = [
 
 export const allTabs: tabsType[] = [
   {
-    tabGroup: "Gods",
+    tabGroup: "gods",
     activeGroup: true,
     tabInfo: godTabData,
   },
   {
-    tabGroup: "human",
+    tabGroup: "humans",
     activeGroup: false,
     tabInfo: humanTabData,
   },

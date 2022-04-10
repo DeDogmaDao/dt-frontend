@@ -313,6 +313,26 @@ export const spellAni: Variants = {
     },
   }),
 };
+export const eachTabAni: Variants = {
+  hidden: {
+    width: "200%",
+    transition: {
+      duration: 0.3,
+    },
+  },
+  visible: {
+    width: "100%",
+    transition: {
+      duration: 0.4,
+    },
+  },
+  out: {
+    width: "200%",
+    transition: {
+      duration: 0.3,
+    },
+  },
+};
 
 export const tabEachGroupAni: Variants = {
   hidden: {
@@ -372,6 +392,54 @@ export const tabBlastAni: Variants = {
     },
   },
 };
+
+export const carouselDisplayAni: Variants = {
+  hidden: (custom) => ({
+    x: 300 * custom,
+    scale: 0.825,
+  }),
+  visible: (custom) => ({
+    x: 0,
+    scale: 1 - 0.175 * Math.abs(custom),
+    transition: {
+      duration: 0.3,
+    },
+  }),
+  out: (custom) => ({
+    position: "absolute",
+    x: 200 * custom,
+    scale: 0.3,
+    opacity: 0.5,
+    transition: {
+      duration: 0.3,
+    },
+  }),
+};
+
+
+export const tabInfoContainerAni:Variants = {
+  hidden:{
+    y:50,
+    opacity:0
+  },
+  visible:{
+    y:0,
+    opacity:1,
+    transition:{
+      duration:0.3
+    }
+  },
+  out:{
+    opacity:0,
+    y:-10,
+    transition:{
+      duration:0.3
+    }
+  }
+
+}
+
+
 
 // page: howItWorks / comp: Tabs
 export const tabImageContainerAni: Variants = {
@@ -449,14 +517,14 @@ export const spellCounterAni: Variants = {
   hidden: {
     translateY: 100,
   },
-  visible: (custom)=>({
+  visible: (custom) => ({
     translateY: 0,
     transition: {
       duration: custom,
       ease: "easeOut",
     },
   }),
-  out: (custom)=>({
+  out: (custom) => ({
     translateY: -100,
     transition: {
       duration: custom,

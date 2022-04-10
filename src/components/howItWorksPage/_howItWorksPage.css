@@ -1,2 +1,4 @@
 @import './_HowItWorks.css';
 @import './PrevTabs/_Tabs.css';
+@import "./Tabs/_Sliding.css";
+@import './Tabs/_Slider.css';
