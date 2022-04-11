@@ -4,8 +4,8 @@ import { motion, Variants } from "framer-motion";
 interface props {
   data: globCardType;
   size: sizeType;
-  framerVariants: Variants;
-  framerCustom: any;
+  framerVariants?: Variants;
+  framerCustom?: any;
 }
 const Card: React.FC<props> = ({
   data,
