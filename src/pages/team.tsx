@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { Fragment } from "react";
+import Team from "../components/teamPage/Team";
 
 export default function team(): JSX.Element {
   return (
@@ -14,7 +15,7 @@ export default function team(): JSX.Element {
         {/* <meta name="keywords" content={careerMeta.keywords} />
         <meta name="author" content={careerMeta.author} /> */}
       </Head>
-
+        <Team />
     </Fragment>
   );
 }
