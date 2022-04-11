@@ -6,10 +6,10 @@ export interface faqType {
   answer: string;
 }
 
-export interface teamType {
-  name: string;
-  role?: string;
+export interface globCardType {
   image: string;
+  name?: string;
+  role?: string;
 }
 
 export interface socialType {
