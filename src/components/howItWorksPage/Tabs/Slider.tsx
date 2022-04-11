@@ -5,6 +5,7 @@ import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 import { activeIndexCardType } from "../../../types/allTypes";
 
 interface props {
+  setIsDragged: Dispatch<SetStateAction<boolean>>;
   setActiveIndexCard: Dispatch<SetStateAction<activeIndexCardType>>;
   activeIndexCard: activeIndexCardType;
   tabGroup: string;
@@ -12,6 +13,7 @@ interface props {
 }
 const Slider: React.FC<props> = ({
   children,
+  setIsDragged,
   setActiveIndexCard,
   tabGroup,
   activeIndexCard,
@@ -43,6 +45,7 @@ const Slider: React.FC<props> = ({
         return { ...prevState, [tabGroup]: prevState[tabGroup] + 1 };
       });
     }
+    setIsDragged(false);
   };
 
   const leftClickHandler = () => {
@@ -72,6 +75,7 @@ const Slider: React.FC<props> = ({
       >
         <motion.div
           onDragEnd={(event, info) => dragHandler(event, info)}
+          onDragStart={()=>setIsDragged(true)}
           className={`inner-carousel flex relative h-[465px]`}
           drag="x"
           dragConstraints={{ right: 0, left: -0 }}

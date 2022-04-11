@@ -50,7 +50,9 @@ jobs:
             docker pull ghcr.io/dedogmadao/dt-frontend/frontend_production:latest
             docker stop frontend_production
             docker system prune -f
-            docker run --name frontend_production -dit -p 3000:3000 ghcr.io/dedogmadao/dt-frontend/frontend_production:latest
+            docker network create ddd_network || true
+            docker run --name frontend_production -dit --network=ddd_network -p 3000:3000 ghcr.io/dedogmadao/dt-frontend/frontend_production:latest
+            docker exec -it frontend_production bash -c "echo $'User-agent: *\nAllow: /\n\nSitemap: https://dedogmadao.com/sitemap.xml' > ./public/robots.txt" 
           host: ${{ secrets.FRONTEND_PRODUCTION_DEPLOY_HOST }}
           user: ${{ secrets.FRONTEND_PRODUCTION_DEPLOY_USER }}
           key: ${{ secrets.PRODUCTION_GITHUB_SSH_KEY }}

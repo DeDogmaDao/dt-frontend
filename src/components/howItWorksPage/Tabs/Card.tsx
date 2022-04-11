@@ -1,11 +1,4 @@
-import {
-  Dispatch,
-  RefObject,
-  SetStateAction,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
+import { Dispatch, RefObject, SetStateAction } from "react";
 import { activeIndexCardType, tabType } from "../../../types/allTypes";
 import { motion, MotionStyle } from "framer-motion";
 import Image from "next/image";
@@ -19,6 +12,7 @@ interface props {
   tabGroup: string;
   activeIndexCard: activeIndexCardType;
   setActiveIndexCard: Dispatch<SetStateAction<activeIndexCardType>>;
+  isDragged: boolean;
 }
 const Card: React.FC<props> = ({
   data,
@@ -28,20 +22,15 @@ const Card: React.FC<props> = ({
   activeIndexCard,
   setActiveIndexCard,
   tabGroup,
+  isDragged,
 }) => {
-  const eachCradRef = useRef<HTMLDivElement>(null);
-  const [scaleRatio, setScaleRatio] = useState(1);
-  let activeIndex = 0;
-  tabInfo.forEach((el, index) => {
-    if (el.activeCard) {
-      activeIndex = index;
+  const cardClickHandler = (e: any) => {
+    if (isDragged) {
+      e.preventDefault();
+      return false;
     }
-  });
-  useEffect(() => {
-    let distance = Math.abs(activeIndex - index);
-    let ratio = 100 / distance;
-    setScaleRatio(ratio / 130);
-  }, [activeIndex]);
+    setActiveIndexCard((prevState) => ({ ...prevState, [tabGroup]: index }));
+  };
 
   const cardPlace = cardPlaceDetector(activeIndexCard[tabGroup], index);
   let style: MotionStyle = {
@@ -61,19 +50,19 @@ const Card: React.FC<props> = ({
       exit={"out"}
       variants={carouselDisplayAni}
       custom={cardPlace}
-      ref={data.activeCard ? cardRef : eachCradRef}
-      className={`h-[465px] w-[220px] flex  text-white absolute select-none pointer-events-none bg-red ${
+      whileHover={{ scale: activeIndexCard[tabGroup] === index ? 1 : 0.7 }}
+      onClick={(e) => cardClickHandler(e)}
+      className={`h-[465px] w-[220px] flex  text-white absolute select-none hover:cursor-pointer  ${
         activeIndexCard[tabGroup] === index ? "grayscale-0" : "grayscale"
       }`}
     >
       <Image
+        draggable={false}
         className="object-contain"
         src={data.image}
         height="465"
         width="220"
       />
-      {/* <p className="text-4xl text-primary-500">{data.name}</p> */}
-      {/* <div>{data.desc}</div> */}
     </motion.div>
   );
 };

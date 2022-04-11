@@ -6,10 +6,10 @@ export interface faqType {
   answer: string;
 }
 
-export interface teamType {
-  name: string;
-  role?: string;
+export interface globCardType {
   image: string;
+  name?: string;
+  role?: string;
 }
 
 export interface socialType {
@@ -64,6 +64,11 @@ export interface bottomRightPosition {
   bottom: number | string;
   width: number | string;
   height: number | string;
+}
+
+export interface sizeType {
+  width: number|string;
+  height?: number | string;
 }
 
 export interface spellNumber {

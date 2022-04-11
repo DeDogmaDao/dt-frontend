@@ -396,11 +396,11 @@ export const tabBlastAni: Variants = {
 export const carouselDisplayAni: Variants = {
   hidden: (custom) => ({
     x: 300 * custom,
-    scale: 0.825,
+    scale: 0.6,
   }),
   visible: (custom) => ({
     x: 0,
-    scale: 1 - 0.175 * Math.abs(custom),
+    scale: 1 - 0.4 * Math.abs(custom),
     transition: {
       duration: 0.3,
     },
@@ -416,30 +416,26 @@ export const carouselDisplayAni: Variants = {
   }),
 };
 
-
-export const tabInfoContainerAni:Variants = {
-  hidden:{
-    y:50,
-    opacity:0
+export const tabInfoContainerAni: Variants = {
+  hidden: {
+    y: 50,
+    opacity: 0,
   },
-  visible:{
-    y:0,
-    opacity:1,
-    transition:{
-      duration:0.3
-    }
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.3,
+    },
   },
-  out:{
-    opacity:0,
-    y:-10,
-    transition:{
-      duration:0.3
-    }
-  }
-
-}
-
-
+  out: {
+    opacity: 0,
+    y: -10,
+    transition: {
+      duration: 0.3,
+    },
+  },
+};
 
 // page: howItWorks / comp: Tabs
 export const tabImageContainerAni: Variants = {
@@ -623,4 +619,20 @@ export const doorToLefttAnimation: Variants = {
       ease: "easeIn",
     },
   },
+};
+
+export const teamMemberAni: Variants = {
+  hidden: {
+    opacity: 0,
+    scale: 0.3,
+  },
+  visible: (custom) => ({
+    opacity: 1,
+    scale: 1,
+    transition: {
+      duration: 1,
+      delay: custom * 0.2,
+      type: "spring",
+    },
+  }),
 };

@@ -17,6 +17,8 @@ const Tabs: React.FC = () => {
     gods: 5,
     humans: 2,
   });
+  const [isDragged, setIsDragged] = useState(false);
+
 
   return (
     <div className="flex flex-col justify-between items-center h-full w-full my-96 relative">
@@ -46,7 +48,7 @@ const Tabs: React.FC = () => {
         </LayoutGroup>
       </div>
       <div className="w-full h-full relative">
-        <div className="absolute top-96 left-1/2 ml-[-150px] z-30 pointer-events-none select-none">
+        <div className="absolute top-96 left-1/2 ml-[-150px] z-0 pointer-events-none select-none">
           <Image
             width="300"
             height="250"
@@ -58,6 +60,7 @@ const Tabs: React.FC = () => {
           if (!tab.activeGroup) return null;
           return (
             <Slider
+              setIsDragged={setIsDragged}
               tabGroup={tab.tabGroup}
               setActiveIndexCard={setActiveIndexCard}
               activeIndexCard={activeIndexCard}
@@ -74,7 +77,7 @@ const Tabs: React.FC = () => {
                     }
                     return (
                       <Card
-                        key={data.name}
+                      key={data.name}
                         tabGroup={tab.tabGroup}
                         setActiveIndexCard={setActiveIndexCard}
                         activeIndexCard={activeIndexCard}
@@ -82,6 +85,7 @@ const Tabs: React.FC = () => {
                         data={data}
                         index={index}
                         tabInfo={tab.tabInfo}
+                        isDragged={isDragged}
                       />
                     );
                   })}
