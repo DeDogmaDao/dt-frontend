@@ -66,6 +66,11 @@ export interface bottomRightPosition {
   height: number | string;
 }
 
+export interface sizeType {
+  width: number|string;
+  height?: number | string;
+}
+
 export interface spellNumber {
   [yellow: string]: number;
   blue: number;

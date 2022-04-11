@@ -14,7 +14,7 @@ import {
   socialType,
   tabsType,
   tabType,
-  teamType,
+  globCardType,
 } from "../types/allTypes";
 
 //
@@ -69,13 +69,16 @@ export const faqData: faqType[] = [
   { question: "when is the launch? ", answer: "we dont know yet" },
 ];
 
-export const teamData: teamType[] = [
+export const teamDataLvl1: globCardType[] = [
   {
     name: "Member1",
     role: "Graphic designer",
     image: "/media/team/member1.png",
   },
   { name: "Member2", role: "ui/ux designer", image: "/media/team/member2.png" },
+];
+
+export const teamDataLvl2: globCardType[] = [
   { name: "Member3", role: "backend dev", image: "/media/team/member3.png" },
   {
     name: "Member1",
@@ -89,56 +92,6 @@ export const teamData: teamType[] = [
   },
   {
     name: "Member3",
-    role: "Graphic designer",
-    image: "/media/team/member3.png",
-  },
-  {
-    name: "Member1",
-    role: "Graphic designer",
-    image: "/media/team/member1.png",
-  },
-  {
-    name: "Member1",
-    role: "Graphic designer",
-    image: "/media/team/member2.png",
-  },
-  {
-    name: "Member1",
-    role: "Graphic designer",
-    image: "/media/team/member1.png",
-  },
-  {
-    name: "Member1",
-    role: "Graphic designer",
-    image: "/media/team/member1.png",
-  },
-  {
-    name: "Member1",
-    role: "Graphic designer",
-    image: "/media/team/member3.png",
-  },
-  {
-    name: "Member1",
-    role: "Graphic designer",
-    image: "/media/team/member1.png",
-  },
-  {
-    name: "Member1",
-    role: "Graphic designer",
-    image: "/media/team/member1.png",
-  },
-  {
-    name: "Member1",
-    role: "Graphic designer",
-    image: "/media/team/member2.png",
-  },
-  {
-    name: "Member1",
-    role: "Graphic designer",
-    image: "/media/team/member1.png",
-  },
-  {
-    name: "Member1",
     role: "Graphic designer",
     image: "/media/team/member3.png",
   },
@@ -156,7 +109,9 @@ export const godTabData: tabType[] = [
         governance with an initial focus on synthetic media.
         <br />
         HUMANS is creating an all-in-one platform for AI-based creation and
-        governance with an initial focus on synthetic media. focus on synthetic media. focus on synthetic media. focus on synthetic media. focus on synthetic media.
+        governance with an initial focus on synthetic media. focus on synthetic
+        media. focus on synthetic media. focus on synthetic media. focus on
+        synthetic media.
       </div>
     ),
   },

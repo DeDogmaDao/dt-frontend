@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { teamDataLvl1, teamDataLvl2 } from "../../store/allData";
+import Card from "../global/Card";
 
 const Team:React.FC = () => {
 
@@ -11,6 +13,16 @@ const Team:React.FC = () => {
                 <h3>
                 Meet the Creators
                 </h3>
+                <div className="flex justify-center items-center w-full gap-x-8 mt-20">
+                    {teamDataLvl1.map(member=>{
+                        return <Card data={member} size={{width:200,height:260}} />
+                    })}
+                </div>
+                <div className="flex justify-center items-center w-full gap-x-8 mt-8">
+                    {teamDataLvl2.map(member=>{
+                        return <Card data={member} size={{width:200,height:260}} />
+                    })}
+                </div>
             </div>
         </div>
     )
