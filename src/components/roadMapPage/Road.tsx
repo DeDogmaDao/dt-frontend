@@ -1,14 +1,26 @@
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 interface props {
-  color:string;
+  color: string;
+  index: number;
+  activeSection: number;
 }
-const Road: React.FC<props> = ({color}) => {
+const Road: React.FC<props> = ({ color, index, activeSection }) => {
+  const [clientHeight, setClientHeight] = useState(0);
+
+  useEffect(() => {
+    setClientHeight(window.innerHeight);
+  }, []);
+
   return (
-    <motion.div className="w-screen h-screen">
+    <motion.div
+      className="w-screen h-screen absolute left-0 duration-700"
+      style={{ top: clientHeight * (index - activeSection) }}
+    >
       <div className="flex justify-between items-center w-full h-full">
-          <div className="w-1/2 h-full " style={{backgroundColor:color}}></div>
-          <div className="w-1/2 h-full bg-green-300"></div>
+        <div className="w-1/2 h-full " style={{ backgroundColor: color }}></div>
+        <div className="w-1/2 h-full bg-green-300"></div>
       </div>
     </motion.div>
   );

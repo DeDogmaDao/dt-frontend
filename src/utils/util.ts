@@ -32,7 +32,7 @@ export const delay = (ms: number) => {
 
 export const topTransformWheel = (evt: any) => {
   evt.preventDefault();
-  var direction = evt.detail < 0 || evt.wheelDelta > 0 ? 1 : -1;
+  let direction = evt.detail < 0 || evt.wheelDelta > 0 ? 1 : -1;
 
   if (direction > 0) {
     window.scrollTo({

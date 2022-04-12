@@ -21,7 +21,6 @@ import {
 //
 //
 //
-export const helloWorld: string = "Hello we are good to go!";
 
 export const footerData: socialType[] = [
   {
