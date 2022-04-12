@@ -11,10 +11,10 @@ const RoadMapPage: React.FC = () => {
     event: MouseEvent | TouchEvent | PointerEvent,
     info: PanInfo
   ) => {
-    if (info.offset.y < 0 && activeSection !== 2) {
+    if (info.offset.y < 0 && activeSection < 2) {
       setActiveSection((prevState) => prevState + 1);
     }
-    if (info.offset.y > 0 && activeSection !== 0) {
+    if (info.offset.y > 0 && activeSection > 0) {
       setActiveSection((prevState) => prevState - 1);
     }
   };
