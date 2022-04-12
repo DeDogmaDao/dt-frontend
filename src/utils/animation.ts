@@ -636,3 +636,10 @@ export const teamMemberAni: Variants = {
     },
   }),
 };
+
+
+// export const roadMapBoxAni:Variants = {
+//   hidden:{
+
+//   }
+// }
