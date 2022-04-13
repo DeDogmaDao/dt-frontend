@@ -15,6 +15,8 @@ import {
   tabsType,
   tabType,
   globCardType,
+  roadMapType,
+  roadDataType,
 } from "../types/allTypes";
 
 //
@@ -1035,3 +1037,88 @@ export const numsList: counterNumType[] = Array.from(Array(51).keys()).map(
     };
   }
 );
+
+export const roadDataQ1: roadDataType[] = [
+  {
+    title: "Set and get their state.",
+    desc: "tate and velocity of an animating value.Usually, these are created automatically. But for advanced use-cases, it is possible to create them manually and inject them into motion components.",
+  },
+  {
+    title: "Any MotionValue can spawn ",
+    desc: "All motion components internally use MotionValues to track the state and velocity of an animating value.Usually, these are created automatically. But for advancenents.",
+  },
+  {
+    title: "Chain MotionValues via the useTransform hook.",
+    desc: "All motion components internally use Moti to create them manually and inject them into motion components.",
+  },
+  {
+    title: "before returning it to update the child.",
+    desc: "All motion components internally use MotionValues to trackutomatically. But for advanced use-cases, it is possible to create them manually and inject them into motion components.",
+  },
+  {
+    title: "Set and get their state.",
+    desc: " the state and velocity of an animating value.Usually, these are created automatically. But for advanced use-cases, it is possible to create them manually and inject them into motion components.",
+  },
+];
+export const roadDataQ2: roadDataType[] = [
+  {
+    title: "Set and get their state.",
+    desc: "tate and velocity of an animating value.Usually, these are created automatically. But for advanced use-cases, it is possible to create them manually and inject them into motion components.",
+  },
+  {
+    title: "Any MotionValue can spawn ",
+    desc: "All motion components internally use MotionValues to track the state and velocity of an animating value.Usually, these are created automatically. But for advancenents.",
+  },
+  {
+    title: "Chain MotionValues via the useTransform hook.",
+    desc: "All motion components internally use Moti to create them manually and inject them into motion components.",
+  },
+  {
+    title: "before returning it to update the child.",
+    desc: "All motion components internally use MotionValues to trackutomatically. But for advanced use-cases, it is possible to create them manually and inject them into motion components.",
+  },
+  {
+    title: "Set and get their state.",
+    desc: " the state and velocity of an animating value.Usually, these are created automatically. But for advanced use-cases, it is possible to create them manually and inject them into motion components.",
+  },
+];
+export const roadDataQ3: roadDataType[] = [
+  {
+    title: "Set and get their state.",
+    desc: "tate and velocity of an animating value.Usually, these are created automatically. But for advanced use-cases, it is possible to create them manually and inject them into motion components.",
+  },
+  {
+    title: "Any MotionValue can spawn ",
+    desc: "All motion components internally use MotionValues to track the state and velocity of an animating value.Usually, these are created automatically. But for advancenents.",
+  },
+  {
+    title: "Chain MotionValues via the useTransform hook.",
+    desc: "All motion components internally use Moti to create them manually and inject them into motion components.",
+  },
+  {
+    title: "before returning it to update the child.",
+    desc: "All motion components internally use MotionValues to trackutomatically. But for advanced use-cases, it is possible to create them manually and inject them into motion components.",
+  },
+  {
+    title: "Set and get their state.",
+    desc: " the state and velocity of an animating value.Usually, these are created automatically. But for advanced use-cases, it is possible to create them manually and inject them into motion components.",
+  },
+];
+
+export const roadMapData: roadMapType[] = [
+  {
+    sectionName: "Q1- Expansion",
+    backImg: "backgroundimg.png",
+    roadData: roadDataQ1,
+  },
+  {
+    sectionName: "Q2- Expansion",
+    backImg: "backgroundimg.png",
+    roadData: roadDataQ2,
+  },
+  {
+    sectionName: "Q3- Expansion",
+    backImg: "backgroundimg.png",
+    roadData: roadDataQ3,
+  },
+];

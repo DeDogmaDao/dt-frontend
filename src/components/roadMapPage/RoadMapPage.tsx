@@ -1,7 +1,8 @@
 import { motion, PanInfo } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+import { roadMapData } from "../../store/allData";
 import Road from "./Road";
-const colors = ["#f542e9", "#5c485a", "#1b7a29"];
+
 
 const RoadMapPage: React.FC = () => {
   const roadmapContainerRef = useRef<HTMLDivElement>(null);
@@ -50,9 +51,9 @@ const RoadMapPage: React.FC = () => {
         dragTransition={{ power: 10 }}
         className="flex flex-col justify-start items-center w-full h-full relative"
       >
-        {colors.map((color, index) => {
+        {roadMapData.map((data, index) => {
           return (
-            <Road color={color} index={index} activeSection={activeSection} />
+            <Road roadData={data} index={index} activeSection={activeSection} />
           );
         })}
       </motion.div>

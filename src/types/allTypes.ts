@@ -97,3 +97,15 @@ export interface activeIndexCardType {
   [gods: string]: number;
   humans: number;
 }
+
+
+export interface roadDataType {
+title:string;
+desc:string;
+}
+
+export interface roadMapType {
+  sectionName:string;
+  backImg: string;
+  roadData: roadDataType[];
+}
