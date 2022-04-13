@@ -1108,17 +1108,17 @@ export const roadDataQ3: roadDataType[] = [
 export const roadMapData: roadMapType[] = [
   {
     sectionName: "Q1- Expansion",
-    backImg: "backgroundimg.png",
+    backImg: "/media/roadmap/section1.png",
     roadData: roadDataQ1,
   },
   {
     sectionName: "Q2- Expansion",
-    backImg: "backgroundimg.png",
+    backImg: "/media/roadmap/section2.png",
     roadData: roadDataQ2,
   },
   {
     sectionName: "Q3- Expansion",
-    backImg: "backgroundimg.png",
+    backImg: "/media/roadmap/section3.png",
     roadData: roadDataQ3,
   },
 ];

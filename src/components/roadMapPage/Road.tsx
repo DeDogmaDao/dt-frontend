@@ -1,16 +1,17 @@
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { roadMapType } from "../../types/allTypes";
-import { roadMapDescAni } from "../../utils/animation";
+import { roadAni, roadMapDescAni } from "../../utils/animation";
 import RoadItem from "./RoadItem";
 
 interface props {
-  road:roadMapType;
+  road: roadMapType;
   index: number;
   activeSection: number;
 }
 
-const Road: React.FC<props> = ({ index, activeSection,road }) => {
+const Road: React.FC<props> = ({ index, activeSection, road }) => {
   const [clientHeight, setClientHeight] = useState(0);
   const [descIndex, setDescIndex] = useState(0);
   useEffect(() => {
@@ -19,20 +20,36 @@ const Road: React.FC<props> = ({ index, activeSection,road }) => {
 
   return (
     <motion.div
+    initial="hidden"
+    animate="visible"
+    variants={roadAni}
       className="w-screen h-screen absolute left-0 duration-700"
-      style={{ top: clientHeight * (index - activeSection) }}
+      style={{
+        top: clientHeight * (index - activeSection),
+        zIndex: 10 - index * 3,
+      }}
     >
-      <div className="flex justify-between items-center w-full h-full">
-        <div className="w-1/2 h-full"></div>
-        <div className="w-1/2 h-full flex justify-center items-center">
+      <div className="flex justify-between items-center w-full h-full relative">
+        <div className="w-full h-full absolute top-0 left-0 z-0">
+          <Image src={road.backImg} layout="fill" />
+        </div>
+        <div className="w-1/2 h-full z-10"></div>
+        <div className="w-1/2 h-full flex justify-center items-center z-10">
           <ul className="w-[416px] p-8 flex flex-col gap-y-2 bg-neutral-600 rounded-xl">
-            {road.roadData.map((data,index) => {
-              return <RoadItem data={data} setDescIndex={setDescIndex} descIndex={descIndex} index={index} />;
+            {road.roadData.map((data, index) => {
+              return (
+                <RoadItem
+                  data={data}
+                  setDescIndex={setDescIndex}
+                  descIndex={descIndex}
+                  index={index}
+                />
+              );
             })}
             <div className="w-full h-28 px-5 overflow-clip text-small-light text-neutral-50/60 ">
               {descIndex !== -1 && (
                 <motion.div
-                className="indent-8"
+                  className="indent-8"
                   initial={"hidden"}
                   animate="visible"
                   variants={roadMapDescAni}
