@@ -1040,67 +1040,67 @@ export const numsList: counterNumType[] = Array.from(Array(51).keys()).map(
 
 export const roadDataQ1: roadDataType[] = [
   {
-    title: "Set and get their state.",
+    title: <p>Set and get their state.</p>,
     desc: "tate and velocity of an animating value.Usually, these are created automatically. But for advanced use-cases, it is possible to create them manually and inject them into motion components.",
   },
   {
-    title: "Any MotionValue can spawn ",
+    title: <p>Any MotionValue can spawn</p>,
     desc: "All motion components internally use MotionValues to track the state and velocity of an animating value.Usually, these are created automatically. But for advancenents.",
   },
   {
-    title: "Chain MotionValues via the useTransform hook.",
+    title: <p>Chain MotionValues via the useTransform hook.</p>,
     desc: "All motion components internally use Moti to create them manually and inject them into motion components.",
   },
   {
-    title: "before returning it to update the child.",
+    title: <p>before returning it to update the child.</p>,
     desc: "All motion components internally use MotionValues to trackutomatically. But for advanced use-cases, it is possible to create them manually and inject them into motion components.",
   },
   {
-    title: "Set and get their state.",
+    title: <p>Set and get their state.</p>,
     desc: " the state and velocity of an animating value.Usually, these are created automatically. But for advanced use-cases, it is possible to create them manually and inject them into motion components.",
   },
 ];
 export const roadDataQ2: roadDataType[] = [
   {
-    title: "Set and get their state.",
+    title: <p>Set and get their state.</p>,
     desc: "tate and velocity of an animating value.Usually, these are created automatically. But for advanced use-cases, it is possible to create them manually and inject them into motion components.",
   },
   {
-    title: "Any MotionValue can spawn ",
+    title: <p>Any MotionValue can spawn</p>,
     desc: "All motion components internally use MotionValues to track the state and velocity of an animating value.Usually, these are created automatically. But for advancenents.",
   },
   {
-    title: "Chain MotionValues via the useTransform hook.",
+    title: <p>Chain MotionValues via the useTransform hook.</p>,
     desc: "All motion components internally use Moti to create them manually and inject them into motion components.",
   },
   {
-    title: "before returning it to update the child.",
+    title: <p>before returning it to update the child.</p>,
     desc: "All motion components internally use MotionValues to trackutomatically. But for advanced use-cases, it is possible to create them manually and inject them into motion components.",
   },
   {
-    title: "Set and get their state.",
+    title: <p>Set and get their state.</p>,
     desc: " the state and velocity of an animating value.Usually, these are created automatically. But for advanced use-cases, it is possible to create them manually and inject them into motion components.",
   },
 ];
 export const roadDataQ3: roadDataType[] = [
   {
-    title: "Set and get their state.",
+    title: <p>Set and get their state.</p>,
     desc: "tate and velocity of an animating value.Usually, these are created automatically. But for advanced use-cases, it is possible to create them manually and inject them into motion components.",
   },
   {
-    title: "Any MotionValue can spawn ",
+    title: <p>Any MotionValue can spawn</p>,
     desc: "All motion components internally use MotionValues to track the state and velocity of an animating value.Usually, these are created automatically. But for advancenents.",
   },
   {
-    title: "Chain MotionValues via the useTransform hook.",
+    title: <p>Chain MotionValues via the useTransform hook.</p>,
     desc: "All motion components internally use Moti to create them manually and inject them into motion components.",
   },
   {
-    title: "before returning it to update the child.",
+    title: <p>before returning it to update the child.</p>,
     desc: "All motion components internally use MotionValues to trackutomatically. But for advanced use-cases, it is possible to create them manually and inject them into motion components.",
   },
   {
-    title: "Set and get their state.",
+    title: <p>Set and get their state.</p>,
     desc: " the state and velocity of an animating value.Usually, these are created automatically. But for advanced use-cases, it is possible to create them manually and inject them into motion components.",
   },
 ];

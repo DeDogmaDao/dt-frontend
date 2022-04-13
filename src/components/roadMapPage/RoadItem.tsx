@@ -2,9 +2,10 @@ import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Dispatch, SetStateAction, useState } from "react";
 import { motion } from "framer-motion";
+import { roadDataType } from "../../types/allTypes";
 
 interface props {
-  data: { title: string; desc: string };
+  data: roadDataType;
   setDescIndex: Dispatch<SetStateAction<number>>;
   descIndex:number;
   index:number;

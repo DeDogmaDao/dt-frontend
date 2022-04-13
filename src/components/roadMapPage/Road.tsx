@@ -31,14 +31,14 @@ const Road: React.FC<props> = ({ index, activeSection,road }) => {
             })}
             <div className="w-full h-28 px-5 overflow-clip text-small-light text-neutral-50/60 ">
               {descIndex !== -1 && (
-                <motion.p
+                <motion.div
                 className="indent-8"
                   initial={"hidden"}
                   animate="visible"
                   variants={roadMapDescAni}
                 >
                   {road.roadData[descIndex].desc}
-                </motion.p>
+                </motion.div>
               )}
             </div>
           </ul>
