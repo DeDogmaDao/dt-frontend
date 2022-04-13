@@ -8,7 +8,7 @@ const Team: React.FC = () => {
     <div className="w-screen h-full relative">
       <div className="w-full h-full absolute top-0 left-0">
         <Image
-          src={"/media/team/team-bg.png"}
+          src={"/img/team/team-bg.png"}
           width="1438"
           height="1128"
           layout="responsive"

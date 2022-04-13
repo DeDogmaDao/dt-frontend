@@ -26,7 +26,7 @@ const TabData: React.FC<props> = ({ data, activeGroup }) => {
             >
               <motion.div className="w-[390px] absolute -bottom-7 left-[-29%] h-[58%]  rounded-tl-full rounded-tr-full z-20 overflow-hidden">
                 <motion.img variants={tabImageButtomAni}               initial="hidden"
-              animate="visible" src={'/media/junks/tabCycle.png'}  />
+              animate="visible" src={'/img/junks/tabCycle.png'}  />
               </motion.div>
               <motion.img
                 variants={tabImageAni}

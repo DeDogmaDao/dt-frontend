@@ -47,7 +47,7 @@ const Layer: React.FC<props> = ({ data, top, index }) => {
 
   return (
     <img
-      src={"/media/layers/" + data.image}
+      src={"/img/layers/" + data.image}
       style={styles}
       className={`transform-gpu w-full absolute`}
     />

@@ -74,27 +74,27 @@ export const teamDataLvl1: globCardType[] = [
   {
     name: "Member1",
     role: "Graphic designer",
-    image: "/media/team/member1.png",
+    image: "/img/team/member1.png",
   },
-  { name: "Member2", role: "ui/ux designer", image: "/media/team/member2.png" },
+  { name: "Member2", role: "ui/ux designer", image: "/img/team/member2.png" },
 ];
 
 export const teamDataLvl2: globCardType[] = [
-  { name: "Member3", role: "backend dev", image: "/media/team/member3.png" },
+  { name: "Member3", role: "backend dev", image: "/img/team/member3.png" },
   {
     name: "Member1",
     role: "Graphic designer",
-    image: "/media/team/member1.png",
+    image: "/img/team/member1.png",
   },
   {
     name: "Member2",
     role: "Graphic designer",
-    image: "/media/team/member2.png",
+    image: "/img/team/member2.png",
   },
   {
     name: "Member3",
     role: "Graphic designer",
-    image: "/media/team/member3.png",
+    image: "/img/team/member3.png",
   },
 ];
 
@@ -103,7 +103,7 @@ export const godTabData: tabType[] = [
     activeCard: false,
     name: "tab0",
     titleOfHonor: "herald the stone eyes",
-    image: "/media/cyc/1.png",
+    image: "/img/cyc/1.png",
     desc: (
       <div>
         HUMANS is creating an all-in-one platform for AI-based creation and
@@ -120,7 +120,7 @@ export const godTabData: tabType[] = [
     activeCard: false,
     name: "tab1",
     titleOfHonor: "Hades the Unseen ",
-    image: "/media/cyc/1.png",
+    image: "/img/cyc/1.png",
     desc: (
       <div>
         HUMANS is creating an all-in-one platform for AI-based creation and
@@ -135,7 +135,7 @@ export const godTabData: tabType[] = [
     activeCard: false,
     name: "tab2",
     titleOfHonor: "herald the stone eyes",
-    image: "/media/cyc/2.png",
+    image: "/img/cyc/2.png",
     desc: (
       <div>
         HUMANS is creating an all-in-one platform for AI-based creation and
@@ -150,7 +150,7 @@ export const godTabData: tabType[] = [
     activeCard: false,
     name: "tab3",
     titleOfHonor: "Hades the Unseen ",
-    image: "/media/cyc/1.png",
+    image: "/img/cyc/1.png",
     desc: (
       <div>
         HUMANS is creating an all-in-one platform for AI-based creation and
@@ -165,7 +165,7 @@ export const godTabData: tabType[] = [
     activeCard: false,
     name: "tab4",
     titleOfHonor: "herald the stone eyes",
-    image: "/media/cyc/1.png",
+    image: "/img/cyc/1.png",
     desc: (
       <div>
         HUMANS is creating an all-in-one platform for AI-based creation and
@@ -180,7 +180,7 @@ export const godTabData: tabType[] = [
     activeCard: false,
     name: "tab5",
     titleOfHonor: "Hades the Unseen ",
-    image: "/media/cyc/2.png",
+    image: "/img/cyc/2.png",
     desc: (
       <div>
         HUMANS is creating an all-in-one platform for AI-based creation and
@@ -195,7 +195,7 @@ export const godTabData: tabType[] = [
     activeCard: true,
     name: "tab6",
     titleOfHonor: "Hades the Unseen ",
-    image: "/media/cyc/1.png",
+    image: "/img/cyc/1.png",
     desc: (
       <div>
         HUMANS is creating an all-in-one platform for AI-based creation and
@@ -210,7 +210,7 @@ export const godTabData: tabType[] = [
     activeCard: false,
     name: "tab7",
     titleOfHonor: "herald the stone eyes",
-    image: "/media/cyc/1.png",
+    image: "/img/cyc/1.png",
     desc: (
       <div>
         HUMANS is creating an all-in-one platform for AI-based creation and
@@ -225,7 +225,7 @@ export const godTabData: tabType[] = [
     activeCard: false,
     name: "tab8",
     titleOfHonor: "herald the stone eyes",
-    image: "/media/cyc/2.png",
+    image: "/img/cyc/2.png",
     desc: (
       <div>
         HUMANS is creating an all-in-one platform for AI-based creation and
@@ -240,7 +240,7 @@ export const godTabData: tabType[] = [
     activeCard: false,
     name: "tab9",
     titleOfHonor: "Hades the Unseen ",
-    image: "/media/cyc/1.png",
+    image: "/img/cyc/1.png",
     desc: (
       <div>
         HUMANS is creating an all-in-one platform for AI-based creation and
@@ -255,7 +255,7 @@ export const godTabData: tabType[] = [
     activeCard: false,
     name: "tab10",
     titleOfHonor: "herald the stone eyes",
-    image: "/media/cyc/1.png",
+    image: "/img/cyc/1.png",
     desc: (
       <div>
         HUMANS is creating an all-in-one platform for AI-based creation and
@@ -272,9 +272,9 @@ export const humanTabData: tabType[] = [
     activeCard: false,
     name: "tab0",
     titleOfHonor: "out of law citizen",
-    image: "/media/cyc/3.png",
-    image2: "/media/cyc/1.png",
-    image3: "/media/cyc/1.png",
+    image: "/img/cyc/3.png",
+    image2: "/img/cyc/1.png",
+    image3: "/img/cyc/1.png",
     desc: (
       <div>
         HUMANS is creating an all-in-one platform for AI-based creation and
@@ -289,9 +289,9 @@ export const humanTabData: tabType[] = [
     activeCard: false,
     name: "tab1",
     titleOfHonor: "out of law citizen",
-    image: "/media/cyc/1.png",
-    image2: "/media/cyc/3.png",
-    image3: "/media/cyc/3.png",
+    image: "/img/cyc/1.png",
+    image2: "/img/cyc/3.png",
+    image3: "/img/cyc/3.png",
     desc: (
       <div>
         HUMANS is creating an all-in-one platform for AI-based creation and
@@ -306,9 +306,9 @@ export const humanTabData: tabType[] = [
     activeCard: true,
     name: "tab2",
     titleOfHonor: "out of law citizen",
-    image: "/media/cyc/2.png",
-    image2: "/media/cyc/1.png",
-    image3: "/media/cyc/1.png",
+    image: "/img/cyc/2.png",
+    image2: "/img/cyc/1.png",
+    image3: "/img/cyc/1.png",
     desc: (
       <div>
         HUMANS is creating an all-in-one platform for AI-based creation and
@@ -323,9 +323,9 @@ export const humanTabData: tabType[] = [
     activeCard: false,
     name: "tab3",
     titleOfHonor: "out of law citizen",
-    image: "/media/cyc/3.png",
-    image2: "/media/cyc/1.png",
-    image3: "/media/cyc/1.png",
+    image: "/img/cyc/3.png",
+    image2: "/img/cyc/1.png",
+    image3: "/img/cyc/1.png",
     desc: (
       <div>
         HUMANS is creating an all-in-one platform for AI-based creation and
@@ -340,9 +340,9 @@ export const humanTabData: tabType[] = [
     activeCard: false,
     name: "tab4",
     titleOfHonor: "out of law citizen",
-    image: "/media/cyc/2.png",
-    image2: "/media/cyc/1.png",
-    image3: "/media/cyc/1.png",
+    image: "/img/cyc/2.png",
+    image2: "/img/cyc/1.png",
+    image3: "/img/cyc/1.png",
     desc: (
       <div>
         HUMANS is creating an all-in-one platform for AI-based creation and
@@ -400,7 +400,7 @@ export const gameCardData: gameCardType[] = [
   {
     id: "1",
     name: "Zeus",
-    image: "/media/team/member1.png",
+    image: "/img/team/member1.png",
     spellGroup: "blue",
     spellValue: [1, 2, 3],
     total: 3,
@@ -412,7 +412,7 @@ export const gameCardData: gameCardType[] = [
   {
     id: "2",
     name: "Hades",
-    image: "/media/team/member2.png",
+    image: "/img/team/member2.png",
     spellGroup: "blue",
     spellValue: [1, 2, 3],
     total: 6,
@@ -424,7 +424,7 @@ export const gameCardData: gameCardType[] = [
   {
     id: "3",
     name: "Laya",
-    image: "/media/team/member1.png",
+    image: "/img/team/member1.png",
     spellGroup: "blue",
     spellValue: [1],
     total: 7,
@@ -436,7 +436,7 @@ export const gameCardData: gameCardType[] = [
   {
     id: "4",
     name: "Desmond",
-    image: "/media/team/member3.png",
+    image: "/img/team/member3.png",
     spellGroup: "yellow",
     spellValue: [1, 2],
     total: 2,
@@ -448,7 +448,7 @@ export const gameCardData: gameCardType[] = [
   {
     id: "5",
     name: "Hero",
-    image: "/media/team/member2.png",
+    image: "/img/team/member2.png",
     spellGroup: "yellow",
     spellValue: [1],
     total: 3,
@@ -460,7 +460,7 @@ export const gameCardData: gameCardType[] = [
   {
     id: "6",
     name: "Cool guy",
-    image: "/media/team/member3.png",
+    image: "/img/team/member3.png",
     spellGroup: "blue",
     spellValue: [1, 2],
     total: 9,
@@ -472,7 +472,7 @@ export const gameCardData: gameCardType[] = [
   {
     id: "7",
     name: "Peter pan",
-    image: "/media/team/member1.png",
+    image: "/img/team/member1.png",
     spellGroup: "yellow",
     spellValue: [1, 2, 3],
     total: 6,
@@ -484,7 +484,7 @@ export const gameCardData: gameCardType[] = [
   {
     id: "8",
     name: "Edmownd",
-    image: "/media/team/member2.png",
+    image: "/img/team/member2.png",
     spellGroup: "yellow",
     spellValue: [1, 2, 3],
     total: 9,
@@ -496,7 +496,7 @@ export const gameCardData: gameCardType[] = [
   {
     id: "9",
     name: "Zeus",
-    image: "/media/team/member1.png",
+    image: "/img/team/member1.png",
     spellGroup: "blue",
     spellValue: [1],
     total: 10,
@@ -508,7 +508,7 @@ export const gameCardData: gameCardType[] = [
   {
     id: "10",
     name: "Hades",
-    image: "/media/team/member2.png",
+    image: "/img/team/member2.png",
     spellGroup: "blue",
     spellValue: [1, 2, 3],
     total: 13,
@@ -520,7 +520,7 @@ export const gameCardData: gameCardType[] = [
   {
     id: "11",
     name: "Desmond",
-    image: "/media/team/member3.png",
+    image: "/img/team/member3.png",
     spellGroup: "yellow",
     spellValue: [1, 2],
     total: 11,
@@ -532,7 +532,7 @@ export const gameCardData: gameCardType[] = [
   {
     id: "12",
     name: "Laya",
-    image: "/media/team/member1.png",
+    image: "/img/team/member1.png",
     spellGroup: "blue",
     spellValue: [1, 2],
     total: 15,
@@ -544,7 +544,7 @@ export const gameCardData: gameCardType[] = [
   {
     id: "13",
     name: "Hero",
-    image: "/media/team/member2.png",
+    image: "/img/team/member2.png",
     spellGroup: "yellow",
     spellValue: [1],
     total: 12,
@@ -556,7 +556,7 @@ export const gameCardData: gameCardType[] = [
   {
     id: "14",
     name: "Cool guy",
-    image: "/media/team/member3.png",
+    image: "/img/team/member3.png",
     spellGroup: "blue",
     spellValue: [1, 2],
     total: 17,
@@ -568,7 +568,7 @@ export const gameCardData: gameCardType[] = [
   {
     id: "15",
     name: "Peter pan",
-    image: "/media/team/member1.png",
+    image: "/img/team/member1.png",
     spellGroup: "yellow",
     spellValue: [1, 2, 3],
     total: 15,
@@ -580,7 +580,7 @@ export const gameCardData: gameCardType[] = [
   {
     id: "16",
     name: "Edmownd",
-    image: "/media/team/member2.png",
+    image: "/img/team/member2.png",
     spellGroup: "yellow",
     spellValue: [1, 2, 3],
     total: 18,
@@ -592,7 +592,7 @@ export const gameCardData: gameCardType[] = [
   {
     id: "17",
     name: "Zeus",
-    image: "/media/team/member1.png",
+    image: "/img/team/member1.png",
     spellGroup: "blue",
     spellValue: [1],
     total: 18,
@@ -604,7 +604,7 @@ export const gameCardData: gameCardType[] = [
   {
     id: "18",
     name: "Hades",
-    image: "/media/team/member2.png",
+    image: "/img/team/member2.png",
     spellGroup: "blue",
     spellValue: [1, 2, 3],
     total: 21,
@@ -616,7 +616,7 @@ export const gameCardData: gameCardType[] = [
   {
     id: "19",
     name: "Desmond",
-    image: "/media/team/member3.png",
+    image: "/img/team/member3.png",
     spellGroup: "yellow",
     spellValue: [1, 2],
     total: 20,
@@ -628,7 +628,7 @@ export const gameCardData: gameCardType[] = [
   {
     id: "20",
     name: "Laya",
-    image: "/media/team/member1.png",
+    image: "/img/team/member1.png",
     spellGroup: "blue",
     spellValue: [1, 2, 3],
     total: 24,
@@ -640,7 +640,7 @@ export const gameCardData: gameCardType[] = [
   {
     id: "21",
     name: "Hero",
-    image: "/media/team/member2.png",
+    image: "/img/team/member2.png",
     spellGroup: "yellow",
     spellValue: [1],
     total: 21,
@@ -652,7 +652,7 @@ export const gameCardData: gameCardType[] = [
   {
     id: "22",
     name: "Cool guy",
-    image: "/media/team/member3.png",
+    image: "/img/team/member3.png",
     spellGroup: "blue",
     spellValue: [1, 2],
     total: 26,
@@ -664,7 +664,7 @@ export const gameCardData: gameCardType[] = [
   {
     id: "23",
     name: "Peter pan",
-    image: "/media/team/member1.png",
+    image: "/img/team/member1.png",
     spellGroup: "yellow",
     spellValue: [1],
     total: 22,
@@ -676,7 +676,7 @@ export const gameCardData: gameCardType[] = [
   {
     id: "24",
     name: "Edmownd",
-    image: "/media/team/member2.png",
+    image: "/img/team/member2.png",
     spellGroup: "yellow",
     spellValue: [1, 2, 3],
     total: 25,
@@ -688,7 +688,7 @@ export const gameCardData: gameCardType[] = [
   {
     id: "25",
     name: "Zeus",
-    image: "/media/team/member1.png",
+    image: "/img/team/member1.png",
     spellGroup: "blue",
     spellValue: [1, 2],
     total: 28,
@@ -700,7 +700,7 @@ export const gameCardData: gameCardType[] = [
   {
     id: "26",
     name: "Hades",
-    image: "/media/team/member2.png",
+    image: "/img/team/member2.png",
     spellGroup: "blue",
     spellValue: [1, 2, 3],
     total: 31,
@@ -712,7 +712,7 @@ export const gameCardData: gameCardType[] = [
   {
     id: "27",
     name: "Desmond",
-    image: "/media/team/member3.png",
+    image: "/img/team/member3.png",
     spellGroup: "yellow",
     spellValue: [1, 2],
     total: 27,
@@ -724,7 +724,7 @@ export const gameCardData: gameCardType[] = [
   {
     id: "28",
     name: "Laya",
-    image: "/media/team/member1.png",
+    image: "/img/team/member1.png",
     spellGroup: "blue",
     spellValue: [1, 2, 3],
     total: 34,
@@ -736,7 +736,7 @@ export const gameCardData: gameCardType[] = [
   {
     id: "29",
     name: "Hero",
-    image: "/media/team/member2.png",
+    image: "/img/team/member2.png",
     spellGroup: "yellow",
     spellValue: [1],
     total: 28,
@@ -748,7 +748,7 @@ export const gameCardData: gameCardType[] = [
   {
     id: "30",
     name: "Cool guy",
-    image: "/media/team/member3.png",
+    image: "/img/team/member3.png",
     spellGroup: "blue",
     spellValue: [1, 2],
     total: 36,
@@ -760,7 +760,7 @@ export const gameCardData: gameCardType[] = [
   {
     id: "31",
     name: "Peter pan",
-    image: "/media/team/member1.png",
+    image: "/img/team/member1.png",
     spellGroup: "yellow",
     spellValue: [1, 2, 3],
     total: 31,
@@ -772,7 +772,7 @@ export const gameCardData: gameCardType[] = [
   {
     id: "32",
     name: "Edmownd",
-    image: "/media/team/member2.png",
+    image: "/img/team/member2.png",
     spellGroup: "yellow",
     spellValue: [1, 2, 3],
     total: 34,
@@ -784,7 +784,7 @@ export const gameCardData: gameCardType[] = [
   {
     id: "33",
     name: "Zeus",
-    image: "/media/team/member1.png",
+    image: "/img/team/member1.png",
     spellGroup: "blue",
     spellValue: [1],
     total: 37,
@@ -796,7 +796,7 @@ export const gameCardData: gameCardType[] = [
   {
     id: "34",
     name: "Hades",
-    image: "/media/team/member2.png",
+    image: "/img/team/member2.png",
     spellGroup: "blue",
     spellValue: [1, 2, 3],
     total: 40,
@@ -808,7 +808,7 @@ export const gameCardData: gameCardType[] = [
   {
     id: "35",
     name: "Desmond",
-    image: "/media/team/member3.png",
+    image: "/img/team/member3.png",
     spellGroup: "yellow",
     spellValue: [1, 2],
     total: 36,
@@ -820,7 +820,7 @@ export const gameCardData: gameCardType[] = [
   {
     id: "36",
     name: "Laya",
-    image: "/media/team/member1.png",
+    image: "/img/team/member1.png",
     spellGroup: "blue",
     spellValue: [1, 2, 3],
     total: 43,
@@ -832,7 +832,7 @@ export const gameCardData: gameCardType[] = [
   {
     id: "37",
     name: "Hero",
-    image: "/media/team/member2.png",
+    image: "/img/team/member2.png",
     spellGroup: "yellow",
     spellValue: [1, 2, 3],
     total: 39,
@@ -844,7 +844,7 @@ export const gameCardData: gameCardType[] = [
   {
     id: "38",
     name: "Cool guy",
-    image: "/media/team/member3.png",
+    image: "/img/team/member3.png",
     spellGroup: "blue",
     spellValue: [1, 2],
     total: 45,
@@ -856,7 +856,7 @@ export const gameCardData: gameCardType[] = [
   {
     id: "39",
     name: "Peter pan",
-    image: "/media/team/member1.png",
+    image: "/img/team/member1.png",
     spellGroup: "yellow",
     spellValue: [1, 2],
     total: 41,
@@ -868,7 +868,7 @@ export const gameCardData: gameCardType[] = [
   {
     id: "40",
     name: "Edmownd",
-    image: "/media/team/member2.png",
+    image: "/img/team/member2.png",
     spellGroup: "yellow",
     spellValue: [1, 2, 3],
     total: 44,
@@ -880,7 +880,7 @@ export const gameCardData: gameCardType[] = [
   {
     id: "41",
     name: "Zeus",
-    image: "/media/team/member1.png",
+    image: "/img/team/member1.png",
     spellGroup: "blue",
     spellValue: [1, 2],
     total: 47,
@@ -892,7 +892,7 @@ export const gameCardData: gameCardType[] = [
   {
     id: "42",
     name: "Hades",
-    image: "/media/team/member2.png",
+    image: "/img/team/member2.png",
     spellGroup: "blue",
     spellValue: [1, 2, 3],
     total: 50,
@@ -904,7 +904,7 @@ export const gameCardData: gameCardType[] = [
   {
     id: "43",
     name: "Desmond",
-    image: "/media/team/member3.png",
+    image: "/img/team/member3.png",
     spellGroup: "yellow",
     spellValue: [1, 2],
     total: 46,
@@ -916,7 +916,7 @@ export const gameCardData: gameCardType[] = [
   {
     id: "44",
     name: "Laya",
-    image: "/media/team/member1.png",
+    image: "/img/team/member1.png",
     spellGroup: "blue",
     spellValue: [1],
     total: 51,
@@ -928,7 +928,7 @@ export const gameCardData: gameCardType[] = [
   {
     id: "45",
     name: "Hero",
-    image: "/media/team/member2.png",
+    image: "/img/team/member2.png",
     spellGroup: "yellow",
     spellValue: [1, 2],
     total: 48,
@@ -940,7 +940,7 @@ export const gameCardData: gameCardType[] = [
   {
     id: "46",
     name: "Cool guy",
-    image: "/media/team/member3.png",
+    image: "/img/team/member3.png",
     spellGroup: "blue",
     spellValue: [1],
     total: 52,
@@ -952,7 +952,7 @@ export const gameCardData: gameCardType[] = [
   {
     id: "47",
     name: "Peter pan",
-    image: "/media/team/member1.png",
+    image: "/img/team/member1.png",
     spellGroup: "yellow",
     spellValue: [1],
     total: 49,
@@ -964,7 +964,7 @@ export const gameCardData: gameCardType[] = [
   {
     id: "48",
     name: "Edmownd",
-    image: "/media/team/member2.png",
+    image: "/img/team/member2.png",
     spellGroup: "yellow",
     spellValue: [1, 2, 3],
     total: 52,
@@ -976,7 +976,7 @@ export const gameCardData: gameCardType[] = [
   {
     id: "49",
     name: "Hero",
-    image: "/media/team/member2.png",
+    image: "/img/team/member2.png",
     spellGroup: "yellow",
     spellValue: [1],
     total: 53,
@@ -988,7 +988,7 @@ export const gameCardData: gameCardType[] = [
   {
     id: "50",
     name: "Cool guy",
-    image: "/media/team/member3.png",
+    image: "/img/team/member3.png",
     spellGroup: "blue",
     spellValue: [1, 2],
     total: 54,
@@ -1000,7 +1000,7 @@ export const gameCardData: gameCardType[] = [
   {
     id: "51",
     name: "Peter pan",
-    image: "/media/team/member1.png",
+    image: "/img/team/member1.png",
     spellGroup: "yellow",
     spellValue: [1],
     total: 54,
@@ -1012,7 +1012,7 @@ export const gameCardData: gameCardType[] = [
   {
     id: "52",
     name: "Edmownd",
-    image: "/media/team/member2.png",
+    image: "/img/team/member2.png",
     spellGroup: "yellow",
     spellValue: [1, 2, 3],
     total: 57,
@@ -1108,17 +1108,17 @@ export const roadDataQ3: roadDataType[] = [
 export const roadMapData: roadMapType[] = [
   {
     sectionName: "Q1- Expansion",
-    backImg: "/media/roadmap/section1.png",
+    backImg: "/img/roadmap/section1.png",
     roadData: roadDataQ1,
   },
   {
     sectionName: "Q2- Expansion",
-    backImg: "/media/roadmap/section2.png",
+    backImg: "/img/roadmap/section2.png",
     roadData: roadDataQ2,
   },
   {
     sectionName: "Q3- Expansion",
-    backImg: "/media/roadmap/section3.png",
+    backImg: "/img/roadmap/section3.png",
     roadData: roadDataQ3,
   },
 ];
