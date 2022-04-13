@@ -13,7 +13,6 @@ module.exports = {
   //     },
   //   ];
   // },
-<<<<<<< HEAD
   // async redirects() {
   //   return [
   //     {
@@ -33,25 +32,4 @@ module.exports = {
   //     },
   //   ];
   // },
-=======
-  async redirects() {
-    return [
-      {
-        source: "/",
-        destination: "/underconstruction",
-        permanent: true,
-      },
-      {
-        source: "/gallery",
-        destination: "/underconstruction",
-        permanent: true,
-      },
-      {
-        source: "/gameboard",
-        destination: "/underconstruction",
-        permanent: true,
-      },
-    ];
-  },
->>>>>>> d0b16ffdd53004cb4d763d6aba07a3ccf871d12a
 };
