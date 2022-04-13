@@ -60,7 +60,7 @@ const RoadMapPage: React.FC = () => {
           );
         })}
       </motion.div>
-      <ProgressLine />
+      <ProgressLine activeSection={activeSection} />
     </div>
   );
 };
