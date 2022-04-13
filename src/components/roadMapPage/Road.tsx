@@ -31,7 +31,7 @@ const Road: React.FC<props> = ({ index, activeSection, road }) => {
     >
       <div className="flex justify-between items-center w-full h-full relative">
         <div className="w-full h-full absolute top-0 left-0 z-0">
-          <img className="w-full h-full" src={road.backImg} />
+          <Image src={road.backImg} layout="fill" />
         </div>
         <h3 className="w-1/2 h-full z-10 flex justify-center items-center">
         {road.sectionName}
