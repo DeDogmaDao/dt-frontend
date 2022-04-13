@@ -47,16 +47,10 @@ jobs:
           command: |
             docker login ghcr.io -u dedogmadao -p $GITHUB_TOKEN
             docker pull ghcr.io/dedogmadao/dt-frontend/frontend_staging:latest
-<<<<<<< HEAD
             docker stop frontend
             docker system prune -f
             docker network create ddd_network || true
             docker run --name frontend -dit --network=ddd_network ghcr.io/dedogmadao/dt-frontend/frontend_staging:latest
-=======
-            docker stop front-staging
-            docker system prune -f
-            docker run --name front-staging -dit -p 80:3000 ghcr.io/dedogmadao/dt-frontend/frontend_staging:latest
->>>>>>> d0b16ffdd53004cb4d763d6aba07a3ccf871d12a
           host: ${{ secrets.FRONTEND_STAGING_DEPLOY_HOST }}
           user: ${{ secrets.FRONTEND_STAGING_DEPLOY_USER }}
           key: ${{ secrets.STAGING_GITHUB_SSH_KEY}}
