@@ -50,7 +50,7 @@ jobs:
             docker stop front-staging
             docker system prune -f
             docker network create ddd_network || true
-            docker run --name front-staging -dit --network=ddd_network -p 80:3000 ghcr.io/dedogmadao/dt-frontend/frontend_staging:latest
+            docker run --name frontend -d --network=ddd_network ghcr.io/dedogmadao/dt-frontend/frontend_staging:latest
           host: ${{ secrets.FRONTEND_STAGING_DEPLOY_HOST }}
           user: ${{ secrets.FRONTEND_STAGING_DEPLOY_USER }}
           key: ${{ secrets.STAGING_GITHUB_SSH_KEY}}
