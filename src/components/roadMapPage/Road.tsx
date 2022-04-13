@@ -20,9 +20,9 @@ const Road: React.FC<props> = ({ index, activeSection, road }) => {
 
   return (
     <motion.div
-    initial="hidden"
-    animate="visible"
-    variants={roadAni}
+      initial="hidden"
+      animate="visible"
+      variants={roadAni}
       className="w-screen h-screen absolute left-0 duration-700"
       style={{
         top: clientHeight * (index - activeSection),

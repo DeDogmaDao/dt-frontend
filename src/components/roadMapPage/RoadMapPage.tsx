@@ -3,7 +3,6 @@ import { useEffect, useRef, useState } from "react";
 import { roadMapData } from "../../store/allData";
 import Road from "./Road";
 
-
 const RoadMapPage: React.FC = () => {
   const roadmapContainerRef = useRef<HTMLDivElement>(null);
   const [activeSection, setActiveSection] = useState(0);
@@ -42,7 +41,10 @@ const RoadMapPage: React.FC = () => {
   }, [activeSection]);
 
   return (
-    <div className="h-full" ref={roadmapContainerRef}>
+    <div
+      className="h-full w-full flex flex-col items-center"
+      ref={roadmapContainerRef}
+    >
       <motion.div
         drag="y"
         onDragEnd={(event, info) => dragHandler(event, info)}
