@@ -19,8 +19,12 @@ const Road: React.FC<props> = ({ color, index, activeSection }) => {
       style={{ top: clientHeight * (index - activeSection) }}
     >
       <div className="flex justify-between items-center w-full h-full">
-        <div className="w-1/2 h-full " style={{ backgroundColor: color }}></div>
-        <div className="w-1/2 h-full bg-green-300"></div>
+        <div className="w-1/2 h-full" ></div>
+        <div className="w-1/2 h-full flex justify-center items-center">
+          <ul className="w-[416px] p-8 ">
+
+          </ul>
+        </div>
       </div>
     </motion.div>
   );
