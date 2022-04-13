@@ -5,14 +5,14 @@ import { roadMapDescAni } from "../../utils/animation";
 import RoadItem from "./RoadItem";
 
 interface props {
-  roadData:roadMapType;
+  road:roadMapType;
   index: number;
   activeSection: number;
 }
 
-const Road: React.FC<props> = ({ index, activeSection,roadData }) => {
+const Road: React.FC<props> = ({ index, activeSection,road }) => {
   const [clientHeight, setClientHeight] = useState(0);
-  const [desc, setDesc] = useState("");
+  const [descIndex, setDescIndex] = useState(0);
   useEffect(() => {
     setClientHeight(window.innerHeight);
   }, []);
@@ -26,18 +26,18 @@ const Road: React.FC<props> = ({ index, activeSection,roadData }) => {
         <div className="w-1/2 h-full"></div>
         <div className="w-1/2 h-full flex justify-center items-center">
           <ul className="w-[416px] p-8 flex flex-col gap-y-2 bg-neutral-600 rounded-xl">
-            {roadData.roadData.map((data) => {
-              return <RoadItem data={data} setDesc={setDesc} />;
+            {road.roadData.map((data,index) => {
+              return <RoadItem data={data} setDescIndex={setDescIndex} descIndex={descIndex} index={index} />;
             })}
             <div className="w-full h-28 px-5 overflow-clip text-small-light text-neutral-50/60 ">
-              {desc !== "" && (
+              {descIndex !== -1 && (
                 <motion.p
                 className="indent-8"
                   initial={"hidden"}
                   animate="visible"
                   variants={roadMapDescAni}
                 >
-                  {desc}
+                  {road.roadData[descIndex].desc}
                 </motion.p>
               )}
             </div>

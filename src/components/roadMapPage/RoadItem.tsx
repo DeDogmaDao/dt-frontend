@@ -1,25 +1,28 @@
 import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Dispatch, SetStateAction } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 import { motion } from "framer-motion";
 
 interface props {
   data: { title: string; desc: string };
-  setDesc: Dispatch<SetStateAction<string>>;
+  setDescIndex: Dispatch<SetStateAction<number>>;
+  descIndex:number;
+  index:number;
+
 }
 
-const RoadItem: React.FC<props> = ({ data, setDesc }) => {
+const RoadItem: React.FC<props> = ({ data, setDescIndex, descIndex, index }) => {
   const descriptionHoverHandler = () => {
-    setDesc((prevState) => {
-      if (prevState === data.desc) {
+    setDescIndex((prevState) => {
+      if (prevState === index) {
         return prevState;
       }
-      return "";
+      return -1;
     });
     setTimeout(() => {
-      setDesc(prevState=>{
-          if(prevState===""){
-              return data.desc
+        setDescIndex(prevState=>{
+          if(prevState===-1){
+              return index
           }
           return prevState
       });
@@ -29,7 +32,7 @@ const RoadItem: React.FC<props> = ({ data, setDesc }) => {
   return (
     <motion.li
       onHoverStart={descriptionHoverHandler}
-      className="w-full flex justify-start items-start gap-3 text-medium-medium hover:text-primary-500"
+      className="w-full flex justify-start items-start gap-3 text-medium-medium hover:text-primary-300"
     >
       <span className="text-xl">
         <FontAwesomeIcon icon={faAngleRight} />

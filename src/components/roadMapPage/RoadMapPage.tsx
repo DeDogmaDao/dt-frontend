@@ -53,7 +53,7 @@ const RoadMapPage: React.FC = () => {
       >
         {roadMapData.map((data, index) => {
           return (
-            <Road roadData={data} index={index} activeSection={activeSection} />
+            <Road road={data} index={index} activeSection={activeSection} />
           );
         })}
       </motion.div>
