@@ -33,7 +33,9 @@ const Road: React.FC<props> = ({ index, activeSection, road }) => {
         <div className="w-full h-full absolute top-0 left-0 z-0">
           <Image src={road.backImg} layout="fill" />
         </div>
-        <div className="w-1/2 h-full z-10"></div>
+        <h3 className="w-1/2 h-full z-10 flex justify-center items-center">
+        {road.sectionName}
+        </h3>
         <div className="w-1/2 h-full flex justify-center items-center z-10">
           <ul className="w-[416px] p-8 flex flex-col gap-y-2 bg-neutral-600 rounded-xl">
             {road.roadData.map((data, index) => {
