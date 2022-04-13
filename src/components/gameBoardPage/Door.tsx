@@ -31,14 +31,14 @@ const Door: React.FC<props> = ({ spellNumber, doorStage }) => {
           initial="hidden"
           animate={doorAnimControls}
           variants={doorToRightAnimation}
-          src="/media/game/door.png"
+          src="/img/game/door.png"
           className="absolute bottom-0 right-0 w-[7.7vw] h-full z-0 "
         />
         <motion.img
           initial="hidden"
           animate={doorAnimControls}
           variants={doorToLefttAnimation}
-          src="/media/game/door.png"
+          src="/img/game/door.png"
           className="absolute bottom-0 left-0 w-[7.7vw] h-full z-0 scale-x-[-1]"
         />
         <motion.div

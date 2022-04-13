@@ -6,6 +6,7 @@ const HowItWorks:React.FC = () => {
 
     return(
         <>
+        
         {/* <HeaderImg />
 
         <SecOne />

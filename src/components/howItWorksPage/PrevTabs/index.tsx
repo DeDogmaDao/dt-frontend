@@ -11,9 +11,9 @@ const PrevTabs: React.FC = () => {
 
   return (
     <div className="flex flex-col justify-start items-center h-[1270px] w-full relative gap-y-10">
-      <img src="/media/junks/tabs.png" className="absolute right-0 bottom-0" />
+      <img src="/img/junks/tabs.png" className="absolute right-0 bottom-0" />
       <img
-        src="/media/junks/tabs.png"
+        src="/img/junks/tabs.png"
         className="absolute left-0 scale-x-[-1] bottom-0"
       />
       <h2 className="mt-16 text-3xl">CHOOSE YOUR CARDS</h2>

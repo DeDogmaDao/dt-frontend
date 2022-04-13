@@ -52,7 +52,7 @@ const GameBoard: React.FC = () => {
     <LayoutGroup>
       <div className="flex justify-between items-center w-screen h-[calc(900/1920*100vw)] relative">
         <img
-          src="/media/game/main.png"
+          src="/img/game/main.png"
           className="absolute top-0 left-0 w-full h-full z-10"
         />
         <Door spellNumber={spellNumber} doorStage={doorStage} />

@@ -27,7 +27,7 @@ const Tabs: React.FC = () => {
           width="1440"
           height="929"
           layout="responsive"
-          src="/media/cyc/tab-bg.png"
+          src="/img/cyc/tab-bg.png"
         />
       </div>
       <h5 className="z-10 font-bold mt-40">
@@ -53,7 +53,7 @@ const Tabs: React.FC = () => {
             width="300"
             height="250"
             layout="intrinsic"
-            src="/media/cyc/tab-portal.png"
+            src="/img/cyc/tab-portal.png"
           />
         </div>
         {tabs.map((tab) => {

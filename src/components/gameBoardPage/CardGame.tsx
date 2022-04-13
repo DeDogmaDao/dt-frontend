@@ -163,7 +163,7 @@ const CardGame: React.FC<props> = ({
         <motion.img
           style={{ translateZ: "-1px" }}
           className="w-full object-contain absolute top-0 left-0"
-          src={"/media/team/member3.png"}
+          src={"/img/team/member3.png"}
         />
         <motion.img className="w-full object-contain" src={data.image} />
         {stage === 1 && (

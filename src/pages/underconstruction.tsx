@@ -20,7 +20,7 @@ export default function underconstruction(): JSX.Element {
 
       <div className="w-screen h-screen relative bg-black">
         <Image
-          src={"/media/junks/const.png"}
+          src={"/img/junks/const.png"}
           layout="responsive"
           width={1920}
           height={2041}
