@@ -21,10 +21,14 @@ export default function underconstruction(): JSX.Element {
       <div className="w-screen h-screen relative bg-black">
         <Image
 <<<<<<< HEAD
+<<<<<<< HEAD
           src={"/img/junks/const.png"}
 =======
           src={"/media/junks/ddd.png"}
 >>>>>>> a977751 (bug fixed: image added to sitemap)
+=======
+          src={"/media/junks/ddd.png"}
+>>>>>>> d0b16ffdd53004cb4d763d6aba07a3ccf871d12a
           layout="responsive"
           width={1920}
           height={2041}
