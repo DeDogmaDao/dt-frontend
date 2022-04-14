@@ -708,3 +708,29 @@ export const eachBenefitDescAni: Variants = {
     },
   }),
 };
+
+export const callToActionSvgAni:Variants = {
+  hidden:{
+width:0
+  },
+  visible:{
+width:274,
+  transition:{
+    duration:1.5,
+    ease:"easeInOut"
+  }
+  },
+}
+export const callToactionSvgArrowRightAni:Variants = {
+  hidden:{
+    opacity:0,
+  },
+  visible:{
+    opacity:1,
+    transition:{
+      delay:1.45,
+      duration:0.2,
+      ease:"easeInOut"
+    }
+  }
+}
