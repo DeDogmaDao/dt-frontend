@@ -1,6 +1,7 @@
 import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
+import Link from "next/link";
 import CallToActionSvg from "./CallToActionSvg";
 
 const ToRoadmapAction: React.FC = () => {
@@ -22,12 +23,14 @@ const ToRoadmapAction: React.FC = () => {
           <div className="absolute top-0 left-[25%]">
             <CallToActionSvg />
           </div>
-          <button className="px-4 py-3 mt-11 bg-black rounded-full text-small-bold flex gap-x-2 duration-500 border-2 border-transparent hover:border-yellow-300">
-            <span>Roadmap Document</span>
-            <span className="animate-bounceX">
-              <FontAwesomeIcon icon={faAngleRight} />
-            </span>
-          </button>
+          <Link href={"/roadmap"}>
+            <button className="px-4 py-3 mt-11 bg-black rounded-full text-small-bold flex gap-x-2 duration-500 border-2 border-transparent hover:border-yellow-300">
+              <span>Roadmap Document</span>
+              <span className="animate-bounceX">
+                <FontAwesomeIcon icon={faAngleRight} />
+              </span>
+            </button>
+          </Link>
         </div>
       </div>
     </div>
