@@ -20,20 +20,26 @@ const EachTab: React.FC<props> = ({
     if (index > activeIndexCard[group]) {
       for (let i = activeIndexCard[group], j = 0; i < index; i++, j++) {
         setTimeout(() => {
-          setActiveIndexCard((prevState) => ({
-            ...prevState,
-            [group]: prevState[group] + 1,
-          }));
+          setActiveIndexCard((prevState) => {
+            if (prevState[group] === index) return { ...prevState };
+            return {
+              ...prevState,
+              [group]: prevState[group] + 1,
+            };
+          });
         }, 100 * j);
       }
     }
     if (index < activeIndexCard[group]) {
       for (let i = activeIndexCard[group], j = 0; i > index; i--, j++) {
         setTimeout(() => {
-          setActiveIndexCard((prevState) => ({
-            ...prevState,
-            [group]: prevState[group] - 1,
-          }));
+          setActiveIndexCard((prevState) => {
+            if (prevState[group] === index) return { ...prevState };
+            return {
+              ...prevState,
+              [group]: prevState[group] - 1,
+            };
+          });
         }, 100 * j);
       }
     }
