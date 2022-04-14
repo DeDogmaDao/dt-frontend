@@ -8,7 +8,7 @@ const Benefits: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <div className="flex flex-col justify-start items-center h-[90vh] bg-red-400 relative">
+    <div className="flex flex-col justify-start items-center h-[90vh] relative">
       <div className="absolute z-0 left-0 top-0 w-full h-full">
       <Image src={'/img/bg/bg1.png'} layout="fill" />
       </div>
