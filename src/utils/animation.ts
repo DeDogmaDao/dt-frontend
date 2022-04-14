@@ -696,3 +696,15 @@ export const eachBenefitAni: Variants = {
     },
   },
 };
+export const eachBenefitDescAni: Variants = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: (custom)=>({
+    opacity: 1,
+    transition: {
+      duration: 0.7,
+      delay:custom *0.3
+    },
+  }),
+};

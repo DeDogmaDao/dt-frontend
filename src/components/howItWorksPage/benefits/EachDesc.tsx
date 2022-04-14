@@ -1,17 +1,26 @@
 import { faCircleDot } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { motion } from "framer-motion";
+import { eachBenefitDescAni } from "../../../utils/animation";
 
 interface props {
   descData: string;
+  index: number;
 }
-const EachDesc: React.FC<props> = ({ descData }) => {
+const EachDesc: React.FC<props> = ({ descData, index }) => {
   return (
-    <li className="flex gap-x-2 text-base px-16 py-8 rounded-full bg-neutral-600/30">
+    <motion.li
+      initial="hidden"
+      animate="visible"
+      variants={eachBenefitDescAni}
+      custom={index}
+      className="flex gap-x-2 text-base px-16 py-8 rounded-full bg-neutral-600/30"
+    >
       <span className="mt-1">
         <FontAwesomeIcon icon={faCircleDot} />
       </span>
       <p className="text-extera-large-medium">{descData}</p>
-    </li>
+    </motion.li>
   );
 };
 
