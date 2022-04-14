@@ -1,3 +1,6 @@
+import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 const ToRoadmapAction: React.FC = () => {
   return (
     <div className="w-full h-full justify-center pb-96">
@@ -10,6 +13,15 @@ const ToRoadmapAction: React.FC = () => {
           Roadmaps focus on providing a list of what your project will
           accomplish and what features your product will include
         </p>
+        <div className="relative">
+          <button className="px-4 py-3 mt-11 bg-black rounded-full text-small-bold flex gap-x-2 duration-500 border-2 border-transparent hover:border-yellow-300">
+            <span>Roadmap Document</span>
+            <span className="animate-bounceX">
+              <FontAwesomeIcon icon={faAngleRight} />
+            </span>
+          </button>
+          
+        </div>
       </div>
     </div>
   );
