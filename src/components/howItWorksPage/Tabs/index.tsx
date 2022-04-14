@@ -55,7 +55,7 @@ const Tabs: React.FC = () => {
             src="/img/cyc/tab-portal.png"
           />
         </div>
-        <div className="absolute top-[23.1rem]  left-1/2 ml-[-122px] z-10 pointer-events-none select-none">
+        <div className="absolute top-[23.1rem]  left-1/2 ml-[-122px] z-50 pointer-events-none select-none">
           <Image
             width="244"
             height="240"
