@@ -17,7 +17,7 @@ import { useEffect, useLayoutEffect } from "react";
 fontawesomeConfig.autoAddCss = false;
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const router = useRouter();
+  // const router = useRouter();
 
   // useLayoutEffect(() => {
   //   if (router.pathname !== "underconstruction") {

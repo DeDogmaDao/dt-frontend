@@ -2,9 +2,18 @@ import { faGear } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Head from "next/head";
 import Image from "next/image";
+import { useRouter } from "next/router";
 import { Fragment } from "react";
+import {  useLayoutEffect } from "react";
 
 export default function underconstruction(): JSX.Element {
+  const router = useRouter();
+
+  useLayoutEffect(() => {
+    if (router.pathname === "/underconstruction") {
+      router.push("/");
+    }
+  }, []);
   return (
     <Fragment>
       <Head>
@@ -20,7 +29,7 @@ export default function underconstruction(): JSX.Element {
 
       <div className="w-screen h-screen relative bg-black">
         <Image
-          src={"/media/junks/ddd.png"}
+          src={"/img/junks/ddd.png"}
           layout="responsive"
           width={1920}
           height={2041}

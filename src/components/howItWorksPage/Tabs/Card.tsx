@@ -34,23 +34,19 @@ const Card: React.FC<props> = ({
 
   const cardPlace = cardPlaceDetector(activeIndexCard[tabGroup], index);
   let style: MotionStyle = {
-    scale: 1 - 0.3 * Math.abs(cardPlace),
     top: 0,
-    left: 50 + cardPlace * 35 + "%",
     marginLeft: "-110px",
   };
 
   return (
     <motion.div
       layoutId={index.toString() + tabGroup}
-      transition={{ duration: 0.3, stiffness: 200 }}
       style={style}
       initial={"hidden"}
       animate="visible"
       exit={"out"}
       variants={carouselDisplayAni}
       custom={cardPlace}
-      whileHover={{ scale: activeIndexCard[tabGroup] === index ? 1 : 0.7 }}
       onClick={(e) => cardClickHandler(e)}
       className={`h-[465px] w-[220px] flex  text-white absolute select-none hover:cursor-pointer  ${
         activeIndexCard[tabGroup] === index ? "grayscale-0" : "grayscale"
