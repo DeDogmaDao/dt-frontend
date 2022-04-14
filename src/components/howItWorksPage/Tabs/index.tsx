@@ -20,7 +20,7 @@ const Tabs: React.FC = () => {
   const [isDragged, setIsDragged] = useState(false);
 
   return (
-    <div className="flex flex-col justify-between items-center h-full w-full my-96 relative">
+    <div className="flex flex-col justify-between items-center h-full w-full relative">
       <div className="absolute top-0 left-0 z-0 w-full">
         <Image
           width="1440"
@@ -126,7 +126,7 @@ const Tabs: React.FC = () => {
       {tabs.map((tab) => {
         if (!tab.activeGroup) return null;
         return (
-          <div className="relative w-full h-full flex justify-center items-center mt-9">
+          <div className="relative w-full h-[120px] flex justify-center items-start mt-9">
             <AnimatePresence>
               {tab.tabInfo.map((data, index) => {
                 return (
