@@ -27,7 +27,7 @@ export interface layersType {
 export interface tabType {
   activeCard: boolean;
   name: string;
-  titleOfHonor:string;
+  titleOfHonor: string;
   image: string;
   image2?: string;
   image3?: string;
@@ -67,7 +67,7 @@ export interface bottomRightPosition {
 }
 
 export interface sizeType {
-  width: number|string;
+  width: number | string;
   height?: number | string;
 }
 
@@ -98,14 +98,18 @@ export interface activeIndexCardType {
   humans: number;
 }
 
-
 export interface roadDataType {
-title:ReactElement<any, any>;
-desc:string;
+  title: ReactElement<any, any>;
+  desc: string;
 }
 
 export interface roadMapType {
-  sectionName:string;
+  sectionName: string;
   backImg: string;
   roadData: roadDataType[];
+}
+
+export interface benefitType {
+  title: string;
+  desc: string[];
 }

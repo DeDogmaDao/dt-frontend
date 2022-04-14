@@ -17,6 +17,7 @@ import {
   globCardType,
   roadMapType,
   roadDataType,
+  benefitType,
 } from "../types/allTypes";
 
 //
@@ -1120,5 +1121,34 @@ export const roadMapData: roadMapType[] = [
     sectionName: "Q3- Expansion",
     backImg: "/img/roadmap/sec3.png",
     roadData: roadDataQ3,
+  },
+];
+
+export const benefitsData: benefitType[] = [
+  {
+    title: "Self-growing pool prize",
+    desc: [
+      "All NFT holders will participate in our daily and weekly gamified lottery automatically. ",
+    ],
+  },
+  {
+    title: "Auto-join lottery",
+    desc: [
+      " daily and weekly gamified lottery automatically. ",
+      "Self-growing pool prize Self-growing pool prize Self-growing pool prize Self-growing pool prize Self-growing pool prize",
+    ],
+  },
+  {
+    title: "Guaranteed floor price",
+    desc: [
+      "All NFT holders will participate in our daily and weekly gamified lottery automatically. ",
+    ],
+  },
+  {
+    title: "One click from NFT to PFP",
+    desc: [
+      " daily and weekly gamified lottery automatically. ",
+      "Self-growing pool prize Self-growing pool prize Self-growing pool prize Self-growing pool prize Self-growing pool prize",
+    ],
   },
 ];
