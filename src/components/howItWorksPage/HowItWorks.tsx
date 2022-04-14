@@ -1,4 +1,5 @@
 import Benefits from "./benefits/Benefits";
+import ToRoadmapAction from "./callToAction/ToRoadmapAction";
 import Tabs from "./Tabs";
 
 
@@ -16,6 +17,7 @@ const HowItWorks:React.FC = () => {
         <Tabs /> */}
         <Benefits />
         <Tabs />
+        <ToRoadmapAction />
         </>
     )
 }
