@@ -1,14 +1,19 @@
+import { motion } from "framer-motion";
 import { Dispatch, SetStateAction, useState } from "react";
 import { benefitType } from "../../../types/allTypes";
-
+import { eachBenefitAni } from "../../../utils/animation";
 interface props {
-    data:benefitType;
-    index:number;
-    setActiveIndex: Dispatch<SetStateAction<number>>;
-    activeIndex: number;
+  data: benefitType;
+  index: number;
+  setActiveIndex: Dispatch<SetStateAction<number>>;
+  activeIndex: number;
 }
-const EachBenefit: React.FC<props> = ({data,index, activeIndex, setActiveIndex}) => {
-
+const EachBenefit: React.FC<props> = ({
+  data,
+  index,
+  activeIndex,
+  setActiveIndex,
+}) => {
   const benefitBtnClickHandler = () => {
     setActiveIndex((prevState) => {
       if (prevState === index) {
@@ -17,21 +22,33 @@ const EachBenefit: React.FC<props> = ({data,index, activeIndex, setActiveIndex})
       return -1;
     });
     setTimeout(() => {
-        setActiveIndex(prevState=>{
-          if(prevState===-1){
-              return index
-          }
-          return prevState
+      setActiveIndex((prevState) => {
+        if (prevState === -1) {
+          return index;
+        }
+        return prevState;
       });
     }, 100);
-  }
+  };
 
   return (
-    <button className="flex justify-center items-center"
-    onClick={benefitBtnClickHandler}
+    <button
+      className={`h-12 flex flex-col justify-center items-start relative duration-500  ${
+        activeIndex === index
+          ? "font-bold text-white"
+          : "text-neutral-50/30 font-thin"
+      }`}
+      onClick={benefitBtnClickHandler}
     >
       <div>{data.title}</div>
-      <div></div>
+      {activeIndex === index && (
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={eachBenefitAni}
+          className="w-7 h-1 bg-yellow-400 absolute bottom-0 left-0"
+        ></motion.div>
+      )}
     </button>
   );
 };
