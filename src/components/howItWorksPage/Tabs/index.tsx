@@ -19,7 +19,6 @@ const Tabs: React.FC = () => {
   });
   const [isDragged, setIsDragged] = useState(false);
 
-
   return (
     <div className="flex flex-col justify-between items-center h-full w-full my-96 relative">
       <div className="absolute top-0 left-0 z-0 w-full">
@@ -48,12 +47,20 @@ const Tabs: React.FC = () => {
         </LayoutGroup>
       </div>
       <div className="w-full h-full relative">
-        <div className="absolute top-96 left-1/2 ml-[-150px] z-0 pointer-events-none select-none">
+        <div className="absolute top-96 opacity-80 left-1/2 ml-[-150px] z-0 pointer-events-none select-none">
           <Image
             width="300"
             height="250"
             layout="intrinsic"
             src="/img/cyc/tab-portal.png"
+          />
+        </div>
+        <div className="absolute top-[23.1rem]  left-1/2 ml-[-122px] z-10 pointer-events-none select-none">
+          <Image
+            width="244"
+            height="240"
+            layout="intrinsic"
+            src="/img/cyc/tab-portal2.png"
           />
         </div>
         {tabs.map((tab) => {
@@ -77,7 +84,7 @@ const Tabs: React.FC = () => {
                     }
                     return (
                       <Card
-                      key={data.name}
+                        key={data.name}
                         tabGroup={tab.tabGroup}
                         setActiveIndexCard={setActiveIndexCard}
                         activeIndexCard={activeIndexCard}
