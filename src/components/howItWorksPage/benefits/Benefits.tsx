@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { benefitsData } from "../../../store/allData";
 import EachBenefit from "./EachBenefit";
+import EachDesc from "./EachDesc";
 
 const Benefits: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -19,10 +20,13 @@ const Benefits: React.FC = () => {
           );
         })}
       </div>
-      <div className="w-9/12 h-28 mt-16 flex justify-center items-center bg-red-300">
-        {benefitsData[activeIndex].desc.map(item=>{
-          return <div>{item}</div>
-        })}
+      <div className="w-9/12 h-52 mt-16 flex ">
+        <ul className="flex flex-col gap-y-3">
+          {activeIndex !== -1 &&
+            benefitsData[activeIndex].desc.map((item) => {
+              return <EachDesc descData={item} />;
+            })}
+        </ul>
       </div>
     </div>
   );
