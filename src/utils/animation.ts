@@ -700,37 +700,41 @@ export const eachBenefitDescAni: Variants = {
   hidden: {
     opacity: 0,
   },
-  visible: (custom)=>({
+  visible: (custom) => ({
     opacity: 1,
     transition: {
       duration: 0.7,
-      delay:custom *0.3
+      delay: custom * 0.3,
     },
   }),
 };
 
-export const callToActionSvgAni:Variants = {
-  hidden:{
-width:0
+export const callToActionSvgAni: Variants = {
+  hidden: {
+    pathLength: 0,
   },
-  visible:{
-width:274,
-  transition:{
-    duration:1.5,
-    ease:"easeInOut"
-  }
+  visible: {
+    pathLength: 1,
+    transition: {
+      delay: 0,
+      duration: 1.5,
+      repeat: 2000,
+      repeatDelay: 5,
+    },
   },
-}
-export const callToactionSvgArrowRightAni:Variants = {
-  hidden:{
-    opacity:0,
+};
+export const callToactionSvgArrowRightAni: Variants = {
+  hidden: {
+    opacity: 0,
   },
-  visible:{
-    opacity:1,
-    transition:{
-      delay:1.45,
-      duration:0.2,
-      ease:"easeInOut"
-    }
-  }
-}
+  visible: {
+    opacity: [0, 0, 1],
+    transition: {
+      duration: 1.5,
+      times: [0, 0.95, 1],
+      repeat: 2000,
+      repeatDelay: 5,
+      repeatType: "loop",
+    },
+  },
+};

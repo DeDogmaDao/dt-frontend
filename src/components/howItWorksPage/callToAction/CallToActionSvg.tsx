@@ -13,7 +13,7 @@ const CallToActionSvg: React.FC = () => {
         initial="hidden"
         animate="visible"
         variants={callToactionSvgArrowRightAni}
-        className="absolute top-[68%] right-[-0.7%] rotate-[-40deg] z-10 text-xl"
+        className="absolute top-[68%] left-[97%] rotate-[-40deg] z-10 text-xl overflow-hidden"
       >
         <FontAwesomeIcon icon={faCaretRight} />
       </motion.span>
