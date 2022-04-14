@@ -439,6 +439,7 @@ export const tabInfoContainerAni: Variants = {
     opacity: 1,
     transition: {
       duration: 0.3,
+      delay: 0.15,
     },
   },
   out: {
