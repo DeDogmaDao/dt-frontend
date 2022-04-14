@@ -1,3 +1,4 @@
+import Benefits from "./benefits/Benefits";
 import Tabs from "./Tabs";
 
 
@@ -13,6 +14,7 @@ const HowItWorks:React.FC = () => {
         <Carosel allData={teamClone} Item={Card} initialQuantity={100} />
         <FAQ />
         <Tabs /> */}
+        <Benefits />
         <Tabs />
         </>
     )
