@@ -395,23 +395,36 @@ export const tabBlastAni: Variants = {
 
 export const carouselDisplayAni: Variants = {
   hidden: (custom) => ({
-    x: 300 * custom,
-    scale: 0.6,
-  }),
-  visible: (custom) => ({
-    x: 0,
+    left: 50 + custom * 70 + "%",
     scale: 1 - 0.4 * Math.abs(custom),
-    transition: {
-      duration: 0.3,
-    },
   }),
+  visible: (custom) => {
+    if (custom === 0) {
+      return {
+        scale: 1 - 0.4 * Math.abs(custom),
+        left: 50 + custom * 35 + "%",
+        transition: {
+          duration: 0.6,
+          ease: [0.98, 0, 0.5, 1.52],
+        },
+      };
+    }
+    return {
+      scale: 1 - 0.4 * Math.abs(custom),
+      left: 50 + custom * 35 + "%",
+      transition: {
+        duration: 0.6,
+        ease: [0.98, 0, 0.5, 1.52],
+      },
+    };
+  },
   out: (custom) => ({
-    position: "absolute",
-    x: 200 * custom,
-    scale: 0.3,
+    left: 50 + custom * 70 + "%",
+    scale: 0.2,
     opacity: 0.5,
     transition: {
-      duration: 0.3,
+      duration: 0.6,
+      ease: [0.98, 0, 0.5, 1.52],
     },
   }),
 };

@@ -24,18 +24,17 @@ const EachTab: React.FC<props> = ({
             ...prevState,
             [group]: prevState[group] + 1,
           }));
-        }, 30 * j);
+        }, 100 * j);
       }
     }
     if (index < activeIndexCard[group]) {
       for (let i = activeIndexCard[group], j = 0; i > index; i--, j++) {
-        console.log(j);
         setTimeout(() => {
           setActiveIndexCard((prevState) => ({
             ...prevState,
             [group]: prevState[group] - 1,
           }));
-        }, 30 * j);
+        }, 100 * j);
       }
     }
   };
