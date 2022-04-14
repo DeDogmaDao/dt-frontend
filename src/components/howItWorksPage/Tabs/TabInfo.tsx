@@ -26,7 +26,7 @@ const TabInfo: React.FC<props> = ({
           animate="visible"
           exit="out"
           variants={tabInfoContainerAni}
-          className="absolute flex flex-col justify-center items-center w-9/12"
+          className="absolute flex flex-col justify-start items-center w-9/12"
         >
           <h6 className="flex justify-center items-center gap-x-2">
             <span>{name}</span>
