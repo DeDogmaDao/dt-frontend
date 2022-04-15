@@ -1,7 +1,6 @@
 import { Variants } from "framer-motion";
 
-
-export const pageAnimation:Variants = {
+export const pageAnimation: Variants = {
   hidden: {
     opacity: 0,
     y: 100,
@@ -22,7 +21,6 @@ export const pageAnimation:Variants = {
     transition: { duration: 1.5 },
   },
 };
-
 
 export const socialAni: Variants = {
   hidden: {

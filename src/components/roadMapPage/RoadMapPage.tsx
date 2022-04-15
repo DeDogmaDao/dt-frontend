@@ -43,27 +43,32 @@ const RoadMapPage: React.FC = () => {
   }, [activeSection]);
 
   return (
-    <motion.div initial="hidden" animate="visible" variants={pageAnimation} >
-    <div
-      className="h-screen w-full flex flex-col items-center relative"
-      ref={roadmapContainerRef}
+    <motion.div
+      initial="hidden"
+      animate="visible"
+      exit="out"
+      variants={pageAnimation}
     >
-      <motion.div
-        drag="y"
-        onDragEnd={(event, info) => dragHandler(event, info)}
-        dragConstraints={roadmapContainerRef}
-        dragElastic={0.5}
-        dragTransition={{ power: 10 }}
-        className="flex flex-col justify-start items-center w-full h-full relative"
+      <div
+        className="h-screen w-full flex flex-col items-center relative"
+        ref={roadmapContainerRef}
       >
-        {roadMapData.map((data, index) => {
-          return (
-            <Road road={data} index={index} activeSection={activeSection} />
-          );
-        })}
-      </motion.div>
-      <ProgressLine activeSection={activeSection} />
-    </div>
+        <motion.div
+          drag="y"
+          onDragEnd={(event, info) => dragHandler(event, info)}
+          dragConstraints={roadmapContainerRef}
+          dragElastic={0.5}
+          dragTransition={{ power: 10 }}
+          className="flex flex-col justify-start items-center w-full h-full relative"
+        >
+          {roadMapData.map((data, index) => {
+            return (
+              <Road road={data} index={index} activeSection={activeSection} />
+            );
+          })}
+        </motion.div>
+        <ProgressLine activeSection={activeSection} />
+      </div>
     </motion.div>
   );
 };

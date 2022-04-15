@@ -6,7 +6,13 @@ import Card from "../global/Card";
 
 const Team: React.FC = () => {
   return (
-    <motion.div initial="hidden" animate="visible" variants={pageAnimation} exit="out" className="w-screen h-full relative">
+    <motion.div
+      initial="hidden"
+      animate="visible"
+      variants={pageAnimation}
+      exit="out"
+      className="w-screen h-full relative"
+    >
       <div className="w-full h-full absolute top-0 left-0">
         <Image
           src={"/img/team/team-bg.png"}
