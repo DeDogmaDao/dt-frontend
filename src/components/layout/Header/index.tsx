@@ -5,38 +5,26 @@ import { useRouter } from "next/router";
 import EachLink from "./EachLink";
 import { motion } from "framer-motion";
 // types
-import { Links } from "./EachLink";
-import { useCallback, useState } from "react";
+import { LinkType } from "../../../types/allTypes";
 
 const Header: React.FC = () => {
-  const [navHovered, setNavHovered] = useState<boolean>(false);
-  const navHovering = useCallback(
-    (order) => {
-      setNavHovered(order);
-    },
-    [setNavHovered]
-  );
 
-  const headerLinks: Links[] = [
+  const headerLinks: LinkType[] = [
     {
       ref: "/",
       text: "Home",
-      hovered: false,
     },
     {
       ref: "/profile",
       text: "My Profile",
-      hovered: false,
     },
     {
       ref: "/hiw",
       text: "How It Works",
-      hovered: false,
     },
     {
       ref: "/gallery",
       text: "All NFTS",
-      hovered: false,
     },
   ];
 
@@ -52,8 +40,6 @@ const Header: React.FC = () => {
               <EachLink
                 key={headLink.ref}
                 headLink={headLink}
-                navHovered={navHovered}
-                navHovering={navHovering}
               />
             );
           })}
