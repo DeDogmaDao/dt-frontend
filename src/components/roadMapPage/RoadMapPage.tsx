@@ -1,6 +1,7 @@
 import { motion, PanInfo } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { roadMapData } from "../../store/allData";
+import { pageAnimation } from "../../utils/animation";
 import ProgressLine from "./ProgressLine";
 import Road from "./Road";
 
@@ -42,8 +43,9 @@ const RoadMapPage: React.FC = () => {
   }, [activeSection]);
 
   return (
+    <motion.div initial="hidden" animate="visible" variants={pageAnimation} >
     <div
-      className="h-full w-full flex flex-col items-center relative"
+      className="h-screen w-full flex flex-col items-center relative"
       ref={roadmapContainerRef}
     >
       <motion.div
@@ -62,6 +64,7 @@ const RoadMapPage: React.FC = () => {
       </motion.div>
       <ProgressLine activeSection={activeSection} />
     </div>
+    </motion.div>
   );
 };
 

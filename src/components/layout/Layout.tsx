@@ -7,6 +7,7 @@ const Layout: React.FC = (props) => {
   const router = useRouter();
   const gameBoardCondition = router.asPath === "/gameboard";
   const underConstructionCondition = router.asPath === "/underconstruction";
+  const roadmapCondition = router.asPath === "/roadmap";
   return (
     <div
       id="__layout"
@@ -16,7 +17,7 @@ const Layout: React.FC = (props) => {
       <AnimatePresence exitBeforeEnter>
       <Main key={router.asPath} >{props.children}</Main>
       </AnimatePresence>
-      {!gameBoardCondition && !underConstructionCondition && <Footer />}
+      {!gameBoardCondition && !underConstructionCondition && !roadmapCondition && <Footer />}
     </div>
   );
 };
