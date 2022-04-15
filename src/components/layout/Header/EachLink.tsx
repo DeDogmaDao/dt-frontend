@@ -47,26 +47,6 @@ const EachLink: React.FC<props> = ({ headLink, navHovered, navHovering }) => {
           {headLink.text}
         </a>
       </Link>
-      <AnimatePresence>
-        {condition && (
-          <>
-            <motion.div
-              initial="hidden"
-              animate="visible"
-              exit="hidden"
-              variants={navHoverAni}
-              className="absolute -top-2 left-[-30%]  bg-primary-500 w-[120%] h-px ml-0"
-            ></motion.div>
-            <motion.div
-              initial="hidden"
-              animate="visible"
-              exit="hidden"
-              variants={navHoverAni}
-              className="absolute -bottom-2 right-[-30%]  bg-primary-500 w-[120%] h-px mr-0"
-            ></motion.div>
-          </>
-        )}
-      </AnimatePresence>
     </motion.li>
   );
 };

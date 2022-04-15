@@ -9,9 +9,9 @@ const Layout: React.FC = (props) => {
   return (
     <div
       id="__layout"
-      className="w-full h-full  flex flex-col justify-between items-start overflow-hidden"
+      className="w-full h-full  flex flex-col justify-between items-start overflow-hidden relative"
     >
-      {/* {!gameBoardCondition && !underConstructionCondition && <Header />} */}
+      {!gameBoardCondition && !underConstructionCondition && <Header />}
       <Main>{props.children}</Main>
       {!gameBoardCondition && !underConstructionCondition && <Footer />}
     </div>
