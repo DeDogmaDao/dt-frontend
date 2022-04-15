@@ -27,7 +27,7 @@ const RoadItem: React.FC<props> = ({ data, setDescIndex, descIndex, index }) => 
           }
           return prevState
       });
-    }, 100);
+    }, 1);
   };
 
   return (
