@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+import { pageAnimation } from "../../utils/animation";
 import Benefits from "./benefits/Benefits";
 import ToRoadmapAction from "./callToAction/ToRoadmapAction";
 import Tabs from "./Tabs";
@@ -7,7 +9,7 @@ const HowItWorks:React.FC = () => {
 
 
     return(
-        <>
+        <motion.div initial="hidden" animate="visible" variants={pageAnimation} >
         
         {/* <HeaderImg />
 
@@ -18,7 +20,7 @@ const HowItWorks:React.FC = () => {
         <Benefits />
         <Tabs />
         <ToRoadmapAction />
-        </>
+        </motion.div>
     )
 }
 
