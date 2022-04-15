@@ -1,5 +1,27 @@
 import { Variants } from "framer-motion";
 
+export const pageAnimation: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 100,
+  },
+
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.75,
+      when: "beforeChildren",
+      staggerChildren: 0.7,
+    },
+  },
+  out: {
+    opacity: 0,
+    y: 100,
+    transition: { duration: 0.5 },
+  },
+};
+
 export const socialAni: Variants = {
   hidden: {
     scale: 0,

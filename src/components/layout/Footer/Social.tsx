@@ -13,7 +13,7 @@ const Social: React.FC<props> = ({ data }) => {
     <motion.li
       onHoverStart={() => setIsHovering(true)}
       onHoverEnd={() => setIsHovering(false)}
-      className="group text-xl w-10 h-10 hover:scale-125 duration-500 flex justify-center items-center"
+      className="group text-xl w-14 h-14 hover:scale-125 duration-500 flex justify-center items-center"
     >
       <a
         className=" w-full h-full group-hover:text-blackPrime duration-500 flex justify-center items-center relative"
@@ -28,7 +28,7 @@ const Social: React.FC<props> = ({ data }) => {
               exit="hidden"
               variants={socialAni}
               style={{ backgroundColor: data.color }}
-              className="w-10 h-10 rounded-full bg-red-400  absolute left-0 top-0 -mt-0.5 z-0"
+              className="w-14 h-14 rounded-full bg-red-400  absolute left-0 top-0 -mt-0.5 z-0"
             ></motion.div>
           )}
         </AnimatePresence>

@@ -1,6 +1,11 @@
 import { IconDefinition } from "@fortawesome/free-brands-svg-icons";
 import { ReactElement } from "react";
 
+export interface LinkType {
+  ref: string;
+  text: string;
+}
+
 export interface faqType {
   question: string;
   answer: string;

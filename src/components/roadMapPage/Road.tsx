@@ -29,12 +29,16 @@ const Road: React.FC<props> = ({ index, activeSection, road }) => {
         zIndex: 10 - index * 3,
       }}
     >
-      <div className="flex justify-between items-center w-full h-full relative">
+      <div
+        className={`flex justify-between items-center w-full h-full relative ${
+          index === 1 ? "flex-row-reverse" : "flex-row"
+        }`}
+      >
         <div className="w-full h-full absolute top-0 left-0 z-0">
           <Image src={road.backImg} layout="fill" />
         </div>
         <h3 className="w-1/2 h-full z-10 flex justify-center items-center">
-        {road.sectionName}
+          {road.sectionName}
         </h3>
         <div className="w-1/2 h-full flex justify-center items-center z-10">
           <ul className="w-[416px] p-8 flex flex-col gap-y-2 bg-neutral-600 rounded-xl">
