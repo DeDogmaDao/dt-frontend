@@ -16,17 +16,18 @@ const Hero: React.FC = () => {
     <div className="flex justify-center items-center relative w-[100vw] h-[76.4vw] mx-auto overflow-hidden hero-container">
       <div className="portal-and-flame-and-hero w-full h-full relative z-10">
         <motion.span
-          className="w-full h-full absolute"
+          className="absolute duration-500"
           style={{
-            marginLeft: (-innerWidth * 0.3) / 2,
-            marginTop: (-innerWidth * 0.7636 * 0.3) / 2,
+            marginLeft: (-innerWidth * (scaleValue - 1)) / 2,
+            marginTop: (-innerWidth * 0.7636 * (scaleValue - 1)) / 2,
+            width:innerWidth * scaleValue,
+            height:0.7636 * innerWidth * scaleValue
           }}
         >
           <Image
             src={"/img/art/portal.png"}
-            layout="fixed"
-            width={innerWidth * 1.3}
-            height={0.7636 * innerWidth * 1.3}
+            layout="fill"
+
           />
         </motion.span>
       </div>
