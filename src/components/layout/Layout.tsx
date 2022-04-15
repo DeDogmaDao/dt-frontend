@@ -16,7 +16,7 @@ const Layout: React.FC = (props) => {
       !gameBoardCondition && !underConstructionCondition,
       !gameBoardCondition && !underConstructionCondition && !roadmapCondition,
     ];
-  }, [router.asPath]);
+  }, [router.pathname]);
   return (
     <div
       id="__layout"
