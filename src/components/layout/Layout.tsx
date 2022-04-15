@@ -23,9 +23,8 @@ const Layout: React.FC = (props) => {
     >
       {layoutCondition[0] && <Header />}
       <AnimatePresence exitBeforeEnter>
-        <Main key={router.asPath}>{props.children}
-      {layoutCondition[1] && <Footer />}
-        </Main>
+        <Main key={router.asPath}>{props.children}</Main>
+        {layoutCondition[1] && <Footer />}
       </AnimatePresence>
     </div>
   );
