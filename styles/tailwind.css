@@ -6,7 +6,7 @@
 
 @import "../src/components/_components.css";
 
-@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Saira&display=swap');
 
 /* chrome */
 *::-webkit-scrollbar {
@@ -62,7 +62,7 @@
     line-height: 120%;
   }
   body {
-    font-family: "Josefin Sans", sans-serif;
+    font-family: 'Saira', sans-serif;
     @apply bg-neutral-900 text-neutral-50;
   }
 
