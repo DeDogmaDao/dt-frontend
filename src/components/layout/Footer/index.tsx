@@ -1,10 +1,13 @@
+import { motion } from "framer-motion";
 import Image from "next/image";
 import { footerData } from "../../../store/allData";
 import Social from "./Social";
 const Footer: React.FC = () => {
+  
   return (
     <>
-      <footer
+      <motion.footer
+      layout
         className="h-full w-full flex flex-col justify-center items-center z-100 -mt-44 "
         style={{
           background:
@@ -27,7 +30,7 @@ const Footer: React.FC = () => {
         <p className="mb-40 text-large-light">
           &copy; COPYWRITES 2022 DDD. ALL RIGHTS RESERVED
         </p>
-      </footer>
+      </motion.footer>
     </>
   );
 };
