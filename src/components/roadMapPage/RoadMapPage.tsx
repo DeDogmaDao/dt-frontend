@@ -1,4 +1,5 @@
 import { motion, PanInfo } from "framer-motion";
+import { debounce, throttle } from "lodash";
 import { useEffect, useRef, useState } from "react";
 import { roadMapData } from "../../store/allData";
 import { pageAnimation } from "../../utils/animation";
@@ -32,13 +33,18 @@ const RoadMapPage: React.FC = () => {
   };
 
   useEffect(() => {
-    window.addEventListener("mousewheel", wheelHandler, { passive: false });
-    window.addEventListener("DOMMouseScroll", wheelHandler, {
+    const throttledWheelHandler = debounce(wheelHandler, 50);
+    window.addEventListener("scroll", throttledWheelHandler);
+    window.addEventListener("mousewheel", throttledWheelHandler, {
+      passive: false,
+    });
+    window.addEventListener("DOMMouseScroll", throttledWheelHandler, {
       passive: false,
     });
     return () => {
-      window.removeEventListener("mousewheel", wheelHandler);
-      window.removeEventListener("DOMMouseScroll", wheelHandler);
+      window.addEventListener("scroll", throttledWheelHandler);
+      window.removeEventListener("mousewheel", throttledWheelHandler);
+      window.removeEventListener("DOMMouseScroll", throttledWheelHandler);
     };
   }, [activeSection]);
 
