@@ -1,11 +1,12 @@
+import { motion } from "framer-motion";
 import Image from "next/image";
 import { teamDataLvl1, teamDataLvl2 } from "../../store/allData";
-import { teamMemberAni } from "../../utils/animation";
+import { pageAnimation, teamMemberAni } from "../../utils/animation";
 import Card from "../global/Card";
 
 const Team: React.FC = () => {
   return (
-    <div className="w-screen h-full relative">
+    <motion.div initial="hidden" animate="visible" variants={pageAnimation} exit="out" className="w-screen h-full relative">
       <div className="w-full h-full absolute top-0 left-0">
         <Image
           src={"/img/team/team-bg.png"}
@@ -41,7 +42,7 @@ const Team: React.FC = () => {
           })}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

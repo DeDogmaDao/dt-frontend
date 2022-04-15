@@ -19,7 +19,7 @@ export const pageAnimation:Variants = {
   out: {
     opacity: 0,
     y: 100,
-    transition: { duration: 0.5 },
+    transition: { duration: 1.5 },
   },
 };
 
