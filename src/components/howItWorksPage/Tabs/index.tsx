@@ -7,7 +7,6 @@ import Card from "./Card";
 import EachGroup from "./EachGroup";
 import EachTab from "./EachTab";
 import Slider from "./Slider";
-import Sliding from "./Sliding";
 import TabInfo from "./TabInfo";
 
 const Tabs: React.FC = () => {
@@ -20,7 +19,10 @@ const Tabs: React.FC = () => {
   const [isDragged, setIsDragged] = useState(false);
 
   return (
-    <div className="flex flex-col justify-between items-center h-full w-full relative">
+    <div
+      className="flex flex-col justify-between items-center h-full w-full relative"
+      id="cards"
+    >
       <div className="absolute top-0 left-0 z-0 w-full">
         <Image
           width="1440"
