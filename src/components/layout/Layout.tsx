@@ -6,6 +6,7 @@ import { AnimatePresence } from "framer-motion";
 import { useMemo } from "react";
 const Layout: React.FC = (props) => {
   const router = useRouter();
+  
   const gameBoardCondition = router.asPath === "/gameboard";
   const underConstructionCondition = router.asPath === "/underconstruction";
   const roadmapCondition = router.asPath === "/roadmap";
@@ -23,7 +24,7 @@ const Layout: React.FC = (props) => {
     >
       {layoutCondition[0] && <Header />}
       <AnimatePresence exitBeforeEnter>
-        <Main key={router.asPath}>{props.children}</Main>
+        <Main key={router.pathname}>{props.children}</Main>
         {layoutCondition[1] && <Footer />}
       </AnimatePresence>
     </div>
