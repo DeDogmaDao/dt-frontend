@@ -11,18 +11,20 @@ const FAQ: React.FC = () => {
       animate="visible"
       variants={pageAnimation}
       exit="out"
-      className="w-screen min-h-screen relative pb-32"
+      className="w-screen min-h-screen relative pb-32 flex flex-col justify-center items-center"
     >
       <div className="w-full h-full absolute top-0 left-0 z-0">
         <Image
           src={"/img/team/team-bg.png"}
-
-          layout="fill"
+          width="1438"
+          height="1128"
+          layout="responsive"
         />
       </div>
+      <h3 className="z-10 mt-44">Frequently Asked Questions</h3>
       <motion.ul
         layout
-        className="flex flex-col justify-center items-center mx-auto w-full h-full  gap-y-1 py-12 z-10"
+        className="flex flex-col justify-center items-center mx-auto w-[63%] h-full rounded-xl  gap-y-1 py-12 z-10 bg-neutral-500 mt-14"
       >
         <LayoutGroup>
           {faqData.map((data) => {

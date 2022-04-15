@@ -1,4 +1,4 @@
-import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import { faMagnifyingGlass, faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
 import { useState } from "react";
@@ -14,32 +14,38 @@ const EachFAQ: React.FC<props> = ({ data }) => {
   return (
     <motion.li
       layout
-      className="w-9/12 flex flex-col justify-center items-center group z-10"
+      className="w-11/12 group z-10 rounded-lg overflow-hidden shadow-md hover:shadow-inner"
     >
-      <motion.div
-        layout
-        className="w-full flex justify-between items-center rounded-3xl px-5 !h-24 cursor-pointer"
-        onClick={() => setIsExpanded((prev) => !prev)}
-      >
-        <h3 className="text-3xl duration-500 group-hover:text-secondary-200">
-          {data.question}
-        </h3>
-        <span
-          className={`bg-secondary-500 text-white text-2xl rounded-full !h-16 !w-16 !min-w-[64px] ml-3 flex justify-center items-center duration-500 group-hover:rotate-90 group-hover:bg-secondary-400
-          ${isExpanded ? "!rotate-45" : ""}`}
-        >
-          <FontAwesomeIcon icon={faPlus} />
-        </span>
-      </motion.div>
-      {isExpanded && (
-        <motion.p
+      <div className="w-full h-full flex flex-col justify-center items-center z-10  hover:bg-neutral-700 duration-500">
+        <motion.div
           layout
-          className="self-start text-lg ml-10 py-5 duration-1000 text-secText"
+          className="w-full flex justify-between items-center px-5 !h-14 cursor-pointer text-medium-medium "
+          onClick={() => setIsExpanded((prev) => !prev)}
         >
-          {data.answer}
-        </motion.p>
-      )}
-      <motion.div layout className="h-px w-10/12 bg-disabled"></motion.div>
+          <div className="flex gap-x-2">
+            <span className="w-px h-5 bg-yellow-300" />
+            <span>
+              <FontAwesomeIcon icon={faMagnifyingGlass} />
+            </span>
+            <span>{data.question}</span>
+          </div>
+          <span
+            className={`bg-secondary-500 text-white rounded-full !h-16 !w-16 !min-w-[64px] ml-3 flex justify-center items-center duration-500 group-hover:rotate-90 group-hover:bg-secondary-400
+          ${isExpanded ? "!rotate-45" : ""}`}
+          >
+            <FontAwesomeIcon icon={faPlus} />
+          </span>
+        </motion.div>
+        {isExpanded && (
+          <motion.p
+            layout
+            className="self-start text-lg ml-10 py-5 text-medium-light duration-1000 text-secText"
+          >
+            {data.answer}
+          </motion.p>
+        )}
+        <motion.div layout className="h-px w-10/12 bg-disabled"></motion.div>
+      </div>
     </motion.li>
   );
 };
