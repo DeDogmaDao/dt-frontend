@@ -5,13 +5,13 @@ const Footer: React.FC = () => {
   return (
     <>
       <footer
-        className="h-full w-full flex flex-col justify-center items-center z-100 -mt-32 "
+        className="h-full w-full flex flex-col justify-center items-center z-100 -mt-44 "
         style={{
           background:
             "linear-gradient(0deg, rgba(33,33,33,1) 0%, rgba(33,33,33,1) 80%, rgba(0,0,0,0) 100%)",
         }}
       >
-        <div className="pt-14 mb-3">
+        <div className="pt-32 mb-3">
           <Image src="/img/logo/treasure.png" width={284} height={94} />
         </div>
         <h3 className="mb-3">
