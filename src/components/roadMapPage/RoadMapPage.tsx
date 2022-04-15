@@ -42,7 +42,9 @@ const RoadMapPage: React.FC = () => {
     }
   };
 
-  const throttledWheelHandler = throttle(wheelHandler, 1000);
+  const throttledWheelHandler = throttle(wheelHandler, 1200, {
+    trailing: false,
+  });
   useEffect(() => {
     window.addEventListener("mousewheel", throttledWheelHandler);
     window.addEventListener("DOMMouseScroll", throttledWheelHandler);
