@@ -15,16 +15,24 @@ const Header: React.FC = () => {
       text: "Home",
     },
     {
-      ref: "/profile",
-      text: "My Profile",
+      ref: "#benefits",
+      text: "Benefits",
     },
     {
-      ref: "/hiw",
-      text: "How It Works",
+      ref: "#intro",
+      text: "Intro",
     },
     {
-      ref: "/gallery",
-      text: "All NFTS",
+      ref: "#cards",
+      text: "Cards",
+    },
+    {
+      ref: "/roadmap",
+      text: "Roadmap",
+    },
+    {
+      ref: "/team",
+      text: "Team",
     },
   ];
 
