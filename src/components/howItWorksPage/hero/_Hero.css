@@ -1,5 +1,9 @@
 @layer components {
     .hero-container {
-        
+        img {
+            max-width: 300vw;
+            max-height:300vw;
+            @apply mx-auto;
+        }
     }
 }
