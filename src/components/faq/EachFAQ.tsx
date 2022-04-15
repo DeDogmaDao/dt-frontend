@@ -14,7 +14,7 @@ const EachFAQ: React.FC<props> = ({ data }) => {
   return (
     <motion.li
       layout
-      className="w-9/12 flex flex-col justify-center items-center group"
+      className="w-9/12 flex flex-col justify-center items-center group z-10"
     >
       <motion.div
         layout
