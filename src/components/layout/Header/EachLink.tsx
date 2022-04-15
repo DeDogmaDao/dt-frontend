@@ -14,7 +14,7 @@ const EachLink: React.FC<props> = ({ headLink,  }) => {
 
   return (
     <motion.li
-    className="text-large-light text-neutral-50/30 hover:text-white hover:text-large-bold duration-300"
+    className="text-large-medium text-neutral-50/30 hover:text-white hover:text-large-bold duration-300"
       key={headLink.text}
     >
       <Link href={headLink.ref}>
