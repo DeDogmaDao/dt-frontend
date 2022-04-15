@@ -1,5 +1,5 @@
 import { motion, PanInfo } from "framer-motion";
-import { debounce, throttle } from "lodash";
+import throttle from "lodash/throttle";
 import { useEffect, useRef, useState } from "react";
 import { roadMapData } from "../../store/allData";
 import { pageAnimation } from "../../utils/animation";
@@ -24,29 +24,33 @@ const RoadMapPage: React.FC = () => {
 
   const wheelHandler = (evt: any) => {
     let direction = evt.detail < 0 || evt.wheelDelta > 0 ? 1 : -1;
-    if (direction < 0 && activeSection < 2) {
-      setActiveSection((prevState) => prevState + 1);
+    if (direction < 0) {
+      setActiveSection((prevState) => {
+        if (prevState < 2) {
+          return prevState + 1;
+        }
+        return prevState;
+      });
     }
-    if (direction > 0 && activeSection > 0) {
-      setActiveSection((prevState) => prevState - 1);
+    if (direction > 0) {
+      setActiveSection((prevState) => {
+        if (prevState > 0) {
+          return prevState - 1;
+        }
+        return prevState;
+      });
     }
   };
 
+  const throttledWheelHandler = throttle(wheelHandler, 1000);
   useEffect(() => {
-    const throttledWheelHandler = debounce(wheelHandler, 50);
-    window.addEventListener("scroll", throttledWheelHandler);
-    window.addEventListener("mousewheel", throttledWheelHandler, {
-      passive: false,
-    });
-    window.addEventListener("DOMMouseScroll", throttledWheelHandler, {
-      passive: false,
-    });
+    window.addEventListener("mousewheel", throttledWheelHandler);
+    window.addEventListener("DOMMouseScroll", throttledWheelHandler);
     return () => {
-      window.addEventListener("scroll", throttledWheelHandler);
       window.removeEventListener("mousewheel", throttledWheelHandler);
       window.removeEventListener("DOMMouseScroll", throttledWheelHandler);
     };
-  }, [activeSection]);
+  }, []);
 
   return (
     <motion.div
