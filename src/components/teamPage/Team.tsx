@@ -11,7 +11,7 @@ const Team: React.FC = () => {
       animate="visible"
       variants={pageAnimation}
       exit="out"
-      className="w-screen h-full relative pb-24"
+      className="w-screen min-h-screen relative pb-32"
     >
       <div className="w-full h-full absolute top-0 left-0">
         <Image
