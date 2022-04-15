@@ -11,7 +11,7 @@ const ToRoadmapAction: React.FC = () => {
         <Image src={"/img/bg/bg2.png"} layout="fill" />
       </div>
       <div className="flex flex-col justify-start items-center z-10 absolute top-0 left-0 w-full h-full">
-        <span className="w-7 h-1 mt-36 bg-yellow-300" />
+        <span className="w-[30px] h-[6px] mt-36 bg-yellow-300" />
         <h3 className="mt-8">
           Our <span className="text-yellow-300">Roadmap</span>
         </h3>

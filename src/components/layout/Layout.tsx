@@ -13,7 +13,7 @@ const Layout: React.FC = (props) => {
     >
       {/* {!gameBoardCondition && !underConstructionCondition && <Header />} */}
       <Main>{props.children}</Main>
-      {/* {!gameBoardCondition && !underConstructionCondition && <Footer />} */}
+      {!gameBoardCondition && !underConstructionCondition && <Footer />}
     </div>
   );
 };
