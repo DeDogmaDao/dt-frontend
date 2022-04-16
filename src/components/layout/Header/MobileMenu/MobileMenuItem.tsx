@@ -7,7 +7,8 @@ interface props {
 }
 const MobileMenuItem: React.FC<props> = ({ link }) => {
   return (
-    <motion.li>
+    <motion.li
+    className="mb-5 flex justify-start cursor-pointer">
       <Link href={link.ref}>
         <div>{link.text}</div>
       </Link>
