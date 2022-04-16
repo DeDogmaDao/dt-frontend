@@ -8,7 +8,7 @@ const Hero: React.FC = () => {
   useEffect(() => {
     setInnerWidth(window.innerWidth);
     setTimeout(() => {
-      setScaleValue(1.3);
+    //   setScaleValue(1.3);
     }, 3000);
   }, []);
 
@@ -16,7 +16,7 @@ const Hero: React.FC = () => {
     <div className="flex justify-center items-center relative w-[100vw] h-[76.4vw] mx-auto overflow-hidden hero-container">
       <div className="portal-and-flame-and-hero w-full h-full relative z-10">
         <motion.span
-          className="absolute duration-500 opacity-90"
+          className="absolute duration-500 "
           style={{
             marginLeft: (-innerWidth * (scaleValue - 1)) / 2,
             marginTop: (-innerWidth * 0.7636 * (scaleValue - 1)) / 2,
@@ -25,6 +25,12 @@ const Hero: React.FC = () => {
           }}
         >
           <Image src={"/img/art/portal.png"} layout="fill" />
+        </motion.span>
+        <motion.span
+          className="absolute duration-500 z-20 bottom-[13.7%] left-[47.5%]"
+          style={{}}
+        >
+          <img className="w-60" src={"/img/art/cape.gif"}  />
         </motion.span>
       </div>
       <span
