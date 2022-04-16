@@ -56,3 +56,4 @@ jobs:
           host: ${{ secrets.FRONTEND_PRODUCTION_DEPLOY_HOST }}
           user: ${{ secrets.FRONTEND_PRODUCTION_DEPLOY_USER }}
           key: ${{ secrets.PRODUCTION_GITHUB_SSH_KEY }}
+          port: ${{ secrets.PROD_SSH_ACTION_HOST }}

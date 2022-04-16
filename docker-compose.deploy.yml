@@ -1,0 +1,17 @@
+version: "3.4"
+
+services:
+  frontend:
+    restart: always
+    image: "ghcr.io/dedogmadao/dt-frontend/${REPOSITORY_NAME}:${BRANCH}-latest"
+    environment:
+      - BACKEND_URL
+      - ROBOTS_TXT_FILE
+    command: echo $ROBOTS_TXT_FILE > /app/frontend/src/public/robots.txt
+    ports:
+      - "3000:3000"
+
+networks:
+  default:
+    external:
+      name: ddd_network
