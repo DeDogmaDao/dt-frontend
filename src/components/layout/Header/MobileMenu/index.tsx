@@ -3,6 +3,7 @@ import { useRef } from "react";
 import { useDimensions } from "../../../../hooks/useDimensions";
 import { LinkType } from "../../../../types/allTypes";
 import { mobileMenuAni } from "../../../../utils/animation";
+import MobileMenuItem from "./MobileMenuItem";
 
 interface props {
     headerLinks:LinkType[];
@@ -23,9 +24,10 @@ const MobileMenu: React.FC<props> = ({headerLinks}) => {
         variants={mobileMenuAni}
         className="w-screen absolute top-0 right-0 bottom-0 bg-white"
       />
-      <motion.ul>
+      <motion.ul 
+      className="absolute p-6 top-24 w-56">
     {headerLinks.map(link=>{
-        return <MobileMenuItem />
+        return <MobileMenuItem link={link} />
     })}
       </motion.ul>
     </motion.nav>

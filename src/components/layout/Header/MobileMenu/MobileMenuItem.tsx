@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import Link from "next/link";
 import { LinkType } from "../../../../types/allTypes";
 
@@ -6,11 +7,11 @@ interface props {
 }
 const MobileMenuItem: React.FC<props> = ({ link }) => {
   return (
-    <li>
+    <motion.li>
       <Link href={link.ref}>
-        <div>{link}</div>
+        <div>{link.text}</div>
       </Link>
-    </li>
+    </motion.li>
   );
 };
 
