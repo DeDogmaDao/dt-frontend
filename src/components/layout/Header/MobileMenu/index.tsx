@@ -2,7 +2,7 @@ import { motion, useCycle } from "framer-motion";
 import { useRef } from "react";
 import { useDimensions } from "../../../../hooks/useDimensions";
 import { LinkType } from "../../../../types/allTypes";
-import { mobileMenuAni } from "../../../../utils/animation";
+import { mobileMenuAni, navBodyAni } from "../../../../utils/animation";
 import MenuToggle from "./MenuToggle";
 import MobileMenuItem from "./MobileMenuItem";
 
@@ -23,9 +23,9 @@ const MobileMenu: React.FC<props> = ({ headerLinks }) => {
     >
       <motion.div
         variants={mobileMenuAni}
-        className="w-full absolute top-0 right-0 bottom-0 bg-white"
+        className="w-full absolute top-0 right-0 bottom-0 bg-neutral-900"
       />
-      <motion.ul className="absolute  top-24 w-56">
+      <motion.ul className="absolute  top-24 w-56" variants={navBodyAni}>
         {headerLinks.map((link) => {
           return <MobileMenuItem link={link} />;
         })}
