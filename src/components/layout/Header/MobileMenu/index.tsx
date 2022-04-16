@@ -19,7 +19,7 @@ const MobileMenu: React.FC<props> = ({ headerLinks }) => {
       animate={isExpanded ? "opened" : "closed"}
       ref={mobileMenuContainerRef}
       custom={dimension.height}
-      className="absolute top-0 right-0 bottom-0 w-screen h-screen"
+      className="absolute top-0 right-0  w-screen h-screen"
     >
       <motion.div
         variants={mobileMenuAni}
