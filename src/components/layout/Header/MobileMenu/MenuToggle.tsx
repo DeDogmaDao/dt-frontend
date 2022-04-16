@@ -1,11 +1,14 @@
 import { motion } from "framer-motion";
 import Path from "./Path";
 
-interface props {}
+interface props {
+  cycleIsExpanded: () => void;
+}
 
-const MenuToggle: React.FC = () => {
+const MenuToggle: React.FC<props> = ({ cycleIsExpanded }) => {
   return (
-    <button>
+    <button onClick={cycleIsExpanded}
+    className="select-none cursor-pointer absolute top-4 left-4 w-12 h-12 rounded-full bg-transparent">
       <svg width={23} height={23} viewBox="0 0 23 23">
         <Path
           variants={{

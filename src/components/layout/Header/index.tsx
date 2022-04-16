@@ -37,7 +37,7 @@ const Header: React.FC = () => {
   ];
 
   return (
-    <div className="absolute top-0 left-0 w-full h-[84px] z-100 ml-16 pt-9">
+    <div className="absolute top-0 left-0 w-full h-[84px] z-100 pl-16 pt-9">
       <div className="flex justify-start items-center w-full h-full ">
         <Link href="/">
           <img src="/img/logo/ddd-logo.png" />
