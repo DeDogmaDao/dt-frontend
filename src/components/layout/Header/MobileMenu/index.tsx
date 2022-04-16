@@ -5,6 +5,9 @@ import { LinkType } from "../../../../types/allTypes";
 import { mobileMenuAni, navBodyAni } from "../../../../utils/animation";
 import MenuToggle from "./MenuToggle";
 import MobileMenuItem from "./MobileMenuItem";
+import { footerData } from "../../../../store/allData";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Link from "next/link";
 
 interface props {
   headerLinks: LinkType[];
@@ -23,14 +26,33 @@ const MobileMenu: React.FC<props> = ({ headerLinks }) => {
     >
       <motion.div
         variants={mobileMenuAni}
-        className="w-full absolute top-0 right-0 bottom-0 bg-neutral-700"
+        className="w-full absolute top-0 right-0 bottom-0 "
       />
-      <motion.ul className="absolute  top-24 left-9 w-56 text-large-light" variants={navBodyAni}>
+      <motion.ul
+        className="absolute  top-24 left-9 w-56 text-large-light"
+        variants={navBodyAni}
+      >
         {headerLinks.map((link) => {
-          return <MobileMenuItem link={link} cycleIsExpanded={cycleIsExpanded}  />;
+          return (
+            <MobileMenuItem link={link} cycleIsExpanded={cycleIsExpanded} />
+          );
         })}
       </motion.ul>
       <MenuToggle cycleIsExpanded={cycleIsExpanded} />
+      <motion.div className="absolute bottom-0 left-0 w-screen h-[100px] flex flex-col justify-center items-center">
+        <ul className="flex justify-center items-center">
+          {footerData.map((social) => {
+            return (
+              <Link href={social.href}>
+                <li className="absolute top-[32px] right-[72px] w-9 h-9 rounded-full bg-neutral-700 text-white text-xl flex justify-center items-center">
+                  <FontAwesomeIcon icon={social.icon} />
+                </li>
+              </Link>
+            );
+          })}
+        </ul>
+        <p></p>
+      </motion.div>
     </motion.nav>
   );
 };

@@ -764,14 +764,14 @@ export const callToactionSvgArrowRightAni: Variants = {
 export const mobileMenuAni: Variants = {
   opened: (custom = 1000) => ({
     clipPath: `circle(${custom * 2 + 200}px at calc(100% - 42px) 50px)`,
+    backgroundColor: "#212121",
     transition: {
-      type: "spring",
-      stiffness: 20,
-      restDelta: 2,
+      clipPath: { type: "spring", stiffness: 20, restDelta: 2 },
     },
   }),
   closed: {
     clipPath: "circle(18px at calc(100% - 42px) 50px)",
+    backgroundColor: "#363636",
     transition: {
       delay: 0.5,
       type: "spring",
@@ -796,23 +796,23 @@ export const navBodyAni: Variants = {
   },
 };
 
-export const menuItemAni:Variants = {
-opened:{
-  display:"flex",
-  y:0,
-  opacity:1,
-  transition:{
-    y:{stiffness:1000, velocity:-100},
+export const menuItemAni: Variants = {
+  opened: {
+    display: "flex",
+    y: 0,
+    opacity: 1,
+    transition: {
+      y: { stiffness: 1000, velocity: -100 },
+    },
   },
-},
-closed:{
-  y:50,
-  opacity:0,
-  transitionEnd:{
-    display:"none"
+  closed: {
+    y: 50,
+    opacity: 0,
+    transitionEnd: {
+      display: "none",
+    },
+    transition: {
+      y: { stiffness: 1000 },
+    },
   },
-  transition:{
-    y:{stiffness:1000}
-  }
-}
-}
+};
