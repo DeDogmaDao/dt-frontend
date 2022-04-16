@@ -763,7 +763,7 @@ export const callToactionSvgArrowRightAni: Variants = {
 
 export const mobileMenuAni: Variants = {
   opened: (custom = 1000) => ({
-    clipPath: `circle(${custom * 2 + 200}px at 90% 40px)`,
+    clipPath: `circle(${custom * 2 + 200}px at 90% 5.5%)`,
     transition: {
       type: "spring",
       stiffness: 20,
@@ -771,7 +771,7 @@ export const mobileMenuAni: Variants = {
     },
   }),
   closed: {
-    clipPath: "circle(30px at 90% 40px)",
+    clipPath: "circle(2% at 91.25% 5.5%)",
     transition: {
       delay: 0.5,
       type: "spring",

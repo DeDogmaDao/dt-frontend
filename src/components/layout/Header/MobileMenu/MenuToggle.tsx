@@ -8,26 +8,26 @@ interface props {
 const MenuToggle: React.FC<props> = ({ cycleIsExpanded }) => {
   return (
     <button onClick={cycleIsExpanded}
-    className="select-none cursor-pointer absolute top-4 left-4 w-12 h-12 rounded-full bg-transparent">
+    className="select-none cursor-pointer absolute top-[2.5%] left-[89.8%] w-12 h-12 p-3 rounded-full bg-transparent">
       <svg width={23} height={23} viewBox="0 0 23 23">
         <Path
           variants={{
             closed: { d: "M 2 2.5 L 20 2.5" },
-            open: { d: "M 3 16.5 L 17 2.5" },
+            opened: { d: "M 3 16.5 L 17 2.5" },
           }}
         />
         <Path
           d="M 2 9.423 L 20 9.423"
           variants={{
             closed: { opacity: 1 },
-            open: { opacity: 0 },
+            opened: { opacity: 0 },
           }}
           transition={{ duration: 0.1 }}
         />
         <Path
           variants={{
             closed: { d: "M 2 16.346 L 20 16.346" },
-            open: { d: "M 3 2.5 L 17 16.346" },
+            opened: { d: "M 3 2.5 L 17 16.346" },
           }}
         />
       </svg>
