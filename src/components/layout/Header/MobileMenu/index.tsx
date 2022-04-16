@@ -25,7 +25,7 @@ const MobileMenu: React.FC<props> = ({ headerLinks }) => {
         variants={mobileMenuAni}
         className="w-full absolute top-0 right-0 bottom-0 bg-neutral-700"
       />
-      <motion.ul className="absolute  top-24 w-56" variants={navBodyAni}>
+      <motion.ul className="absolute  top-24 left-9 w-56 text-large-light" variants={navBodyAni}>
         {headerLinks.map((link) => {
           return <MobileMenuItem link={link} />;
         })}
