@@ -39,7 +39,7 @@ const Header: React.FC = () => {
   return (
     <div className="absolute top-0 left-0 w-full h-[84px] z-100 ">
       <div className="flex justify-start items-center w-full h-full relative pt-9">
-        <div className="absolute top-0 left-0 w-full h-[93px] bg-gradient-to-b from-neutral-900 to-transparent " />
+        <div className="absolute top-0 left-0 w-full h-[93px] bg-gradient-to-b from-neutral-900 to-transparent md:hidden" />
         <span className="absolute top-[35px] left-6 z-100 ">
           <Link href="/">
             <div className="flex justify-start items-center gap-x-2">

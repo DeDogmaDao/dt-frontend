@@ -27,7 +27,7 @@ const MobileMenu: React.FC<props> = ({ headerLinks }) => {
       />
       <motion.ul className="absolute  top-24 left-9 w-56 text-large-light" variants={navBodyAni}>
         {headerLinks.map((link) => {
-          return <MobileMenuItem link={link} />;
+          return <MobileMenuItem link={link} cycleIsExpanded={cycleIsExpanded}  />;
         })}
       </motion.ul>
       <MenuToggle cycleIsExpanded={cycleIsExpanded} />

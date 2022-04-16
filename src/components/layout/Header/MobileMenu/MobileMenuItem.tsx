@@ -6,11 +6,13 @@ import { menuItemAni } from "../../../../utils/animation";
 
 interface props {
   link: LinkType;
+  cycleIsExpanded: () => void;
 }
-const MobileMenuItem: React.FC<props> = ({ link }) => {
+const MobileMenuItem: React.FC<props> = ({ link,cycleIsExpanded }) => {
     const router = useRouter();
   return (
     <motion.li
+    onClick={cycleIsExpanded}
     variants={menuItemAni}
     whileHover={{scale:1.05}}
     whileTap={{scale:0.95}}
