@@ -798,6 +798,7 @@ export const navBodyAni: Variants = {
 
 export const menuItemAni:Variants = {
 opened:{
+  display:"flex",
   y:0,
   opacity:1,
   transition:{
@@ -807,6 +808,9 @@ opened:{
 closed:{
   y:50,
   opacity:0,
+  transitionEnd:{
+    display:"none"
+  },
   transition:{
     y:{stiffness:1000}
   }
