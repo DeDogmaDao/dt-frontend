@@ -47,7 +47,7 @@ const Header: React.FC = () => {
             return <EachLink key={headLink.ref} headLink={headLink} />;
           })}
         </motion.ul> */}
-        <MobileMenu />
+        <MobileMenu headerLinks={headerLinks} />
       </div>
     </div>
   );
