@@ -1,14 +1,7 @@
 import { motion } from "framer-motion";
+import Path from "./Path";
 
-const Path = (props: any) => (
-  <motion.path
-    fill={"transparent"}
-    strokeWidth="3"
-    stroke="hsl(0,0%,18%)"
-    strokeLinecap={"round"}
-    {...props}
-  />
-);
+interface props {}
 
 const MenuToggle: React.FC = () => {
   return (
