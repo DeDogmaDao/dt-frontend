@@ -874,3 +874,47 @@ export const menuCopyRightAni: Variants = {
     },
   },
 };
+
+
+export const heroAnim:Variants = {
+  hidden:{
+    scale:1,
+    transition:{
+      duration:1
+    },
+  },
+  visible:{
+    scale:1.4,
+    transition:{
+      duration:2
+    }
+  }
+}
+export const cityAnim:Variants = {
+  hidden:{
+    scale:1,
+    transition:{
+      duration:1
+    },
+  },
+  visible:{
+    scale:0.75,
+    transition:{
+      duration:2
+    }
+  }
+}
+export const cityMaskAnim:Variants = {
+  hidden:{
+    opacity:0.6,
+    transition:{
+      duration:1
+    },
+  },
+  visible:{
+    opacity:0.2,
+    transition:{
+      duration:2
+    }
+  }
+}
