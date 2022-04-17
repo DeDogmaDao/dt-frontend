@@ -7,8 +7,10 @@ interface props {
 
 const MenuToggle: React.FC<props> = ({ cycleIsExpanded }) => {
   return (
-    <button onClick={cycleIsExpanded}
-    className="select-none outline-none border-none no-select-a-tag cursor-pointer absolute top-[29px] right-[37px] w-7 h-7 p-3 rounded-full bg-transparent">
+    <button
+      onClick={cycleIsExpanded}
+      className="select-none outline-none border-none no-select-a-tag cursor-pointer absolute top-[32px] right-[25px] w-8 h-10 rounded-full bg-transparent flex justify-center items-center"
+    >
       <svg width={23} height={23} viewBox="0 0 23 23">
         <Path
           variants={{
