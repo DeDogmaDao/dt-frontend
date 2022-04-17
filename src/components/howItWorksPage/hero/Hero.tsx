@@ -1,101 +1,117 @@
 import {
   motion,
+  useAnimation,
   useSpring,
   useTransform,
   useViewportScroll,
 } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useLayoutEffect, useState } from "react";
+import { cityAnim, heroAnim } from "../../../utils/animation";
 
 const speed = 1000;
 
 const Hero: React.FC = () => {
   const [innerWidth, setInnerWidth] = useState(1000);
+  const [anim, setAnim] = useState("hidden");
   useLayoutEffect(() => {
     setInnerWidth(window.innerWidth);
   }, []);
   const { scrollY, scrollYProgress } = useViewportScroll();
-  const marginLeftT = useTransform(
-    scrollY,
-    (y) => (-innerWidth * (1 + y / speed - 1)) / 2
-  );
-  const marginTopT = useTransform(
-    scrollY,
-    (y) => -innerWidth * 0.5626 * (1 + y / speed - 1)
-  );
-  const widthT = useTransform(scrollY, (y) => innerWidth * (1 + y / speed));
-  const heightT = useTransform(
-    scrollY,
-    (y) => 0.5626 * innerWidth * (1 + y / speed)
-  );
-  const widthGifT = useTransform(
-    scrollY,
-    (y) => innerWidth * 0.156 * (1 + y / speed)
-  );
-  const bottomGifT = useTransform(
-    scrollY,
-    (y) => innerWidth * 0.4 * (1 + y / speed)
-  );
-  const scaleT = useTransform(scrollYProgress, (y) => 1 - y);
-  const opacityT = useTransform(scrollYProgress, (y) => 0.6 - y * 3);
+  // (-innerWidth * (1 + y / speed - 1)) / 2
+  const scaleT = useTransform(scrollY, [0, 100, 200, 300], [1, 1.1, 1.2, 1.3]);
+  const scaleS = useSpring(scaleT, { damping: 20 });
+  const topT = useTransform(scrollY, [0, 100, 200, 300], [0, 100, 200, 300]);
+  const topS = useSpring(topT, { damping: 20 });
 
-  const marginLeft = useSpring(marginLeftT, { damping: 20 });
-  const marginTop = useSpring(marginTopT, { damping: 20 });
-  const width = useSpring(widthT, { damping: 20 });
-  const height = useSpring(heightT, { damping: 20 });
-  const widthGif = useSpring(widthGifT, { damping: 20 });
-  const bottomGif = useSpring(bottomGifT, { damping: 20 });
-  const scale = useSpring(scaleT, { damping: 20 });
-  const opacity = useSpring(opacityT, { damping: 20 });
+  const topTransformWheel = () => {
+    if (window.scrollY > 1) {
+      setAnim((prevState) => {
+        if (prevState === "visible") {
+          return prevState;
+        }
+        return "visible";
+      });
+    } else {
+      setAnim((prevState) => {
+        if (prevState === "hidden") {
+          return prevState;
+        }
+        return "hidden";
+      });
+    }
+  };
 
+  useEffect(() => {
+    window.addEventListener("scroll", topTransformWheel);
+    window.addEventListener("mousewheel", topTransformWheel);
+    window.addEventListener("DOMMouseScroll", topTransformWheel);
+
+    return () => {
+      window.removeEventListener("mousewheel", topTransformWheel);
+      window.removeEventListener("DOMMouseScroll", topTransformWheel);
+      window.removeEventListener("scroll", topTransformWheel);
+    };
+  }, []);
+
+  const controls = useAnimation();
+
+  useEffect(() => {
+    console.log(anim);
+    controls.start(anim);
+  }, [setAnim]);
   return (
     <>
       {innerWidth !== 0 && (
-        <div className="flex justify-center items-center relative w-[100vw] h-[56.26vw] mx-auto overflow-hidden hero-container">
+        <motion.div
+          style={{ marginTop: topT }}
+          className=" flex justify-center items-center relative w-[100vw] h-[56.26vw] mx-auto overflow-hidden hero-container"
+        >
           <div className="portal-and-flame-and-hero w-full h-full relative z-20 ">
             <motion.span
-              className="absolute"
-              style={{
-                marginLeft,
-                marginTop,
-                width,
-                height,
-              }}
+              className="absolute w-full h-full origin-bottom"
+              initial="hidden"
+              animate={anim}
+              variants={heroAnim}
             >
               <div className="w-full h-full relative">
-                <Image src={"/img/art/portal.png"} layout="fill" />
+                <Image
+                  src={"/img/art/portal.png"}
+                  layout="fill"
+                  className="z-10"
+                />
 
                 <motion.img
-                  style={{ width: widthGif, top: bottomGif }}
-                  className=" absolute  z-20 left-[47%]"
+                  className="absolute z-20 left-[47%] top-[71%] w-[15%]"
                   src={"/img/art/cape.gif"}
                 />
+                <motion.span
+                  className="absolute w-full h-full z-0"
+                  initial="hidden"
+                  animate={anim}
+                  variants={cityAnim}
+                >
+                  <Image
+                    src={"/img/art/city.png"}
+                    layout="fixed"
+                    width={innerWidth}
+                    height={0.5626 * innerWidth * 1.3}
+                  />
+                </motion.span>
+                <motion.span
+                  className="absolute w-full h-full z-0 mt-[-5%]"
+                >
+                  <Image
+                    src={"/img/art/mask.png"}
+                    layout="fixed"
+                    width={innerWidth}
+                    height={0.5626 * innerWidth * 1.3}
+                  />
+                </motion.span>
               </div>
             </motion.span>
           </div>
-          <motion.span
-            className="absolute w-full h-full z-10"
-            style={{ marginTop: (-innerWidth * 1 * 0.3) / 2, scale, opacity }}
-          >
-            <Image
-              src={"/img/art/mask.png"}
-              layout="fixed"
-              width={innerWidth}
-              height={0.5626 * innerWidth * 1.3}
-            />
-          </motion.span>
-          <motion.span
-            className="absolute w-full h-full z-0"
-            style={{ marginTop: (-innerWidth * 1 * 0.3) / 2, scale }}
-          >
-            <Image
-              src={"/img/art/city.png"}
-              layout="fixed"
-              width={innerWidth}
-              height={0.5626 * innerWidth * 1.3}
-            />
-          </motion.span>
-        </div>
+        </motion.div>
       )}
     </>
   );
