@@ -4,12 +4,9 @@ import { useEffect, useState } from "react";
 
 const Hero: React.FC = () => {
   const [innerWidth, setInnerWidth] = useState(0);
-  // const [scaleValue, setScaleValue] = useState(1);
   useEffect(() => {
     setInnerWidth(window.innerWidth);
-    // setTimeout(() => {
-    //   setScaleValue(1.3);
-    // }, 3000);
+
   }, []);
   const { scrollY } = useViewportScroll();
   const marginLeft = useTransform(
@@ -18,7 +15,7 @@ const Hero: React.FC = () => {
   );
   const marginTop = useTransform(
     scrollY,
-    (y) => (-innerWidth * 0.5626 * (1 + y / 1000 - 1)) / 2
+    (y) => -innerWidth * 0.5626 * (1 + y / 1000 - 1)
   );
   const width = useTransform(scrollY, (y) => innerWidth * (1 + y / 1000));
   const height = useTransform(
@@ -36,7 +33,7 @@ const Hero: React.FC = () => {
 
   return (
     <div className="flex justify-center items-center relative w-[100vw] h-[56.26vw] mx-auto overflow-hidden hero-container">
-      <div className="portal-and-flame-and-hero w-full h-full relative z-10">
+      <div className="portal-and-flame-and-hero w-full h-full relative z-10 ">
         <motion.span
           className="absolute duration-500 "
           style={{
