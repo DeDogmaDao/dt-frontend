@@ -5,13 +5,13 @@ import {
   useViewportScroll,
 } from "framer-motion";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 
-const speed = 3000;
+const speed = 1000;
 
 const Hero: React.FC = () => {
-  const [innerWidth, setInnerWidth] = useState(0);
-  useEffect(() => {
+  const [innerWidth, setInnerWidth] = useState(1000);
+  useLayoutEffect(() => {
     setInnerWidth(window.innerWidth);
   }, []);
   const { scrollY, scrollYProgress } = useViewportScroll();
@@ -37,7 +37,7 @@ const Hero: React.FC = () => {
     (y) => innerWidth * 0.4 * (1 + y / speed)
   );
   const scaleT = useTransform(scrollYProgress, (y) => 1 - y);
-  const opacityT = useTransform(scrollYProgress, (y) => 0.8 - y * 3);
+  const opacityT = useTransform(scrollYProgress, (y) => 0.6 - y * 3);
 
   const marginLeft = useSpring(marginLeftT, { damping: 20 });
   const marginTop = useSpring(marginTopT, { damping: 20 });
@@ -49,51 +49,55 @@ const Hero: React.FC = () => {
   const opacity = useSpring(opacityT, { damping: 20 });
 
   return (
-    <div className="flex justify-center items-center relative w-[100vw] h-[56.26vw] mx-auto overflow-hidden hero-container">
-      <div className="portal-and-flame-and-hero w-full h-full relative z-20 ">
-        <motion.span
-          className="absolute  "
-          style={{
-            marginLeft,
-            marginTop,
-            width,
-            height,
-          }}
-        >
-          <div className="w-full h-full relative">
-            <Image src={"/img/art/portal.png"} layout="fill" />
+    <>
+      {innerWidth !== 0 && (
+        <div className="flex justify-center items-center relative w-[100vw] h-[56.26vw] mx-auto overflow-hidden hero-container">
+          <div className="portal-and-flame-and-hero w-full h-full relative z-20 ">
+            <motion.span
+              className="absolute"
+              style={{
+                marginLeft,
+                marginTop,
+                width,
+                height,
+              }}
+            >
+              <div className="w-full h-full relative">
+                <Image src={"/img/art/portal.png"} layout="fill" />
 
-            <motion.img
-              style={{ width: widthGif, top: bottomGif }}
-              className=" absolute  z-20 left-[47%]"
-              src={"/img/art/cape.gif"}
-            />
+                <motion.img
+                  style={{ width: widthGif, top: bottomGif }}
+                  className=" absolute  z-20 left-[47%]"
+                  src={"/img/art/cape.gif"}
+                />
+              </div>
+            </motion.span>
           </div>
-        </motion.span>
-      </div>
-      <motion.span
-        className="absolute w-full h-full z-10"
-        style={{ marginTop: (-innerWidth * 1 * 0.3) / 2, scale, opacity }}
-      >
-        <Image
-          src={"/img/art/mask.png"}
-          layout="fixed"
-          width={innerWidth}
-          height={0.5626 * innerWidth * 1.3}
-        />
-      </motion.span>
-      <motion.span
-        className="absolute w-full h-full z-0"
-        style={{ marginTop: (-innerWidth * 1 * 0.3) / 2, scale }}
-      >
-        <Image
-          src={"/img/art/city.png"}
-          layout="fixed"
-          width={innerWidth}
-          height={0.5626 * innerWidth * 1.3}
-        />
-      </motion.span>
-    </div>
+          <motion.span
+            className="absolute w-full h-full z-10"
+            style={{ marginTop: (-innerWidth * 1 * 0.3) / 2, scale, opacity }}
+          >
+            <Image
+              src={"/img/art/mask.png"}
+              layout="fixed"
+              width={innerWidth}
+              height={0.5626 * innerWidth * 1.3}
+            />
+          </motion.span>
+          <motion.span
+            className="absolute w-full h-full z-0"
+            style={{ marginTop: (-innerWidth * 1 * 0.3) / 2, scale }}
+          >
+            <Image
+              src={"/img/art/city.png"}
+              layout="fixed"
+              width={innerWidth}
+              height={0.5626 * innerWidth * 1.3}
+            />
+          </motion.span>
+        </div>
+      )}
+    </>
   );
 };
 
