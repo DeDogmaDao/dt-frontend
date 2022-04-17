@@ -1,6 +1,8 @@
-import { motion, useTransform, useViewportScroll } from "framer-motion";
+import { motion, useSpring, useTransform, useViewportScroll } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+
+const speed = 3000;
 
 const Hero: React.FC = () => {
   const [innerWidth, setInnerWidth] = useState(0);
@@ -8,34 +10,43 @@ const Hero: React.FC = () => {
     setInnerWidth(window.innerWidth);
 
   }, []);
-  const { scrollY } = useViewportScroll();
-  const marginLeft = useTransform(
+  const { scrollY,scrollYProgress } = useViewportScroll();
+  const marginLeftT = useTransform(
     scrollY,
-    (y) => (-innerWidth * (1 + y / 1000 - 1)) / 2
+    (y) => (-innerWidth * (1 + y / speed - 1)) / 2
   );
-  const marginTop = useTransform(
+  const marginTopT = useTransform(
     scrollY,
-    (y) => -innerWidth * 0.5626 * (1 + y / 1000 - 1)
+    (y) => -innerWidth * 0.5626 * (1 + y / speed - 1)
   );
-  const width = useTransform(scrollY, (y) => innerWidth * (1 + y / 1000));
-  const height = useTransform(
+  const widthT = useTransform(scrollY, (y) => innerWidth * (1 + y / speed));
+  const heightT = useTransform(
     scrollY,
-    (y) => 0.5626 * innerWidth * (1 + y / 1000)
+    (y) => 0.5626 * innerWidth * (1 + y / speed)
   );
-  const widthGif = useTransform(
+  const widthGifT = useTransform(
     scrollY,
-    (y) => innerWidth * 0.156 * (1 + y / 1000)
+    (y) => innerWidth * 0.156 * (1 + y / speed)
   );
-  const bottomGif = useTransform(
+  const bottomGifT = useTransform(
     scrollY,
-    (y) => innerWidth * 0.4 * (1 + y / 1000)
+    (y) => innerWidth * 0.4 * (1 + y / speed)
   );
+  const scaleY = useTransform(scrollYProgress,y=>1 -y)
+  
+  const marginLeft = useSpring(marginLeftT,{damping:20})
+  const marginTop = useSpring(marginTopT,{damping:20})
+  const width = useSpring(widthT,{damping:20})
+  const height = useSpring(heightT,{damping:20})
+  const widthGif = useSpring(widthGifT,{damping:20})
+  const bottomGif = useSpring(bottomGifT,{damping:20})
+  const scale = useSpring(scaleY,{damping:20})
 
   return (
     <div className="flex justify-center items-center relative w-[100vw] h-[56.26vw] mx-auto overflow-hidden hero-container">
       <div className="portal-and-flame-and-hero w-full h-full relative z-10 ">
         <motion.span
-          className="absolute duration-500 "
+          className="absolute  "
           style={{
             marginLeft,
             marginTop,
@@ -48,15 +59,16 @@ const Hero: React.FC = () => {
 
             <motion.img
               style={{ width: widthGif, top: bottomGif }}
-              className=" absolute duration-500 z-20 left-[47%]"
+              className=" absolute  z-20 left-[47%]"
               src={"/img/art/cape.gif"}
             />
           </div>
         </motion.span>
       </div>
-      <span
+      <motion.span
         className="absolute w-full h-full z-0"
-        style={{ marginTop: (-innerWidth * 1.5 * 0.3) / 2 }}
+        style={{ marginTop: (-innerWidth * 1 * 0.3) / 2,
+      scale }}
       >
         <Image
           src={"/img/art/city.png"}
@@ -64,7 +76,7 @@ const Hero: React.FC = () => {
           width={innerWidth}
           height={0.5626 * innerWidth * 1.3}
         />
-      </span>
+      </motion.span>
     </div>
   );
 };
