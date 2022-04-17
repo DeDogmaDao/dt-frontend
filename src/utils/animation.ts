@@ -761,6 +761,23 @@ export const callToactionSvgArrowRightAni: Variants = {
   },
 };
 
+export const mobileMenuContainerAni: Variants = {
+  opened: {
+    height: "100vh",
+    transition: {
+      when: "beforeChildren",
+      duration: 0.01,
+    },
+  },
+  closed: {
+    height: "100%",
+    transition: {
+      when: "afterChildren",
+      duration: 0.2,
+    },
+  },
+};
+
 export const mobileMenuAni: Variants = {
   opened: (custom = 1000) => ({
     clipPath: `circle(${custom * 2 + 200}px at calc(100% - 42px) 50px)`,
@@ -842,8 +859,8 @@ export const menuCopyRightAni: Variants = {
     x: 0,
     opacity: 1,
     transition: {
-      opacity:{delay:0.5},
-      x: {delay:0.5, stiffness: 1000, velocity: -100 },
+      opacity: { delay: 0.5 },
+      x: { delay: 0.5, stiffness: 1000, velocity: -100 },
     },
   },
   closed: {

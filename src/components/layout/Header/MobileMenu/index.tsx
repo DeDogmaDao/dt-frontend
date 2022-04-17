@@ -7,6 +7,7 @@ import {
   menuItemAni,
   menuSocialItemAni,
   mobileMenuAni,
+  mobileMenuContainerAni,
   navBodyAni,
 } from "../../../../utils/animation";
 import MenuToggle from "./MenuToggle";
@@ -28,7 +29,8 @@ const MobileMenu: React.FC<props> = ({ headerLinks }) => {
       animate={isExpanded ? "opened" : "closed"}
       ref={mobileMenuContainerRef}
       custom={dimension.height}
-      className="absolute top-0 right-0  w-screen h-screen"
+      variants={mobileMenuContainerAni}
+      className="absolute top-0 right-0  w-screen"
     >
       <motion.div
         variants={mobileMenuAni}
