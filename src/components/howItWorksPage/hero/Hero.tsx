@@ -1,10 +1,5 @@
 import {
-  motion,
-  useAnimation,
-  useSpring,
-  useTransform,
-  useViewportScroll,
-} from "framer-motion";
+  motion} from "framer-motion";
 import throttle from "lodash/throttle";
 import Image from "next/image";
 import { useEffect, useLayoutEffect, useState } from "react";
@@ -41,25 +36,27 @@ const Hero: React.FC = () => {
   };
 
   const scrollHandler = () => {
-    if (window.scrollY > 1) {
-      setAnim((prevState) => {
-        if (prevState === "visible") {
-          return prevState;
-        }
-        return "visible";
-      });
-    } else {
-      setAnim((prevState) => {
-        if (prevState === "hidden") {
-          return prevState;
-        }
-        return "hidden";
-      });
+    if (window.scrollY < 450) {
+      if (window.scrollY > 1) {
+        setAnim((prevState) => {
+          if (prevState === "visible") {
+            return prevState;
+          }
+          return "visible";
+        });
+      } else {
+        setAnim((prevState) => {
+          if (prevState === "hidden") {
+            return prevState;
+          }
+          return "hidden";
+        });
+      }
     }
   };
 
   useEffect(() => {
-    const throtteledTopScroll = throttle((e) => topTransformWheel(e), 10);
+    const throtteledTopScroll = topTransformWheel;
     window.addEventListener("scroll", scrollHandler);
     window.addEventListener("mousewheel", throtteledTopScroll, {
       passive: false,
@@ -70,16 +67,14 @@ const Hero: React.FC = () => {
 
     return () => {
       window.removeEventListener("scroll", scrollHandler);
-      window.removeEventListener("mousewheel", topTransformWheel);
-      window.removeEventListener("DOMMouseScroll", topTransformWheel);
+      window.removeEventListener("mousewheel", throtteledTopScroll);
+      window.removeEventListener("DOMMouseScroll", throtteledTopScroll);
     };
   }, []);
 
   return (
     <>
-      <motion.div
-        className=" flex justify-center items-center relative w-[100vw] h-[56.26vw] mx-auto overflow-hidden hero-container"
-      >
+      <motion.div className=" flex justify-center items-center relative w-[100vw] h-[56.26vw] mx-auto overflow-hidden hero-container">
         <div className="portal-and-flame-and-hero w-full h-full relative z-20 ">
           <motion.span
             className="absolute w-full h-full origin-bottom"
