@@ -19,8 +19,11 @@ jobs:
       - name: pull latest code
         uses: actions/checkout@v2
 
+      - name: export env
+        run: export ROBOTS_TXT_FILE=$ROBOTS_TXT_FILE
+
       - name: build step
-        run: docker build -t ghcr.io/dedogmadao/dt-frontend/dt-frontend:${{ github.ref_name }}-latest .
+        run: docker build -t ghcr.io/dedogmadao/dt-frontend/dt-frontend:${{ github.ref_name }}-latest --build-arg ROBOTS_TXT_FILE .
 
       - name: login to docker registry
         run: echo ${{ secrets.PERSONAL_GITHUB_TOKEN }} | docker login ghcr.io -u flokibb --password-stdin
