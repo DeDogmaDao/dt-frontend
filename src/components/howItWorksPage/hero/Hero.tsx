@@ -12,13 +12,13 @@ import { cityAnim, cityMaskAnim, heroAnim } from "../../../utils/animation";
 
 const Hero: React.FC = () => {
   const [anim, setAnim] = useState("hidden");
-  const { scrollY } = useViewportScroll();
-  const topT = useTransform(scrollY, (y) => {
-    if (y < 2000) {
-      return y / 5;
-    }
-    return 400;
-  });
+  // const { scrollY } = useViewportScroll();
+  // const topT = useTransform(scrollY, (y) => {
+  //   if (y < 2000) {
+  //     return y / 5;
+  //   }
+  //   return 400;
+  // });
 
   const topTransformWheel = (evt: any) => {
     if (window.scrollY < 15) {
@@ -78,7 +78,6 @@ const Hero: React.FC = () => {
   return (
     <>
       <motion.div
-        style={{ marginTop: topT }}
         className=" flex justify-center items-center relative w-[100vw] h-[56.26vw] mx-auto overflow-hidden hero-container"
       >
         <div className="portal-and-flame-and-hero w-full h-full relative z-20 ">
