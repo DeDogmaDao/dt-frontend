@@ -3,7 +3,7 @@ version: "3.4"
 services:
   frontend:
     restart: always
-    image: "ghcr.io/dedogmadao/dt-frontend/${REPOSITORY_NAME}:${BRANCH}-latest"
+    image: "ghcr.io/dedogmadao/${REPOSITORY_NAME}/${REPOSITORY_NAME}:${BRANCH}-latest"
     environment:
       - BACKEND_URL
       - ROBOTS_TXT_FILE

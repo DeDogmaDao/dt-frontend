@@ -3,8 +3,8 @@ name: Build and deploy
 on:
   push:
     branches:
-      - production
-      - staging
+      - master
+      - develop
   workflow_dispatch:
     inputs:
       logLevel:
