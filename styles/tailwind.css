@@ -6,7 +6,7 @@
 
 @import "../src/components/_components.css";
 
-@import url('https://fonts.googleapis.com/css2?family=Saira&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Saira&display=swap");
 
 /* chrome */
 *::-webkit-scrollbar {
@@ -62,7 +62,7 @@
     line-height: 120%;
   }
   body {
-    font-family: 'Saira', sans-serif;
+    font-family: "Saira", sans-serif;
     @apply bg-neutral-900 text-neutral-50;
   }
 
@@ -83,6 +83,21 @@
     user-select: none;
   }
   .no-select-a-tag:focus {
+    outline: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  * {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  *:focus {
     outline: none !important;
   }
 }

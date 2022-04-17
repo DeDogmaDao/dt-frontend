@@ -39,15 +39,15 @@ const MobileMenu: React.FC<props> = ({ headerLinks }) => {
         })}
       </motion.ul>
       <MenuToggle cycleIsExpanded={cycleIsExpanded} />
-      <motion.div className="absolute bottom-0 left-0 w-screen h-[100px] flex flex-col justify-center items-center">
-        <ul className="flex justify-center items-center">
+      <motion.div className="absolute bottom-10 left-0 w-screen h-[100px] flex flex-col justify-center items-center">
+        <ul className="flex justify-center items-center w-full h-1/2 gap-x-3">
           {footerData.map((social) => {
             return (
-              <Link href={social.href}>
-                <li className="absolute top-[32px] right-[72px] w-9 h-9 rounded-full bg-neutral-700 text-white text-xl flex justify-center items-center">
+              <a href={social.href} target="_blank">
+                <li className="w-8 h-8 rounded-full bg-neutral-700 text-white text-base flex justify-center items-center cursor-pointer">
                   <FontAwesomeIcon icon={social.icon} />
                 </li>
-              </Link>
+              </a>
             );
           })}
         </ul>
