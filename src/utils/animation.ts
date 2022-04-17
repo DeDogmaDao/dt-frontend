@@ -816,3 +816,44 @@ export const menuItemAni: Variants = {
     },
   },
 };
+export const menuSocialItemAni: Variants = {
+  opened: {
+    display: "flex",
+    x: 0,
+    opacity: 1,
+    transition: {
+      x: { stiffness: 1000, velocity: -100 },
+    },
+  },
+  closed: {
+    x: 100,
+    opacity: 0,
+    transitionEnd: {
+      display: "none",
+    },
+    transition: {
+      x: { stiffness: 1000 },
+    },
+  },
+};
+export const menuCopyRightAni: Variants = {
+  opened: {
+    display: "flex",
+    x: 0,
+    opacity: 1,
+    transition: {
+      opacity:{delay:0.5},
+      x: {delay:0.5, stiffness: 1000, velocity: -100 },
+    },
+  },
+  closed: {
+    x: 50,
+    opacity: 0,
+    transitionEnd: {
+      display: "none",
+    },
+    transition: {
+      x: { stiffness: 1000 },
+    },
+  },
+};
