@@ -53,6 +53,7 @@ jobs:
       SSH_ACTION_USER: ${{ secrets[format('{0}SSH_ACTION_USER', needs.environ_step.outputs.prefix)] }}
       SSH_ACTION_KEY: ${{ secrets[format('{0}SSH_ACTION_KEY', needs.environ_step.outputs.prefix)] }}
       SSH_ACTION_PORT: ${{ secrets[format('{0}SSH_ACTION_PORT', needs.environ_step.outputs.prefix)] }}
+      DOMAIN: ${{ secrets[format('{0}DOMAIN', needs.environ_step.outputs.prefix)] }}
       BRANCH: ${{ github.ref_name }}
       PERSONAL_GITHUB_TOKEN: ${{ secrets['PERSONAL_GITHUB_TOKEN'] }}
       BACKEND_URL: ${{ secrets[format('{0}BACKEND_URL', needs.environ_step.outputs.prefix)] }}
