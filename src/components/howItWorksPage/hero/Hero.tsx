@@ -7,7 +7,7 @@ import {
 } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useLayoutEffect, useState } from "react";
-import { cityAnim, heroAnim } from "../../../utils/animation";
+import { cityAnim, cityMaskAnim, heroAnim } from "../../../utils/animation";
 
 const speed = 1000;
 
@@ -91,22 +91,14 @@ const Hero: React.FC = () => {
                   animate={anim}
                   variants={cityAnim}
                 >
-                  <Image
-                    src={"/img/art/city.png"}
-                    layout="fixed"
-                    width={innerWidth}
-                    height={0.5626 * innerWidth * 1.3}
-                  />
+                  <Image src={"/img/art/city.png"} layout="fill" />
                 </motion.span>
                 <motion.span
-                  className="absolute w-full h-full z-0 mt-[-5%]"
-                >
-                  <Image
-                    src={"/img/art/mask.png"}
-                    layout="fixed"
-                    width={innerWidth}
-                    height={0.5626 * innerWidth * 1.3}
-                  />
+                                  initial="hidden"
+                                  animate={anim}
+                                  variants={cityMaskAnim}
+                className="absolute w-full h-full z-0 scale-105">
+                  <Image src={"/img/art/mask.png"} layout="fill" />
                 </motion.span>
               </div>
             </motion.span>

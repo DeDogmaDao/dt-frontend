@@ -898,7 +898,7 @@ export const cityAnim:Variants = {
     },
   },
   visible:{
-    scale:0.7,
+    scale:0.75,
     transition:{
       duration:2
     }
