@@ -760,3 +760,100 @@ export const callToactionSvgArrowRightAni: Variants = {
     },
   },
 };
+
+export const mobileMenuAni: Variants = {
+  opened: (custom = 1000) => ({
+    clipPath: `circle(${custom * 2 + 200}px at calc(100% - 42px) 50px)`,
+    backgroundColor: "#212121",
+    transition: {
+      clipPath: { type: "spring", stiffness: 20, restDelta: 2 },
+    },
+  }),
+  closed: {
+    clipPath: "circle(18px at calc(100% - 42px) 50px)",
+    backgroundColor: "#363636",
+    transition: {
+      delay: 0.5,
+      type: "spring",
+      stiffness: 400,
+      damping: 40,
+    },
+  },
+};
+
+export const navBodyAni: Variants = {
+  opened: {
+    transition: {
+      staggerChildren: 0.07,
+      delayChildren: 0.2,
+    },
+  },
+  closed: {
+    transition: {
+      staggerChildren: 0.05,
+      staggerDirection: -1,
+    },
+  },
+};
+
+export const menuItemAni: Variants = {
+  opened: {
+    display: "flex",
+    y: 0,
+    opacity: 1,
+    transition: {
+      y: { stiffness: 1000, velocity: -100 },
+    },
+  },
+  closed: {
+    y: 50,
+    opacity: 0,
+    transitionEnd: {
+      display: "none",
+    },
+    transition: {
+      y: { stiffness: 1000 },
+    },
+  },
+};
+export const menuSocialItemAni: Variants = {
+  opened: {
+    display: "flex",
+    x: 0,
+    opacity: 1,
+    transition: {
+      x: { stiffness: 1000, velocity: -100 },
+    },
+  },
+  closed: {
+    x: 100,
+    opacity: 0,
+    transitionEnd: {
+      display: "none",
+    },
+    transition: {
+      x: { stiffness: 1000 },
+    },
+  },
+};
+export const menuCopyRightAni: Variants = {
+  opened: {
+    display: "flex",
+    x: 0,
+    opacity: 1,
+    transition: {
+      opacity:{delay:0.5},
+      x: {delay:0.5, stiffness: 1000, velocity: -100 },
+    },
+  },
+  closed: {
+    x: 50,
+    opacity: 0,
+    transitionEnd: {
+      display: "none",
+    },
+    transition: {
+      x: { stiffness: 1000 },
+    },
+  },
+};

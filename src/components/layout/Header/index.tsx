@@ -6,6 +6,9 @@ import EachLink from "./EachLink";
 import { motion } from "framer-motion";
 // types
 import { LinkType } from "../../../types/allTypes";
+import MobileMenu from "./MobileMenu";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faDiscord } from "@fortawesome/free-brands-svg-icons";
 
 const Header: React.FC = () => {
   const headerLinks: LinkType[] = [
@@ -36,16 +39,29 @@ const Header: React.FC = () => {
   ];
 
   return (
-    <div className="absolute top-0 left-0 w-full h-12 z-100 ml-16 mt-9">
-      <div className="flex justify-start items-center w-full h-full ">
-        <Link href="/">
-          <img src="/img/logo/ddd-logo.png" />
-        </Link>
-        <motion.ul className="flex justify-start items-center ml-9 gap-x-8">
+    <div className="absolute top-0 left-0 w-full h-[84px] z-100 ">
+      <div className="flex justify-start items-center w-full h-full relative pt-9">
+        <div className="absolute top-0 left-0 w-full h-[93px] bg-gradient-to-b from-neutral-900 to-transparent md:hidden" />
+        <span className="absolute top-[35px] left-6 z-100 ">
+          <Link href="/">
+            <div className="flex justify-start items-center gap-x-2">
+              <img
+                className="w-9 cursor-pointer"
+                src="/img/logo/ddd-logo.png"
+              />
+              <span className="text-medium-bold">Demmortal Treasure</span>
+            </div>
+          </Link>
+        </span>
+        {/* <motion.ul className="flex justify-start items-center ml-9 gap-x-8">
           {headerLinks.map((headLink) => {
             return <EachLink key={headLink.ref} headLink={headLink} />;
           })}
-        </motion.ul>
+        </motion.ul> */}
+        <span className="absolute top-[32px] right-[72px] w-9 h-9 rounded-full bg-neutral-700 text-white text-xl flex justify-center items-center">
+          <FontAwesomeIcon icon={faDiscord} />
+        </span>
+        <MobileMenu headerLinks={headerLinks} />
       </div>
     </div>
   );
