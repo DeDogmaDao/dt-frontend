@@ -39,7 +39,7 @@ const MobileMenu: React.FC<props> = ({ headerLinks }) => {
         })}
       </motion.ul>
       <MenuToggle cycleIsExpanded={cycleIsExpanded} />
-      <motion.div className="absolute bottom-10 left-0 w-screen h-[100px] flex flex-col justify-center items-center">
+      <motion.div className="absolute bottom-10 left-0 w-screen h-[100px] flex flex-col justify-center items-center gap-y-6">
         <ul className="flex justify-center items-center w-full h-1/2 gap-x-3">
           {footerData.map((social) => {
             return (
@@ -51,7 +51,7 @@ const MobileMenu: React.FC<props> = ({ headerLinks }) => {
             );
           })}
         </ul>
-        <p></p>
+        <p className="text-[10px]">&copy; COPYWRITES 2022 DDD. ALL RIGHTS RESERVED</p>
       </motion.div>
     </motion.nav>
   );
