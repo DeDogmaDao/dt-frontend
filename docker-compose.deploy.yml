@@ -7,7 +7,7 @@ services:
     environment:
       - BACKEND_URL
       - ROBOTS_TXT_FILE
-    command: npm run up echo
+    command: npm run up
     ports:
       - "3000:3000"
 

@@ -12,4 +12,4 @@ RUN npm install
 COPY . .
 
 EXPOSE 3000
-RUN  $ROBOTS_TXT_FILE > /app/frontend/src/public/robots.txt
+RUN  echo $ROBOTS_TXT_FILE > /app/frontend/src/public/robots.txt
