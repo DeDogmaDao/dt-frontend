@@ -30,8 +30,8 @@ const Road: React.FC<props> = ({ index, activeSection, road }) => {
       }}
     >
       <div
-        className={`flex justify-between items-center w-full h-full relative ${
-          index === 1 ? "flex-row-reverse" : "flex-row"
+        className={`flex flex-col justify-between items-center w-full h-full relative ${
+          index === 1 ? "lg:flex-row-reverse" : "lg:flex-row"
         }`}
       >
         <div className="w-full h-full absolute top-0 left-0 z-0">
