@@ -14,12 +14,12 @@ const EachDesc: React.FC<props> = ({ descData, index }) => {
       animate="visible"
       variants={eachBenefitDescAni}
       custom={index}
-      className="flex gap-x-2 text-base px-8 py-7 rounded-full bg-neutral-600/30"
+      className="flex gap-x-2 text-base px-3 ssm:px-8 py-3 lg:py-7 rounded-full sm:bg-neutral-500/30"
     >
       <span className="mt-1">
         <FontAwesomeIcon icon={faCircleDot} />
       </span>
-      <p className="text-extera-large-medium">{descData}</p>
+      <p className="text-large-medium lg:text-extera-large-medium">{descData}</p>
     </motion.li>
   );
 };

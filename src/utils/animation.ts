@@ -737,6 +737,7 @@ export const callToActionSvgAni: Variants = {
   },
   visible: {
     pathLength: 1,
+    
     transition: {
       delay: 0,
       duration: 1.5,
@@ -753,7 +754,7 @@ export const callToactionSvgArrowRightAni: Variants = {
     opacity: [0, 0, 1],
     transition: {
       duration: 1.5,
-      times: [0, 0.95, 1],
+      times: [0, 0.93, 1],
       repeat: 2000,
       repeatDelay: 5,
       repeatType: "loop",
@@ -874,3 +875,47 @@ export const menuCopyRightAni: Variants = {
     },
   },
 };
+
+
+export const heroAnim:Variants = {
+  hidden:{
+    scale:1,
+    transition:{
+      duration:1
+    },
+  },
+  visible:{
+    scale:1.4,
+    transition:{
+      duration:2
+    }
+  }
+}
+export const cityAnim:Variants = {
+  hidden:{
+    scale:1,
+    transition:{
+      duration:1
+    },
+  },
+  visible:{
+    scale:0.75,
+    transition:{
+      duration:2
+    }
+  }
+}
+export const cityMaskAnim:Variants = {
+  hidden:{
+    opacity:1,
+    transition:{
+      duration:1
+    },
+  },
+  visible:{
+    opacity:0.3,
+    transition:{
+      duration:2
+    }
+  }
+}

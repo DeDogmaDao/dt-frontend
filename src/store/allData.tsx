@@ -105,167 +105,129 @@ export const godTabData: tabType[] = [
     name: "tab0",
     titleOfHonor: "herald the stone eyes",
     image: "/img/cyc/1.png",
-    desc: (
-      <div>
-        HUMANS is creating an all-in-one platform for AI-based creation and
-        governance with an initial focus on synthetic media.
-        <br />
-        HUMANS is creating an all-in-one platform for AI-based creation and
-        governance with an initial focus on synthetic media. focus on synthetic
-        media. focus on synthetic media. focus on synthetic media. focus on
-        synthetic media.
-      </div>
-    ),
+    desc: [
+      "God of the sun and master of thievery and poetry. With his wing-threaded sandals, he can spread"
+    ],
   },
   {
     activeCard: false,
     name: "tab1",
-    titleOfHonor: "Hades the Unseen ",
+    titleOfHonor: "Hades the Unseen",
     image: "/img/cyc/1.png",
-    desc: (
-      <div>
-        HUMANS is creating an all-in-one platform for AI-based creation and
-        governance with an initial focus on synthetic media.
-        <br />
-        HUMANS is creating an all-in-one platform for AI-based creation and
-        governance with an initial focus on synthetic media.
-      </div>
-    ),
+    desc: [
+      "God of the sun and master of thievery and poetry. With his wing-threaded sandals, he can spread news at the blink of an eye to those who are willing to lend him an ear. The words that leave his mouth are nothing short of poetical.",
+      "Hermes created the thieves guild by placing a magnetic power in humans.",
+      "Hermes takes 3% share of the thieves guild’s win of treasury.",
+      "Hermes has 18X more chance to compare to other cards to win the lottery",
+    ],
   },
   {
     activeCard: false,
     name: "tab2",
     titleOfHonor: "herald the stone eyes",
     image: "/img/cyc/2.png",
-    desc: (
-      <div>
-        HUMANS is creating an all-in-one platform for AI-based creation and
-        governance with an initial focus on synthetic media.
-        <br />
-        HUMANS is creating an all-in-one platform for AI-based creation and
-        governance with an initial focus on synthetic media.
-      </div>
-    ),
+    desc: [
+      "God of the sun and master of thievery and poetry. With his wing-threaded sandals, he can spread news at the blink of an eye to those who are willing to lend him an ear. The words that leave his mouth are nothing short of poetical.",
+      "Hermes created the thieves guild by placing a magnetic power in humans.",
+      "Hermes takes 3% share of the thieves guild’s win of treasury.",
+      "Hermes has 18X more chance to compare to other cards to win the lottery",
+    ],
   },
   {
     activeCard: false,
     name: "tab3",
     titleOfHonor: "Hades the Unseen ",
     image: "/img/cyc/1.png",
-    desc: (
-      <div>
-        HUMANS is creating an all-in-one platform for AI-based creation and
-        governance with an initial focus on synthetic media.
-        <br />
-        HUMANS is creating an all-in-one platform for AI-based creation and
-        governance with an initial focus on synthetic media.
-      </div>
-    ),
+    desc: [
+      "God of the sun and master of thievery and poetry. With his wing-threaded sandals, he can spread news at the blink of an eye to those who are willing to lend him an ear. The words that leave his mouth are nothing short of poetical.",
+      "Hermes created the thieves guild by placing a magnetic power in humans.",
+      "Hermes takes 3% share of the thieves guild’s win of treasury.",
+      "Hermes has 18X more chance to compare to other cards to win the lottery",
+    ],
   },
   {
     activeCard: false,
     name: "tab4",
     titleOfHonor: "herald the stone eyes",
     image: "/img/cyc/1.png",
-    desc: (
-      <div>
-        HUMANS is creating an all-in-one platform for AI-based creation and
-        governance with an initial focus on synthetic media.
-        <br />
-        HUMANS is creating an all-in-one platform for AI-based creation and
-        governance with an initial focus on synthetic media.
-      </div>
-    ),
+    desc: [
+      "God of the sun and master of thievery and poetry. With his wing-threaded sandals, he can spread news at the blink of an eye to those who are willing to lend him an ear. The words that leave his mouth are nothing short of poetical.",
+      "Hermes created the thieves guild by placing a magnetic power in humans.",
+      "Hermes takes 3% share of the thieves guild’s win of treasury.",
+      "Hermes has 18X more chance to compare to other cards to win the lottery",
+    ],
   },
   {
     activeCard: false,
     name: "tab5",
     titleOfHonor: "Hades the Unseen ",
     image: "/img/cyc/2.png",
-    desc: (
-      <div>
-        HUMANS is creating an all-in-one platform for AI-based creation and
-        governance with an initial focus on synthetic media.
-        <br />
-        HUMANS is creating an all-in-one platform for AI-based creation and
-        governance with an initial focus on synthetic media.
-      </div>
-    ),
+    desc: [
+      "God of the sun and master of thievery and poetry. With his wing-threaded sandals, he can spread news at the blink of an eye to those who are willing to lend him an ear. The words that leave his mouth are nothing short of poetical.",
+      "Hermes created the thieves guild by placing a magnetic power in humans.",
+      "Hermes takes 3% share of the thieves guild’s win of treasury.",
+      "Hermes has 18X more chance to compare to other cards to win the lottery",
+    ],
   },
   {
     activeCard: true,
     name: "tab6",
     titleOfHonor: "Hades the Unseen ",
     image: "/img/cyc/1.png",
-    desc: (
-      <div>
-        HUMANS is creating an all-in-one platform for AI-based creation and
-        governance with an initial focus on synthetic media.
-        <br />
-        HUMANS is creating an all-in-one platform for AI-based creation and
-        governance with an initial focus on synthetic media.
-      </div>
-    ),
+    desc: [
+      "God of the sun and master of thievery and poetry. With his wing-threaded sandals, he can spread news at the blink of an eye to those who are willing to lend him an ear. The words that leave his mouth are nothing short of poetical.",
+      "Hermes created the thieves guild by placing a magnetic power in humans.",
+      "Hermes takes 3% share of the thieves guild’s win of treasury.",
+      "Hermes has 18X more chance to compare to other cards to win the lottery",
+    ],
   },
   {
     activeCard: false,
     name: "tab7",
     titleOfHonor: "herald the stone eyes",
     image: "/img/cyc/1.png",
-    desc: (
-      <div>
-        HUMANS is creating an all-in-one platform for AI-based creation and
-        governance with an initial focus on synthetic media.
-        <br />
-        HUMANS is creating an all-in-one platform for AI-based creation and
-        governance with an initial focus on synthetic media.
-      </div>
-    ),
+    desc: [
+      "God of the sun and master of thievery and poetry. With his wing-threaded sandals, he can spread news at the blink of an eye to those who are willing to lend him an ear. The words that leave his mouth are nothing short of poetical.",
+      "Hermes created the thieves guild by placing a magnetic power in humans.",
+      "Hermes takes 3% share of the thieves guild’s win of treasury.",
+      "Hermes has 18X more chance to compare to other cards to win the lottery",
+    ],
   },
   {
     activeCard: false,
     name: "tab8",
     titleOfHonor: "herald the stone eyes",
     image: "/img/cyc/2.png",
-    desc: (
-      <div>
-        HUMANS is creating an all-in-one platform for AI-based creation and
-        governance with an initial focus on synthetic media.
-        <br />
-        HUMANS is creating an all-in-one platform for AI-based creation and
-        governance with an initial focus on synthetic media.
-      </div>
-    ),
+    desc: [
+      "God of the sun and master of thievery and poetry. With his wing-threaded sandals, he can spread news at the blink of an eye to those who are willing to lend him an ear. The words that leave his mouth are nothing short of poetical.",
+      "Hermes created the thieves guild by placing a magnetic power in humans.",
+      "Hermes takes 3% share of the thieves guild’s win of treasury.",
+      "Hermes has 18X more chance to compare to other cards to win the lottery",
+    ],
   },
   {
     activeCard: false,
     name: "tab9",
     titleOfHonor: "Hades the Unseen ",
     image: "/img/cyc/1.png",
-    desc: (
-      <div>
-        HUMANS is creating an all-in-one platform for AI-based creation and
-        governance with an initial focus on synthetic media.
-        <br />
-        HUMANS is creating an all-in-one platform for AI-based creation and
-        governance with an initial focus on synthetic media.
-      </div>
-    ),
+    desc: [
+      "God of the sun and master of thievery and poetry. With his wing-threaded sandals, he can spread news at the blink of an eye to those who are willing to lend him an ear. The words that leave his mouth are nothing short of poetical.",
+      "Hermes created the thieves guild by placing a magnetic power in humans.",
+      "Hermes takes 3% share of the thieves guild’s win of treasury.",
+      "Hermes has 18X more chance to compare to other cards to win the lottery",
+    ],
   },
   {
     activeCard: false,
     name: "tab10",
     titleOfHonor: "herald the stone eyes",
     image: "/img/cyc/1.png",
-    desc: (
-      <div>
-        HUMANS is creating an all-in-one platform for AI-based creation and
-        governance with an initial focus on synthetic media.
-        <br />
-        HUMANS is creating an all-in-one platform for AI-based creation and
-        governance with an initial focus on synthetic media.
-      </div>
-    ),
+    desc: [
+      "God of the sun and master of thievery and poetry. With his wing-threaded sandals, he can spread news at the blink of an eye to those who are willing to lend him an ear. The words that leave his mouth are nothing short of poetical.",
+      "Hermes created the thieves guild by placing a magnetic power in humans.",
+      "Hermes takes 3% share of the thieves guild’s win of treasury.",
+      "Hermes has 18X more chance to compare to other cards to win the lottery",
+    ],
   },
 ];
 export const humanTabData: tabType[] = [
@@ -276,15 +238,12 @@ export const humanTabData: tabType[] = [
     image: "/img/cyc/3.png",
     image2: "/img/cyc/1.png",
     image3: "/img/cyc/1.png",
-    desc: (
-      <div>
-        HUMANS is creating an all-in-one platform for AI-based creation and
-        governance with an initial focus on synthetic media.
-        <br />
-        HUMANS is creating an all-in-one platform for AI-based creation and
-        governance with an initial focus on synthetic media.
-      </div>
-    ),
+    desc: [
+      "God of the sun and master of thievery and poetry. With his wing-threaded sandals, he can spread news at the blink of an eye to those who are willing to lend him an ear. The words that leave his mouth are nothing short of poetical.",
+      "Hermes created the thieves guild by placing a magnetic power in humans.",
+      "Hermes takes 3% share of the thieves guild’s win of treasury.",
+      "Hermes has 18X more chance to compare to other cards to win the lottery",
+    ],
   },
   {
     activeCard: false,
@@ -293,15 +252,12 @@ export const humanTabData: tabType[] = [
     image: "/img/cyc/1.png",
     image2: "/img/cyc/3.png",
     image3: "/img/cyc/3.png",
-    desc: (
-      <div>
-        HUMANS is creating an all-in-one platform for AI-based creation and
-        governance with an initial focus on synthetic media.
-        <br />
-        HUMANS is creating an all-in-one platform for AI-based creation and
-        governance with an initial focus on synthetic media.
-      </div>
-    ),
+    desc: [
+      "God of the sun and master of thievery and poetry. With his wing-threaded sandals, he can spread news at the blink of an eye to those who are willing to lend him an ear. The words that leave his mouth are nothing short of poetical.",
+      "Hermes created the thieves guild by placing a magnetic power in humans.",
+      "Hermes takes 3% share of the thieves guild’s win of treasury.",
+      "Hermes has 18X more chance to compare to other cards to win the lottery",
+    ],
   },
   {
     activeCard: true,
@@ -310,15 +266,12 @@ export const humanTabData: tabType[] = [
     image: "/img/cyc/2.png",
     image2: "/img/cyc/1.png",
     image3: "/img/cyc/1.png",
-    desc: (
-      <div>
-        HUMANS is creating an all-in-one platform for AI-based creation and
-        governance with an initial focus on synthetic media.
-        <br />
-        HUMANS is creating an all-in-one platform for AI-based creation and
-        governance with an initial focus on synthetic media.
-      </div>
-    ),
+    desc: [
+      "God of the sun and master of thievery and poetry. With his wing-threaded sandals, he can spread news at the blink of an eye to those who are willing to lend him an ear. The words that leave his mouth are nothing short of poetical.",
+      "Hermes created the thieves guild by placing a magnetic power in humans.",
+      "Hermes takes 3% share of the thieves guild’s win of treasury.",
+      "Hermes has 18X more chance to compare to other cards to win the lottery",
+    ],
   },
   {
     activeCard: false,
@@ -327,15 +280,12 @@ export const humanTabData: tabType[] = [
     image: "/img/cyc/3.png",
     image2: "/img/cyc/1.png",
     image3: "/img/cyc/1.png",
-    desc: (
-      <div>
-        HUMANS is creating an all-in-one platform for AI-based creation and
-        governance with an initial focus on synthetic media.
-        <br />
-        HUMANS is creating an all-in-one platform for AI-based creation and
-        governance with an initial focus on synthetic media.
-      </div>
-    ),
+    desc: [
+      "God of the sun and master of thievery and poetry. With his wing-threaded sandals, he can spread news at the blink of an eye to those who are willing to lend him an ear. The words that leave his mouth are nothing short of poetical.",
+      "Hermes created the thieves guild by placing a magnetic power in humans.",
+      "Hermes takes 3% share of the thieves guild’s win of treasury.",
+      "Hermes has 18X more chance to compare to other cards to win the lottery",
+    ],
   },
   {
     activeCard: false,
@@ -344,15 +294,12 @@ export const humanTabData: tabType[] = [
     image: "/img/cyc/2.png",
     image2: "/img/cyc/1.png",
     image3: "/img/cyc/1.png",
-    desc: (
-      <div>
-        HUMANS is creating an all-in-one platform for AI-based creation and
-        governance with an initial focus on synthetic media.
-        <br />
-        HUMANS is creating an all-in-one platform for AI-based creation and
-        governance with an initial focus on synthetic media.
-      </div>
-    ),
+    desc: [
+      "God of the sun and master of thievery and poetry. With his wing-threaded sandals, he can spread news at the blink of an eye to those who are willing to lend him an ear. The words that leave his mouth are nothing short of poetical.",
+      "Hermes created the thieves guild by placing a magnetic power in humans.",
+      "Hermes takes 3% share of the thieves guild’s win of treasury.",
+      "Hermes has 18X more chance to compare to other cards to win the lottery",
+    ],
   },
 ];
 

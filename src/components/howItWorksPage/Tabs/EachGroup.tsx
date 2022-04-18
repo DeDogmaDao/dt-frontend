@@ -24,14 +24,15 @@ const EachGroup: React.FC<props> = ({ name, activeGroup, setTabs, tabs }) => {
     setTabs(newGroup);
   };
   return (
-    <button
-      className="w-64 h-28 relative flex justify-center items-center"
+    <motion.button
+      whileHover={{ scale: activeGroup ? 1 : 1.05 }}
+      className=" w-48 md:w-64 aspect-[2.3] relative flex justify-center items-center"
       onClick={clickHandler}
     >
       {activeGroup && (
         <div
           className="absolute top-0 left-0 w-full h-full z-0 flex justify-between items-center overflow-hidden rounded-2xl
-       shadow-[0px_15px_25px_1px_rgb(240,217,85,0.3)]"
+       shadow-[0px_18px_20px_-10px_rgb(240,217,85,0.3)]"
         >
           <span className="w-1/2 h-1/2 self-start bg-gradient-to-br from-[#F0D955] via-transparent to-transparent"></span>
           <span className="w-1/2 h-full bg-gradient-to-br from-transparent via-transparent to-[#F0D955]"></span>
@@ -44,94 +45,12 @@ const EachGroup: React.FC<props> = ({ name, activeGroup, setTabs, tabs }) => {
       }`}
       >
         <span className="ml-6">{name}</span>
-        <Image
-          src={"/img/cyc/" + name + ".png"}
-          width="171"
-          height="112"
-          layout="fixed"
-        />
+        <span className="relative w-[60%] h-full">
+          <Image src={"/img/cyc/" + name + ".png"} layout="fill" />
+        </span>
       </div>
-    </button>
+    </motion.button>
   );
 };
 
 export default EachGroup;
-
-// import { motion } from "framer-motion";
-// import { tabsType } from "../../../types/allTypes";
-// import deepClone from "lodash/cloneDeep";
-// import { tabBlastAni } from "../../../utils/animation";
-
-// interface props {
-//   name: string;
-//   activeGroup: boolean;
-//   setTabs: any;
-//   tabs: tabsType[];
-// }
-// const EachGroup: React.FC<props> = ({ name, activeGroup, setTabs, tabs }) => {
-//   const clickHandler = () => {
-//     const clonedState = deepClone(tabs);
-//     const newGroup = clonedState.map((tab) => {
-//       if (tab.tabGroup === name) {
-//         tab.activeGroup = true;
-//       } else {
-//         tab.activeGroup = false;
-//       }
-//       return tab;
-//     });
-//     setTabs(newGroup);
-//   };
-//   return (
-//     <button
-//       className={`relative flex justify-center items-center p-4`}
-//       onClick={clickHandler}
-//     >
-//       <p
-//         className={`text-sm font-normal z-10 ${
-//           activeGroup && "text-blackPrime"
-//         }`}
-//       >
-//         {name}
-//       </p>
-//       {activeGroup && (
-//         <>
-//           <motion.div
-//             initial="hidden"
-//             animate="visible"
-//             variants={tabBlastAni}
-//             className="w-10 h-10 absolute rounded-full"
-//             style={{
-//               background:
-//                 "radial-gradient(50% 50% at 50% 50%,rgba(255, 255, 255, 0) 0%,#ffffff 100%)",
-//             }}
-//           ></motion.div>
-
-//           <motion.div
-//             layoutId="eachGroup"
-//             transition={{ type: "spring", stiffness: 150 }}
-//             className={`absolute flex justify-center items-center w-full h-7 bg-primText z-0 rounded-full shadow-cycle shadow-slate-200
-//           `}
-//           ></motion.div>
-//         </>
-//       )}
-//     </button>
-//   );
-// };
-
-// export default EachGroup;
-
-// export const tabBlastAni: Variants = {
-//   hidden: {
-//     scale: 0,
-//     opacity: 0.5,
-//   },
-//   visible: {
-//     scale: 3.5,
-//     opacity: 0,
-//     transition: {
-//       duration: 0.8,
-//       delay: 0,
-//       ease: [0.45, 0.73, 0.4, 0.9],
-//     },
-//   },
-// };

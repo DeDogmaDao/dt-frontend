@@ -33,6 +33,7 @@ const RoadItem: React.FC<props> = ({ data, setDescIndex, descIndex, index }) => 
   return (
     <motion.li
       onHoverStart={descriptionHoverHandler}
+      onTap={descriptionHoverHandler}
       className={`w-full flex justify-start items-start gap-3 text-medium-medium duration-300
        ${index === descIndex ? "text-primary-300 translate-x-2":""}`}
     >

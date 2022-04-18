@@ -12,6 +12,7 @@ const HowItWorks: React.FC = () => {
       animate="visible"
       exit="out"
       variants={pageAnimation}
+      className="w-full h-full flex flex-col"
     >
       <Hero />
       <Benefits />
