@@ -106,10 +106,7 @@ export const godTabData: tabType[] = [
     titleOfHonor: "herald the stone eyes",
     image: "/img/cyc/1.png",
     desc: [
-      "God of the sun and master of thievery and poetry. With his wing-threaded sandals, he can spread news at the blink of an eye to those who are willing to lend him an ear. The words that leave his mouth are nothing short of poetical.",
-      "Hermes created the thieves guild by placing a magnetic power in humans.",
-      "Hermes takes 3% share of the thieves guild’s win of treasury.",
-      "Hermes has 18X more chance to compare to other cards to win the lottery",
+      "God of the sun and master of thievery and poetry. With his wing-threaded sandals, he can spread"
     ],
   },
   {
