@@ -52,22 +52,7 @@ const Tabs: React.FC = () => {
         className="w-full h-full relative mt-10 sm:mt-14 md:mt-20 lg:mt-28
       "
       >
-        <div className="absolute top-96 opacity-80 left-1/2 ml-[-150px] z-0 pointer-events-none select-none">
-          <Image
-            width="300"
-            height="250"
-            layout="intrinsic"
-            src="/img/cyc/tab-portal.png"
-          />
-        </div>
-        <div className="absolute top-[23.1rem]  left-1/2 ml-[-122px] z-50 pointer-events-none select-none">
-          <Image
-            width="244"
-            height="240"
-            layout="intrinsic"
-            src="/img/cyc/tab-portal2.png"
-          />
-        </div>
+
         <div className="w-full h-full flex justify-center items-center">
           {tabs.map((tab) => {
             if (!tab.activeGroup) return null;

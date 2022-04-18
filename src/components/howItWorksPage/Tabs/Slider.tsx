@@ -1,6 +1,7 @@
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion, PanInfo, useElementScroll } from "framer-motion";
+import Image from "next/image";
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 import { activeIndexCardType } from "../../../types/allTypes";
 
@@ -68,14 +69,14 @@ const Slider: React.FC<props> = ({
   };
 
   return (
-    <motion.div className="relative">
+    <motion.div className="relative w-[100%] sm:w-[80%] md:w-[70%] flex justify-center">
       <motion.div
         ref={carouselRef}
-        className="carousel overflow-hidden mx-auto w-[900px]  "
+        className="carousel overflow-hidden mx-auto min-w-[700px] w-full  z-10"
       >
         <motion.div
           onDragEnd={(event, info) => dragHandler(event, info)}
-          onDragStart={()=>setIsDragged(true)}
+          onDragStart={() => setIsDragged(true)}
           className={`inner-carousel flex relative h-[465px]`}
           drag="x"
           dragConstraints={{ right: 0, left: -0 }}
@@ -86,17 +87,33 @@ const Slider: React.FC<props> = ({
       </motion.div>
 
       <button
-        className="absolute p-2 left-[14.5%] top-1/2 -mt-8 text-5xl text-neutral-400"
+        className="absolute p-2 left-0 top-1/2 -mt-8 text-5xl text-neutral-400 z-50"
         onClick={leftClickHandler}
       >
         <FontAwesomeIcon icon={faChevronLeft} />
       </button>
       <button
-        className="absolute p-2 right-[14.5%] top-1/2 -mt-8 text-5xl scale-x-[-1] text-neutral-400"
+        className="absolute p-2 right-0 top-1/2 -mt-8 text-5xl scale-x-[-1] text-neutral-400 z-50"
         onClick={rightClickHandler}
       >
         <FontAwesomeIcon icon={faChevronLeft} />
       </button>
+      <div className="absolute top-[55%] left-1/2 ml-[-150px] z-0 pointer-events-none select-none">
+        <Image
+          width="300"
+          height="250"
+          layout="intrinsic"
+          src="/img/cyc/tab-portal.png"
+        />
+      </div>
+      <div className="absolute top-[35%]  left-1/2 ml-[-122px] z-20 pointer-events-none select-none">
+        <Image
+          width="244"
+          height="320"
+          layout="intrinsic"
+          src="/img/cyc/tab-portal2.png"
+        />
+      </div>
     </motion.div>
   );
 };
