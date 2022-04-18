@@ -35,7 +35,8 @@ const Benefits: React.FC = () => {
         <Image src={"/img/bg/bg1.png"} layout="fill" />
       </div>
       <motion.div
-      
+      onHoverStart={()=>setIsPlaying(false)}
+      onHoverEnd={()=>setIsPlaying(true)}
       className="flex justify-center items-center gap-x-12 text-extera-large-medium z-10 mt-32">
         {benefitsData.map((data, index) => {
           return (
@@ -44,6 +45,7 @@ const Benefits: React.FC = () => {
               index={index}
               setActiveIndex={setActiveIndex}
               activeIndex={activeIndex}
+              setIsPlaying={setIsPlaying}
             />
           );
         })}
