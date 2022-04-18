@@ -94,7 +94,7 @@ const Hero: React.FC = () => {
               />
 
               <motion.img
-                className="absolute z-20 left-[48.2%] top-[70.5%] w-[10%] h-[15%]"
+                className="absolute z-20 left-[48.5%] top-[71%] w-[10%] h-[15%]"
                 src={"/img/art/cape.gif"}
               />
               <motion.span
