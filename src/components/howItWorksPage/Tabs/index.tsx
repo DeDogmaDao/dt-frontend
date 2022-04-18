@@ -31,9 +31,9 @@ const Tabs: React.FC = () => {
           src="/img/cyc/tab-bg.png"
         />
       </div>
-      <h5 className="z-10 font-bold mt-14 ssm:mt-20 sm:mt-32 lg:mt-40">
+      <h3 className="z-10 mt-14 ssm:mt-20 sm:mt-32 lg:mt-40 text-[20px] ssm:text-[28px] sm:text-[38px] font-bold sm:font-bold">
         Choose your <span className="text-yellow-400">Card</span>
-      </h5>
+      </h3>
       <div className=" flex flex-col ssm:flex-row gap-y-8 sm:gap-y-0 justify-center items-center gap-x-8 md:gap-x-16 text-2xl mt-14">
         <LayoutGroup id="tabGroup">
           {tabs.map((data) => {

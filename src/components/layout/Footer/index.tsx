@@ -18,7 +18,7 @@ const Footer: React.FC = () => {
         </div>
         <h3 className="mb-3 text-[20px] ssm:text-[28px] sm:text-[38px] font-bold sm:font-bold">
           NFT Game and Collection by
-          <span className="text-yellow-300">DDD</span>
+          <span className="text-yellow-300"> DDD</span>
         </h3>
         <span className="w-[30px] h-[6px] mb-6 bg-yellow-300" />
         <ul className="flex justify-center items-center sm:gap-x-3 mb-10">
