@@ -25,7 +25,7 @@ const EachGroup: React.FC<props> = ({ name, activeGroup, setTabs, tabs }) => {
   };
   return (
     <motion.button
-    whileHover={{scale: activeGroup? 1 : 1.05}}
+      whileHover={{ scale: activeGroup ? 1 : 1.05 }}
       className=" w-48 md:w-64 aspect-[2.3] relative flex justify-center items-center"
       onClick={clickHandler}
     >
