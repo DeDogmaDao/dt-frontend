@@ -7,7 +7,8 @@ interface props {
 
 const ProgressLine: React.FC<props> = ({ activeSection }) => {
   return (
-    <div className="absolute top-0 left-[5%] ssm:left-[7%] lg:left-1/2 ml-[-8px] w-1 flex flex-col items-center gap-y-5 z-100 mt-[15vh]">
+    <div className="absolute top-0 left-[5%] ssm:left-[7%] lg:left-1/2 ml-[-8px] w-1
+     flex flex-col items-center gap-y-5 z-100 mt-[12vh]">
       <div className="text-3xl text-primary-500">
         <FontAwesomeIcon icon={faEthereum} />
       </div>
