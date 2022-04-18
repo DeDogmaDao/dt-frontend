@@ -94,7 +94,7 @@ const Hero: React.FC = () => {
               />
 
               <motion.img
-                className="absolute z-20 left-[48.2%] top-[70.5%] w-[10%] h-[15%]"
+                className="absolute z-20 left-[48.5%] top-[71%] w-[10%] h-[15%]"
                 src={"/img/art/cape.gif"}
               />
               <motion.span
@@ -113,6 +113,13 @@ const Hero: React.FC = () => {
               >
                 <Image src={"/img/art/mask.png"} layout="fill" />
               </motion.span>
+
+              <motion.video loop autoPlay muted className="absolute z-20 w-[9.429%] h-[20.114%] left-[14.576%] top-[57.828%]">
+              <source src={"/img/art/left-fire.mp4"} type="video/mp4" />
+              </motion.video>
+              <motion.video loop autoPlay muted className="absolute z-20 w-[9.429%] h-[20.114%] left-[74.844%] top-[57.828%]">
+              <source src={"/img/art/right-fire.mp4"} type="video/mp4" />
+              </motion.video>
             </div>
           </motion.span>
         </div>

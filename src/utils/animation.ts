@@ -907,13 +907,13 @@ export const cityAnim:Variants = {
 }
 export const cityMaskAnim:Variants = {
   hidden:{
-    opacity:0.6,
+    opacity:1,
     transition:{
       duration:1
     },
   },
   visible:{
-    opacity:0.2,
+    opacity:0.3,
     transition:{
       duration:2
     }

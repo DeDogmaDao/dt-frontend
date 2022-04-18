@@ -27,8 +27,8 @@ const Social: React.FC<props> = ({ data }) => {
               animate="visible"
               exit="hidden"
               variants={socialAni}
-              style={{ backgroundColor: data.color }}
-              className="w-14 h-14 rounded-full bg-red-400  absolute left-0 top-0 -mt-0.5 z-0"
+
+              className="w-14 h-14 rounded-full absolute left-0 top-0 -mt-0.5 z-0 bg-primary-800"
             ></motion.div>
           )}
         </AnimatePresence>

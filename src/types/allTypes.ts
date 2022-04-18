@@ -36,7 +36,7 @@ export interface tabType {
   image: string;
   image2?: string;
   image3?: string;
-  desc: ReactElement<any, any>;
+  desc: string[];
 }
 
 export interface tabsType {
