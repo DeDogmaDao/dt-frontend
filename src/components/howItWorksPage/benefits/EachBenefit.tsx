@@ -36,7 +36,7 @@ const EachBenefit: React.FC<props> = ({
   return (
     <motion.button
     onTap={()=>setIsPlaying(false)}
-      className={`h-12 flex flex-col justify-center items-start relative duration-500  ${
+      className={`h-12 flex flex-col justify-center items-start relative duration-500 ml-6 ssm:ml-0  ${
         activeIndex === index
           ? "font-bold text-white"
           : "text-neutral-50/30 font-thin"
