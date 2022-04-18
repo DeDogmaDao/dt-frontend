@@ -34,7 +34,7 @@ const Tabs: React.FC = () => {
       <h5 className="z-10 font-bold mt-14 ssm:mt-20 sm:mt-32 lg:mt-40">
         Choose your <span className="text-yellow-400">Card</span>
       </h5>
-      <div className=" flex flex-col sm:flex-row gap-y-8 sm:gap-y-0 justify-center items-center gap-x-24 text-2xl mt-14">
+      <div className=" flex flex-col ssm:flex-row gap-y-8 sm:gap-y-0 justify-center items-center gap-x-8 md:gap-x-24 text-2xl mt-14">
         <LayoutGroup id="tabGroup">
           {tabs.map((data) => {
             return (
@@ -48,7 +48,10 @@ const Tabs: React.FC = () => {
           })}
         </LayoutGroup>
       </div>
-      <div className="w-full h-full relative">
+      <div
+        className="w-full h-full relative mt-10 sm:mt-14 md:mt-20 lg:mt-28
+      "
+      >
         <div className="absolute top-96 opacity-80 left-1/2 ml-[-150px] z-0 pointer-events-none select-none">
           <Image
             width="300"
@@ -65,44 +68,46 @@ const Tabs: React.FC = () => {
             src="/img/cyc/tab-portal2.png"
           />
         </div>
-        {tabs.map((tab) => {
-          if (!tab.activeGroup) return null;
-          return (
-            <Slider
-              setIsDragged={setIsDragged}
-              tabGroup={tab.tabGroup}
-              setActiveIndexCard={setActiveIndexCard}
-              activeIndexCard={activeIndexCard}
-              dataQuantity={tab.tabInfo.length}
-            >
-              <LayoutGroup>
-                <AnimatePresence>
-                  {tab.tabInfo.map((data, index) => {
-                    if (
-                      index > activeIndexCard[tab.tabGroup] + 1 ||
-                      index < activeIndexCard[tab.tabGroup] - 1
-                    ) {
-                      return null;
-                    }
-                    return (
-                      <Card
-                        key={data.name}
-                        tabGroup={tab.tabGroup}
-                        setActiveIndexCard={setActiveIndexCard}
-                        activeIndexCard={activeIndexCard}
-                        cardRef={cardRef}
-                        data={data}
-                        index={index}
-                        tabInfo={tab.tabInfo}
-                        isDragged={isDragged}
-                      />
-                    );
-                  })}
-                </AnimatePresence>
-              </LayoutGroup>
-            </Slider>
-          );
-        })}
+        <div className="w-full h-full flex justify-center items-center">
+          {tabs.map((tab) => {
+            if (!tab.activeGroup) return null;
+            return (
+              <Slider
+                setIsDragged={setIsDragged}
+                tabGroup={tab.tabGroup}
+                setActiveIndexCard={setActiveIndexCard}
+                activeIndexCard={activeIndexCard}
+                dataQuantity={tab.tabInfo.length}
+              >
+                <LayoutGroup>
+                  <AnimatePresence>
+                    {tab.tabInfo.map((data, index) => {
+                      if (
+                        index > activeIndexCard[tab.tabGroup] + 1 ||
+                        index < activeIndexCard[tab.tabGroup] - 1
+                      ) {
+                        return null;
+                      }
+                      return (
+                        <Card
+                          key={data.name}
+                          tabGroup={tab.tabGroup}
+                          setActiveIndexCard={setActiveIndexCard}
+                          activeIndexCard={activeIndexCard}
+                          cardRef={cardRef}
+                          data={data}
+                          index={index}
+                          tabInfo={tab.tabInfo}
+                          isDragged={isDragged}
+                        />
+                      );
+                    })}
+                  </AnimatePresence>
+                </LayoutGroup>
+              </Slider>
+            );
+          })}
+        </div>
       </div>
 
       {tabs.map((tab) => {

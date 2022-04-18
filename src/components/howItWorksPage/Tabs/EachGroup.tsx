@@ -25,7 +25,7 @@ const EachGroup: React.FC<props> = ({ name, activeGroup, setTabs, tabs }) => {
   };
   return (
     <button
-      className="w-64 h-28 relative flex justify-center items-center"
+      className=" w-48 md:w-64 aspect-[2.3] relative flex justify-center items-center"
       onClick={clickHandler}
     >
       {activeGroup && (
@@ -44,16 +44,12 @@ const EachGroup: React.FC<props> = ({ name, activeGroup, setTabs, tabs }) => {
       }`}
       >
         <span className="ml-6">{name}</span>
-        <Image
-          src={"/img/cyc/" + name + ".png"}
-          width="171"
-          height="112"
-          layout="fixed"
-        />
+        <span className="relative w-[60%] h-full">
+          <Image src={"/img/cyc/" + name + ".png"} layout="fill" />
+        </span>
       </div>
     </button>
   );
 };
 
 export default EachGroup;
-

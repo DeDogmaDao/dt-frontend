@@ -71,7 +71,7 @@ const Slider: React.FC<props> = ({
     <motion.div className="relative">
       <motion.div
         ref={carouselRef}
-        className="carousel overflow-hidden mx-auto w-[900px] mt-28 "
+        className="carousel overflow-hidden mx-auto w-[900px]  "
       >
         <motion.div
           onDragEnd={(event, info) => dragHandler(event, info)}
