@@ -1,5 +1,4 @@
-import {
-  motion} from "framer-motion";
+import { motion } from "framer-motion";
 import throttle from "lodash/throttle";
 import Image from "next/image";
 import { useEffect, useLayoutEffect, useState } from "react";
@@ -74,7 +73,7 @@ const Hero: React.FC = () => {
 
   return (
     <>
-      <motion.div className=" flex justify-center items-center relative w-[100vw] h-[56.26vw] mx-auto overflow-hidden hero-container">
+      <motion.div className=" flex justify-center items-center relative w-[100vw] h-[100vh] ssm:h-[110vh] sm:h-[90vh] md:h-[56.26vw] mx-auto overflow-hidden hero-container">
         <div className="portal-and-flame-and-hero w-full h-full relative z-20 ">
           <motion.span
             className="absolute w-full h-full origin-bottom"
@@ -82,7 +81,12 @@ const Hero: React.FC = () => {
             animate={anim}
             variants={heroAnim}
           >
-            <div className="w-full h-full relative">
+            <div
+              className=" ml-[-100%] sm:ml-[-25%] md:ml-auto
+             h-full
+              w-[300%] sm:w-[150%] md:w-full
+                relative flex justify-center items-center"
+            >
               <Image
                 src={"/img/art/portal.png"}
                 layout="fill"
@@ -90,7 +94,7 @@ const Hero: React.FC = () => {
               />
 
               <motion.img
-                className="absolute z-20 left-[48.2%] top-[70.5%] w-[10%]"
+                className="absolute z-20 left-[48.2%] top-[70.5%] w-[10%] h-[15%]"
                 src={"/img/art/cape.gif"}
               />
               <motion.span
