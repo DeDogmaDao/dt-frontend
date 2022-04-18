@@ -5,7 +5,7 @@ import { tabInfoContainerAni } from "../../../utils/animation";
 interface props {
   name: string;
   titleOfHonor: string;
-  desc: ReactElement<any, any>;
+  desc: string[];
   index: number;
   activeIndexCard: activeIndexCardType;
   tabGroup: string;
@@ -32,11 +32,9 @@ const TabInfo: React.FC<props> = ({
             <span>{name}</span>
             <p className="text-cyan-400">“{titleOfHonor}”</p>
           </h6>
-          <p
-            className="flex justify-center items-center mt-3 text-center  text-lg font-extralight "
-          >
+          <div className="flex flex-col justify-start items-start mt-3 text-lg font-extralight ">
             {desc}
-          </p>
+          </div>
         </motion.div>
       )}
     </>
