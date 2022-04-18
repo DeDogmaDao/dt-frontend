@@ -49,10 +49,9 @@ const Tabs: React.FC = () => {
         </LayoutGroup>
       </div>
       <div
-        className="w-full h-full relative mt-10 sm:mt-14 md:mt-20 lg:mt-28
+        className="w-full h-full relative mt-3 sm:mt-4 md:mt-10 lg:mt-10
       "
       >
-
         <div className="w-full h-full flex justify-center items-center">
           {tabs.map((tab) => {
             if (!tab.activeGroup) return null;
