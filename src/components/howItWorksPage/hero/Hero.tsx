@@ -114,7 +114,7 @@ const Hero: React.FC = () => {
                 <Image src={"/img/art/mask.png"} layout="fill" />
               </motion.span>
 
-              <motion.video loop autoPlay muted className="absolute z-20 w-[9%] h-[21.9%] left-[14.8%] bottom-[21.7%]">
+              <motion.video loop autoPlay muted className="absolute z-20 w-[9.429%] h-[20.114%] left-[14.576%] top-[57.828%]">
               <source src={"/img/art/fire1.mp4"} type="video/mp4" />
               </motion.video>
             </div>
