@@ -15,7 +15,7 @@ const ToRoadmapAction: React.FC = () => {
         <h3 className="mt-8">
           Our <span className="text-yellow-300">Roadmap</span>
         </h3>
-        <p className="text-large-medium mt-3 w-[90%] md:w-[70%] lg:w-[55%] mx-auto text-center">
+        <p className="text-large-medium font-light mt-3 w-[90%] md:w-[70%] lg:w-[55%] mx-auto text-center">
           Roadmaps focus on providing a list of what your project will
           accomplish and what features your product will include
         </p>
