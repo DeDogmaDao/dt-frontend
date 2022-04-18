@@ -20,7 +20,7 @@ const ToRoadmapAction: React.FC = () => {
           accomplish and what features your product will include
         </p>
         <div className="relative w-full flex justify-center items-center">
-          <div className="absolute top-0 left-[25%]">
+          <div className="absolute top-[-30%] left-[24%]">
             <CallToActionSvg />
           </div>
           <Link href={"/roadmap"}>
