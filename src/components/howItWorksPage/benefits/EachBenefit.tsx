@@ -6,6 +6,7 @@ interface props {
   data: benefitType;
   index: number;
   setActiveIndex: Dispatch<SetStateAction<number>>;
+  setIsPlaying: Dispatch<SetStateAction<boolean>>;
   activeIndex: number;
 }
 const EachBenefit: React.FC<props> = ({
@@ -13,6 +14,7 @@ const EachBenefit: React.FC<props> = ({
   index,
   activeIndex,
   setActiveIndex,
+  setIsPlaying
 }) => {
   const benefitBtnClickHandler = () => {
     setActiveIndex((prevState) => {
@@ -32,7 +34,8 @@ const EachBenefit: React.FC<props> = ({
   };
 
   return (
-    <button
+    <motion.button
+    onTap={()=>setIsPlaying(false)}
       className={`h-12 flex flex-col justify-center items-start relative duration-500  ${
         activeIndex === index
           ? "font-bold text-white"
@@ -49,7 +52,7 @@ const EachBenefit: React.FC<props> = ({
           className="w-[26px] h-[6px] bg-yellow-400 absolute bottom-1 left-0"
         ></motion.div>
       )}
-    </button>
+    </motion.button>
   );
 };
 
