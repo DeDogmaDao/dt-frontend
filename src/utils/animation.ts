@@ -737,6 +737,7 @@ export const callToActionSvgAni: Variants = {
   },
   visible: {
     pathLength: 1,
+    
     transition: {
       delay: 0,
       duration: 1.5,
@@ -753,7 +754,7 @@ export const callToactionSvgArrowRightAni: Variants = {
     opacity: [0, 0, 1],
     transition: {
       duration: 1.5,
-      times: [0, 0.95, 1],
+      times: [0, 0.93, 1],
       repeat: 2000,
       repeatDelay: 5,
       repeatType: "loop",
