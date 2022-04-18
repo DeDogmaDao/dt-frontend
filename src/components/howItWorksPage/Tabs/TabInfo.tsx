@@ -28,11 +28,15 @@ const TabInfo: React.FC<props> = ({
           variants={tabInfoContainerAni}
           className="absolute flex flex-col justify-start items-center w-9/12"
         >
-          <h6 className="flex justify-center items-center gap-x-2">
+          <h6 className="flex flex-col sm:flex-row justify-center items-center gap-x-2 text-2xl md:text-3xl font-bold">
             <span>{name}</span>
             <p className="text-cyan-400">“{titleOfHonor}”</p>
           </h6>
-          <div className="flex justify-center items-center text-center">{desc}</div>
+          <p
+            className="flex justify-center items-center mt-3 text-center  text-lg font-extralight "
+          >
+            {desc}
+          </p>
         </motion.div>
       )}
     </>

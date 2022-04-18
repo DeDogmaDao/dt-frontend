@@ -120,7 +120,7 @@ export const godTabData: tabType[] = [
   {
     activeCard: false,
     name: "tab1",
-    titleOfHonor: "Hades the Unseen ",
+    titleOfHonor: "Hades the Unseen",
     image: "/img/cyc/1.png",
     desc: (
       <div>
