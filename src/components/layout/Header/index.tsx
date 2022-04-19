@@ -64,7 +64,7 @@ const Header: React.FC = () => {
             return <EachLink key={headLink.ref} headLink={headLink} />;
           })}
         </motion.ul>
-        <span className="absolute top-[32px] right-[72px] w-9 h-9 rounded-full bg-neutral-700 text-white text-xl flex justify-center items-center">
+        <span className="absolute pointer-events-auto top-[32px] right-[72px] w-9 h-9 rounded-full bg-neutral-700 text-white text-xl flex justify-center items-center">
           <FontAwesomeIcon icon={faDiscord} />
         </span>
         <MobileMenu headerLinks={headerLinks} />
