@@ -21,8 +21,8 @@ const Team: React.FC = () => {
           layout="responsive"
         />
       </div>
-      <div className="relative w-full h-full  flex flex-col justify-start items-center pt-44 pb-10">
-        <h3>Meet the Creators</h3>
+      <div className="relative w-full h-full flex flex-col justify-start items-center pt-24 md:pt-32 pb-10">
+        <h3 className="text-[20px] ssm:text-[28px] sm:text-[38px] font-bold">Meet the Creators</h3>
         <div className="flex flex-wrap justify-center items-center w-full gap-8 mt-20">
           {teamDataLvl1.map((member, index) => {
             return (
