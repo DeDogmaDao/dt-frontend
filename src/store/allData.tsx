@@ -105,7 +105,7 @@ export const godTabData: tabType[] = [
     activeCard: false,
     name: "Zeus",
     titleOfHonor: "King of the Olympians",
-    image: "/img/cyc/2.jpg",
+    image: "/img/cyc/zeus.png",
     desc: [
       "Lord of the skies and king of the Olympians. Strong-willed and astute, he  empowers mortals with his greatness to surface their potential. His thunderbolt has the power to induce fear and dominate like no other.",
       "Zeus takes 1.5 % of every mortal player's prize share in case of winning. Zeus has 18X more chance to compare to other cards to win the lottery.",
@@ -115,7 +115,7 @@ export const godTabData: tabType[] = [
     activeCard: false,
     name: "Artemis",
     titleOfHonor: "Goddess of the hunt",
-    image: "/img/cyc/1.jpg",
+    image: "/img/cyc/artemis.png",
     desc: [
       "Beautiful moon maiden, goddess of the hunt. Twin to Apollo, the sun god. Fingers laced with silver and a deadly accuracy with her bow and arrows- all who pursue the art of archery strive to attain a sliver of her skill all their lives.",
       "Artemis created the beastrider guild by sending her goat to help them. She takes 3% share of the beast rider's win of the treasury.",
@@ -126,7 +126,7 @@ export const godTabData: tabType[] = [
     activeCard: false,
     name: "Hermes",
     titleOfHonor: "God of the sun",
-    image: "/img/cyc/2.jpg",
+    image: "/img/cyc/hermes.png",
     desc: [
       "God of the sun and master of thievery and poetry. With his wing-threaded sandals, he can spread news at the blink of an eye to those who are willing to lend him an ear. The words that leave his mouth are nothing short of poetical.",
       "Hermes created the thieves guild by placing a magnetic power in humans. ",
@@ -138,7 +138,7 @@ export const godTabData: tabType[] = [
     activeCard: false,
     name: "Hephaestus",
     titleOfHonor: "God of craftsmen and invention",
-    image: "/img/cyc/3.jpg",
+    image: "/img/cyc/zeus.png",
     desc: [
       "God of craftsmen and invention, son of Hera. A blazing forge with his blessing yields the sharpest daggers and the most balanced swords. His inventive spirit can solve any problem with an ingenious idea.",
       "Hephaestus created the blessed guild by giving them the box of pandora.",
@@ -150,7 +150,7 @@ export const godTabData: tabType[] = [
     activeCard: false,
     name: "Hecate",
     titleOfHonor: "Goddess of necromancy and sorcery",
-    image: "/img/cyc/1.jpg",
+    image: "/img/cyc/hecate.png",
     desc: [
       "Goddess of necromancy and sorcery. Accompanied by her double shadow, her magical abilities knows no boundaries.",
       "Hecate created the sorcerers by the power of her magic and fire.",
@@ -162,7 +162,7 @@ export const godTabData: tabType[] = [
     activeCard: false,
     name: "Hades",
     titleOfHonor: "God of the afterlife",
-    image: "/img/cyc/2.jpg",
+    image: "/img/cyc/hades.png",
     desc: [
       "God of the afterlife and Lord of the underworld. No mortal man could bare a single second in his presence, as he emits a sense of death being right around the corner.",
       "18X more chance to compare to other cards to win the lottery",
@@ -172,7 +172,7 @@ export const godTabData: tabType[] = [
     activeCard: true,
     name: "Aphrodite",
     titleOfHonor: "Goddess of beauty and passion",
-    image: "/img/cyc/3.jpg",
+    image: "/img/cyc/aphrodite.png",
     desc: [
       "Goddess of beauty and passion. Seductive, beautiful and wistful, this goddess could make a man swoon at her while holding a dagger to his throat. A dangerous-but-fantastic deity.",
       "18X more chance to compare to other cards to win the lottery.",
@@ -182,7 +182,7 @@ export const godTabData: tabType[] = [
     activeCard: false,
     name: "Poseidon",
     titleOfHonor: "God of the oceans",
-    image: "/img/cyc/1.jpg",
+    image: "/img/cyc/poseidon.png",
     desc: [
       "God of the oceans and Lord of the seas. Father of horses and all sea creatures. With is power to control large bodies of water, he can influence the climate of the earth like no other.",
       "18X more chance to compare to other cards to win the lottery.",
@@ -192,7 +192,7 @@ export const godTabData: tabType[] = [
     activeCard: false,
     name: "Ares",
     titleOfHonor: "God of War and bloodlust",
-    image: "/img/cyc/2.jpg",
+    image: "/img/cyc/ares.png",
     desc: [
       "God of War and bloodlust. The most hostile god to deal with, but the most useful to have with you in battle. His combat intelligence and street smarts cannot be humbled.",
       "18X more chance to compare to other cards to win the lottery.",
@@ -202,7 +202,7 @@ export const godTabData: tabType[] = [
     activeCard: false,
     name: "Hera",
     titleOfHonor: "Goddess of marriage",
-    image: "/img/cyc/1.jpg",
+    image: "/img/cyc/hera.png",
     desc: [
       "Goddess of marriage and patroness of women. Daughter of Kronos and Hera. Her loyalty to Zeus cannot be restrained and her dedication towards women and  children is admirable.",
       "18X more chance to compare to other cards to win the lottery",

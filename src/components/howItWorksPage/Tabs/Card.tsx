@@ -35,7 +35,7 @@ const Card: React.FC<props> = ({
   const cardPlace = cardPlaceDetector(activeIndexCard[tabGroup], index);
   let style: MotionStyle = {
     top: 0,
-    marginLeft: "-150px",
+    marginLeft: "-160px",
   };
 
   return (
@@ -48,7 +48,7 @@ const Card: React.FC<props> = ({
       variants={carouselDisplayAni}
       custom={cardPlace}
       onClick={(e) => cardClickHandler(e)}
-      className={`h-[424px] w-[300px] flex  text-white absolute select-none hover:cursor-pointer  ${
+      className={`h-[420px] w-[320px] flex  text-white absolute select-none hover:cursor-pointer  ${
         activeIndexCard[tabGroup] === index ? "grayscale-0" : "grayscale"
       }`}
     >
@@ -56,8 +56,8 @@ const Card: React.FC<props> = ({
         draggable={false}
         className="object-contain"
         src={data.image}
-        height="424"
-        width="300"
+        height="420"
+        width="320"
       />
     </motion.div>
   );
