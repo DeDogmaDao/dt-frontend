@@ -87,18 +87,27 @@ const Slider: React.FC<props> = ({
       </motion.div>
 
       <button
-        className="absolute p-2 left-0 top-1/2 -mt-8 text-5xl text-neutral-400 z-50"
+        className="absolute p-2 left-0 top-1/2 -mt-8 text-5xl text-white ssm:text-neutral-400 z-60"
         onClick={leftClickHandler}
       >
         <FontAwesomeIcon icon={faChevronLeft} />
       </button>
       <button
-        className="absolute p-2 right-0 top-1/2 -mt-8 text-5xl scale-x-[-1] text-neutral-400 z-50"
+        className="absolute p-2 right-0 top-1/2 -mt-8 text-5xl scale-x-[-1] text-white ssm:text-neutral-400 z-60"
         onClick={rightClickHandler}
       >
         <FontAwesomeIcon icon={faChevronLeft} />
       </button>
-      <div className="absolute top-[55%] left-1/2 ml-[-150px] z-0 pointer-events-none select-none">
+      
+      <div className="absolute top-[50%] mt-[-220px] left-1/2 ml-[-190px] z-50 pointer-events-none select-none">
+        <Image
+          width="380"
+          height="490"
+          layout="fixed"
+          src="/img/cyc/frame.png"
+        />
+      </div>
+      {/* <div className="absolute top-[55%] left-1/2 ml-[-150px] z-0 pointer-events-none select-none">
         <Image
           width="300"
           height="250"
@@ -113,7 +122,7 @@ const Slider: React.FC<props> = ({
           layout="intrinsic"
           src="/img/cyc/tab-portal2.png"
         />
-      </div>
+      </div> */}
     </motion.div>
   );
 };
