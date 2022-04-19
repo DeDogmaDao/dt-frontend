@@ -118,3 +118,11 @@ export interface benefitType {
   title: string;
   desc: string[];
 }
+
+export interface metaType {
+  title: string;
+  description: string;
+  keywords: string;
+  author: string;
+  preload: string[];
+}

@@ -91,6 +91,7 @@ const Hero: React.FC = () => {
                 src={"/img/art/portal.png"}
                 layout="fill"
                 className="z-10"
+                priority={true}
               />
 
               <motion.img
@@ -103,7 +104,7 @@ const Hero: React.FC = () => {
                 animate={anim}
                 variants={cityAnim}
               >
-                <Image src={"/img/art/city.png"} layout="fill" />
+                <Image src={"/img/art/city.png"} layout="fill"  />
               </motion.span>
               <motion.span
                 initial="hidden"

@@ -426,8 +426,7 @@ export const carouselDisplayAni: Variants = {
         scale: 1 - 0.4 * Math.abs(custom),
         left: 50 + custom * 35 + "%",
         transition: {
-          duration: 0.6,
-          ease: [0.98, 0, 0.5, 1.52],
+          duration: 0.4,
         },
       };
     }
@@ -435,8 +434,7 @@ export const carouselDisplayAni: Variants = {
       scale: 1 - 0.4 * Math.abs(custom),
       left: 50 + custom * 35 + "%",
       transition: {
-        duration: 0.6,
-        ease: [0.98, 0, 0.5, 1.52],
+        duration: 0.4,
       },
     };
   },
@@ -445,8 +443,7 @@ export const carouselDisplayAni: Variants = {
     scale: 0.2,
     opacity: 0.5,
     transition: {
-      duration: 0.6,
-      ease: [0.98, 0, 0.5, 1.52],
+      duration: 0.4,
     },
   }),
 };
