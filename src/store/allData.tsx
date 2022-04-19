@@ -1104,7 +1104,7 @@ export const benefitsData: benefitType[] = [
 // //////////////////////////
 // pages
 
-export const homePage: metaType = {
+export const homePageMetaData: metaType = {
   author: "DeDogmaDAO",
   description: "Demmortal Treasure! Win Eth!",
   keywords: "etherium , demmortal",
