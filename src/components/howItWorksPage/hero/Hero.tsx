@@ -92,6 +92,7 @@ const Hero: React.FC = () => {
                 layout="fill"
                 className="z-10"
                 priority={true}
+                quality={100}
               />
 
               <motion.img
@@ -104,7 +105,7 @@ const Hero: React.FC = () => {
                 animate={anim}
                 variants={cityAnim}
               >
-                <Image src={"/img/art/city.png"} layout="fill"  />
+                <Image src={"/img/art/city.png"} layout="fill" quality={100}  />
               </motion.span>
               <motion.span
                 initial="hidden"
