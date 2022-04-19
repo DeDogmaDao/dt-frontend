@@ -949,84 +949,124 @@ export const numsList: counterNumType[] = Array.from(Array(51).keys()).map(
 
 export const roadDataQ1: roadDataType[] = [
   {
-    title: <p>Set and get their state.</p>,
-    desc: "tate and velocity of an animating value.Usually, these are created automatically. But for advanced use-cases, it is possible to create them manually and inject them into motion components.",
+    title: "Treasury filling period (3 month)",
+    desc: (
+      <>
+        After minting, releasing royalty fees from Opensea will take a month and
+        8 weeks to fill the Investment Treasury.
+      </>
+    ),
   },
   {
-    title: <p>Any MotionValue can spawn</p>,
-    desc: "All motion components internally use MotionValues to track the state and velocity of an animating value.Usually, these are created automatically. But for advancenents.",
+    title: "Yield farming on Investment Treasury simultaneously",
+    desc: <>This will start immediately after receiving the funds.</>,
   },
   {
-    title: <p>Chain MotionValues via the useTransform hook.</p>,
-    desc: "All motion components internally use Moti to create them manually and inject them into motion components.",
+    title: "Multi format PFP for NFT owners to download",
+    desc: (
+      <>This feature will be available from the first day of the reveal date.</>
+    ),
   },
   {
-    title: <p>before returning it to update the child.</p>,
-    desc: "All motion components internally use MotionValues to trackutomatically. But for advanced use-cases, it is possible to create them manually and inject them into motion components.",
+    title: "Lottery starts",
+    desc: <>3 months after minting(until the investment Treasury fills).</>,
   },
   {
-    title: <p>Set and get their state.</p>,
-    desc: " the state and velocity of an animating value.Usually, these are created automatically. But for advanced use-cases, it is possible to create them manually and inject them into motion components.",
+    title: "Sharing prize pools",
+    desc: (
+      <>
+        Building several participant pools. Members of the pools will have an
+        increased chance of winning the prize as a passive income opportunity.
+        This prize will be splitted among the members based on their NFTs.
+      </>
+    ),
   },
 ];
 export const roadDataQ2: roadDataType[] = [
   {
-    title: <p>Set and get their state.</p>,
-    desc: "tate and velocity of an animating value.Usually, these are created automatically. But for advanced use-cases, it is possible to create them manually and inject them into motion components.",
+    title: "Moving towards becoming a DAO",
+    desc: (
+      <>
+        6 months after minting the Demmortal Treasure NFTs, accepting proposal
+        for accelerating defi gamification ideas based on DD Dao treasures{" "}
+        <a
+          href="https://wiki.com"
+          target={"_blank"}
+          className="link-inside-text"
+        >
+          link to the Wiki
+        </a>
+      </>
+    ),
   },
   {
-    title: <p>Any MotionValue can spawn</p>,
-    desc: "All motion components internally use MotionValues to track the state and velocity of an animating value.Usually, these are created automatically. But for advancenents.",
+    title: "Airdrops for the next upcoming collictigame that is being built",
+    desc: (
+      <>
+        To play this game, each player needs to hold 5 cards of the new
+        collection. 3 of which will be airdropped to the owners of Demmortal
+        Treasure collection.
+      </>
+    ),
   },
   {
-    title: <p>Chain MotionValues via the useTransform hook.</p>,
-    desc: "All motion components internally use Moti to create them manually and inject them into motion components.",
+    title: "Expanding DDD collictigames to Sandbox platform",
+    desc: (
+      <>
+        This is an ongoing project. This is expected to be released by the end
+        of 2022.
+      </>
+    ),
   },
   {
-    title: <p>before returning it to update the child.</p>,
-    desc: "All motion components internally use MotionValues to trackutomatically. But for advanced use-cases, it is possible to create them manually and inject them into motion components.",
+    title: "Merging other investment DeFi protocols to our existing games",
+    desc: <>To add more diverse funds to the lottery prize.</>,
   },
   {
-    title: <p>Set and get their state.</p>,
-    desc: " the state and velocity of an animating value.Usually, these are created automatically. But for advanced use-cases, it is possible to create them manually and inject them into motion components.",
+    title: "Launching accessories marketplace",
+    desc: (
+      <>
+        Marketplace for collectibles and their accessories like scores, POAPs,
+        badges, etc.
+      </>
+    ),
   },
 ];
 export const roadDataQ3: roadDataType[] = [
   {
-    title: <p>Set and get their state.</p>,
-    desc: "tate and velocity of an animating value.Usually, these are created automatically. But for advanced use-cases, it is possible to create them manually and inject them into motion components.",
+    title: "Platformization the lottery format for other collectibles",
+    desc: (
+      <>
+        This is possible via fractionalizing to ERC20. DDD will host at least 10
+        lottery for popular collectibles by the end of 2022.
+      </>
+    ),
   },
   {
-    title: <p>Any MotionValue can spawn</p>,
-    desc: "All motion components internally use MotionValues to track the state and velocity of an animating value.Usually, these are created automatically. But for advancenents.",
+    title: "Expanding the games and protocols on ethereum layer2 networks",
+    desc: <> Building fully on-chain games with cost efficient fees.</>,
   },
   {
-    title: <p>Chain MotionValues via the useTransform hook.</p>,
-    desc: "All motion components internally use Moti to create them manually and inject them into motion components.",
-  },
-  {
-    title: <p>before returning it to update the child.</p>,
-    desc: "All motion components internally use MotionValues to trackutomatically. But for advanced use-cases, it is possible to create them manually and inject them into motion components.",
-  },
-  {
-    title: <p>Set and get their state.</p>,
-    desc: " the state and velocity of an animating value.Usually, these are created automatically. But for advanced use-cases, it is possible to create them manually and inject them into motion components.",
+    title: "More anti-rug open-sourced features",
+    desc: (
+      <>We believe you should not trust the team, trust the code instead.</>
+    ),
   },
 ];
 
 export const roadMapData: roadMapType[] = [
   {
-    sectionName: "Q1- Expansion",
+    sectionName: "Demmortal Treasure",
     backImg: "/img/roadmap/sec1.png",
     roadData: roadDataQ1,
   },
   {
-    sectionName: "Q2- Expansion",
+    sectionName: "Expanding DDD - part I",
     backImg: "/img/roadmap/sec2.png",
     roadData: roadDataQ2,
   },
   {
-    sectionName: "Q3- Expansion",
+    sectionName: "Expanding DDD - part II",
     backImg: "/img/roadmap/sec3.png",
     roadData: roadDataQ3,
   },
@@ -1041,7 +1081,11 @@ export const benefitsData: benefitType[] = [
         will guarantee the floor price. Any nft holder has the right to burn
         their nfts and receive their funds back. Our team only receives 30% of
         the funds based on the time schedule.{" "}
-        <a href="https://gitbook.what" className="links-inside-text">
+        <a
+          href="https://gitbook.what"
+          target={"_blank"}
+          className="link-inside-text"
+        >
           GITBOOK
         </a>
         <br />

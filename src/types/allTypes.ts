@@ -102,8 +102,8 @@ export interface activeIndexCardType {
 }
 
 export interface roadDataType {
-  title: ReactElement<any, any>;
-  desc: string;
+  title: string;
+  desc: ReactElement<any,any>;
 }
 
 export interface roadMapType {

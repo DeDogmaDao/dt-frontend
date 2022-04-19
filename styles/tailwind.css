@@ -20,7 +20,7 @@
   scrollbar-width: thin;
   scrollbar-color: darkgray;
 }
-.links-inside-text {
+.link-inside-text {
   @apply !text-cyan-500 !underline hover:!text-primary-500 duration-500; 
 }
 
