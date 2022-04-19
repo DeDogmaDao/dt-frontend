@@ -1,9 +1,10 @@
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { motion, PanInfo, useElementScroll } from "framer-motion";
+import { motion, PanInfo, useAnimation, useElementScroll } from "framer-motion";
 import Image from "next/image";
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 import { activeIndexCardType } from "../../../types/allTypes";
+import { tabFrameAni } from "../../../utils/animation";
 
 interface props {
   setIsDragged: Dispatch<SetStateAction<boolean>>;
@@ -68,6 +69,11 @@ const Slider: React.FC<props> = ({
     });
   };
 
+  const frameControls = useAnimation();
+useEffect(()=>{
+  frameControls.start("visible")
+},[activeIndexCard])
+  
   return (
     <motion.div className="relative w-[100%] sm:w-[80%] md:w-[70%] flex justify-center">
       <motion.div
@@ -99,14 +105,15 @@ const Slider: React.FC<props> = ({
         <FontAwesomeIcon icon={faChevronLeft} />
       </button>
       
-      <div className="absolute top-[50%] mt-[-220px] left-1/2 ml-[-190px] z-50 pointer-events-none select-none">
+      <motion.div inlist={"hidden"} animate={frameControls} variants={tabFrameAni} 
+      className="absolute top-[50%] mt-[-230px] left-1/2 ml-[-190px] z-50 pointer-events-none select-none">
         <Image
           width="380"
           height="490"
           layout="fixed"
           src="/img/cyc/frame.png"
         />
-      </div>
+      </motion.div>
       {/* <div className="absolute top-[55%] left-1/2 ml-[-150px] z-0 pointer-events-none select-none">
         <Image
           width="300"

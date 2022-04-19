@@ -545,6 +545,19 @@ export const tabImageAni: Variants = {
   }),
 };
 
+export const tabFrameAni:Variants = {
+  hidden:{
+    scale:1,
+  },
+  visible:{
+    scale:[1,1.03,1],
+    transition:{
+      duration:0.7,
+      times:[0,0.3,1]
+    }
+  }
+}
+
 export const spellCounterAni: Variants = {
   hidden: {
     translateY: 100,
