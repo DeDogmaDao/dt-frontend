@@ -37,7 +37,8 @@ const Benefits: React.FC = () => {
       <motion.div
       onHoverStart={()=>setIsPlaying(false)}
       onHoverEnd={()=>setIsPlaying(true)}
-      className="w-11/12 lg:w-9/12 flex flex-wrap justify-start ssm:justify-center items-center gap-x-12 text-large-medium  lg:text-extera-large-medium z-10 mt-14 ssm:mt-24 lg:mt-32">
+      className="w-11/12 lg:w-9/12 flex flex-wrap justify-start ssm:justify-center items-center gap-x-12
+      text-large-medium  lg:text-extera-large-medium z-10 mt-14 ssm:mt-24 lg:mt-32">
         {benefitsData.map((data, index) => {
           return (
             <EachBenefit
