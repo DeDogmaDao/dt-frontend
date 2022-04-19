@@ -30,7 +30,7 @@ const MobileMenu: React.FC<props> = ({ headerLinks }) => {
       ref={mobileMenuContainerRef}
       custom={dimension.height}
       variants={mobileMenuContainerAni}
-      className="absolute top-0 right-0  w-screen"
+      className="absolute top-0 right-0  w-screen block md:hidden"
     >
       <motion.div
         variants={mobileMenuAni}
