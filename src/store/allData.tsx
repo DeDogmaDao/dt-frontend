@@ -1099,3 +1099,13 @@ export const benefitsData: benefitType[] = [
     ],
   },
 ];
+
+
+
+
+
+
+// //////////////////////////
+// pages
+
+export const homePage =1;
