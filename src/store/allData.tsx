@@ -1080,8 +1080,13 @@ export const benefitsData: benefitType[] = [
         The money collected from the minting, goes to the buyback treasury which
         will guarantee the floor price. Any nft holder has the right to burn
         their nfts and receive their funds back. Our team only receives 30% of
-        the funds based on the time schedule.
-        {" "}<a href="https://gitbook.what" className="links-inside-text">GITBOOK</a> <br />
+        the funds based on the time schedule.{" "}
+        <a href="https://gitbook.what" className="links-inside-text">
+          GITBOOK
+        </a>
+        <br />
+      </>,
+      <>
         Part of the money earned from the secondary market sales and yield
         farming will also go to this treasure to refuel it.
       </>,
