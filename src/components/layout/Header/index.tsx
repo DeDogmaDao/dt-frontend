@@ -43,10 +43,10 @@ const Header: React.FC = () => {
   ];
 
   return (
-    <div className="absolute top-0 left-0 w-full h-[84px] z-[10000] ">
+    <div className="absolute top-0 left-0 w-full h-[84px] z-[10000] pointer-events-none">
       <div className="flex justify-start items-center w-full h-full relative">
         <div className="absolute top-0 left-0 w-full h-[160px] bg-gradient-to-b from-neutral-900 via-neutral-900/70 to-transparent " />
-        <span className="absolute top-[35px] left-5 ssm:left-16 z-100 ">
+        <span className="absolute top-[35px] left-5 ssm:left-16 z-100 pointer-events-auto">
           <Link href="/">
             <div className="flex justify-start items-center gap-x-2">
               <img
@@ -59,7 +59,7 @@ const Header: React.FC = () => {
             </div>
           </Link>
         </span>
-        <motion.ul className="absolute top-[35px] left-[114px] lg:left-[154px] hidden md:flex justify-start items-center gap-x-5 lg:gap-x-8 z-110">
+        <motion.ul className="absolute pointer-events-auto top-[35px] left-[114px] lg:left-[154px] hidden md:flex justify-start items-center gap-x-5 lg:gap-x-8 z-110">
           {headerLinks.map((headLink) => {
             return <EachLink key={headLink.ref} headLink={headLink} />;
           })}
