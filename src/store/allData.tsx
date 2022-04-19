@@ -55,21 +55,193 @@ export const footerData: socialType[] = [
 ];
 
 export const faqData: faqType[] = [
-  { question: "What is nepoleia?", answer: "we dont know yet" },
   {
-    question: "Can I use the platform without buying an NFT?",
-    answer: "we dont know yet",
+    question: "How will the minting work?",
+    answer: (
+      <>
+        This collectible contains 7777 unique NFTs. We will sell the 10 God NFTs
+        in an dutch auction which are all revealed from the beginning. Then, all
+        the remaining characters will be minted in an unrevealed fashion. On the
+        reveal day, owners will be able to see their revealed character on DDD
+        and all the other listed platforms.
+      </>
+    ),
   },
-  { question: "Why does this NFT have value?", answer: "we dont know yet" },
   {
-    question: "What blockchain are you operating on?",
-    answer: "we dont know yet",
+    question: "How much is the minting price?",
+    answer: (
+      <>
+        God NFT minting price will be determined during the dutch auction which
+        will vary for different gods.
+        <br />
+        The minting price for the remaining NFTs will be announced soon.
+      </>
+    ),
   },
   {
-    question: "What type of wallet do I need to buy one of Lonely Shadows NFT?",
-    answer: "we dont know yet",
+    question: "Mint date",
+    answer: <>June 2022</>,
   },
-  { question: "when is the launch? ", answer: "we dont know yet" },
+  {
+    question: "When is the reveal?",
+    answer: <>4 weeks after minting is over</>,
+  },
+  {
+    question: "How to get whitelisted?",
+    answer: (
+      <>
+        - Holders of collections that we will announce in our social channels.
+        <br />
+        - Active members of our community.
+        <br />- Winners of the challenges announced in DDD discord.
+      </>
+    ),
+  },
+  {
+    question: "Are there any public sales?",
+    answer: (
+      <>
+        Whitelisted members are our priority list of customers for sale. The
+        remaining NFTs will be available to the public.
+      </>
+    ),
+  },
+  {
+    question: "Should we do anything to join the lottery?",
+    answer: (
+      <>
+        No, it is an auto join lottery. You just need to hold your NFT in your
+        wallet.
+      </>
+    ),
+  },
+  {
+    question: "What wallets can I use?",
+    answer: <>Metamask, WalletConnect, Coinbase wallet, Fortmatic and Portis</>,
+  },
+  {
+    question: "Do the NFTs have an equal chance to win the lottery?",
+    answer: (
+      <>
+        No, it depends on your character. Read more about it here{" "}
+        <a
+          href="https://paper.com"
+          target={"_blank"}
+          className="link-inside-text"
+        >
+          like to lite-paper
+        </a>
+      </>
+    ),
+  },
+  {
+    question: "How can the nfts be upgraded?",
+    answer: (
+      <>
+        Cards that have played but couldn’t reveal the treasure will receive a
+        POTL (Proof Of Titan Luck). Cards with 3 POTLs will have the option to
+        upgrade their NFTs to the more rare guilds.
+      </>
+    ),
+  },
+  {
+    question: "Will the burnt nft come back to the supply?",
+    answer: <>No, It will not.</>,
+  },
+  {
+    question: "Will the supply increase?",
+    answer: (
+      <>
+        No, there are only 7777 NFTs which can decrease if owners burn their
+        NFTs.
+      </>
+    ),
+  },
+  {
+    question: "Will Demmortal Treasure be minted on ERC-721A standard?",
+    answer: (
+      <>
+        Yes{" "}
+        <a
+          href="https://azuki.com"
+          target={"_blank"}
+          className="link-inside-text"
+        >
+          link to Azuki’s post about this standard
+        </a>
+      </>
+    ),
+  },
+  {
+    question: "What is the time-guaranteed treasury?",
+    answer: (
+      <>
+        This is an anti-rug feature designed to guarantee the quality and price
+        of the collection. This means the share of the team will be released to
+        the team gradually in a smaller amount during 8 months to maintain the
+        value of the NFTs and guarantee the performance of our protocol.
+      </>
+    ),
+  },
+  {
+    question: "What is the time-guaranteed treasury schedule?",
+    answer: (
+      <>
+        20% of minting price during minting period for market making and
+        bootstrapping
+        <br />
+        10% of minting price after the 3rd month for the team
+        <br />
+        10% of minting price after the 4th month for the team
+        <br />
+        10% of minting price after the 5th month for the team
+        <br />
+        10% of minting price after the 6th month for DDD platform expansion
+        <br />
+        10% of minting price after the 7th month for DDD platform expansion
+        <br />
+        10% of minting price after the 8th month for DDD platform expansion
+      </>
+    ),
+  },
+  {
+    question: "How will the guaranteed prize work?",
+    answer: (
+      <>
+        The royalty fees of our 8 weeks with highest trading volume will be used
+        for yield farming and the interest of it will be funded in the
+        guaranteed prize.
+      </>
+    ),
+  },
+  {
+    question: "When does the lottery start?",
+    answer: (
+      <>
+        We are having a three month lottery preparation period in-between
+        minting and when the lottery starts.
+      </>
+    ),
+  },
+  {
+    question: "What is the yield farming strategy?",
+    answer: (
+      <>
+        This strategy can change throughout time and we will optimize towards
+        the maximum interest between yield aggregators. In the beginning we will
+        start with Yearn Finance.
+      </>
+    ),
+  },
+  {
+    question: "Wen token?",
+    answer: (
+      <>
+        We don’t have any tokens. All prizes and benefits of the lottery are in
+        ETH itself.
+      </>
+    ),
+  },
 ];
 
 export const teamDataLvl1: globCardType[] = [

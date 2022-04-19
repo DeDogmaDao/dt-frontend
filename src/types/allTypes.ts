@@ -8,7 +8,7 @@ export interface LinkType {
 
 export interface faqType {
   question: string;
-  answer: string;
+  answer: ReactElement<any,any>;
 }
 
 export interface globCardType {
