@@ -26,7 +26,7 @@ const EachFAQ: React.FC<props> = ({ data }) => {
             <span>
               <FontAwesomeIcon icon={faMagnifyingGlass} />
             </span>
-            <span>{data.question}</span>
+            <span className="font-medium">{data.question}</span>
           </div>
           <span
             className={`bg-secondary-500 text-white rounded-full !h-16 !w-16 !min-w-[64px] ml-3 
@@ -39,7 +39,7 @@ const EachFAQ: React.FC<props> = ({ data }) => {
         {isExpanded && (
           <motion.p
             layout
-            className="self-start text-lg ml-10 py-5 text-medium-light  text-secText"
+            className="self-start text-lg ml-10 py-5 text-medium-light font-thin"
           >
             {data.answer}
           </motion.p>
