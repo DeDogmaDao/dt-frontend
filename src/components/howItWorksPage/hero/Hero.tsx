@@ -97,7 +97,6 @@ const Hero: React.FC = () => {
               <motion.img
                 className="absolute z-20 left-[48.5%] top-[71%] w-[10%] h-[15%]"
                 src={"/img/art/cape.gif"}
-                loading="eager"
               />
               <motion.span
                 className="absolute w-full h-full z-0"
@@ -105,7 +104,7 @@ const Hero: React.FC = () => {
                 animate={anim}
                 variants={cityAnim}
               >
-                <Image src={"/img/art/city.png"} layout="fill" priority={true} />
+                <Image src={"/img/art/city.png"} layout="fill"  />
               </motion.span>
               <motion.span
                 initial="hidden"
@@ -113,7 +112,7 @@ const Hero: React.FC = () => {
                 variants={cityMaskAnim}
                 className="absolute w-full h-full z-0 scale-105"
               >
-                <Image src={"/img/art/mask.png"} layout="fill" priority={true} />
+                <Image src={"/img/art/mask.png"} layout="fill" />
               </motion.span>
 
               <motion.video loop autoPlay muted className="absolute z-20 w-[9.429%] h-[20.114%] left-[14.576%] top-[57.828%]">
