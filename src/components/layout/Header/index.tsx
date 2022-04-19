@@ -46,14 +46,14 @@ const Header: React.FC = () => {
     <div className="absolute top-0 left-0 w-full h-[84px] z-[10000] ">
       <div className="flex justify-start items-center w-full h-full relative">
         <div className="absolute top-0 left-0 w-full h-[160px] bg-gradient-to-b from-neutral-900 via-neutral-900/70 to-transparent " />
-        <span className="absolute top-[35px] left-16 z-100 ">
+        <span className="absolute top-[35px] left-5 ssm:left-16 z-100 ">
           <Link href="/">
             <div className="flex justify-start items-center gap-x-2">
               <img
                 className="w-9 cursor-pointer"
                 src="/img/logo/ddd-logo.png"
               />
-              <span className="text-medium-bold md:hidden">
+              <span className="text-small-bold ssm:text-medium-bold md:hidden">
                 Demmortal Treasure
               </span>
             </div>
