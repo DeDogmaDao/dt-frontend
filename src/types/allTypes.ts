@@ -119,7 +119,6 @@ export interface benefitType {
   desc: string[];
 }
 
-
 export interface metaType {
   title: string;
   description: string;
