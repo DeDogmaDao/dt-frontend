@@ -25,6 +25,14 @@ function MyApp({ Component, pageProps }: AppProps) {
   //   }
   // }, []);
 
+  useLayoutEffect(()=>{
+    if(window.innerWidth> 1536){
+      const htmlTag = document.querySelector("html");
+      const windowWidth = window.innerWidth;
+      const scaleFont = windowWidth / 1536;
+      htmlTag!.style.fontSize = scaleFont * 16 + "px";
+    }
+  },[])
   return (
     <>
       <Head>
