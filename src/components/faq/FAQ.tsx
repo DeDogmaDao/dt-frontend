@@ -22,7 +22,8 @@ const FAQ: React.FC = () => {
         />
       </div>
       <h3 className="z-10 mt-44">Frequently Asked Questions</h3>
-      <motion.ul className="flex flex-col justify-center items-center mx-auto w-[63%] h-full rounded-xl  gap-y-1 py-12 z-10 bg-neutral-500 mt-14">
+      <motion.ul className="flex flex-col justify-center items-center mx-auto w-[95%] sm:w-[90%] md:w-[75%] lg:w-[63%]
+       h-full rounded-xl  gap-y-1 py-12 z-10 bg-neutral-500 mt-14">
         <LayoutGroup>
           {faqData.map((data) => {
             return <EachFAQ key={data.question} data={data} />;
