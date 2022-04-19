@@ -45,7 +45,7 @@ const Header: React.FC = () => {
   return (
     <div className="absolute top-0 left-0 w-full h-[84px] z-[10000] ">
       <div className="flex justify-start items-center w-full h-full relative pt-9">
-        <div className="absolute top-0 left-0 w-full h-[93px] bg-gradient-to-b from-neutral-900 to-transparent md:hidden" />
+        <div className="absolute top-0 left-0 w-full h-[160px] bg-gradient-to-b from-neutral-900 via-neutral-900/70 to-transparent " />
         <span className="absolute top-[35px] left-6 z-100 ">
           <Link href="/">
             <div className="flex justify-start items-center gap-x-2">
@@ -53,7 +53,7 @@ const Header: React.FC = () => {
                 className="w-9 cursor-pointer"
                 src="/img/logo/ddd-logo.png"
               />
-              <span className="text-medium-bold">Demmortal Treasure</span>
+              <span className="text-medium-bold hidden md:block">Demmortal Treasure</span>
             </div>
           </Link>
         </span>
@@ -65,7 +65,7 @@ const Header: React.FC = () => {
         <span className="absolute top-[32px] right-[72px] w-9 h-9 rounded-full bg-neutral-700 text-white text-xl flex justify-center items-center">
           <FontAwesomeIcon icon={faDiscord} />
         </span>
-        <MobileMenu headerLinks={headerLinks} />
+        {/* <MobileMenu headerLinks={headerLinks} /> */}
       </div>
     </div>
   );
