@@ -18,6 +18,7 @@ import {
   roadMapType,
   roadDataType,
   benefitType,
+  metaType,
 } from "../types/allTypes";
 
 //
@@ -106,7 +107,7 @@ export const godTabData: tabType[] = [
     titleOfHonor: "herald the stone eyes",
     image: "/img/cyc/1.png",
     desc: [
-      "God of the sun and master of thievery and poetry. With his wing-threaded sandals, he can spread"
+      "God of the sun and master of thievery and poetry. With his wing-threaded sandals, he can spread",
     ],
   },
   {
@@ -1100,12 +1101,20 @@ export const benefitsData: benefitType[] = [
   },
 ];
 
-
-
-
-
-
 // //////////////////////////
 // pages
 
-export const homePage =1;
+export const homePage: metaType = {
+  author: "DeDogmaDAO",
+  description: "Demmortal Treasure! Win Eth!",
+  keywords: "etherium , demmortal",
+  title: "DeDogmaDAO Demmortal Treasure",
+  preload: [
+    "/public/img/art/portal.png",
+    "/public/img/art/city.png",
+    "/public/img/art/mask.png",
+    "/public/img/art/cape.gif",
+    "/public/img/art/left-fire.mp4",
+    "/public/img/art/right-fire.mp4",
+  ],
+};
