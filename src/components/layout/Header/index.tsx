@@ -36,6 +36,10 @@ const Header: React.FC = () => {
       ref: "/team",
       text: "Team",
     },
+    {
+      ref: "/faq",
+      text: "FAQ",
+    },
   ];
 
   return (
