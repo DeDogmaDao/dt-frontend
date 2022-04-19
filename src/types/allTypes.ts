@@ -116,7 +116,7 @@ export interface roadMapType {
 
 export interface benefitType {
   title: string;
-  desc: string[];
+  desc: ReactElement<any, any>[];
 }
 
 export interface metaType {

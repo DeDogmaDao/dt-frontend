@@ -55,7 +55,7 @@ const Benefits: React.FC = () => {
         <ul className="flex flex-col gap-y-3">
           {activeIndex !== -1 &&
             benefitsData[activeIndex].desc.map((item, index) => {
-              return <EachDesc descData={item} index={index} />;
+              return <EachDesc setIsPlaying={setIsPlaying} descData={item} index={index} />;
             })}
         </ul>
       </div>

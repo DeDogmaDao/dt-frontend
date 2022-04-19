@@ -1074,29 +1074,49 @@ export const roadMapData: roadMapType[] = [
 
 export const benefitsData: benefitType[] = [
   {
-    title: "Self-growing pool prize",
+    title: "Time-Guaranteed floor price",
     desc: [
-      "All NFT holders will participate in our daily and weekly gamified lottery automatically. ",
+      <>
+        The money collected from the minting, goes to the buyback treasury which
+        will guarantee the floor price. Any nft holder has the right to burn
+        their nfts and receive their funds back. Our team only receives 30% of
+        the funds based on the time schedule.
+        {" "}<a href="https://gitbook.what" className="links-inside-text">GITBOOK</a> <br />
+        Part of the money earned from the secondary market sales and yield
+        farming will also go to this treasure to refuel it.
+      </>,
     ],
   },
   {
     title: "Auto-join lottery",
     desc: [
-      " daily and weekly gamified lottery automatically. ",
-      "Self-growing pool prize Self-growing pool prize Self-growing pool prize Self-growing pool prize Self-growing pool prize",
+      <>
+        All NFT holders will automatically participate in our daily and weekly
+        gamified lottery.
+      </>,
+      <>No extra gas fee or action needed from the holders unless they win.</>,
     ],
   },
   {
-    title: "Guaranteed floor price",
+    title: "Diverse pool prizes",
     desc: [
-      "All NFT holders will participate in our daily and weekly gamified lottery automatically. ",
+      <>Currently, There are two types of prizes in each game.</>,
+      <>Dynamic prize based on secondary sales (main prize).</>,
+      <>Guaranteed prize based on yield farming of investment treasury.</>,
+      <>
+        Note: The investment treasury is a self-growing pool which can only grow
+        bigger and guarantees a minimum prize.
+      </>,
     ],
   },
   {
     title: "One click from NFT to PFP",
     desc: [
-      " daily and weekly gamified lottery automatically. ",
-      "Self-growing pool prize Self-growing pool prize Self-growing pool prize Self-growing pool prize Self-growing pool prize",
+      <>
+        Demmortal Treasure collectigame is based on the lore‘s main characters.
+        It is also possible to generate detailed artwork PFP from your unique
+        NFT.
+      </>,
     ],
   },
 ];
