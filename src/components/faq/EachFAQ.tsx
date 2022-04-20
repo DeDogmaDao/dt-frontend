@@ -39,7 +39,7 @@ const EachFAQ: React.FC<props> = ({ data }) => {
         {isExpanded && (
           <motion.p
             layout
-            className="self-start text-lg ml-10 py-5 text-medium-light font-thin"
+            className="self-start text-lg ml-10 py-5 pr-6 text-medium-light font-thin"
           >
             {data.answer}
           </motion.p>

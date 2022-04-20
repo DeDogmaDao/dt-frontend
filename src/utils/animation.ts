@@ -419,12 +419,14 @@ export const carouselDisplayAni: Variants = {
   hidden: (custom) => ({
     left: 50 + custom * 70 + "%",
     scale: 1 - 0.4 * Math.abs(custom),
+    opacity:0.3,
   }),
   visible: (custom) => {
     if (custom === 0) {
       return {
         scale: 1 - 0.4 * Math.abs(custom),
         left: 50 + custom * 35 + "%",
+        opacity:1,
         transition: {
           duration: 0.4,
         },
@@ -433,6 +435,7 @@ export const carouselDisplayAni: Variants = {
     return {
       scale: 1 - 0.4 * Math.abs(custom),
       left: 50 + custom * 35 + "%",
+      opacity:0.5,
       transition: {
         duration: 0.4,
       },
@@ -441,7 +444,7 @@ export const carouselDisplayAni: Variants = {
   out: (custom) => ({
     left: 50 + custom * 70 + "%",
     scale: 0.2,
-    opacity: 0.5,
+    opacity: 0.3,
     transition: {
       duration: 0.4,
     },
@@ -541,6 +544,19 @@ export const tabImageAni: Variants = {
     },
   }),
 };
+
+export const tabFrameAni:Variants = {
+  hidden:{
+    scale:1,
+  },
+  visible:{
+    scale:[1,1.03,1],
+    transition:{
+      duration:0.7,
+      times:[0,0.3,1]
+    }
+  }
+}
 
 export const spellCounterAni: Variants = {
   hidden: {
