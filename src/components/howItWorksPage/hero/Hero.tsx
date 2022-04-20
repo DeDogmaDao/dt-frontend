@@ -76,10 +76,13 @@ const Hero: React.FC = () => {
   const rightFireRef = useRef<HTMLVideoElement>(null);
 
   useLayoutEffect(() => {
+    console.log("1");
     if (getOS() === "Mac OS") {
+      console.log(getOS());
       leftFireRef.current!.style.filter = "brightness(91.5%)";
       rightFireRef.current!.style.filter = "brightness(91.5%)";
     }
+    console.log(getOS()==="Mac OS");
   }, []);
 
   return (
@@ -136,7 +139,7 @@ const Hero: React.FC = () => {
                 autoPlay
                 muted
                 playsInline
-                className="absolute contrast-[120%] opacity-100 border-none outline-none z-20 w-[9.429%] h-[20.114%] left-[14.576%] top-[57.828%]"
+                className="absolute border-none outline-none z-20 w-[9.429%] h-[20.114%] left-[14.576%] top-[57.828%]"
               >
                 <source src={"/img/art/left-fire.mp4"} type="video/mp4" />
               </motion.video>
@@ -146,7 +149,7 @@ const Hero: React.FC = () => {
                 autoPlay
                 muted
                 playsInline
-                className="absolute opacity-100 border-none outline-none z-20 w-[9.429%] h-[20.114%] left-[74.844%] top-[57.828%]"
+                className="absolute border-none outline-none z-20 w-[9.429%] h-[20.114%] left-[74.844%] top-[57.828%]"
               >
                 <source src={"/img/art/right-fire.mp4"} type="video/mp4" />
               </motion.video>
