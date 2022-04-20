@@ -20,16 +20,13 @@ const Tabs: React.FC = () => {
 
   return (
     <div
-      className="flex flex-col justify-between items-center h-full w-full relative"
+      className="flex flex-col justify-between items-center h-full w-full relative z-100"
       id="cards"
     >
-      <div className="absolute top-0 left-0 z-0 w-full">
-        <Image
-          width="1440"
-          height="929"
-          layout="responsive"
-          src="/img/cyc/tab-bg.png"
-        />
+      <div className="absolute top-0 left-0 z-0 w-full h-full">
+        <div className="relative w-full h-full">
+          <Image layout="fill" src="/img/bg/sec2.png" />
+        </div>
       </div>
       <h3 className="z-10 mt-14 ssm:mt-20 sm:mt-32 lg:mt-40 text-[20px] ssm:text-[28px] sm:text-[38px] font-bold sm:font-bold">
         Choose your <span className="text-yellow-400">Card</span>

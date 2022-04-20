@@ -28,7 +28,7 @@ const Benefits: React.FC = () => {
 
   return (
     <div
-      className="flex flex-col justify-start items-center h-full relative"
+      className="flex flex-col justify-start items-center h-full relative z-0"
       id="benefits"
     >
       <div className="absolute z-0 left-0 top-0 w-full h-full">

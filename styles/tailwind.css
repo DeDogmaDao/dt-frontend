@@ -66,7 +66,7 @@
   }
   body {
     font-family: "Saira", sans-serif;
-    @apply bg-neutral-900 text-neutral-50;
+    @apply bg-[#000413] text-neutral-50;
   }
 
   span > img {
