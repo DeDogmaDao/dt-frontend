@@ -13,23 +13,38 @@ module.exports = {
   //     },
   //   ];
   // },
-  // async redirects() {
-  //   return [
-  //     {
-  //       source: "/",
-  //       destination: "/underconstruction",
-  //       permanent: true,
-  //     },
-  //     {
-  //       source: "/gallery",
-  //       destination: "/underconstruction",
-  //       permanent: true,
-  //     },
-  //     {
-  //       source: "/gameboard",
-  //       destination: "/underconstruction",
-  //       permanent: true,
-  //     },
-  //   ];
-  // },
+  async redirects() {
+    return [
+      {
+        source: "/",
+        destination: "/underconstruction",
+        permanent: false,
+      },
+      {
+        source: "/gallery",
+        destination: "/underconstruction",
+        permanent: false,
+      },
+      {
+        source: "/gameboard",
+        destination: "/underconstruction",
+        permanent: false,
+      },
+      {
+        source: "/roadmap",
+        destination: "/underconstruction",
+        permanent: false,
+      },
+      {
+        source: "/team",
+        destination: "/underconstruction",
+        permanent: false,
+      },
+      {
+        source: "/faq",
+        destination: "/underconstruction",
+        permanent: false,
+      },
+    ];
+  },
 };

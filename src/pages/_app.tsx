@@ -17,13 +17,13 @@ import { useEffect, useLayoutEffect } from "react";
 fontawesomeConfig.autoAddCss = false;
 
 function MyApp({ Component, pageProps }: AppProps) {
-  // const router = useRouter();
+  const router = useRouter();
 
-  // useLayoutEffect(() => {
-  //   if (router.pathname !== "underconstruction") {
-  //     router.push("/underconstruction");
-  //   }
-  // }, []);
+  useLayoutEffect(() => {
+    if (router.pathname !== "underconstruction") {
+      router.push("/underconstruction");
+    }
+  }, []);
 
   useLayoutEffect(()=>{
     if(window.innerWidth> 1536){
