@@ -9,11 +9,11 @@ import {  useLayoutEffect } from "react";
 export default function underconstruction(): JSX.Element {
   const router = useRouter();
 
-  // useLayoutEffect(() => {
-  //   if (router.pathname === "/underconstruction") {
-  //     router.push("/");
-  //   }
-  // }, []);
+  useLayoutEffect(() => {
+    if (router.pathname === "/underconstruction") {
+      router.push("/");
+    }
+  }, []);
   return (
     <Fragment>
       <Head>
