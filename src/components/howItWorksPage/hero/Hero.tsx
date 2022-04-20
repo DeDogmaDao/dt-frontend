@@ -73,8 +73,10 @@ const Hero: React.FC = () => {
 
   return (
     <>
-      <motion.div className=" flex justify-center items-center relative bg-[#171181]
-       w-[100vw] h-[100vh] ssm:h-[110vh] sm:h-[90vh] md:h-[100vh] lg:h-[56.26vw] mx-auto overflow-hidden hero-container">
+      <motion.div
+        className=" flex justify-center items-center relative bg-[#171181]
+       w-[100vw] h-[100vh] ssm:h-[110vh] sm:h-[90vh] md:h-[100vh] lg:h-[56.26vw] mx-auto overflow-hidden hero-container"
+      >
         <div className="portal-and-flame-and-hero w-full h-full relative z-20 ">
           <motion.span
             className="absolute w-full h-full origin-bottom"
@@ -106,7 +108,7 @@ const Hero: React.FC = () => {
                 animate={anim}
                 variants={cityAnim}
               >
-                <Image src={"/img/art/city.png"} layout="fill" quality={100}  />
+                <Image src={"/img/art/city.png"} layout="fill" quality={100} />
               </motion.span>
               <motion.span
                 initial="hidden"
@@ -117,11 +119,23 @@ const Hero: React.FC = () => {
                 <Image src={"/img/art/mask.png"} layout="fill" />
               </motion.span>
 
-              <motion.video loop autoPlay muted playsInline className="absolute opacity-90 border-none outline-none z-20 w-[9.429%] h-[20.114%] left-[14.576%] top-[57.828%]">
-              <source src={"/img/art/left-fire.mp4"} type="video/mp4" />
+              <motion.video
+                loop
+                autoPlay
+                muted
+                playsInline
+                className="absolute opacity-90 border-none outline-none z-20 w-[9.429%] h-[20.114%] left-[14.576%] top-[57.828%]"
+              >
+                <source src={"/img/art/left-fire.mp4"} type="video/mp4" />
               </motion.video>
-              <motion.video loop autoPlay muted playsInline className="absolute opacity-90 border-none outline-none z-20 w-[9.429%] h-[20.114%] left-[74.844%] top-[57.828%]">
-              <source src={"/img/art/right-fire.mp4"} type="video/mp4" />
+              <motion.video
+                loop
+                autoPlay
+                muted
+                playsInline
+                className="absolute opacity-90 border-none outline-none z-20 w-[9.429%] h-[20.114%] left-[74.844%] top-[57.828%]"
+              >
+                <source src={"/img/art/right-fire.mp4"} type="video/mp4" />
               </motion.video>
             </div>
           </motion.span>
