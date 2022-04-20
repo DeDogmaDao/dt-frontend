@@ -11,8 +11,8 @@ const ToRoadmapAction: React.FC = () => {
         <div className="relative w-full h-full"><Image src={"/img/bg/sec3.png"} layout="fill" /></div>
       </div>
       <div className="flex flex-col justify-start items-center z-10 absolute top-0 left-0 w-full h-full">
-        <span className="w-[30px] h-[6px] mt-12 md:mt-24 lg:mt-32 xl:mt-36 bg-yellow-300" />
-        <h3 className="mt-8 text-[20px] ssm:text-[28px] sm:text-[38px] font-bold sm:font-bold">
+        <span className="w-[1.875rem] h-[.375rem] mt-12 md:mt-24 lg:mt-32 xl:mt-36 bg-yellow-300" />
+        <h3 className="mt-8 text-[1.25rem] ssm:text-[1.75rem] sm:text-[2.375rem] font-bold sm:font-bold">
           Our <span className="text-yellow-300">Roadmap</span>
         </h3>
         <p className="text-large-medium font-light mt-3 w-[90%] md:w-[70%] lg:w-[55%] mx-auto text-center">

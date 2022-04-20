@@ -17,11 +17,11 @@ const Footer: React.FC = () => {
         <div className="pt-80 mb-3 scale-[80%] ssm:scale-100 z-10">
           <Image src="/img/logo/treasure.png" width={284} height={94} />
         </div>
-        <h3 className="mb-3 text-[20px] ssm:text-[28px] sm:text-[38px] font-bold sm:font-bold z-10">
+        <h3 className="mb-3 text-[1.25rem] ssm:text-[1.75rem] sm:text-[2.375rem] font-bold sm:font-bold z-10">
           NFT Game and Collection by
           <span className="text-yellow-300"> DDD</span>
         </h3>
-        <span className="w-[30px] h-[6px] mb-6 bg-yellow-300 z-10" />
+        <span className="w-[1.875rem] h-[.375rem] mb-6 bg-yellow-300 z-10" />
         <ul className="flex justify-center items-center sm:gap-x-3 mb-10 z-10">
           {footerData.map((data) => {
             return <Social data={data} />;

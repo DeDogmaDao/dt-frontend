@@ -49,7 +49,7 @@ const EachBenefit: React.FC<props> = ({
           initial="hidden"
           animate="visible"
           variants={eachBenefitAni}
-          className="w-[26px] h-[6px] bg-yellow-400 absolute bottom-1 left-0"
+          className="w-[1.625rem] h-[.375rem] bg-yellow-400 absolute bottom-1 left-0"
         ></motion.div>
       )}
     </motion.button>

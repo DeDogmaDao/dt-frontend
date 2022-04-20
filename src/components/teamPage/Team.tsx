@@ -22,7 +22,7 @@ const Team: React.FC = () => {
         />
       </div>
       <div className="relative w-full h-full flex flex-col justify-start items-center pt-24 md:pt-32 pb-10">
-        <h3 className="text-[20px] ssm:text-[28px] sm:text-[38px] font-bold">Meet the Creators</h3>
+        <h3 className="text-[1.25rem] ssm:text-[1.75rem] sm:text-[2.375rem] font-bold">Meet the Creators</h3>
         <div className="flex flex-wrap justify-center items-center w-full gap-8 mt-20">
           {teamDataLvl1.map((member, index) => {
             return (
