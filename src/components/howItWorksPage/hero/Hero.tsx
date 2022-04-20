@@ -124,7 +124,7 @@ const Hero: React.FC = () => {
                 autoPlay
                 muted
                 playsInline
-                style={{WebkitFilter:"brightness(108.5%)"}}
+                style={{WebkitFilter:"brightness(91.5%)"}}
                 className="absolute opacity-90 border-none outline-none z-20 w-[9.429%] h-[20.114%] left-[14.576%] top-[57.828%]"
               >
                 <source src={"/img/art/left-fire.mp4"} type="video/mp4" />
