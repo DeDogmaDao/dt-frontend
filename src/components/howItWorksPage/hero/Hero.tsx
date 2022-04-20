@@ -71,20 +71,26 @@ const Hero: React.FC = () => {
             initial="hidden"
             animate={anim}
             variants={heroAnim}
-          >
+            >
             <div
               className=" ml-[-100%] sm:ml-[-25%] lg:ml-auto
              h-full
              w-[300%] sm:w-[150%] lg:w-full
              relative flex justify-center items-center"
-            >
-              <Image
-                src={"/img/art/portal.png"}
-                layout="fill"
-                className="z-10"
-                priority={true}
-                quality={100}
-              />
+             >
+              <motion.div
+              onHoverStart={() => setAnim("visible")}
+              onHoverEnd={() => setAnim("hidden")}
+              
+              className="absolute w-[20%] h-[65%] top-1/2 mt-[-19.5%] left-1/2 ml-[-10%]  z-100 rounded-[50%]" />
+              <motion.span className="absolute w-full h-full z-10">
+                <Image
+                  src={"/img/art/portal.png"}
+                  layout="fill"
+                  priority={true}
+                  quality={100}
+                />
+              </motion.span>
 
               <motion.img
                 className="absolute z-20 left-[48.5%] top-[71%] w-[10%] h-[15%]"
