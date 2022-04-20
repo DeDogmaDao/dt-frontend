@@ -29,7 +29,7 @@ const EachFAQ: React.FC<props> = ({ data }) => {
             <span className="font-medium">{data.question}</span>
           </div>
           <span
-            className={`bg-secondary-500 text-white rounded-full !h-16 !w-16 !min-w-[64px] ml-3 
+            className={`bg-secondary-500 text-white rounded-full !h-16 !w-16 !min-w-[4rem] ml-3 
             flex justify-center items-center  group-hover:rotate-90 group-hover:bg-secondary-400 duration-500
           ${isExpanded ? "!rotate-45" : ""}`}
           >
