@@ -15,23 +15,23 @@ const Hero: React.FC = () => {
   // });
 
   const topTransformWheel = (evt: any) => {
-    if (window.scrollY < 15) {
-      evt.preventDefault();
-      let direction = evt.detail < 0 || evt.wheelDelta > 0 ? 1 : -1;
-      if (direction > 0) {
-        window.scrollTo({
-          top: window.scrollY - 20,
-          left: 0,
-          behavior: "smooth",
-        });
-      } else {
-        window.scrollTo({
-          top: window.scrollY + 20,
-          left: 0,
-          behavior: "smooth",
-        });
-      }
-    }
+    // if (window.scrollY < 15) {
+    //   evt.preventDefault();
+    //   let direction = evt.detail < 0 || evt.wheelDelta > 0 ? 1 : -1;
+    //   if (direction > 0) {
+    //     window.scrollTo({
+    //       top: window.scrollY - 20,
+    //       left: 0,
+    //       behavior: "smooth",
+    //     });
+    //   } else {
+    //     window.scrollTo({
+    //       top: window.scrollY + 20,
+    //       left: 0,
+    //       behavior: "smooth",
+    //     });
+    //   }
+    // }
   };
 
   const scrollHandler = () => {
