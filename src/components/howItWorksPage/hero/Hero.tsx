@@ -107,8 +107,7 @@ const Hero: React.FC = () => {
               </motion.span>
               <motion.span
                 initial="hidden"
-                animate={anim}
-                variants={cityMaskAnim}
+
                 className="absolute w-full h-full z-0 scale-105"
               >
                 <Image src={"/img/art/mask.png"} layout="fill" />
