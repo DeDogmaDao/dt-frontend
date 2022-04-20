@@ -9,7 +9,7 @@ const MenuToggle: React.FC<props> = ({ cycleIsExpanded }) => {
   return (
     <button
       onClick={cycleIsExpanded}
-      className="select-none outline-none border-none no-select-a-tag cursor-pointer absolute top-[32px] right-[25px] w-8 h-10 rounded-full bg-transparent flex justify-center items-center"
+      className="select-none outline-none border-none no-select-a-tag cursor-pointer absolute top-[2rem] right-[1.5625rem] w-8 h-10 rounded-full bg-transparent flex justify-center items-center"
     >
       <svg width={23} height={23} viewBox="0 0 23 23">
         <Path

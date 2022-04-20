@@ -123,7 +123,7 @@ const Carosel: React.FC<props> = ({ allData, initialQuantity, Item }) => {
   const snapStyle = isSmallDevice
     ? {
         scrollSnapType: "x mandatory",
-        scrollPaddingInline: "50px",
+        scrollPaddingInline: "3.125rem",
       }
     : {};
 

@@ -8,7 +8,7 @@ export interface LinkType {
 
 export interface faqType {
   question: string;
-  answer: string;
+  answer: ReactElement<any,any>;
 }
 
 export interface globCardType {
@@ -32,11 +32,9 @@ export interface layersType {
 export interface tabType {
   activeCard: boolean;
   name: string;
-  titleOfHonor: string;
+  titleOfHonor?: string;
   image: string;
-  image2?: string;
-  image3?: string;
-  desc: ReactElement<any, any>;
+  desc: string[];
 }
 
 export interface tabsType {
@@ -104,8 +102,8 @@ export interface activeIndexCardType {
 }
 
 export interface roadDataType {
-  title: ReactElement<any, any>;
-  desc: string;
+  title: string;
+  desc: ReactElement<any,any>;
 }
 
 export interface roadMapType {
@@ -116,5 +114,13 @@ export interface roadMapType {
 
 export interface benefitType {
   title: string;
-  desc: string[];
+  desc: ReactElement<any, any>[];
+}
+
+export interface metaType {
+  title: string;
+  description: string;
+  keywords: string;
+  author: string;
+  preload: string[];
 }

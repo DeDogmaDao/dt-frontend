@@ -30,7 +30,7 @@ const MobileMenu: React.FC<props> = ({ headerLinks }) => {
       ref={mobileMenuContainerRef}
       custom={dimension.height}
       variants={mobileMenuContainerAni}
-      className="absolute top-0 right-0  w-screen"
+      className="absolute top-0 right-0  w-screen block md:hidden pointer-events-auto"
     >
       <motion.div
         variants={mobileMenuAni}
@@ -47,7 +47,7 @@ const MobileMenu: React.FC<props> = ({ headerLinks }) => {
         })}
       </motion.ul>
       <MenuToggle cycleIsExpanded={cycleIsExpanded} />
-      <motion.div className="absolute bottom-10 left-0 w-screen h-[100px] flex flex-col justify-center items-center ">
+      <motion.div className="absolute bottom-10 left-0 w-screen h-[6.25rem] flex flex-col justify-center items-center ">
         <motion.ul
           variants={navBodyAni}
           className="flex justify-center items-start w-full h-1/2 gap-x-3"
@@ -67,7 +67,7 @@ const MobileMenu: React.FC<props> = ({ headerLinks }) => {
             );
           })}
         </motion.ul>
-        <motion.p variants={menuCopyRightAni} className="text-[10px]">
+        <motion.p variants={menuCopyRightAni} className="text-[.625rem]">
           &copy; COPYWRITES 2022 DDD. ALL RIGHTS RESERVED
         </motion.p>
       </motion.div>

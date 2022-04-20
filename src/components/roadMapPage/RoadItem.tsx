@@ -33,10 +33,11 @@ const RoadItem: React.FC<props> = ({ data, setDescIndex, descIndex, index }) => 
   return (
     <motion.li
       onHoverStart={descriptionHoverHandler}
-      className={`w-full flex justify-start items-start gap-3 text-medium-medium duration-300
+      onTap={descriptionHoverHandler}
+      className={`w-full flex justify-start items-start 2xl:items-center gap-3 text-medium-medium 2xl:text-large-medium duration-300
        ${index === descIndex ? "text-primary-300 translate-x-2":""}`}
     >
-      <span className="text-xl">
+      <span className="text-base">
         <FontAwesomeIcon icon={faAngleRight} />
       </span>
       <p>{data.title}</p>

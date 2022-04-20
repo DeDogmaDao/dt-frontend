@@ -47,7 +47,7 @@ const EachTab: React.FC<props> = ({
 
   return (
     <button
-      className={`relative flex justify-center items-center w-[26px] h-[6px] bg-neutral-700 rounded-full duration-500`}
+      className={`relative flex justify-center items-center w-[.9375rem] ssm:w-[1.625rem] h-[.375rem] bg-neutral-700 rounded-full duration-500`}
       onClick={clickHandler}
     >
       {activeIndexCard[group] === index && (

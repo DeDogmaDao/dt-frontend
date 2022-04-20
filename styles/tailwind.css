@@ -6,7 +6,7 @@
 
 @import "../src/components/_components.css";
 
-@import url("https://fonts.googleapis.com/css2?family=Saira&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 /* chrome */
 *::-webkit-scrollbar {
@@ -19,6 +19,9 @@
 * {
   scrollbar-width: thin;
   scrollbar-color: darkgray;
+}
+.link-inside-text {
+  @apply !text-cyan-500 !underline hover:!text-primary-500 duration-500; 
 }
 
 @layer base {
@@ -63,7 +66,7 @@
   }
   body {
     font-family: "Saira", sans-serif;
-    @apply bg-neutral-900 text-neutral-50;
+    @apply bg-[#000413] text-neutral-50;
   }
 
   span > img {
@@ -85,9 +88,11 @@
   .no-select-a-tag:focus {
     outline: none !important;
   }
+
+
+
 }
 
-@media (max-width: 768px) {
   * {
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
@@ -100,4 +105,4 @@
   *:focus {
     outline: none !important;
   }
-}
+
