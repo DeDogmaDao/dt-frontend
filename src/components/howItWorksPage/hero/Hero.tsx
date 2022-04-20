@@ -73,7 +73,8 @@ const Hero: React.FC = () => {
 
   return (
     <>
-      <motion.div className=" flex justify-center items-center relative w-[100vw] h-[100vh] ssm:h-[110vh] sm:h-[90vh] md:h-[100vh] lg:h-[56.26vw] mx-auto overflow-hidden hero-container">
+      <motion.div className=" flex justify-center items-center relative bg-[#171181]
+       w-[100vw] h-[100vh] ssm:h-[110vh] sm:h-[90vh] md:h-[100vh] lg:h-[56.26vw] mx-auto overflow-hidden hero-container">
         <div className="portal-and-flame-and-hero w-full h-full relative z-20 ">
           <motion.span
             className="absolute w-full h-full origin-bottom"
@@ -92,6 +93,7 @@ const Hero: React.FC = () => {
                 layout="fill"
                 className="z-10"
                 priority={true}
+                quality={100}
               />
 
               <motion.img
@@ -104,7 +106,7 @@ const Hero: React.FC = () => {
                 animate={anim}
                 variants={cityAnim}
               >
-                <Image src={"/img/art/city.png"} layout="fill"  />
+                <Image src={"/img/art/city.png"} layout="fill" quality={100}  />
               </motion.span>
               <motion.span
                 initial="hidden"

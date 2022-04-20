@@ -20,18 +20,15 @@ const Tabs: React.FC = () => {
 
   return (
     <div
-      className="flex flex-col justify-between items-center h-full w-full relative"
+      className="flex flex-col justify-between items-center h-full w-full relative z-100"
       id="cards"
     >
-      <div className="absolute top-0 left-0 z-0 w-full">
-        <Image
-          width="1440"
-          height="929"
-          layout="responsive"
-          src="/img/cyc/tab-bg.png"
-        />
+      <div className="absolute top-0 left-0 z-0 w-full h-full">
+        <div className="relative w-full h-full">
+          <Image layout="fill" src="/img/bg/sec2.png" />
+        </div>
       </div>
-      <h3 className="z-10 mt-14 ssm:mt-20 sm:mt-32 lg:mt-40 text-[20px] ssm:text-[28px] sm:text-[38px] font-bold sm:font-bold">
+      <h3 className="z-10 mt-14 ssm:mt-20 sm:mt-32 lg:mt-40 text-[1.25rem] ssm:text-[1.75rem] sm:text-[2.375rem] font-bold sm:font-bold">
         Choose your <span className="text-yellow-400">Card</span>
       </h3>
       <div className=" flex flex-col ssm:flex-row gap-y-8 sm:gap-y-0 justify-center items-center gap-x-8 md:gap-x-16 text-2xl mt-14">
@@ -94,7 +91,7 @@ const Tabs: React.FC = () => {
       {tabs.map((tab) => {
         if (!tab.activeGroup) return null;
         return (
-          <div className="h-16 flex justify-center items-center gap-x-[10px] text-2xl  rounded-full mt-14">
+          <div className="h-16 flex justify-center items-center gap-x-[.625rem] text-2xl  rounded-full mt-14">
             <LayoutGroup id="eachTab">
               {tab.tabInfo.map((data, index) => {
                 return (
@@ -114,7 +111,7 @@ const Tabs: React.FC = () => {
       {tabs.map((tab) => {
         if (!tab.activeGroup) return null;
         return (
-          <div className="relative w-full h-[550px] sm:h-[350px] md:h-[300px] lg:h-[250px] flex justify-center items-start mt-0">
+          <div className="relative w-full h-[34.375rem] sm:h-[21.875rem] md:h-[18.75rem] lg:h-[15.625rem] flex justify-center items-start mt-0">
             <AnimatePresence>
               {tab.tabInfo.map((data, index) => {
                 return (
