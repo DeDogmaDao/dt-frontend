@@ -3,9 +3,10 @@ import throttle from "lodash/throttle";
 import Image from "next/image";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { cityAnim, cityMaskAnim, heroAnim } from "../../../utils/animation";
-import { getOS } from "../../../utils/util";
+import {UAParser} from 'ua-parser-js';
 
 const Hero: React.FC = () => {
+  const uaParser = new UAParser();
   const [anim, setAnim] = useState("hidden");
   // const { scrollY } = useViewportScroll();
   // const topT = useTransform(scrollY, (y) => {
@@ -75,14 +76,11 @@ const Hero: React.FC = () => {
   const leftFireRef = useRef<HTMLVideoElement>(null);
   const rightFireRef = useRef<HTMLVideoElement>(null);
 
-  useLayoutEffect(() => {
-    console.log("1");
-    if (getOS() === "Mac OS") {
-      console.log(getOS());
+  useEffect(() => {
+    if (uaParser.getOS().name === "Mac OS") {
       leftFireRef.current!.style.filter = "brightness(91.5%)";
       rightFireRef.current!.style.filter = "brightness(91.5%)";
     }
-    console.log(getOS()==="Mac OS");
   }, []);
 
   return (
