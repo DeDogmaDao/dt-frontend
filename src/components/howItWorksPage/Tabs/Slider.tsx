@@ -106,11 +106,10 @@ useEffect(()=>{
       </button>
       
       <motion.div inlist={"hidden"} animate={frameControls} variants={tabFrameAni} 
-      className="absolute top-[50%] mt-[-14.375rem] left-1/2 ml-[-11.875rem] z-50 pointer-events-none select-none">
+      className="absolute top-[50%] mt-[-14.375rem] left-1/2 ml-[-11.875rem] z-50 pointer-events-none select-none
+      w-[23.75rem] h-[30.625rem]">
         <Image
-          width="380"
-          height="490"
-          layout="fixed"
+          layout="fill"
           src="/img/cyc/frame.png"
         />
       </motion.div>

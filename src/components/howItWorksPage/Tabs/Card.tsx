@@ -52,13 +52,9 @@ const Card: React.FC<props> = ({
         activeIndexCard[tabGroup] === index ? "grayscale-0" : "grayscale"
       }`}
     >
-      <Image
-        draggable={false}
-        src={data.image}
-        layout="fixed"
-        height="460"
-        width="300"
-      />
+      <div className="w-full h-full relative">
+        <Image draggable={false} src={data.image} layout="fill" />
+      </div>
     </motion.div>
   );
 };
