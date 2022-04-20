@@ -75,7 +75,7 @@ export interface sizeType {
 }
 export interface dimensionType {
   width: number;
-  height?: number;
+  height: number;
 }
 
 export interface spellNumber {

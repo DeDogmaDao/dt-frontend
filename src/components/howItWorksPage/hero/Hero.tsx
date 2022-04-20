@@ -1,4 +1,4 @@
-import { motion, useMotionValue, useTransform } from "framer-motion";
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import throttle from "lodash/throttle";
 import Image from "next/image";
 import {
@@ -32,12 +32,20 @@ const Hero: React.FC = () => {
   const xTrans = useTransform(
     xCord,
     [0, dimension.width / 2, dimension.width],
-    [- 100, 0, 100]
+    [50, 0, -50]
+  );
+  const yTrans = useTransform(
+    yCord,
+    [0, dimension.height / 2, dimension.height],
+    [50, 0, -50]
   );
   const mouseMoveHandler = (event: MouseEvent) => {
     xCord.set(event.pageX);
-    console.log(event.pageX);
+    yCord.set(event.pageY);
   };
+
+  const springX = useSpring(xTrans, { stiffness: 50 });
+  const springY = useSpring(yTrans, { stiffness: 50 });
 
   const leftFireRef = useRef<HTMLVideoElement>(null);
   const rightFireRef = useRef<HTMLVideoElement>(null);
@@ -83,7 +91,7 @@ const Hero: React.FC = () => {
                 src={"/img/art/cape.gif"}
               />
               <motion.span
-                style={{ x: xTrans }}
+                style={{ x: springX, y: springY }}
                 className="absolute w-full h-full z-0"
                 initial="hidden"
                 animate={anim}
