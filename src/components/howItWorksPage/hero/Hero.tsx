@@ -1,8 +1,9 @@
 import { motion } from "framer-motion";
 import throttle from "lodash/throttle";
 import Image from "next/image";
-import { useEffect, useLayoutEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { cityAnim, cityMaskAnim, heroAnim } from "../../../utils/animation";
+import { getOS } from "../../../utils/util";
 
 const Hero: React.FC = () => {
   const [anim, setAnim] = useState("hidden");
@@ -71,6 +72,16 @@ const Hero: React.FC = () => {
     };
   }, []);
 
+  const leftFireRef = useRef<HTMLVideoElement>(null);
+  const rightFireRef = useRef<HTMLVideoElement>(null);
+
+  useLayoutEffect(() => {
+    if (getOS() === "Mac OS") {
+      leftFireRef.current!.style.filter = "brightness(91.5%)";
+      rightFireRef.current!.style.filter = "brightness(91.5%)";
+    }
+  }, []);
+
   return (
     <>
       <motion.div
@@ -120,21 +131,21 @@ const Hero: React.FC = () => {
               </motion.span>
 
               <motion.video
+                ref={leftFireRef}
                 loop
                 autoPlay
                 muted
                 playsInline
-                style={{ WebkitFilter: "brightness(91.5%)" }}
                 className="absolute contrast-[120%] opacity-100 border-none outline-none z-20 w-[9.429%] h-[20.114%] left-[14.576%] top-[57.828%]"
               >
                 <source src={"/img/art/left-fire.mp4"} type="video/mp4" />
               </motion.video>
               <motion.video
+                ref={rightFireRef}
                 loop
                 autoPlay
                 muted
                 playsInline
-                style={{ WebkitFilter: "brightness(91.5%)" }}
                 className="absolute opacity-100 border-none outline-none z-20 w-[9.429%] h-[20.114%] left-[74.844%] top-[57.828%]"
               >
                 <source src={"/img/art/right-fire.mp4"} type="video/mp4" />
