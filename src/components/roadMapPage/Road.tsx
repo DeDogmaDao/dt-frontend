@@ -55,7 +55,7 @@ const Road: React.FC<props> = ({ index, activeSection, road }) => {
                 />
               );
             })}
-            <div className="w-full h-32 lg:h-28 ssm:px-5 overflow-clip text-small-light text-neutral-50/60 ">
+            <div className="w-full h-32 lg:h-28 ssm:px-5 overflow-clip text-small-light 2xl:text-large-medium text-neutral-50/60 ">
               {descIndex !== -1 && (
                 <motion.div
                   className="indent-8"
