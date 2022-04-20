@@ -1,77 +1,25 @@
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useTransform } from "framer-motion";
 import throttle from "lodash/throttle";
 import Image from "next/image";
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { MouseEvent, useEffect, useLayoutEffect, useRef, useState } from "react";
 import { cityAnim, cityMaskAnim, heroAnim } from "../../../utils/animation";
 import {UAParser} from 'ua-parser-js';
 
 const Hero: React.FC = () => {
   const uaParser = new UAParser();
   const [anim, setAnim] = useState("hidden");
-  // const { scrollY } = useViewportScroll();
-  // const topT = useTransform(scrollY, (y) => {
-  //   if (y < 2000) {
-  //     return y / 5;
-  //   }
-  //   return 400;
-  // });
 
-  const topTransformWheel = (evt: any) => {
-    // if (window.scrollY < 15) {
-    //   evt.preventDefault();
-    //   let direction = evt.detail < 0 || evt.wheelDelta > 0 ? 1 : -1;
-    //   if (direction > 0) {
-    //     window.scrollTo({
-    //       top: window.scrollY - 20,
-    //       left: 0,
-    //       behavior: "smooth",
-    //     });
-    //   } else {
-    //     window.scrollTo({
-    //       top: window.scrollY + 20,
-    //       left: 0,
-    //       behavior: "smooth",
-    //     });
-    //   }
-    // }
-  };
+  const xCord = useMotionValue(400);
+  const yCord = useMotionValue(400);
+  const xTrans = useTransform(xCord,[0,window.innerWidth/2,window.innerWidth],[-500,0,+500])
+  const mouseMoveHandler = (event:MouseEvent) =>{
+    xCord.set(event.pageX)
+    console.log(event.pageX);
+  }
 
-  const scrollHandler = () => {
-    if (window.scrollY < 450) {
-      if (window.scrollY > 1) {
-        setAnim((prevState) => {
-          if (prevState === "visible") {
-            return prevState;
-          }
-          return "visible";
-        });
-      } else {
-        setAnim((prevState) => {
-          if (prevState === "hidden") {
-            return prevState;
-          }
-          return "hidden";
-        });
-      }
-    }
-  };
 
-  useEffect(() => {
-    const throtteledTopScroll = topTransformWheel;
-    window.addEventListener("scroll", scrollHandler);
-    window.addEventListener("mousewheel", throtteledTopScroll, {
-      passive: false,
-    });
-    window.addEventListener("DOMMouseScroll", throtteledTopScroll, {
-      passive: false,
-    });
 
-    return () => {
-      window.removeEventListener("scroll", scrollHandler);
-      window.removeEventListener("mousewheel", throtteledTopScroll);
-      window.removeEventListener("DOMMouseScroll", throtteledTopScroll);
-    };
-  }, []);
+
 
   const leftFireRef = useRef<HTMLVideoElement>(null);
   const rightFireRef = useRef<HTMLVideoElement>(null);
@@ -86,6 +34,8 @@ const Hero: React.FC = () => {
   return (
     <>
       <motion.div
+      style={{marginLeft:xTrans}}
+      onMouseMove={mouseMoveHandler}
         className=" flex justify-center items-center relative bg-[#171181]
        w-[100vw] h-[100vh] ssm:h-[110vh] sm:h-[90vh] md:h-[100vh] lg:h-[56.26vw] mx-auto overflow-hidden hero-container"
       >
