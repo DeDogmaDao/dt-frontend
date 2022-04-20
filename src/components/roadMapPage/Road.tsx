@@ -35,7 +35,9 @@ const Road: React.FC<props> = ({ index, activeSection, road }) => {
         }`}
       >
         <div className="w-full h-full absolute top-0 left-0 z-0">
+          <div className="w-full h-full relative">
           <Image src={road.backImg} layout="fill" />
+          </div>
         </div>
         <h3 className="w-full h-1/3 lg:w-1/2 lg:h-full pt-20 lg:pt-0 z-10 flex justify-center items-center 
         text-[30px] ssm:text-[36px] lg:text-[40px] font-bold">

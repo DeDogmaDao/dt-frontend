@@ -1229,17 +1229,17 @@ export const roadDataQ3: roadDataType[] = [
 export const roadMapData: roadMapType[] = [
   {
     sectionName: "Demmortal Treasure",
-    backImg: "/img/roadmap/sec1.png",
+    backImg: "/img/bg/road-sec1.png",
     roadData: roadDataQ1,
   },
   {
     sectionName: "Expanding DDD - part I",
-    backImg: "/img/roadmap/sec2.png",
+    backImg: "/img/bg/road-sec2.png",
     roadData: roadDataQ2,
   },
   {
     sectionName: "Expanding DDD - part II",
-    backImg: "/img/roadmap/sec3.png",
+    backImg: "/img/bg/road-sec3.png",
     roadData: roadDataQ3,
   },
 ];
