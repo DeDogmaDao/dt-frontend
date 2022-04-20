@@ -1,25 +1,43 @@
 import { motion, useMotionValue, useTransform } from "framer-motion";
 import throttle from "lodash/throttle";
 import Image from "next/image";
-import { MouseEvent, useEffect, useLayoutEffect, useRef, useState } from "react";
+import {
+  MouseEvent,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from "react";
 import { cityAnim, cityMaskAnim, heroAnim } from "../../../utils/animation";
-import {UAParser} from 'ua-parser-js';
+import { UAParser } from "ua-parser-js";
+import { dimensionType } from "../../../types/allTypes";
 
 const Hero: React.FC = () => {
+  const heroContainerRef = useRef<HTMLDivElement>(null);
+  const [dimension, setDimension] = useState<dimensionType>({
+    width: 0,
+    height: 0,
+  });
+  useLayoutEffect(() => {
+    setDimension({
+      width: heroContainerRef.current!.offsetWidth,
+      height: heroContainerRef.current!.offsetHeight,
+    });
+  }, []);
   const uaParser = new UAParser();
   const [anim, setAnim] = useState("hidden");
 
-  const xCord = useMotionValue(400);
-  const yCord = useMotionValue(400);
-  const xTrans = useTransform(xCord,[0,window.innerWidth/2,window.innerWidth],[-500,0,+500])
-  const mouseMoveHandler = (event:MouseEvent) =>{
-    xCord.set(event.pageX)
+  const xCord = useMotionValue(0);
+  const yCord = useMotionValue(0);
+  const xTrans = useTransform(
+    xCord,
+    [0, dimension.width / 2, dimension.width],
+    [- 100, 0, 100]
+  );
+  const mouseMoveHandler = (event: MouseEvent) => {
+    xCord.set(event.pageX);
     console.log(event.pageX);
-  }
-
-
-
-
+  };
 
   const leftFireRef = useRef<HTMLVideoElement>(null);
   const rightFireRef = useRef<HTMLVideoElement>(null);
@@ -34,10 +52,10 @@ const Hero: React.FC = () => {
   return (
     <>
       <motion.div
-      style={{marginLeft:xTrans}}
-      onMouseMove={mouseMoveHandler}
+        ref={heroContainerRef}
+        onMouseMove={mouseMoveHandler}
         className=" flex justify-center items-center relative bg-[#171181]
-       w-[100vw] h-[100vh] ssm:h-[110vh] sm:h-[90vh] md:h-[100vh] lg:h-[56.26vw] mx-auto overflow-hidden hero-container"
+        w-[100vw] h-[100vh] ssm:h-[110vh] sm:h-[90vh] md:h-[100vh] lg:h-[56.26vw] mx-auto overflow-hidden hero-container"
       >
         <div className="portal-and-flame-and-hero w-full h-full relative z-20 ">
           <motion.span
@@ -49,8 +67,8 @@ const Hero: React.FC = () => {
             <div
               className=" ml-[-100%] sm:ml-[-25%] lg:ml-auto
              h-full
-              w-[300%] sm:w-[150%] lg:w-full
-                relative flex justify-center items-center"
+             w-[300%] sm:w-[150%] lg:w-full
+             relative flex justify-center items-center"
             >
               <Image
                 src={"/img/art/portal.png"}
@@ -65,6 +83,7 @@ const Hero: React.FC = () => {
                 src={"/img/art/cape.gif"}
               />
               <motion.span
+                style={{ x: xTrans }}
                 className="absolute w-full h-full z-0"
                 initial="hidden"
                 animate={anim}
