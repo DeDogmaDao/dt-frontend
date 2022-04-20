@@ -124,7 +124,7 @@ const Hero: React.FC = () => {
                 autoPlay
                 muted
                 playsInline
-                style={{WebkitFilter:"brightness(96%)"}}
+                style={{WebkitFilter:"brightness(91%)"}}
                 className="absolute opacity-90 border-none outline-none z-20 w-[9.429%] h-[20.114%] left-[14.576%] top-[57.828%]"
                 >
                 <source src={"/img/art/left-fire.mp4"} type="video/mp4" />
@@ -134,7 +134,7 @@ const Hero: React.FC = () => {
                 autoPlay
                 muted
                 playsInline
-                style={{WebkitFilter:"brightness(84%)"}}
+                style={{WebkitFilter:"brightness(91%)"}}
                 className="absolute opacity-90 border-none outline-none z-20 w-[9.429%] h-[20.114%] left-[74.844%] top-[57.828%]"
               >
                 <source src={"/img/art/right-fire.mp4"} type="video/mp4" />
