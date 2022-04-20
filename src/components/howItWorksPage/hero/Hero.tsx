@@ -117,10 +117,10 @@ const Hero: React.FC = () => {
                 <Image src={"/img/art/mask.png"} layout="fill" />
               </motion.span>
 
-              <motion.video loop autoPlay muted playsInline className="absolute z-20 w-[9.429%] h-[20.114%] left-[14.576%] top-[57.828%]">
+              <motion.video loop autoPlay muted playsInline className="absolute opacity-90 border-none outline-none z-20 w-[9.429%] h-[20.114%] left-[14.576%] top-[57.828%]">
               <source src={"/img/art/left-fire.mp4"} type="video/mp4" />
               </motion.video>
-              <motion.video loop autoPlay muted playsInline className="absolute z-20 w-[9.429%] h-[20.114%] left-[74.844%] top-[57.828%]">
+              <motion.video loop autoPlay muted playsInline className="absolute opacity-90 border-none outline-none z-20 w-[9.429%] h-[20.114%] left-[74.844%] top-[57.828%]">
               <source src={"/img/art/right-fire.mp4"} type="video/mp4" />
               </motion.video>
             </div>
