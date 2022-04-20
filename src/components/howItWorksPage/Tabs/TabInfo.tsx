@@ -38,7 +38,7 @@ const TabInfo: React.FC<props> = ({
             {desc.map((item) => {
               return (
                 <li className="flex gap-x-2">
-                  <span className="text-[9px]">
+                  <span className="text-[.5625rem]">
                     <FontAwesomeIcon icon={faCircle} />
                   </span>
                   {item}
