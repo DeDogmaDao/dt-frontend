@@ -18,7 +18,7 @@ const EachFAQ: React.FC<props> = ({ data }) => {
       >
         <motion.div
           layout
-          className="w-full flex justify-between items-center px-1 sm:px-5 min-h-14 py-3 sm:py-0 cursor-pointer text-medium-medium "
+          className="w-full flex justify-between items-center px-1 sm:px-5 min-h-14 py-3 sm:py-0 cursor-pointer text-medium-medium 2xl:text-large-medium "
           onClick={() => setIsExpanded((prev) => !prev)}
         >
           <div className="flex gap-x-2 items-center">
