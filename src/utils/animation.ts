@@ -419,14 +419,14 @@ export const carouselDisplayAni: Variants = {
   hidden: (custom) => ({
     left: 50 + custom * 70 + "%",
     scale: 1 - 0.4 * Math.abs(custom),
-    opacity:0.3,
+    opacity: 0.3,
   }),
   visible: (custom) => {
     if (custom === 0) {
       return {
         scale: 1 - 0.4 * Math.abs(custom),
         left: 50 + custom * 35 + "%",
-        opacity:1,
+        opacity: 1,
         transition: {
           duration: 0.4,
         },
@@ -435,7 +435,7 @@ export const carouselDisplayAni: Variants = {
     return {
       scale: 1 - 0.4 * Math.abs(custom),
       left: 50 + custom * 35 + "%",
-      opacity:0.5,
+      opacity: 0.5,
       transition: {
         duration: 0.4,
       },
@@ -545,18 +545,18 @@ export const tabImageAni: Variants = {
   }),
 };
 
-export const tabFrameAni:Variants = {
-  hidden:{
-    scale:1,
+export const tabFrameAni: Variants = {
+  hidden: {
+    scale: 1,
   },
-  visible:{
-    scale:[1,1.03,1],
-    transition:{
-      duration:0.7,
-      times:[0,0.3,1]
-    }
-  }
-}
+  visible: {
+    scale: [1, 1.03, 1],
+    transition: {
+      duration: 0.7,
+      times: [0, 0.3, 1],
+    },
+  },
+};
 
 export const spellCounterAni: Variants = {
   hidden: {
@@ -750,7 +750,7 @@ export const callToActionSvgAni: Variants = {
   },
   visible: {
     pathLength: 1,
-    
+
     transition: {
       delay: 0,
       duration: 1.5,
@@ -889,46 +889,37 @@ export const menuCopyRightAni: Variants = {
   },
 };
 
+export const heroAnim: Variants = {
+  hidden: {
+    scale: 1,
+    transition: {
+      duration: 2,
+      ease: "easeInOut",
+    },
+  },
+  visible: {
+    scale: 1.5,
+    transition: {
+      duration: 10,
+      ease: [.25,.72,0,.94],
+      
+    },
+  },
+};
+export const cityAnim: Variants = {
+  hidden: {
+    scale: 1,
+    transition: {
+      duration: 2,
+      ease: "easeInOut",
+    },
+  },
+  visible: {
+    scale: 0.8,
+    transition: {
+      duration: 10,
+      ease: [.25,.72,0,.94],
+    },
+  },
+};
 
-export const heroAnim:Variants = {
-  hidden:{
-    scale:1,
-    transition:{
-      duration:1
-    },
-  },
-  visible:{
-    scale:1.4,
-    transition:{
-      duration:2
-    }
-  }
-}
-export const cityAnim:Variants = {
-  hidden:{
-    scale:1,
-    transition:{
-      duration:1
-    },
-  },
-  visible:{
-    scale:0.75,
-    transition:{
-      duration:2
-    }
-  }
-}
-export const cityMaskAnim:Variants = {
-  hidden:{
-    opacity:1,
-    transition:{
-      duration:1
-    },
-  },
-  visible:{
-    opacity:0.3,
-    transition:{
-      duration:2
-    }
-  }
-}

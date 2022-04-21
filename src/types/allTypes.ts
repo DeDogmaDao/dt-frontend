@@ -73,6 +73,10 @@ export interface sizeType {
   width: number | string;
   height?: number | string;
 }
+export interface dimensionType {
+  width: number;
+  height: number;
+}
 
 export interface spellNumber {
   [yellow: string]: number;

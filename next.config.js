@@ -18,17 +18,32 @@ module.exports = {
   //     {
   //       source: "/",
   //       destination: "/underconstruction",
-  //       permanent: true,
+  //       permanent: false,
   //     },
   //     {
   //       source: "/gallery",
   //       destination: "/underconstruction",
-  //       permanent: true,
+  //       permanent: false,
   //     },
   //     {
   //       source: "/gameboard",
   //       destination: "/underconstruction",
-  //       permanent: true,
+  //       permanent: false,
+  //     },
+  //     {
+  //       source: "/roadmap",
+  //       destination: "/underconstruction",
+  //       permanent: false,
+  //     },
+  //     {
+  //       source: "/team",
+  //       destination: "/underconstruction",
+  //       permanent: false,
+  //     },
+  //     {
+  //       source: "/faq",
+  //       destination: "/underconstruction",
+  //       permanent: false,
   //     },
   //   ];
   // },
