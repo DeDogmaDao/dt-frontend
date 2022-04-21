@@ -8,7 +8,7 @@ import {
   useRef,
   useState,
 } from "react";
-import { cityAnim, cityMaskAnim, heroAnim } from "../../../utils/animation";
+import { cityAnim, heroAnim } from "../../../utils/animation";
 import { UAParser } from "ua-parser-js";
 import { dimensionType } from "../../../types/allTypes";
 
@@ -29,6 +29,7 @@ const Hero: React.FC = () => {
 
   const xCord = useMotionValue(0);
   const yCord = useMotionValue(0);
+  const maskOpacity = useMotionValue(0.7);
   const xTrans = useTransform(
     xCord,
     [0, dimension.width / 2, dimension.width],
@@ -42,6 +43,11 @@ const Hero: React.FC = () => {
   const mouseMoveHandler = (event: MouseEvent) => {
     xCord.set(event.pageX);
     yCord.set(event.pageY);
+    const fisaghores =
+      Math.pow(event.pageX - dimension.width / 2, 2) +
+      Math.pow(event.pageY - dimension.height / 2, 2);
+    maskOpacity.set(Math.sqrt(fisaghores) / (dimension.height / 1.1));
+    console.log(fisaghores);
   };
 
   const springX = useSpring(xTrans, { stiffness: 50 });
@@ -71,18 +77,18 @@ const Hero: React.FC = () => {
             initial="hidden"
             animate={anim}
             variants={heroAnim}
-            >
+          >
             <div
               className=" ml-[-100%] sm:ml-[-25%] lg:ml-auto
              h-full
              w-[300%] sm:w-[150%] lg:w-full
              relative flex justify-center items-center"
-             >
+            >
               <motion.div
-              onHoverStart={() => setAnim("visible")}
-              onHoverEnd={() => setAnim("hidden")}
-              
-              className="absolute w-[20%] h-[65%] top-1/2 mt-[-19.5%] left-1/2 ml-[-10%]  z-100 rounded-[50%]" />
+                onHoverStart={() => setAnim("visible")}
+                onHoverEnd={() => setAnim("hidden")}
+                className="absolute w-[20%] h-[65%] top-1/2 mt-[-19.5%] left-1/2 ml-[-10%]  z-100 rounded-[50%]"
+              />
               <motion.span className="absolute w-full h-full z-10">
                 <Image
                   src={"/img/art/portal.png"}
@@ -106,10 +112,8 @@ const Hero: React.FC = () => {
                 <Image src={"/img/art/city.png"} layout="fill" quality={100} />
               </motion.span>
               <motion.span
-                initial="hidden"
-
-                className="absolute w-full h-full z-0 scale-105"
-              >
+              style={{opacity:maskOpacity}}
+              className="absolute w-full h-full z-0 scale-105">
                 <Image src={"/img/art/mask.png"} layout="fill" />
               </motion.span>
 
