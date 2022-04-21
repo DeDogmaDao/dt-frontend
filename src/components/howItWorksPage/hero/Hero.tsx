@@ -94,7 +94,7 @@ const Hero: React.FC = () => {
               </motion.span>
               <motion.button
                 className="text-small-bold absolute rounded-full w-[138px] h-[40px] flex justify-center items-center text-white
-              bg-neutral-900 z-110 mt-[17%] cursor-pointer will-change-transform"
+              bg-neutral-900 z-110 mt-[17%] cursor-pointer will-change-transform duration-500 border-2 border-transparent hover:border-primary-500"
                 onHoverStart={() => setAnim("visible")}
                 onHoverEnd={() => setAnim("hidden")}
               >
