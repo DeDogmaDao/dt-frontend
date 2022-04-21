@@ -47,7 +47,6 @@ const Hero: React.FC = () => {
       Math.pow(event.pageX - dimension.width / 2, 2) +
       Math.pow(event.pageY - dimension.height / 2, 2);
     maskOpacity.set(Math.sqrt(fisaghores) / (dimension.height / 1.1));
-    console.log(fisaghores);
   };
 
   const springX = useSpring(xTrans, { stiffness: 50 });
@@ -63,6 +62,7 @@ const Hero: React.FC = () => {
     }
   }, []);
 
+  const [PortalLoading, setPortalLoading] = useState(0);
   return (
     <>
       <motion.div
@@ -91,6 +91,9 @@ const Hero: React.FC = () => {
               />
               <motion.span className="absolute w-full h-full z-10">
                 <Image
+                  onLoadingComplete={() =>
+                    setPortalLoading((prevState) => prevState + 1)
+                  }
                   src={"/img/art/portal.png"}
                   layout="fill"
                   priority={true}
@@ -103,7 +106,11 @@ const Hero: React.FC = () => {
                 src={"/img/art/cape.gif"}
               />
               <motion.span
-                style={{ x: springX, y: springY }}
+                style={{
+                  x: springX,
+                  y: springY,
+                  visibility: PortalLoading > 0 ? "visible" : "hidden",
+                }}
                 className="absolute w-full h-full z-0"
                 initial="hidden"
                 animate={anim}
@@ -112,12 +119,17 @@ const Hero: React.FC = () => {
                 <Image src={"/img/art/city.png"} layout="fill" quality={100} />
               </motion.span>
               <motion.span
-              style={{opacity:maskOpacity}}
-              className="absolute w-full h-full z-0 scale-105">
+                style={{
+                  opacity: maskOpacity,
+                  visibility: PortalLoading > 0 ? "visible" : "hidden",
+                }}
+                className="absolute w-full h-full z-0 scale-105"
+              >
                 <Image src={"/img/art/mask.png"} layout="fill" />
               </motion.span>
 
               <motion.video
+                style={{ visibility: PortalLoading > 0 ? "visible" : "hidden" }}
                 ref={leftFireRef}
                 loop
                 autoPlay
@@ -128,6 +140,7 @@ const Hero: React.FC = () => {
                 <source src={"/img/art/left-fire.mp4"} type="video/mp4" />
               </motion.video>
               <motion.video
+                style={{ visibility: PortalLoading > 0 ? "visible" : "hidden" }}
                 ref={rightFireRef}
                 loop
                 autoPlay
