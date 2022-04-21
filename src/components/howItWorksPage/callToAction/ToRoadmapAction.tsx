@@ -3,12 +3,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import Link from "next/link";
 import CallToActionSvg from "./CallToActionSvg";
+import AngleRightSVG from "../../svgs/rightangle.svg";
 
 const ToRoadmapAction: React.FC = () => {
   return (
     <div className="w-full h-[70vh] sm:h-[80vh] md:h-screen justify-center relative z-0">
       <div className=" z-0 w-full h-full absolute top-0 left-0">
-        <div className="relative w-full h-full"><Image src={"/img/bg/sec3.png"} layout="fill" /></div>
+        <div className="relative w-full h-full">
+          <Image src={"/img/bg/sec3.png"} layout="fill" />
+        </div>
       </div>
       <div className="flex flex-col justify-start items-center z-10 absolute top-0 left-0 w-full h-full">
         <span className="w-[1.875rem] h-[.375rem] mt-12 md:mt-24 lg:mt-32 xl:mt-36 bg-yellow-300" />
@@ -27,7 +30,13 @@ const ToRoadmapAction: React.FC = () => {
             <button className="px-4 py-3 mt-11 bg-black rounded-full text-small-bold flex gap-x-2 duration-500 border-2 border-transparent hover:border-yellow-300">
               <span>Roadmap Document</span>
               <span className="animate-bounceX">
-                <FontAwesomeIcon icon={faAngleRight} />
+                <AngleRightSVG
+                  stroke="#2CEDFF"
+                  width={10}
+                  height={17}
+                  fill="none"
+                  style={{ marginTop: 2 }}
+                />
               </span>
             </button>
           </Link>
