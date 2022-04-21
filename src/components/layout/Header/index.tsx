@@ -17,14 +17,6 @@ const Header: React.FC = () => {
       text: "Home",
     },
     {
-      ref: "/#benefits",
-      text: "Benefits",
-    },
-    {
-      ref: "/#intro",
-      text: "Intro",
-    },
-    {
       ref: "/#cards",
       text: "Cards",
     },
@@ -33,12 +25,12 @@ const Header: React.FC = () => {
       text: "Roadmap",
     },
     {
-      ref: "/team",
-      text: "Team",
-    },
-    {
       ref: "/faq",
       text: "FAQ",
+    },
+    {
+      ref: "/team",
+      text: "Team",
     },
   ];
 
