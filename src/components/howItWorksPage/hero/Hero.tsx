@@ -14,6 +14,8 @@ import { dimensionType } from "../../../types/allTypes";
 
 const Hero: React.FC = () => {
   const heroContainerRef = useRef<HTMLDivElement>(null);
+  const capeRef = useRef<>(null);
+  const [PortalLoading, setPortalLoading] = useState(0);
   const [dimension, setDimension] = useState<dimensionType>({
     width: 0,
     height: 0,
@@ -62,7 +64,11 @@ const Hero: React.FC = () => {
     }
   }, []);
 
-  const [PortalLoading, setPortalLoading] = useState(0);
+  useEffect(()=>{
+    // @ts-ignore
+    capeRef.current!.stop()
+  },[])
+
   return (
     <>
       <motion.div
@@ -113,6 +119,7 @@ const Hero: React.FC = () => {
               </motion.span>
 
               <motion.img
+              ref={capeRef}
                 className="absolute z-20 left-[48.5%] top-[71%] w-[10%] h-[15%] will-change-transform"
                 src={"/img/art/cape.gif"}
               />
