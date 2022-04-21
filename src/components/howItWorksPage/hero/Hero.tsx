@@ -99,18 +99,27 @@ const Hero: React.FC = () => {
                 onHoverEnd={() => setAnim("hidden")}
                 className="red-transparent-on-city absolute w-[20%] h-[65%] top-1/2 mt-[-19.5%] left-1/2 ml-[-10%]  z-100 rounded-[50%] will-change-transform"
               />
-              <motion.span className="mt-[10%] z-20 absolute will-change-transform">
-                <Image src="/img/logo/treasure.png" width={231} height={70} />
-              </motion.span>
-              <motion.button
-                className="text-small-bold absolute rounded-full w-[138px] h-[40px] flex justify-center items-center text-white
-              bg-neutral-900 z-110 mt-[17%] cursor-pointer will-change-transform duration-500 border-2 border-transparent hover:border-primary-500"
-                onTap={() => setAnim("visible")}
-                onHoverStart={() => setAnim("visible")}
-                onHoverEnd={() => setAnim("hidden")}
+              <motion.div
+                style={{ visibility: PortalLoading > 2 ? "visible" : "hidden" }}
+                className="mt-[7%] lg:mt-[10%] z-20 absolute flex flex-col justify-center items-center"
               >
-                Join Our Discord
-              </motion.button>
+                <motion.span className="w-[231px] h-[70px]   will-change-transform">
+                  <Image
+                    src="/img/logo/treasure.png"
+                    layout={"fill"}
+                    quality={100}
+                  />
+                </motion.span>
+                <motion.button
+                  className="text-small-bold  rounded-full w-[138px] h-[40px] flex justify-center items-center text-white
+              bg-neutral-900 z-110  cursor-pointer will-change-transform duration-500 border-2 border-transparent hover:border-primary-500"
+                  onTap={() => setAnim("visible")}
+                  onHoverStart={() => setAnim("visible")}
+                  onHoverEnd={() => setAnim("hidden")}
+                >
+                  Join Our Discord
+                </motion.button>
+              </motion.div>
               <motion.span className="absolute left-0 w-[32.17669%] h-full hidden sm:block z-10 will-change-transform">
                 <Image
                   onLoadingComplete={() =>
