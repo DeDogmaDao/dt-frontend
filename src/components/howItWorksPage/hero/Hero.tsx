@@ -47,7 +47,7 @@ const Hero: React.FC = () => {
     const fisaghores =
       Math.pow(event.pageX - dimension.width / 2, 2) +
       Math.pow(event.pageY - dimension.height / 2, 2);
-    maskOpacity.set(Math.sqrt(fisaghores) / (dimension.height / 1.1));
+    maskOpacity.set(Math.sqrt(fisaghores) / (dimension.width / 1.6));
   };
 
   const springX = useSpring(xTrans, { stiffness: 50 });
@@ -96,6 +96,7 @@ const Hero: React.FC = () => {
               <motion.button
                 className="text-small-bold absolute rounded-full w-[138px] h-[40px] flex justify-center items-center text-white
               bg-neutral-900 z-110 mt-[17%] cursor-pointer will-change-transform duration-500 border-2 border-transparent hover:border-primary-500"
+                onTap={() => setAnim("visible")}
                 onHoverStart={() => setAnim("visible")}
                 onHoverEnd={() => setAnim("hidden")}
               >
