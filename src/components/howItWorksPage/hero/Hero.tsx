@@ -68,10 +68,10 @@ const Hero: React.FC = () => {
       <motion.div
         ref={heroContainerRef}
         onMouseMove={mouseMoveHandler}
-        className=" flex justify-center items-center relative bg-[#171181]
+        className=" flex justify-center items-center relative
         w-[100vw] h-[100vh] ssm:h-[110vh] sm:h-[90vh] md:h-[100vh] lg:h-[56.26vw] mx-auto overflow-hidden hero-container"
       >
-        <div className="portal-and-flame-and-hero w-full h-full relative z-20 ">
+        <div className="portal-and-flame-and-hero w-full h-full relative z-20">
           <motion.span
             className="absolute w-full h-full origin-bottom will-change-transform"
             initial="hidden"
@@ -101,7 +101,7 @@ const Hero: React.FC = () => {
               >
                 Join Our Discord
               </motion.button>
-              <motion.span className="absolute left-0 w-[32.127%] h-full z-10 will-change-transform">
+              <motion.span className="absolute left-0 w-[32.17669%] h-full z-10 will-change-transform">
                 <Image
                   onLoadingComplete={() =>
                     setPortalLoading((prevState) => prevState + 1)
@@ -112,7 +112,7 @@ const Hero: React.FC = () => {
                   quality={100}
                 />
               </motion.span>
-              <motion.span className="absolute right-0 w-[32.240%] h-full z-10 will-change-transform">
+              <motion.span className="absolute right-0 w-[32.23981%] h-full z-10 will-change-transform">
                 <Image
                   onLoadingComplete={() =>
                     setPortalLoading((prevState) => prevState + 1)
@@ -123,7 +123,7 @@ const Hero: React.FC = () => {
                   quality={100}
                 />
               </motion.span>
-              <motion.span className="absolute w-[35.709%] h-full z-10 will-change-transform">
+              <motion.span className="absolute left-[32.12669%] w-[35.70889%] h-full z-[11] will-change-transform">
                 <Image
                   onLoadingComplete={() =>
                     setPortalLoading((prevState) => prevState + 1)
