@@ -63,10 +63,6 @@ const Hero: React.FC = () => {
     }
   }, []);
 
-  useEffect(() => {
-    // @ts-ignore
-    capeRef.current!.stop();
-  }, []);
 
   return (
     <>
