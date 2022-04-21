@@ -35,9 +35,17 @@ const Header: React.FC = () => {
   ];
 
   return (
-    <div className="absolute top-0 left-0 w-full h-[5.25rem] z-[10000] pointer-events-none">
+    <div className=" w-full h-[5.25rem] z-[10000] pointer-events-none">
       <div className="flex justify-start items-center w-full h-full relative">
-        <div className="absolute top-0 left-0 w-full h-[10rem] bg-gradient-to-b from-[#000413] via-[#000413]/30 to-transparent " />
+        <div
+          className="absolute top-0 left-0 w-full h-[7.5rem] "
+          style={{
+            background:
+              "linear-gradient(180deg, #15161C 0%, #0B0C18 39.92%, rgba(20, 20, 28, 0) 100%)",
+            filter: "blur(70px)",
+            backdropFilter: "blur(138px)",
+          }}
+        />
         <span className="absolute top-[2.1875rem]  left-5 ssm:left-16 z-100 pointer-events-auto">
           <Link href="/">
             <div className="flex justify-start items-center gap-x-2">
