@@ -34,7 +34,7 @@ const Hero: React.FC = () => {
   const xTrans = useTransform(
     xCord,
     [0, dimension.width / 2, dimension.width],
-    [50, 0, -50]
+    [100, 0, -100]
   );
   const yTrans = useTransform(
     yCord,
@@ -62,7 +62,6 @@ const Hero: React.FC = () => {
       rightFireRef.current!.style.filter = "brightness(91.5%)";
     }
   }, []);
-
 
   return (
     <>
@@ -102,7 +101,7 @@ const Hero: React.FC = () => {
               >
                 Join Our Discord
               </motion.button>
-              <motion.span className="absolute w-full h-full z-10 will-change-transform">
+              <motion.span className="absolute w-full h-full z-10 will-change-transform opacity-0">
                 <Image
                   onLoadingComplete={() =>
                     setPortalLoading((prevState) => prevState + 1)
@@ -124,7 +123,7 @@ const Hero: React.FC = () => {
                   y: springY,
                   visibility: PortalLoading > 0 ? "visible" : "hidden",
                 }}
-                className="absolute w-full h-full z-0 will-change-transform"
+                className="absolute w-[48.567%] h-[85.121%] z-0 will-change-transform"
                 initial="hidden"
                 animate={anim}
                 variants={cityAnim}
