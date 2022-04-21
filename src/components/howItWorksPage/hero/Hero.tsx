@@ -87,8 +87,17 @@ const Hero: React.FC = () => {
               <motion.div
                 onHoverStart={() => setAnim("visible")}
                 onHoverEnd={() => setAnim("hidden")}
-                className="absolute w-[20%] h-[65%] top-1/2 mt-[-19.5%] left-1/2 ml-[-10%]  z-100 rounded-[50%]"
+                className="red-transparent-on-city absolute w-[20%] h-[65%] top-1/2 mt-[-19.5%] left-1/2 ml-[-10%]  z-100 rounded-[50%]"
               />
+              <motion.span className="mt-[10%] z-20 absolute">
+                <Image src="/img/logo/treasure.png" width={231} height={70} />
+              </motion.span>
+              <motion.button
+                className="text-small-bold absolute rounded-full w-[138px] h-[40px] flex justify-center items-center text-white
+              bg-neutral-900 z-20 mt-[17%]"
+              >
+                Join Our Discord
+              </motion.button>
               <motion.span className="absolute w-full h-full z-10">
                 <Image
                   onLoadingComplete={() =>
