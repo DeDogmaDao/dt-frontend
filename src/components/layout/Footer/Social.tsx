@@ -8,7 +8,6 @@ interface props {
 }
 const Social: React.FC<props> = ({ data }) => {
   const [isHovering, setIsHovering] = useState(false);
-
   return (
     <motion.li
       onHoverStart={() => setIsHovering(true)}
@@ -33,7 +32,7 @@ const Social: React.FC<props> = ({ data }) => {
           )}
         </AnimatePresence>
         <span className="z-10">
-          <FontAwesomeIcon icon={data.icon} />
+        {data.icon}
         </span>
       </a>
     </motion.li>

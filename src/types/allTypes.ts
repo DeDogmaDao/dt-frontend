@@ -1,4 +1,3 @@
-import { IconDefinition } from "@fortawesome/free-brands-svg-icons";
 import { ReactElement } from "react";
 
 export interface LinkType {
@@ -18,9 +17,8 @@ export interface globCardType {
 }
 
 export interface socialType {
-  icon: IconDefinition;
+  icon: ReactElement<any>;
   href: string;
-  color: string;
 }
 
 export interface layersType {

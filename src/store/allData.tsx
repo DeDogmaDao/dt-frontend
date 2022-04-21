@@ -25,32 +25,31 @@ import {
 //
 //
 //
-
+import DiscordSVG from "../components/svgs/discord.svg";
+import YoutubeSVG from "../components/svgs/youtube.svg";
+import Linkedin from "../components/svgs/linkedin.svg";
+import Twitter from "../components/svgs/twitter.svg";
+import Instagram from "../components/svgs/instagram.svg";
 export const footerData: socialType[] = [
   {
-    icon: faDiscord,
+    icon: <DiscordSVG />,
     href: "https://www.discord.com",
-    color: "#e4405f",
   },
   {
-    icon: faYoutube,
+    icon: <YoutubeSVG />,
     href: "www.discord.com",
-    color: "#3b5999",
   },
   {
-    icon: faLinkedin,
+    icon: <Linkedin />,
     href: "www.discord.com",
-    color: "#e4405f",
   },
   {
-    icon: faTwitter,
+    icon: <Twitter />,
     href: "www.discord.com",
-    color: "#cd201f",
   },
   {
-    icon: faInstagram,
+    icon: <Instagram />,
     href: "www.discord.com",
-    color: "#0077B5",
   },
 ];
 
