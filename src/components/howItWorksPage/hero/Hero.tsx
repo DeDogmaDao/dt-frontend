@@ -34,12 +34,12 @@ const Hero: React.FC = () => {
   const xTrans = useTransform(
     xCord,
     [0, dimension.width / 2, dimension.width],
-    [-50, 0, 50]
+    [50, 0, -50]
   );
   const yTrans = useTransform(
     yCord,
     [0, dimension.height / 2, dimension.height],
-    [-50, 0, 50]
+    [50, 0, -50]
   );
   const mouseMoveHandler = (event: MouseEvent) => {
     xCord.set(event.pageX);
