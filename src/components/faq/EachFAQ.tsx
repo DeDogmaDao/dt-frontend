@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { faqType } from "../../types/allTypes";
+import PlusSVG from '../svgs/plus.svg';
 
 interface props {
   data: faqType;
@@ -23,17 +24,14 @@ const EachFAQ: React.FC<props> = ({ data }) => {
         >
           <div className="flex gap-x-2 items-center">
             <span className="w-px h-2 bg-yellow-300 duration-500 group-hover:h-6 group-hover:w-px" />
-            <span>
-              <FontAwesomeIcon icon={faMagnifyingGlass} />
-            </span>
             <span className="font-medium">{data.question}</span>
           </div>
           <span
-            className={`bg-secondary-500 text-white rounded-full !h-16 !w-16 !min-w-[4rem] ml-3 
-            flex justify-center items-center  group-hover:rotate-90 group-hover:bg-secondary-400 duration-500
+            className={` text-white rounded-full !h-16 !w-16 !min-w-[4rem] ml-3 
+            flex justify-center items-center  group-hover:rotate-90  duration-500
           ${isExpanded ? "!rotate-45" : ""}`}
           >
-            <FontAwesomeIcon icon={faPlus} />
+            <PlusSVG />
           </span>
         </motion.div>
         {isExpanded && (
