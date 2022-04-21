@@ -47,7 +47,7 @@ const Hero: React.FC = () => {
     const fisaghores =
       Math.pow(event.pageX - dimension.width / 2, 2) +
       Math.pow(event.pageY - dimension.height / 2, 2);
-    maskOpacity.set(Math.sqrt(fisaghores) / (dimension.width / 1.6));
+    maskOpacity.set(Math.sqrt(fisaghores) / (dimension.width / 2));
   };
 
   const springX = useSpring(xTrans, { stiffness: 50 });
