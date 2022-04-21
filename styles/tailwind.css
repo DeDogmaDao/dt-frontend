@@ -28,6 +28,11 @@
   html {
     scroll-behavior: smooth;
   }
+
+  svg{
+    overflow: visible;
+  }
+
   h1 {
     font-style: normal;
     font-weight: 500;
@@ -105,4 +110,5 @@
   *:focus {
     outline: none !important;
   }
+
 
