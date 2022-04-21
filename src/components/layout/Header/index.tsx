@@ -65,7 +65,7 @@ const Header: React.FC = () => {
           })}
         </motion.ul>
         <span className="absolute pointer-events-auto top-[2rem] right-[4.5rem] w-9 h-9 rounded-full bg-neutral-700 text-white text-xl flex justify-center items-center">
-          <FontAwesomeIcon icon={faDiscord} />
+          <img src= alt="" />
         </span>
         <MobileMenu headerLinks={headerLinks} />
       </div>
