@@ -188,7 +188,7 @@ const Hero: React.FC = () => {
                 autoPlay
                 muted
                 playsInline
-                className="absolute border-none outline-none z-20 w-[9.429%] h-[20.114%] left-[14.576%] top-[57.828%] will-change-transform"
+                className="absolute hidden sm:block border-none outline-none z-20 w-[9.429%] h-[20.114%] left-[14.576%] top-[57.828%] will-change-transform"
               >
                 <source src={"/img/art/left-fire.mp4"} type="video/mp4" />
               </motion.video>
@@ -199,7 +199,7 @@ const Hero: React.FC = () => {
                 autoPlay
                 muted
                 playsInline
-                className="absolute border-none outline-none z-20 w-[9.429%] h-[20.114%] left-[74.844%] top-[57.828%] will-change-transform"
+                className="absolute hidden sm:block border-none outline-none z-20 w-[9.429%] h-[20.114%] left-[74.844%] top-[57.828%] will-change-transform"
               >
                 <source src={"/img/art/right-fire.mp4"} type="video/mp4" />
               </motion.video>
