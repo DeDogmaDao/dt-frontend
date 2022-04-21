@@ -101,12 +101,34 @@ const Hero: React.FC = () => {
               >
                 Join Our Discord
               </motion.button>
-              <motion.span className="absolute w-full h-full z-10 will-change-transform opacity-0">
+              <motion.span className="absolute left-0 w-[32.127%] h-full z-10 will-change-transform">
                 <Image
                   onLoadingComplete={() =>
                     setPortalLoading((prevState) => prevState + 1)
                   }
-                  src={"/img/art/portal.png"}
+                  src={"/img/art/left-portal.png"}
+                  layout="fill"
+                  priority={true}
+                  quality={100}
+                />
+              </motion.span>
+              <motion.span className="absolute right-0 w-[32.240%] h-full z-10 will-change-transform">
+                <Image
+                  onLoadingComplete={() =>
+                    setPortalLoading((prevState) => prevState + 1)
+                  }
+                  src={"/img/art/right-portal.png"}
+                  layout="fill"
+                  priority={true}
+                  quality={100}
+                />
+              </motion.span>
+              <motion.span className="absolute w-[35.709%] h-full z-10 will-change-transform">
+                <Image
+                  onLoadingComplete={() =>
+                    setPortalLoading((prevState) => prevState + 1)
+                  }
+                  src={"/img/art/middle-portal.png"}
                   layout="fill"
                   priority={true}
                   quality={100}
@@ -121,7 +143,7 @@ const Hero: React.FC = () => {
                 style={{
                   x: springX,
                   y: springY,
-                  visibility: PortalLoading > 0 ? "visible" : "hidden",
+                  visibility: PortalLoading > 2 ? "visible" : "hidden",
                 }}
                 className="absolute w-[48.567%] h-[85.121%] z-0 will-change-transform"
                 initial="hidden"
@@ -133,7 +155,7 @@ const Hero: React.FC = () => {
               <motion.span
                 style={{
                   opacity: maskOpacity,
-                  visibility: PortalLoading > 0 ? "visible" : "hidden",
+                  visibility: PortalLoading > 2 ? "visible" : "hidden",
                 }}
                 className="absolute w-full h-full z-0 scale-105 will-change-transform"
               >
@@ -141,7 +163,7 @@ const Hero: React.FC = () => {
               </motion.span>
 
               <motion.video
-                style={{ visibility: PortalLoading > 0 ? "visible" : "hidden" }}
+                style={{ visibility: PortalLoading > 2 ? "visible" : "hidden" }}
                 ref={leftFireRef}
                 loop
                 autoPlay
@@ -152,7 +174,7 @@ const Hero: React.FC = () => {
                 <source src={"/img/art/left-fire.mp4"} type="video/mp4" />
               </motion.video>
               <motion.video
-                style={{ visibility: PortalLoading > 0 ? "visible" : "hidden" }}
+                style={{ visibility: PortalLoading > 2 ? "visible" : "hidden" }}
                 ref={rightFireRef}
                 loop
                 autoPlay
