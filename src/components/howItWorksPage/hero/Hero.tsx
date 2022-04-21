@@ -3,6 +3,7 @@ import throttle from "lodash/throttle";
 import Image from "next/image";
 import {
   MouseEvent,
+  TouchEvent,
   useEffect,
   useLayoutEffect,
   useRef,
@@ -28,8 +29,8 @@ const Hero: React.FC = () => {
   const uaParser = new UAParser();
   const [anim, setAnim] = useState("hidden");
 
-  const xCord = useMotionValue(0);
-  const yCord = useMotionValue(0);
+  const xCord = useMotionValue(200);
+  const yCord = useMotionValue(200);
   const maskOpacity = useMotionValue(0.7);
   const xTrans = useTransform(
     xCord,
@@ -47,6 +48,14 @@ const Hero: React.FC = () => {
     const fisaghores =
       Math.pow(event.pageX - dimension.width / 2, 2) +
       Math.pow(event.pageY - dimension.height / 2, 2);
+    maskOpacity.set(Math.sqrt(fisaghores) / (dimension.width / 2));
+  };
+  const touchMoveHandler = (event: TouchEvent) => {
+    xCord.set(event.touches[0].pageX);
+    yCord.set(event.touches[0].pageY);
+    const fisaghores =
+      Math.pow(event.touches[0].pageX - dimension.width / 2, 2) +
+      Math.pow(event.touches[0].pageY - dimension.height / 2, 2);
     maskOpacity.set(Math.sqrt(fisaghores) / (dimension.width / 2));
   };
 
@@ -68,6 +77,7 @@ const Hero: React.FC = () => {
       <motion.div
         ref={heroContainerRef}
         onMouseMove={mouseMoveHandler}
+        onTouchMove={touchMoveHandler}
         className=" flex justify-center items-center relative
         w-[100vw] aspect-[947/1492] sm:aspect-auto sm:h-[90vh] md:h-[100vh] lg:h-[56.26vw] mx-auto overflow-hidden hero-container"
       >
