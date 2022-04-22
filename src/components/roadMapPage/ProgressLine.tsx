@@ -1,5 +1,4 @@
-import { faEthereum } from "@fortawesome/free-brands-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import EthereumSVG from '../svgs/ethereum.svg';
 interface props {
   activeSection: number;

@@ -1,5 +1,4 @@
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import { AnimationControls, motion, useAnimation } from "framer-motion";
 import { discordBtnAni } from "../../../utils/animation";
 import AngleRightSVG from '../../svgs/rightangle.svg';

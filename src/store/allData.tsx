@@ -1,10 +1,4 @@
-import {
-  faDiscord,
-  faInstagram,
-  faLinkedin,
-  faTwitter,
-  faYoutube,
-} from "@fortawesome/free-brands-svg-icons";
+
 // type
 import {
   counterNumType,

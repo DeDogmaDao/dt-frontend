@@ -1,5 +1,4 @@
-import { faCircleDot } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import { motion } from "framer-motion";
 import { Dispatch, ReactElement, SetStateAction } from "react";
 import { eachBenefitDescAni } from "../../../utils/animation";

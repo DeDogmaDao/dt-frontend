@@ -7,8 +7,6 @@ import { motion } from "framer-motion";
 // types
 import { LinkType } from "../../../types/allTypes";
 import MobileMenu from "./MobileMenu";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faDiscord } from "@fortawesome/free-brands-svg-icons";
 import DiscordSVG from "../../svgs/discord.svg";
 import GitBookSVG from "../../svgs/gitbook.svg";
 import LogoSVG from "../../svgs/logo.svg";

@@ -2,8 +2,7 @@ import { ReactElement } from "react";
 import { activeIndexCardType } from "../../../types/allTypes";
 import { motion } from "framer-motion";
 import { tabInfoContainerAni } from "../../../utils/animation";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircle } from "@fortawesome/free-solid-svg-icons";
+
 interface props {
   name: string;
   titleOfHonor?: string;

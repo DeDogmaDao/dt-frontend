@@ -13,7 +13,6 @@ import {
 import MenuToggle from "./MenuToggle";
 import MobileMenuItem from "./MobileMenuItem";
 import { footerData } from "../../../../store/allData";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import Social from "../../Footer/Social";
 
