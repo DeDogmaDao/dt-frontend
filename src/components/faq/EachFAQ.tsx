@@ -30,7 +30,7 @@ const EachFAQ: React.FC<props> = ({ data }) => {
             flex justify-center items-center  group-hover:rotate-90  duration-500
           ${isExpanded ? "!rotate-45" : ""}`}
           >
-            <PlusSVG />
+            <span className="w-4 fill-white"><PlusSVG /></span>
           </span>
         </motion.div>
         {isExpanded && (
