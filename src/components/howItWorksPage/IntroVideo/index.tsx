@@ -68,6 +68,8 @@ const InteroVideo: React.FC = () => {
           </div>
         )}
         <video
+        onPause={()=>setIsPlaying(false)}
+        onPlay={()=>setIsPlaying(true)}
           onClick={videoClickHandler}
           onMouseEnter={() => setIsHovering(true)}
           onMouseLeave={() => setIsHovering(false)}
