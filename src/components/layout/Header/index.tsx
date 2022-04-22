@@ -40,7 +40,7 @@ const Header: React.FC = () => {
     <div className="absolute top-0 left-0 w-full h-[5.25rem] z-[10000] pointer-events-none">
       <div className="flex justify-start items-center w-full h-full relative">
         <div className="absolute top-0 left-0 w-full h-[7.5rem] bg-gradient-to-b from-[#090919] via-[#090919]/50 to-transparent " />
-        <span className="absolute top-[2.1875rem]  left-5 ssm:left-16 z-100 pointer-events-auto">
+        <span className="absolute top-[2.3rem]  left-5 ssm:left-16 z-100 pointer-events-auto">
           <Link href="/">
             <div className="flex justify-start items-center gap-x-2">
               <img
