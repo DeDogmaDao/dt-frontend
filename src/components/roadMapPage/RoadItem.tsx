@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Dispatch, SetStateAction, useState } from "react";
 import { motion } from "framer-motion";
 import { roadDataType } from "../../types/allTypes";
-
+import AngleRightSVG from "../svgs/rightangle.svg";
 interface props {
   data: roadDataType;
   setDescIndex: Dispatch<SetStateAction<number>>;
@@ -34,11 +34,17 @@ const RoadItem: React.FC<props> = ({ data, setDescIndex, descIndex, index }) => 
     <motion.li
       onHoverStart={descriptionHoverHandler}
       onTap={descriptionHoverHandler}
-      className={`w-full flex justify-start items-start 2xl:items-center gap-3 text-medium-medium 2xl:text-large-medium duration-300
-       ${index === descIndex ? "text-primary-300 translate-x-2":""}`}
+      className={`w-full flex justify-start items-start 3xl:items-center gap-x-3 text-medium-medium 2xl:text-large-medium duration-300
+       ${index === descIndex ? "text-primary-500 stroke-primary-500 translate-x-2":""}`}
     >
       <span className="text-base">
-        <FontAwesomeIcon icon={faAngleRight} />
+      <AngleRightSVG
+          stroke="#2CEDFF"
+          width={10}
+          height={17}
+          fill="none"
+          style={{ marginTop:  7}}
+        />
       </span>
       <p>{data.title}</p>
     </motion.li>
