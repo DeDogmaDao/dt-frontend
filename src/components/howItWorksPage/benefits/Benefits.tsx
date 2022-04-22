@@ -31,11 +31,11 @@ const Benefits: React.FC = () => {
       className="flex flex-col justify-start items-center h-full relative z-0"
       id="benefits"
     >
-      <div className="absolute z-0 left-0 top-0 w-full h-full">
-        <div className="relative w-full h-full">
-          <Image src={"/img/bg/sec1.png"} layout="fill" />
-        </div>
-      </div>
+      <span className="absolute h-full aspect-[1438/608]">
+        <span className="w-full h-full inner-image-no-max-width">
+          <Image src={"/img/bg/sec1.png"} layout="fill" quality={100} />
+        </span>
+      </span>
       <motion.div
         onHoverStart={() => setIsPlaying(false)}
         onHoverEnd={() => setIsPlaying(true)}

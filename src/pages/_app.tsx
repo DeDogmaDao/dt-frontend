@@ -1,7 +1,7 @@
 // types
 import type { AppProps } from "next/app";
 // libs
-import { config as fontawesomeConfig } from "@fortawesome/fontawesome-svg-core";
+
 import { useRouter } from "next/router";
 // components
 import Layout from "../components/layout/Layout";
@@ -10,11 +10,9 @@ import Layout from "../components/layout/Layout";
 // store
 // utils & animation
 import "../../styles/tailwind.css";
-import "@fortawesome/fontawesome-svg-core/styles.css";
 import Head from "next/head";
 import { useEffect, useLayoutEffect } from "react";
 
-fontawesomeConfig.autoAddCss = false;
 
 function MyApp({ Component, pageProps }: AppProps) {
   // const router = useRouter();

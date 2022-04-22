@@ -1,5 +1,4 @@
-import { faGear } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
@@ -37,9 +36,6 @@ export default function underconstruction(): JSX.Element {
         />
         <div className="absolute left-0 top-[65vw] h-[55vw] w-full bg-gradient-to-b via-black from-transparent to-black"></div>
         <div className="absolute left-[6vw] top-[5vw] flex flex-col justify-center items-center font-serif ">
-          <span className="text-[10vw]  text-primary-500">
-            <FontAwesomeIcon className="animate-spin" icon={faGear} />
-          </span>
           <p className="text-[6vw]">DDD</p>
           <p className="text-[3vw]">Under Construction...</p>
         </div>

@@ -57,7 +57,7 @@ const EachTab: React.FC<props> = ({
           animate="visible"
           exit="out"
           variants={eachTabAni}
-          className="absolute left-0 bottom-0 w-full h-full bg-cyan-400 rounded-full shadow-cycle shadow-cyan-400 z-20"
+          className="absolute left-0 bottom-0 w-full h-full bg-primary-500 rounded-full shadow-cycle shadow-primary-500 z-20"
         ></motion.div>
       )}
     </button>
