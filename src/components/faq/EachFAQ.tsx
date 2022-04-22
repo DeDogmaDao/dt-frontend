@@ -22,7 +22,7 @@ const EachFAQ: React.FC<props> = ({ data }) => {
           onClick={() => setIsExpanded((prev) => !prev)}
         >
           <div className="flex gap-x-2 items-center">
-            <span className="w-px h-2 bg-yellow-300 duration-500 group-hover:h-6 group-hover:w-px" />
+            <span className="w-px h-2 bg-primary-500 duration-500 group-hover:h-6 group-hover:w-px" />
             <span className="font-medium">{data.question}</span>
           </div>
           <span

@@ -31,7 +31,7 @@ const TabInfo: React.FC<props> = ({
         >
           <h6 className="flex flex-col sm:flex-row justify-center items-center gap-x-2 text-2xl md:text-3xl font-bold">
             <span>{name}</span>
-            {titleOfHonor && <p className="text-cyan-400 text-center">“{titleOfHonor}”</p>}
+            {titleOfHonor && <p className="text-primary-500 text-center">“{titleOfHonor}”</p>}
           </h6>
           <ul className="flex flex-col justify-start items-start mt-3 text-lg font-extralight">
             {desc.map((item) => {

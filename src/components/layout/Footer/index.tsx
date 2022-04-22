@@ -14,9 +14,9 @@ const Footer: React.FC = () => {
         </div>
         <h3 className="mb-3 text-[1.25rem] ssm:text-[1.75rem] sm:text-[2.375rem] font-bold sm:font-bold z-10">
           NFT Game and Collection by
-          <span className="text-yellow-300"> DDD</span>
+          <span className="text-primary-500"> DDD</span>
         </h3>
-        <span className="w-[1.875rem] h-[.375rem] mb-6 bg-yellow-300 z-10" />
+        <span className="w-[1.875rem] h-[.375rem] mb-6 bg-primary-500 z-10 " />
         <ul className="flex justify-center items-center gap-x-1 sm:gap-x-3 mb-36 z-10">
           {footerData.map((data) => {
             return <Social data={data} width="3.375rem" svgWidth="1.625rem" hasTransition={true} />;
