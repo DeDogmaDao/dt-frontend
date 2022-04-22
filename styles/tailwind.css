@@ -86,6 +86,9 @@
   video::-webkit-media-controls-overlay-pause-button {
     display: none;
   }
+  video::-webkit-media-controls-overlay-loading-panel {
+    display: none;
+  }
 
 }
 
