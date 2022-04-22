@@ -15,7 +15,7 @@ const FAQ: React.FC = () => {
     >
       <span className="absolute w-full aspect-[1440/1097]">
         <span className="w-full h-full inner-image-no-max-width">
-          <Image src={"/img/bg/sec4.png"} layout="fill" quality={100} placeholder="blur" />
+          <Image src={"/img/bg/sec4.png"} layout="fill" quality={100}  />
         </span>
       </span>
       <h3 className="z-10 mt-32 md:mt-44 text-[1.25rem] ssm:text-[1.75rem] sm:text-[2.375rem] font-bold sm:font-bold">
