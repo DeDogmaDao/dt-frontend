@@ -1,8 +1,9 @@
 import Image from "next/image";
 import PlaySVG from "../../svgs/play.svg";
 import PauseSVG from "../../svgs/pause.svg";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+import { videoBtnAnim } from "../../../utils/animation";
 const InteroVideo: React.FC = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [iseHovering, setIsHovering] = useState(false);
@@ -22,6 +23,7 @@ const InteroVideo: React.FC = () => {
       videoRef.current!.play();
     }
   }, [isPlaying]);
+
   return (
     <div className="w-full aspect-video flex justify-center items-center relative">
       <span className="w-full  absolute h-full lg:aspect-video">
@@ -33,26 +35,36 @@ const InteroVideo: React.FC = () => {
         className="aspect-video w-[70%] rounded-[30px] z-10 mt-[-10%] flex justify-center items-center
       relative cursor-pointer"
       >
-        {!isPlaying && (
-          <motion.span
-            onClick={videoClickHandler}
-            onMouseEnter={() => setIsHovering(true)}
-            className="z-20 absolute w-[5.625rem] aspect-square p-6 rounded-full bg-white/20 fill-white
+        <AnimatePresence>
+          {!isPlaying && (
+            <motion.span
+              initial="hidden"
+              animate="visible"
+              exit="out"
+              variants={videoBtnAnim}
+              onClick={videoClickHandler}
+              onMouseEnter={() => setIsHovering(true)}
+              className="z-20 absolute w-[5.625rem] aspect-square p-6 rounded-full bg-white/20 fill-white
           hover:scale-125 hover:fill-primary-500 duration-150 ease-out"
-          >
-            <PlaySVG />
-          </motion.span>
-        )}
-        {isPlaying && iseHovering && (
-          <span
-            onClick={videoClickHandler}
-            onMouseEnter={() => setIsHovering(true)}
-            className="z-20 absolute w-[5.625rem] aspect-square p-6 rounded-full bg-white/20 fill-white
+            >
+              <PlaySVG />
+            </motion.span>
+          )}
+          {isPlaying && iseHovering && (
+            <motion.span
+              initial="hidden"
+              animate="visible"
+              exit="out"
+              variants={videoBtnAnim}
+              onClick={videoClickHandler}
+              onMouseEnter={() => setIsHovering(true)}
+              className="z-20 absolute w-[5.625rem] aspect-square p-6 rounded-full bg-white/20 fill-white
           hover:scale-125 hover:fill-primary-500 duration-150 ease-out opacity-50 hover:opacity-100"
-          >
-            <PauseSVG />
-          </span>
-        )}
+            >
+              <PauseSVG />
+            </motion.span>
+          )}
+        </AnimatePresence>
         {!once && (
           <div
             className="absolute w-[60%] h-[30%] mt-[25%]  flex flex-col justify-center items-center z-20
@@ -68,8 +80,8 @@ const InteroVideo: React.FC = () => {
           </div>
         )}
         <video
-        onPause={()=>setIsPlaying(false)}
-        onPlay={()=>setIsPlaying(true)}
+          onPause={() => setIsPlaying(false)}
+          onPlay={() => setIsPlaying(true)}
           onClick={videoClickHandler}
           onMouseEnter={() => setIsHovering(true)}
           onMouseLeave={() => setIsHovering(false)}
