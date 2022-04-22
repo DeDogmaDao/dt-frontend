@@ -25,7 +25,7 @@ const Tabs: React.FC = () => {
     >
       <span className="absolute h-full aspect-[1440/1097]">
         <span className="w-full h-full inner-image-no-max-width">
-          <Image src={"/img/bg/sec3.png"} layout="fill" quality={100} />
+          <Image src={"/img/bg/sec3.png"} layout="fill" quality={100}  />
         </span>
       </span>
       <h3 className="z-10 mt-14 ssm:mt-20 sm:mt-32 lg:mt-40 text-[1.25rem] ssm:text-[1.75rem] sm:text-[2.375rem] font-bold sm:font-bold">

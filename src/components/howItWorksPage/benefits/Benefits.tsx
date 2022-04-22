@@ -33,7 +33,7 @@ const Benefits: React.FC = () => {
     >
       <span className="absolute h-full aspect-[1438/608]">
         <span className="w-full h-full inner-image-no-max-width">
-          <Image src={"/img/bg/sec1.png"} layout="fill" quality={100} />
+          <Image src={"/img/bg/sec1.png"} layout="fill" quality={100}  />
         </span>
       </span>
       <motion.div
