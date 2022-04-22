@@ -21,13 +21,18 @@
   scrollbar-color: darkgray;
 }
 .link-inside-text {
-  @apply !text-cyan-500 !underline hover:!text-primary-500 duration-500; 
+  @apply !text-primary-500 !underline hover:!text-primary-500 duration-500; 
 }
 
 @layer base {
   html {
     scroll-behavior: smooth;
   }
+
+  svg{
+    overflow: visible;
+  }
+
   h1 {
     font-style: normal;
     font-weight: 500;
@@ -66,7 +71,7 @@
   }
   body {
     font-family: "Saira", sans-serif;
-    @apply bg-[#000413] text-neutral-50;
+    @apply bg-[#090919] text-neutral-50;
   }
 
   span > img {
@@ -106,3 +111,7 @@
     outline: none !important;
   }
 
+
+.inner-image-no-max-width > span > img {
+@apply max-w-none;
+}

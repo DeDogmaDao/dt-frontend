@@ -100,8 +100,11 @@ const Hero: React.FC = () => {
                 className="red-transparent-on-city absolute w-[20%] h-[65%] top-1/2 mt-[-19.5%] left-1/2 ml-[-10%]  z-100 rounded-[50%] will-change-transform"
               />
               <motion.div
+                onTap={() => setAnim("visible")}
+                onHoverStart={() => setAnim("visible")}
+                onHoverEnd={() => setAnim("hidden")}
                 style={{ visibility: PortalLoading > 2 ? "visible" : "hidden" }}
-                className="mt-[7%] lg:mt-[10%] z-20 absolute flex flex-col justify-center items-center"
+                className="mt-[7%] lg:mt-[12%]  absolute flex flex-col justify-center items-center z-110 pb-[2.5%]"
               >
                 <motion.span className="w-[231px] h-[70px]   will-change-transform">
                   <Image
@@ -112,10 +115,7 @@ const Hero: React.FC = () => {
                 </motion.span>
                 <motion.button
                   className="text-small-bold  rounded-full w-[138px] h-[40px] flex justify-center items-center text-white
-              bg-neutral-900 z-110  cursor-pointer will-change-transform duration-500 border-2 border-transparent hover:border-primary-500"
-                  onTap={() => setAnim("visible")}
-                  onHoverStart={() => setAnim("visible")}
-                  onHoverEnd={() => setAnim("hidden")}
+              bg-neutral-900  cursor-pointer will-change-transform duration-500 border-2 border-transparent hover:border-primary-500"
                 >
                   Join Our Discord
                 </motion.button>
@@ -188,7 +188,7 @@ const Hero: React.FC = () => {
                 autoPlay
                 muted
                 playsInline
-                className="absolute border-none outline-none z-20 w-[9.429%] h-[20.114%] left-[14.576%] top-[57.828%] will-change-transform"
+                className="absolute hidden sm:block border-none outline-none z-20 w-[9.429%] h-[20.114%] left-[14.576%] top-[57.828%] will-change-transform"
               >
                 <source src={"/img/art/left-fire.mp4"} type="video/mp4" />
               </motion.video>
@@ -199,7 +199,7 @@ const Hero: React.FC = () => {
                 autoPlay
                 muted
                 playsInline
-                className="absolute border-none outline-none z-20 w-[9.429%] h-[20.114%] left-[74.844%] top-[57.828%] will-change-transform"
+                className="absolute hidden sm:block border-none outline-none z-20 w-[9.429%] h-[20.114%] left-[74.844%] top-[57.828%] will-change-transform"
               >
                 <source src={"/img/art/right-fire.mp4"} type="video/mp4" />
               </motion.video>

@@ -34,11 +34,11 @@ const Road: React.FC<props> = ({ index, activeSection, road }) => {
           index === 1 ? "lg:flex-row-reverse" : "lg:flex-row"
         }`}
       >
-        <div className="w-full h-full absolute top-0 left-0 z-0">
-          <div className="w-full h-full relative">
-          <Image src={road.backImg} layout="fill" />
-          </div>
-        </div>
+      <span className="absolute w-full aspect-[1426/821]">
+        <span className="w-full h-full inner-image-no-max-width">
+          <Image src={road.backImg} layout="fill" quality={100} />
+        </span>
+      </span>
         <h3 className="w-full h-1/3 lg:w-1/2 lg:h-full pt-20 lg:pt-0 z-10 flex justify-center items-center 
         text-[1.875rem] ssm:text-[2.25rem] lg:text-[2.5rem] font-bold">
           {road.sectionName}

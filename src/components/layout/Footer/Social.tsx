@@ -1,22 +1,25 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { socialType } from "../../../types/allTypes";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import { socialAni } from "../../../utils/animation";
 interface props {
   data: socialType;
+  svgWidth:string;
+  width:string;
+  hasTransition:boolean;
 }
-const Social: React.FC<props> = ({ data }) => {
+const Social: React.FC<props> = ({ data,svgWidth,width, hasTransition }) => {
   const [isHovering, setIsHovering] = useState(false);
-
   return (
     <motion.li
       onHoverStart={() => setIsHovering(true)}
       onHoverEnd={() => setIsHovering(false)}
-      className="group text-xl w-14 h-14 hover:scale-125 duration-500 flex justify-center items-center"
+      className={`group text-xl  bg-neutral-700 rounded-full  flex justify-center items-center
+      fill-white hover:fill-neutral-900  aspect-square ${hasTransition && "duration-500 delay-200"}`}
+      style={{width}}
     >
       <a
-        className=" w-full h-full group-hover:text-blackPrime duration-500 flex justify-center items-center relative"
+        className=" w-full h-full group-hover:text-blackPrime flex justify-center items-center relative"
         href={data.href}
         target="_blank"
       >
@@ -27,13 +30,14 @@ const Social: React.FC<props> = ({ data }) => {
               animate="visible"
               exit="hidden"
               variants={socialAni}
-
-              className="w-14 h-14 rounded-full absolute left-0 top-0 -mt-0.5 z-0 bg-primary-800"
+              style={{width}}
+              className=" rounded-full absolute left-0 top-0 z-0 bg-primary-500 aspect-square"
             ></motion.div>
           )}
         </AnimatePresence>
-        <span className="z-10">
-          <FontAwesomeIcon icon={data.icon} />
+        <span className="z-10 will-change-transform"
+        style={{width:svgWidth}}>
+        {data.icon}
         </span>
       </a>
     </motion.li>

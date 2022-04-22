@@ -1,5 +1,4 @@
-import { faCaretRight } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import { motion } from "framer-motion";
 import {
   callToActionSvgAni,

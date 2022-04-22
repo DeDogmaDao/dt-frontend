@@ -923,3 +923,22 @@ export const cityAnim: Variants = {
   },
 };
 
+export const videoBtnAnim:Variants = {
+  hidden:{
+    opacity:0,
+  },
+  visible:{
+    opacity:1,
+    transition:{
+      duration:0.5,
+      delay:0.2,
+    },
+  },
+  out:{
+    opacity:0,
+    transition:{
+      duration:0.5,
+      delay:0.2,
+    },
+  },
+}

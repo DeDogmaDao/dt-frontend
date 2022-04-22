@@ -1,10 +1,10 @@
-import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import { motion, PanInfo, useAnimation, useElementScroll } from "framer-motion";
 import Image from "next/image";
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 import { activeIndexCardType } from "../../../types/allTypes";
 import { tabFrameAni } from "../../../utils/animation";
+import AngleRightSVG from "../../svgs/rightangle.svg";
 
 interface props {
   setIsDragged: Dispatch<SetStateAction<boolean>>;
@@ -70,10 +70,10 @@ const Slider: React.FC<props> = ({
   };
 
   const frameControls = useAnimation();
-useEffect(()=>{
-  frameControls.start("visible")
-},[activeIndexCard])
-  
+  useEffect(() => {
+    frameControls.start("visible");
+  }, [activeIndexCard]);
+
   return (
     <motion.div className="relative w-[100%] sm:w-[80%] md:w-[70%] flex justify-center">
       <motion.div
@@ -93,25 +93,38 @@ useEffect(()=>{
       </motion.div>
 
       <button
-        className="absolute p-2 left-0 top-1/2 -mt-8 text-5xl text-white ssm:text-neutral-400 z-60"
+        className="absolute p-2 left-0 top-1/2 -mt-8 text-5xl scale-x-[-1] text-white ssm:text-neutral-400 z-60"
         onClick={leftClickHandler}
       >
-        <FontAwesomeIcon icon={faChevronLeft} />
+        <AngleRightSVG
+          stroke="#66666A"
+          width={21}
+          height={45}
+          fill="none"
+          style={{ marginTop: 22 }}
+        />
       </button>
       <button
-        className="absolute p-2 right-0 top-1/2 -mt-8 text-5xl scale-x-[-1] text-white ssm:text-neutral-400 z-60"
+        className="absolute p-2 right-0 top-1/2 -mt-8 text-5xl  text-white ssm:text-neutral-400 z-60"
         onClick={rightClickHandler}
       >
-        <FontAwesomeIcon icon={faChevronLeft} />
-      </button>
-      
-      <motion.div inlist={"hidden"} animate={frameControls} variants={tabFrameAni} 
-      className="absolute top-[50%] mt-[-14.375rem] left-1/2 ml-[-11.875rem] z-50 pointer-events-none select-none
-      w-[23.75rem] h-[30.625rem]">
-        <Image
-          layout="fill"
-          src="/img/cyc/frame.png"
+        <AngleRightSVG
+          stroke="#66666A"
+          width={21}
+          height={45}
+          fill="none"
+          style={{ marginTop: 22 }}
         />
+      </button>
+
+      <motion.div
+        inlist={"hidden"}
+        animate={frameControls}
+        variants={tabFrameAni}
+        className="absolute top-[50%] mt-[-14.375rem] left-1/2 ml-[-11.875rem] z-50 pointer-events-none select-none
+      w-[23.75rem] h-[30.625rem]"
+      >
+        <Image layout="fill" src="/img/cyc/frame.png" />
       </motion.div>
       {/* <div className="absolute top-[55%] left-1/2 ml-[-9.375rem] z-0 pointer-events-none select-none">
         <Image
