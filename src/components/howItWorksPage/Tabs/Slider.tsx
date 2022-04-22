@@ -121,7 +121,7 @@ const Slider: React.FC<props> = ({
         inlist={"hidden"}
         animate={frameControls}
         variants={tabFrameAni}
-        className="absolute top-[58%] left-1/2 ml-[-11.25rem] z-50 pointer-events-none select-none
+        className="absolute top-[62%] left-1/2 ml-[-11.25rem] z-50 pointer-events-none select-none
       w-[22.5rem] aspect-[444/320]"
       >
         <Image layout="fill" src="/img/cyc/frame.png"  />
