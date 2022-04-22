@@ -30,6 +30,7 @@ const Card: React.FC<props> = ({
           height={size.height}
           src={data.image}
           loading="lazy"
+          placeholder="blur"
         />
       </div>
       {data.name && (

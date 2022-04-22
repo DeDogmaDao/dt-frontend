@@ -53,7 +53,7 @@ const Card: React.FC<props> = ({
       }`}
     >
       <div className="w-full h-full relative">
-        <Image draggable={false} src={data.image} layout="fill" quality={100} />
+        <Image draggable={false} src={data.image} layout="fill" quality={100} placeholder="blur" />
       </div>
     </motion.div>
   );
