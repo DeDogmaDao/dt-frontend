@@ -112,3 +112,6 @@
   }
 
 
+.inner-image-no-max-width > span > img {
+@apply max-w-none;
+}

@@ -23,11 +23,11 @@ const Tabs: React.FC = () => {
       className="flex flex-col justify-between items-center h-full w-full relative z-100"
       id="cards"
     >
-      <div className="absolute top-0 left-0 z-0 w-full h-full">
+      {/* <div className="absolute top-0 left-0 z-0 w-full h-full">
         <div className="relative w-full h-full">
           <Image layout="fill" src="/img/bg/sec2.png" />
         </div>
-      </div>
+      </div> */}
       <h3 className="z-10 mt-14 ssm:mt-20 sm:mt-32 lg:mt-40 text-[1.25rem] ssm:text-[1.75rem] sm:text-[2.375rem] font-bold sm:font-bold">
         Choose your <span className="text-yellow-400">Card</span>
       </h3>

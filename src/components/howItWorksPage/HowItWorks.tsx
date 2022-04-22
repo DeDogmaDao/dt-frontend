@@ -3,6 +3,7 @@ import { pageAnimation } from "../../utils/animation";
 import Benefits from "./benefits/Benefits";
 import ToRoadmapAction from "./callToAction/ToRoadmapAction";
 import Hero from "./hero/Hero";
+import InteroVideo from "./IntroVideo";
 import Tabs from "./Tabs";
 
 const HowItWorks: React.FC = () => {
@@ -16,6 +17,7 @@ const HowItWorks: React.FC = () => {
     >
       <Hero />
       <Benefits />
+      <InteroVideo />
       <Tabs />
       <ToRoadmapAction />
     </motion.div>
