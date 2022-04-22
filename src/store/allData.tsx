@@ -32,23 +32,23 @@ import Twitter from "../components/svgs/twitter.svg";
 import Instagram from "../components/svgs/instagram.svg";
 export const footerData: socialType[] = [
   {
-    icon: <DiscordSVG />,
+    icon: <DiscordSVG width={26} />,
     href: "https://www.discord.com",
   },
   {
-    icon: <YoutubeSVG />,
+    icon: <YoutubeSVG width={26} />,
     href: "www.discord.com",
   },
   {
-    icon: <Linkedin />,
+    icon: <Linkedin width={26} />,
     href: "www.discord.com",
   },
   {
-    icon: <Twitter />,
+    icon: <Twitter width={26} />,
     href: "www.discord.com",
   },
   {
-    icon: <Instagram />,
+    icon: <Instagram width={26} />,
     href: "www.discord.com",
   },
 ];
