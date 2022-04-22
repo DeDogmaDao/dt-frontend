@@ -15,7 +15,7 @@ const Team: React.FC = () => {
     >
       <span className="absolute w-full aspect-[1440/1097]">
         <span className="w-full h-full inner-image-no-max-width">
-          <Image src={"/img/bg/sec4.png"} layout="fill" quality={100} />
+          <Image src={"/img/bg/sec4.png"} layout="fill" quality={100}  />
         </span>
       </span>
       <div className="relative w-full h-full flex flex-col justify-start items-center pt-24 md:pt-32 pb-10">

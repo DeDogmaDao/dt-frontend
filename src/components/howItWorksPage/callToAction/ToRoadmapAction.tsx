@@ -9,7 +9,7 @@ const ToRoadmapAction: React.FC = () => {
     <div className="w-full h-[90vh] sm:h-[110vh] justify-center relative z-0">
       <span className="absolute w-full h-full sm:aspect-[1440/762]">
         <span className="w-full h-full inner-image-no-max-width">
-          <Image src={"/img/bg/sec4.png"} layout="fill" quality={100} />
+          <Image src={"/img/bg/sec4.png"} layout="fill" quality={100}  />
         </span>
       </span>
       <div className="flex flex-col justify-start items-center z-10 absolute top-0 left-0 w-full h-full">

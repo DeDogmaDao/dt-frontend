@@ -77,6 +77,19 @@
   span > img {
     @apply pointer-events-none;
   }
+
+
+
+  video::-webkit-media-controls-overlay-play-button {
+    display: none;
+  }
+  video::-webkit-media-controls-overlay-pause-button {
+    display: none;
+  }
+  video::-webkit-media-controls-loading-panel {
+    display: none;
+  }
+
 }
 
 @layer components {
