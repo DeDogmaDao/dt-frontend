@@ -7,6 +7,7 @@ import { videoBtnAnim } from "../../../utils/animation";
 const InteroVideo: React.FC = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [iseHovering, setIsHovering] = useState(false);
+  const [showBtn, setShowBtn] = useState(true);
   const [once, setOnce] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const videoClickHandler = () => {
@@ -15,6 +16,7 @@ const InteroVideo: React.FC = () => {
     }
     setIsPlaying((prevState) => !prevState);
   };
+  
 
   useEffect(() => {
     if (isPlaying === false) {
@@ -22,7 +24,16 @@ const InteroVideo: React.FC = () => {
     } else {
       videoRef.current!.play();
     }
+    setShowBtn(true);
+    const btnTimeOut = setTimeout(() => {
+      setShowBtn(false);
+    }, 1500);
+
+    return () => {
+      clearTimeout(btnTimeOut)
+    }
   }, [isPlaying]);
+
 
   return (
     <div className="w-full aspect-[16/13] sm:aspect-video flex justify-center items-center relative">
@@ -50,7 +61,7 @@ const InteroVideo: React.FC = () => {
               <PlaySVG />
             </motion.span>
           )}
-          {isPlaying && iseHovering && (
+          {isPlaying && iseHovering && showBtn && (
             <motion.span
               initial="hidden"
               animate="visible"

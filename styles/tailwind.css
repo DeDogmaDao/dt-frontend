@@ -86,7 +86,7 @@
   video::-webkit-media-controls-overlay-pause-button {
     display: none;
   }
-  video::-webkit-media-controls-overlay-loading-panel {
+  video::-webkit-media-controls-loading-panel {
     display: none;
   }
 
