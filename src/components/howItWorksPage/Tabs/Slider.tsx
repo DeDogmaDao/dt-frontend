@@ -116,7 +116,7 @@ const Slider: React.FC<props> = ({
         />
       </button>
 
-      {tabGroup === "gods" && (
+      {(
         <motion.div
           className="absolute top-[67%] left-1/2 ml-[-11.25rem] z-50 pointer-events-none select-none
 w-[22.5rem] aspect-[444/320]"
@@ -129,7 +129,7 @@ w-[22.5rem] aspect-[444/320]"
           />
         </motion.div>
       )}
-      {tabGroup === "humans" && (
+      {/* {tabGroup === "humans" && (
         <>
           <motion.div
             className="absolute top-[62%] left-1/2 ml-[-11.25rem] z-0 pointer-events-none select-none
@@ -154,7 +154,7 @@ w-[18.375rem] aspect-[289/340]"
             />
           </motion.div>
         </>
-      )}
+      )} */}
     </motion.div>
   );
 };
