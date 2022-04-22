@@ -131,22 +131,28 @@ w-[22.5rem] aspect-[444/320]"
       )}
       {tabGroup === "humans" && (
         <>
-          <div className="absolute top-[65%] left-1/2 ml-[-9.375rem] z-0 pointer-events-none select-none">
+          <motion.div
+            className="absolute top-[62%] left-1/2 ml-[-11.25rem] z-0 pointer-events-none select-none
+w-[22.5rem] aspect-[444/320] ]"
+          >
             <Image
-              width="300"
-              height="250"
-              layout="intrinsic"
+              layout="fill"
               src="/img/cyc/tab-portal.png"
+              quality={100}
+              loading="eager"
             />
-          </div>
-          <div className="absolute top-[45%]  left-1/2 ml-[-7.625rem] z-20 pointer-events-none select-none">
+          </motion.div>
+          <motion.div
+            className="absolute top-[40.5%] left-1/2 ml-[-9.1875rem] z-50 pointer-events-none select-none
+w-[18.375rem] aspect-[289/340]"
+          >
             <Image
-              width="244"
-              height="320"
-              layout="intrinsic"
+              layout="fill"
               src="/img/cyc/tab-portal2.png"
+              quality={100}
+              loading="eager"
             />
-          </div>
+          </motion.div>
         </>
       )}
     </motion.div>
