@@ -7,6 +7,7 @@ import { videoBtnAnim } from "../../../utils/animation";
 const InteroVideo: React.FC = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [iseHovering, setIsHovering] = useState(false);
+  const [isTapped,setIsTapped] = useState(0);
   const [showBtn, setShowBtn] = useState(true);
   const [once, setOnce] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -34,6 +35,18 @@ const InteroVideo: React.FC = () => {
     }
   }, [isPlaying]);
 
+
+  useEffect(()=>{
+    const btnTimeOut = setTimeout(() => {
+      setShowBtn(false);
+    }, 2000);
+
+    return () => {
+      clearTimeout(btnTimeOut)
+    }
+  },[isTapped])
+
+  
 
   return (
     <div className="w-full aspect-[16/13] sm:aspect-video flex justify-center items-center relative">
@@ -90,7 +103,8 @@ const InteroVideo: React.FC = () => {
             </span>
           </div>
         )}
-        <video
+        <motion.video
+          onTap={()=>setIsTapped(prevState=>prevState+1)}
           onPause={() => setIsPlaying(false)}
           onPlay={() => setIsPlaying(true)}
           onClick={videoClickHandler}
@@ -102,7 +116,7 @@ const InteroVideo: React.FC = () => {
           className="aspect-video w-[58.125rem] rounded-[30px] z-10 object-cover"
         >
           <source src={"/img/video/intro.mp4"} type="video/mp4" />
-        </video>
+        </motion.video>
       </motion.div>
     </div>
   );
