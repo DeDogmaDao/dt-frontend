@@ -1,4 +1,3 @@
-
 // type
 import {
   counterNumType,
@@ -379,7 +378,7 @@ export const humanTabData: tabType[] = [
     activeCard: false,
     name: "Beast riders",
     titleOfHonor: "ّFollowers of Artemis",
-    image: "/img/cyc/3.png",
+    image: "/img/cyc/beast-riders.png",
     desc: [
       "Attained their power from Artemis. Power is known as “card illusion”. With this power, one holds an additional card in the deck identical to the real one. This guild has 444 cards in total at the start.",
       "Chance of winning for the members of this guild is 1.7X among all the cards.",
@@ -389,7 +388,7 @@ export const humanTabData: tabType[] = [
     activeCard: false,
     name: "Bandits",
     titleOfHonor: "Followers of Hermes",
-    image: "/img/cyc/1.png",
+    image: "/img/cyc/bandits.png",
 
     desc: [
       "Attained their power from Hermes. Power is known as “magnet”. With this power, one can steal the treasury from the winner under a specific condition. This guild has 480 cards in total at the start.",
@@ -400,7 +399,7 @@ export const humanTabData: tabType[] = [
     activeCard: true,
     name: "Enchants",
     titleOfHonor: "Followers of Hecate",
-    image: "/img/cyc/2.png",
+    image: "/img/cyc/enchants.png",
     desc: [
       "Attained their power from Hecate. Power is known as “double ability”. With this power, members can play their abilities twice. This guild has 666 cards in total at the start.",
       "Chance of winning for the members of this guild is 1.25X among all the cards.",
@@ -410,7 +409,7 @@ export const humanTabData: tabType[] = [
     activeCard: false,
     name: "Smiths",
     titleOfHonor: "Followers of Hephaestus",
-    image: "/img/cyc/3.png",
+    image: "/img/cyc/smiths.png",
 
     desc: [
       "Attained their power from Hephaestus. Power is known as “special drop”. With this power members will receive something special in the future. This guild has 777 cards in total at the start.",
@@ -419,9 +418,17 @@ export const humanTabData: tabType[] = [
   },
   {
     activeCard: false,
-    name: "Humans",
-    titleOfHonor: "Ordinary people",
-    image: "/img/cyc/2.png",
+    name: "Humans 1",
+    image: "/img/cyc/human1.png",
+    desc: [
+      "They don’t hold any special power but they are strong in their beliefs, which is the reason why they joined the army to hunt down the treasure with their bare hands.",
+      "The chance of winning for the humans is 0.85X among all the cards.",
+    ],
+  },
+  {
+    activeCard: false,
+    name: "Humans 2",
+    image: "/img/cyc/human2.png",
     desc: [
       "They don’t hold any special power but they are strong in their beliefs, which is the reason why they joined the army to hunt down the treasure with their bare hands.",
       "The chance of winning for the humans is 0.85X among all the cards.",
