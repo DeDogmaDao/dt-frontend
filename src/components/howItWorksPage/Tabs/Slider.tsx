@@ -1,4 +1,3 @@
-
 import { motion, PanInfo, useAnimation, useElementScroll } from "framer-motion";
 import Image from "next/image";
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
@@ -83,7 +82,7 @@ const Slider: React.FC<props> = ({
         <motion.div
           onDragEnd={(event, info) => dragHandler(event, info)}
           onDragStart={() => setIsDragged(true)}
-          className={`inner-carousel flex relative h-[26.25rem] mt-[4%]`}
+          className={`inner-carousel flex relative h-[29.25rem] mt-[4%]`}
           drag="x"
           dragConstraints={{ right: 0, left: -0 }}
           dragElastic={0.03}
@@ -117,29 +116,39 @@ const Slider: React.FC<props> = ({
         />
       </button>
 
-      <motion.div
-
-        className="absolute top-[67%] left-1/2 ml-[-11.25rem] z-50 pointer-events-none select-none
-      w-[22.5rem] aspect-[444/320]"
-      >
-        <Image layout="fill" src="/img/cyc/frame.png" quality={100} loading="eager" />
-      </motion.div>
-      {/* <div className="absolute top-[55%] left-1/2 ml-[-9.375rem] z-0 pointer-events-none select-none">
-        <Image
-          width="300"
-          height="250"
-          layout="intrinsic"
-          src="/img/cyc/tab-portal.png"
-        />
-      </div>
-      <div className="absolute top-[35%]  left-1/2 ml-[-7.625rem] z-20 pointer-events-none select-none">
-        <Image
-          width="244"
-          height="320"
-          layout="intrinsic"
-          src="/img/cyc/tab-portal2.png"
-        />
-      </div> */}
+      {tabGroup === "gods" && (
+        <motion.div
+          className="absolute top-[67%] left-1/2 ml-[-11.25rem] z-50 pointer-events-none select-none
+w-[22.5rem] aspect-[444/320]"
+        >
+          <Image
+            layout="fill"
+            src="/img/cyc/frame.png"
+            quality={100}
+            loading="eager"
+          />
+        </motion.div>
+      )}
+      {tabGroup === "humans" && (
+        <>
+          <div className="absolute top-[65%] left-1/2 ml-[-9.375rem] z-0 pointer-events-none select-none">
+            <Image
+              width="300"
+              height="250"
+              layout="intrinsic"
+              src="/img/cyc/tab-portal.png"
+            />
+          </div>
+          <div className="absolute top-[45%]  left-1/2 ml-[-7.625rem] z-20 pointer-events-none select-none">
+            <Image
+              width="244"
+              height="320"
+              layout="intrinsic"
+              src="/img/cyc/tab-portal2.png"
+            />
+          </div>
+        </>
+      )}
     </motion.div>
   );
 };
