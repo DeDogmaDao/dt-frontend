@@ -14,7 +14,7 @@ const Social: React.FC<props> = ({ data,svgWidth,width, hasTransition }) => {
     <motion.li
       onHoverStart={() => setIsHovering(true)}
       onHoverEnd={() => setIsHovering(false)}
-      className={`group text-xl  bg-neutral-700 rounded-full hover:scale-110  flex justify-center items-center
+      className={`group text-xl  bg-neutral-700 rounded-full  flex justify-center items-center
       fill-white hover:fill-neutral-900  aspect-square ${hasTransition && "duration-500 delay-200"}`}
       style={{width}}
     >

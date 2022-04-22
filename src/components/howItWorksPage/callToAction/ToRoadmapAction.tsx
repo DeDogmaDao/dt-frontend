@@ -6,8 +6,8 @@ import AngleRightSVG from "../../svgs/rightangle.svg";
 
 const ToRoadmapAction: React.FC = () => {
   return (
-    <div className="w-full h-[70vh] sm:h-[80vh] md:h-screen justify-center relative z-0">
-      <span className="absolute h-full aspect-[1440/762]">
+    <div className="w-full h-[70vh] sm:h-[80vh] md:h-[110vh] justify-center relative z-0">
+      <span className="absolute w-full aspect-[1440/762]">
         <span className="w-full h-full inner-image-no-max-width">
           <Image src={"/img/bg/sec4.png"} layout="fill" quality={100} />
         </span>
