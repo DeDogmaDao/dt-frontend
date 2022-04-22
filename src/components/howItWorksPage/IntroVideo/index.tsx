@@ -28,7 +28,7 @@ const InteroVideo: React.FC = () => {
     <div className="w-full aspect-[16/13] sm:aspect-video flex justify-center items-center relative">
       <span className="w-full  absolute h-full lg:aspect-video">
         <span className="w-full h-full inner-image-no-max-width">
-          <Image src={"/img/bg/sec2.png"} layout="fill" />
+          <Image src={"/img/bg/sec2.png"} layout="fill" quality={100} />
         </span>
       </span>
       <motion.div
