@@ -22,9 +22,9 @@ const Footer: React.FC = () => {
           <span className="text-yellow-300"> DDD</span>
         </h3>
         <span className="w-[1.875rem] h-[.375rem] mb-6 bg-yellow-300 z-10" />
-        <ul className="flex justify-center items-center sm:gap-x-3 mb-10 z-10">
+        <ul className="flex justify-center items-center gap-x-1 sm:gap-x-3 mb-10 z-10">
           {footerData.map((data) => {
-            return <Social data={data} />;
+            return <Social data={data} width="3.375rem" svgWidth="1.625rem" hasTransition={true} />;
           })}
         </ul>
         <p className="mb-20 text-xs ssm:text-medium-light !font-thin z-10">

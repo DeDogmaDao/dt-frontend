@@ -15,6 +15,7 @@ import MobileMenuItem from "./MobileMenuItem";
 import { footerData } from "../../../../store/allData";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
+import Social from "../../Footer/Social";
 
 interface props {
   headerLinks: LinkType[];
@@ -50,7 +51,7 @@ const MobileMenu: React.FC<props> = ({ headerLinks }) => {
       <motion.div className="absolute bottom-10 left-0 w-screen h-[6.25rem] flex flex-col justify-center items-center ">
         <motion.ul
           variants={navBodyAni}
-          className="flex justify-center items-start w-full h-1/2 gap-x-3"
+          className="flex justify-center items-start w-full h-1/2 gap-x-1 sm:gap-x-3 mb-10 z-10"
         >
           {footerData.map((social) => {
             return (
@@ -58,11 +59,9 @@ const MobileMenu: React.FC<props> = ({ headerLinks }) => {
                 variants={menuSocialItemAni}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="w-8 h-8 rounded-full bg-neutral-700 text-white text-base flex justify-center items-center cursor-pointer"
+                className="rounded-full bg-neutral-700 text-white text-base flex justify-center items-center cursor-pointer !duration-[0]"
               >
-                <a href={social.href} target="_blank">
-                  <FontAwesomeIcon icon={social.icon} />
-                </a>
+                <Social data={social} width={"2rem"} svgWidth=".875rem" hasTransition={false} />
               </motion.li>
             );
           })}

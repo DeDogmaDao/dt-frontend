@@ -5,15 +5,19 @@ import { useState } from "react";
 import { socialAni } from "../../../utils/animation";
 interface props {
   data: socialType;
+  svgWidth:string;
+  width:string;
+  hasTransition:boolean;
 }
-const Social: React.FC<props> = ({ data }) => {
+const Social: React.FC<props> = ({ data,svgWidth,width, hasTransition }) => {
   const [isHovering, setIsHovering] = useState(false);
   return (
     <motion.li
       onHoverStart={() => setIsHovering(true)}
       onHoverEnd={() => setIsHovering(false)}
-      className="group text-xl w-14 h-14 bg-neutral-900 rounded-full hover:scale-110 duration-500 flex justify-center items-center
-      fill-white hover:fill-neutral-900 delay-200"
+      className={`group text-xl  bg-neutral-700 rounded-full hover:scale-110  flex justify-center items-center
+      fill-white hover:fill-neutral-900  aspect-square ${hasTransition && "duration-500 delay-200"}`}
+      style={{width}}
     >
       <a
         className=" w-full h-full group-hover:text-blackPrime flex justify-center items-center relative"
@@ -27,12 +31,13 @@ const Social: React.FC<props> = ({ data }) => {
               animate="visible"
               exit="hidden"
               variants={socialAni}
-
-              className="w-14 h-14 rounded-full absolute left-0 top-0 z-0 bg-primary-500"
+              style={{width}}
+              className=" rounded-full absolute left-0 top-0 z-0 bg-primary-500 aspect-square"
             ></motion.div>
           )}
         </AnimatePresence>
-        <span className="z-10 will-change-transform">
+        <span className="z-10 will-change-transform"
+        style={{width:svgWidth}}>
         {data.icon}
         </span>
       </a>
