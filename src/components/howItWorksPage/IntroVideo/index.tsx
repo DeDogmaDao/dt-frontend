@@ -26,13 +26,7 @@ const InteroVideo: React.FC = () => {
       videoRef.current!.play();
     }
     setShowBtn(true);
-    const btnTimeOut = setTimeout(() => {
-      setShowBtn(false);
-    }, 1500);
 
-    return () => {
-      clearTimeout(btnTimeOut)
-    }
   }, [isPlaying]);
 
 
