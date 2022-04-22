@@ -6,8 +6,8 @@ import AngleRightSVG from "../../svgs/rightangle.svg";
 
 const ToRoadmapAction: React.FC = () => {
   return (
-    <div className="w-full h-[70vh] sm:h-[80vh] md:h-[110vh] justify-center relative z-0">
-      <span className="absolute w-full aspect-[1440/762]">
+    <div className="w-full h-[90vh] sm:h-[110vh] justify-center relative z-0">
+      <span className="absolute w-full h-full sm:aspect-[1440/762]">
         <span className="w-full h-full inner-image-no-max-width">
           <Image src={"/img/bg/sec4.png"} layout="fill" quality={100} />
         </span>
@@ -26,11 +26,11 @@ const ToRoadmapAction: React.FC = () => {
             <CallToActionSvg />
           </div>
           <Link href={"/roadmap"}>
-            <button className="px-4 py-3 mt-11 bg-black rounded-full text-small-bold flex gap-x-2 duration-500 border-2 border-transparent hover:border-primary-500">
+            <button className="px-5 py-3 mt-11 bg-primary-500 text-neutral-900 rounded-full text-small-bold flex gap-x-2 duration-500 border-2 border-transparent hover:border-primary-500">
               <span>Roadmap Document</span>
               <span className="animate-bounceX">
                 <AngleRightSVG
-                  stroke="#2CEDFF"
+                  stroke="black"
                   width={10}
                   height={17}
                   fill="none"
