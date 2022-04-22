@@ -96,6 +96,7 @@ const InteroVideo: React.FC = () => {
             </span>
           </motion.div>
         )}
+        <img src='/img/video/border.png' className="aspect-[16/9] w-[58.3rem] pl-px absolute" />
         <motion.video
           onTap={() => setIsTapped((prevState) => prevState + 1)}
           onPause={() => setIsPlaying(false)}
@@ -106,7 +107,7 @@ const InteroVideo: React.FC = () => {
           ref={videoRef}
           controls={once}
           poster="/img/bg/Story.png"
-          className="aspect-video w-[58.125rem] rounded-[30px] z-10 object-cover"
+          className="aspect-video w-[58.125rem] rounded-[1.9vw] z-10 object-cover"
         >
           <source src={"/img/video/intro.mp4"} type="video/mp4" />
         </motion.video>
