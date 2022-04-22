@@ -119,10 +119,10 @@ const Slider: React.FC<props> = ({
 
       <motion.div
 
-        className="absolute top-[62%] left-1/2 ml-[-11.25rem] z-50 pointer-events-none select-none
+        className="absolute top-[67%] left-1/2 ml-[-11.25rem] z-50 pointer-events-none select-none
       w-[22.5rem] aspect-[444/320]"
       >
-        <Image layout="fill" src="/img/cyc/frame.png"  />
+        <Image layout="fill" src="/img/cyc/frame.png" quality={100}  />
       </motion.div>
       {/* <div className="absolute top-[55%] left-1/2 ml-[-9.375rem] z-0 pointer-events-none select-none">
         <Image

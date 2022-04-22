@@ -91,7 +91,7 @@ const Tabs: React.FC = () => {
       {tabs.map((tab) => {
         if (!tab.activeGroup) return null;
         return (
-          <div className="h-16 flex justify-center items-center gap-x-[.625rem] text-2xl  rounded-full mt-14">
+          <div className="h-16 flex justify-center items-center gap-x-[.625rem] text-2xl  rounded-full mt-28">
             <LayoutGroup id="eachTab">
               {tab.tabInfo.map((data, index) => {
                 return (
