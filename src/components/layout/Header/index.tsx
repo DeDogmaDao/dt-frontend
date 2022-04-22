@@ -11,6 +11,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDiscord } from "@fortawesome/free-brands-svg-icons";
 import DiscordSVG from "../../svgs/discord.svg";
 import GitBookSVG from "../../svgs/gitbook.svg";
+import LogoSVG from "../../svgs/logo.svg";
+
 
 const Header: React.FC = () => {
   const headerLinks: LinkType[] = [
@@ -40,16 +42,13 @@ const Header: React.FC = () => {
     <div className="absolute top-0 left-0 w-full h-[5.25rem] z-[10000] pointer-events-none">
       <div className="flex justify-start items-center w-full h-full relative">
         <div className="absolute top-0 left-0 w-full h-[7.5rem] bg-gradient-to-b from-[#090919] via-[#090919]/50 to-transparent " />
-        <span className="absolute top-[2.3rem]  left-5 ssm:left-16 z-100 pointer-events-auto">
+        <span className="absolute top-[2.3rem]  left-5 ssm:left-16 z-100 pointer-events-auto cursor-pointer">
           <Link href="/">
-            <div className="flex justify-start items-center gap-x-2">
-              <img
-                className="w-9 cursor-pointer"
-                src="/img/logo/ddd-logo.png"
-              />
-              <span className="text-small-bold ssm:text-medium-bold md:hidden">
-                Demmortal Treasure
-              </span>
+            <div className="flex justify-start items-center gap-x-2 fill-white hover:fill-primary-500 duration-300">
+            <LogoSVG width="2.5rem" />
+              {/* <span className="text-small-bold ssm:text-medium-bold md:hidden ">
+                Demmortal  Treasure
+              </span> */}
             </div>
           </Link>
         </span>
