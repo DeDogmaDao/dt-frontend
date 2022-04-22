@@ -36,7 +36,7 @@ const TabInfo: React.FC<props> = ({
           <ul className="flex flex-col justify-start items-start mt-3 text-lg font-extralight">
             {desc.map((item) => {
               return (
-                <li className="flex gap-x-2">
+                <li className="flex gap-x-2 select-text">
                   <span className="h-[.5625rem] aspect-square rounded-full bg-white mt-[.5625rem]" />
                   {item}
                 </li>
