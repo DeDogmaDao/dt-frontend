@@ -4,6 +4,7 @@ import { motion, MotionStyle } from "framer-motion";
 import Image from "next/image";
 import { cardPlaceDetector } from "../../../utils/util";
 import { carouselDisplayAni } from "../../../utils/animation";
+import imgData from "./img/img";
 interface props {
   data: tabType;
   cardRef: RefObject<HTMLDivElement>;
@@ -53,7 +54,13 @@ const Card: React.FC<props> = ({
       }`}
     >
       <div className="w-full h-full relative">
-        <Image draggable={false} src={data.image} layout="fill" quality={100}  />
+        <Image
+          draggable={false}
+          src={imgData[tabGroup][index]}
+          layout="fill"
+          quality={100}
+          placeholder="blur"
+        />
       </div>
     </motion.div>
   );
