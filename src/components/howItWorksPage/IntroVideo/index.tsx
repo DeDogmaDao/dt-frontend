@@ -7,7 +7,7 @@ import { videoBtnAnim } from "../../../utils/animation";
 const InteroVideo: React.FC = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [iseHovering, setIsHovering] = useState(false);
-  const [isTapped,setIsTapped] = useState(0);
+  const [isTapped, setIsTapped] = useState(0);
   const [showBtn, setShowBtn] = useState(true);
   const [once, setOnce] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -17,7 +17,6 @@ const InteroVideo: React.FC = () => {
     }
     setIsPlaying((prevState) => !prevState);
   };
-  
 
   useEffect(() => {
     if (isPlaying === false) {
@@ -26,21 +25,18 @@ const InteroVideo: React.FC = () => {
       videoRef.current!.play();
     }
     setShowBtn(true);
-
   }, [isPlaying]);
 
-
-  useEffect(()=>{
+  useEffect(() => {
+    setIsHovering(true);
     const btnTimeOut = setTimeout(() => {
-      setShowBtn(false);
+      setIsHovering(false);
     }, 2000);
 
     return () => {
-      clearTimeout(btnTimeOut)
-    }
-  },[isTapped])
-
-  
+      clearTimeout(btnTimeOut);
+    };
+  }, [isTapped]);
 
   return (
     <div className="w-full aspect-[16/13] sm:aspect-video flex justify-center items-center relative">
@@ -61,6 +57,7 @@ const InteroVideo: React.FC = () => {
               exit="out"
               variants={videoBtnAnim}
               onClick={videoClickHandler}
+              onTap={() => setIsTapped((prevState) => prevState + 1)}
               onMouseEnter={() => setIsHovering(true)}
               className="z-20 absolute w-[3rem] md:w-[5.625rem] aspect-square p-2 md:p-6 rounded-full bg-white/20 fill-white
           hover:scale-125 hover:fill-primary-500 duration-150 ease-out"
@@ -68,13 +65,14 @@ const InteroVideo: React.FC = () => {
               <PlaySVG />
             </motion.span>
           )}
-          {isPlaying && iseHovering && showBtn && (
+          {isPlaying && iseHovering && (
             <motion.span
               initial="hidden"
               animate="visible"
               exit="out"
               variants={videoBtnAnim}
               onClick={videoClickHandler}
+              onTap={() => setIsTapped((prevState) => prevState + 1)}
               onMouseEnter={() => setIsHovering(true)}
               className="z-20 absolute w-[5.625rem] aspect-square p-6 rounded-full bg-white/20 fill-white
           hover:scale-125 hover:fill-primary-500 duration-150 ease-out opacity-50 hover:opacity-100"
@@ -84,7 +82,8 @@ const InteroVideo: React.FC = () => {
           )}
         </AnimatePresence>
         {!once && (
-          <div
+          <motion.div
+            onTap={() => setIsTapped((prevState) => prevState + 1)}
             className="absolute w-[100%] h-[10rem] mt-[30%]  flex flex-col justify-center items-center z-20
         gap-y-1 pointer-events-none scale-[38%] md:scale-[60%] lg:scale-100"
           >
@@ -95,10 +94,10 @@ const InteroVideo: React.FC = () => {
             <span className="text-xl font-light whitespace-nowrap">
               This is how everything started Between Gods and humans ...
             </span>
-          </div>
+          </motion.div>
         )}
         <motion.video
-          onTap={()=>setIsTapped(prevState=>prevState+1)}
+          onTap={() => setIsTapped((prevState) => prevState + 1)}
           onPause={() => setIsPlaying(false)}
           onPlay={() => setIsPlaying(true)}
           onClick={videoClickHandler}
