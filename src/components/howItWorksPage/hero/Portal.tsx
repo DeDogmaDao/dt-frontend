@@ -10,7 +10,9 @@ interface props {
 const Portal: React.FC<props> = ({ setPortalLoading, portalLoading }) => {
   useEffect(() => {
     if (portalLoading === 3) {
-      setPortalLoading(4);
+      setTimeout(() => {
+        setPortalLoading(4);
+      }, 1500);
     }
   }, [portalLoading]);
 

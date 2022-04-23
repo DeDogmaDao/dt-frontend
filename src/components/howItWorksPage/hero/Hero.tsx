@@ -13,6 +13,7 @@ import { cityAnim, heroAnim } from "../../../utils/animation";
 import { UAParser } from "ua-parser-js";
 import { dimensionType } from "../../../types/allTypes";
 import LogoType from "./LogoType";
+import Portal from "./Portal";
 
 const Hero: React.FC = () => {
   const heroContainerRef = useRef<HTMLDivElement>(null);
@@ -99,7 +100,7 @@ const Hero: React.FC = () => {
             />
             <LogoType setAnim={setAnim} portalLoading={portalLoading} />
 
-            <></>
+            <Portal portalLoading={portalLoading} setPortalLoading={setPortalLoading} />
 
             <motion.img
               className="absolute z-20 left-[48.5%] top-[71%] w-[10%] h-[15%] will-change-transform"
@@ -109,7 +110,7 @@ const Hero: React.FC = () => {
               style={{
                 x: springX,
                 y: springY,
-                visibility: portalLoading > 2 ? "visible" : "hidden",
+                visibility: portalLoading ===4 ? "visible" : "hidden",
               }}
               className="absolute w-[48.567%] h-[85.121%] z-0 will-change-transform"
               initial="hidden"
@@ -121,7 +122,7 @@ const Hero: React.FC = () => {
             <motion.span
               style={{
                 opacity: maskOpacity,
-                visibility: portalLoading > 2 ? "visible" : "hidden",
+                visibility: portalLoading ===4 ? "visible" : "hidden",
               }}
               className="absolute w-full h-full z-0 scale-105 will-change-transform"
             >
@@ -129,7 +130,7 @@ const Hero: React.FC = () => {
             </motion.span>
 
             <motion.video
-              style={{ visibility: portalLoading > 2 ? "visible" : "hidden" }}
+              style={{ visibility: portalLoading ===4 ? "visible" : "hidden" }}
               ref={leftFireRef}
               loop
               autoPlay
@@ -140,7 +141,7 @@ const Hero: React.FC = () => {
               <source src={"/img/art/left-fire.mp4"} type="video/mp4" />
             </motion.video>
             <motion.video
-              style={{ visibility: portalLoading > 2 ? "visible" : "hidden" }}
+              style={{ visibility: portalLoading ===4 ? "visible" : "hidden" }}
               ref={rightFireRef}
               loop
               autoPlay
