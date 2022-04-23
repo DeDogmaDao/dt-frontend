@@ -66,7 +66,7 @@ const Hero: React.FC = () => {
     const fisaghores =
       Math.pow(event.pageX - dimension.width / 2, 2) +
       Math.pow(event.pageY - dimension.height / 2, 2);
-    maskOpacity.set(Math.sqrt(fisaghores) / (dimension.width / 1.1));
+    maskOpacity.set(Math.sqrt(fisaghores) / (dimension.width / 1.1) -0.1);
   };
   const touchMoveHandler = (event: TouchEvent) => {
     xCord.set(event.touches[0].pageX);
