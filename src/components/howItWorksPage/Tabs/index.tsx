@@ -13,8 +13,8 @@ const Tabs: React.FC = () => {
   const [tabs, setTabs] = useState(allTabs);
   const cardRef = useRef<HTMLDivElement>(null);
   const [activeIndexCard, setActiveIndexCard] = useState<activeIndexCardType>({
-    gods: [4, 5, 6],
-    humans: [1, 2, 3],
+    gods: [1, 2, 3],
+    humans: [3, 4, 5],
   });
   const [isDragged, setIsDragged] = useState(false);
 
