@@ -12,13 +12,13 @@ const LogoType: React.FC<props> = ({ setAnim, portalLoading }) => {
       onHoverStart={() => setAnim("visible")}
       onHoverEnd={() => setAnim("hidden")}
       style={{ visibility: portalLoading > 2 ? "visible" : "hidden" }}
-      className="mt-[7%] lg:mt-[12%]  absolute flex flex-col justify-center items-center z-110 pb-[2.5%]"
+      className="mt-[-1%] ssm:mt-[1%] lg:mt-[2%]  absolute flex flex-col justify-start items-center z-110 "
     >
-      <motion.span className="w-[231px] h-[70px]   will-change-transform">
+      <motion.span className="w-[20rem] aspect-[1207/728]   will-change-transform">
         <Image src="/img/logo/treasure.png" layout={"fill"} quality={100} />
       </motion.span>
       <motion.button
-        className="text-small-bold  rounded-full w-[138px] h-[40px] flex justify-center items-center text-white
+        className="text-small-bold  rounded-full w-[138px] h-[40px] flex justify-center items-center text-white mt-[-14%]
         bg-neutral-900 hover:bg-neutral-900/60  cursor-pointer will-change-transform duration-500 border-2 border-transparent hover:border-primary-500"
       >
         Join Our Discord
