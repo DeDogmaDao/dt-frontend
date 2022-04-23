@@ -96,6 +96,7 @@ const Hero: React.FC = () => {
              relative flex justify-center items-center will-change-transform origin-bottom"
           >
             <motion.div
+              onTap={() => setAnim("visible")}
               onHoverStart={() => setAnim("visible")}
               onHoverEnd={() => setAnim("hidden")}
               className="red-transparent-on-city absolute w-[20%] h-[65%] top-1/2 mt-[-19.5%] left-1/2 ml-[-10%]  z-100 rounded-[50%] will-change-transform"
@@ -105,6 +106,7 @@ const Hero: React.FC = () => {
             <Portal
               portalLoading={portalLoading}
               setPortalLoading={setPortalLoading}
+              setAnim={setAnim}
             />
 
             <City
