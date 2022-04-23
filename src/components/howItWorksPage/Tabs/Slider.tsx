@@ -29,13 +29,13 @@ const Slider: React.FC<props> = ({
   ) => {
     if (info.offset.x > 0) {
       setActiveIndexCard((prevState) => {
-        return {...prevState, [tabGroup]: cardIndexHandler(prevState[tabGroup][1]-1,dataQuantity)}
+        return {...prevState, [tabGroup]: cardIndexHandler(prevState[tabGroup][0],dataQuantity)}
 
       });
     }
     if (info.offset.x < 0 && info.offset.y > -300) {
       setActiveIndexCard((prevState) => {
-        return {...prevState, [tabGroup]: cardIndexHandler(prevState[tabGroup][1]+1,dataQuantity)}
+        return {...prevState, [tabGroup]: cardIndexHandler(prevState[tabGroup][2],dataQuantity)}
       });
     }
     setIsDragged(false);
@@ -43,12 +43,12 @@ const Slider: React.FC<props> = ({
 
   const leftClickHandler = () => {
     setActiveIndexCard((prevState) => {
-      return {...prevState, [tabGroup]: cardIndexHandler(prevState[tabGroup][1]-1,dataQuantity)}
+      return {...prevState, [tabGroup]: cardIndexHandler(prevState[tabGroup][0],dataQuantity)}
     });
   };
   const rightClickHandler = () => {
     setActiveIndexCard((prevState) => {
-      return {...prevState, [tabGroup]: cardIndexHandler(prevState[tabGroup][1]+1,dataQuantity)}
+      return {...prevState, [tabGroup]: cardIndexHandler(prevState[tabGroup][2],dataQuantity)}
     });
   };
 
