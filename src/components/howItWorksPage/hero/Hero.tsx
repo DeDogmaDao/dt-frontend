@@ -55,7 +55,7 @@ const Hero: React.FC = () => {
     const fisaghores =
       Math.pow(event.pageX - dimension.width / 2, 2) +
       Math.pow(event.pageY - dimension.height / 2, 2);
-    maskOpacity.set(Math.sqrt(fisaghores) / (dimension.width / 2));
+    maskOpacity.set(Math.sqrt(fisaghores) / (dimension.width / 1.4));
   };
   const touchMoveHandler = (event: TouchEvent) => {
     xCord.set(event.touches[0].pageX);
@@ -63,7 +63,7 @@ const Hero: React.FC = () => {
     const fisaghores =
       Math.pow(event.touches[0].pageX - dimension.width / 2, 2) +
       Math.pow(event.touches[0].pageY - dimension.height / 2, 2);
-    maskOpacity.set(Math.sqrt(fisaghores) / (dimension.width / 2));
+    maskOpacity.set(Math.sqrt(fisaghores) / (dimension.width / 1.4));
   };
 
   const leftFireRef = useRef<HTMLVideoElement>(null);
