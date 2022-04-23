@@ -15,6 +15,7 @@ import { dimensionType } from "../../../types/allTypes";
 import LogoType from "./LogoType";
 import Portal from "./Portal";
 import City from "./City";
+import FireCape from "./FireCape";
 
 const Hero: React.FC = () => {
   const heroContainerRef = useRef<HTMLDivElement>(null);
@@ -84,7 +85,7 @@ const Hero: React.FC = () => {
         className=" flex justify-center items-center relative
         w-[100vw] aspect-[947/1492] sm:aspect-auto sm:h-[90vh] md:h-[100vh] lg:h-[56.26vw] mx-auto overflow-hidden hero-container"
       >
-        <div className="portal-and-flame-and-hero w-full h-full relative z-20 origin-bottom">
+        <div className="portal-and-flame-and-hero w-full h-full relative z-20 ">
           <motion.div
             initial="hidden"
             animate={anim}
@@ -92,7 +93,7 @@ const Hero: React.FC = () => {
             className=" ml-[-100%] sm:ml-[-25%] lg:ml-auto
              h-full
              w-[300%] sm:w-[150%] lg:w-full
-             relative flex justify-center items-center will-change-transform"
+             relative flex justify-center items-center will-change-transform origin-bottom"
           >
             <motion.div
               onHoverStart={() => setAnim("visible")}
@@ -114,7 +115,11 @@ const Hero: React.FC = () => {
               springY={springY}
             />
 
-
+            <FireCape
+              leftFireRef={leftFireRef}
+              rightFireRef={rightFireRef}
+              portalLoading={portalLoading}
+            />
           </motion.div>
         </div>
       </motion.div>

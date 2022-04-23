@@ -2,13 +2,15 @@ import { motion } from "framer-motion";
 import { RefObject } from "react";
 
 interface props {
-portalLoading:number;
-leftFireRef:RefObject<HTMLVideoElement>;
-rightFireRef:RefObject<HTMLVideoElement>;
-
+  portalLoading: number;
+  leftFireRef: RefObject<HTMLVideoElement>;
+  rightFireRef: RefObject<HTMLVideoElement>;
 }
-const FireCape: React.FC<props> = ({portalLoading,leftFireRef,rightFireRef}) => {
-    
+const FireCape: React.FC<props> = ({
+  portalLoading,
+  leftFireRef,
+  rightFireRef,
+}) => {
   return (
     <>
       <motion.img
@@ -42,6 +44,5 @@ const FireCape: React.FC<props> = ({portalLoading,leftFireRef,rightFireRef}) => 
     </>
   );
 };
-
 
 export default FireCape;
