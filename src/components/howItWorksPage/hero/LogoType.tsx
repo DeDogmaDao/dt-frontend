@@ -9,7 +9,6 @@ interface props {
 const LogoType: React.FC<props> = ({ setAnim, portalLoading }) => {
   return (
     <motion.div
-      onTap={() => setAnim("visible")}
       onHoverStart={() => setAnim("visible")}
       onHoverEnd={() => setAnim("hidden")}
       style={{ visibility: portalLoading > 2 ? "visible" : "hidden" }}
