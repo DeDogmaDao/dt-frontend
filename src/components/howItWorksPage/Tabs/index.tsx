@@ -13,8 +13,8 @@ const Tabs: React.FC = () => {
   const [tabs, setTabs] = useState(allTabs);
   const cardRef = useRef<HTMLDivElement>(null);
   const [activeIndexCard, setActiveIndexCard] = useState<activeIndexCardType>({
-    gods: 5,
-    humans: 2,
+    gods: [4, 5, 6],
+    humans: [1, 2, 3],
   });
   const [isDragged, setIsDragged] = useState(false);
 
@@ -25,7 +25,7 @@ const Tabs: React.FC = () => {
     >
       <span className="absolute h-full aspect-[1440/1097]">
         <span className="w-full h-full inner-image-no-max-width">
-          <Image src={"/img/bg/sec3.png"} layout="fill" quality={100}  />
+          <Image src={"/img/bg/sec3.png"} layout="fill" quality={100} />
         </span>
       </span>
       <h3 className="z-10 mt-14 ssm:mt-20 sm:mt-32 lg:mt-40 text-[1.25rem] ssm:text-[1.75rem] sm:text-[2.375rem] font-bold sm:font-bold">
@@ -60,12 +60,13 @@ const Tabs: React.FC = () => {
                 <LayoutGroup>
                   <AnimatePresence>
                     {tab.tabInfo.map((data, index) => {
-                      if (
-                        index > activeIndexCard[tab.tabGroup] + 1 ||
-                        index < activeIndexCard[tab.tabGroup] - 1
-                      ) {
-                        return null;
-                      }
+                      let show = false;
+                      activeIndexCard[tab.tabGroup].forEach((item) => {
+                        if (index === item) {
+                          show = true;
+                        }
+                      });
+                      if (!show) return null;
                       return (
                         <Card
                           key={data.name}
@@ -101,6 +102,7 @@ const Tabs: React.FC = () => {
                     activeIndexCard={activeIndexCard}
                     setActiveIndexCard={setActiveIndexCard}
                     index={index}
+                    dataQuantity={tab.tabInfo.length}
                   />
                 );
               })}

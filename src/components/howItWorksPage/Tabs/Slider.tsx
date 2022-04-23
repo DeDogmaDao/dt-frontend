@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 import { activeIndexCardType } from "../../../types/allTypes";
 import { tabFrameAni } from "../../../utils/animation";
+import { cardIndexHandler } from "../../../utils/util";
 import AngleRightSVG from "../../svgs/rightangle.svg";
 
 interface props {
@@ -22,28 +23,19 @@ const Slider: React.FC<props> = ({
 }) => {
   const carouselRef = useRef<HTMLDivElement>(null);
 
-  //   const [width, setWidth] = useState(0);
-  //   useEffect(() => {
-  //     const totalScrollWidth =
-  //       carouselRef.current!.scrollWidth - carouselRef.current!.offsetWidth;
-  //     setWidth(carouselRef.current!.offsetWidth);
-  //     console.log(carouselRef.current!.children[0].children[0].clientWidth);
-  //   }, []);
-
   const dragHandler = (
     event: MouseEvent | TouchEvent | PointerEvent,
     info: PanInfo
   ) => {
     if (info.offset.x > 0) {
       setActiveIndexCard((prevState) => {
-        if (prevState[tabGroup] === 0) return { ...prevState };
-        return { ...prevState, [tabGroup]: prevState[tabGroup] - 1 };
+        return {...prevState, [tabGroup]: cardIndexHandler(prevState[tabGroup][1]-1,dataQuantity)}
+
       });
     }
     if (info.offset.x < 0 && info.offset.y > -300) {
       setActiveIndexCard((prevState) => {
-        if (prevState[tabGroup] === dataQuantity - 1) return { ...prevState };
-        return { ...prevState, [tabGroup]: prevState[tabGroup] + 1 };
+        return {...prevState, [tabGroup]: cardIndexHandler(prevState[tabGroup][1]+1,dataQuantity)}
       });
     }
     setIsDragged(false);
@@ -51,20 +43,12 @@ const Slider: React.FC<props> = ({
 
   const leftClickHandler = () => {
     setActiveIndexCard((prevState) => {
-      if (prevState[tabGroup] === 0) return { ...prevState };
-      return {
-        ...prevState,
-        [tabGroup]: prevState[tabGroup] - 1,
-      };
+      return {...prevState, [tabGroup]: cardIndexHandler(prevState[tabGroup][1]-1,dataQuantity)}
     });
   };
   const rightClickHandler = () => {
     setActiveIndexCard((prevState) => {
-      if (prevState[tabGroup] === dataQuantity - 1) return { ...prevState };
-      return {
-        ...prevState,
-        [tabGroup]: prevState[tabGroup] + 1,
-      };
+      return {...prevState, [tabGroup]: cardIndexHandler(prevState[tabGroup][1]+1,dataQuantity)}
     });
   };
 
