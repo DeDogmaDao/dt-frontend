@@ -23,7 +23,7 @@ const Road: React.FC<props> = ({ index, activeSection, road }) => {
       initial="hidden"
       animate="visible"
       variants={roadAni}
-      className="w-screen h-screen absolute left-0 duration-700"
+      className="w-screen h-screen absolute left-0 duration-700 overflow-hidden"
       style={{
         top: clientHeight * (index - activeSection),
         zIndex: 10 - index * 3,
