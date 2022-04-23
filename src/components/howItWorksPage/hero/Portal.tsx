@@ -12,7 +12,7 @@ const Portal: React.FC<props> = ({ setPortalLoading, portalLoading }) => {
     if (portalLoading === 3) {
       setTimeout(() => {
         setPortalLoading(4);
-      }, 1500);
+      }, 1);
     }
   }, [portalLoading]);
 

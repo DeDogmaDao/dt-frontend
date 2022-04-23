@@ -105,11 +105,6 @@ const Hero: React.FC = () => {
               setPortalLoading={setPortalLoading}
             />
 
-            <motion.img
-              style={{ visibility: portalLoading === 4 ? "visible" : "hidden" }}
-              className="absolute z-20 left-[48.5%] top-[71%] w-[10%] h-[15%] will-change-transform"
-              src={"/img/art/cape.gif"}
-            />
             <motion.span
               style={{
                 x: springX,
@@ -133,6 +128,13 @@ const Hero: React.FC = () => {
               <Image src={"/img/art/mask.png"} layout="fill" />
             </motion.span>
 
+
+            <motion.img
+              style={{ visibility: portalLoading === 4 ? "visible" : "hidden" }}
+              className="absolute z-20 left-[48.5%] top-[71%] w-[10%] h-[15%] will-change-transform"
+              src={"/img/art/cape.gif"}
+            />
+            
             <motion.video
               style={{ visibility: portalLoading === 4 ? "visible" : "hidden" }}
               ref={leftFireRef}
