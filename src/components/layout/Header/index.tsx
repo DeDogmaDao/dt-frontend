@@ -62,7 +62,7 @@ const Header: React.FC = () => {
           <span className=" ">
             <GitBookSVG width={26} />
           </span>
-          <span>LightBook</span>
+          <span>LitePaper</span>
         </button>
         <button
           className="absolute pointer-events-auto top-[2rem] right-[4.5rem] w-10 h-10 rounded-full bg-neutral-600
