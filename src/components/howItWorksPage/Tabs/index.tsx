@@ -16,7 +16,6 @@ const Tabs: React.FC = () => {
     gods: [4, 5, 6],
     humans: [1, 2, 3],
   });
-  console.log(activeIndexCard.humans);
   const [isDragged, setIsDragged] = useState(false);
 
   return (
