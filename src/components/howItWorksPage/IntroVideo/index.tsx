@@ -40,8 +40,8 @@ const InteroVideo: React.FC = () => {
 
   return (
     <div className="w-full aspect-[16/13] sm:aspect-video flex justify-center items-center relative">
-            <div className="absolute top-0 left-0 w-full h-[7.5rem] bg-gradient-to-b from-bodymain to-transparent z-[1]" />
-      <div className="absolute bottom-0 left-0 w-full h-[7.5rem] bg-gradient-to-t from-bodymain to-transparent z-[1]" />
+            <div className="absolute top-0 left-0 w-full h-[7.5rem] bg-gradient-to-b from-bodymain via-transparent to-transparent z-[1]" />
+      <div className="absolute bottom-0 left-0 w-full h-[7.5rem] bg-gradient-to-t from-bodymain via-transparent to-transparent z-[1]" />
       <span className="w-full  absolute h-full lg:aspect-[1382/814]">
         <span className="w-full h-full inner-image-no-max-width">
           <Image src={"/img/bg/sec2.png"} layout="fill" quality={100}  />
