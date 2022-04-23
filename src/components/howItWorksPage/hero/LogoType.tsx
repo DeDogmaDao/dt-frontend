@@ -18,7 +18,7 @@ const LogoType: React.FC<props> = ({ setAnim, portalLoading }) => {
         <Image src="/img/logo/treasure.png" layout={"fill"} quality={100} />
       </motion.span>
       <motion.button
-        className="text-small-bold  rounded-full w-[138px] h-[40px] flex justify-center items-center text-white mt-[-14%]
+        className="text-small-bold  rounded-full w-[8.625rem] h-[2.5rem] flex justify-center items-center text-white mt-[-14%]
         bg-neutral-900 hover:bg-neutral-900/60  cursor-pointer will-change-transform duration-500 border-2 border-transparent hover:border-primary-500"
       >
         Join Our Discord
