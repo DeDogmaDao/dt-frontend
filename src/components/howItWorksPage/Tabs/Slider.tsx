@@ -1,9 +1,9 @@
-
 import { motion, PanInfo, useAnimation, useElementScroll } from "framer-motion";
 import Image from "next/image";
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 import { activeIndexCardType } from "../../../types/allTypes";
 import { tabFrameAni } from "../../../utils/animation";
+import { cardIndexHandler } from "../../../utils/util";
 import AngleRightSVG from "../../svgs/rightangle.svg";
 
 interface props {
@@ -23,28 +23,19 @@ const Slider: React.FC<props> = ({
 }) => {
   const carouselRef = useRef<HTMLDivElement>(null);
 
-  //   const [width, setWidth] = useState(0);
-  //   useEffect(() => {
-  //     const totalScrollWidth =
-  //       carouselRef.current!.scrollWidth - carouselRef.current!.offsetWidth;
-  //     setWidth(carouselRef.current!.offsetWidth);
-  //     console.log(carouselRef.current!.children[0].children[0].clientWidth);
-  //   }, []);
-
   const dragHandler = (
     event: MouseEvent | TouchEvent | PointerEvent,
     info: PanInfo
   ) => {
     if (info.offset.x > 0) {
       setActiveIndexCard((prevState) => {
-        if (prevState[tabGroup] === 0) return { ...prevState };
-        return { ...prevState, [tabGroup]: prevState[tabGroup] - 1 };
+        return {...prevState, [tabGroup]: cardIndexHandler(prevState[tabGroup][0],dataQuantity)}
+
       });
     }
     if (info.offset.x < 0 && info.offset.y > -300) {
       setActiveIndexCard((prevState) => {
-        if (prevState[tabGroup] === dataQuantity - 1) return { ...prevState };
-        return { ...prevState, [tabGroup]: prevState[tabGroup] + 1 };
+        return {...prevState, [tabGroup]: cardIndexHandler(prevState[tabGroup][2],dataQuantity)}
       });
     }
     setIsDragged(false);
@@ -52,20 +43,12 @@ const Slider: React.FC<props> = ({
 
   const leftClickHandler = () => {
     setActiveIndexCard((prevState) => {
-      if (prevState[tabGroup] === 0) return { ...prevState };
-      return {
-        ...prevState,
-        [tabGroup]: prevState[tabGroup] - 1,
-      };
+      return {...prevState, [tabGroup]: cardIndexHandler(prevState[tabGroup][0],dataQuantity)}
     });
   };
   const rightClickHandler = () => {
     setActiveIndexCard((prevState) => {
-      if (prevState[tabGroup] === dataQuantity - 1) return { ...prevState };
-      return {
-        ...prevState,
-        [tabGroup]: prevState[tabGroup] + 1,
-      };
+      return {...prevState, [tabGroup]: cardIndexHandler(prevState[tabGroup][2],dataQuantity)}
     });
   };
 
@@ -83,7 +66,7 @@ const Slider: React.FC<props> = ({
         <motion.div
           onDragEnd={(event, info) => dragHandler(event, info)}
           onDragStart={() => setIsDragged(true)}
-          className={`inner-carousel flex relative h-[26.25rem] mt-[4%]`}
+          className={`inner-carousel flex relative h-[29.25rem] mt-[4%]`}
           drag="x"
           dragConstraints={{ right: 0, left: -0 }}
           dragElastic={0.03}
@@ -117,31 +100,45 @@ const Slider: React.FC<props> = ({
         />
       </button>
 
-      <motion.div
-        inlist={"hidden"}
-        animate={frameControls}
-        variants={tabFrameAni}
-        className="absolute top-[50%] mt-[-14.375rem] left-1/2 ml-[-11.875rem] z-50 pointer-events-none select-none
-      w-[23.75rem] h-[30.625rem]"
-      >
-        <Image layout="fill" src="/img/cyc/frame.png"  />
-      </motion.div>
-      {/* <div className="absolute top-[55%] left-1/2 ml-[-9.375rem] z-0 pointer-events-none select-none">
-        <Image
-          width="300"
-          height="250"
-          layout="intrinsic"
-          src="/img/cyc/tab-portal.png"
-        />
-      </div>
-      <div className="absolute top-[35%]  left-1/2 ml-[-7.625rem] z-20 pointer-events-none select-none">
-        <Image
-          width="244"
-          height="320"
-          layout="intrinsic"
-          src="/img/cyc/tab-portal2.png"
-        />
-      </div> */}
+      {tabGroup === "gods" && (
+        <motion.div
+          className="absolute top-[67%] left-1/2 ml-[-11.25rem] z-50 pointer-events-none select-none
+w-[22.5rem] aspect-[444/320]"
+        >
+          <Image
+            layout="fill"
+            src="/img/cyc/frame.png"
+            quality={100}
+            loading="eager"
+          />
+        </motion.div>
+      )}
+      {tabGroup === "humans" && (
+        <>
+          <motion.div
+            className="absolute top-[62%] left-1/2 ml-[-11.25rem] z-0 pointer-events-none select-none
+w-[22.5rem] aspect-[444/320] ]"
+          >
+            <Image
+              layout="fill"
+              src="/img/cyc/tab-portal.png"
+              quality={100}
+              loading="eager"
+            />
+          </motion.div>
+          <motion.div
+            className="absolute top-[40.5%] left-1/2 ml-[-9.1875rem] z-50 pointer-events-none select-none
+w-[18.375rem] aspect-[289/340]"
+          >
+            <Image
+              layout="fill"
+              src="/img/cyc/tab-portal2.png"
+              quality={100}
+              loading="eager"
+            />
+          </motion.div>
+        </>
+      )}
     </motion.div>
   );
 };

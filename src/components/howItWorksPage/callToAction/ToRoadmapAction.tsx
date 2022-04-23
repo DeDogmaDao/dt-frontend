@@ -26,15 +26,13 @@ const ToRoadmapAction: React.FC = () => {
             <CallToActionSvg />
           </div>
           <Link href={"/roadmap"}>
-            <button className="px-5 py-3 mt-11 bg-primary-500 text-neutral-900 rounded-full text-small-bold flex gap-x-2 duration-500 border-2 border-transparent hover:border-primary-500">
+            <button className="px-5 py-3 mt-11 bg-primary-500 hover:bg-primary-900/80 
+            text-neutral-900 hover:text-neutral-50 rounded-full text-small-bold flex gap-x-2 
+            duration-500 border-2 border-transparent hover:border-primary-500 stroke-black hover:stroke-white">
               <span>Roadmap Document</span>
-              <span className="animate-bounceX">
+              <span className="animate-bounceX w-2 aspect-[10/17] mt-1">
                 <AngleRightSVG
-                  stroke="black"
-                  width={10}
-                  height={17}
                   fill="none"
-                  style={{ marginTop: 2 }}
                 />
               </span>
             </button>

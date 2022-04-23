@@ -99,8 +99,8 @@ export type createLightningType = (
 ) => light[];
 
 export interface activeIndexCardType {
-  [gods: string]: number;
-  humans: number;
+  [gods: string]: number[];
+  humans: number[];
 }
 
 export interface roadDataType {
