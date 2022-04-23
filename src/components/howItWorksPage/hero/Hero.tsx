@@ -81,14 +81,12 @@ const Hero: React.FC = () => {
         className=" flex justify-center items-center relative
         w-[100vw] aspect-[947/1492] sm:aspect-auto sm:h-[90vh] md:h-[100vh] lg:h-[56.26vw] mx-auto overflow-hidden hero-container"
       >
-        <div className="portal-and-flame-and-hero w-full h-full relative z-20">
-          <motion.span
-            className="absolute w-full h-full origin-bottom will-change-transform"
-            initial="hidden"
-            animate={anim}
-            variants={heroAnim}
-          >
-            <div
+        <div className="portal-and-flame-and-hero w-full h-full relative z-20 origin-bottom">
+
+            <motion.div
+                        initial="hidden"
+                        animate={anim}
+                        variants={heroAnim}
               className=" ml-[-100%] sm:ml-[-25%] lg:ml-auto
              h-full
              w-[300%] sm:w-[150%] lg:w-full
@@ -203,8 +201,7 @@ const Hero: React.FC = () => {
               >
                 <source src={"/img/art/right-fire.mp4"} type="video/mp4" />
               </motion.video>
-            </div>
-          </motion.span>
+            </motion.div>
         </div>
       </motion.div>
     </>
