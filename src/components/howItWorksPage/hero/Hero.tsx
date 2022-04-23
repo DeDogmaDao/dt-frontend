@@ -12,6 +12,7 @@ import {
 import { cityAnim, heroAnim } from "../../../utils/animation";
 import { UAParser } from "ua-parser-js";
 import { dimensionType } from "../../../types/allTypes";
+import LogoType from "./LogoType";
 
 const Hero: React.FC = () => {
   const heroContainerRef = useRef<HTMLDivElement>(null);
@@ -96,6 +97,7 @@ const Hero: React.FC = () => {
               onHoverEnd={() => setAnim("hidden")}
               className="red-transparent-on-city absolute w-[20%] h-[65%] top-1/2 mt-[-19.5%] left-1/2 ml-[-10%]  z-100 rounded-[50%] will-change-transform"
             />
+            <LogoType setAnim={setAnim} portalLoading={portalLoading} />
 
             <motion.span className="absolute left-0 w-[32.17669%] h-full hidden sm:block z-10 will-change-transform">
               <Image
@@ -170,7 +172,7 @@ const Hero: React.FC = () => {
               <source src={"/img/art/left-fire.mp4"} type="video/mp4" />
             </motion.video>
             <motion.video
-              style={{ visibility: PortalLoading > 2 ? "visible" : "hidden" }}
+              style={{ visibility: portalLoading > 2 ? "visible" : "hidden" }}
               ref={rightFireRef}
               loop
               autoPlay
