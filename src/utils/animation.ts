@@ -446,7 +446,7 @@ export const carouselDisplayAni: Variants = {
     scale: 0.2,
     opacity: 0.3,
     transition: {
-      duration: 0.4,
+      duration: 0.2,
     },
   }),
 };
