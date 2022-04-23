@@ -14,6 +14,7 @@ import { UAParser } from "ua-parser-js";
 import { dimensionType } from "../../../types/allTypes";
 import LogoType from "./LogoType";
 import Portal from "./Portal";
+import City from "./City";
 
 const Hero: React.FC = () => {
   const heroContainerRef = useRef<HTMLDivElement>(null);
@@ -105,58 +106,15 @@ const Hero: React.FC = () => {
               setPortalLoading={setPortalLoading}
             />
 
-            <motion.span
-              style={{
-                x: springX,
-                y: springY,
-                visibility: portalLoading === 4 ? "visible" : "hidden",
-              }}
-              className="absolute w-[48.567%] h-[85.121%] z-0 will-change-transform"
-              initial="hidden"
-              animate={anim}
-              variants={cityAnim}
-            >
-              <Image src={"/img/art/city.png"} layout="fill" quality={100} />
-            </motion.span>
-            <motion.span
-              style={{
-                opacity: maskOpacity,
-                visibility: portalLoading === 4 ? "visible" : "hidden",
-              }}
-              className="absolute w-full h-full z-0 scale-105 will-change-transform"
-            >
-              <Image src={"/img/art/mask.png"} layout="fill" />
-            </motion.span>
-
-
-            <motion.img
-              style={{ visibility: portalLoading === 4 ? "visible" : "hidden" }}
-              className="absolute z-20 left-[48.5%] top-[71%] w-[10%] h-[15%] will-change-transform"
-              src={"/img/art/cape.gif"}
+            <City
+              anim={anim}
+              maskOpacity={maskOpacity}
+              portalLoading={portalLoading}
+              springX={springX}
+              springY={springY}
             />
-            
-            <motion.video
-              style={{ visibility: portalLoading === 4 ? "visible" : "hidden" }}
-              ref={leftFireRef}
-              loop
-              autoPlay
-              muted
-              playsInline
-              className="absolute hidden sm:block border-none outline-none z-20 w-[9.429%] h-[20.114%] left-[14.576%] top-[57.828%] will-change-transform"
-            >
-              <source src={"/img/art/left-fire.mp4"} type="video/mp4" />
-            </motion.video>
-            <motion.video
-              style={{ visibility: portalLoading === 4 ? "visible" : "hidden" }}
-              ref={rightFireRef}
-              loop
-              autoPlay
-              muted
-              playsInline
-              className="absolute hidden sm:block border-none outline-none z-20 w-[9.429%] h-[20.114%] left-[74.844%] top-[57.828%] will-change-transform"
-            >
-              <source src={"/img/art/right-fire.mp4"} type="video/mp4" />
-            </motion.video>
+
+
           </motion.div>
         </div>
       </motion.div>
