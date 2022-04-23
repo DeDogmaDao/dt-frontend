@@ -21,7 +21,7 @@ const TabInfo: React.FC<props> = ({
 }) => {
   return (
     <>
-      {activeIndexCard[tabGroup] === index && (
+      {activeIndexCard[tabGroup][1] === index && (
         <motion.div
           initial="hidden"
           animate="visible"

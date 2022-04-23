@@ -2,7 +2,7 @@ import { Dispatch, RefObject, SetStateAction } from "react";
 import { activeIndexCardType, tabType } from "../../../types/allTypes";
 import { motion, MotionStyle } from "framer-motion";
 import Image from "next/image";
-import { cardPlaceDetector } from "../../../utils/util";
+import { cardIndexHandler, cardPlaceDetector } from "../../../utils/util";
 import { carouselDisplayAni } from "../../../utils/animation";
 import imgData from "./img/img";
 interface props {
@@ -30,7 +30,7 @@ const Card: React.FC<props> = ({
       e.preventDefault();
       return false;
     }
-    setActiveIndexCard((prevState) => ({ ...prevState, [tabGroup]: index }));
+    setActiveIndexCard((prevState) => ({ ...prevState, [tabGroup]: cardIndexHandler(index,tabInfo.length) }));
   };
 
   const cardPlace = cardPlaceDetector(activeIndexCard[tabGroup], index);
@@ -50,7 +50,7 @@ const Card: React.FC<props> = ({
       custom={cardPlace}
       onClick={(e) => cardClickHandler(e)}
       className={`h-[28.75rem] w-[18.75rem] flex  text-white absolute select-none hover:cursor-pointer !rounded-xl overflow-hidden  ${
-        activeIndexCard[tabGroup] === index ? "grayscale-0" : "grayscale"
+        activeIndexCard[tabGroup][1] === index ? "grayscale-0" : "grayscale"
       }`}
     >
       <div className="w-full h-full relative">

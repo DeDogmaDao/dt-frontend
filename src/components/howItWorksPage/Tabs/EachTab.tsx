@@ -2,12 +2,14 @@ import { motion } from "framer-motion";
 import { Dispatch, SetStateAction } from "react";
 import { activeIndexCardType } from "../../../types/allTypes";
 import { eachTabAni } from "../../../utils/animation";
+import { cardIndexHandler } from "../../../utils/util";
 interface props {
   group: string;
   name: string;
   setActiveIndexCard: Dispatch<SetStateAction<activeIndexCardType>>;
   activeIndexCard: activeIndexCardType;
   index: number;
+  dataQuantity:number;
 }
 const EachTab: React.FC<props> = ({
   group,
@@ -15,30 +17,23 @@ const EachTab: React.FC<props> = ({
   activeIndexCard,
   setActiveIndexCard,
   index,
+  dataQuantity
 }) => {
   const clickHandler = () => {
-    if (index > activeIndexCard[group]) {
-      for (let i = activeIndexCard[group], j = 0; i < index; i++, j++) {
+    if (index > activeIndexCard[group][1]) {
+      for (let i = activeIndexCard[group][1], j = 0; i < index; i++, j++) {
         setTimeout(() => {
           setActiveIndexCard((prevState) => {
-            if (prevState[group] === index) return { ...prevState };
-            return {
-              ...prevState,
-              [group]: prevState[group] + 1,
-            };
+            return {...prevState, [group]: cardIndexHandler(prevState[group][1]+1,dataQuantity)}
           });
         }, 100 * j);
       }
     }
-    if (index < activeIndexCard[group]) {
-      for (let i = activeIndexCard[group], j = 0; i > index; i--, j++) {
+    if (index < activeIndexCard[group][1]) {
+      for (let i = activeIndexCard[group][1], j = 0; i > index; i--, j++) {
         setTimeout(() => {
           setActiveIndexCard((prevState) => {
-            if (prevState[group] === index) return { ...prevState };
-            return {
-              ...prevState,
-              [group]: prevState[group] - 1,
-            };
+            return {...prevState, [group]: cardIndexHandler(prevState[group][1]-1,dataQuantity)}
           });
         }, 100 * j);
       }
@@ -50,7 +45,7 @@ const EachTab: React.FC<props> = ({
       className={`relative flex justify-center items-center w-[.9375rem] ssm:w-[1.625rem] h-[.375rem] bg-neutral-700 rounded-full duration-500`}
       onClick={clickHandler}
     >
-      {activeIndexCard[group] === index && (
+      {activeIndexCard[group][1] === index && (
         <motion.div
           layoutId="eachTab"
           initial="hidden"
