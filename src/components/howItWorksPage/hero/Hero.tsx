@@ -9,7 +9,7 @@ import {
   useRef,
   useState,
 } from "react";
-import { cityAnim, heroAnim } from "../../../utils/animation";
+import { heroAnim } from "../../../utils/animation";
 import { UAParser } from "ua-parser-js";
 import { dimensionType } from "../../../types/allTypes";
 import LogoType from "./LogoType";
@@ -46,6 +46,9 @@ const Hero: React.FC = () => {
     [0, dimension.height / 2, dimension.height],
     [50, 0, -50]
   );
+  const springX = useSpring(xTrans, { stiffness: 50 });
+  const springY = useSpring(yTrans, { stiffness: 50 });
+
   const mouseMoveHandler = (event: MouseEvent) => {
     xCord.set(event.pageX);
     yCord.set(event.pageY);
@@ -63,9 +66,6 @@ const Hero: React.FC = () => {
     maskOpacity.set(Math.sqrt(fisaghores) / (dimension.width / 2));
   };
 
-  const springX = useSpring(xTrans, { stiffness: 50 });
-  const springY = useSpring(yTrans, { stiffness: 50 });
-
   const leftFireRef = useRef<HTMLVideoElement>(null);
   const rightFireRef = useRef<HTMLVideoElement>(null);
 
@@ -77,55 +77,53 @@ const Hero: React.FC = () => {
   }, []);
 
   return (
-    <>
-      <motion.div
-        ref={heroContainerRef}
-        onMouseMove={mouseMoveHandler}
-        onTouchMove={touchMoveHandler}
-        className=" flex justify-center items-center relative
+    <motion.div
+      ref={heroContainerRef}
+      onMouseMove={mouseMoveHandler}
+      onTouchMove={touchMoveHandler}
+      className=" flex justify-center items-center relative
         w-[100vw] aspect-[947/1492] sm:aspect-auto sm:h-[90vh] md:h-[100vh] lg:h-[56.26vw] mx-auto overflow-hidden hero-container"
-      >
-        <div className="portal-and-flame-and-hero w-full h-full relative z-20 ">
-          <motion.div
-            initial="hidden"
-            animate={anim}
-            variants={heroAnim}
-            className=" ml-[-100%] sm:ml-[-25%] lg:ml-auto
+    >
+      <div className="portal-and-flame-and-hero w-full h-full relative z-20 ">
+        <motion.div
+          initial="hidden"
+          animate={anim}
+          variants={heroAnim}
+          className=" ml-[-100%] sm:ml-[-25%] lg:ml-auto
              h-full
              w-[300%] sm:w-[150%] lg:w-full
              relative flex justify-center items-center will-change-transform origin-bottom"
-          >
-            <motion.div
-              onTap={() => setAnim("visible")}
-              onHoverStart={() => setAnim("visible")}
-              onHoverEnd={() => setAnim("hidden")}
-              className="red-transparent-on-city absolute w-[20%] h-[65%] top-1/2 mt-[-19.5%] left-1/2 ml-[-10%]  z-100 rounded-[50%] will-change-transform"
-            />
-            <LogoType setAnim={setAnim} portalLoading={portalLoading} />
+        >
+          <motion.div
+            onTap={() => setAnim("visible")}
+            onHoverStart={() => setAnim("visible")}
+            onHoverEnd={() => setAnim("hidden")}
+            className="red-transparent-on-city absolute w-[20%] h-[65%] top-1/2 mt-[-19.5%] left-1/2 ml-[-10%]  z-100 rounded-[50%] will-change-transform"
+          />
+          <LogoType setAnim={setAnim} portalLoading={portalLoading} />
 
-            <Portal
-              portalLoading={portalLoading}
-              setPortalLoading={setPortalLoading}
-              setAnim={setAnim}
-            />
+          <Portal
+            portalLoading={portalLoading}
+            setPortalLoading={setPortalLoading}
+            setAnim={setAnim}
+          />
 
-            <City
-              anim={anim}
-              maskOpacity={maskOpacity}
-              portalLoading={portalLoading}
-              springX={springX}
-              springY={springY}
-            />
+          <City
+            anim={anim}
+            maskOpacity={maskOpacity}
+            portalLoading={portalLoading}
+            springX={springX}
+            springY={springY}
+          />
 
-            <FireCape
-              leftFireRef={leftFireRef}
-              rightFireRef={rightFireRef}
-              portalLoading={portalLoading}
-            />
-          </motion.div>
-        </div>
-      </motion.div>
-    </>
+          <FireCape
+            leftFireRef={leftFireRef}
+            rightFireRef={rightFireRef}
+            portalLoading={portalLoading}
+          />
+        </motion.div>
+      </div>
+    </motion.div>
   );
 };
 
