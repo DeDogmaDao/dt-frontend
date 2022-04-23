@@ -23,7 +23,7 @@ const Tabs: React.FC = () => {
       className="flex flex-col justify-between items-center h-full w-full relative z-100"
       id="cards"
     >
-      <span className="absolute h-full aspect-[1440/1097]">
+      <span className="absolute h-full aspect-[1440/1017]">
         <span className="w-full h-full inner-image-no-max-width">
           <Image src={"/img/bg/sec3.png"} layout="fill" quality={100} />
         </span>

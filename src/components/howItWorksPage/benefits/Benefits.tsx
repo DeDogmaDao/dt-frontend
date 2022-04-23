@@ -31,7 +31,7 @@ const Benefits: React.FC = () => {
       className="flex flex-col justify-start items-center h-full relative z-0"
       id="benefits"
     >
-      <span className="absolute h-full aspect-[1438/608]">
+      <span className="absolute h-full aspect-[1438/586]">
         <span className="w-full h-full inner-image-no-max-width">
           <Image src={"/img/bg/sec1.png"} layout="fill" quality={100}  />
         </span>
