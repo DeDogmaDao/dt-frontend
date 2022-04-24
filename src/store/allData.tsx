@@ -1242,13 +1242,13 @@ export const benefitsData: benefitType[] = [
         The money collected from the minting, goes to the buyback treasury which
         will guarantee the floor price. Any nft holder has the right to burn
         their nfts and receive their funds back. Our team only receives 30% of
-        the funds based on the time schedule.{" "}
+        the funds based on the{" "}
         <a
           href="https://docs.dedogmadao.com/economic-mechanisms"
           target={"_blank"}
           className="link-inside-text"
         >
-          GITBOOK
+          time schedule
         </a>
         <br />
       </>,
