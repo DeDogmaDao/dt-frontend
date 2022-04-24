@@ -133,7 +133,7 @@ w-[18.375rem] aspect-[289/340]"
             <Image
               layout="fill"
               src="/img/cyc/tab-portal2.png"
-              quality={100}
+              quality={90}
               loading="eager"
             />
           </motion.div>
