@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
+import { useRef } from "react";
 import { pageAnimation } from "../../utils/animation";
+import BackToTop from "../global/BackToTop";
 import Benefits from "./benefits/Benefits";
 import ToRoadmapAction from "./callToAction/ToRoadmapAction";
 import Hero from "./hero/Hero";
@@ -7,8 +9,10 @@ import InteroVideo from "./IntroVideo";
 import Tabs from "./Tabs";
 
 const HowItWorks: React.FC = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
   return (
     <motion.div
+    ref={containerRef}
       initial="hidden"
       animate="visible"
       exit="out"
@@ -20,6 +24,7 @@ const HowItWorks: React.FC = () => {
       <InteroVideo />
       <Tabs />
       <ToRoadmapAction />
+      <BackToTop containerRef={containerRef} />
     </motion.div>
   );
 };
