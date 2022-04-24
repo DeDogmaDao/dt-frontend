@@ -34,7 +34,7 @@ const Portal: React.FC<props> = ({
           src={"/img/art/left-portal.png"}
           layout="fill"
           priority={true}
-          quality={95}
+          quality={100}
         />
       </motion.span>
       <motion.span
@@ -48,7 +48,7 @@ const Portal: React.FC<props> = ({
           src={"/img/art/right-portal.png"}
           layout="fill"
           priority={true}
-          quality={95}
+          quality={100}
         />
       </motion.span>
       <motion.span
@@ -62,7 +62,7 @@ const Portal: React.FC<props> = ({
           src={"/img/art/middle-portal.png"}
           layout="fill"
           priority={true}
-          quality={95}
+          quality={100}
         />
       </motion.span>
     </>
