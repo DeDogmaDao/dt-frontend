@@ -81,6 +81,7 @@ module.exports = {
         800: "#2C2C2C",
         900: "#212121",
       },
+      bodymain: "#090919"
     }),
     columns: {
       auto: "auto",

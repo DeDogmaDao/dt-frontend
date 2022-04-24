@@ -18,7 +18,7 @@ const EachDesc: React.FC<props> = ({ descData, index, setIsPlaying }) => {
       animate="visible"
       variants={eachBenefitDescAni}
       custom={index}
-      className="flex gap-x-2 text-base px-3 ssm:px-8 py-3 lg:py-7 rounded-full sm:bg-neutral-500/30"
+      className="flex gap-x-2 text-base px-3 ssm:px-8 py-3 lg:py-7 rounded-full sm:bg-[#191C3A4D]/30 sm:backdrop-blur-sm"
     >
       <span className="flex justify-center items-start">
         <AngleRightSVG

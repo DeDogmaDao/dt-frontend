@@ -28,7 +28,7 @@ const City: React.FC<props> = ({
         animate={anim}
         variants={cityAnim}
       >
-        <Image src={"/img/art/city.png"} layout="fill" quality={100} />
+        <Image src={"/img/art/city.png"} layout="fill" quality={70} />
       </motion.span>
       <motion.span
         style={{

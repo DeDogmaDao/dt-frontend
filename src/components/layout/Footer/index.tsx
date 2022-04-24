@@ -9,8 +9,8 @@ const Footer: React.FC = () => {
         layout
         className="h-full w-full flex flex-col justify-center items-center z-100  relative -mt-40 sm:-mt-56"
       >
-        <div className="pt-10 mb-3 scale-[80%] ssm:scale-100 z-10">
-          <Image src="/img/logo/treasure.png" width={284} height={94}  />
+        <div className="scale-[80%] ssm:scale-100  z-10 mb-[-3rem] w-[25.25rem] aspect-[1207/728]">
+          <Image src="/img/logo/treasure.png" layout="fill"  />
         </div>
         <h3 className="mb-3 text-[1.25rem] ssm:text-[1.75rem] sm:text-[2.375rem] font-bold sm:font-bold z-10">
           NFT Game and Collection by

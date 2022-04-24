@@ -901,8 +901,7 @@ export const heroAnim: Variants = {
     scale: 1.5,
     transition: {
       duration: 10,
-      ease: [.25,.72,0,.94],
-      
+      ease: [0.25, 0.72, 0, 0.94],
     },
   },
 };
@@ -918,27 +917,48 @@ export const cityAnim: Variants = {
     scale: 0.8,
     transition: {
       duration: 10,
-      ease: [.25,.72,0,.94],
+      ease: [0.25, 0.72, 0, 0.94],
     },
   },
 };
 
-export const videoBtnAnim:Variants = {
-  hidden:{
-    opacity:0,
+export const videoBtnAnim: Variants = {
+  hidden: {
+    opacity: 0,
   },
-  visible:{
-    opacity:1,
-    transition:{
-      duration:0.5,
-      delay:0.2,
+  visible: {
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+      delay: 0.2,
     },
   },
-  out:{
-    opacity:0,
-    transition:{
-      duration:0.5,
-      delay:0.2,
+  out: {
+    opacity: 0,
+    transition: {
+      duration: 0.5,
+      delay: 0.2,
     },
   },
-}
+};
+
+export const backToTopAni: Variants = {
+  hidden: {
+    opacity: 0,
+    scale: 0,
+  },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      duration:0.1,
+    },
+  },
+  out: {
+    opacity: 0,
+    scale: 0,
+    transition: {
+      duration: 0.1,
+    },
+  },
+};

@@ -23,7 +23,7 @@ const Road: React.FC<props> = ({ index, activeSection, road }) => {
       initial="hidden"
       animate="visible"
       variants={roadAni}
-      className="w-screen h-screen absolute left-0 duration-700"
+      className="w-screen h-screen absolute left-0 duration-700 overflow-hidden"
       style={{
         top: clientHeight * (index - activeSection),
         zIndex: 10 - index * 3,
@@ -44,7 +44,8 @@ const Road: React.FC<props> = ({ index, activeSection, road }) => {
           {road.sectionName}
         </h3>
         <div className=" w-full lg:w-1/2 h-2/3 lg:h-full flex justify-center items-center z-10">
-          <ul className="w-[90%] ssm:w-[80%] sm:w-[65%] md:w-[50%] lg:w-[26rem] py-8 px-4 sm:px-8 flex flex-col gap-y-2 bg-neutral-600 rounded-xl">
+          <ul className="w-[90%] ssm:w-[80%] sm:w-[65%] md:w-[50%] lg:w-[26rem] py-8 px-4 sm:px-8 flex flex-col gap-y-2
+           bg-[#191C3A4D]/30 backdrop-blur-sm rounded-xl">
             {road.roadData.map((data, index) => {
               return (
                 <RoadItem
@@ -55,7 +56,7 @@ const Road: React.FC<props> = ({ index, activeSection, road }) => {
                 />
               );
             })}
-            <div className="w-full h-32 lg:h-28 ssm:px-5 overflow-clip text-small-light 2xl:text-large-medium text-neutral-50/60 ">
+            <div className="w-full h-32 lg:h-28 ssm:px-5 overflow-clip text-small-light font-normal  text-neutral-50/60 ">
               {descIndex !== -1 && (
                 <motion.div
                   className="indent-8"
