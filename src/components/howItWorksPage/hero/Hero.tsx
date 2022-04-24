@@ -29,6 +29,17 @@ const Hero: React.FC = () => {
       width: heroContainerRef.current!.offsetWidth,
       height: heroContainerRef.current!.offsetHeight,
     });
+    const resizeHandlerDim = () => {
+      setDimension({
+        width: heroContainerRef.current!.offsetWidth,
+        height: heroContainerRef.current!.offsetHeight,
+      });
+    }
+    window.addEventListener("resize",resizeHandlerDim);
+
+    return () => {
+      window.removeEventListener("resize", resizeHandlerDim)
+    }
   }, []);
   const uaParser = new UAParser();
   const [anim, setAnim] = useState("hidden");
@@ -55,7 +66,7 @@ const Hero: React.FC = () => {
     const fisaghores =
       Math.pow(event.pageX - dimension.width / 2, 2) +
       Math.pow(event.pageY - dimension.height / 2, 2);
-    maskOpacity.set(Math.sqrt(fisaghores) / (dimension.width / 1.4));
+    maskOpacity.set(Math.sqrt(fisaghores) / (dimension.width / 1.1) -0.1);
   };
   const touchMoveHandler = (event: TouchEvent) => {
     xCord.set(event.touches[0].pageX);
@@ -63,7 +74,7 @@ const Hero: React.FC = () => {
     const fisaghores =
       Math.pow(event.touches[0].pageX - dimension.width / 2, 2) +
       Math.pow(event.touches[0].pageY - dimension.height / 2, 2);
-    maskOpacity.set(Math.sqrt(fisaghores) / (dimension.width / 1.4));
+    maskOpacity.set(Math.sqrt(fisaghores) / (dimension.width / 1.1));
   };
 
   const leftFireRef = useRef<HTMLVideoElement>(null);

@@ -29,6 +29,9 @@ function MyApp({ Component, pageProps }: AppProps) {
         const windowWidth = window.innerWidth;
         const scaleFont = windowWidth / 1536;
         htmlTag!.style.fontSize = scaleFont * 16 + "px";
+      } else {
+        const htmlTag = document.querySelector("html");
+        htmlTag!.style.fontSize = 16 + "px";
       }
     };
     resizeHandlerFont();

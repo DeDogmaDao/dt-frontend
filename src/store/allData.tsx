@@ -153,13 +153,13 @@ export const faqData: faqType[] = [
     question: "Will Demmortal Treasure be minted on ERC-721A standard?",
     answer: (
       <>
-        Yes{" "}
+        Yes,{" "}
         <a
-          href="https://azuki.com"
+          href="https://www.azuki.com/erc721a"
           target={"_blank"}
           className="link-inside-text"
         >
-          link to Azuki’s post about this standard
+          Read Azuki’s post about this standard
         </a>
       </>
     ),
@@ -1160,14 +1160,7 @@ export const roadDataQ2: roadDataType[] = [
     desc: (
       <>
         6 months after minting the Demmortal Treasure NFTs, accepting proposal
-        for accelerating defi gamification ideas based on DD Dao treasures{" "}
-        <a
-          href="https://wiki.com"
-          target={"_blank"}
-          className="link-inside-text"
-        >
-          link to the Wiki
-        </a>
+        for accelerating defi gamification ideas based on DD Dao treasures
       </>
     ),
   },
@@ -1254,7 +1247,7 @@ export const benefitsData: benefitType[] = [
         their nfts and receive their funds back. Our team only receives 30% of
         the funds based on the time schedule.{" "}
         <a
-          href="https://gitbook.what"
+          href="https://docs.dedogmadao.com/economic-mechanisms"
           target={"_blank"}
           className="link-inside-text"
         >

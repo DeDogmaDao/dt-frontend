@@ -23,7 +23,9 @@ const Tabs: React.FC = () => {
       className="flex flex-col justify-between items-center h-full w-full relative z-100"
       id="cards"
     >
-      <span className="absolute h-full aspect-[1440/1097]">
+            <div className="absolute top-0 left-0 w-full h-[7.5rem] bg-gradient-to-b from-bodymain to-transparent z-[1]" />
+      <div className="absolute bottom-0 left-0 w-full h-[7.5rem] bg-gradient-to-t from-bodymain to-transparent z-[1]" />
+      <span className="absolute h-full aspect-[1440/1017]">
         <span className="w-full h-full inner-image-no-max-width">
           <Image src={"/img/bg/sec3.png"} layout="fill" quality={100} />
         </span>
