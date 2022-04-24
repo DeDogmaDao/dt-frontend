@@ -1,7 +1,8 @@
 import { motion, MotionValue } from "framer-motion";
 import Image from "next/image";
 import { cityAnim } from "../../../utils/animation";
-
+import city from '../../images/art/city.png';
+import mask from '../../images/art/mask.png';
 interface props {
   springX: MotionValue;
   springY: MotionValue;
@@ -29,7 +30,7 @@ const City: React.FC<props> = ({
         animate={anim}
         variants={cityAnim}
       >
-        <Image src={"/img/art/city.png"} layout="fill" quality={75} />
+        <Image src={city} layout="fill" quality={75} />
       </motion.span>
       <motion.span
         style={{
@@ -38,7 +39,7 @@ const City: React.FC<props> = ({
         }}
         className="absolute w-full h-full z-0 scale-105 will-change-transform"
       >
-        <Image src={"/img/art/mask.png"} layout="fill" />
+        <Image src={mask} layout="fill" />
       </motion.span>
     </>
   );
