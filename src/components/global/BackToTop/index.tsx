@@ -27,17 +27,21 @@ const BackToTop: React.FC<props> = ({ containerRef }) => {
     };
   }, []);
 
+  const backToTopClickHandler = () => {
+    window.scrollTo({ left: 0, top: 0, behavior: "smooth" });
+  };
   return (
     <>
       <AnimatePresence>
-        {(scrollY / scrollHeight) > 0.8 && (
+        {scrollY / scrollHeight > 0.8 && (
           <motion.button
+            onClick={backToTopClickHandler}
             initial="hidden"
             animate="visible"
             exit="out"
             variants={backToTopAni}
             className="group z-[200] flex flex-col justify-center items-center w-[4.6875rem] aspect-[75/84]
-       fixed right-[4.875rem] bottom-[6.375rem] hover:text-primary-500 duration-200 hover:scale-105 active:scale-95
+       fixed right-[4.875rem] bottom-[6.375rem] hover:text-primary-500 duration-200 hover:!scale-105 active:!scale-95
         will-change-transform"
           >
             <span
