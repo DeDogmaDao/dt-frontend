@@ -15,7 +15,7 @@ const Team: React.FC = () => {
       animate="visible"
       variants={pageAnimation}
       exit="out"
-      className="w-screen min-h-screen relative  mb-20"
+      className="w-screen min-h-screen relative  mb-44"
     >
       <BackToTop containerRef={teamRef} />
 
