@@ -1,18 +1,23 @@
 import { LayoutGroup, motion } from "framer-motion";
 import Image from "next/image";
+import { useRef } from "react";
 import { faqData } from "../../store/allData";
 import { pageAnimation } from "../../utils/animation";
+import BackToTop from "../global/BackToTop";
 import EachFAQ from "./EachFAQ";
 
 const FAQ: React.FC = () => {
+  const faqRef = useRef<HTMLDivElement>(null);
   return (
     <motion.div
+      ref={faqRef}
       initial="hidden"
       animate="visible"
       variants={pageAnimation}
       exit="out"
       className=" w-full h-full relative"
     >
+      <BackToTop containerRef={faqRef} />
       <motion.span layout className="absolute w-full aspect-[1440/1097]">
         <span className="w-full h-full inner-image-no-max-width">
           <Image src={"/img/bg/sec4.png"} layout="fill" quality={100} />

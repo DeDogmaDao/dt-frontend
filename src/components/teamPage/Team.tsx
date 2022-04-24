@@ -1,20 +1,25 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useRef } from "react";
 import { teamDataLvl1, teamDataLvl2 } from "../../store/allData";
 import { pageAnimation, teamMemberAni } from "../../utils/animation";
+import BackToTop from "../global/BackToTop";
 import Card from "../global/Card";
 
 const Team: React.FC = () => {
+  const teamRef = useRef<HTMLDivElement>(null);
   return (
     <motion.div
+    ref={teamRef}
       initial="hidden"
       animate="visible"
       variants={pageAnimation}
       exit="out"
       className="w-screen min-h-screen relative  mb-20"
     >
+      <BackToTop containerRef={teamRef} />
 
-      <span className="absolute w-full aspect-[1440/1097]">
+      <span className="absolute w-full aspect-[1440/1097] z-0">
         <span className="w-full h-full inner-image-no-max-width ">
             <div className="absolute bottom-0  left-0 w-full h-[7.5rem] bg-gradient-to-t from-bodymain to-transparent z-[1]" />
           <Image src={"/img/bg/sec4.png"} layout="fill" quality={100}  />
