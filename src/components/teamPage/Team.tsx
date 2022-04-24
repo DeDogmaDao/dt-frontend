@@ -11,10 +11,12 @@ const Team: React.FC = () => {
       animate="visible"
       variants={pageAnimation}
       exit="out"
-      className="w-screen min-h-screen relative pb-32 mb-20"
+      className="w-screen min-h-screen relative  mb-20"
     >
+
       <span className="absolute w-full aspect-[1440/1097]">
-        <span className="w-full h-full inner-image-no-max-width">
+        <span className="w-full h-full inner-image-no-max-width ">
+            <div className="absolute bottom-0  left-0 w-full h-[7.5rem] bg-gradient-to-t from-bodymain to-transparent z-[1]" />
           <Image src={"/img/bg/sec4.png"} layout="fill" quality={100}  />
         </span>
       </span>
