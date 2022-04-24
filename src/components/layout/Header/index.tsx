@@ -11,7 +11,6 @@ import DiscordSVG from "../../svgs/discord.svg";
 import GitBookSVG from "../../svgs/gitbook.svg";
 import LogoSVG from "../../svgs/logo.svg";
 
-
 const Header: React.FC = () => {
   const headerLinks: LinkType[] = [
     {
@@ -43,7 +42,7 @@ const Header: React.FC = () => {
         <span className="absolute top-[2.3rem]  left-5 ssm:left-16 z-100 pointer-events-auto cursor-pointer">
           <Link href="/">
             <div className="flex justify-start items-center gap-x-2 fill-white hover:fill-primary-500 duration-300">
-            <LogoSVG width="2.5rem" />
+              <LogoSVG width="2.5rem" />
               {/* <span className="text-small-bold ssm:text-medium-bold md:hidden ">
                 Demmortal  Treasure
               </span> */}
@@ -56,8 +55,8 @@ const Header: React.FC = () => {
           })}
         </motion.ul>
         <a
-        href="https://docs.dedogmadao.com/"
-        target="_blank"
+          href="https://docs.dedogmadao.com/"
+          target="_blank"
           className=" pointer-events-auto absolute top-[2rem] right-[7.7rem] px-2 ssm:w-[8.5rem] h-10 rounded-full bg-neutral-600 text-white text-sm font-bold 
     flex justify-evenly items-center hover:bg-neutral-500 duration-200 fill-primary-500 hover:fill-primary-700 cursor-pointer"
         >
