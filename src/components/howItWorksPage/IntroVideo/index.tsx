@@ -4,6 +4,8 @@ import PauseSVG from "../../svgs/pause.svg";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { videoBtnAnim } from "../../../utils/animation";
+import introBg from '../../images/bg/sec2.png';
+
 const InteroVideo: React.FC = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [iseHovering, setIsHovering] = useState(false);
@@ -44,7 +46,7 @@ const InteroVideo: React.FC = () => {
       <div className="absolute bottom-0 left-0 w-full h-[7.5rem] bg-gradient-to-t from-bodymain via-transparent to-transparent z-[1]" />
       <span className="w-full  absolute h-full lg:aspect-[1382/814]">
         <span className="w-full h-full inner-image-no-max-width">
-          <Image src={"/img/bg/sec2.png"} layout="fill" quality={100}  />
+          <Image src={introBg} layout="fill" quality={100} placeholder="blur" />
         </span>
       </span>
       <motion.div

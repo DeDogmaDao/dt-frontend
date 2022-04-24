@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import CallToActionSvg from "./CallToActionSvg";
 import AngleRightSVG from "../../svgs/rightangle.svg";
+import calltoactionBg from '../../images/bg/sec4.png';
 
 const ToRoadmapAction: React.FC = () => {
   return (
@@ -11,7 +12,7 @@ const ToRoadmapAction: React.FC = () => {
       <div className="absolute bottom-0 left-0 w-full h-[7.5rem] bg-gradient-to-t from-bodymain to-transparent z-[1]" />
       <span className="absolute w-full h-full sm:aspect-[1440/768]">
         <span className="w-full h-full inner-image-no-max-width">
-          <Image src={"/img/bg/sec4.png"} layout="fill" quality={100}  />
+          <Image src={calltoactionBg} layout="fill" quality={100} placeholder="blur"  />
         </span>
       </span>
       <div className="flex flex-col justify-start items-center z-10 absolute top-0 left-0 w-full h-full">

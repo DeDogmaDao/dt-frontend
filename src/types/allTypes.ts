@@ -110,7 +110,6 @@ export interface roadDataType {
 
 export interface roadMapType {
   sectionName: string;
-  backImg: string;
   roadData: roadDataType[];
 }
 

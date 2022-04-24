@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Dispatch, SetStateAction, useEffect } from "react";
-
+import leftPortal from '../../images/art/left-portal.png';
+import rightPortal from '../../images/art/right-portal.png';
+import middlePortal from '../../images/art/middle-portal.png';
 interface props {
   setPortalLoading: Dispatch<SetStateAction<number>>;
   portalLoading: number;
@@ -31,10 +33,11 @@ const Portal: React.FC<props> = ({
           onLoadingComplete={() =>
             setPortalLoading((prevState) => prevState + 1)
           }
-          src={"/img/art/left-portal.png"}
+          src={leftPortal}
           layout="fill"
           priority={true}
-          quality={100}
+          quality={75}
+          placeholder="blur"
         />
       </motion.span>
       <motion.span
@@ -45,10 +48,11 @@ const Portal: React.FC<props> = ({
           onLoadingComplete={() =>
             setPortalLoading((prevState) => prevState + 1)
           }
-          src={"/img/art/right-portal.png"}
+          src={rightPortal}
           layout="fill"
           priority={true}
-          quality={100}
+          quality={75}
+          placeholder="blur"
         />
       </motion.span>
       <motion.span
@@ -59,10 +63,11 @@ const Portal: React.FC<props> = ({
           onLoadingComplete={() =>
             setPortalLoading((prevState) => prevState + 1)
           }
-          src={"/img/art/middle-portal.png"}
+          src={middlePortal}
           layout="fill"
           priority={true}
-          quality={100}
+          quality={75}
+          placeholder="blur"
         />
       </motion.span>
     </>
