@@ -8,6 +8,7 @@ import EachGroup from "./EachGroup";
 import EachTab from "./EachTab";
 import Slider from "./Slider";
 import TabInfo from "./TabInfo";
+import tabBg from '../../images/bg/sec3.png';
 
 const Tabs: React.FC = () => {
   const [tabs, setTabs] = useState(allTabs);
@@ -27,7 +28,7 @@ const Tabs: React.FC = () => {
       <div className="absolute bottom-0 left-0 w-full h-[7.5rem] bg-gradient-to-t from-bodymain to-transparent z-[1]" />
       <span className="absolute h-full aspect-[1440/1017]">
         <span className="w-full h-full inner-image-no-max-width">
-          <Image src={"/img/bg/sec3.png"} layout="fill" quality={100} />
+          <Image src={tabBg} layout="fill" quality={100} placeholder="blur" />
         </span>
       </span>
       <h3 className="z-10 mt-14 ssm:mt-20 sm:mt-32 lg:mt-40 text-[1.25rem] ssm:text-[1.75rem] sm:text-[2.375rem] font-bold sm:font-bold">
