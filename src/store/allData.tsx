@@ -20,9 +20,7 @@ import {
 //
 import DiscordSVG from "../components/svgs/discord.svg";
 import YoutubeSVG from "../components/svgs/youtube.svg";
-import Linkedin from "../components/svgs/linkedin.svg";
 import Twitter from "../components/svgs/twitter.svg";
-import Instagram from "../components/svgs/instagram.svg";
 export const footerData: socialType[] = [
   {
     icon: <YoutubeSVG />,
@@ -33,15 +31,7 @@ export const footerData: socialType[] = [
     href: "www.discord.com",
   },
   {
-    icon: <Linkedin />,
-    href: "www.discord.com",
-  },
-  {
     icon: <Twitter />,
-    href: "www.discord.com",
-  },
-  {
-    icon: <Instagram />,
     href: "www.discord.com",
   },
 ];
