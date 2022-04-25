@@ -1,8 +1,8 @@
-import img1 from '../components/images/team/1.jpg';
-import img2 from '../components/images/team/2.jpg';
-import img3 from '../components/images/team/3.jpg';
-import img4 from '../components/images/team/4.jpg';
-import img5 from '../components/images/team/5.jpg';
-import img6 from '../components/images/team/6.jpg';
-import img7 from '../components/images/team/7.jpg';
-export const teamImg: StaticImageData[] = [img1,img2,img3,img4,img5,img6,img7];
+import member1 from '../components/images/team/member1.png';
+import member2 from '../components/images/team/member2.png';
+import member3 from '../components/images/team/member3.png';
+import member4 from '../components/images/team/member4.png';
+import member5 from '../components/images/team/member5.png';
+import member6 from '../components/images/team/member6.png';
+import member7 from '../components/images/team/member7.png';
+export const teamImg: StaticImageData[] = [member1,member2,member3,member4,member5,member6,member7];
