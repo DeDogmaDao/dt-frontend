@@ -70,7 +70,7 @@ const Portal: React.FC<props> = ({
         />
       </motion.span>
       <motion.span
-        className="absolute  w-[3.70889%] h-full z-[110] will-change-transform sm:hidden"
+        className="absolute  w-[35.70889%] h-full z-[11] will-change-transform sm:hidden"
         onTap={() => setAnim("hidden")}
       >
         <Image
