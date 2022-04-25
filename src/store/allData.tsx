@@ -228,11 +228,11 @@ export const faqData: faqType[] = [
 
 export const teamDataLvl1: globCardType[] = [
   {
-    name: "Member1",
-    role: "Graphic designer",
-    image: "/img/team/member1.png",
+    name: "Decentral Titan",
+    role: "Main founder and investor",
+    desc:"Believer in Decentral Dogma. Explorer of the first titans treasure. Full time defi user and researcher for more than 4 years. NFT market addicted."
   },
-  { name: "Member2", role: "ui/ux designer", image: "/img/team/member2.png" },
+  { name: "Member2", role: "ui/ux designer",  },
 ];
 
 export const teamDataLvl2: globCardType[] = [
