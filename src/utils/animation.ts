@@ -1006,7 +1006,7 @@ export const goldenSplitAni: Variants = {
     y:0,
     scale:1,
     transition: {
-      delay: (Math.floor(Math.random()*7 + 4)/10) + custom/30,
+      delay: 0.1 + (custom*0.1),
       duration: 1.5,
       ease:"easeIn",
     },
