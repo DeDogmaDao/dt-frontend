@@ -11,7 +11,7 @@ export interface faqType {
 }
 
 export interface globCardType {
-  image?: string | StaticImageData;
+  image: string | StaticImageData;
   name?: string;
   role?: string;
   desc?: string;

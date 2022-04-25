@@ -21,18 +21,19 @@ const Card: React.FC<props> = ({
       custom={framerCustom}
       className="flex flex-col justify-center items-center text-white group"
     >
-      <div
+      <span
         style={{ ...size }}
-        className="group-hover:-translate-y-3 group-hover:opacity-70 duration-500 "
+        className="group-hover:-translate-y-3 group-hover:opacity-70 duration-500 relative rounded-xl overflow-hidden"
       >
         <Image
-          width={size.width}
-          height={size.height}
           src={data.image}
+          layout="fill"
           loading="lazy"
+          placeholder="blur"
+          objectFit="cover"
           
         />
-      </div>
+      </span>
       {data.name && (
         <p className="text-medium-bold text-white mt-4 group-hover:text-primary-500 duration-500">
           {data.name}
