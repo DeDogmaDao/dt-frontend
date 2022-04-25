@@ -11,9 +11,11 @@ export interface faqType {
 }
 
 export interface globCardType {
-  image: string;
+  image: string | StaticImageData;
   name?: string;
   role?: string;
+  desc?: string;
+  link?:string;
 }
 
 export interface socialType {
@@ -110,7 +112,6 @@ export interface roadDataType {
 
 export interface roadMapType {
   sectionName: string;
-  backImg: string;
   roadData: roadDataType[];
 }
 

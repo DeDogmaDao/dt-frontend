@@ -20,9 +20,8 @@ import {
 //
 import DiscordSVG from "../components/svgs/discord.svg";
 import YoutubeSVG from "../components/svgs/youtube.svg";
-import Linkedin from "../components/svgs/linkedin.svg";
 import Twitter from "../components/svgs/twitter.svg";
-import Instagram from "../components/svgs/instagram.svg";
+import { teamImg } from "./context/img";
 export const footerData: socialType[] = [
   {
     icon: <YoutubeSVG />,
@@ -33,15 +32,7 @@ export const footerData: socialType[] = [
     href: "www.discord.com",
   },
   {
-    icon: <Linkedin />,
-    href: "www.discord.com",
-  },
-  {
     icon: <Twitter />,
-    href: "www.discord.com",
-  },
-  {
-    icon: <Instagram />,
     href: "www.discord.com",
   },
 ];
@@ -238,29 +229,49 @@ export const faqData: faqType[] = [
 
 export const teamDataLvl1: globCardType[] = [
   {
-    name: "Member1",
-    role: "Graphic designer",
-    image: "/img/team/member1.png",
+    name: "Decentral Titan",
+    role: "Main founder and investor",
+    image: teamImg[0],
+    desc: "Believer in Decentral Dogma. Explorer of the first titans treasure. Full time defi user and researcher for more than 4 years. NFT market addicted.",
   },
-  { name: "Member2", role: "ui/ux designer", image: "/img/team/member2.png" },
+  {
+    name: "Meti.eth",
+    role: "Blockchain Engineer",
+    image: teamImg[1],
+    desc: "Mehdi Salehi is a Master’s Student at Concordia University in Montreal, Canada. He mainly researches blockchain technologies and decentralized finance. He is an independent smart contract auditor, auditing several DeFi projects. He also contributed to the Meta Governance project and EIP-4824.",
+  },
+  {
+    name: "Sara",
+    role: "Co-founder and Product Manager",
+    image: teamImg[2],
+    desc: "Sara has a technical background in entertainment and fintech industry worked in companies like Spotify and iZettle. She is a true believer in Ethereum and blockchain. She has been active in this field for a couple of years now and wants to continue to have a bigger impact in this industry by building more innovative solutions.",
+  },
 ];
 
 export const teamDataLvl2: globCardType[] = [
-  { name: "Member3", role: "backend dev", image: "/img/team/member3.png" },
   {
-    name: "Member1",
-    role: "Graphic designer",
-    image: "/img/team/member1.png",
+    name: "George",
+    role: "Backend  Adviser",
+    image: teamImg[3],
+    desc: "George has many years of experience in backend engineering. He has worked in companies like Spotify and successful startups like Soundwave.",
   },
   {
-    name: "Member2",
-    role: "Graphic designer",
-    image: "/img/team/member2.png",
+    name: "Floki BB",
+    role: "Co-founder and Blockchain Engineer",
+    image: teamImg[4],
+    desc: "Floki BB is a software engineer and has been in the Blockchain filed since 2016. He has worked as a Blockchain integration engineer and have been involved in the Ethereum ecosystem since 2018. An example of his remarkable work is contributing to solidity language compiler and work as DAPP engineer in couple other projects.",
   },
   {
-    name: "Member3",
-    role: "Graphic designer",
-    image: "/img/team/member3.png",
+    name: "Katy",
+    role: "Master of lore and communications",
+    image: teamImg[5],
+    desc: "Katy is a linguistics enthusiast and lover of all things literature. By day, she teaches English as a foreign language and by night she spends her time building lightsabers, writing, dreaming and ever expanding her hobbies. She enjoys the company of like-minded people and bringing these people together. Inspired by web3 culture. Community building and support lies at the core of what she does at DeDogmaDao.",
+  },
+  {
+    name: "Sofia",
+    role: "Head of art",
+    image: teamImg[6],
+    desc: "Full-time artist for more than 10 years. Specialised in Illustration, character and motion design in the video production and game industry. On the introverted side, but an amazing teammate. Perhaps she’ll decide to be douxed one day.",
   },
 ];
 
@@ -1222,17 +1233,14 @@ export const roadDataQ3: roadDataType[] = [
 export const roadMapData: roadMapType[] = [
   {
     sectionName: "Demmortal Treasure",
-    backImg: "/img/bg/road-sec1.png",
     roadData: roadDataQ1,
   },
   {
     sectionName: "Expanding DDD - part I",
-    backImg: "/img/bg/road-sec2.png",
     roadData: roadDataQ2,
   },
   {
     sectionName: "Expanding DDD - part II",
-    backImg: "/img/bg/road-sec3.png",
     roadData: roadDataQ3,
   },
 ];
@@ -1245,13 +1253,13 @@ export const benefitsData: benefitType[] = [
         The money collected from the minting, goes to the buyback treasury which
         will guarantee the floor price. Any nft holder has the right to burn
         their nfts and receive their funds back. Our team only receives 30% of
-        the funds based on the time schedule.{" "}
+        the funds based on the{" "}
         <a
           href="https://docs.dedogmadao.com/economic-mechanisms"
           target={"_blank"}
           className="link-inside-text"
         >
-          GITBOOK
+          time schedule
         </a>
         <br />
       </>,

@@ -453,20 +453,23 @@ export const carouselDisplayAni: Variants = {
 
 export const tabInfoContainerAni: Variants = {
   hidden: {
-    y: 50,
+    y: -600,
     opacity: 0,
+    scale: 0,
   },
   visible: {
     y: 0,
-    opacity: 1,
+    opacity: [0,0.7,1],
+    scale: [0,0.3,1],
     transition: {
       duration: 0.3,
       delay: 0.15,
+      times:[0,0.5,1]
     },
   },
   out: {
     opacity: 0,
-    y: -10,
+    y: 50,
     transition: {
       duration: 0.3,
     },
@@ -951,7 +954,7 @@ export const backToTopAni: Variants = {
     opacity: 1,
     scale: 1,
     transition: {
-      duration:0.1,
+      duration: 0.1,
     },
   },
   out: {
