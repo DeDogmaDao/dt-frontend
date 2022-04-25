@@ -23,7 +23,7 @@ const GoldenPoint: React.FC = () => {
           Demmortal Treasure is more than a{" "}
         </motion.span>
         <motion.div className="flex justify-between">
-          {"Collectable".split("").map((word, index) => {
+          {"Collectible".split("").map((word, index) => {
             return (
               <motion.span
                 variants={goldenSplitAni}
