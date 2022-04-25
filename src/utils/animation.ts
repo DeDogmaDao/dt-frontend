@@ -995,14 +995,16 @@ export const goldenFirstAni: Variants = {
 };
 export const goldenSplitAni: Variants = {
   hidden: (custom) => ({
-    opacity: 0.5,
+    opacity: 0,
     x: -500 + custom * 100,
     y: custom % 2 !== 0 ? 500  : -500 ,
+    scale:3,
   }),
   visible: (custom) => ({
     opacity: 1,
     x: 0,
     y:0,
+    scale:1,
     transition: {
       delay: (Math.floor(Math.random()*7 + 4)/10) + custom/30,
       duration: 1.5,
@@ -1020,7 +1022,7 @@ export const goldenSecondAni: Variants = {
     x: 0,
     transition: {
       duration: 0.4,
-      staggerChildren:0.4
+      staggerChildren:0.5
     },
   },
 };

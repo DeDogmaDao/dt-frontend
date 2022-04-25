@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useOnScrollAnimation } from "../../../hooks/useOnScrollAnimation";
 import {
     goldenContainerAni,
   goldenFirstAni,
@@ -8,10 +9,12 @@ import {
 } from "../../../utils/animation";
 
 const GoldenPoint: React.FC = () => {
+    const [element,controls]= useOnScrollAnimation(0.5);
   return (
     <motion.div
+    ref={element}
       initial="hidden"
-      animate="visible"
+      animate={controls}
       variants={goldenContainerAni}
       className="flex flex-col justify-center items-center z-100"
     >
