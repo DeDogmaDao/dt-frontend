@@ -983,17 +983,31 @@ export const goldenFirstAni: Variants = {
 export const goldenSplitAni: Variants = {
   hidden: (custom) => ({
     opacity: 0.5,
-    x: -300 + custom * 80,
-    y: custom % 2 !== 0 ? 300  : -300 ,
+    x: -500 + custom * 100,
+    y: custom % 2 !== 0 ? 500  : -500 ,
   }),
   visible: (custom) => ({
     opacity: 1,
     x: 0,
     y:0,
     transition: {
-      delay: 0.3 + 0.1 * custom,
-      duration: 1 + 0.1/(custom +1),
-      ease:"easeIn"
+      delay: (Math.floor(Math.random()*7 + 4)/10) + custom/30,
+      duration: 1.5,
+      ease:"easeIn",
     },
   }),
+};
+export const goldenSecondAni: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 50,
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      delay: 1,
+      duration: 0.3,
+    },
+  },
 };
