@@ -459,12 +459,12 @@ export const tabInfoContainerAni: Variants = {
   },
   visible: {
     y: 0,
-    opacity: [0,0.7,1],
-    scale: [0,0.3,1],
+    opacity: [0, 0.7, 1],
+    scale: [0, 0.3, 1],
     transition: {
       duration: 0.3,
       delay: 0.15,
-      times:[0,0.5,1]
+      times: [0, 0.5, 1],
     },
   },
   out: {
@@ -966,18 +966,34 @@ export const backToTopAni: Variants = {
   },
 };
 
-
-export const goldenFirstAni:Variants = {
-  hidden:{
-    opacity:0,
-    x:-50,
+export const goldenFirstAni: Variants = {
+  hidden: {
+    opacity: 0,
+    x: -50,
   },
-  visible:{
-    opacity:1,
-    x:0,
-    transition:{
-      delay:1,
-      duration:0.3
-    }
-  }
-}
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      delay: 1,
+      duration: 0.3,
+    },
+  },
+};
+export const goldenSplitAni: Variants = {
+  hidden: (custom) => ({
+    opacity: 0.5,
+    x: -300 + custom * 80,
+    y: custom % 2 !== 0 ? 300  : -300 ,
+  }),
+  visible: (custom) => ({
+    opacity: 1,
+    x: 0,
+    y:0,
+    transition: {
+      delay: 0.3 + 0.1 * custom,
+      duration: 1 + 0.1/(custom +1),
+      ease:"easeIn"
+    },
+  }),
+};
