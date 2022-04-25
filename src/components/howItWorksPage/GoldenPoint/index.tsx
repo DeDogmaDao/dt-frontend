@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
 import {
+    goldenContainerAni,
   goldenFirstAni,
   goldenSecondAni,
+  goldenSecondSpanAni,
   goldenSplitAni,
 } from "../../../utils/animation";
 
@@ -10,6 +12,7 @@ const GoldenPoint: React.FC = () => {
     <motion.div
       initial="hidden"
       animate="visible"
+      variants={goldenContainerAni}
       className="flex flex-col justify-center items-center z-100"
     >
       <motion.div className="flex justify-center gap-x-1 text-[1.75rem] font-bold">
@@ -32,11 +35,11 @@ const GoldenPoint: React.FC = () => {
       </motion.div>
       <motion.div
         variants={goldenSecondAni}
-        className="text-[1.25rem] font-semibold text-white/60"
+        className="text-[1.25rem] font-semibold text-white/60 flex gap-x-1.5"
       >
         Sustainable economy empowered by{" "}
-        <span className=" text-white">Anti-Rug Protocols</span> and a{" "}
-        <span className=" text-white">Daily Lottery</span> with
+        <motion.span variants={goldenSecondSpanAni} custom={1} className=" text-white">Anti-Rug Protocols</motion.span> and a{" "}
+        <motion.span variants={goldenSecondSpanAni} custom={2} className=" text-white">Daily Lottery</motion.span> with
         guaranteed prize. All by owning a NFT!
       </motion.div>
     </motion.div>
