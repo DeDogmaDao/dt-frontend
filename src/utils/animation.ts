@@ -973,9 +973,9 @@ export const goldenContainerAni: Variants = {
   visible: {
     opacity: 1,
     transition: {
-      duration: 0.1,
-      staggerChildren:0.2,
-      delayChildren:0.5,
+      duration: 0.01,
+      staggerChildren:0.1,
+      delayChildren:0.1,
       when:"beforeChildren"
     },
   },
@@ -997,7 +997,7 @@ export const goldenSplitAni: Variants = {
   hidden: (custom) => ({
     opacity: 0,
     x: -500 + custom * 100,
-    y: custom % 2 !== 0 ? 500  : -500 ,
+    y: custom % 2 !== 0 ? 300  : -300 ,
     scale:3,
   }),
   visible: (custom) => ({
@@ -1007,8 +1007,8 @@ export const goldenSplitAni: Variants = {
     scale:1,
     transition: {
       delay: 0.1 + (custom*0.1),
-      duration: 1.5,
-      ease:"easeIn",
+      duration: 0.7,
+      ease:"easeInOut",
     },
   }),
 };
