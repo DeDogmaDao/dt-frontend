@@ -21,7 +21,7 @@ import {
 import DiscordSVG from "../components/svgs/discord.svg";
 import YoutubeSVG from "../components/svgs/youtube.svg";
 import Twitter from "../components/svgs/twitter.svg";
-import { teamImg } from "./context/img";
+import { teamImg } from "./img";
 export const footerData: socialType[] = [
   {
     icon: <YoutubeSVG />,
