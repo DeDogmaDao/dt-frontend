@@ -23,7 +23,7 @@ const Card: React.FC<props> = ({
     >
       <span
         style={{ ...size }}
-        className="group-hover:-translate-y-3 group-hover:opacity-70 duration-500 relative rounded-xl overflow-hidden"
+        className="group-hover:-translate-y-3 group-hover:opacity-90 duration-500 relative rounded-xl overflow-hidden"
       >
         <Image
           src={data.image}
@@ -33,13 +33,18 @@ const Card: React.FC<props> = ({
           objectFit="cover"
           
         />
+        <span className="w-full h-full absolute bottom-0 left-0 bg-gradient-to-t from-cyan-900 via-cyan-900/80
+         to to-cyan-900/10 pt-[30%] pb-5 px-4 flex justify-center items-end
+         text-white text-base font-normal translate-y-[100%] group-hover:translate-y-0 duration-700">{data.desc}</span>
       </span>
+        <a target={"_blank"} href={data.link} className="cursor-pointer flex flex-col justify-center items-center w-full mt-5 gap-y-2">
       {data.name && (
-        <p className="text-medium-bold text-white mt-4 group-hover:text-primary-500 duration-500">
+        <p className="text-medium-bold text-white  group-hover:text-primary-500 duration-500">
           {data.name}
         </p>
       )}
-      {data.role && <p className="text-small-light mt-2">{data.role}</p>}
+      {data.role && <span  className="text-small-light ">{data.role}</span>}
+      </a>
     </motion.div>
   );
 };
