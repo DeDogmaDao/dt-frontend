@@ -4,6 +4,7 @@ import { pageAnimation } from "../../utils/animation";
 import BackToTop from "../global/BackToTop";
 import Benefits from "./benefits/Benefits";
 import ToRoadmapAction from "./callToAction/ToRoadmapAction";
+import GoldenPoint from "./GoldenPoint";
 import Hero from "./hero/Hero";
 import InteroVideo from "./IntroVideo";
 import Tabs from "./Tabs";
@@ -20,6 +21,7 @@ const HowItWorks: React.FC = () => {
       className="w-full h-full flex flex-col"
     >
       <Hero />
+      <GoldenPoint />
       <Benefits />
       <InteroVideo />
       <Tabs />
