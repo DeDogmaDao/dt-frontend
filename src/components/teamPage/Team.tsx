@@ -5,7 +5,7 @@ import { teamDataLvl1, teamDataLvl2 } from "../../store/allData";
 import { pageAnimation, teamMemberAni } from "../../utils/animation";
 import BackToTop from "../global/BackToTop";
 import Card from "../global/Card";
-
+import teamBg from '../images/bg/sec4.png';
 const Team: React.FC = () => {
   const teamRef = useRef<HTMLDivElement>(null);
   return (
@@ -22,7 +22,7 @@ const Team: React.FC = () => {
       <span className="absolute w-full aspect-[1440/1097] z-0">
         <span className="w-full h-full inner-image-no-max-width ">
             <div className="absolute bottom-0  left-0 w-full h-[7.5rem] bg-gradient-to-t from-bodymain to-transparent z-[1]" />
-          <Image src={"/img/bg/sec4.png"} layout="fill" quality={100}  />
+          <Image src={teamBg} layout="fill" quality={100}  />
         </span>
       </span>
       <div className="relative w-full h-full flex flex-col justify-start items-center pt-24 md:pt-32 pb-10">
