@@ -459,11 +459,12 @@ export const tabInfoContainerAni: Variants = {
   },
   visible: {
     y: 0,
-    opacity: 1,
-    scale: 1,
+    opacity: [0,0.7,1],
+    scale: [0,0.3,1],
     transition: {
       duration: 0.3,
       delay: 0.15,
+      times:[0,0.5,1]
     },
   },
   out: {
