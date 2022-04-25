@@ -57,16 +57,16 @@ const Header: React.FC = () => {
         <a
           href="https://docs.dedogmadao.com/"
           target="_blank"
-          className=" pointer-events-auto absolute top-[2rem] right-[7.7rem] px-2 ssm:w-[8.5rem] h-10 rounded-full bg-neutral-600 text-white text-sm font-bold 
+          className="z-50 pointer-events-auto absolute top-[2rem] right-[7.7rem] px-2 ssm:w-[8.5rem] h-10 rounded-full bg-neutral-600 text-white text-sm font-bold 
     flex justify-evenly items-center hover:bg-neutral-500 duration-200 fill-primary-500 hover:fill-primary-700 cursor-pointer"
         >
           <span className=" ">
             <GitBookSVG width={26} />
           </span>
-          <span>LitePaper</span>
+          <span>Litepaper</span>
         </a>
         <button
-          className="absolute pointer-events-auto top-[2rem] right-[4.5rem] w-10 h-10 rounded-full bg-neutral-600
+          className="z-50 absolute pointer-events-auto top-[2rem] right-[4.5rem] w-10 h-10 rounded-full bg-neutral-600
          text-white text-xl flex justify-center items-center hover:bg-neutral-500 duration-200 fill-primary-500 hover:fill-primary-700"
         >
           <DiscordSVG width={26} />

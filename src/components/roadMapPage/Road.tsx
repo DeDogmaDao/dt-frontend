@@ -41,7 +41,7 @@ const Road: React.FC<props> = ({ index, activeSection, road }) => {
         </span>
       </span>
         <h3 className="w-full h-1/3 lg:w-1/2 lg:h-full pt-20 lg:pt-0 z-10 flex justify-center items-center 
-        text-[1.875rem] ssm:text-[2.25rem] lg:text-[2.5rem] font-bold">
+        text-[1.5rem] ssm:text-[2.25rem] lg:text-[2.5rem] font-bold">
           {road.sectionName}
         </h3>
         <div className=" w-full lg:w-1/2 h-2/3 lg:h-full flex justify-center items-center z-10">
