@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
         layout
         className="h-full w-full flex flex-col justify-center items-center z-100  relative -mt-40 sm:-mt-56"
       >
-        <div className="scale-[80%] ssm:scale-100  z-10 mb-[-3rem] w-[25.25rem] h-[15.23rem]">
+        <div className="z-10 mb-[-3rem] w-[20rem] h-[12rem]  ssm:w-[25.25rem] ssm:h-[15.23rem]">
           <Image src={treasure} layout="fill" placeholder="blur"  />
         </div>
         <h3 className="mb-3 text-[1.25rem] ssm:text-[1.75rem] sm:text-[2.375rem] font-bold sm:font-bold z-10">
