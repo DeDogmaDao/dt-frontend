@@ -39,7 +39,7 @@ const GoldenPoint: React.FC = () => {
             return (
               <span
                 className={`whitespace-nowrap ${
-                  (index === 4 || index === 5 || index === 8 || index === 9) &&
+                  (index === 6 || index === 7 || index === 10 || index === 11) &&
                   "font-semibold"
                 }`}
               >

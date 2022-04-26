@@ -93,10 +93,10 @@ const InteroVideo: React.FC = () => {
           >
             <span className="w-[26px] h-[6px] bg-primary-500" />
             <span className="text-[2.5rem] font-bold whitespace-nowrap">
-              THE TRESURE <span className="text-primary-500">STORY</span>
+            Odyssey of the <span className="text-primary-500">Titan’s treasure</span>
             </span>
-            <span className="text-xl font-light whitespace-nowrap">
-              This is how everything started Between Gods and humans ...
+            <span className="text-xl font-light text-center md:px-10">
+            Olympians, Titans and mortals- united in search of fortune. Watch to see how it all came to be
             </span>
           </motion.div>
         )}
