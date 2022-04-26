@@ -5,6 +5,7 @@ import CallToActionSvg from "./CallToActionSvg";
 import AngleRightSVG from "../../svgs/rightangle.svg";
 import calltoactionBg from '../../images/bg/sec4.png';
 
+
 const ToRoadmapAction: React.FC = () => {
   return (
     <div className="w-full h-[30rem] sm:h-[40rem] md:h-[50rem] justify-center relative z-0">
@@ -28,7 +29,7 @@ const ToRoadmapAction: React.FC = () => {
           <div className="absolute top-[-20%] left-[-30%] ssm:left-[-5%] sm:left-[5%] md:left-[13%] lg:left-[20%] xl:left-[24%] scale-y-[65%] scale-x-[40%] sm:scale-[65%] lg:scale-[80%] xl:scale-100">
             <CallToActionSvg />
           </div>
-          <Link href={"/roadmap"}>
+          <Link href={"/roadmap"} scroll={false}>
             <button className="px-5 py-3 mt-11 bg-primary-500 hover:bg-primary-900/80 
             text-neutral-900 hover:text-neutral-50 rounded-full text-small-bold flex gap-x-2 
             duration-500 border-2 border-transparent hover:border-primary-500 stroke-black hover:stroke-white">

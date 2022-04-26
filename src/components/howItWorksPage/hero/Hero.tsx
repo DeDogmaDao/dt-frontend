@@ -96,7 +96,8 @@ const Hero: React.FC = () => {
         w-[100vw] h-[157.55vw] sm:h-[84.375vw] md:h-[84.375vw]  lg:h-[56.25vw] mx-auto overflow-hidden hero-container"
     >
       <div className="portal-and-flame-and-hero w-full h-full relative z-20 ">
-      <div className="absolute bottom-0 left-0 w-full h-[10rem] bg-gradient-to-t from-bodymain  to-transparent z-[110] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-full h-[3rem] sm:h-[10rem]
+       bg-gradient-to-t from-bodymain  to-transparent z-[110] pointer-events-none" />
         <motion.div
           initial="hidden"
           animate={anim}

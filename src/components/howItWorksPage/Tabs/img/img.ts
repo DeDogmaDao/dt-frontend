@@ -1,3 +1,4 @@
+import { StaticImageData } from "next/image";
 import bandits from "./bandits.png";
 import beastriders from "./beast-riders.png";
 import enchants from "./enchants.png";
