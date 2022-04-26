@@ -14,15 +14,15 @@ module.exports = {
     return config
   },
 
-  // async redirects() {
-  //   return [
-  //     {
-  //       source: "/((?!(?:underconstruction)$).*$)",
-  //       destination: "/underconstruction",
-  //       permanent: false,
-  //     },
-  //   ];
-  // },
+  async redirects() {
+    return [
+      {
+        source: "/gameboard",
+        destination: "/404",
+        permanent: false,
+      },
+    ];
+  },
   // async redirects() {
   //   return [
   //     {
