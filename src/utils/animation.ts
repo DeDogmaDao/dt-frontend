@@ -974,8 +974,7 @@ export const goldenContainerAni: Variants = {
     opacity: 1,
     transition: {
       duration: 0.01,
-      staggerChildren:0.1,
-      delayChildren:0.1,
+      staggerChildren:0.06,
       when:"beforeChildren"
     },
   },
@@ -985,13 +984,14 @@ export const goldenFirstAni: Variants = {
     opacity: 0,
     x: -50,
   },
-  visible: {
+  visible: (custom)=>({
     opacity: 1,
     x: 0,
     transition: {
       duration: 0.3,
+      delay: custom * 0.12
     },
-  },
+  }),
 };
 export const goldenSplitAni: Variants = {
   hidden: (custom) => ({
@@ -1015,28 +1015,14 @@ export const goldenSplitAni: Variants = {
 export const goldenSecondAni: Variants = {
   hidden: {
     opacity: 0,
-    x: 50,
+    y: 50,
   },
   visible: {
     opacity: 1,
-    x: 0,
+    y: 0,
     transition: {
       duration: 0.4,
       staggerChildren:0.5
     },
   },
-};
-export const goldenSecondSpanAni: Variants = {
-  hidden: (custom) => ({
-    opacity: 0,
-    y: custom * 20 ,
-  }),
-  visible: (custom) => ({
-    opacity: 1,
-    y:0,
-    transition: {
-      duration: 0.5,
-      ease:"easeOut",
-    },
-  }),
 };

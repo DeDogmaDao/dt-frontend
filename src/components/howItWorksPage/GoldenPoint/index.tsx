@@ -4,7 +4,6 @@ import {
     goldenContainerAni,
   goldenFirstAni,
   goldenSecondAni,
-  goldenSecondSpanAni,
   goldenSplitAni,
 } from "../../../utils/animation";
 
@@ -16,13 +15,18 @@ const GoldenPoint: React.FC = () => {
       initial="hidden"
       animate={controls}
       variants={goldenContainerAni}
-      className="flex flex-col justify-center items-center z-100"
+      className="flex flex-col justify-center items-center z-100 px-5"
     >
-      <motion.div className="flex justify-center gap-x-1 text-[1.75rem] font-bold">
-        <motion.span variants={goldenFirstAni}>
-          Demmortal Treasure is more than a{" "}
-        </motion.span>
-        <motion.div className="flex justify-between">
+      <motion.div className="flex flex-wrap justify-center gap-x-2 text-[1.75rem] font-bold">
+        {"Demmortal Treasure is more than a".split(" ").map((word, index) => {
+            return (
+              <motion.span variants={goldenFirstAni} custom={index}>
+                {word}
+              </motion.span>
+            );
+          })}
+        
+        <motion.div className="flex justify-between whitespace-nowrap">
           {"Collectible".split("").map((word, index) => {
             return (
               <motion.span
@@ -38,12 +42,11 @@ const GoldenPoint: React.FC = () => {
       </motion.div>
       <motion.div
         variants={goldenSecondAni}
-        className="text-[1.25rem] font-semibold text-white/60 flex gap-x-1.5"
+        className="text-[1.25rem] font-semibold text-white/60 flex gap-x-1.5 justify-center flex-wrap"
       >
-        Sustainable economy empowered by{" "}
-        <motion.span variants={goldenSecondSpanAni} custom={1} className=" text-white">Anti-Rug Protocols</motion.span> and a{" "}
-        <motion.span variants={goldenSecondSpanAni} custom={2} className=" text-white">Daily Lottery</motion.span> with
-        guaranteed prize. All by owning a NFT!
+{"Sustainable economy empowered by Anti-Rug Protocols and a Daily Lottery with guaranteed prize. All by owning a NFT!".split(" ").map((word,index)=>{
+  return <span className={`whitespace-nowrap ${(index===4 || index === 5 || index===8 || index ===9) && "text-white"}`}>{word}</span>
+})}
       </motion.div>
     </motion.div>
   );
