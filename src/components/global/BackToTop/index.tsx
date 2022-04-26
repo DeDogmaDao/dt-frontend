@@ -49,7 +49,9 @@ const BackToTop: React.FC<props> = ({ containerRef }) => {
             >
               <BackToTopSVG />
             </span>
-            <div className="text-sm font-normal hidden md:block">Back to Top</div>
+            <div className="text-sm font-normal hidden md:block">
+              Back to Top
+            </div>
           </motion.button>
         )}
       </AnimatePresence>
