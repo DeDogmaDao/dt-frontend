@@ -7,7 +7,7 @@ import calltoactionBg from '../../images/bg/sec4.png';
 
 const ToRoadmapAction: React.FC = () => {
   return (
-    <div className="w-full h-[70vh] sm:h-[80vh] md:h-[90vh]  lg:h-[110vh] justify-center relative z-0">
+    <div className="w-full h-[30rem] sm:h-[40rem] md:h-[50rem] justify-center relative z-0">
       <div className="absolute top-0 left-0 w-full h-[7.5rem] bg-gradient-to-b from-bodymain to-transparent z-[1]" />
       <div className="absolute bottom-0 left-0 w-full h-[7.5rem] bg-gradient-to-t from-bodymain to-transparent z-[1]" />
       <span className="absolute w-full h-full sm:aspect-[1440/768]">
