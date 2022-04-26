@@ -4,7 +4,7 @@ import { useRef } from "react";
 import { teamDataLvl1, teamDataLvl2 } from "../../store/allData";
 import { pageAnimation, teamMemberAni } from "../../utils/animation";
 import BackToTop from "../global/BackToTop";
-import Card from "../global/Card";
+import TeamCard from "./TeamCard";
 import teamBg from '../images/bg/sec4.png';
 const Team: React.FC = () => {
   const teamRef = useRef<HTMLDivElement>(null);
@@ -33,7 +33,7 @@ const Team: React.FC = () => {
         >
           {teamDataLvl1.map((member, index) => {
             return (
-              <Card
+              <TeamCard
                 data={member}
                 size={{ width: "18.75rem", height: "24.375rem" }}
                 framerVariants={teamMemberAni}
@@ -46,7 +46,7 @@ const Team: React.FC = () => {
         >
           {teamDataLvl2.map((member, index) => {
             return (
-              <Card
+              <TeamCard
                 data={member}
                 size={{ width: "18.75rem", height: "24.375rem" }}
                 framerVariants={teamMemberAni}
