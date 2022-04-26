@@ -292,7 +292,7 @@ export const godTabData: tabType[] = [
     titleOfHonor: "Goddess of the hunt",
     image: "/img/cyc/artemis.jpg",
     desc: [
-      "Beautiful moon maiden, goddess of the hunt. Twin to Apollo, the sun god. Fingers laced with silver and a deadly accuracy with her bow and arrows- all who pursue the art of archery strive to attain a sliver of her skill all their lives.",
+      "Beautiful moon maiden, goddess of the hunt. Twin to Apollo, the sun god. Fingers laced with silver and a deadly accuracy with her bow and arrows- all who pursue the art of archery strive to attain only a sliver of her skill.",
       "Artemis created the beastrider guild by sending her goat to help them. She takes 3% share of the beast rider's win of the treasury.",
       "Artemis has 18X more chance to compare to other cards to win the lottery.",
     ],
@@ -303,9 +303,9 @@ export const godTabData: tabType[] = [
     titleOfHonor: "God of the sun",
     image: "/img/cyc/hermes.jpg",
     desc: [
-      "God of the sun and master of thievery and poetry. With his wing-threaded sandals, he can spread news at the blink of an eye to those who are willing to lend him an ear. The words that leave his mouth are nothing short of poetical.",
-      "Hermes created the thieves guild by placing a magnetic power in humans. ",
-      "Hermes takes 3% share of the thieves guild’s win of treasury.",
+      "Master of thievery and poetry. With his wing-threaded sandals, he can spread news at the blink of an eye to those who are willing to lend him an ear. The words that leave his mouth are nothing short of poetical.",
+      "Hermes created the Bandits guild by placing a magnetic power in humans.",
+      "Hermes takes 3% share of the Bandits guilds‘ win of treasury.",
       "Hermes has 18X more chance to compare to other cards to win the lottery.",
     ],
   },
@@ -316,8 +316,8 @@ export const godTabData: tabType[] = [
     image: "/img/cyc/zeus.jpg",
     desc: [
       "God of craftsmen and invention, son of Hera. A blazing forge with his blessing yields the sharpest daggers and the most balanced swords. His inventive spirit can solve any problem with an ingenious idea.",
-      "Hephaestus created the blessed guild by giving them the box of pandora.",
-      "Hephaestus takes 3% share of the blessed guild’s win of treasury. ",
+      "Hephaestus created the Smiths guild by giving them the box of pandora.",
+      "Hephaestus takes 3% share of the Smiths guilds‘ win of treasury.",
       "Hephaestus has 18X more chance to compare to other cards to win the lottery.",
     ],
   },
@@ -328,8 +328,8 @@ export const godTabData: tabType[] = [
     image: "/img/cyc/hecate.jpg",
     desc: [
       "Goddess of necromancy and sorcery. Accompanied by her double shadow, her magical abilities knows no boundaries.",
-      "Hecate created the sorcerers by the power of her magic and fire.",
-      "Hecate takes 3% share of the sorcerers guild’s win of  treasury. ",
+      "Hecate created the Enchants by the power of her magic and fire.",
+      "Hecate takes 3% share of the Enchants guild’s win of  treasury.",
       "Hecate has 18X more chance to compare to other cards to win the lottery.",
     ],
   },
@@ -339,8 +339,8 @@ export const godTabData: tabType[] = [
     titleOfHonor: "God of the afterlife",
     image: "/img/cyc/hades.jpg",
     desc: [
-      "God of the afterlife and Lord of the underworld. No mortal man could bare a single second in his presence, as he emits a sense of death being right around the corner.",
-      "18X more chance to compare to other cards to win the lottery",
+      "God of the afterlife and Lord of the underworld. No mortal man could bare a single second in his presence, as he emits a strong sense of death and loss.",
+      "Hades has 18X more chance to compare to other cards to win the lottery",
     ],
   },
   {
@@ -350,7 +350,7 @@ export const godTabData: tabType[] = [
     image: "/img/cyc/aphrodite.jpg",
     desc: [
       "Goddess of beauty and passion. Seductive, beautiful and wistful, this goddess could make a man swoon at her while holding a dagger to his throat. A dangerous-but-fantastic deity.",
-      "18X more chance to compare to other cards to win the lottery.",
+      "Aphrodite has 18X more chance to compare to other cards to win the lottery.",
     ],
   },
   {
@@ -360,7 +360,7 @@ export const godTabData: tabType[] = [
     image: "/img/cyc/poseidon.jpg",
     desc: [
       "God of the oceans and Lord of the seas. Father of horses and all sea creatures. With is power to control large bodies of water, he can influence the climate of the earth like no other.",
-      "18X more chance to compare to other cards to win the lottery.",
+      "Poseidon has 18X more chance to compare to other cards to win the lottery.",
     ],
   },
   {
@@ -370,7 +370,7 @@ export const godTabData: tabType[] = [
     image: "/img/cyc/ares.jpg",
     desc: [
       "God of War and bloodlust. The most hostile god to deal with, but the most useful to have with you in battle. His combat intelligence and street smarts cannot be humbled.",
-      "18X more chance to compare to other cards to win the lottery.",
+      "Ares has 18X more chance to compare to other cards to win the lottery.",
     ],
   },
   {
@@ -380,7 +380,7 @@ export const godTabData: tabType[] = [
     image: "/img/cyc/hera.jpg",
     desc: [
       "Goddess of marriage and patroness of women. Daughter of Kronos and Hera. Her loyalty to Zeus cannot be restrained and her dedication towards women and  children is admirable.",
-      "18X more chance to compare to other cards to win the lottery",
+      "Hera has 18X more chance to compare to other cards to win the lottery",
     ],
   },
 ];
@@ -429,7 +429,7 @@ export const humanTabData: tabType[] = [
   },
   {
     activeCard: false,
-    name: "Humans 1",
+    name: "Masculine Mortals",
     image: "/img/cyc/human1.png",
     desc: [
       "They don’t hold any special power but they are strong in their beliefs, which is the reason why they joined the army to hunt down the treasure with their bare hands.",
@@ -438,7 +438,7 @@ export const humanTabData: tabType[] = [
   },
   {
     activeCard: false,
-    name: "Humans 2",
+    name: "Feminine Mortals",
     image: "/img/cyc/human2.png",
     desc: [
       "They don’t hold any special power but they are strong in their beliefs, which is the reason why they joined the army to hunt down the treasure with their bare hands.",
@@ -1247,25 +1247,27 @@ export const roadMapData: roadMapType[] = [
 
 export const benefitsData: benefitType[] = [
   {
-    title: "Time-Guaranteed floor price",
+    title: "Guaranteed floor price",
     desc: [
       <>
-        The money collected from the minting, goes to the buyback treasury which
-        will guarantee the floor price. Any nft holder has the right to burn
-        their nfts and receive their funds back. Our team only receives 30% of
-        the funds based on the{" "}
+        The money collected from the minting goes to the buyback treasury. This
+        will guarantee the floor price of the NFTs. Any NFT holder has the right
+        to burn their NFTs and receive their funds back. The economical
+        mechanism of Demmortal Treasure is designed in a way that the team
+        receives only 30% of the funds based on{" "}
         <a
           href="https://docs.dedogmadao.com/economic-mechanisms"
           target={"_blank"}
           className="link-inside-text"
         >
-          time schedule
+          the schedule
         </a>
         <br />
       </>,
       <>
-        Part of the money earned from the secondary market sales and yield
-        farming will also go to this treasure to refuel it.
+        Additionally, part of the money earned from the secondary market sales
+        and yield farming will go to this treasury as a refuel. Please read the
+        Litepaper for more information.
       </>,
     ],
   },
@@ -1274,9 +1276,10 @@ export const benefitsData: benefitType[] = [
     desc: [
       <>
         All NFT holders will automatically participate in our daily and weekly
-        gamified lottery.
+        gamified lottery. No extra gas fee or action needed from the holders to
+        join the lottery unless your NFT wins the lottery and you will see the
+        details in your profile.
       </>,
-      <>No extra gas fee or action needed from the holders unless they win.</>,
     ],
   },
   {
@@ -1292,12 +1295,16 @@ export const benefitsData: benefitType[] = [
     ],
   },
   {
-    title: "One click from NFT to PFP",
+    title: "Game card and PFP",
     desc: [
       <>
-        Demmortal Treasure collectigame is based on the lore‘s main characters.
-        It is also possible to generate detailed artwork PFP from your unique
-        NFT.
+        Demmortal Treasure is a collectigame established upon composed lore. The
+        lore is based on ancient classical myths. The NFTs are the result of
+        many hours of our talented artists’ artwork. The specifications of the
+        characters (NFTs) affect the result of the lottery. For further
+        information, read more about the cards in the Litepaper. As an a NFT
+        owner, one could generate detailed artwork PFP(profile photo) from your
+        unique NFT.
       </>,
     ],
   },
