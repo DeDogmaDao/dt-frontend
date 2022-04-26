@@ -12,9 +12,11 @@ const GoldenPoint: React.FC = () => {
   return (
     <motion.div className="flex flex-col justify-center items-center z-100 px-5">
       <motion.div className="flex flex-wrap justify-center gap-x-2 text-[1.75rem] font-bold">
-        {"Demmortal Treasure is more than a".split(" ").map((word, index) => {
-          return <motion.span>{word}</motion.span>;
-        })}
+        {"Demmortal Treasure is more than just a"
+          .split(" ")
+          .map((word, index) => {
+            return <motion.span>{word}</motion.span>;
+          })}
 
         <motion.div className="flex justify-between whitespace-nowrap">
           {"Collectible".split("").map((word, index) => {
@@ -31,7 +33,7 @@ const GoldenPoint: React.FC = () => {
         animate={controls}
         className="text-[1.25rem] font-extralight flex gap-x-1.5 justify-center flex-wrap"
       >
-        {"Sustainable economy empowered by Anti-Rug Protocols and a Daily Lottery with guaranteed prize. All by owning a NFT!"
+        {"It’s a sustainable economy empowered by anti-rug protocols and a daily lottery with guaranteed prizes. All by owning a NFT!"
           .split(" ")
           .map((word, index) => {
             return (
