@@ -35,7 +35,7 @@ const Team: React.FC = () => {
             return (
               <Card
                 data={member}
-                size={{ width: "300px", height: "390px" }}
+                size={{ width: "18.75rem", height: "24.375rem" }}
                 framerVariants={teamMemberAni}
                 framerCustom={index}
               />
@@ -48,7 +48,7 @@ const Team: React.FC = () => {
             return (
               <Card
                 data={member}
-                size={{ width: "300px", height: "390px" }}
+                size={{ width: "18.75rem", height: "24.375rem" }}
                 framerVariants={teamMemberAni}
                 framerCustom={index}
               />
