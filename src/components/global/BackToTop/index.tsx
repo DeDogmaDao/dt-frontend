@@ -39,17 +39,17 @@ const BackToTop: React.FC<props> = ({ containerRef }) => {
             animate="visible"
             exit="out"
             variants={backToTopAni}
-            className="group z-[200] flex flex-col justify-center items-center w-[4.6875rem] aspect-[75/84]
-       fixed right-[4.875rem] bottom-[6.375rem] hover:text-primary-500 duration-200 hover:!scale-105 active:!scale-95
-        will-change-transform"
+            className="group z-[200] flex flex-col justify-center items-center w-[4.6875rem] h-[4.6875rem] md:h-[5.25rem]
+       fixed right-[4.875rem] bottom-[6.375rem] md:hover:text-primary-500 duration-200 hover:!scale-105 active:!scale-95
+        will-change-transform rounded-full bg-primary-500 md:bg-transparent"
           >
             <span
-              className=" will-change-transform stroke-primary-500 w-[3.125rem] aspect-[5/6] fill-transparent
-        group-hover:stroke-secondary-200 duration-200"
+              className=" will-change-transform  stroke-black md:stroke-primary-500 w-[3.125rem] h-[3.125rem]  md:h-[3.75rem] fill-transparent
+        md:group-hover:stroke-secondary-200 duration-200"
             >
               <BackToTopSVG />
             </span>
-            <div className="text-sm font-normal">Back to Top</div>
+            <div className="text-sm font-normal hidden md:block">Back to Top</div>
           </motion.button>
         )}
       </AnimatePresence>
