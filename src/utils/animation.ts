@@ -462,16 +462,17 @@ export const tabInfoContainerAni: Variants = {
     opacity: [0, 0.7, 1],
     scale: [0, 0.3, 1],
     transition: {
-      duration: 0.3,
+      duration: 0.4,
       delay: 0.15,
       times: [0, 0.5, 1],
+      ease:"easeIn"
     },
   },
   out: {
     opacity: 0,
     y: 50,
     transition: {
-      duration: 0.3,
+      duration: 0.4,
     },
   },
 };

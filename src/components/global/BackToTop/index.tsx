@@ -8,7 +8,6 @@ interface props {
 const BackToTop: React.FC<props> = ({ containerRef }) => {
   const [scrollY, setScrollY] = useState(0);
   const [scrollHeight, setScrollHeight] = useState(0);
-  console.log(scrollHeight + " __ " + scrollY);
 
   useEffect(() => {
     setScrollHeight(containerRef.current!.scrollHeight - 300);
