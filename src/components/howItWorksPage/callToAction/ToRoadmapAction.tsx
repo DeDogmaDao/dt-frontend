@@ -5,6 +5,7 @@ import CallToActionSvg from "./CallToActionSvg";
 import AngleRightSVG from "../../svgs/rightangle.svg";
 import calltoactionBg from '../../images/bg/sec4.png';
 
+
 const ToRoadmapAction: React.FC = () => {
   return (
     <div className="w-full h-[30rem] sm:h-[40rem] md:h-[50rem] justify-center relative z-0">
