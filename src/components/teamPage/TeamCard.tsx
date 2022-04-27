@@ -1,8 +1,8 @@
 import Image from "next/image";
-import { globCardType, sizeType } from "../../types/allTypes";
+import { globCardType, sizeType, teamCardType } from "../../types/allTypes";
 import { motion, Variants } from "framer-motion";
 interface props {
-  data: globCardType;
+  data: teamCardType;
   size: sizeType;
   framerVariants?: Variants;
   framerCustom?: any;
@@ -38,20 +38,20 @@ const TeamCard: React.FC<props> = ({
          text-white text-base font-normal translate-y-[100%] group-hover:translate-y-0 duration-700">
            <div className="w-full relative h-full flex flex-col justify-between">
              <div className="w-full h-10 flex justify-center items-center">
-               
+
              </div>
              <p>{data.desc}</p>
              </div>
            </span>
       </span>
-        <a target={"_blank"} href={data.link} className="cursor-pointer flex flex-col justify-center items-center w-full mt-5 gap-y-2">
+        {/* <a target={"_blank"} href={data.link} className="cursor-pointer flex flex-col justify-center items-center w-full mt-5 gap-y-2"> */}
       {data.name && (
         <p className="text-medium-bold text-white  group-hover:text-primary-500 duration-500">
           {data.name}
         </p>
       )}
       {data.role && <span  className="text-small-light ">{data.role}</span>}
-      </a>
+      {/* </a> */}
     </motion.div>
   );
 };

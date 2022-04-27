@@ -8,7 +8,7 @@ export interface LinkType {
 
 export interface faqType {
   question: string;
-  answer: ReactElement<any,any>;
+  answer: ReactElement<any, any>;
 }
 
 export interface globCardType {
@@ -16,14 +16,14 @@ export interface globCardType {
   name?: string;
   role?: string;
   desc?: string;
-  link?:string;
+  link?: string;
 }
 export interface teamCardType {
   image: StaticImageData;
   name?: string;
   role?: string;
   desc?: string;
-  link?:string;
+  link?: { href: string; icon: ReactElement<any> }[];
 }
 
 export interface socialType {
@@ -115,7 +115,7 @@ export interface activeIndexCardType {
 
 export interface roadDataType {
   title: string;
-  desc: ReactElement<any,any>;
+  desc: ReactElement<any, any>;
 }
 
 export interface roadMapType {
