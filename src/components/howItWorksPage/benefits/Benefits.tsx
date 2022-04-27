@@ -44,37 +44,39 @@ const Benefits: React.FC = () => {
           />
         </span>
       </span>
-      <motion.div
-        onHoverStart={() => setIsPlaying(false)}
-        onHoverEnd={() => setIsPlaying(true)}
-        className="w-11/12 lg:w-4/12 pl-32 flex flex-col justify-center items-start gap-x-12 gap-y-14
+      <div className="flex w-9/12 mx-auto">
+        <motion.div
+          onHoverStart={() => setIsPlaying(false)}
+          onHoverEnd={() => setIsPlaying(true)}
+          className="w-1/3 flex flex-col gap-x-12 gap-y-12
       text-large-medium  lg:text-extera-large-medium z-10 mt-14 ssm:mt-24 lg:mt-32"
-      >
-        {benefitsData.map((data, index) => {
-          return (
-            <EachBenefit
-              data={data}
-              index={index}
-              setActiveIndex={setActiveIndex}
-              activeIndex={activeIndex}
-              setIsPlaying={setIsPlaying}
-            />
-          );
-        })}
-      </motion.div>
-      <div className="sm:w-11/12 lg:w-9/12 h-[32rem] ssm:h-[28rem] sm:h-[22rem] lg:h-[32rem] mt-8 ssm:mt-16 flex z-10">
-        <ul className="flex flex-col gap-y-3">
-          {activeIndex !== -1 &&
-            benefitsData[activeIndex].desc.map((item, index) => {
-              return (
-                <EachDesc
-                  setIsPlaying={setIsPlaying}
-                  descData={item}
-                  index={index}
-                />
-              );
-            })}
-        </ul>
+        >
+          {benefitsData.map((data, index) => {
+            return (
+              <EachBenefit
+                data={data}
+                index={index}
+                setActiveIndex={setActiveIndex}
+                activeIndex={activeIndex}
+                setIsPlaying={setIsPlaying}
+              />
+            );
+          })}
+        </motion.div>
+        <div className="w-2/3 h-[32rem] ssm:h-[28rem] sm:h-[22rem] lg:h-[32rem] mt-8 ssm:mt-32 flex z-10">
+          <ul className="flex flex-col gap-y-3">
+            {activeIndex !== -1 &&
+              benefitsData[activeIndex].desc.map((item, index) => {
+                return (
+                  <EachDesc
+                    setIsPlaying={setIsPlaying}
+                    descData={item}
+                    index={index}
+                  />
+                );
+              })}
+          </ul>
+        </div>
       </div>
     </div>
   );
