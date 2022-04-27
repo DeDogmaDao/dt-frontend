@@ -1285,11 +1285,12 @@ export const benefitsData: benefitType[] = [
     title: "Guaranteed floor price",
     desc: [
       <>
-        The money collected from the minting goes to the buyback treasury. This
-        will guarantee the floor price of the NFTs. Any NFT holder has the right
-        to burn their NFTs and receive their funds back. The economical
-        mechanism of Demmortal Treasure is designed in a way that the team
-        receives only 30% of the funds based on{" "}
+        The money collected from the minting goes to the{" "}
+        <span className="font-semibold">buyback treasury</span>. This will
+        guarantee the floor price of the NFTs. Any NFT holder has the right to
+        burn their NFTs and receive their funds back. The economical mechanism
+        of Demmortal Treasure is designed in a way that the team receives only
+        30% of the funds based on{" "}
         <a
           href="https://docs.dedogmadao.com/economic-mechanisms"
           target={"_blank"}
@@ -1312,8 +1313,7 @@ export const benefitsData: benefitType[] = [
       <>
         All NFT holders will automatically participate in our daily and weekly
         gamified lottery. No extra gas fee or action needed from the holders to
-        join the lottery unless your NFT wins the lottery and you will see the
-        details in your profile.
+        join the lottery unless your NFT wins the lottery.
       </>,
     ],
   },

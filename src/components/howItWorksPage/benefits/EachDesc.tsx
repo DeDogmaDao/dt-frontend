@@ -18,8 +18,7 @@ const EachDesc: React.FC<props> = ({ descData, index, setIsPlaying }) => {
       custom={index}
       className="flex"
     >
-
-      <div className="text-2xl font-normal">
+      <div className="text-2xl font-light my-1">
         {descData}
       </div>
     </motion.li>
