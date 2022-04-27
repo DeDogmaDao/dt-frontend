@@ -38,7 +38,15 @@ const TeamCard: React.FC<props> = ({
          text-white text-base font-normal translate-y-[100%] group-hover:translate-y-0 duration-700"
         >
           <div className="w-full relative h-full flex flex-col justify-between">
-            <div className="w-full h-10 flex justify-center items-center"></div>
+            <div className="w-full h-10 flex justify-center items-center">
+              {data.link?.map(item=>{
+                return (
+                  <a href={item.href} className="w-5 h-5">
+                    {item.icon}
+                  </a>
+                )
+              })}
+            </div>
             <p>{data.desc}</p>
           </div>
         </span>
