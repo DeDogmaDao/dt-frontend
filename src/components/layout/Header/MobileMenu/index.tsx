@@ -14,7 +14,7 @@ import MenuToggle from "./MenuToggle";
 import MobileMenuItem from "./MobileMenuItem";
 import { footerData } from "../../../../store/allData";
 import Link from "next/link";
-import Social from "../../Footer/Social";
+import Social from "../../../global/Social";
 
 interface props {
   headerLinks: LinkType[];
