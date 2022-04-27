@@ -91,7 +91,8 @@
   }
 
   ::selection {
-    @apply bg-primary-500;
+    text-shadow: 0px 1px 0 black;
+    @apply bg-primary-500 text-black ;
   }
 }
 
