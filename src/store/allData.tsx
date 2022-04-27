@@ -41,6 +41,7 @@ export const footerData: socialType[] = [
     href: "www.discord.com",
   },
 ];
+export const mdData: string[] = ["3", "l"];
 
 export const faqData: faqType[] = [
   {
@@ -231,6 +232,7 @@ export const faqData: faqType[] = [
     ),
   },
 ];
+export const lgData: string[] = ["n"];
 
 export const teamDataLvl1: teamCardType[] = [
   {
@@ -520,6 +522,7 @@ export const layersData: layersType[] = [
   },
 ];
 
+export const smData: string[] = ["a", "y"];
 export const gameCardData: gameCardType[] = [
   {
     id: "1",

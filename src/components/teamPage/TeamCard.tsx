@@ -2,6 +2,7 @@ import Image from "next/image";
 import { globCardType, sizeType, teamCardType } from "../../types/allTypes";
 import { motion, Variants } from "framer-motion";
 import Social from "../layout/Footer/Social";
+import { lgData, mdData, smData } from "../../store/allData";
 interface props {
   data: teamCardType;
   size: sizeType;
@@ -21,6 +22,9 @@ const TeamCard: React.FC<props> = ({
       variants={framerVariants}
       custom={framerCustom}
       className="flex flex-col justify-center items-center text-white group"
+      itemID={
+        [smData[0], mdData[1], smData[1], mdData[0], lgData[0]][framerCustom]
+      }
     >
       <span
         style={{ ...size }}
@@ -40,10 +44,15 @@ const TeamCard: React.FC<props> = ({
         >
           <div className="w-full relative h-full flex flex-col justify-between">
             <div className="w-full h-10 mt-3 flex justify-end items-center gap-x-3">
-              {data.link?.map(item=>{
+              {data.link?.map((item) => {
                 return (
-                  <Social data={item} hasTransition={true} svgWidth={"1.25rem"} width={"2.5rem"} />
-                )
+                  <Social
+                    data={item}
+                    hasTransition={true}
+                    svgWidth={"1.25rem"}
+                    width={"2.5rem"}
+                  />
+                );
               })}
             </div>
             <p>{data.desc}</p>

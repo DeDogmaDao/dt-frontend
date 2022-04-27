@@ -9,7 +9,7 @@ interface props {
   setActiveIndexCard: Dispatch<SetStateAction<activeIndexCardType>>;
   activeIndexCard: activeIndexCardType;
   index: number;
-  dataQuantity:number;
+  dataQuantity: number;
 }
 const EachTab: React.FC<props> = ({
   group,
@@ -17,14 +17,17 @@ const EachTab: React.FC<props> = ({
   activeIndexCard,
   setActiveIndexCard,
   index,
-  dataQuantity
+  dataQuantity,
 }) => {
   const clickHandler = () => {
     if (index > activeIndexCard[group][1]) {
       for (let i = activeIndexCard[group][1], j = 0; i < index; i++, j++) {
         setTimeout(() => {
           setActiveIndexCard((prevState) => {
-            return {...prevState, [group]: cardIndexHandler(prevState[group][1]+1,dataQuantity)}
+            return {
+              ...prevState,
+              [group]: cardIndexHandler(prevState[group][1] + 1, dataQuantity),
+            };
           });
         }, 100 * j);
       }
@@ -33,7 +36,10 @@ const EachTab: React.FC<props> = ({
       for (let i = activeIndexCard[group][1], j = 0; i > index; i--, j++) {
         setTimeout(() => {
           setActiveIndexCard((prevState) => {
-            return {...prevState, [group]: cardIndexHandler(prevState[group][1]-1,dataQuantity)}
+            return {
+              ...prevState,
+              [group]: cardIndexHandler(prevState[group][1] - 1, dataQuantity),
+            };
           });
         }, 100 * j);
       }

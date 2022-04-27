@@ -34,12 +34,12 @@ const Hero: React.FC = () => {
         width: heroContainerRef.current!.offsetWidth,
         height: heroContainerRef.current!.offsetHeight,
       });
-    }
-    window.addEventListener("resize",resizeHandlerDim);
+    };
+    window.addEventListener("resize", resizeHandlerDim);
 
     return () => {
-      window.removeEventListener("resize", resizeHandlerDim)
-    }
+      window.removeEventListener("resize", resizeHandlerDim);
+    };
   }, []);
   const uaParser = new UAParser();
   const [anim, setAnim] = useState("hidden");
@@ -66,7 +66,7 @@ const Hero: React.FC = () => {
     const fisaghores =
       Math.pow(event.pageX - dimension.width / 2, 2) +
       Math.pow(event.pageY - dimension.height / 2, 2);
-    maskOpacity.set(Math.sqrt(fisaghores) / (dimension.width / 1.1) -0.1);
+    maskOpacity.set(Math.sqrt(fisaghores) / (dimension.width / 1.1) - 0.1);
   };
   const touchMoveHandler = (event: TouchEvent) => {
     xCord.set(event.touches[0].pageX);
@@ -96,8 +96,10 @@ const Hero: React.FC = () => {
         w-[100vw] h-[157.55vw] sm:h-[84.375vw] md:h-[84.375vw]  lg:h-[56.25vw] mx-auto overflow-hidden hero-container"
     >
       <div className="portal-and-flame-and-hero w-full h-full relative z-20 ">
-      <div className="absolute bottom-0 left-0 w-full h-[3rem] sm:h-[10rem]
-       bg-gradient-to-t from-bodymain  to-transparent z-[110] pointer-events-none" />
+        <div
+          className="absolute bottom-0 left-0 w-full h-[3rem] sm:h-[10rem]
+       bg-gradient-to-t from-bodymain  to-transparent z-[110] pointer-events-none"
+        />
         <motion.div
           initial="hidden"
           animate={anim}

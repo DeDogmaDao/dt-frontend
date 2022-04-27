@@ -1,10 +1,8 @@
-
 import Image from "next/image";
 import Link from "next/link";
 import CallToActionSvg from "./CallToActionSvg";
 import AngleRightSVG from "../../svgs/rightangle.svg";
-import calltoactionBg from '../../images/bg/sec4.png';
-
+import calltoactionBg from "../../images/bg/sec4.png";
 
 const ToRoadmapAction: React.FC = () => {
   return (
@@ -13,7 +11,12 @@ const ToRoadmapAction: React.FC = () => {
       <div className="absolute bottom-0 left-0 w-full h-[7.5rem] bg-gradient-to-t from-bodymain to-transparent z-[1]" />
       <span className="absolute w-full h-full sm:aspect-[1440/768]">
         <span className="w-full h-full inner-image-no-max-width">
-          <Image src={calltoactionBg} layout="fill" quality={100} placeholder="blur"  />
+          <Image
+            src={calltoactionBg}
+            layout="fill"
+            quality={100}
+            placeholder="blur"
+          />
         </span>
       </span>
       <div className="flex flex-col justify-start items-center z-10 absolute top-0 left-0 w-full h-full">
@@ -30,14 +33,14 @@ const ToRoadmapAction: React.FC = () => {
             <CallToActionSvg />
           </div>
           <Link href={"/roadmap"} scroll={false}>
-            <button className="px-5 py-3 mt-11 bg-primary-500 hover:bg-primary-900/80 
+            <button
+              className="px-5 py-3 mt-11 bg-primary-500 hover:bg-primary-900/80 
             text-neutral-900 hover:text-neutral-50 rounded-full text-small-bold flex gap-x-2 
-            duration-500 border-2 border-transparent hover:border-primary-500 stroke-black hover:stroke-white">
+            duration-500 border-2 border-transparent hover:border-primary-500 stroke-black hover:stroke-white"
+            >
               <span>Roadmap Document</span>
               <span className="animate-bounceX w-2 aspect-[10/17] mt-1">
-                <AngleRightSVG
-                  fill="none"
-                />
+                <AngleRightSVG fill="none" />
               </span>
             </button>
           </Link>

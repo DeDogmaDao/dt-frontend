@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Dispatch, SetStateAction, useEffect } from "react";
-import portal from '../../images/art/portal.png';
-import middlePortal from '../../images/art/middle-portal.png';
+import portal from "../../images/art/portal.png";
+import middlePortal from "../../images/art/middle-portal.png";
 interface props {
   setPortalLoading: Dispatch<SetStateAction<number>>;
   portalLoading: number;
@@ -59,9 +59,7 @@ const Portal: React.FC<props> = ({
         onTap={() => setAnim("hidden")}
       >
         <Image
-          onLoadingComplete={() =>
-            setPortalLoading((prevState) => 3)
-          }
+          onLoadingComplete={() => setPortalLoading((prevState) => 3)}
           src={portal}
           layout="fill"
           priority={true}
@@ -74,9 +72,7 @@ const Portal: React.FC<props> = ({
         onTap={() => setAnim("hidden")}
       >
         <Image
-          onLoadingComplete={() =>
-            setPortalLoading((prevState) => 3)
-          }
+          onLoadingComplete={() => setPortalLoading((prevState) => 3)}
           src={middlePortal}
           layout="fill"
           priority={true}

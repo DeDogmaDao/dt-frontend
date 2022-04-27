@@ -4,7 +4,7 @@ import PauseSVG from "../../svgs/pause.svg";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { videoBtnAnim } from "../../../utils/animation";
-import introBg from '../../images/bg/sec2.png';
+import introBg from "../../images/bg/sec2.png";
 
 const InteroVideo: React.FC = () => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -42,7 +42,7 @@ const InteroVideo: React.FC = () => {
 
   return (
     <div className="w-full aspect-[16/13] sm:aspect-video flex justify-center items-center relative">
-            <div className="absolute top-0 left-0 w-full h-[7.5rem] bg-gradient-to-b from-bodymain via-transparent to-transparent z-[1]" />
+      <div className="absolute top-0 left-0 w-full h-[7.5rem] bg-gradient-to-b from-bodymain via-transparent to-transparent z-[1]" />
       <div className="absolute bottom-0 left-0 w-full h-[7.5rem] bg-gradient-to-t from-bodymain via-transparent to-transparent z-[1]" />
       <span className="w-full  absolute h-full lg:aspect-[1382/814]">
         <span className="w-full h-full inner-image-no-max-width">
@@ -93,14 +93,19 @@ const InteroVideo: React.FC = () => {
           >
             <span className="w-[26px] h-[6px] bg-primary-500" />
             <span className="text-[2.5rem] font-bold whitespace-nowrap">
-            Odyssey of the <span className="text-primary-500">Titan’s treasure</span>
+              Odyssey of the{" "}
+              <span className="text-primary-500">Titan’s treasure</span>
             </span>
             <span className="text-xl font-light text-center md:px-10">
-            Olympians, Titans and mortals- united in search of fortune. Watch to see how it all came to be
+              Olympians, Titans and mortals- united in search of fortune. Watch
+              to see how it all came to be
             </span>
           </motion.div>
         )}
-        <img src='/img/video/border.png' className="aspect-[16/9] w-[58.3rem] pl-px absolute" />
+        <img
+          src="/img/video/border.png"
+          className="aspect-[16/9] w-[58.3rem] pl-px absolute"
+        />
         <motion.video
           onTap={() => setIsTapped((prevState) => prevState + 1)}
           onPause={() => setIsPlaying(false)}
