@@ -1311,18 +1311,22 @@ export const benefitsData: benefitType[] = [
     title: "Auto-join lottery",
     desc: [
       <>
-        All NFT holders will automatically participate in our daily and weekly
-        gamified lottery. No extra gas fee or action needed from the holders to
-        join the lottery unless your NFT wins the lottery.
+        All NFT holders will automatically participate in our{" "}
+        <span className="font-semibold">daily and weekly</span> gamified{" "}
+        <span className="font-semibold">lottery</span>.
+      </>,
+      <>
+        <span className="font-semibold">No extra gas fee</span> or action needed
+        from the holders to join the lottery unless your NFT wins the lottery.
       </>,
     ],
   },
   {
     title: "Diverse pool prizes",
     desc: [
-      <>Currently, There are two types of prizes in each game.</>,
-      <>Dynamic prize based on secondary sales (main prize).</>,
-      <>Guaranteed prize based on yield farming of investment treasury.</>,
+      <>Currently, There are two types of prizes in each game:</>,
+      <p className="ml-10">1-Dynamic prize based on secondary sales (main prize).</p>,
+      <p className="ml-10">2-Guaranteed prize based on yield farming of investment treasury.</p>,
       <>
         Note: The investment treasury is a self-growing pool which can only grow
         bigger and guarantees a minimum prize.

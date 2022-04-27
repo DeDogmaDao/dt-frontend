@@ -64,7 +64,7 @@ const Benefits: React.FC = () => {
           })}
         </motion.div>
         <div className="w-2/3 h-[32rem] ssm:h-[28rem] sm:h-[22rem] lg:h-[32rem] mt-8 ssm:mt-32 flex z-10">
-          <ul className="flex flex-col gap-y-3">
+          <ul className="flex flex-col gap-y-3 mt-1.5">
             {activeIndex !== -1 &&
               benefitsData[activeIndex].desc.map((item, index) => {
                 return (
