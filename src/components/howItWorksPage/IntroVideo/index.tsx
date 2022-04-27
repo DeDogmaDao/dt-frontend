@@ -13,7 +13,7 @@ const InteroVideo: React.FC = () => {
   const videoClickHandler = () => {
     if (once === false) {
       setOnce(true);
-      videoRef.current!.src = videoRef.current!.src + "?autoplay=1?muted=1";
+      videoRef.current!.src = videoRef.current!.src + "?autoplay=1";
     }
   };
 
