@@ -245,14 +245,24 @@ export const teamDataLvl1: teamCardType[] = [
     role: "Blockchain Engineer",
     image: teamImg[1],
     desc: "Mehdi Salehi is a Master’s Student at Concordia University in Montreal, Canada. He mainly researches blockchain technologies and decentralized finance. He is an independent smart contract auditor, auditing several DeFi projects. He also contributed to the Meta Governance project and EIP-4824.",
-    link: [{ href: "https://www.linkedin.com/in/mehdi-salehi-b16873158/", icon: <Linkedin /> }],
+    link: [
+      {
+        href: "https://www.linkedin.com/in/mehdi-salehi-b16873158/",
+        icon: <Linkedin />,
+      },
+    ],
   },
   {
     name: "Sara",
     role: "Co-founder and Product Manager",
     image: teamImg[2],
     desc: "Sara has a technical background in entertainment and fintech industry worked in companies like Spotify and iZettle. She is a true believer in Ethereum and blockchain. She has been active in this field for a couple of years now and wants to continue to have a bigger impact in this industry by building more innovative solutions.",
-    link: [{ href: "https://www.linkedin.com/in/sara-rabiee-17711260/", icon: <Linkedin /> }],
+    link: [
+      {
+        href: "https://www.linkedin.com/in/sara-rabiee-17711260/",
+        icon: <Linkedin />,
+      },
+    ],
   },
 ];
 
@@ -263,28 +273,31 @@ export const teamDataLvl2: teamCardType[] = [
     image: teamImg[3],
     desc: "George has many years of experience in backend engineering. He has worked in companies like Spotify and successful startups like Soundwave.",
     link: [
-      { href: "https://www.linkedin.com/in/george-boyle-845b38b8/", icon: <Linkedin /> },
+      {
+        href: "https://www.linkedin.com/in/george-boyle-845b38b8/",
+        icon: <Linkedin />,
+      },
       { href: "https://github.com/Dockheas23", icon: <Github /> },
-  ],
-},
-{
-  name: "Floki BB",
-  role: "Co-founder and Blockchain Engineer",
-  image: teamImg[4],
-  desc: "Floki BB is a software engineer and has been in the Blockchain filed since 2016. He has worked as a Blockchain integration engineer and have been involved in the Ethereum ecosystem since 2018. An example of his remarkable work is contributing to solidity language compiler and work as DAPP engineer in couple other projects.",
-  link: [
-    { href: "https://twitter.com/FlokiTheBB", icon: <Twitter /> },
-    { href: "https://github.com/FlokiBB", icon: <Github /> },
-  ],
-},
-{
-  name: "Katy",
-  role: "Master of lore and communications",
-  image: teamImg[5],
-  desc: "Katy is a linguistics enthusiast and lover of all things literature. By day, she teaches English as a foreign language and by night she spends her time building lightsabers, writing, dreaming and ever expanding her hobbies. She enjoys the company of like-minded people and bringing these people together. Inspired by web3 culture. Community building and support lies at the core of what she does at DeDogmaDao.",
-  link: [
-    { href: "https://www.instagram.com/katythemaker/", icon: <Instagram /> },
-  ],
+    ],
+  },
+  {
+    name: "Floki BB",
+    role: "Co-founder and Blockchain Engineer",
+    image: teamImg[4],
+    desc: "Floki BB is a software engineer and has been in the Blockchain filed since 2016. He has worked as a Blockchain integration engineer and have been involved in the Ethereum ecosystem since 2018. An example of his remarkable work is contributing to solidity language compiler and work as DAPP engineer in couple other projects.",
+    link: [
+      { href: "https://twitter.com/FlokiTheBB", icon: <Twitter /> },
+      { href: "https://github.com/FlokiBB", icon: <Github /> },
+    ],
+  },
+  {
+    name: "Katy",
+    role: "Master of lore and communications",
+    image: teamImg[5],
+    desc: "Katy is a linguistics enthusiast and lover of all things literature. By day, she teaches English as a foreign language and by night she spends her time building lightsabers, writing, dreaming and ever expanding her hobbies. She enjoys the company of like-minded people and bringing these people together. Inspired by web3 culture. Community building and support lies at the core of what she does at DeDogmaDao.",
+    link: [
+      { href: "https://www.instagram.com/katythemaker/", icon: <Instagram /> },
+    ],
   },
   {
     name: "Sofia",
