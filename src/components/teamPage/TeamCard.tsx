@@ -34,8 +34,15 @@ const TeamCard: React.FC<props> = ({
           
         />
         <span className="w-full h-full absolute bottom-0 left-0 bg-gradient-to-t from-cyan-900 via-cyan-900/80
-         to to-cyan-900/10 pt-[30%] pb-5 px-4 flex justify-center items-end
-         text-white text-base font-normal translate-y-[100%] group-hover:translate-y-0 duration-700">{data.desc}</span>
+         to to-cyan-900/10  pb-5 px-4 flex justify-center items-end
+         text-white text-base font-normal translate-y-[100%] group-hover:translate-y-0 duration-700">
+           <div className="w-full relative h-full flex flex-col justify-between">
+             <div className="w-full h-10 flex justify-center items-center">
+               
+             </div>
+             <p>{data.desc}</p>
+             </div>
+           </span>
       </span>
         <a target={"_blank"} href={data.link} className="cursor-pointer flex flex-col justify-center items-center w-full mt-5 gap-y-2">
       {data.name && (

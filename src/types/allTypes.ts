@@ -18,6 +18,13 @@ export interface globCardType {
   desc?: string;
   link?:string;
 }
+export interface teamCardType {
+  image: StaticImageData;
+  name?: string;
+  role?: string;
+  desc?: string;
+  link?:string;
+}
 
 export interface socialType {
   icon: ReactElement<any>;
