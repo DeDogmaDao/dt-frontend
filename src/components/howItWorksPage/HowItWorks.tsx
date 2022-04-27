@@ -13,7 +13,7 @@ const HowItWorks: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   return (
     <motion.div
-    ref={containerRef}
+      ref={containerRef}
       initial="hidden"
       animate="visible"
       exit="out"

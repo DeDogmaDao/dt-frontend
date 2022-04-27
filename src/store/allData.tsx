@@ -12,6 +12,7 @@ import {
   roadDataType,
   benefitType,
   metaType,
+  teamCardType,
 } from "../types/allTypes";
 
 //
@@ -21,6 +22,10 @@ import {
 import DiscordSVG from "../components/svgs/discord.svg";
 import YoutubeSVG from "../components/svgs/youtube.svg";
 import Twitter from "../components/svgs/twitter.svg";
+import Github from "../components/svgs/github.svg";
+import Instagram from "../components/svgs/instagram.svg";
+import Linkedin from "../components/svgs/linkedin.svg";
+
 import { teamImg } from "./img";
 export const footerData: socialType[] = [
   {
@@ -36,6 +41,7 @@ export const footerData: socialType[] = [
     href: "www.discord.com",
   },
 ];
+export const mdData: string[] = ["3", "l"];
 
 export const faqData: faqType[] = [
   {
@@ -226,46 +232,74 @@ export const faqData: faqType[] = [
     ),
   },
 ];
+export const lgData: string[] = ["n"];
 
-export const teamDataLvl1: globCardType[] = [
+export const teamDataLvl1: teamCardType[] = [
   {
     name: "Decentral Titan",
     role: "Main founder and investor",
     image: teamImg[0],
     desc: "Believer in Decentral Dogma. Explorer of the first titans treasure. Full time defi user and researcher for more than 4 years. NFT market addicted.",
+    link: [{ href: "https://twitter.com/DecentralTitan", icon: <Twitter /> }],
   },
   {
     name: "Meti.eth",
     role: "Blockchain Engineer",
     image: teamImg[1],
     desc: "Mehdi Salehi is a Master’s Student at Concordia University in Montreal, Canada. He mainly researches blockchain technologies and decentralized finance. He is an independent smart contract auditor, auditing several DeFi projects. He also contributed to the Meta Governance project and EIP-4824.",
+    link: [
+      {
+        href: "https://www.linkedin.com/in/mehdi-salehi-b16873158/",
+        icon: <Linkedin />,
+      },
+    ],
   },
   {
     name: "Sara",
     role: "Co-founder and Product Manager",
     image: teamImg[2],
     desc: "Sara has a technical background in entertainment and fintech industry worked in companies like Spotify and iZettle. She is a true believer in Ethereum and blockchain. She has been active in this field for a couple of years now and wants to continue to have a bigger impact in this industry by building more innovative solutions.",
+    link: [
+      {
+        href: "https://www.linkedin.com/in/sara-rabiee-17711260/",
+        icon: <Linkedin />,
+      },
+    ],
   },
 ];
 
-export const teamDataLvl2: globCardType[] = [
+export const teamDataLvl2: teamCardType[] = [
   {
     name: "George",
     role: "Backend  Adviser",
     image: teamImg[3],
     desc: "George has many years of experience in backend engineering. He has worked in companies like Spotify and successful startups like Soundwave.",
+    link: [
+      {
+        href: "https://www.linkedin.com/in/george-boyle-845b38b8/",
+        icon: <Linkedin />,
+      },
+      { href: "https://github.com/Dockheas23", icon: <Github /> },
+    ],
   },
   {
     name: "Floki BB",
     role: "Co-founder and Blockchain Engineer",
     image: teamImg[4],
     desc: "Floki BB is a software engineer and has been in the Blockchain filed since 2016. He has worked as a Blockchain integration engineer and have been involved in the Ethereum ecosystem since 2018. An example of his remarkable work is contributing to solidity language compiler and work as DAPP engineer in couple other projects.",
+    link: [
+      { href: "https://twitter.com/FlokiTheBB", icon: <Twitter /> },
+      { href: "https://github.com/FlokiBB/", icon: <Github /> },
+    ],
   },
   {
     name: "Katy",
     role: "Master of lore and communications",
     image: teamImg[5],
     desc: "Katy is a linguistics enthusiast and lover of all things literature. By day, she teaches English as a foreign language and by night she spends her time building lightsabers, writing, dreaming and ever expanding her hobbies. She enjoys the company of like-minded people and bringing these people together. Inspired by web3 culture. Community building and support lies at the core of what she does at DeDogmaDao.",
+    link: [
+      { href: "https://www.instagram.com/katythemaker", icon: <Instagram /> },
+    ],
   },
   {
     name: "Sofia",
@@ -488,6 +522,7 @@ export const layersData: layersType[] = [
   },
 ];
 
+export const smData: string[] = ["a", "y"];
 export const gameCardData: gameCardType[] = [
   {
     id: "1",

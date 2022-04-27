@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Dispatch, SetStateAction } from "react";
-import treasure from '../../images/logo/treasure.png';
+import treasure from "../../images/logo/treasure.png";
 interface props {
   setAnim: Dispatch<SetStateAction<string>>;
   portalLoading: number;

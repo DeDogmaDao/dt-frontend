@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import {
   callToActionSvgAni,
@@ -7,7 +6,10 @@ import {
 
 const CallToActionSvg: React.FC = () => {
   return (
-    <motion.div className="relative" style={{ width: "17.125rem", height: "7.125rem" }}>
+    <motion.div
+      className="relative"
+      style={{ width: "17.125rem", height: "7.125rem" }}
+    >
       <motion.svg
         xmlns="http://www.w3.org/2000/svg"
         width="current"

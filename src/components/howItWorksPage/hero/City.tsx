@@ -1,8 +1,8 @@
 import { motion, MotionValue } from "framer-motion";
 import Image from "next/image";
 import { cityAnim } from "../../../utils/animation";
-import city from '../../images/art/city.png';
-import mask from '../../images/art/mask.png';
+import city from "../../images/art/city.png";
+import mask from "../../images/art/mask.png";
 interface props {
   springX: MotionValue;
   springY: MotionValue;

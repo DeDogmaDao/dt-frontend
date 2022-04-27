@@ -14,7 +14,7 @@ const EachBenefit: React.FC<props> = ({
   index,
   activeIndex,
   setActiveIndex,
-  setIsPlaying
+  setIsPlaying,
 }) => {
   const benefitBtnClickHandler = () => {
     setActiveIndex((prevState) => {
@@ -35,11 +35,9 @@ const EachBenefit: React.FC<props> = ({
 
   return (
     <motion.button
-    onTap={()=>setIsPlaying(false)}
+      onTap={() => setIsPlaying(false)}
       className={`h-12 flex flex-col justify-center items-start relative duration-500 ml-6 ssm:ml-0 font-semibold  ${
-        activeIndex === index
-          ? " text-white"
-          : "text-neutral-50/30 "
+        activeIndex === index ? " text-white" : "text-neutral-50/30 "
       }`}
       onClick={benefitBtnClickHandler}
     >

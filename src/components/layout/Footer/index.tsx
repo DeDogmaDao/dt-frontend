@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { footerData } from "../../../store/allData";
-import Social from "./Social";
+import Social from "../../global/Social";
 import treasure from '../../images/logo/treasure.png';
 const Footer: React.FC = () => {
   return (
