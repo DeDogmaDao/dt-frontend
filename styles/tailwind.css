@@ -90,6 +90,9 @@
     display: none;
   }
 
+  ::selection {
+    @apply bg-primary-500;
+  }
 }
 
 @layer components {
