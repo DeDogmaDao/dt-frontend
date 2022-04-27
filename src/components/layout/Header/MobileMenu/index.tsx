@@ -66,7 +66,7 @@ const MobileMenu: React.FC<props> = ({ headerLinks }) => {
           })}
         </motion.ul>
         <motion.p variants={menuCopyRightAni} className="text-[.625rem]">
-          &copy; COPYWRITES 2022 DDD. ALL RIGHTS RESERVED
+          &copy; COPYRIGHT 2022 DDD. ALL RIGHTS RESERVED
         </motion.p>
       </motion.div>
     </motion.nav>
