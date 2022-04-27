@@ -12,7 +12,7 @@ const InteroVideo: React.FC = () => {
   const [isTapped, setIsTapped] = useState(0);
   const [showBtn, setShowBtn] = useState(true);
   const [once, setOnce] = useState(false);
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const videoRef = useRef<HTMLIFrameElement>(null);
   const videoClickHandler = () => {
     if (once === false) {
       setOnce(true);
@@ -20,25 +20,25 @@ const InteroVideo: React.FC = () => {
     setIsPlaying((prevState) => !prevState);
   };
 
-  useEffect(() => {
-    if (isPlaying === false) {
-      videoRef.current!.pause();
-    } else {
-      videoRef.current!.play();
-    }
-    setShowBtn(true);
-  }, [isPlaying]);
+  // useEffect(() => {
+  //   if (isPlaying === false) {
+  //     videoRef.current!.pause();
+  //   } else {
+  //     videoRef.current!.play();
+  //   }
+  //   setShowBtn(true);
+  // }, [isPlaying]);
 
-  useEffect(() => {
-    setIsHovering(true);
-    const btnTimeOut = setTimeout(() => {
-      setIsHovering(false);
-    }, 2000);
+  // useEffect(() => {
+  //   setIsHovering(true);
+  //   const btnTimeOut = setTimeout(() => {
+  //     setIsHovering(false);
+  //   }, 2000);
 
-    return () => {
-      clearTimeout(btnTimeOut);
-    };
-  }, [isTapped]);
+  //   return () => {
+  //     clearTimeout(btnTimeOut);
+  //   };
+  // }, [isTapped]);
 
   return (
     <div className="w-full aspect-[16/13] sm:aspect-video flex justify-center items-center relative">
@@ -51,40 +51,19 @@ const InteroVideo: React.FC = () => {
       </span>
       <motion.div
         className="aspect-video w-[90%] sm:w-[70%] rounded-[30px] z-10 mt-[-0%] flex justify-center items-center
-      relative cursor-pointer"
+      relative cursor-pointer bg-red-50/40 overflow-hidden"
+      onClick={()=>{videoRef.current!.src="https://www.youtube.com/embed/sP13ARp0jTA?autoplay=1"}}
       >
-        <AnimatePresence>
-          {!isPlaying && (
-            <motion.span
-              initial="hidden"
-              animate="visible"
-              exit="out"
-              variants={videoBtnAnim}
-              onClick={videoClickHandler}
-              onTap={() => setIsTapped((prevState) => prevState + 1)}
-              onMouseEnter={() => setIsHovering(true)}
-              className="z-20 absolute w-[3rem] md:w-[5.625rem] aspect-square p-2 md:p-6 rounded-full bg-white/20 fill-white
-          hover:scale-125 hover:fill-primary-500 duration-150 ease-out"
-            >
-              <PlaySVG />
-            </motion.span>
-          )}
-          {isPlaying && iseHovering && (
-            <motion.span
-              initial="hidden"
-              animate="visible"
-              exit="out"
-              variants={videoBtnAnim}
-              onClick={videoClickHandler}
-              onTap={() => setIsTapped((prevState) => prevState + 1)}
-              onMouseEnter={() => setIsHovering(true)}
-              className="z-20 absolute w-[5.625rem] aspect-square p-6 rounded-full bg-white/20 fill-white
-          hover:scale-125 hover:fill-primary-500 duration-150 ease-out opacity-50 hover:opacity-100"
-            >
-              <PauseSVG />
-            </motion.span>
-          )}
-        </AnimatePresence>
+      <iframe
+      className="w-full h-full"
+      ref={videoRef}
+      loading="lazy"
+      src={``}
+      frameBorder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowFullScreen
+      title="Demmortal Treasure dedogmadao"
+    />
         {!once && (
           <motion.div
             onTap={() => setIsTapped((prevState) => prevState + 1)}
@@ -104,22 +83,8 @@ const InteroVideo: React.FC = () => {
         )}
         <img
           src="/img/video/border.png"
-          className="aspect-[16/9] w-[58.3rem] pl-px absolute"
+          className="w-full aspect-video pl-px absolute"
         />
-        <motion.video
-          onTap={() => setIsTapped((prevState) => prevState + 1)}
-          onPause={() => setIsPlaying(false)}
-          onPlay={() => setIsPlaying(true)}
-          onClick={videoClickHandler}
-          onMouseEnter={() => setIsHovering(true)}
-          onMouseLeave={() => setIsHovering(false)}
-          ref={videoRef}
-          controls={once}
-          poster="/img/bg/Story.png"
-          className="aspect-video w-[58.125rem] rounded-[1.9vw] z-10 object-cover"
-        >
-          <source src={"/img/video/intro.mp4"} type="video/mp4" />
-        </motion.video>
       </motion.div>
     </div>
   );
