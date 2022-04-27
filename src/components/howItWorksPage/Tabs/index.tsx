@@ -8,7 +8,7 @@ import EachGroup from "./EachGroup";
 import EachTab from "./EachTab";
 import Slider from "./Slider";
 import TabInfo from "./TabInfo";
-import tabBg from '../../images/bg/sec3.png';
+import tabBg from "../../images/bg/sec3.png";
 
 const Tabs: React.FC = () => {
   const [tabs, setTabs] = useState(allTabs);
@@ -24,7 +24,7 @@ const Tabs: React.FC = () => {
       className="flex flex-col justify-between items-center h-full w-full relative z-100"
       id="cards"
     >
-            <div className="absolute top-0 left-0 w-full h-[7.5rem] bg-gradient-to-b from-bodymain to-transparent z-[1]" />
+      <div className="absolute top-0 left-0 w-full h-[7.5rem] bg-gradient-to-b from-bodymain to-transparent z-[1]" />
       <div className="absolute bottom-0 left-0 w-full h-[7.5rem] bg-gradient-to-t from-bodymain to-transparent z-[1]" />
       <span className="absolute h-full aspect-[1440/1017]">
         <span className="w-full h-full inner-image-no-max-width">
@@ -117,19 +117,18 @@ const Tabs: React.FC = () => {
         if (!tab.activeGroup) return null;
         return (
           <div className="relative w-full h-[34.375rem] sm:h-[21.875rem] md:h-[18.75rem] lg:h-[15.625rem] flex justify-center items-start mt-0">
-            
-              {tab.tabInfo.map((data, index) => {
-                return (
-                  <TabInfo
-                    name={data.name}
-                    titleOfHonor={data.titleOfHonor}
-                    desc={data.desc}
-                    index={index}
-                    activeIndexCard={activeIndexCard}
-                    tabGroup={tab.tabGroup}
-                  />
-                );
-              })}
+            {tab.tabInfo.map((data, index) => {
+              return (
+                <TabInfo
+                  name={data.name}
+                  titleOfHonor={data.titleOfHonor}
+                  desc={data.desc}
+                  index={index}
+                  activeIndexCard={activeIndexCard}
+                  tabGroup={tab.tabGroup}
+                />
+              );
+            })}
           </div>
         );
       })}

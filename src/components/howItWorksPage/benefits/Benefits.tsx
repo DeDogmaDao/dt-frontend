@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { benefitsData } from "../../../store/allData";
 import EachBenefit from "./EachBenefit";
 import EachDesc from "./EachDesc";
-import benefitBg from '../../images/bg/sec1.png'
+import benefitBg from "../../images/bg/sec1.png";
 
 const Benefits: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -32,11 +32,16 @@ const Benefits: React.FC = () => {
       className="flex flex-col justify-start items-center h-full relative z-0"
       id="benefits"
     >
-            <div className="absolute top-0 left-0 w-full h-[7.5rem] bg-gradient-to-b from-bodymain to-transparent z-[1]" />
+      <div className="absolute top-0 left-0 w-full h-[7.5rem] bg-gradient-to-b from-bodymain to-transparent z-[1]" />
       <div className="absolute bottom-0 left-0 w-full h-[7.5rem] bg-gradient-to-t from-bodymain to-transparent z-[1]" />
       <span className="absolute h-full aspect-[1438/586]">
         <span className="w-full h-full inner-image-no-max-width">
-          <Image src={benefitBg} layout="fill" quality={100} placeholder="blur"  />
+          <Image
+            src={benefitBg}
+            layout="fill"
+            quality={100}
+            placeholder="blur"
+          />
         </span>
       </span>
       <motion.div

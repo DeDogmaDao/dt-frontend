@@ -30,7 +30,10 @@ const Card: React.FC<props> = ({
       e.preventDefault();
       return false;
     }
-    setActiveIndexCard((prevState) => ({ ...prevState, [tabGroup]: cardIndexHandler(index,tabInfo.length) }));
+    setActiveIndexCard((prevState) => ({
+      ...prevState,
+      [tabGroup]: cardIndexHandler(index, tabInfo.length),
+    }));
   };
 
   const cardPlace = cardPlaceDetector(activeIndexCard[tabGroup], index);
