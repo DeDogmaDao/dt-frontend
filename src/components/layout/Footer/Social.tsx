@@ -31,7 +31,7 @@ const Social: React.FC<props> = ({ data,svgWidth,width, hasTransition }) => {
               exit="hidden"
               variants={socialAni}
               style={{width}}
-              className=" rounded-full absolute left-0 top-0 z-0 bg-primary-500 aspect-square"
+              className="rounded-full absolute left-0 top-0 z-0 bg-primary-500 aspect-square"
             ></motion.div>
           )}
         </AnimatePresence>

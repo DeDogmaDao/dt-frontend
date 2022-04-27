@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { globCardType, sizeType, teamCardType } from "../../types/allTypes";
 import { motion, Variants } from "framer-motion";
+import Social from "../layout/Footer/Social";
 interface props {
   data: teamCardType;
   size: sizeType;
@@ -38,12 +39,10 @@ const TeamCard: React.FC<props> = ({
          text-white text-base font-normal translate-y-[100%] group-hover:translate-y-0 duration-700"
         >
           <div className="w-full relative h-full flex flex-col justify-between">
-            <div className="w-full h-10 flex justify-center items-center">
+            <div className="w-full h-10 mt-3 flex justify-center items-center gap-x-3">
               {data.link?.map(item=>{
                 return (
-                  <a href={item.href} className="w-5 h-5">
-                    {item.icon}
-                  </a>
+                  <Social data={item} hasTransition={true} svgWidth={"1.25rem"} width={"2.5rem"} />
                 )
               })}
             </div>

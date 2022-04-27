@@ -23,7 +23,7 @@ export interface teamCardType {
   name?: string;
   role?: string;
   desc?: string;
-  link?: { href: string; icon: ReactElement<any> }[];
+  link?: socialType[];
 }
 
 export interface socialType {

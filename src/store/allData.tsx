@@ -287,7 +287,7 @@ export const teamDataLvl2: teamCardType[] = [
     desc: "Floki BB is a software engineer and has been in the Blockchain filed since 2016. He has worked as a Blockchain integration engineer and have been involved in the Ethereum ecosystem since 2018. An example of his remarkable work is contributing to solidity language compiler and work as DAPP engineer in couple other projects.",
     link: [
       { href: "https://twitter.com/FlokiTheBB", icon: <Twitter /> },
-      { href: "https://github.com/FlokiBB", icon: <Github /> },
+      { href: "https://github.com/FlokiBB/", icon: <Github /> },
     ],
   },
   {
@@ -296,7 +296,7 @@ export const teamDataLvl2: teamCardType[] = [
     image: teamImg[5],
     desc: "Katy is a linguistics enthusiast and lover of all things literature. By day, she teaches English as a foreign language and by night she spends her time building lightsabers, writing, dreaming and ever expanding her hobbies. She enjoys the company of like-minded people and bringing these people together. Inspired by web3 culture. Community building and support lies at the core of what she does at DeDogmaDao.",
     link: [
-      { href: "https://www.instagram.com/katythemaker/", icon: <Instagram /> },
+      { href: "https://www.instagram.com/katythemaker", icon: <Instagram /> },
     ],
   },
   {
