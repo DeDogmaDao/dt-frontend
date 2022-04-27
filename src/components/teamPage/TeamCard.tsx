@@ -39,7 +39,7 @@ const TeamCard: React.FC<props> = ({
          text-white text-base font-normal translate-y-[100%] group-hover:translate-y-0 duration-700"
         >
           <div className="w-full relative h-full flex flex-col justify-between">
-            <div className="w-full h-10 mt-3 flex justify-center items-center gap-x-3">
+            <div className="w-full h-10 mt-3 flex justify-start items-center gap-x-3">
               {data.link?.map(item=>{
                 return (
                   <Social data={item} hasTransition={true} svgWidth={"1.25rem"} width={"2.5rem"} />

@@ -15,11 +15,11 @@ const Social: React.FC<props> = ({ data,svgWidth,width, hasTransition }) => {
       onHoverStart={() => setIsHovering(true)}
       onHoverEnd={() => setIsHovering(false)}
       className={`group text-xl  bg-neutral-700 rounded-full  flex justify-center items-center
-      fill-white hover:fill-neutral-900  aspect-square ${hasTransition && "duration-500 delay-200"}`}
+      fill-white hover:fill-neutral-900  aspect-square will-change-transform ${hasTransition && "duration-500 delay-200"}`}
       style={{width}}
     >
       <a
-        className=" w-full h-full group-hover:text-blackPrime flex justify-center items-center relative"
+        className=" w-full h-full group-hover:text-blackPrime flex justify-center items-center relative will-change-transform"
         href={data.href}
         target="_blank"
       >
@@ -31,7 +31,7 @@ const Social: React.FC<props> = ({ data,svgWidth,width, hasTransition }) => {
               exit="hidden"
               variants={socialAni}
               style={{width}}
-              className="rounded-full absolute left-0 top-0 z-0 bg-primary-500 aspect-square"
+              className="rounded-full absolute left-0 top-0 z-0 bg-primary-500 aspect-square will-change-transform"
             ></motion.div>
           )}
         </AnimatePresence>
