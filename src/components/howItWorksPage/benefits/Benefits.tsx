@@ -56,6 +56,7 @@ const Benefits: React.FC = () => {
           {benefitsData.map((data, index) => {
             return (
               <EachBenefit
+              key={data.title}
                 data={data}
                 index={index}
                 setActiveIndex={setActiveIndex}
@@ -71,6 +72,7 @@ const Benefits: React.FC = () => {
               benefitsData[activeIndex].desc.map((item, index) => {
                 return (
                   <EachDesc
+                  key={index + "benefit-desc"}
                     setIsPlaying={setIsPlaying}
                     descData={item}
                     index={index}

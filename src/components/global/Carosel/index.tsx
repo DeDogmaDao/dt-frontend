@@ -148,7 +148,7 @@ const Carosel: React.FC<props> = ({ allData, initialQuantity, Item }) => {
                   (_: any, index: number) => showMore.quantity - 1 >= index
                 )
                 .map((data: any, index: number) => {
-                  return <Item data={data} />;
+                  return <Item key={index + "item"} data={data} />;
                 })}
               <div ref={wastefulCover} className="wasteful-cover"></div>
             </div>
