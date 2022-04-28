@@ -61,7 +61,7 @@ const MobileMenu: React.FC<props> = ({ headerLinks }) => {
                 whileTap={{ scale: 0.95 }}
                 className="rounded-full bg-neutral-700 text-white text-base flex justify-center items-center cursor-pointer !duration-[0]"
               >
-                <Social data={social} width={"2rem"} svgWidth=".875rem" hasTransition={false} />
+                <ul><Social data={social} width={"2rem"} svgWidth=".875rem" hasTransition={false} /></ul>
               </motion.li>
             );
           })}
