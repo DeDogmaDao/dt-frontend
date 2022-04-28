@@ -135,3 +135,13 @@ export interface metaType {
   author: string;
   preload: string[];
 }
+
+export interface metaDataType {
+  siteTitle: string;
+  pageTitle: string;
+  desc:string;
+  keywords: string;
+  pageUrl:string;
+  imageUrl:string;
+  homePageUrl:string;
+}

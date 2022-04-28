@@ -58,6 +58,7 @@ const Card: React.FC<props> = ({
     >
       <div className="w-full h-full relative">
         <Image
+        alt={"dedogmadao " + tabGroup + " " + data.name} 
           draggable={false}
           src={imgData[tabGroup][index]}
           layout="fill"

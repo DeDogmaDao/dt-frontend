@@ -45,7 +45,7 @@ const EachGroup: React.FC<props> = ({ name, activeGroup, setTabs, tabs }) => {
       >
         <span className="ml-6">{name}</span>
         <span className="relative w-[60%] h-full">
-          <Image src={"/img/cyc/" + name + ".png"} layout="fill" />
+          <Image alt="dedogmadao background"  src={"/img/cyc/" + name + ".png"} layout="fill" />
         </span>
       </div>
     </motion.button>
