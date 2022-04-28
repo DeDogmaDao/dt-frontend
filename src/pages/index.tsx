@@ -31,6 +31,8 @@ export default function home(): JSX.Element {
         <meta property="og:image:height" content="480" />
         <meta property="og:image:type" content="image/jpg" />
         <meta property="og:image:secure_url" content={homePageMetaData.imageUrl} />
+        <meta name="twitter:creator" content="@DeDogmaDao" />
+        <meta name="twitter:site" content="@DeDogmaDao" />
       </Head>
       <HowItWorks />
     </Fragment>
