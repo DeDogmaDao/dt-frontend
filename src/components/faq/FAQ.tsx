@@ -21,7 +21,7 @@ const FAQ: React.FC = () => {
       <BackToTop containerRef={faqRef} />
       <motion.span layout className="absolute w-full aspect-[1440/1097] will-change-transform">
         <span className="w-full h-full inner-image-no-max-width will-change-transform">
-          <Image src={faqBg} layout="fill" quality={100} />
+          <Image src={faqBg} layout="fill" quality={100} alt="dedogmadao background" />
         </span>
       </motion.span>
       <LayoutGroup>

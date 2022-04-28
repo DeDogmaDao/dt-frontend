@@ -16,7 +16,7 @@ const LogoType: React.FC<props> = ({ setAnim, portalLoading }) => {
     >
       <motion.span className="w-[20rem] aspect-[1207/728]   will-change-transform">
         <span className=" w-full h-full">
-        <Image src={treasure} layout={"fill"} quality={90} placeholder="blur" />
+        <Image alt="dedogmadao logo"  src={treasure} layout={"fill"} quality={90} placeholder="blur" />
         </span>
       </motion.span>
       <motion.a

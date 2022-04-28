@@ -22,7 +22,7 @@ const InteroVideo: React.FC = () => {
       <div className="absolute bottom-0 left-0 w-full h-[7.5rem] bg-gradient-to-t from-bodymain via-transparent to-transparent z-[1]" />
       <span className="w-full  absolute h-full lg:aspect-[1382/814]">
         <span className="w-full h-full inner-image-no-max-width">
-          <Image src={introBg} layout="fill" quality={100} placeholder="blur" />
+          <Image alt="dedogmadao background"  src={introBg} layout="fill" quality={100} placeholder="blur" />
         </span>
       </span>
       <motion.div
@@ -57,6 +57,7 @@ const InteroVideo: React.FC = () => {
               <span className="w-full  absolute h-full lg:aspect-[1382/814]">
                 <span className="w-full h-full inner-image-no-max-width">
                   <Image
+                  alt="dedogmadao background" 
                     src={videoBg}
                     layout="fill"
                     quality={100}

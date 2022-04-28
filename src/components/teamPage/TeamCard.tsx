@@ -31,6 +31,7 @@ const TeamCard: React.FC<props> = ({
         className="group-hover:-translate-y-3 group-hover:opacity-90 duration-500 relative rounded-xl overflow-hidden"
       >
         <Image
+        alt={"dedogmadao team " + data.name}
           src={data.image}
           layout="fill"
           loading="lazy"
