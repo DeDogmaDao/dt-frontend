@@ -10,7 +10,6 @@ export default function home(): JSX.Element {
         <meta charSet="utf-8" />
         <meta name="description" content="{{description}}" />
         <meta name="keywords" content="{{keywords}}" />
-        <link rel="author" href="https://plus.google.com/{{googlePlusId}}" />
         <link rel="canonical" href="{{pageUrl}}" />
         <meta property="og:url" content="{{pageUrl}}" />
         <meta property="og:image" content="{{imageUrl}}" />
