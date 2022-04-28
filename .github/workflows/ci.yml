@@ -29,8 +29,7 @@ jobs:
 
       - name: push docker image to package registry
         run: docker push ghcr.io/dedogmadao/dt-frontend/dt-frontend:${{ github.ref_name }}-latest
-      secrets:
-        ROBOTS_TXT: ${{ secrets.STAGE_ROBOTS_TXT_FILE }}"
+
 
   environ_step:
     needs: build_and_push
