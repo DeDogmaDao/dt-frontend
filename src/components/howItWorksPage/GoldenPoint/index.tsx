@@ -15,13 +15,13 @@ const GoldenPoint: React.FC = () => {
         {"Demmortal Treasure is more than just a"
           .split(" ")
           .map((word, index) => {
-            return <motion.span>{word}</motion.span>;
+            return <motion.span key={word + index}>{word}</motion.span>;
           })}
 
         <motion.div className="flex justify-between whitespace-nowrap">
           {"Collectible".split("").map((word, index) => {
             return (
-              <motion.span className="text-primary-500">{word}</motion.span>
+              <motion.span key={word + index} className="text-primary-500">{word}</motion.span>
             );
           })}
         </motion.div>
@@ -38,6 +38,7 @@ const GoldenPoint: React.FC = () => {
           .map((word, index) => {
             return (
               <span
+              key={word + index}
                 className={`whitespace-nowrap ${
                   (index === 6 ||
                     index === 7 ||
