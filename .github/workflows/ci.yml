@@ -48,6 +48,7 @@ jobs:
     with:
       REPOSITORY_NAME: dt-frontend
     secrets:
+      ROBOTS_TXT_FILE: ${{ secrets[format('{0}ROBOTS_TXT_FILE', needs.environ_step.outputs.prefix)] }}
       REF_NAME: ${{ secrets[format('{0}DOMAIN', needs.environ_step.outputs.prefix)] }}
       SSH_ACTION_HOST: ${{ secrets[format('{0}SSH_ACTION_HOST', needs.environ_step.outputs.prefix)] }}
       SSH_ACTION_USER: ${{ secrets[format('{0}SSH_ACTION_USER', needs.environ_step.outputs.prefix)] }}
@@ -56,8 +57,6 @@ jobs:
       DOMAIN: ${{ secrets[format('{0}DOMAIN', needs.environ_step.outputs.prefix)] }}
       BRANCH: ${{ github.ref_name }}
       PERSONAL_GITHUB_TOKEN: ${{ secrets['PERSONAL_GITHUB_TOKEN'] }}
-      BACKEND_URL: ${{ secrets[format('{0}BACKEND_URL', needs.environ_step.outputs.prefix)] }}
-      ROBOTS_TXT_FILE: ${{ secrets[format('{0}ROBOTS_TXT_FILE', needs.environ_step.outputs.prefix)] }}
 
 
 
