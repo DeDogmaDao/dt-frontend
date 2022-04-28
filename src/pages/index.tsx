@@ -22,7 +22,7 @@ export default function home(): JSX.Element {
         />
         <meta property="og:site_name" content={homePageMetaData.siteTitle} />
         <meta property="og:see_also" content={homePageMetaData.homePageUrl} />
-        <meta name="twitter:card" content={homePageMetaData.desc} />
+        <meta name="twitter:card" content={"summary_large_image"} />
         <meta name="twitter:url" content={homePageMetaData.pageUrl} />
         <meta name="twitter:title" content={homePageMetaData.pageTitle} />
         <meta name="twitter:description" content={homePageMetaData.desc} />

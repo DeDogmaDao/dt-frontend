@@ -23,7 +23,7 @@ export default function roadmap(): JSX.Element {
         />
         <meta property="og:site_name" content={roadmapPageMetaData.siteTitle} />
         <meta property="og:see_also" content={roadmapPageMetaData.homePageUrl} />
-        <meta name="twitter:card" content={roadmapPageMetaData.desc} />
+        <meta name="twitter:card" content={"summary_large_image"} />
         <meta name="twitter:url" content={roadmapPageMetaData.pageUrl} />
         <meta name="twitter:title" content={roadmapPageMetaData.pageTitle} />
         <meta name="twitter:description" content={roadmapPageMetaData.desc} />

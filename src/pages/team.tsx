@@ -23,7 +23,7 @@ export default function team(): JSX.Element {
         />
         <meta property="og:site_name" content={teamPageMetaData.siteTitle} />
         <meta property="og:see_also" content={teamPageMetaData.homePageUrl} />
-        <meta name="twitter:card" content={teamPageMetaData.desc} />
+        <meta name="twitter:card" content={"summary_large_image"} />
         <meta name="twitter:url" content={teamPageMetaData.pageUrl} />
         <meta name="twitter:title" content={teamPageMetaData.pageTitle} />
         <meta name="twitter:description" content={teamPageMetaData.desc} />

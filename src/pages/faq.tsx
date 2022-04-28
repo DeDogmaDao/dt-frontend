@@ -24,7 +24,7 @@ export default function faq(): JSX.Element {
         />
         <meta property="og:site_name" content={faqPageMetaData.siteTitle} />
         <meta property="og:see_also" content={faqPageMetaData.homePageUrl} />
-        <meta name="twitter:card" content={faqPageMetaData.desc} />
+        <meta name="twitter:card" content={"summary_large_image"} />
         <meta name="twitter:url" content={faqPageMetaData.pageUrl} />
         <meta name="twitter:title" content={faqPageMetaData.pageTitle} />
         <meta name="twitter:description" content={faqPageMetaData.desc} />
