@@ -15,9 +15,9 @@ const Social: React.FC<props> = ({ data, svgWidth, width, hasTransition }) => {
       onHoverStart={() => setIsHovering(true)}
       onHoverEnd={() => setIsHovering(false)}
       className={`group text-xl  bg-neutral-700 rounded-full  flex justify-center items-center
-      fill-white hover:fill-neutral-900  aspect-square will-change-transform ${
-        hasTransition && "duration-500 delay-200"
-      }`}
+        aspect-square will-change-transform ${
+          hasTransition && "duration-500 delay-200"
+        }`}
       style={{ width }}
     >
       <a
@@ -38,7 +38,9 @@ const Social: React.FC<props> = ({ data, svgWidth, width, hasTransition }) => {
           )}
         </AnimatePresence>
         <span
-          className="z-10 will-change-transform"
+          className={`z-10 will-change-transform fill-white group-hover:fill-neutral-900 ${
+            hasTransition && "duration-500 delay-200"
+          }`}
           style={{ width: svgWidth }}
         >
           {data.icon}
