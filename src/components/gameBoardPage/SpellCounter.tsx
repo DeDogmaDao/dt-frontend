@@ -1,5 +1,5 @@
 import { AnimatePresence, motion, MotionStyle } from "framer-motion";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { numsList } from "../../store/allData";
 import { spellNumber } from "../../types/allTypes";
 import { spellCounterAni } from "../../utils/animation";
@@ -77,7 +77,7 @@ const SpellCounter: React.FC<props> = ({
       <motion.div className="relative flex justify-center items-center w-full h-full -rotate-45">
         {nums.map((num) => {
           return (
-            <>
+            <React.Fragment key={num + "counter"}>
               <AnimatePresence exitBeforeEnter>
                 {num.active && (
                   <motion.span
@@ -92,7 +92,7 @@ const SpellCounter: React.FC<props> = ({
                   </motion.span>
                 )}
               </AnimatePresence>
-            </>
+            </React.Fragment>
           );
         })}
       </motion.div>

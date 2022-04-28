@@ -30,15 +30,15 @@ import { teamImg } from "./img";
 export const footerData: socialType[] = [
   {
     icon: <YoutubeSVG />,
-    href: "www.discord.com",
+    href: "https://discord.gg/dedogmadao",
   },
   {
     icon: <DiscordSVG />,
-    href: "www.discord.com",
+    href: "https://www.youtube.com/channel/UCNGZXAcCP-xHrAVqaEWqozw",
   },
   {
     icon: <Twitter />,
-    href: "www.discord.com",
+    href: "https://twitter.com/DMTtreasure",
   },
 ];
 export const mdData: string[] = ["3", "l"];
@@ -1285,24 +1285,15 @@ export const benefitsData: benefitType[] = [
     title: "Guaranteed floor price",
     desc: [
       <>
-        The money collected from the minting goes to the buyback treasury. This
-        will guarantee the floor price of the NFTs. Any NFT holder has the right
-        to burn their NFTs and receive their funds back. The economical
-        mechanism of Demmortal Treasure is designed in a way that the team
-        receives only 30% of the funds based on{" "}
-        <a
-          href="https://docs.dedogmadao.com/economic-mechanisms"
-          target={"_blank"}
-          className="link-inside-text"
-        >
-          the schedule
-        </a>
-        <br />
+        The money collected from the minting goes to the{" "}
+        <span className="font-semibold">buyback treasury</span>. This will
+        guarantee the floor price of the NFTs to mint price and can raise by
+        time. Any NFT holder has the right to burn their NFTs and receive their
+        funds back.
       </>,
       <>
         Additionally, part of the money earned from the secondary market sales
-        and yield farming will go to this treasury as a refuel. Please read the
-        Litepaper for more information.
+        and yield farming will go to this treasury as a refuel.
       </>,
     ],
   },
@@ -1310,19 +1301,28 @@ export const benefitsData: benefitType[] = [
     title: "Auto-join lottery",
     desc: [
       <>
-        All NFT holders will automatically participate in our daily and weekly
-        gamified lottery. No extra gas fee or action needed from the holders to
-        join the lottery unless your NFT wins the lottery and you will see the
-        details in your profile.
+        All NFT holders will automatically participate in our{" "}
+        <span className="font-semibold">daily and weekly</span> gamified{" "}
+        <span className="font-semibold">lottery</span>.
+      </>,
+      <>
+        <span className="font-semibold">No extra gas fee</span> or action needed
+        from the holders to join the lottery unless your NFT wins the lottery.
       </>,
     ],
   },
   {
     title: "Diverse pool prizes",
     desc: [
-      <>Currently, There are two types of prizes in each game.</>,
-      <>Dynamic prize based on secondary sales (main prize).</>,
-      <>Guaranteed prize based on yield farming of investment treasury.</>,
+      <>Currently, There are two types of prizes in each game:</>,
+      <p>
+        <span className="font-semibold">1- Dynamic</span> prize based on
+        secondary sales (main prize).
+      </p>,
+      <p>
+        <span className="font-semibold">2- Guaranteed</span> prize based on
+        yield farming of investment treasury.
+      </p>,
       <>
         Note: The investment treasury is a self-growing pool which can only grow
         bigger and guarantees a minimum prize.
@@ -1333,13 +1333,16 @@ export const benefitsData: benefitType[] = [
     title: "Game card and PFP",
     desc: [
       <>
-        Demmortal Treasure is a collectigame established upon composed lore. The
-        lore is based on ancient classical myths. The NFTs are the result of
-        many hours of our talented artists’ artwork. The specifications of the
-        characters (NFTs) affect the result of the lottery. For further
-        information, read more about the cards in the Litepaper. As an a NFT
-        owner, one could generate detailed artwork PFP(profile photo) from your
-        unique NFT.
+        Demmortal Treasure is a{" "}
+        <span className="font-semibold">collectigame</span> established upon
+        composed lore. The lore is based on ancient classical myths. The NFTs
+        are the result of many hours of our talented artists’ artwork.
+      </>,
+      <>
+        The specifications of the characters (NFTs) affect the result of the
+        lottery. As an a NFT owner, one could generate{" "}
+        <span className="font-semibold">detailed artwork PFP</span>(profile
+        photo) from your unique NFT.
       </>,
     ],
   },

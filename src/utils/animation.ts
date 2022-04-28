@@ -743,7 +743,7 @@ export const eachBenefitDescAni: Variants = {
     opacity: 1,
     transition: {
       duration: 0.7,
-      delay: custom * 0.3,
+      delay: 0.1 + custom * 0.2,
     },
   }),
 };

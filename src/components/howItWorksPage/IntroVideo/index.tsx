@@ -5,44 +5,21 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { videoBtnAnim } from "../../../utils/animation";
 import introBg from "../../images/bg/sec2.png";
+import videoBg from "../../images/bg/Story.png";
 
 const InteroVideo: React.FC = () => {
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [iseHovering, setIsHovering] = useState(false);
-  const [isTapped, setIsTapped] = useState(0);
-  const [showBtn, setShowBtn] = useState(true);
   const [once, setOnce] = useState(false);
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const videoRef = useRef<HTMLIFrameElement>(null);
   const videoClickHandler = () => {
     if (once === false) {
       setOnce(true);
+      videoRef.current!.src = videoRef.current!.src + "?autoplay=1";
     }
-    setIsPlaying((prevState) => !prevState);
   };
-
-  useEffect(() => {
-    if (isPlaying === false) {
-      videoRef.current!.pause();
-    } else {
-      videoRef.current!.play();
-    }
-    setShowBtn(true);
-  }, [isPlaying]);
-
-  useEffect(() => {
-    setIsHovering(true);
-    const btnTimeOut = setTimeout(() => {
-      setIsHovering(false);
-    }, 2000);
-
-    return () => {
-      clearTimeout(btnTimeOut);
-    };
-  }, [isTapped]);
 
   return (
     <div className="w-full aspect-[16/13] sm:aspect-video flex justify-center items-center relative">
-      <div className="absolute top-0 left-0 w-full h-[7.5rem] bg-gradient-to-b from-bodymain via-transparent to-transparent z-[1]" />
+      <div className="absolute top-0 left-0 w-full h-[7.5rem] bg-gradient-to-b from-[#04050E] via-transparent to-transparent z-[1]" />
       <div className="absolute bottom-0 left-0 w-full h-[7.5rem] bg-gradient-to-t from-bodymain via-transparent to-transparent z-[1]" />
       <span className="w-full  absolute h-full lg:aspect-[1382/814]">
         <span className="w-full h-full inner-image-no-max-width">
@@ -50,76 +27,65 @@ const InteroVideo: React.FC = () => {
         </span>
       </span>
       <motion.div
-        className="aspect-video w-[90%] sm:w-[70%] rounded-[30px] z-10 mt-[-0%] flex justify-center items-center
-      relative cursor-pointer"
+        onClick={videoClickHandler}
+        className="aspect-video w-[90%] sm:w-[70%] rounded-[2.2vw] z-10 mt-[-0%] flex justify-center items-center
+      relative cursor-pointer bg-neutral-900 overflow-hidden"
       >
-        <AnimatePresence>
-          {!isPlaying && (
-            <motion.span
-              initial="hidden"
-              animate="visible"
-              exit="out"
-              variants={videoBtnAnim}
-              onClick={videoClickHandler}
-              onTap={() => setIsTapped((prevState) => prevState + 1)}
-              onMouseEnter={() => setIsHovering(true)}
-              className="z-20 absolute w-[3rem] md:w-[5.625rem] aspect-square p-2 md:p-6 rounded-full bg-white/20 fill-white
-          hover:scale-125 hover:fill-primary-500 duration-150 ease-out"
-            >
-              <PlaySVG />
-            </motion.span>
-          )}
-          {isPlaying && iseHovering && (
-            <motion.span
-              initial="hidden"
-              animate="visible"
-              exit="out"
-              variants={videoBtnAnim}
-              onClick={videoClickHandler}
-              onTap={() => setIsTapped((prevState) => prevState + 1)}
-              onMouseEnter={() => setIsHovering(true)}
-              className="z-20 absolute w-[5.625rem] aspect-square p-6 rounded-full bg-white/20 fill-white
-          hover:scale-125 hover:fill-primary-500 duration-150 ease-out opacity-50 hover:opacity-100"
-            >
-              <PauseSVG />
-            </motion.span>
-          )}
-        </AnimatePresence>
+        <iframe
+          className="w-full h-full z-10"
+          ref={videoRef}
+          loading="lazy"
+          src={`https://www.youtube.com/embed/sP13ARp0jTA`}
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+          title="Demmortal Treasure dedogmadao"
+        />
         {!once && (
-          <motion.div
-            onTap={() => setIsTapped((prevState) => prevState + 1)}
-            className="absolute w-[100%] h-[10rem] mt-[30%]  flex flex-col justify-center items-center z-20
+          <div className="absolute top-0 left-0 w-full h-full z-20">
+            <div className="relative w-full h-full flex justify-center items-center">
+              <motion.span
+                initial="hidden"
+                animate="visible"
+                exit="out"
+                variants={videoBtnAnim}
+                className="z-20 absolute w-[3rem] md:w-[5.625rem] aspect-square p-2 md:p-6 rounded-full bg-white/20 fill-white
+          hover:scale-125 hover:fill-primary-500 duration-150 ease-out"
+              >
+                <PlaySVG />
+              </motion.span>
+
+              <span className="w-full  absolute h-full lg:aspect-[1382/814]">
+                <span className="w-full h-full inner-image-no-max-width">
+                  <Image
+                    src={videoBg}
+                    layout="fill"
+                    quality={100}
+                    placeholder="blur"
+                  />
+                </span>
+              </span>
+              <motion.div
+                className="absolute w-[100%] h-[10rem] mt-[30%]  flex flex-col justify-center items-center z-20
         gap-y-1 pointer-events-none scale-[38%] md:scale-[60%] lg:scale-100"
-          >
-            <span className="w-[26px] h-[6px] bg-primary-500" />
-            <span className="text-[2.5rem] font-bold whitespace-nowrap">
-              Odyssey of the{" "}
-              <span className="text-primary-500">Titan’s treasure</span>
-            </span>
-            <span className="text-xl font-light text-center md:px-10">
-              Olympians, Titans and mortals- united in search of fortune. Watch
-              to see how it all came to be
-            </span>
-          </motion.div>
+              >
+                <span className="w-[26px] h-[6px] bg-primary-500" />
+                <span className="text-[2.5rem] font-bold whitespace-nowrap">
+                  Odyssey of the{" "}
+                  <span className="text-primary-500">Titan’s treasure</span>
+                </span>
+                <span className="text-xl font-light text-center md:px-10">
+                  Olympians, Titans and mortals- united in search of fortune.
+                  Watch to see how it all came to be
+                </span>
+              </motion.div>
+            </div>
+          </div>
         )}
         <img
           src="/img/video/border.png"
-          className="aspect-[16/9] w-[58.3rem] pl-px absolute"
+          className="w-full aspect-video pl-px absolute z-30 pointer-events-none"
         />
-        <motion.video
-          onTap={() => setIsTapped((prevState) => prevState + 1)}
-          onPause={() => setIsPlaying(false)}
-          onPlay={() => setIsPlaying(true)}
-          onClick={videoClickHandler}
-          onMouseEnter={() => setIsHovering(true)}
-          onMouseLeave={() => setIsHovering(false)}
-          ref={videoRef}
-          controls={once}
-          poster="/img/bg/Story.png"
-          className="aspect-video w-[58.125rem] rounded-[1.9vw] z-10 object-cover"
-        >
-          <source src={"/img/video/intro.mp4"} type="video/mp4" />
-        </motion.video>
       </motion.div>
     </div>
   );

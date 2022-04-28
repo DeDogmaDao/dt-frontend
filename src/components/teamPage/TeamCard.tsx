@@ -47,6 +47,7 @@ const TeamCard: React.FC<props> = ({
               {data.link?.map((item) => {
                 return (
                   <Social
+                  key={item.href}
                     data={item}
                     hasTransition={true}
                     svgWidth={"1.25rem"}
