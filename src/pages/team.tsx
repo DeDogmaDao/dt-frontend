@@ -31,6 +31,7 @@ export default function team(): JSX.Element {
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="480" />
         <meta property="og:image:type" content="image/jpg" />
+        <meta property="og:image:secure_url" content={teamPageMetaData.imageUrl} />
       </Head>
         <Team />
     </Fragment>
