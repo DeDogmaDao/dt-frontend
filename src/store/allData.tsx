@@ -12,6 +12,7 @@ import {
   benefitType,
   metaType,
   teamCardType,
+  metaDataType,
 } from "../types/allTypes";
 
 //
@@ -1350,17 +1351,13 @@ export const benefitsData: benefitType[] = [
 // //////////////////////////
 // pages
 
-export const homePageMetaData: metaType = {
-  author: "DeDogmaDAO",
-  description: "Demmortal Treasure! Win Eth!",
-  keywords: "etherium , demmortal",
-  title: "DeDogmaDAO Demmortal Treasure",
-  preload: [
-    "/public/img/art/portal.png",
-    "/public/img/art/city.png",
-    "/public/img/art/mask.png",
-    "/public/img/art/cape.gif",
-    "/public/img/art/left-fire.mp4",
-    "/public/img/art/right-fire.mp4",
-  ],
+export const homePageMetaData: metaDataType = {
+  siteTitle: "DeDogma Dao",
+  pageTitle: "Home",
+  desc: "Demmortal Treasure is more than just a collectible. It’s a sustainable economy empowered by anti-rug protocols and a daily lottery with guaranteed prizes. All by owning a NFT!",
+  keywords:
+    "dogma , decentralized , nft , lottery , collectible , ethereum , collectigame , titan , mythology , greek myths , zeus , card game  , no loss , pooltogether nft , demmortal , treasure , daily prize , big prize , eth , dao  , pfp , anti-rug , anti rug , protocol , erc , yield farming , guarantee , floor price, guaranteed prize",
+  imageUrl: "/dedogmadao.jpg",
+  homePageUrl: "https://dedogmadao.com",
+  pageUrl: "https://dedogmadao.com/",
 };

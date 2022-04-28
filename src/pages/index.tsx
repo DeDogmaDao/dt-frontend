@@ -1,27 +1,32 @@
 import Head from "next/head";
 import { Fragment } from "react";
 import HowItWorks from "../components/howItWorksPage/HowItWorks";
-
+import { homePageMetaData } from "../store/allData";
 export default function home(): JSX.Element {
   return (
     <Fragment>
       <Head>
-        <title>{"pageTitle"}</title>
+        <title>{"DDD" + " | " + homePageMetaData.pageTitle}</title>
         <meta charSet="utf-8" />
-        <meta name="description" content="{{description}}" />
-        <meta name="keywords" content="{{keywords}}" />
-        <link rel="canonical" href="{{pageUrl}}" />
-        <meta property="og:url" content="{{pageUrl}}" />
-        <meta property="og:image" content="{{imageUrl}}" />
-        <meta property="og:description" content="{{description}}" />
-        <meta property="og:title" content="{{pageTitle}}" />
-        <meta property="og:site_name" content="{{siteTitle}}" />
-        <meta property="og:see_also" content="{{homepageUrl}}" />
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:url" content="{{pageUrl}}" />
-        <meta name="twitter:title" content="{{pageTitle}}" />
-        <meta name="twitter:description" content="{{description}}" />
-        <meta name="twitter:image" content="{{imageUrl}}" />
+        <meta name="description" content={homePageMetaData.desc} />
+        <meta name="keywords" content={homePageMetaData.keywords} />
+        <link rel="canonical" href={homePageMetaData.pageUrl} />
+        <meta property="og:url" content={homePageMetaData.pageUrl} />
+        <meta property="og:image" content={homePageMetaData.imageUrl} />
+        <meta property="og:description" content={homePageMetaData.desc} />
+        <meta
+          property="og:title"
+          content={
+            homePageMetaData.siteTitle + " | " + homePageMetaData.pageTitle
+          }
+        />
+        <meta property="og:site_name" content={homePageMetaData.siteTitle} />
+        <meta property="og:see_also" content={homePageMetaData.homePageUrl} />
+        <meta name="twitter:card" content={homePageMetaData.desc} />
+        <meta name="twitter:url" content={homePageMetaData.pageUrl} />
+        <meta name="twitter:title" content={homePageMetaData.pageTitle} />
+        <meta name="twitter:description" content={homePageMetaData.desc} />
+        <meta name="twitter:image" content={homePageMetaData.imageUrl} />
       </Head>
       <HowItWorks />
     </Fragment>
