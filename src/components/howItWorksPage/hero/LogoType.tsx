@@ -15,7 +15,9 @@ const LogoType: React.FC<props> = ({ setAnim, portalLoading }) => {
       className="mt-[-1%] ssm:mt-[1%] lg:mt-[2%] xl:mt-[7%]  absolute flex flex-col justify-start items-center z-110 "
     >
       <motion.span className="w-[20rem] aspect-[1207/728]   will-change-transform">
-        <Image src={treasure} layout={"fill"} quality={75} placeholder="blur" />
+        <span className="relative w-full h-full">
+        <Image src={treasure} layout={"fill"} quality={90} placeholder="blur" />
+        </span>
       </motion.span>
       <motion.a
       href="https://discord.gg/dedogmadao"
