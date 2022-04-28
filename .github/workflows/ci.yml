@@ -22,13 +22,15 @@ jobs:
       - name: build step
         run: |
             if [ "${{ github.ref }}" == 'refs/heads/develop' ]; then export ROBOTS_TXT="${{ secrets.STAGE_ROBOTS_TXT_FILE }}" ; else  export ROBOTS_TXT="${{ secrets.PROD_ROBOTS_TXT_FILE }}"; fi
-            docker build -t ghcr.io/dedogmadao/dt-frontend/dt-frontend:${{ github.ref_name }}-latest --build-arg ROBOTS_TXT .
+            docker build -t ghcr.io/dedogmadao/dt-frontend/dt-frontend:${{ github.ref_name }}-latest --build-arg ROBOTS_TXT=$ROBOTS_TXT .   
 
       - name: login to docker registry
         run: echo ${{ secrets.PERSONAL_GITHUB_TOKEN }} | docker login ghcr.io -u flokibb --password-stdin
 
       - name: push docker image to package registry
         run: docker push ghcr.io/dedogmadao/dt-frontend/dt-frontend:${{ github.ref_name }}-latest
+      secrets:
+        ROBOTS_TXT: ${{ secrets.STAGE_ROBOTS_TXT_FILE }}"
 
   environ_step:
     needs: build_and_push
