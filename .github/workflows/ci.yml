@@ -23,7 +23,8 @@ jobs:
         run:  if [ "${{ github.ref }}" == 'refs/heads/develop' ]; then export ROBOTS_TXT="${{ secrets.STAGE_ROBOTS_TXT_FILE }}" ; else  export ROBOTS_TXT="${{ secrets.PROD_ROBOTS_TXT_FILE }}"; fi
         
       - name: echo secret
-        run: echo "${{ secrets.STAGE_ROBOTS_TXT_FILE }}"
+        # run: echo "${{ secrets.STAGE_ROBOTS_TXT_FILE }}"
+        run: echo $ROBOTS_TXT
 
 
       - name: build step
