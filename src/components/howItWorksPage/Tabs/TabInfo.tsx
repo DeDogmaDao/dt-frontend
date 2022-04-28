@@ -20,7 +20,7 @@ const TabInfo: React.FC<props> = ({
   tabGroup,
 }) => {
   return (
-    <AnimatePresence exitBeforeEnter>
+    <AnimatePresence>
       {activeIndexCard[tabGroup][1] === index && (
         <motion.div
           initial="hidden"
