@@ -13,28 +13,18 @@ on:
         default: 'info'
 
 jobs:
-  environ_step:
-    runs-on: ubuntu-latest
-    outputs:
-      prefix: ${{ steps.env_step.outputs.env_prefix }}
-    steps:
-      - name: Check out current repository and set ENV
-        id: env_step
-        run: if [ "${{ github.ref }}" == 'refs/heads/develop' ]; then echo "::set-output name=env_prefix::STAGE_"; else echo "::set-output name=env_prefix::PROD_"; fi
-  
-
   build_and_push:
-    needs: environ_step
     runs-on: ubuntu-latest
     steps:
       - name: pull latest code
         uses: actions/checkout@v2
 
-      # - name: export env
-      #   run: export ROBOTS_TXT=${{ secrets[format('{0}ROBOTS_TXT_FILE', needs.environ_step.outputs.prefix)] }}
+      - name: export env
+        run:  if [ "${{ github.ref }}" == 'refs/heads/develop' ]; then export ROBOTS_TXT=${{ secrets.STAGE_ROBOTS_TXT_FILE }} ; else  export ROBOTS_TXT=${{ secrets.PROD_ROBOTS_TXT_FILE }}; fi
+
 
       - name: build step
-        run: docker build -t ghcr.io/dedogmadao/dt-frontend/dt-frontend:${{ github.ref_name }}-latest --build-arg ${{ secrets[format('{0}ROBOTS_TXT_FILE', needs.environ_step.outputs.prefix)] }} .
+        run: docker build -t ghcr.io/dedogmadao/dt-frontend/dt-frontend:${{ github.ref_name }}-latest --build-arg ROBOTS_TXT_FILE .
 
       - name: login to docker registry
         run: echo ${{ secrets.PERSONAL_GITHUB_TOKEN }} | docker login ghcr.io -u flokibb --password-stdin
@@ -42,8 +32,19 @@ jobs:
       - name: push docker image to package registry
         run: docker push ghcr.io/dedogmadao/dt-frontend/dt-frontend:${{ github.ref_name }}-latest
 
-  deploy:
+  environ_step:
     needs: build_and_push
+    runs-on: ubuntu-latest
+    outputs:
+      prefix: ${{ steps.env_step.outputs.env_prefix }}
+    steps:
+      - name: Check out current repository and set ENV
+        id: env_step
+        run: if [ "${{ github.ref }}" == 'refs/heads/develop' ]; then echo "::set-output name=env_prefix::STAGE_"; else echo "::set-output name=env_prefix::PROD_"; fi
+          
+
+  deploy:
+    needs: environ_step
     uses: dedogmadao/dd-reusable-actions/.github/workflows/action.yml@master
     with:
       REPOSITORY_NAME: dt-frontend
