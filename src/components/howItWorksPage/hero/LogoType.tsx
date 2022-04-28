@@ -17,12 +17,14 @@ const LogoType: React.FC<props> = ({ setAnim, portalLoading }) => {
       <motion.span className="w-[20rem] aspect-[1207/728]   will-change-transform">
         <Image src={treasure} layout={"fill"} quality={75} placeholder="blur" />
       </motion.span>
-      <motion.button
+      <motion.a
+      href="https://discord.gg/dedogmadao"
+      target={"_blank"}
         className="text-small-bold  rounded-full w-[8.625rem] h-[2.5rem] flex justify-center items-center text-white mt-[-14%]
         bg-neutral-900 hover:bg-neutral-900/60  cursor-pointer will-change-transform duration-500 border-2 border-transparent hover:border-primary-500"
       >
         Join Our Discord
-      </motion.button>
+      </motion.a>
     </motion.div>
   );
 };
