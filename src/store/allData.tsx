@@ -30,15 +30,15 @@ import { teamImg } from "./img";
 export const footerData: socialType[] = [
   {
     icon: <YoutubeSVG />,
-    href: "www.discord.com",
+    href: "https://discord.gg/dedogmadao",
   },
   {
     icon: <DiscordSVG />,
-    href: "www.discord.com",
+    href: "https://www.youtube.com/channel/UCNGZXAcCP-xHrAVqaEWqozw",
   },
   {
     icon: <Twitter />,
-    href: "www.discord.com",
+    href: "https://twitter.com/DMTtreasure",
   },
 ];
 export const mdData: string[] = ["3", "l"];
