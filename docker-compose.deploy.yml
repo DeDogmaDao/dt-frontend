@@ -6,6 +6,7 @@ services:
     image: "ghcr.io/dedogmadao/${REPOSITORY_NAME}/${REPOSITORY_NAME}:${BRANCH}-latest"
     environment:
       - BACKEND_URL
+      - ROBOTS_TXT
     command: npm run up
 
 networks:
