@@ -119,7 +119,7 @@ w-[22.5rem] aspect-[444/320]"
           <Image
             layout="fill"
             src="/img/cyc/frame.png"
-            quality={100}
+            quality={75}
             loading="eager"
           />
         </motion.div>
@@ -133,7 +133,7 @@ w-[22.5rem] aspect-[444/320] ]"
             <Image
               layout="fill"
               src="/img/cyc/tab-portal.png"
-              quality={100}
+              quality={75}
               loading="eager"
             />
           </motion.div>

@@ -43,9 +43,9 @@ const Header: React.FC = () => {
           <Link href="/">
             <div className="flex justify-start items-center gap-x-2 fill-white hover:fill-primary-500 duration-300">
               <LogoSVG width="2.5rem" />
-              {/* <span className="text-small-bold ssm:text-medium-bold md:hidden ">
+              <span className="text-small-bold ssm:text-medium-bold hidden sm:block md:hidden ">
                 Demmortal  Treasure
-              </span> */}
+              </span>
             </div>
           </Link>
         </span>
@@ -65,12 +65,14 @@ const Header: React.FC = () => {
           </span>
           <span>Litepaper</span>
         </a>
-        <button
-          className="z-50 absolute pointer-events-auto top-[2rem] right-[4.5rem] w-10 h-10 rounded-full bg-neutral-600
+        <a
+                  href="https://discord.gg/dedogmadao"
+                  target="_blank"
+          className="z-50 absolute cursor-pointer pointer-events-auto top-[2rem] right-[4.5rem] w-10 h-10 rounded-full bg-neutral-600
          text-white text-xl flex justify-center items-center hover:bg-neutral-500 duration-200 fill-primary-500 hover:fill-primary-700"
         >
           <DiscordSVG width={26} />
-        </button>
+        </a>
         <MobileMenu headerLinks={headerLinks} />
       </div>
     </div>

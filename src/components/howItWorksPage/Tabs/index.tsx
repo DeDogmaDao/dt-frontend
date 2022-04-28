@@ -39,6 +39,7 @@ const Tabs: React.FC = () => {
           {tabs.map((data) => {
             return (
               <EachGroup
+              key={data.tabGroup}
                 tabs={tabs}
                 name={data.tabGroup}
                 activeGroup={data.activeGroup}
@@ -54,6 +55,7 @@ const Tabs: React.FC = () => {
             if (!tab.activeGroup) return null;
             return (
               <Slider
+              key={tab.tabGroup}
                 setIsDragged={setIsDragged}
                 tabGroup={tab.tabGroup}
                 setActiveIndexCard={setActiveIndexCard}
@@ -72,7 +74,7 @@ const Tabs: React.FC = () => {
                       if (!show) return null;
                       return (
                         <Card
-                          key={data.name}
+                          key={data.name + index}
                           tabGroup={tab.tabGroup}
                           setActiveIndexCard={setActiveIndexCard}
                           activeIndexCard={activeIndexCard}
@@ -95,11 +97,12 @@ const Tabs: React.FC = () => {
       {tabs.map((tab) => {
         if (!tab.activeGroup) return null;
         return (
-          <div className="h-16 flex justify-center items-center gap-x-[.625rem] text-2xl  rounded-full mt-28">
+          <div key={tab.tabGroup} className="h-16 flex justify-center items-center gap-x-[.625rem] text-2xl  rounded-full mt-28">
             <LayoutGroup id="eachTab">
               {tab.tabInfo.map((data, index) => {
                 return (
                   <EachTab
+                  key={data.name + index}
                     group={tab.tabGroup}
                     name={data.name}
                     activeIndexCard={activeIndexCard}
@@ -116,10 +119,11 @@ const Tabs: React.FC = () => {
       {tabs.map((tab) => {
         if (!tab.activeGroup) return null;
         return (
-          <div className="relative w-full h-[34.375rem] sm:h-[21.875rem] md:h-[18.75rem] lg:h-[15.625rem] flex justify-center items-start mt-0">
+          <div key={tab.tabGroup} className="relative w-full h-[34.375rem] sm:h-[21.875rem] md:h-[18.75rem] lg:h-[15.625rem] flex justify-center items-start mt-0">
             {tab.tabInfo.map((data, index) => {
               return (
                 <TabInfo
+                key={data.name + index}
                   name={data.name}
                   titleOfHonor={data.titleOfHonor}
                   desc={data.desc}

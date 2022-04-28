@@ -33,6 +33,7 @@ const Team: React.FC = () => {
           {teamDataLvl1.map((member, index) => {
             return (
               <TeamCard
+              key={member.name + index}
                 data={member}
                 size={{ width: "18.75rem", height: "24.375rem" }}
                 framerVariants={teamMemberAni}
@@ -45,6 +46,7 @@ const Team: React.FC = () => {
           {teamDataLvl2.map((member, index) => {
             return (
               <TeamCard
+              key={member.name + index}
                 data={member}
                 size={{ width: "18.75rem", height: "24.375rem" }}
                 framerVariants={teamMemberAni}

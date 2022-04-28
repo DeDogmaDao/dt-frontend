@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { Dispatch, ReactElement, SetStateAction } from "react";
 import { eachBenefitDescAni } from "../../../utils/animation";
-import AngleRightSVG from "../../svgs/rightangle.svg";
 
 interface props {
   descData: ReactElement<any, any>;
@@ -17,20 +16,9 @@ const EachDesc: React.FC<props> = ({ descData, index, setIsPlaying }) => {
       animate="visible"
       variants={eachBenefitDescAni}
       custom={index}
-      className="flex gap-x-2 text-base px-3 ssm:px-8 py-3 lg:py-7 rounded-full sm:bg-[#191C3A4D]/30 sm:backdrop-blur-sm"
+      className="text-2xl font-light"
     >
-      <span className="flex justify-center items-start">
-        <AngleRightSVG
-          stroke="#2CEDFF"
-          width={10}
-          height={17}
-          fill="none"
-          style={{ marginTop: 7 }}
-        />
-      </span>
-      <div className="text-large-medium lg:text-extera-large-medium">
         {descData}
-      </div>
     </motion.li>
   );
 };

@@ -42,7 +42,7 @@ const MobileMenu: React.FC<props> = ({ headerLinks }) => {
       >
         {headerLinks.map((link) => {
           return (
-            <MobileMenuItem link={link} cycleIsExpanded={cycleIsExpanded} />
+            <MobileMenuItem key={link.text} link={link} cycleIsExpanded={cycleIsExpanded} />
           );
         })}
       </motion.ul>
@@ -55,18 +55,19 @@ const MobileMenu: React.FC<props> = ({ headerLinks }) => {
           {footerData.map((social) => {
             return (
               <motion.li
+              key={social.href}
                 variants={menuSocialItemAni}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="rounded-full bg-neutral-700 text-white text-base flex justify-center items-center cursor-pointer !duration-[0]"
               >
-                <Social data={social} width={"2rem"} svgWidth=".875rem" hasTransition={false} />
+                <ul><Social data={social} width={"2rem"} svgWidth=".875rem" hasTransition={false} /></ul>
               </motion.li>
             );
           })}
         </motion.ul>
         <motion.p variants={menuCopyRightAni} className="text-[.625rem]">
-          &copy; COPYWRITES 2022 DDD. ALL RIGHTS RESERVED
+          &copy; COPYRIGHT 2022 DDD. ALL RIGHTS RESERVED
         </motion.p>
       </motion.div>
     </motion.nav>
