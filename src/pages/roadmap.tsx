@@ -28,6 +28,9 @@ export default function roadmap(): JSX.Element {
         <meta name="twitter:title" content={roadmapPageMetaData.pageTitle} />
         <meta name="twitter:description" content={roadmapPageMetaData.desc} />
         <meta name="twitter:image" content={roadmapPageMetaData.imageUrl} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="480" />
+        <meta property="og:image:type" content="image/jpg" />
       </Head>
       <RoadMapPage />
     </Fragment>

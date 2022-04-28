@@ -28,6 +28,9 @@ export default function team(): JSX.Element {
         <meta name="twitter:title" content={teamPageMetaData.pageTitle} />
         <meta name="twitter:description" content={teamPageMetaData.desc} />
         <meta name="twitter:image" content={teamPageMetaData.imageUrl} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="480" />
+        <meta property="og:image:type" content="image/jpg" />
       </Head>
         <Team />
     </Fragment>
