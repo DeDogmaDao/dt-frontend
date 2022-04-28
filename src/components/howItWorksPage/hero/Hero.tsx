@@ -1,6 +1,4 @@
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import throttle from "lodash/throttle";
-import Image from "next/image";
 import {
   MouseEvent,
   TouchEvent,

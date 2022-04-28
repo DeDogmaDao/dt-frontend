@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
         className="h-full w-full flex flex-col justify-center items-center z-100  relative -mt-40 sm:-mt-56"
       >
         <div className="z-10 mb-[-3rem] w-[20rem] h-[12rem]  ssm:w-[25.25rem] ssm:h-[15.23rem] relative">
-          <span className="relative w-full h-full">
+          <span className=" w-full h-full">
           <Image src={treasure} layout="fill" quality={90} placeholder="blur"  />
           </span>
         </div>

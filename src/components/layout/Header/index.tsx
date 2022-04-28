@@ -1,7 +1,5 @@
 import Link from "next/link";
 
-import Head from "next/head";
-import { useRouter } from "next/router";
 import EachLink from "./EachLink";
 import { motion } from "framer-motion";
 // types

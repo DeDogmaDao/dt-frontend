@@ -1,6 +1,6 @@
 import { AnimatePresence, LayoutGroup } from "framer-motion";
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { allTabs } from "../../../store/allData";
 import { activeIndexCardType } from "../../../types/allTypes";
 import Card from "./Card";

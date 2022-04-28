@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { globCardType, sizeType, teamCardType } from "../../types/allTypes";
+import { sizeType, teamCardType } from "../../types/allTypes";
 import { motion, Variants } from "framer-motion";
 import Social from "../global/Social";
 import { lgData, mdData, smData } from "../../store/allData";

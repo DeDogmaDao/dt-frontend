@@ -1,4 +1,3 @@
-import { ReactElement } from "react";
 import { activeIndexCardType } from "../../../types/allTypes";
 import { AnimatePresence, motion } from "framer-motion";
 import { tabInfoContainerAni } from "../../../utils/animation";

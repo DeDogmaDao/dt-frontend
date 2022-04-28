@@ -1,8 +1,7 @@
 import Image from "next/image";
 import PlaySVG from "../../svgs/play.svg";
-import PauseSVG from "../../svgs/pause.svg";
-import { AnimatePresence, motion } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import {  motion } from "framer-motion";
+import {  useRef, useState } from "react";
 import { videoBtnAnim } from "../../../utils/animation";
 import introBg from "../../images/bg/sec2.png";
 import videoBg from "../../images/bg/Story.png";

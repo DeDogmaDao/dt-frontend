@@ -7,7 +7,6 @@ import {
   socialType,
   tabsType,
   tabType,
-  globCardType,
   roadMapType,
   roadDataType,
   benefitType,
