@@ -83,6 +83,7 @@ const InteroVideo: React.FC = () => {
           </div>
         )}
         <img
+        alt="dedogmadao background" 
           src="/img/video/border.png"
           className="w-full aspect-video pl-px absolute z-30 pointer-events-none"
         />
