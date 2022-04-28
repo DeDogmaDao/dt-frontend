@@ -42,7 +42,7 @@ const MobileMenu: React.FC<props> = ({ headerLinks }) => {
       >
         {headerLinks.map((link) => {
           return (
-            <MobileMenuItem link={link} cycleIsExpanded={cycleIsExpanded} />
+            <MobileMenuItem key={link.text} link={link} cycleIsExpanded={cycleIsExpanded} />
           );
         })}
       </motion.ul>
@@ -55,6 +55,7 @@ const MobileMenu: React.FC<props> = ({ headerLinks }) => {
           {footerData.map((social) => {
             return (
               <motion.li
+              key={social.href}
                 variants={menuSocialItemAni}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
