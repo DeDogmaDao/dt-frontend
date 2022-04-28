@@ -7,7 +7,7 @@ services:
     environment:
       - BACKEND_URL
       - ROBOTS_TXT
-    command: /app/frontend/src/run.sh
+    command: sh /app/frontend/src/run.sh
 
 networks:
   default:
