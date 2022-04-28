@@ -50,6 +50,7 @@ const Road: React.FC<props> = ({ index, activeSection, road }) => {
             {road.roadData.map((data, index) => {
               return (
                 <RoadItem
+                key={data.title.substring(0,20)}
                   data={data}
                   setDescIndex={setDescIndex}
                   descIndex={descIndex}
