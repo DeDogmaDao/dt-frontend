@@ -20,7 +20,7 @@ const Footer: React.FC = () => {
         <span className="w-[1.875rem] h-[.375rem] mb-6 bg-primary-500 z-10 " />
         <ul className="flex justify-center items-center gap-x-1 sm:gap-x-3 mb-36 z-10">
           {footerData.map((data) => {
-            return <Social data={data} width="3.375rem" svgWidth="1.625rem" hasTransition={true} />;
+            return <Social key={data.href} data={data} width="3.375rem" svgWidth="1.625rem" hasTransition={true} />;
           })}
         </ul>
         <p className="mb-10 text-xs ssm:text-medium-light !font-thin z-10">

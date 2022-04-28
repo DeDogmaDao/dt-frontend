@@ -43,9 +43,9 @@ const Header: React.FC = () => {
           <Link href="/">
             <div className="flex justify-start items-center gap-x-2 fill-white hover:fill-primary-500 duration-300">
               <LogoSVG width="2.5rem" />
-              {/* <span className="text-small-bold ssm:text-medium-bold md:hidden ">
+              <span className="text-small-bold ssm:text-medium-bold hidden sm:block md:hidden ">
                 Demmortal  Treasure
-              </span> */}
+              </span>
             </div>
           </Link>
         </span>
