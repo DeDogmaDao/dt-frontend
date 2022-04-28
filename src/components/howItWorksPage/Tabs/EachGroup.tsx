@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { tabsType } from "../../../types/allTypes";
-import underLine from "../../images/Union.png";
 import deepClone from "lodash/cloneDeep";
 import Image from "next/image";
 

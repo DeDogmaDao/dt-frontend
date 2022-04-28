@@ -1,10 +1,7 @@
 import { motion } from "framer-motion";
 import { useOnScrollAnimation } from "../../../hooks/useOnScrollAnimation";
 import {
-  goldenContainerAni,
-  goldenFirstAni,
   goldenSecondAni,
-  goldenSplitAni,
 } from "../../../utils/animation";
 
 const GoldenPoint: React.FC = () => {

@@ -1,8 +1,7 @@
-import { motion, PanInfo, useAnimation, useElementScroll } from "framer-motion";
+import { motion, PanInfo, useAnimation } from "framer-motion";
 import Image from "next/image";
-import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useRef } from "react";
 import { activeIndexCardType } from "../../../types/allTypes";
-import { tabFrameAni } from "../../../utils/animation";
 import { cardIndexHandler } from "../../../utils/util";
 import AngleRightSVG from "../../svgs/rightangle.svg";
 
