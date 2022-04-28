@@ -33,7 +33,7 @@ const Benefits: React.FC = () => {
       id="benefits"
     >
       <div className="absolute top-0 left-0 w-full h-[7.5rem] bg-gradient-to-b from-bodymain to-transparent z-[1]" />
-      <div className="absolute bottom-0 left-0 w-full h-[7.5rem] bg-gradient-to-t from-bodymain to-transparent z-[1]" />
+      <div className="absolute bottom-0 left-0 w-full h-[7.5rem] bg-gradient-to-t from-[#04050E] to-transparent z-[1]" />
       <span className="absolute h-full min-w-[100vw] aspect-[1438/586]">
         <span className="w-full h-full inner-image-no-max-width">
           <Image
@@ -45,7 +45,7 @@ const Benefits: React.FC = () => {
         </span>
       </span>
       <div className="flex flex-col lg:flex-row ssm:w-11/12 lg:w-10/12 2xl:w-9/12 mx-auto
-      min-h-[50rem] ssm:min-h-[45rem] sm:min-h-[45rem] lg:min-h-[35rem]
+      min-h-[50rem] ssm:min-h-[45rem] sm:min-h-[45rem] lg:min-h-[40rem]
       md:pt-20">
         <motion.div
           onHoverStart={() => setIsPlaying(false)}
