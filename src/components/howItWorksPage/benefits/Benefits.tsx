@@ -34,7 +34,7 @@ const Benefits: React.FC = () => {
     >
       <div className="absolute top-0 left-0 w-full h-[7.5rem] bg-gradient-to-b from-bodymain to-transparent z-[1]" />
       <div className="absolute bottom-0 left-0 w-full h-[7.5rem] bg-gradient-to-t from-bodymain to-transparent z-[1]" />
-      <span className="absolute lg:w-full aspect-[1438/586]">
+      <span className="absolute lg:h-full aspect-[1438/586]">
         <span className="w-full h-full inner-image-no-max-width">
           <Image
             src={benefitBg}
