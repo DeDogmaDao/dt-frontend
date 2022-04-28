@@ -7,7 +7,7 @@ import {
 const GoldenPoint: React.FC = () => {
   const [element, controls] = useOnScrollAnimation(0.5);
   return (
-    <motion.div className="flex flex-col justify-center items-center z-100 px-5 py-14">
+    <motion.div className="flex flex-col justify-center items-center z-100 px-5 pt-10">
       <motion.div className="flex flex-wrap justify-center gap-x-2 text-[1.75rem] font-bold">
         {"Demmortal Treasure is more than just a"
           .split(" ")
