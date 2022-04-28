@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { tabsType } from "../../../types/allTypes";
-import underLine from "../../images/Union.png";
 import deepClone from "lodash/cloneDeep";
 import Image from "next/image";
 
@@ -26,7 +25,7 @@ const EachGroup: React.FC<props> = ({ name, activeGroup, setTabs, tabs }) => {
   return (
     <motion.button
       whileHover={{ scale: activeGroup ? 1 : 1.05 }}
-      className=" w-48 md:w-64 aspect-[2.3] relative flex justify-center items-center"
+      className=" w-48 h-[5.2rem] md:w-64 md:h-28 aspect-[2.3] relative flex justify-center items-center"
       onClick={clickHandler}
     >
       {activeGroup && (
@@ -46,7 +45,7 @@ const EachGroup: React.FC<props> = ({ name, activeGroup, setTabs, tabs }) => {
       >
         <span className="ml-6">{name}</span>
         <span className="relative w-[60%] h-full">
-          <Image src={"/img/cyc/" + name + ".png"} layout="fill" />
+          <Image alt="dedogmadao background"  src={"/img/cyc/" + name + ".png"} layout="fill" />
         </span>
       </div>
     </motion.button>

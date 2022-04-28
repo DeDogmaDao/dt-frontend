@@ -1,147 +1,142 @@
-import { motion } from "framer-motion";
-import throttle from "lodash/throttle";
-import Image from "next/image";
-import { useEffect, useLayoutEffect, useState } from "react";
-import { cityAnim, cityMaskAnim, heroAnim } from "../../../utils/animation";
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import {
+  MouseEvent,
+  TouchEvent,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from "react";
+import { heroAnim } from "../../../utils/animation";
+import { UAParser } from "ua-parser-js";
+import { dimensionType } from "../../../types/allTypes";
+import LogoType from "./LogoType";
+import Portal from "./Portal";
+import City from "./City";
+import FireCape from "./FireCape";
 
 const Hero: React.FC = () => {
-  const [anim, setAnim] = useState("hidden");
-  // const { scrollY } = useViewportScroll();
-  // const topT = useTransform(scrollY, (y) => {
-  //   if (y < 2000) {
-  //     return y / 5;
-  //   }
-  //   return 400;
-  // });
-
-  const topTransformWheel = (evt: any) => {
-    // if (window.scrollY < 15) {
-    //   evt.preventDefault();
-    //   let direction = evt.detail < 0 || evt.wheelDelta > 0 ? 1 : -1;
-    //   if (direction > 0) {
-    //     window.scrollTo({
-    //       top: window.scrollY - 20,
-    //       left: 0,
-    //       behavior: "smooth",
-    //     });
-    //   } else {
-    //     window.scrollTo({
-    //       top: window.scrollY + 20,
-    //       left: 0,
-    //       behavior: "smooth",
-    //     });
-    //   }
-    // }
-  };
-
-  const scrollHandler = () => {
-    if (window.scrollY < 450) {
-      if (window.scrollY > 1) {
-        setAnim((prevState) => {
-          if (prevState === "visible") {
-            return prevState;
-          }
-          return "visible";
-        });
-      } else {
-        setAnim((prevState) => {
-          if (prevState === "hidden") {
-            return prevState;
-          }
-          return "hidden";
-        });
-      }
-    }
-  };
-
-  useEffect(() => {
-    const throtteledTopScroll = topTransformWheel;
-    window.addEventListener("scroll", scrollHandler);
-    window.addEventListener("mousewheel", throtteledTopScroll, {
-      passive: false,
+  const heroContainerRef = useRef<HTMLDivElement>(null);
+  const [portalLoading, setPortalLoading] = useState(0);
+  const [dimension, setDimension] = useState<dimensionType>({
+    width: 0,
+    height: 0,
+  });
+  useLayoutEffect(() => {
+    setDimension({
+      width: heroContainerRef.current!.offsetWidth,
+      height: heroContainerRef.current!.offsetHeight,
     });
-    window.addEventListener("DOMMouseScroll", throtteledTopScroll, {
-      passive: false,
-    });
+    const resizeHandlerDim = () => {
+      setDimension({
+        width: heroContainerRef.current!.offsetWidth,
+        height: heroContainerRef.current!.offsetHeight,
+      });
+    };
+    window.addEventListener("resize", resizeHandlerDim);
 
     return () => {
-      window.removeEventListener("scroll", scrollHandler);
-      window.removeEventListener("mousewheel", throtteledTopScroll);
-      window.removeEventListener("DOMMouseScroll", throtteledTopScroll);
+      window.removeEventListener("resize", resizeHandlerDim);
     };
+  }, []);
+  const uaParser = new UAParser();
+  const [anim, setAnim] = useState("hidden");
+
+  const xCord = useMotionValue(200);
+  const yCord = useMotionValue(200);
+  const maskOpacity = useMotionValue(0.7);
+  const xTrans = useTransform(
+    xCord,
+    [0, dimension.width / 2, dimension.width],
+    [100, 0, -100]
+  );
+  const yTrans = useTransform(
+    yCord,
+    [0, dimension.height / 2, dimension.height],
+    [50, 0, -50]
+  );
+  const springX = useSpring(xTrans, { stiffness: 50 });
+  const springY = useSpring(yTrans, { stiffness: 50 });
+
+  const mouseMoveHandler = (event: MouseEvent) => {
+    xCord.set(event.pageX);
+    yCord.set(event.pageY);
+    const fisaghores =
+      Math.pow(event.pageX - dimension.width / 2, 2) +
+      Math.pow(event.pageY - dimension.height / 2, 2);
+    maskOpacity.set(Math.sqrt(fisaghores) / (dimension.width / 1.1) - 0.1);
+  };
+  const touchMoveHandler = (event: TouchEvent) => {
+    xCord.set(event.touches[0].pageX);
+    yCord.set(event.touches[0].pageY);
+    const fisaghores =
+      Math.pow(event.touches[0].pageX - dimension.width / 2, 2) +
+      Math.pow(event.touches[0].pageY - dimension.height / 2, 2);
+    maskOpacity.set(Math.sqrt(fisaghores) / (dimension.width / 1.1));
+  };
+
+  const leftFireRef = useRef<HTMLVideoElement>(null);
+  const rightFireRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (uaParser.getOS().name === "Mac OS") {
+      leftFireRef.current!.style.filter = "brightness(91.5%)";
+      rightFireRef.current!.style.filter = "brightness(91.5%)";
+    }
   }, []);
 
   return (
-    <>
-      <motion.div
-        className=" flex justify-center items-center relative bg-[#171181]
-       w-[100vw] h-[100vh] ssm:h-[110vh] sm:h-[90vh] md:h-[100vh] lg:h-[56.26vw] mx-auto overflow-hidden hero-container"
-      >
-        <div className="portal-and-flame-and-hero w-full h-full relative z-20 ">
-          <motion.span
-            className="absolute w-full h-full origin-bottom"
-            initial="hidden"
-            animate={anim}
-            variants={heroAnim}
-          >
-            <div
-              className=" ml-[-100%] sm:ml-[-25%] lg:ml-auto
+    <motion.div
+      ref={heroContainerRef}
+      onMouseMove={mouseMoveHandler}
+      onTouchMove={touchMoveHandler}
+      className=" flex justify-center items-center relative
+        w-[100vw] h-[157.55vw] sm:h-[84.375vw] md:h-[84.375vw]  lg:h-[56.25vw] mx-auto overflow-hidden hero-container"
+    >
+      <div className="portal-and-flame-and-hero w-full h-full relative z-20 ">
+        <div
+          className="absolute bottom-0 left-0 w-full h-[3rem] sm:h-[10rem]
+       bg-gradient-to-t from-bodymain  to-transparent z-[110] pointer-events-none"
+        />
+        <motion.div
+          initial="hidden"
+          animate={anim}
+          variants={heroAnim}
+          className=" ml-[-100%] sm:ml-[-25%] lg:ml-auto
              h-full
-              w-[300%] sm:w-[150%] lg:w-full
-                relative flex justify-center items-center"
-            >
-              <Image
-                src={"/img/art/portal.png"}
-                layout="fill"
-                className="z-10"
-                priority={true}
-                quality={100}
-              />
+             w-[300%] sm:w-[150%] lg:w-full
+             relative flex justify-center items-center will-change-transform origin-bottom"
+        >
+          <motion.div
+            onTap={() => setAnim("visible")}
+            onHoverStart={() => setAnim("visible")}
+            onHoverEnd={() => setAnim("hidden")}
+            className="red-transparent-on-city absolute w-[20%] h-[65%] top-1/2 mt-[-19.5%] left-1/2 ml-[-10%]  z-100 rounded-[50%] will-change-transform"
+          />
+          <LogoType setAnim={setAnim} portalLoading={portalLoading} />
 
-              <motion.img
-                className="absolute z-20 left-[48.5%] top-[71%] w-[10%] h-[15%]"
-                src={"/img/art/cape.gif"}
-              />
-              <motion.span
-                className="absolute w-full h-full z-0"
-                initial="hidden"
-                animate={anim}
-                variants={cityAnim}
-              >
-                <Image src={"/img/art/city.png"} layout="fill" quality={100} />
-              </motion.span>
-              <motion.span
-                initial="hidden"
-                animate={anim}
-                variants={cityMaskAnim}
-                className="absolute w-full h-full z-0 scale-105"
-              >
-                <Image src={"/img/art/mask.png"} layout="fill" />
-              </motion.span>
+          <Portal
+            portalLoading={portalLoading}
+            setPortalLoading={setPortalLoading}
+            setAnim={setAnim}
+          />
 
-              <motion.video
-                loop
-                autoPlay
-                muted
-                playsInline
-                className="absolute opacity-90 border-none outline-none z-20 w-[9.429%] h-[20.114%] left-[14.576%] top-[57.828%]"
-              >
-                <source src={"/img/art/left-fire.mp4"} type="video/mp4" />
-              </motion.video>
-              <motion.video
-                loop
-                autoPlay
-                muted
-                playsInline
-                className="absolute opacity-90 border-none outline-none z-20 w-[9.429%] h-[20.114%] left-[74.844%] top-[57.828%]"
-              >
-                <source src={"/img/art/right-fire.mp4"} type="video/mp4" />
-              </motion.video>
-            </div>
-          </motion.span>
-        </div>
-      </motion.div>
-    </>
+          <City
+            anim={anim}
+            maskOpacity={maskOpacity}
+            portalLoading={portalLoading}
+            springX={springX}
+            springY={springY}
+          />
+
+          <FireCape
+            leftFireRef={leftFireRef}
+            rightFireRef={rightFireRef}
+            portalLoading={portalLoading}
+          />
+        </motion.div>
+      </div>
+    </motion.div>
   );
 };
 

@@ -1,4 +1,4 @@
-import { IconDefinition } from "@fortawesome/free-brands-svg-icons";
+import { StaticImageData } from "next/image";
 import { ReactElement } from "react";
 
 export interface LinkType {
@@ -8,19 +8,27 @@ export interface LinkType {
 
 export interface faqType {
   question: string;
-  answer: ReactElement<any,any>;
+  answer: ReactElement<any, any>;
 }
 
 export interface globCardType {
-  image: string;
+  image: StaticImageData;
   name?: string;
   role?: string;
+  desc?: string;
+  link?: string;
+}
+export interface teamCardType {
+  image: StaticImageData;
+  name: string;
+  role: string;
+  desc: string;
+  link?: socialType[];
 }
 
 export interface socialType {
-  icon: IconDefinition;
+  icon: ReactElement<any>;
   href: string;
-  color: string;
 }
 
 export interface layersType {
@@ -73,6 +81,10 @@ export interface sizeType {
   width: number | string;
   height?: number | string;
 }
+export interface dimensionType {
+  width: number;
+  height: number;
+}
 
 export interface spellNumber {
   [yellow: string]: number;
@@ -97,18 +109,17 @@ export type createLightningType = (
 ) => light[];
 
 export interface activeIndexCardType {
-  [gods: string]: number;
-  humans: number;
+  [gods: string]: number[];
+  humans: number[];
 }
 
 export interface roadDataType {
   title: string;
-  desc: ReactElement<any,any>;
+  desc: ReactElement<any, any>;
 }
 
 export interface roadMapType {
   sectionName: string;
-  backImg: string;
   roadData: roadDataType[];
 }
 
@@ -123,4 +134,14 @@ export interface metaType {
   keywords: string;
   author: string;
   preload: string[];
+}
+
+export interface metaDataType {
+  siteTitle: string;
+  pageTitle: string;
+  desc:string;
+  keywords: string;
+  pageUrl:string;
+  imageUrl:string;
+  homePageUrl:string;
 }

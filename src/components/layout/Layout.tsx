@@ -24,7 +24,7 @@ const Layout: React.FC = (props) => {
       className="w-full h-full  flex flex-col justify-between items-start overflow-hidden relative"
     >
       {layoutCondition[0] && <Header />}
-      <AnimatePresence exitBeforeEnter>
+      <AnimatePresence exitBeforeEnter onExitComplete={()=>window.scrollTo(0,0)}>
         <Main key={router.pathname}>{props.children}</Main>
         {layoutCondition[1] && <Footer />}
       </AnimatePresence>

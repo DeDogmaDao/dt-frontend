@@ -1,5 +1,4 @@
-import { faGear } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
@@ -9,11 +8,11 @@ import {  useLayoutEffect } from "react";
 export default function underconstruction(): JSX.Element {
   const router = useRouter();
 
-  // useLayoutEffect(() => {
-  //   if (router.pathname === "/underconstruction") {
-  //     router.push("/");
-  //   }
-  // }, []);
+  useLayoutEffect(() => {
+    if (router.pathname === "/underconstruction") {
+      router.push("/");
+    }
+  }, []);
   return (
     <Fragment>
       <Head>
@@ -34,12 +33,10 @@ export default function underconstruction(): JSX.Element {
           width={1920}
           height={2041}
           alt="ddd dedogmadao"
+          
         />
         <div className="absolute left-0 top-[65vw] h-[55vw] w-full bg-gradient-to-b via-black from-transparent to-black"></div>
         <div className="absolute left-[6vw] top-[5vw] flex flex-col justify-center items-center font-serif ">
-          <span className="text-[10vw]  text-primary-500">
-            <FontAwesomeIcon className="animate-spin" icon={faGear} />
-          </span>
           <p className="text-[6vw]">DDD</p>
           <p className="text-[3vw]">Under Construction...</p>
         </div>

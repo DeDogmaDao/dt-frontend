@@ -6,7 +6,7 @@
 
 @import "../src/components/_components.css";
 
-@import url("https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
 
 /* chrome */
 *::-webkit-scrollbar {
@@ -21,13 +21,18 @@
   scrollbar-color: darkgray;
 }
 .link-inside-text {
-  @apply !text-cyan-500 !underline hover:!text-primary-500 duration-500; 
+  @apply !text-primary-500 !underline hover:!text-primary-500 duration-500; 
 }
 
 @layer base {
   html {
     scroll-behavior: smooth;
   }
+
+  svg{
+    overflow: visible;
+  }
+
   h1 {
     font-style: normal;
     font-weight: 500;
@@ -66,11 +71,28 @@
   }
   body {
     font-family: "Saira", sans-serif;
-    @apply bg-[#000413] text-neutral-50;
+    @apply bg-bodymain text-neutral-50;
   }
 
   span > img {
     @apply pointer-events-none;
+  }
+
+
+
+  video::-webkit-media-controls-overlay-play-button {
+    display: none;
+  }
+  video::-webkit-media-controls-overlay-pause-button {
+    display: none;
+  }
+  video::-webkit-media-controls-loading-panel {
+    display: none;
+  }
+
+  ::selection {
+    text-shadow: 0px 1px 0 black;
+    @apply bg-primary-500 text-black ;
   }
 }
 
@@ -95,14 +117,18 @@
 
   * {
     -webkit-tap-highlight-color: transparent;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+    -webkit-touch-callout: text;
+    -webkit-user-select: text;
+    -khtml-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
   }
   *:focus {
     outline: none !important;
   }
 
+
+.inner-image-no-max-width > span > img {
+@apply max-w-none;
+}

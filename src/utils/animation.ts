@@ -418,15 +418,15 @@ export const tabBlastAni: Variants = {
 export const carouselDisplayAni: Variants = {
   hidden: (custom) => ({
     left: 50 + custom * 70 + "%",
-    scale: 1 - 0.4 * Math.abs(custom),
-    opacity:0.3,
+    scale: 1 - 0.8 * Math.abs(custom),
+    opacity: 0.3,
   }),
   visible: (custom) => {
     if (custom === 0) {
       return {
         scale: 1 - 0.4 * Math.abs(custom),
         left: 50 + custom * 35 + "%",
-        opacity:1,
+        opacity: 1,
         transition: {
           duration: 0.4,
         },
@@ -435,7 +435,7 @@ export const carouselDisplayAni: Variants = {
     return {
       scale: 1 - 0.4 * Math.abs(custom),
       left: 50 + custom * 35 + "%",
-      opacity:0.5,
+      opacity: 0.5,
       transition: {
         duration: 0.4,
       },
@@ -446,29 +446,33 @@ export const carouselDisplayAni: Variants = {
     scale: 0.2,
     opacity: 0.3,
     transition: {
-      duration: 0.4,
+      duration: 0.3,
     },
   }),
 };
 
 export const tabInfoContainerAni: Variants = {
   hidden: {
-    y: 50,
+    y: -600,
     opacity: 0,
+    scale: 0,
   },
   visible: {
     y: 0,
-    opacity: 1,
+    opacity: [0, 0.7, 1],
+    scale: [0, 0.3, 1],
     transition: {
-      duration: 0.3,
+      duration: 0.4,
       delay: 0.15,
+      times: [0, 0.5, 1],
+      ease: "easeIn",
     },
   },
   out: {
     opacity: 0,
-    y: -10,
+    y: 50,
     transition: {
-      duration: 0.3,
+      duration: 0.4,
     },
   },
 };
@@ -545,18 +549,18 @@ export const tabImageAni: Variants = {
   }),
 };
 
-export const tabFrameAni:Variants = {
-  hidden:{
-    scale:1,
+export const tabFrameAni: Variants = {
+  hidden: {
+    scale: 1,
   },
-  visible:{
-    scale:[1,1.03,1],
-    transition:{
-      duration:0.7,
-      times:[0,0.3,1]
-    }
-  }
-}
+  visible: {
+    scale: [1, 1.03, 1],
+    transition: {
+      duration: 0.7,
+      times: [0, 0.3, 1],
+    },
+  },
+};
 
 export const spellCounterAni: Variants = {
   hidden: {
@@ -739,7 +743,7 @@ export const eachBenefitDescAni: Variants = {
     opacity: 1,
     transition: {
       duration: 0.7,
-      delay: custom * 0.3,
+      delay: 0.1 + custom * 0.2,
     },
   }),
 };
@@ -750,7 +754,7 @@ export const callToActionSvgAni: Variants = {
   },
   visible: {
     pathLength: 1,
-    
+
     transition: {
       delay: 0,
       duration: 1.5,
@@ -889,46 +893,137 @@ export const menuCopyRightAni: Variants = {
   },
 };
 
+export const heroAnim: Variants = {
+  hidden: {
+    scale: 1,
+    transition: {
+      duration: 2,
+      ease: "easeInOut",
+    },
+  },
+  visible: {
+    scale: 1.5,
+    transition: {
+      duration: 10,
+      ease: [0.25, 0.72, 0, 0.94],
+    },
+  },
+};
+export const cityAnim: Variants = {
+  hidden: {
+    scale: 1,
+    transition: {
+      duration: 2,
+      ease: "easeInOut",
+    },
+  },
+  visible: {
+    scale: 0.8,
+    transition: {
+      duration: 10,
+      ease: [0.25, 0.72, 0, 0.94],
+    },
+  },
+};
 
-export const heroAnim:Variants = {
-  hidden:{
-    scale:1,
-    transition:{
-      duration:1
+export const videoBtnAnim: Variants = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+      delay: 0.2,
     },
   },
-  visible:{
-    scale:1.4,
-    transition:{
-      duration:2
-    }
-  }
-}
-export const cityAnim:Variants = {
-  hidden:{
-    scale:1,
-    transition:{
-      duration:1
+  out: {
+    opacity: 0,
+    transition: {
+      duration: 0.5,
+      delay: 0.2,
     },
   },
-  visible:{
-    scale:0.75,
-    transition:{
-      duration:2
-    }
-  }
-}
-export const cityMaskAnim:Variants = {
-  hidden:{
-    opacity:1,
-    transition:{
-      duration:1
+};
+
+export const backToTopAni: Variants = {
+  hidden: {
+    opacity: 0,
+    scale: 0,
+  },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      duration: 0.1,
     },
   },
-  visible:{
-    opacity:0.3,
-    transition:{
-      duration:2
-    }
-  }
-}
+  out: {
+    opacity: 0,
+    scale: 0,
+    transition: {
+      duration: 0.1,
+    },
+  },
+};
+
+export const goldenContainerAni: Variants = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      duration: 0.01,
+      staggerChildren: 0.06,
+      when: "beforeChildren",
+    },
+  },
+};
+export const goldenFirstAni: Variants = {
+  hidden: {
+    opacity: 0,
+    x: -50,
+  },
+  visible: (custom) => ({
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.3,
+      delay: custom * 0.12,
+    },
+  }),
+};
+export const goldenSplitAni: Variants = {
+  hidden: (custom) => ({
+    opacity: 0,
+    x: -500 + custom * 100,
+    y: custom % 2 !== 0 ? 300 : -300,
+    scale: 3,
+  }),
+  visible: (custom) => ({
+    opacity: 1,
+    x: 0,
+    y: 0,
+    scale: 1,
+    transition: {
+      delay: 0.1 + custom * 0.1,
+      duration: 0.7,
+      ease: "easeInOut",
+    },
+  }),
+};
+export const goldenSecondAni: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 50,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.4,
+      staggerChildren: 0.5,
+    },
+  },
+};

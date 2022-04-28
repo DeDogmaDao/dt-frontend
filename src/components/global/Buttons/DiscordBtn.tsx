@@ -1,7 +1,7 @@
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import { AnimationControls, motion, useAnimation } from "framer-motion";
 import { discordBtnAni } from "../../../utils/animation";
+import AngleRightSVG from '../../svgs/rightangle.svg';
 const DiscordBtn: React.FC = () => {
   const controls: AnimationControls = useAnimation();
   return (
@@ -33,7 +33,7 @@ const DiscordBtn: React.FC = () => {
         />
       </motion.svg>
       Join Discord
-      <span className="animate-bounceX"><FontAwesomeIcon icon={faArrowRight} /></span>
+      <span className="animate-bounceX"><AngleRightSVG/></span>
     </motion.button>
   );
 };

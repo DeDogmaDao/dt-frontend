@@ -151,6 +151,7 @@ const CardGame: React.FC<props> = ({
           {data.spellValue.map((spell) => {
             return (
               <Spell
+              key={spell + "d-spell"}
                 spellIndex={data.total - data.spellValue.length + spell}
                 spellNumber={spellNumber}
                 spellGroup={data.spellGroup}

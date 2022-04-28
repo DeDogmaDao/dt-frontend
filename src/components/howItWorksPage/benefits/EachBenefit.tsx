@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Dispatch, SetStateAction, useState } from "react";
+import { Dispatch, SetStateAction } from "react";
 import { benefitType } from "../../../types/allTypes";
 import { eachBenefitAni } from "../../../utils/animation";
 interface props {
@@ -14,7 +14,7 @@ const EachBenefit: React.FC<props> = ({
   index,
   activeIndex,
   setActiveIndex,
-  setIsPlaying
+  setIsPlaying,
 }) => {
   const benefitBtnClickHandler = () => {
     setActiveIndex((prevState) => {
@@ -35,11 +35,9 @@ const EachBenefit: React.FC<props> = ({
 
   return (
     <motion.button
-    onTap={()=>setIsPlaying(false)}
-      className={`h-12 flex flex-col justify-center items-start relative duration-500 ml-6 ssm:ml-0 font-semibold  ${
-        activeIndex === index
-          ? " text-white"
-          : "text-neutral-50/30 "
+      onTap={() => setIsPlaying(false)}
+      className={`h-12 flex flex-col justify-center items-start relative duration-75 ml-6 ssm:ml-0 font-normal  ${
+        activeIndex === index ? " text-white !font-bold" : "text-neutral-50/30 "
       }`}
       onClick={benefitBtnClickHandler}
     >
@@ -49,7 +47,7 @@ const EachBenefit: React.FC<props> = ({
           initial="hidden"
           animate="visible"
           variants={eachBenefitAni}
-          className="w-[1.625rem] h-[.375rem] bg-yellow-400 absolute bottom-1 left-0"
+          className="w-[1.625rem] h-[.375rem] bg-primary-500 absolute bottom-1 left-0"
         ></motion.div>
       )}
     </motion.button>

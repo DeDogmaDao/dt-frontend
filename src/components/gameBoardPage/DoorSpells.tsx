@@ -50,6 +50,7 @@ const DoorSpells: React.FC<props> = ({
           return (
             <>
               <Spell
+              key={spell + "d-spell"}
                 spellIndex={spellIndex(spell)}
                 spellGroup={spellGroup}
                 spellNumber={spellNumber}

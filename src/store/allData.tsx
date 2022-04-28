@@ -1,10 +1,3 @@
-import {
-  faDiscord,
-  faInstagram,
-  faLinkedin,
-  faTwitter,
-  faYoutube,
-} from "@fortawesome/free-brands-svg-icons";
 // type
 import {
   counterNumType,
@@ -14,45 +7,41 @@ import {
   socialType,
   tabsType,
   tabType,
-  globCardType,
   roadMapType,
   roadDataType,
   benefitType,
   metaType,
+  teamCardType,
+  metaDataType,
 } from "../types/allTypes";
 
 //
 //
 //
 //
+import DiscordSVG from "../components/svgs/discord.svg";
+import YoutubeSVG from "../components/svgs/youtube.svg";
+import Twitter from "../components/svgs/twitter.svg";
+import Github from "../components/svgs/github.svg";
+import Instagram from "../components/svgs/instagram.svg";
+import Linkedin from "../components/svgs/linkedin.svg";
 
+import { teamImg } from "./img";
 export const footerData: socialType[] = [
   {
-    icon: faDiscord,
-    href: "https://www.discord.com",
-    color: "#e4405f",
+    icon: <YoutubeSVG />,
+    href: "https://www.youtube.com/channel/UCNGZXAcCP-xHrAVqaEWqozw",
   },
   {
-    icon: faYoutube,
-    href: "www.discord.com",
-    color: "#3b5999",
+    icon: <DiscordSVG />,
+    href: "https://discord.gg/dedogmadao",
   },
   {
-    icon: faLinkedin,
-    href: "www.discord.com",
-    color: "#e4405f",
-  },
-  {
-    icon: faTwitter,
-    href: "www.discord.com",
-    color: "#cd201f",
-  },
-  {
-    icon: faInstagram,
-    href: "www.discord.com",
-    color: "#0077B5",
+    icon: <Twitter />,
+    href: "https://twitter.com/DMTtreasure",
   },
 ];
+export const mdData: string[] = ["3", "l"];
 
 export const faqData: faqType[] = [
   {
@@ -161,13 +150,13 @@ export const faqData: faqType[] = [
     question: "Will Demmortal Treasure be minted on ERC-721A standard?",
     answer: (
       <>
-        Yes{" "}
+        Yes,{" "}
         <a
-          href="https://azuki.com"
+          href="https://www.azuki.com/erc721a"
           target={"_blank"}
           className="link-inside-text"
         >
-          link to Azuki’s post about this standard
+          Read Azuki’s post about this standard
         </a>
       </>
     ),
@@ -243,32 +232,80 @@ export const faqData: faqType[] = [
     ),
   },
 ];
+export const lgData: string[] = ["n"];
 
-export const teamDataLvl1: globCardType[] = [
+export const teamDataLvl1: teamCardType[] = [
   {
-    name: "Member1",
-    role: "Graphic designer",
-    image: "/img/team/member1.png",
+    name: "Decentral Titan",
+    role: "Main founder and investor",
+    image: teamImg[0],
+    desc: "Believer in Decentral Dogma. Explorer of the first titans treasure. Full time defi user and researcher for more than 4 years. NFT market addicted.",
+    link: [{ href: "https://twitter.com/DecentralTitan", icon: <Twitter /> }],
   },
-  { name: "Member2", role: "ui/ux designer", image: "/img/team/member2.png" },
+  {
+    name: "Meti.eth",
+    role: "Blockchain Engineer",
+    image: teamImg[1],
+    desc: "Mehdi Salehi is a Master’s Student at Concordia University in Montreal, Canada. He mainly researches blockchain technologies and decentralized finance. He is an independent smart contract auditor, auditing several DeFi projects. He also contributed to the Meta Governance project and EIP-4824.",
+    link: [
+      {
+        href: "https://www.linkedin.com/in/mehdi-salehi-b16873158/",
+        icon: <Linkedin />,
+      },
+    ],
+  },
+  {
+    name: "Sara",
+    role: "Co-founder and Product Manager",
+    image: teamImg[2],
+    desc: "Sara has a technical background in entertainment and fintech industry worked in companies like Spotify and iZettle. She is a true believer in Ethereum and blockchain. She has been active in this field for a couple of years now and wants to continue to have a bigger impact in this industry by building more innovative solutions.",
+    link: [
+      {
+        href: "https://www.linkedin.com/in/sara-rabiee-17711260/",
+        icon: <Linkedin />,
+      },
+    ],
+  },
 ];
 
-export const teamDataLvl2: globCardType[] = [
-  { name: "Member3", role: "backend dev", image: "/img/team/member3.png" },
+export const teamDataLvl2: teamCardType[] = [
   {
-    name: "Member1",
-    role: "Graphic designer",
-    image: "/img/team/member1.png",
+    name: "George",
+    role: "Backend  Adviser",
+    image: teamImg[3],
+    desc: "George has many years of experience in backend engineering. He has worked in companies like Spotify and successful startups like Soundwave.",
+    link: [
+      {
+        href: "https://www.linkedin.com/in/george-boyle-845b38b8/",
+        icon: <Linkedin />,
+      },
+      { href: "https://github.com/Dockheas23", icon: <Github /> },
+    ],
   },
   {
-    name: "Member2",
-    role: "Graphic designer",
-    image: "/img/team/member2.png",
+    name: "Floki BB",
+    role: "Co-founder and Blockchain Engineer",
+    image: teamImg[4],
+    desc: "Floki BB is a software engineer and has been in the Blockchain filed since 2016. He has worked as a Blockchain integration engineer and have been involved in the Ethereum ecosystem since 2018. An example of his remarkable work is contributing to solidity language compiler and work as DAPP engineer in couple other projects.",
+    link: [
+      { href: "https://twitter.com/FlokiTheBB", icon: <Twitter /> },
+      { href: "https://github.com/FlokiBB/", icon: <Github /> },
+    ],
   },
   {
-    name: "Member3",
-    role: "Graphic designer",
-    image: "/img/team/member3.png",
+    name: "Katy",
+    role: "Master of lore and communications",
+    image: teamImg[5],
+    desc: "Katy is a linguistics enthusiast and lover of all things literature. By day, she teaches English as a foreign language and by night she spends her time building lightsabers, writing, dreaming and ever expanding her hobbies. She enjoys the company of like-minded people and bringing these people together. Inspired by web3 culture. Community building and support lies at the core of what she does at DeDogmaDao.",
+    link: [
+      { href: "https://www.instagram.com/katythemaker", icon: <Instagram /> },
+    ],
+  },
+  {
+    name: "Sofia",
+    role: "Head of art",
+    image: teamImg[6],
+    desc: "Full-time artist for more than 10 years. Specialised in Illustration, character and motion design in the video production and game industry. On the introverted side, but an amazing teammate. Perhaps she’ll decide to be douxed one day.",
   },
 ];
 
@@ -289,7 +326,7 @@ export const godTabData: tabType[] = [
     titleOfHonor: "Goddess of the hunt",
     image: "/img/cyc/artemis.jpg",
     desc: [
-      "Beautiful moon maiden, goddess of the hunt. Twin to Apollo, the sun god. Fingers laced with silver and a deadly accuracy with her bow and arrows- all who pursue the art of archery strive to attain a sliver of her skill all their lives.",
+      "Beautiful moon maiden, goddess of the hunt. Twin to Apollo, the sun god. Fingers laced with silver and a deadly accuracy with her bow and arrows- all who pursue the art of archery strive to attain only a sliver of her skill.",
       "Artemis created the beastrider guild by sending her goat to help them. She takes 3% share of the beast rider's win of the treasury.",
       "Artemis has 18X more chance to compare to other cards to win the lottery.",
     ],
@@ -300,9 +337,9 @@ export const godTabData: tabType[] = [
     titleOfHonor: "God of the sun",
     image: "/img/cyc/hermes.jpg",
     desc: [
-      "God of the sun and master of thievery and poetry. With his wing-threaded sandals, he can spread news at the blink of an eye to those who are willing to lend him an ear. The words that leave his mouth are nothing short of poetical.",
-      "Hermes created the thieves guild by placing a magnetic power in humans. ",
-      "Hermes takes 3% share of the thieves guild’s win of treasury.",
+      "Master of thievery and poetry. With his wing-threaded sandals, he can spread news at the blink of an eye to those who are willing to lend him an ear. The words that leave his mouth are nothing short of poetical.",
+      "Hermes created the Bandits guild by placing a magnetic power in humans.",
+      "Hermes takes 3% share of the Bandits guilds‘ win of treasury.",
       "Hermes has 18X more chance to compare to other cards to win the lottery.",
     ],
   },
@@ -313,8 +350,8 @@ export const godTabData: tabType[] = [
     image: "/img/cyc/zeus.jpg",
     desc: [
       "God of craftsmen and invention, son of Hera. A blazing forge with his blessing yields the sharpest daggers and the most balanced swords. His inventive spirit can solve any problem with an ingenious idea.",
-      "Hephaestus created the blessed guild by giving them the box of pandora.",
-      "Hephaestus takes 3% share of the blessed guild’s win of treasury. ",
+      "Hephaestus created the Smiths guild by giving them the box of pandora.",
+      "Hephaestus takes 3% share of the Smiths guilds‘ win of treasury.",
       "Hephaestus has 18X more chance to compare to other cards to win the lottery.",
     ],
   },
@@ -325,8 +362,8 @@ export const godTabData: tabType[] = [
     image: "/img/cyc/hecate.jpg",
     desc: [
       "Goddess of necromancy and sorcery. Accompanied by her double shadow, her magical abilities knows no boundaries.",
-      "Hecate created the sorcerers by the power of her magic and fire.",
-      "Hecate takes 3% share of the sorcerers guild’s win of  treasury. ",
+      "Hecate created the Enchants by the power of her magic and fire.",
+      "Hecate takes 3% share of the Enchants guild’s win of  treasury.",
       "Hecate has 18X more chance to compare to other cards to win the lottery.",
     ],
   },
@@ -336,8 +373,8 @@ export const godTabData: tabType[] = [
     titleOfHonor: "God of the afterlife",
     image: "/img/cyc/hades.jpg",
     desc: [
-      "God of the afterlife and Lord of the underworld. No mortal man could bare a single second in his presence, as he emits a sense of death being right around the corner.",
-      "18X more chance to compare to other cards to win the lottery",
+      "God of the afterlife and Lord of the underworld. No mortal man could bare a single second in his presence, as he emits a strong sense of death and loss.",
+      "Hades has 18X more chance to compare to other cards to win the lottery",
     ],
   },
   {
@@ -347,7 +384,7 @@ export const godTabData: tabType[] = [
     image: "/img/cyc/aphrodite.jpg",
     desc: [
       "Goddess of beauty and passion. Seductive, beautiful and wistful, this goddess could make a man swoon at her while holding a dagger to his throat. A dangerous-but-fantastic deity.",
-      "18X more chance to compare to other cards to win the lottery.",
+      "Aphrodite has 18X more chance to compare to other cards to win the lottery.",
     ],
   },
   {
@@ -357,7 +394,7 @@ export const godTabData: tabType[] = [
     image: "/img/cyc/poseidon.jpg",
     desc: [
       "God of the oceans and Lord of the seas. Father of horses and all sea creatures. With is power to control large bodies of water, he can influence the climate of the earth like no other.",
-      "18X more chance to compare to other cards to win the lottery.",
+      "Poseidon has 18X more chance to compare to other cards to win the lottery.",
     ],
   },
   {
@@ -367,7 +404,7 @@ export const godTabData: tabType[] = [
     image: "/img/cyc/ares.jpg",
     desc: [
       "God of War and bloodlust. The most hostile god to deal with, but the most useful to have with you in battle. His combat intelligence and street smarts cannot be humbled.",
-      "18X more chance to compare to other cards to win the lottery.",
+      "Ares has 18X more chance to compare to other cards to win the lottery.",
     ],
   },
   {
@@ -377,7 +414,7 @@ export const godTabData: tabType[] = [
     image: "/img/cyc/hera.jpg",
     desc: [
       "Goddess of marriage and patroness of women. Daughter of Kronos and Hera. Her loyalty to Zeus cannot be restrained and her dedication towards women and  children is admirable.",
-      "18X more chance to compare to other cards to win the lottery",
+      "Hera has 18X more chance to compare to other cards to win the lottery",
     ],
   },
 ];
@@ -386,7 +423,7 @@ export const humanTabData: tabType[] = [
     activeCard: false,
     name: "Beast riders",
     titleOfHonor: "ّFollowers of Artemis",
-    image: "/img/cyc/3.png",
+    image: "/img/cyc/beast-riders.png",
     desc: [
       "Attained their power from Artemis. Power is known as “card illusion”. With this power, one holds an additional card in the deck identical to the real one. This guild has 444 cards in total at the start.",
       "Chance of winning for the members of this guild is 1.7X among all the cards.",
@@ -396,7 +433,7 @@ export const humanTabData: tabType[] = [
     activeCard: false,
     name: "Bandits",
     titleOfHonor: "Followers of Hermes",
-    image: "/img/cyc/1.png",
+    image: "/img/cyc/bandits.png",
 
     desc: [
       "Attained their power from Hermes. Power is known as “magnet”. With this power, one can steal the treasury from the winner under a specific condition. This guild has 480 cards in total at the start.",
@@ -407,7 +444,7 @@ export const humanTabData: tabType[] = [
     activeCard: true,
     name: "Enchants",
     titleOfHonor: "Followers of Hecate",
-    image: "/img/cyc/2.png",
+    image: "/img/cyc/enchants.png",
     desc: [
       "Attained their power from Hecate. Power is known as “double ability”. With this power, members can play their abilities twice. This guild has 666 cards in total at the start.",
       "Chance of winning for the members of this guild is 1.25X among all the cards.",
@@ -417,7 +454,7 @@ export const humanTabData: tabType[] = [
     activeCard: false,
     name: "Smiths",
     titleOfHonor: "Followers of Hephaestus",
-    image: "/img/cyc/3.png",
+    image: "/img/cyc/smiths.png",
 
     desc: [
       "Attained their power from Hephaestus. Power is known as “special drop”. With this power members will receive something special in the future. This guild has 777 cards in total at the start.",
@@ -426,9 +463,17 @@ export const humanTabData: tabType[] = [
   },
   {
     activeCard: false,
-    name: "Humans",
-    titleOfHonor: "Ordinary people",
-    image: "/img/cyc/2.png",
+    name: "Masculine Mortals",
+    image: "/img/cyc/human1.png",
+    desc: [
+      "They don’t hold any special power but they are strong in their beliefs, which is the reason why they joined the army to hunt down the treasure with their bare hands.",
+      "The chance of winning for the humans is 0.85X among all the cards.",
+    ],
+  },
+  {
+    activeCard: false,
+    name: "Feminine Mortals",
+    image: "/img/cyc/human2.png",
     desc: [
       "They don’t hold any special power but they are strong in their beliefs, which is the reason why they joined the army to hunt down the treasure with their bare hands.",
       "The chance of winning for the humans is 0.85X among all the cards.",
@@ -477,6 +522,7 @@ export const layersData: layersType[] = [
   },
 ];
 
+export const smData: string[] = ["a", "y"];
 export const gameCardData: gameCardType[] = [
   {
     id: "1",
@@ -1160,14 +1206,7 @@ export const roadDataQ2: roadDataType[] = [
     desc: (
       <>
         6 months after minting the Demmortal Treasure NFTs, accepting proposal
-        for accelerating defi gamification ideas based on DD Dao treasures{" "}
-        <a
-          href="https://wiki.com"
-          target={"_blank"}
-          className="link-inside-text"
-        >
-          link to the Wiki
-        </a>
+        for accelerating defi gamification ideas based on DD Dao treasures
       </>
     ),
   },
@@ -1229,42 +1268,32 @@ export const roadDataQ3: roadDataType[] = [
 export const roadMapData: roadMapType[] = [
   {
     sectionName: "Demmortal Treasure",
-    backImg: "/img/bg/road-sec1.png",
     roadData: roadDataQ1,
   },
   {
     sectionName: "Expanding DDD - part I",
-    backImg: "/img/bg/road-sec2.png",
     roadData: roadDataQ2,
   },
   {
     sectionName: "Expanding DDD - part II",
-    backImg: "/img/bg/road-sec3.png",
     roadData: roadDataQ3,
   },
 ];
 
 export const benefitsData: benefitType[] = [
   {
-    title: "Time-Guaranteed floor price",
+    title: "Guaranteed floor price",
     desc: [
       <>
-        The money collected from the minting, goes to the buyback treasury which
-        will guarantee the floor price. Any nft holder has the right to burn
-        their nfts and receive their funds back. Our team only receives 30% of
-        the funds based on the time schedule.{" "}
-        <a
-          href="https://gitbook.what"
-          target={"_blank"}
-          className="link-inside-text"
-        >
-          GITBOOK
-        </a>
-        <br />
+        The money collected from the minting goes to the{" "}
+        <span className="font-semibold">buyback treasury</span>. This will
+        guarantee the floor price of the NFTs to mint price and can raise by
+        time. Any NFT holder has the right to burn their NFTs and receive their
+        funds back.
       </>,
       <>
-        Part of the money earned from the secondary market sales and yield
-        farming will also go to this treasure to refuel it.
+        Additionally, part of the money earned from the secondary market sales
+        and yield farming will go to this treasury as a refuel.
       </>,
     ],
   },
@@ -1272,18 +1301,28 @@ export const benefitsData: benefitType[] = [
     title: "Auto-join lottery",
     desc: [
       <>
-        All NFT holders will automatically participate in our daily and weekly
-        gamified lottery.
+        All NFT holders will automatically participate in our{" "}
+        <span className="font-semibold">daily and weekly</span> gamified{" "}
+        <span className="font-semibold">lottery</span>.
       </>,
-      <>No extra gas fee or action needed from the holders unless they win.</>,
+      <>
+        <span className="font-semibold">No extra gas fee</span> or action needed
+        from the holders to join the lottery unless your NFT wins the lottery.
+      </>,
     ],
   },
   {
     title: "Diverse pool prizes",
     desc: [
-      <>Currently, There are two types of prizes in each game.</>,
-      <>Dynamic prize based on secondary sales (main prize).</>,
-      <>Guaranteed prize based on yield farming of investment treasury.</>,
+      <>Currently, There are two types of prizes in each game:</>,
+      <p>
+        <span className="font-semibold">1- Dynamic</span> prize based on
+        secondary sales (main prize).
+      </p>,
+      <p>
+        <span className="font-semibold">2- Guaranteed</span> prize based on
+        yield farming of investment treasury.
+      </p>,
       <>
         Note: The investment treasury is a self-growing pool which can only grow
         bigger and guarantees a minimum prize.
@@ -1291,12 +1330,19 @@ export const benefitsData: benefitType[] = [
     ],
   },
   {
-    title: "One click from NFT to PFP",
+    title: "Game card and PFP",
     desc: [
       <>
-        Demmortal Treasure collectigame is based on the lore‘s main characters.
-        It is also possible to generate detailed artwork PFP from your unique
-        NFT.
+        Demmortal Treasure is a{" "}
+        <span className="font-semibold">collectigame</span> established upon
+        composed lore. The lore is based on ancient classical myths. The NFTs
+        are the result of many hours of our talented artists’ artwork.
+      </>,
+      <>
+        The specifications of the characters (NFTs) affect the result of the
+        lottery. As an a NFT owner, one could generate{" "}
+        <span className="font-semibold">detailed artwork PFP</span>(profile
+        photo) from your unique NFT.
       </>,
     ],
   },
@@ -1305,17 +1351,43 @@ export const benefitsData: benefitType[] = [
 // //////////////////////////
 // pages
 
-export const homePageMetaData: metaType = {
-  author: "DeDogmaDAO",
-  description: "Demmortal Treasure! Win Eth!",
-  keywords: "etherium , demmortal",
-  title: "DeDogmaDAO Demmortal Treasure",
-  preload: [
-    "/public/img/art/portal.png",
-    "/public/img/art/city.png",
-    "/public/img/art/mask.png",
-    "/public/img/art/cape.gif",
-    "/public/img/art/left-fire.mp4",
-    "/public/img/art/right-fire.mp4",
-  ],
+export const homePageMetaData: metaDataType = {
+  siteTitle: "DeDogma Dao",
+  pageTitle: "Home",
+  desc: "Demmortal Treasure is more than just a collectible. It’s a sustainable economy empowered by anti-rug protocols and a daily lottery with guaranteed prizes. All by owning a NFT!",
+  keywords:
+    "dogma , decentralized , nft , lottery , collectible , ethereum , collectigame , titan , mythology , greek myths , zeus , card game  , no loss , pooltogether nft , demmortal , treasure , daily prize , big prize , eth , dao  , pfp , anti-rug , anti rug , protocol , erc , yield farming , guarantee , floor price, guaranteed prize",
+  imageUrl: "/dedogmadao.jpg",
+  homePageUrl: "https://dedogmadao.com",
+  pageUrl: "https://dedogmadao.com/",
+};
+export const roadmapPageMetaData: metaDataType = {
+  siteTitle: "DeDogma Dao",
+  pageTitle: "Roadmap",
+  desc: "Demmortal Treasure is more than just a collectible. It’s a sustainable economy empowered by anti-rug protocols and a daily lottery with guaranteed prizes. All by owning a NFT!",
+  keywords:
+    "dogma , decentralized , nft , lottery , collectible , ethereum , collectigame , titan , mythology , greek myths , zeus , card game  , no loss , pooltogether nft , demmortal , treasure , daily prize , big prize , eth , dao  , pfp , anti-rug , anti rug , protocol , erc , yield farming , guarantee , floor price, guaranteed prize",
+  imageUrl: "/dedogmadao.jpg",
+  homePageUrl: "https://dedogmadao.com",
+  pageUrl: "https://dedogmadao.com/roadmap",
+};
+export const teamPageMetaData: metaDataType = {
+  siteTitle: "DeDogma Dao",
+  pageTitle: "Team",
+  desc: "Demmortal Treasure is more than just a collectible. It’s a sustainable economy empowered by anti-rug protocols and a daily lottery with guaranteed prizes. All by owning a NFT!",
+  keywords:
+    "dogma , decentralized , nft , lottery , collectible , ethereum , collectigame , titan , mythology , greek myths , zeus , card game  , no loss , pooltogether nft , demmortal , treasure , daily prize , big prize , eth , dao  , pfp , anti-rug , anti rug , protocol , erc , yield farming , guarantee , floor price, guaranteed prize",
+  imageUrl: "/dedogmadao.jpg",
+  homePageUrl: "https://dedogmadao.com",
+  pageUrl: "https://dedogmadao.com/team",
+};
+export const faqPageMetaData: metaDataType = {
+  siteTitle: "DeDogma Dao",
+  pageTitle: "FAQ",
+  desc: "Demmortal Treasure is more than just a collectible. It’s a sustainable economy empowered by anti-rug protocols and a daily lottery with guaranteed prizes. All by owning a NFT!",
+  keywords:
+    "dogma , decentralized , nft , lottery , collectible , ethereum , collectigame , titan , mythology , greek myths , zeus , card game  , no loss , pooltogether nft , demmortal , treasure , daily prize , big prize , eth , dao  , pfp , anti-rug , anti rug , protocol , erc , yield farming , guarantee , floor price, guaranteed prize",
+  imageUrl: "/dedogmadao.jpg",
+  homePageUrl: "https://dedogmadao.com",
+  pageUrl: "https://dedogmadao.com/faq",
 };

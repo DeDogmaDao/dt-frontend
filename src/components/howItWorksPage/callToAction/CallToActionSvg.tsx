@@ -1,5 +1,3 @@
-import { faCaretRight } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
 import {
   callToActionSvgAni,
@@ -8,11 +6,14 @@ import {
 
 const CallToActionSvg: React.FC = () => {
   return (
-    <motion.div className="relative" style={{ width: 274, height: 114 }}>
+    <motion.div
+      className="relative"
+      style={{ width: "17.125rem", height: "7.125rem" }}
+    >
       <motion.svg
         xmlns="http://www.w3.org/2000/svg"
-        width="274"
-        height="114"
+        width="100%"
+        height="100%"
         viewBox="0 0 274 114"
       >
         <defs>
@@ -43,7 +44,7 @@ const CallToActionSvg: React.FC = () => {
           stroke={"#fff"}
           strokeWidth={2}
           strokeDasharray={10}
-          marker-end="url(#arrow)"
+          markerEnd="url(#arrow)"
           d="M2 3C16.5 41 51.3402 72.9477 84 88.5C105 98.5 126.5 101.726 153 99.5C175.532 97.6077 186.873 91 191.5 78.7256C200.736 54.2256 152.127 47.4512 149.127 67.7256C146.127 88 167.138 96.1487 178 101.5C186 105.441 195.5 106.5 200 107C204.5 107.5 211 107.5 218 106"
         />
       </motion.svg>

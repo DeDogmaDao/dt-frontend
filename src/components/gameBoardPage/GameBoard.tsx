@@ -1,4 +1,4 @@
-import { LayoutGroup, motion } from "framer-motion";
+import { LayoutGroup } from "framer-motion";
 import { useEffect, useState } from "react";
 import { gameCardData } from "../../store/allData";
 import CardGame from "./CardGame";
@@ -68,6 +68,7 @@ const GameBoard: React.FC = () => {
           {gameCardData.map((data, index) => {
             return (
               <CardGame
+              key={data.total + data.spellGroup + data.spellValue.length}
                 layoutID={"cardGame" + data.id}
                 data={data}
                 cardIndex={index}
