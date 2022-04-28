@@ -19,18 +19,8 @@ jobs:
       - name: pull latest code
         uses: actions/checkout@v2
 
-      - name: Set env
-        run: |
-          echo "GITHUB_SHA_SHORT=HELL12343" >> $GITHUB_ENV
-          if [ "${{ github.ref }}" == 'refs/heads/develop' ]; then echo "ROBOTS_TXT=$(echo ${{ secrets.STAGE_ROBOTS_TXT_FILE }})" >> $GITHUB_ENV ; else echo "ROBOTS_TXT=$(echo ${{ secrets.PROD_ROBOTS_TXT_FILE }})" >> $GITHUB_ENV; fi
-
-      - name: Test
-        run: echo $GITHUB_SHA_SHORT && echo $ROBOTS_TXT
-
       - name: build step
-        run: |
-            if [ "${{ github.ref }}" == 'refs/heads/develop' ]; then export ROBOTS_TXT="${{ secrets.STAGE_ROBOTS_TXT_FILE }}" ; else  export ROBOTS_TXT="${{ secrets.PROD_ROBOTS_TXT_FILE }}"; fi
-            docker build -t ghcr.io/dedogmadao/dt-frontend/dt-frontend:${{ github.ref_name }}-latest --build-arg ROBOTS_TXT="$ROBOTS_TXT" .   
+        run: docker build -t ghcr.io/dedogmadao/dt-frontend/dt-frontend:${{ github.ref_name }}-latest .
 
       - name: login to docker registry
         run: echo ${{ secrets.PERSONAL_GITHUB_TOKEN }} | docker login ghcr.io -u flokibb --password-stdin
