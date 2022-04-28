@@ -57,7 +57,7 @@ jobs:
       BRANCH: ${{ github.ref_name }}
       PERSONAL_GITHUB_TOKEN: ${{ secrets['PERSONAL_GITHUB_TOKEN'] }}
       BACKEND_URL: ${{ secrets[format('{0}BACKEND_URL', needs.environ_step.outputs.prefix)] }}
-      ROBOTS_TXT: ${{ secrets[format('{0}ROBOTS_TXT_FILE', needs.environ_step.outputs.prefix)] }}
+      ROBOTS_TXT_FILE: ${{ secrets[format('{0}ROBOTS_TXT_FILE', needs.environ_step.outputs.prefix)] }}
 
 
 
