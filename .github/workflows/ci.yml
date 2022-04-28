@@ -43,7 +43,7 @@ jobs:
         run: docker push ghcr.io/dedogmadao/dt-frontend/dt-frontend:${{ github.ref_name }}-latest
 
   deploy:
-    needs: environ_step
+    needs: build_and_push
     uses: dedogmadao/dd-reusable-actions/.github/workflows/action.yml@master
     with:
       REPOSITORY_NAME: dt-frontend
