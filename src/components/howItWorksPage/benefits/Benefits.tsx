@@ -44,14 +44,14 @@ const Benefits: React.FC = () => {
           />
         </span>
       </span>
-      <div className="flex flex-col lg:flex-wrap ssm:w-11/12 lg:w-10/12 2xl:w-9/12 mx-auto
-      min-h-[50rem] ssm:min-h-[45rem] sm:min-h-[45rem] h-[30rem]
+      <div className="flex flex-col lg:flex-row ssm:w-11/12 lg:w-10/12 2xl:w-9/12 mx-auto
+      min-h-[50rem] ssm:min-h-[45rem] sm:min-h-[45rem] lg:min-h-[35rem]
       md:pt-20">
         <motion.div
           onHoverStart={() => setIsPlaying(false)}
           onHoverEnd={() => setIsPlaying(true)}
           className="lg:w-1/3 flex lg:flex-col gap-x-12 lg:gap-y-12 mx-auto flex-wrap justify-center lg:justify-start
-      text-large-medium  lg:text-extera-large-medium z-10 mt-14 ssm:mt-24 lg:mt-32"
+      text-large-medium  lg:text-extera-large-medium z-10 mt-14 "
         >
           {benefitsData.map((data, index) => {
             return (
@@ -65,8 +65,8 @@ const Benefits: React.FC = () => {
             );
           })}
         </motion.div>
-        <div className="px-5 ssm:px-0 sm:w-10/12 lg:w-2/3 mt-8 ssm:mt-16 flex z-10 mx-auto">
-          <ul className="flex flex-col gap-y-3 mt-1.5">
+        <div className="px-5 ssm:px-0 sm:w-10/12 lg:w-2/3 mt-8 ssm:mt-14 flex z-10 mx-auto">
+          <ul className="flex flex-col gap-y-4 mt-1.5 w-full">
             {activeIndex !== -1 &&
               benefitsData[activeIndex].desc.map((item, index) => {
                 return (

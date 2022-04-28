@@ -16,11 +16,9 @@ const EachDesc: React.FC<props> = ({ descData, index, setIsPlaying }) => {
       animate="visible"
       variants={eachBenefitDescAni}
       custom={index}
-      className="flex"
+      className="text-2xl font-light"
     >
-      <div className="text-2xl font-light my-1">
         {descData}
-      </div>
     </motion.li>
   );
 };

@@ -1315,11 +1315,11 @@ export const benefitsData: benefitType[] = [
     title: "Diverse pool prizes",
     desc: [
       <>Currently, There are two types of prizes in each game:</>,
-      <p className="ml-4 ssm:ml-10">
+      <p>
         <span className="font-semibold">1- Dynamic</span> prize based on
         secondary sales (main prize).
       </p>,
-      <p className="ml-4 ssm:ml-10">
+      <p>
         <span className="font-semibold">2- Guaranteed</span> prize based on
         yield farming of investment treasury.
       </p>,
