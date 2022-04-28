@@ -135,3 +135,7 @@ export interface metaType {
   author: string;
   preload: string[];
 }
+
+export interface metaDataType {
+  
+}

@@ -1,20 +1,28 @@
 import Head from "next/head";
 import { Fragment } from "react";
 import HowItWorks from "../components/howItWorksPage/HowItWorks";
-import { homePageMetaData } from "../store/allData";
 
 export default function home(): JSX.Element {
   return (
     <Fragment>
       <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        {/* {homePageMetaData.preload.map((src) => (
-          <link key={src} rel="preload" as="image" href={src} />
-        ))} */}
-        <title>{homePageMetaData.title}</title>
-        <meta name="description" content={homePageMetaData.description} />
-        <meta name="keywords" content={homePageMetaData.keywords} />
-        <meta name="author" content={homePageMetaData.author} />
+        <title>{"pageTitle"}</title>
+        <meta charSet="utf-8" />
+        <meta name="description" content="{{description}}" />
+        <meta name="keywords" content="{{keywords}}" />
+        <link rel="author" href="https://plus.google.com/{{googlePlusId}}" />
+        <link rel="canonical" href="{{pageUrl}}" />
+        <meta property="og:url" content="{{pageUrl}}" />
+        <meta property="og:image" content="{{imageUrl}}" />
+        <meta property="og:description" content="{{description}}" />
+        <meta property="og:title" content="{{pageTitle}}" />
+        <meta property="og:site_name" content="{{siteTitle}}" />
+        <meta property="og:see_also" content="{{homepageUrl}}" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:url" content="{{pageUrl}}" />
+        <meta name="twitter:title" content="{{pageTitle}}" />
+        <meta name="twitter:description" content="{{description}}" />
+        <meta name="twitter:image" content="{{imageUrl}}" />
       </Head>
       <HowItWorks />
     </Fragment>
