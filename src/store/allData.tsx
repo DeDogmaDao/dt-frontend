@@ -30,11 +30,11 @@ import { teamImg } from "./img";
 export const footerData: socialType[] = [
   {
     icon: <YoutubeSVG />,
-    href: "https://discord.gg/dedogmadao",
+    href: "https://www.youtube.com/channel/UCNGZXAcCP-xHrAVqaEWqozw",
   },
   {
     icon: <DiscordSVG />,
-    href: "https://www.youtube.com/channel/UCNGZXAcCP-xHrAVqaEWqozw",
+    href: "https://discord.gg/dedogmadao",
   },
   {
     icon: <Twitter />,
