@@ -1287,23 +1287,13 @@ export const benefitsData: benefitType[] = [
       <>
         The money collected from the minting goes to the{" "}
         <span className="font-semibold">buyback treasury</span>. This will
-        guarantee the floor price of the NFTs. Any NFT holder has the right to
-        burn their NFTs and receive their funds back. The economical mechanism
-        of Demmortal Treasure is designed in a way that the team receives only
-        30% of the funds based on{" "}
-        <a
-          href="https://docs.dedogmadao.com/economic-mechanisms"
-          target={"_blank"}
-          className="link-inside-text"
-        >
-          the schedule
-        </a>
-        <br />
+        guarantee the floor price of the NFTs to mint price and can raise by
+        time. Any NFT holder has the right to burn their NFTs and receive their
+        funds back.
       </>,
       <>
         Additionally, part of the money earned from the secondary market sales
-        and yield farming will go to this treasury as a refuel. Please read the
-        Litepaper for more information.
+        and yield farming will go to this treasury as a refuel.
       </>,
     ],
   },
@@ -1325,8 +1315,14 @@ export const benefitsData: benefitType[] = [
     title: "Diverse pool prizes",
     desc: [
       <>Currently, There are two types of prizes in each game:</>,
-      <p className="ml-10">1-Dynamic prize based on secondary sales (main prize).</p>,
-      <p className="ml-10">2-Guaranteed prize based on yield farming of investment treasury.</p>,
+      <p className="ml-10">
+        <span className="font-semibold">1- Dynamic</span> prize based on
+        secondary sales (main prize).
+      </p>,
+      <p className="ml-10">
+        <span className="font-semibold">2- Guaranteed</span> prize based on
+        yield farming of investment treasury.
+      </p>,
       <>
         Note: The investment treasury is a self-growing pool which can only grow
         bigger and guarantees a minimum prize.
@@ -1337,13 +1333,16 @@ export const benefitsData: benefitType[] = [
     title: "Game card and PFP",
     desc: [
       <>
-        Demmortal Treasure is a collectigame established upon composed lore. The
-        lore is based on ancient classical myths. The NFTs are the result of
-        many hours of our talented artists’ artwork. The specifications of the
-        characters (NFTs) affect the result of the lottery. For further
-        information, read more about the cards in the Litepaper. As an a NFT
-        owner, one could generate detailed artwork PFP(profile photo) from your
-        unique NFT.
+        Demmortal Treasure is a{" "}
+        <span className="font-semibold">collectigame</span> established upon
+        composed lore. The lore is based on ancient classical myths. The NFTs
+        are the result of many hours of our talented artists’ artwork.
+      </>,
+      <>
+        The specifications of the characters (NFTs) affect the result of the
+        lottery. As an a NFT owner, one could generate{" "}
+        <span className="font-semibold">detailed artwork PFP</span>(profile
+        photo) from your unique NFT.
       </>,
     ],
   },
