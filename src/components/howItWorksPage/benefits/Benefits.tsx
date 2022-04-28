@@ -34,7 +34,7 @@ const Benefits: React.FC = () => {
     >
       <div className="absolute top-0 left-0 w-full h-[7.5rem] bg-gradient-to-b from-bodymain to-transparent z-[1]" />
       <div className="absolute bottom-0 left-0 w-full h-[7.5rem] bg-gradient-to-t from-bodymain to-transparent z-[1]" />
-      <span className="absolute lg:h-full aspect-[1438/586]">
+      <span className="absolute h-full min-w-[100vw] aspect-[1438/586]">
         <span className="w-full h-full inner-image-no-max-width">
           <Image
             src={benefitBg}
@@ -44,11 +44,13 @@ const Benefits: React.FC = () => {
           />
         </span>
       </span>
-      <div className="flex w-9/12 mx-auto">
+      <div className="flex flex-col lg:flex-wrap ssm:w-11/12 lg:w-10/12 2xl:w-9/12 mx-auto
+      min-h-[50rem] ssm:min-h-[45rem] sm:min-h-[45rem] h-[30rem]
+      md:pt-20">
         <motion.div
           onHoverStart={() => setIsPlaying(false)}
           onHoverEnd={() => setIsPlaying(true)}
-          className="w-1/3 flex flex-col gap-x-12 gap-y-12
+          className="lg:w-1/3 flex lg:flex-col gap-x-12 lg:gap-y-12 mx-auto flex-wrap justify-center lg:justify-start
       text-large-medium  lg:text-extera-large-medium z-10 mt-14 ssm:mt-24 lg:mt-32"
         >
           {benefitsData.map((data, index) => {
@@ -63,7 +65,7 @@ const Benefits: React.FC = () => {
             );
           })}
         </motion.div>
-        <div className="w-2/3 h-[32rem] ssm:h-[28rem] sm:h-[22rem] lg:h-[32rem] mt-8 ssm:mt-32 flex z-10">
+        <div className="px-5 ssm:px-0 sm:w-10/12 lg:w-2/3 mt-8 ssm:mt-16 flex z-10 mx-auto">
           <ul className="flex flex-col gap-y-3 mt-1.5">
             {activeIndex !== -1 &&
               benefitsData[activeIndex].desc.map((item, index) => {
