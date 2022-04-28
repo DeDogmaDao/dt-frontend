@@ -7,7 +7,7 @@ services:
     environment:
       - BACKEND_URL
       - ROBOTS_TXT
-    command: echo $ROBOTS_TXT > /app/frontend/src/public/robots.txt && npm run up
+    command: /app/frontend/src/run.sh
 
 networks:
   default:
