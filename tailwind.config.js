@@ -8,6 +8,7 @@ module.exports = {
   presets: [],
   darkMode: "media", // or 'class'
   theme: {
+    namedGroups: ["1", "2"],
     screens: {
       ssm: "450px",
       sm: "640px",
@@ -81,7 +82,7 @@ module.exports = {
         800: "#2C2C2C",
         900: "#212121",
       },
-      bodymain: "#090919"
+      bodymain: "#090919",
     }),
     columns: {
       auto: "auto",
@@ -1046,6 +1047,7 @@ module.exports = {
     "disabled",
   ],
   plugins: [
+    require("tailwindcss-named-groups"),
     plugin(function ({ addBase, addComponents, addUtilities, theme }) {
       addComponents({
         ".text-extera-large-bold": {
