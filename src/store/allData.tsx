@@ -7,12 +7,12 @@ import {
   socialType,
   tabsType,
   tabType,
-  globCardType,
   roadMapType,
   roadDataType,
   benefitType,
   metaType,
   teamCardType,
+  metaDataType,
 } from "../types/allTypes";
 
 //
@@ -30,11 +30,11 @@ import { teamImg } from "./img";
 export const footerData: socialType[] = [
   {
     icon: <YoutubeSVG />,
-    href: "https://discord.gg/dedogmadao",
+    href: "https://www.youtube.com/channel/UCNGZXAcCP-xHrAVqaEWqozw",
   },
   {
     icon: <DiscordSVG />,
-    href: "https://www.youtube.com/channel/UCNGZXAcCP-xHrAVqaEWqozw",
+    href: "https://discord.gg/dedogmadao",
   },
   {
     icon: <Twitter />,
@@ -1351,17 +1351,43 @@ export const benefitsData: benefitType[] = [
 // //////////////////////////
 // pages
 
-export const homePageMetaData: metaType = {
-  author: "DeDogmaDAO",
-  description: "Demmortal Treasure! Win Eth!",
-  keywords: "etherium , demmortal",
-  title: "DeDogmaDAO Demmortal Treasure",
-  preload: [
-    "/public/img/art/portal.png",
-    "/public/img/art/city.png",
-    "/public/img/art/mask.png",
-    "/public/img/art/cape.gif",
-    "/public/img/art/left-fire.mp4",
-    "/public/img/art/right-fire.mp4",
-  ],
+export const homePageMetaData: metaDataType = {
+  siteTitle: "DeDogma Dao",
+  pageTitle: "Home",
+  desc: "Demmortal Treasure is more than just a collectible. It’s a sustainable economy empowered by anti-rug protocols and a daily lottery with guaranteed prizes. All by owning a NFT!",
+  keywords:
+    "dogma , decentralized , nft , lottery , collectible , ethereum , collectigame , titan , mythology , greek myths , zeus , card game  , no loss , pooltogether nft , demmortal , treasure , daily prize , big prize , eth , dao  , pfp , anti-rug , anti rug , protocol , erc , yield farming , guarantee , floor price, guaranteed prize",
+  imageUrl: "/dedogmadao.jpg",
+  homePageUrl: "https://dedogmadao.com",
+  pageUrl: "https://dedogmadao.com/",
+};
+export const roadmapPageMetaData: metaDataType = {
+  siteTitle: "DeDogma Dao",
+  pageTitle: "Roadmap",
+  desc: "Demmortal Treasure is more than just a collectible. It’s a sustainable economy empowered by anti-rug protocols and a daily lottery with guaranteed prizes. All by owning a NFT!",
+  keywords:
+    "dogma , decentralized , nft , lottery , collectible , ethereum , collectigame , titan , mythology , greek myths , zeus , card game  , no loss , pooltogether nft , demmortal , treasure , daily prize , big prize , eth , dao  , pfp , anti-rug , anti rug , protocol , erc , yield farming , guarantee , floor price, guaranteed prize",
+  imageUrl: "/dedogmadao.jpg",
+  homePageUrl: "https://dedogmadao.com",
+  pageUrl: "https://dedogmadao.com/roadmap",
+};
+export const teamPageMetaData: metaDataType = {
+  siteTitle: "DeDogma Dao",
+  pageTitle: "Team",
+  desc: "Demmortal Treasure is more than just a collectible. It’s a sustainable economy empowered by anti-rug protocols and a daily lottery with guaranteed prizes. All by owning a NFT!",
+  keywords:
+    "dogma , decentralized , nft , lottery , collectible , ethereum , collectigame , titan , mythology , greek myths , zeus , card game  , no loss , pooltogether nft , demmortal , treasure , daily prize , big prize , eth , dao  , pfp , anti-rug , anti rug , protocol , erc , yield farming , guarantee , floor price, guaranteed prize",
+  imageUrl: "/dedogmadao.jpg",
+  homePageUrl: "https://dedogmadao.com",
+  pageUrl: "https://dedogmadao.com/team",
+};
+export const faqPageMetaData: metaDataType = {
+  siteTitle: "DeDogma Dao",
+  pageTitle: "FAQ",
+  desc: "Demmortal Treasure is more than just a collectible. It’s a sustainable economy empowered by anti-rug protocols and a daily lottery with guaranteed prizes. All by owning a NFT!",
+  keywords:
+    "dogma , decentralized , nft , lottery , collectible , ethereum , collectigame , titan , mythology , greek myths , zeus , card game  , no loss , pooltogether nft , demmortal , treasure , daily prize , big prize , eth , dao  , pfp , anti-rug , anti rug , protocol , erc , yield farming , guarantee , floor price, guaranteed prize",
+  imageUrl: "/dedogmadao.jpg",
+  homePageUrl: "https://dedogmadao.com",
+  pageUrl: "https://dedogmadao.com/faq",
 };

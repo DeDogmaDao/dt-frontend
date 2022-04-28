@@ -1,8 +1,7 @@
-import { motion, Variants } from "framer-motion";
+import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import {
   bottomRightPosition,
-  gameCardType,
   spellNumber,
 } from "../../types/allTypes";
 import { spellAni } from "../../utils/animation";

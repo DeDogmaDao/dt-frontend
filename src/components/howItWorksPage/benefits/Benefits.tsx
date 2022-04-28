@@ -37,6 +37,7 @@ const Benefits: React.FC = () => {
       <span className="absolute h-full min-w-[100vw] aspect-[1438/586]">
         <span className="w-full h-full inner-image-no-max-width">
           <Image
+          alt="dedogmadao background" 
             src={benefitBg}
             layout="fill"
             quality={100}
@@ -50,7 +51,7 @@ const Benefits: React.FC = () => {
         <motion.div
           onHoverStart={() => setIsPlaying(false)}
           onHoverEnd={() => setIsPlaying(true)}
-          className="lg:w-1/3 flex lg:flex-col gap-x-12 lg:gap-y-12 mx-auto flex-wrap justify-center lg:justify-start
+          className="lg:w-1/3 flex lg:flex-col gap-x-12 lg:gap-y-12 mx-auto flex-wrap ssm:justify-center lg:justify-start
       text-large-medium  lg:text-extera-large-medium z-10 mt-14 "
         >
           {benefitsData.map((data, index) => {

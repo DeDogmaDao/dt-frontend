@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Dispatch, SetStateAction, useState } from "react";
+import { Dispatch, SetStateAction } from "react";
 import { benefitType } from "../../../types/allTypes";
 import { eachBenefitAni } from "../../../utils/animation";
 interface props {
@@ -36,8 +36,8 @@ const EachBenefit: React.FC<props> = ({
   return (
     <motion.button
       onTap={() => setIsPlaying(false)}
-      className={`h-12 flex flex-col justify-center items-start relative duration-500 ml-6 ssm:ml-0 font-normal  ${
-        activeIndex === index ? " text-white font-bold" : "text-neutral-50/30 "
+      className={`h-12 flex flex-col justify-center items-start relative duration-75 ml-6 ssm:ml-0 font-normal  ${
+        activeIndex === index ? " text-white !font-bold" : "text-neutral-50/30 "
       }`}
       onClick={benefitBtnClickHandler}
     >

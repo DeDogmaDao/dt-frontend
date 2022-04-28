@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import Path from "./Path";
 
 interface props {

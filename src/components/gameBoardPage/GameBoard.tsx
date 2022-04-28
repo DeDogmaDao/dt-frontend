@@ -1,4 +1,4 @@
-import { LayoutGroup, motion } from "framer-motion";
+import { LayoutGroup } from "framer-motion";
 import { useEffect, useState } from "react";
 import { gameCardData } from "../../store/allData";
 import CardGame from "./CardGame";

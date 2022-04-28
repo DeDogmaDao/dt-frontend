@@ -12,6 +12,7 @@ const ToRoadmapAction: React.FC = () => {
       <span className="absolute w-full h-full sm:aspect-[1440/768]">
         <span className="w-full h-full inner-image-no-max-width">
           <Image
+          alt="dedogmadao background" 
             src={calltoactionBg}
             layout="fill"
             quality={100}

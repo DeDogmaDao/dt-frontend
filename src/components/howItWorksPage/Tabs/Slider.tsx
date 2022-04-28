@@ -1,8 +1,7 @@
-import { motion, PanInfo, useAnimation, useElementScroll } from "framer-motion";
+import { motion, PanInfo, useAnimation } from "framer-motion";
 import Image from "next/image";
-import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useRef } from "react";
 import { activeIndexCardType } from "../../../types/allTypes";
-import { tabFrameAni } from "../../../utils/animation";
 import { cardIndexHandler } from "../../../utils/util";
 import AngleRightSVG from "../../svgs/rightangle.svg";
 
@@ -117,6 +116,7 @@ const Slider: React.FC<props> = ({
 w-[22.5rem] aspect-[444/320]"
         >
           <Image
+          alt="dedogmadao frame" 
             layout="fill"
             src="/img/cyc/frame.png"
             quality={75}
@@ -131,6 +131,7 @@ w-[22.5rem] aspect-[444/320]"
 w-[22.5rem] aspect-[444/320] ]"
           >
             <Image
+            alt="dedogmadao portal" 
               layout="fill"
               src="/img/cyc/tab-portal.png"
               quality={75}
@@ -142,6 +143,7 @@ w-[22.5rem] aspect-[444/320] ]"
 w-[18.375rem] aspect-[289/340]"
           >
             <Image
+            alt="dedogmadao portal" 
               layout="fill"
               src="/img/cyc/tab-portal2.png"
               quality={90}

@@ -1,8 +1,7 @@
 import Image from "next/image";
 import PlaySVG from "../../svgs/play.svg";
-import PauseSVG from "../../svgs/pause.svg";
-import { AnimatePresence, motion } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import {  motion } from "framer-motion";
+import {  useRef, useState } from "react";
 import { videoBtnAnim } from "../../../utils/animation";
 import introBg from "../../images/bg/sec2.png";
 import videoBg from "../../images/bg/Story.png";
@@ -23,7 +22,7 @@ const InteroVideo: React.FC = () => {
       <div className="absolute bottom-0 left-0 w-full h-[7.5rem] bg-gradient-to-t from-bodymain via-transparent to-transparent z-[1]" />
       <span className="w-full  absolute h-full lg:aspect-[1382/814]">
         <span className="w-full h-full inner-image-no-max-width">
-          <Image src={introBg} layout="fill" quality={100} placeholder="blur" />
+          <Image alt="dedogmadao background"  src={introBg} layout="fill" quality={100} placeholder="blur" />
         </span>
       </span>
       <motion.div
@@ -58,6 +57,7 @@ const InteroVideo: React.FC = () => {
               <span className="w-full  absolute h-full lg:aspect-[1382/814]">
                 <span className="w-full h-full inner-image-no-max-width">
                   <Image
+                  alt="dedogmadao background" 
                     src={videoBg}
                     layout="fill"
                     quality={100}
@@ -83,6 +83,7 @@ const InteroVideo: React.FC = () => {
           </div>
         )}
         <img
+        alt="dedogmadao background" 
           src="/img/video/border.png"
           className="w-full aspect-video pl-px absolute z-30 pointer-events-none"
         />

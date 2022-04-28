@@ -14,6 +14,7 @@ const FireCape: React.FC<props> = ({
   return (
     <>
       <motion.img
+      alt="dedogmadao cape gif" 
         style={{ visibility: portalLoading === 4 ? "visible" : "hidden" }}
         className="absolute z-20 left-[48.5%] top-[71%] w-[10%] h-[15%] will-change-transform"
         src={"/img/art/cape.gif"}

@@ -4,7 +4,6 @@ import { useDimensions } from "../../../../hooks/useDimensions";
 import { LinkType } from "../../../../types/allTypes";
 import {
   menuCopyRightAni,
-  menuItemAni,
   menuSocialItemAni,
   mobileMenuAni,
   mobileMenuContainerAni,
@@ -13,7 +12,6 @@ import {
 import MenuToggle from "./MenuToggle";
 import MobileMenuItem from "./MobileMenuItem";
 import { footerData } from "../../../../store/allData";
-import Link from "next/link";
 import Social from "../../../global/Social";
 
 interface props {

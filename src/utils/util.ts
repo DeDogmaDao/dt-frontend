@@ -1,4 +1,4 @@
-import { activeIndexCardType, createLightningType } from "../types/allTypes";
+import { createLightningType } from "../types/allTypes";
 
 // shimmer effect for image placeholder
 export const shimmer = (w: number, h: number): string => `

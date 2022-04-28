@@ -30,7 +30,7 @@ const City: React.FC<props> = ({
         animate={anim}
         variants={cityAnim}
       >
-        <Image src={city} layout="fill" quality={75} />
+        <Image alt="dedogmadao city"  src={city} layout="fill" quality={75} />
       </motion.span>
       <motion.span
         style={{
@@ -39,7 +39,7 @@ const City: React.FC<props> = ({
         }}
         className="absolute w-full h-full z-0 scale-105 will-change-transform"
       >
-        <Image src={mask} layout="fill" quality={75} />
+        <Image alt="dedogmadao mask"  src={mask} layout="fill" quality={75} />
       </motion.span>
     </>
   );

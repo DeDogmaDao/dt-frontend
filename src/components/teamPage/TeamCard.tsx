@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { globCardType, sizeType, teamCardType } from "../../types/allTypes";
+import { sizeType, teamCardType } from "../../types/allTypes";
 import { motion, Variants } from "framer-motion";
 import Social from "../global/Social";
 import { lgData, mdData, smData } from "../../store/allData";
@@ -31,6 +31,7 @@ const TeamCard: React.FC<props> = ({
         className="group-hover:-translate-y-3 group-hover:opacity-90 duration-500 relative rounded-xl overflow-hidden"
       >
         <Image
+        alt={"dedogmadao team " + data.name}
           src={data.image}
           layout="fill"
           loading="lazy"
