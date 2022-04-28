@@ -32,8 +32,6 @@ const InteroVideo: React.FC = () => {
       relative cursor-pointer bg-neutral-900 overflow-hidden"
       >
         <iframe
-        
-          allowTransparency={true}
           className="w-full h-full z-10"
           ref={videoRef}
           loading="lazy"
