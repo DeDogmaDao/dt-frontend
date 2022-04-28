@@ -20,9 +20,9 @@ export interface globCardType {
 }
 export interface teamCardType {
   image: StaticImageData;
-  name?: string;
-  role?: string;
-  desc?: string;
+  name: string;
+  role: string;
+  desc: string;
   link?: socialType[];
 }
 
