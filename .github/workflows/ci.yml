@@ -13,26 +13,7 @@ on:
         default: 'info'
 
 jobs:
-  build_and_push:
-    runs-on: ubuntu-latest
-    steps:
-      - name: pull latest code
-        uses: actions/checkout@v2
-
-      - name: export env
-        run: export ROBOTS_TXT_FILE=$ROBOTS_TXT_FILE
-
-      - name: build step
-        run: docker build -t ghcr.io/dedogmadao/dt-frontend/dt-frontend:${{ github.ref_name }}-latest --build-arg ROBOTS_TXT_FILE .
-
-      - name: login to docker registry
-        run: echo ${{ secrets.PERSONAL_GITHUB_TOKEN }} | docker login ghcr.io -u flokibb --password-stdin
-
-      - name: push docker image to package registry
-        run: docker push ghcr.io/dedogmadao/dt-frontend/dt-frontend:${{ github.ref_name }}-latest
-
   environ_step:
-    needs: build_and_push
     runs-on: ubuntu-latest
     outputs:
       prefix: ${{ steps.env_step.outputs.env_prefix }}
@@ -40,7 +21,26 @@ jobs:
       - name: Check out current repository and set ENV
         id: env_step
         run: if [ "${{ github.ref }}" == 'refs/heads/develop' ]; then echo "::set-output name=env_prefix::STAGE_"; else echo "::set-output name=env_prefix::PROD_"; fi
-          
+  
+
+  build_and_push:
+    needs: environ_step
+    runs-on: ubuntu-latest
+    steps:
+      - name: pull latest code
+        uses: actions/checkout@v2
+
+      - name: export env
+        run: export ROBOTS_TXT=${{ secrets[format('{0}ROBOTS_TXT_FILE', needs.environ_step.outputs.prefix)] }}
+
+      - name: build step
+        run: docker build -t ghcr.io/dedogmadao/dt-frontend/dt-frontend:${{ github.ref_name }}-latest --build-arg ROBOTS_TXT .
+
+      - name: login to docker registry
+        run: echo ${{ secrets.PERSONAL_GITHUB_TOKEN }} | docker login ghcr.io -u flokibb --password-stdin
+
+      - name: push docker image to package registry
+        run: docker push ghcr.io/dedogmadao/dt-frontend/dt-frontend:${{ github.ref_name }}-latest
 
   deploy:
     needs: environ_step
@@ -48,7 +48,6 @@ jobs:
     with:
       REPOSITORY_NAME: dt-frontend
     secrets:
-      ROBOTS_TXT_FILE: ${{ secrets[format('{0}ROBOTS_TXT_FILE', needs.environ_step.outputs.prefix)] }}
       REF_NAME: ${{ secrets[format('{0}DOMAIN', needs.environ_step.outputs.prefix)] }}
       SSH_ACTION_HOST: ${{ secrets[format('{0}SSH_ACTION_HOST', needs.environ_step.outputs.prefix)] }}
       SSH_ACTION_USER: ${{ secrets[format('{0}SSH_ACTION_USER', needs.environ_step.outputs.prefix)] }}
@@ -57,6 +56,6 @@ jobs:
       DOMAIN: ${{ secrets[format('{0}DOMAIN', needs.environ_step.outputs.prefix)] }}
       BRANCH: ${{ github.ref_name }}
       PERSONAL_GITHUB_TOKEN: ${{ secrets['PERSONAL_GITHUB_TOKEN'] }}
-
+      BACKEND_URL: ${{ secrets[format('{0}BACKEND_URL', needs.environ_step.outputs.prefix)] }}
 
 
