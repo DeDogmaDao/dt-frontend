@@ -1363,11 +1363,21 @@ export const homePageMetaData: metaDataType = {
 };
 export const roadmapPageMetaData: metaDataType = {
   siteTitle: "DeDogma Dao",
-  pageTitle: "roadmap",
+  pageTitle: "Roadmap",
   desc: "Demmortal Treasure is more than just a collectible. It’s a sustainable economy empowered by anti-rug protocols and a daily lottery with guaranteed prizes. All by owning a NFT!",
   keywords:
     "dogma , decentralized , nft , lottery , collectible , ethereum , collectigame , titan , mythology , greek myths , zeus , card game  , no loss , pooltogether nft , demmortal , treasure , daily prize , big prize , eth , dao  , pfp , anti-rug , anti rug , protocol , erc , yield farming , guarantee , floor price, guaranteed prize",
   imageUrl: "/dedogmadao.jpg",
   homePageUrl: "https://dedogmadao.com",
   pageUrl: "https://dedogmadao.com/roadmap",
+};
+export const teamPageMetaData: metaDataType = {
+  siteTitle: "DeDogma Dao",
+  pageTitle: "Team",
+  desc: "Demmortal Treasure is more than just a collectible. It’s a sustainable economy empowered by anti-rug protocols and a daily lottery with guaranteed prizes. All by owning a NFT!",
+  keywords:
+    "dogma , decentralized , nft , lottery , collectible , ethereum , collectigame , titan , mythology , greek myths , zeus , card game  , no loss , pooltogether nft , demmortal , treasure , daily prize , big prize , eth , dao  , pfp , anti-rug , anti rug , protocol , erc , yield farming , guarantee , floor price, guaranteed prize",
+  imageUrl: "/dedogmadao.jpg",
+  homePageUrl: "https://dedogmadao.com",
+  pageUrl: "https://dedogmadao.com/team",
 };
