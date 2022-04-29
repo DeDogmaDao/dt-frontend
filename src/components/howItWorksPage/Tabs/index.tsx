@@ -49,7 +49,7 @@ const Tabs: React.FC = () => {
           })}
         </LayoutGroup>
       </div>
-      <div className="w-full h-full relative mt-8 md:mt-10 lg:mt-10">
+      <div className="w-full h-full relative mt-8 md:mt-10 lg:mt-10 slider-container">
         <div className="w-full h-full flex justify-center items-center">
           {tabs.map((tab) => {
             if (!tab.activeGroup) return null;

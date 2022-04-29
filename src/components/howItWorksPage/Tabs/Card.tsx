@@ -52,7 +52,7 @@ const Card: React.FC<props> = ({
       variants={carouselDisplayAni}
       custom={cardPlace}
       onClick={(e) => cardClickHandler(e)}
-      className={`h-[28.75rem] w-[18.75rem] flex  text-white absolute select-none hover:cursor-pointer !rounded-xl overflow-hidden  ${
+      className={`tab-card-container h-[28.75rem] w-[18.75rem] flex  text-white absolute select-none hover:cursor-pointer !rounded-xl overflow-hidden  ${
         activeIndexCard[tabGroup][1] === index ? "grayscale-0" : "grayscale"
       }`}
     >
