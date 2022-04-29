@@ -70,10 +70,10 @@ const InteroVideo: React.FC = () => {
         gap-y-1 pointer-events-none scale-[38%] md:scale-[60%] lg:scale-100"
               >
                 <span className="w-[26px] h-[6px] bg-primary-500" />
-                <span className="text-[2.5rem] font-bold whitespace-nowrap">
+                <h2 className="text-[2.5rem] font-bold whitespace-nowrap">
                   Odyssey of the{" "}
                   <span className="text-primary-500">Titan’s treasure</span>
-                </span>
+                </h2>
                 <span className="text-xl font-light text-center md:px-10">
                   Olympians, Titans and mortals- united in search of fortune.
                   Watch to see how it all came to be
