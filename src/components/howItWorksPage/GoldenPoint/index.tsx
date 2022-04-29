@@ -10,7 +10,7 @@ const GoldenPoint: React.FC = () => {
         Demmortal Treasure is more than just a
         <motion.span className="text-primary-500">Collectible</motion.span>
       </motion.h1>
-      <motion.div
+      <motion.p
         initial="hidden"
         variants={goldenSecondAni}
         ref={element}
@@ -35,7 +35,7 @@ const GoldenPoint: React.FC = () => {
               </span>
             );
           })}
-      </motion.div>
+      </motion.p>
     </motion.div>
   );
 };
