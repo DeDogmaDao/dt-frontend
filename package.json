@@ -5,7 +5,8 @@
     "build": "next build",
     "start": "next start",
     "test": "jest --watch",
-    "up": "next build && next start"
+    "up": "next build && next start",
+    "postbuild": "next-sitemap --config next-sitemap.config.js"
   },
   "dependencies": {
     "framer-motion": "^6.3.2",
@@ -32,6 +33,7 @@
     "@types/ua-parser-js": "^0.7.36",
     "autoprefixer": "^10.4.5",
     "jest": "^28.0.1",
+    "next-sitemap": "^2.5.20",
     "postcss": "^8.4.12",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-import": "^14.1.0",
