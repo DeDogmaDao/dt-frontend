@@ -8,7 +8,7 @@ const GoldenPoint: React.FC = () => {
     <motion.div className="flex flex-col justify-center items-center z-100 px-5 pt-10">
       <motion.h1 className="flex flex-wrap justify-center gap-x-2 text-[1.75rem] font-bold">
         Demmortal Treasure is more than just a
-        <motion.span className="text-primary-500">Collectible</motion.span>
+        <motion.span className="text-primary-500"> Collectible</motion.span>
       </motion.h1>
       <motion.p
         initial="hidden"
