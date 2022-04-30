@@ -50,13 +50,14 @@ const RoadItem: React.FC<props> = ({
         </span>
         <p>{data.title}</p>
       </div>
-      <div
-        className={` w-full h-0 opacity-0 pl-10 overflow-clip 
-        text-small-light font-normal text-neutral-50/60 duration-500 delay-75 flex-grow-0
-      ${index === descIndex && "!h-16 opacity-100"}`}
+      <motion.div
+      style={{height:index === descIndex ? data.size *2.5 + "rem" : "0rem"}}
+        className={`w-full opacity-0 pl-10 overflow-clip 
+        text-small-light font-normal text-neutral-50/60 duration-500 delay-75 
+      ${index === descIndex && "opacity-100"}`}
       >
         {data.desc}
-      </div>
+      </motion.div>
     </motion.li>
   );
 };

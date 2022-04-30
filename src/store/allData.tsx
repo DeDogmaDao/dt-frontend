@@ -1175,20 +1175,24 @@ export const roadDataQ1: roadDataType[] = [
         8 weeks to fill the Investment Treasury.
       </>
     ),
+    size: 2,
   },
   {
     title: "Simultaneous Yield farming on Investment Treasury",
     desc: <>This will start immediately after receiving the funds.</>,
+    size: 1,
   },
   {
     title: "Multi format PFP for NFT owners to download",
     desc: (
       <>This feature will be available from the first day of the reveal date.</>
     ),
+    size: 1,
   },
   {
     title: "Lottery starts",
     desc: <>3 months after minting(until the investment Treasury fills).</>,
+    size: 1,
   },
   {
     title: "Sharing prize pools",
@@ -1199,6 +1203,7 @@ export const roadDataQ1: roadDataType[] = [
         This prize will be split among the members based on their NFTs.
       </>
     ),
+    size: 3,
   },
 ];
 export const roadDataQ2: roadDataType[] = [
@@ -1211,6 +1216,7 @@ export const roadDataQ2: roadDataType[] = [
         treasures
       </>
     ),
+    size: 2.5,
   },
   {
     title: "Airdrops for the next upcoming collictigame that is being built",
@@ -1221,6 +1227,7 @@ export const roadDataQ2: roadDataType[] = [
         Treasure collection.
       </>
     ),
+    size: 2.5,
   },
   {
     title: "Expanding DDD collictigames to Sandbox platform",
@@ -1230,10 +1237,12 @@ export const roadDataQ2: roadDataType[] = [
         of 2022.
       </>
     ),
+    size: 1.5,
   },
   {
     title: "Merging other investment DeFi protocols to our existing games",
     desc: <>To add more diverse funds to the lottery prize.</>,
+    size: 1,
   },
   {
     title: "Launching accessories marketplace",
@@ -1243,6 +1252,7 @@ export const roadDataQ2: roadDataType[] = [
         POAPs, badges, etc.
       </>
     ),
+    size: 1.5,
   },
 ];
 export const roadDataQ3: roadDataType[] = [
@@ -1254,16 +1264,19 @@ export const roadDataQ3: roadDataType[] = [
         lotteries for popular collectibles by the end of 2022.
       </>
     ),
+    size: 2,
   },
   {
     title: "Expanding the games and protocols on ethereum layer2 networks",
     desc: <> Building fully on-chain games with cost efficient fees.</>,
+    size: 1,
   },
   {
     title: "More anti-rug open-sourced features",
     desc: (
       <>We believe you should not trust the team, trust the code instead.</>
     ),
+    size: 1,
   },
 ];
 
