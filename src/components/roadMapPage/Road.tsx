@@ -37,7 +37,7 @@ const Road: React.FC<props> = ({ index, activeSection, road }) => {
       >
       <span className="absolute w-full aspect-[1426/821]">
         <span className="w-full h-full inner-image-no-max-width">
-          <Image alt="dedogmadao background"  src={roadImages[index]} layout="fill" quality={100} placeholder="blur"  />
+          <Image alt="dedogmadao NFT" title="dedogmadao NFT"  src={roadImages[index]} layout="fill" quality={100} placeholder="blur"  />
         </span>
       </span>
         <h3 className="w-full h-1/3 lg:w-1/2 lg:h-full pt-20 lg:pt-0 z-10 flex justify-center items-center 
