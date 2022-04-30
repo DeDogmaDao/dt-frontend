@@ -1203,7 +1203,7 @@ export const roadDataQ1: roadDataType[] = [
         This prize will be split among the members based on their NFTs.
       </>
     ),
-    size: 3,
+    size: 3.2,
   },
 ];
 export const roadDataQ2: roadDataType[] = [

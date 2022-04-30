@@ -55,8 +55,8 @@ const Road: React.FC<props> = ({ index, activeSection, road }) => {
         </h3>
         <div className=" w-full lg:w-1/2 h-2/3 lg:h-full flex justify-center items-center z-10">
           <ul
-            className="w-[90%] ssm:w-[80%] sm:w-[65%] md:w-[50%] lg:w-[26rem]
-          min-h-[60%] py-8 px-4 sm:px-8 flex flex-col gap-y-2
+            className="w-[93%] ssm:w-[80%] sm:w-[65%] md:w-[50%] lg:w-[26rem]
+       min-h-[100%] ssm:min-h-[82%] sm:min-h-[79%] md:min-h-[75%] lg:min-h-[60%] py-8 pl-5 pr-2 sm:px-8 flex flex-col gap-y-2
            bg-[#191C3A4D]/30 backdrop-blur-sm rounded-xl justify-start"
           >
             {road.roadData.map((data, index) => {

@@ -2,7 +2,6 @@ import { Dispatch, SetStateAction } from "react";
 import { motion } from "framer-motion";
 import { roadDataType } from "../../types/allTypes";
 import AngleRightSVG from "../svgs/rightangle.svg";
-import { roadMapDescAni } from "../../utils/animation";
 interface props {
   data: roadDataType;
   setDescIndex: Dispatch<SetStateAction<number>>;
@@ -27,7 +26,7 @@ const RoadItem: React.FC<props> = ({
       className={`w-full flex flex-col `}
     >
       <div
-        className={` cursor-default w-full flex justify-start items-start 3xl:items-center gap-x-3 text-medium-medium 2xl:text-large-medium
+        className={` cursor-default w-full flex justify-start items-start 3xl:items-center gap-x-2 text-medium-medium 2xl:text-large-medium
        ${
          index === descIndex
            ? "text-primary-500 stroke-primary-500 "
@@ -51,8 +50,8 @@ const RoadItem: React.FC<props> = ({
         <p>{data.title}</p>
       </div>
       <motion.div
-      style={{height:index === descIndex ? data.size *2.5 + "rem" : "0rem"}}
-        className={`w-full opacity-0 pl-10 overflow-clip 
+      style={{height:index === descIndex ? `${data.size *2.5}rem`: "0rem"}}
+        className={`w-full flex items-center opacity-0 pl-6 ssm:pl-10 overflow-clip 
         text-small-light font-normal text-neutral-50/60 duration-500 delay-75 
       ${index === descIndex && "opacity-100"}`}
       >
