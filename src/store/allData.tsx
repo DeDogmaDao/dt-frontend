@@ -79,10 +79,11 @@ export const faqData: faqType[] = [
     question: "How to get whitelisted?",
     answer: (
       <>
-        - Holders of collections that we will announce in our social channels.
+        - Holders of chosen collections will be eligible for whitelisting.
+        Collections will be announced on our social channels.
         <br />
-        - Active members of our community.
-        <br />- Winners of the challenges announced in DDD discord.
+        - By being an active member of our community.
+        <br />- Winners of the challenges are announced in DDD discord.
       </>
     ),
   },
@@ -105,20 +106,20 @@ export const faqData: faqType[] = [
     ),
   },
   {
-    question: "What wallets can I use?",
+    question: "Which wallets can I use?",
     answer: <>Metamask, WalletConnect, Coinbase wallet, Fortmatic and Portis</>,
   },
   {
     question: "Do the NFTs have an equal chance to win the lottery?",
     answer: (
       <>
-        No, it depends on your character. Read more about it here{" "}
+        No, it depends on your character.{" "}
         <a
-          href="https://paper.com"
+          href="https://docs.dedogmadao.com/game-structure#guilds-formed-by-special-powers-gifted-by-the-olympian-gods"
           target={"_blank"}
           className="link-inside-text"
         >
-          like to lite-paper
+          Read more about it here
         </a>
       </>
     ),
@@ -327,14 +328,14 @@ export const godTabData: tabType[] = [
     image: "/img/cyc/artemis.jpg",
     desc: [
       "Beautiful moon maiden, goddess of the hunt. Twin to Apollo, the sun god. Fingers laced with silver and a deadly accuracy with her bow and arrows- all who pursue the art of archery strive to attain only a sliver of her skill.",
-      "Artemis created the beastrider guild by sending her goat to help them. She takes 3% share of the beast rider's win of the treasury.",
+      "Artemis created the beast rider guild by sending her goat to help them. She takes 3% share of the beast rider's win of the treasury.",
       "Artemis has 18X more chance to compare to other cards to win the lottery.",
     ],
   },
   {
     activeCard: false,
     name: "Hermes",
-    titleOfHonor: "God of the sun",
+    titleOfHonor: "God of thieves",
     image: "/img/cyc/hermes.jpg",
     desc: [
       "Master of thievery and poetry. With his wing-threaded sandals, he can spread news at the blink of an eye to those who are willing to lend him an ear. The words that leave his mouth are nothing short of poetical.",
@@ -393,7 +394,7 @@ export const godTabData: tabType[] = [
     titleOfHonor: "God of the oceans",
     image: "/img/cyc/poseidon.jpg",
     desc: [
-      "God of the oceans and Lord of the seas. Father of horses and all sea creatures. With is power to control large bodies of water, he can influence the climate of the earth like no other.",
+      "God of the oceans and Lord of the seas. Father of horses and all sea creatures. With his power to control large bodies of water, he can influence the climate of the earth like no other.",
       "Poseidon has 18X more chance to compare to other cards to win the lottery.",
     ],
   },
@@ -1167,7 +1168,7 @@ export const numsList: counterNumType[] = Array.from(Array(51).keys()).map(
 
 export const roadDataQ1: roadDataType[] = [
   {
-    title: "Treasury filling period (3 month)",
+    title: "Treasury filling period (3 months)",
     desc: (
       <>
         After minting, releasing royalty fees from Opensea will take a month and
@@ -1176,7 +1177,7 @@ export const roadDataQ1: roadDataType[] = [
     ),
   },
   {
-    title: "Yield farming on Investment Treasury simultaneously",
+    title: "Simultaneous Yield farming on Investment Treasury",
     desc: <>This will start immediately after receiving the funds.</>,
   },
   {
@@ -1195,7 +1196,7 @@ export const roadDataQ1: roadDataType[] = [
       <>
         Building several participant pools. Members of the pools will have an
         increased chance of winning the prize as a passive income opportunity.
-        This prize will be splitted among the members based on their NFTs.
+        This prize will be split among the members based on their NFTs.
       </>
     ),
   },
@@ -1205,8 +1206,9 @@ export const roadDataQ2: roadDataType[] = [
     title: "Moving towards becoming a DAO",
     desc: (
       <>
-        6 months after minting the Demmortal Treasure NFTs, accepting proposal
-        for accelerating defi gamification ideas based on DD Dao treasures
+        6 months after minting the Demmortal Treasure NFTs, we will be accepting
+        proposals for accelerating defi gamification ideas based on DD Dao
+        treasures
       </>
     ),
   },
@@ -1237,19 +1239,19 @@ export const roadDataQ2: roadDataType[] = [
     title: "Launching accessories marketplace",
     desc: (
       <>
-        Marketplace for collectibles and their accessories like scores, POAPs,
-        badges, etc.
+        Marketplace for collectibles and their accessories like scores, POTLs,
+        POAPs, badges, etc.
       </>
     ),
   },
 ];
 export const roadDataQ3: roadDataType[] = [
   {
-    title: "Platformization the lottery format for other collectibles",
+    title: "Platformization of the lottery format for other collectibles",
     desc: (
       <>
         This is possible via fractionalizing to ERC20. DDD will host at least 10
-        lottery for popular collectibles by the end of 2022.
+        lotteries for popular collectibles by the end of 2022.
       </>
     ),
   },
