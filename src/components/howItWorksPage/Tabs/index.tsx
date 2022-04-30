@@ -32,7 +32,7 @@ const Tabs: React.FC = () => {
         </span>
       </span>
       <h2 className="z-10 mt-14 ssm:mt-20 sm:mt-32 lg:mt-40 text-[1.25rem] ssm:text-[1.75rem] sm:text-[2.375rem] font-bold sm:font-bold">
-        Choose your <span className="text-primary-500">Card</span>
+         <span className="text-primary-500">NFT</span> Card Collection
       </h2>
       <div className=" flex flex-col ssm:flex-row gap-y-8 sm:gap-y-0 justify-center items-center gap-x-8 md:gap-x-16 text-2xl mt-14">
         <LayoutGroup id="tabGroup">
@@ -49,7 +49,7 @@ const Tabs: React.FC = () => {
           })}
         </LayoutGroup>
       </div>
-      <div className="w-full h-full relative mt-8 md:mt-10 lg:mt-10">
+      <div className="w-full h-full relative mt-8 md:mt-10 lg:mt-10 slider-container">
         <div className="w-full h-full flex justify-center items-center">
           {tabs.map((tab) => {
             if (!tab.activeGroup) return null;

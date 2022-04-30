@@ -12,7 +12,7 @@ const ToRoadmapAction: React.FC = () => {
       <span className="absolute w-full h-full sm:aspect-[1440/768]">
         <span className="w-full h-full inner-image-no-max-width">
           <Image
-          alt="dedogmadao background" 
+            alt="dedogmadao background"
             src={calltoactionBg}
             layout="fill"
             quality={100}
@@ -26,8 +26,8 @@ const ToRoadmapAction: React.FC = () => {
           Our <span className="text-prbg-primary-500">Roadmap</span>
         </h2>
         <p className="text-large-medium font-light mt-3 w-[90%] md:w-[70%] lg:w-[55%] mx-auto text-center">
-          Roadmaps focus on providing a list of what your project will
-          accomplish and what features your product will include
+          Roadmaps focus on providing a list of what our project will accomplish
+          and what features our product will include
         </p>
         <div className="relative w-full flex justify-center items-center">
           <div className="absolute top-[-20%] left-[-30%] ssm:left-[-5%] sm:left-[5%] md:left-[13%] lg:left-[20%] xl:left-[24%] scale-y-[65%] scale-x-[40%] sm:scale-[65%] lg:scale-[80%] xl:scale-100">

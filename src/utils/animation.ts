@@ -443,10 +443,10 @@ export const carouselDisplayAni: Variants = {
   },
   out: (custom) => ({
     left: 50 + custom * 70 + "%",
-    scale: 0.2,
-    opacity: 0.3,
+    scale: 0,
+    opacity: 0,
     transition: {
-      duration: 0.3,
+      duration: 0.2,
     },
   }),
 };
@@ -705,7 +705,7 @@ export const roadMapDescAni: Variants = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.3,
+      duration: 0.7,
     },
   },
 };

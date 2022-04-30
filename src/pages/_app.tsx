@@ -12,7 +12,7 @@ import Layout from "../components/layout/Layout";
 import "../../styles/tailwind.css";
 import Head from "next/head";
 import { useEffect, useLayoutEffect } from "react";
-
+import TagManager from "react-gtm-module";
 function MyApp({ Component, pageProps }: AppProps) {
   // const router = useRouter();
 
@@ -22,6 +22,9 @@ function MyApp({ Component, pageProps }: AppProps) {
   //   }
   // }, []);
 
+  useEffect(() => {
+    TagManager.initialize({ gtmId: "GTM-KQ3KRW6" });
+  }, []);
   useLayoutEffect(() => {
     const resizeHandlerFont = () => {
       if (window.innerWidth > 1536) {
