@@ -37,7 +37,8 @@ const Benefits: React.FC = () => {
       <span className="absolute h-full min-w-[100vw] aspect-[1438/586]">
         <span className="w-full h-full inner-image-no-max-width">
           <Image
-          alt="dedogmadao background" 
+          alt="dedogmadao NFT" 
+          title="dedogmadao NFT"
             src={benefitBg}
             layout="fill"
             quality={100}

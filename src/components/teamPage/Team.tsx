@@ -22,7 +22,7 @@ const Team: React.FC = () => {
       <span className="absolute w-full aspect-[1440/1097] z-0">
         <span className="w-full h-full inner-image-no-max-width ">
           <div className="absolute bottom-0  left-0 w-full h-[7.5rem] bg-gradient-to-t from-bodymain to-transparent z-[1]" />
-          <Image alt="dedogmadao background"  src={teamBg} layout="fill" quality={100} />
+          <Image alt="dedogmadao NFT" title="dedogmadao NFT"  src={teamBg} layout="fill" quality={100} />
         </span>
       </span>
       <div className="relative w-full h-full flex flex-col justify-start items-center pt-24 md:pt-32 pb-10 mx-auto">
