@@ -17,27 +17,14 @@ const RoadItem: React.FC<props> = ({
   index,
 }) => {
   const descriptionHoverHandler = () => {
-    setDescIndex((prevState) => {
-      if (prevState === index) {
-        return prevState;
-      }
-      return -1;
-    });
-    setTimeout(() => {
-      setDescIndex((prevState) => {
-        if (prevState === -1) {
-          return index;
-        }
-        return prevState;
-      });
-    }, 1);
+      setDescIndex(index);
   };
 
   return (
     <motion.li
       onHoverStart={descriptionHoverHandler}
       onTap={descriptionHoverHandler}
-      className={`w-full flex flex-col`}
+      className={`w-full flex flex-col  flex-grow`}
     >
       <div
         className={` cursor-default w-full flex justify-start items-start 3xl:items-center gap-x-3 text-medium-medium 2xl:text-large-medium
@@ -49,7 +36,7 @@ const RoadItem: React.FC<props> = ({
       >
         {" "}
         <span
-          className={`text-base duration-500 ${
+          className={`text-base duration-500  ${
             index === descIndex && "rotate-90"
           }`}
         >
@@ -64,7 +51,8 @@ const RoadItem: React.FC<props> = ({
         <p>{data.title}</p>
       </div>
       <div
-        className={`w-full h-0 opacity-0 pl-10 overflow-clip text-small-light font-normal text-neutral-50/60 duration-500
+        className={` w-full h-0 opacity-0 pl-10 overflow-clip 
+        text-small-light font-normal text-neutral-50/60 duration-500 delay-75 flex-grow-0
       ${index === descIndex && "!h-16 opacity-100"}`}
       >
         {data.desc}
