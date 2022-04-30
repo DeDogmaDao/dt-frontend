@@ -24,7 +24,7 @@ const RoadItem: React.FC<props> = ({
     <motion.li
       onHoverStart={descriptionHoverHandler}
       onTap={descriptionHoverHandler}
-      className={`w-full flex flex-col  flex-grow`}
+      className={`w-full flex flex-col `}
     >
       <div
         className={` cursor-default w-full flex justify-start items-start 3xl:items-center gap-x-3 text-medium-medium 2xl:text-large-medium
