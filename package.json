@@ -41,6 +41,6 @@
     "postcss-import": "^14.1.0",
     "postcss-nesting": "^10.1.4",
     "tailwindcss": "^3.0.24",
-    "tailwindcss-named-groups": "0.0.5"
+    "tailwindcss-labeled-groups": "^0.0.2"
   }
 }
