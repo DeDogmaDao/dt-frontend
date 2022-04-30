@@ -41,7 +41,7 @@ const EachBenefit: React.FC<props> = ({
       }`}
       onClick={benefitBtnClickHandler}
     >
-      <div>{data.title}</div>
+      <h3>{data.title}</h3>
       {activeIndex === index && (
         <motion.div
           initial="hidden"

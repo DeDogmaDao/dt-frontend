@@ -22,7 +22,7 @@ const InteroVideo: React.FC = () => {
       <div className="absolute bottom-0 left-0 w-full h-[7.5rem] bg-gradient-to-t from-bodymain via-transparent to-transparent z-[1]" />
       <span className="w-full  absolute h-full lg:aspect-[1382/814]">
         <span className="w-full h-full inner-image-no-max-width">
-          <Image alt="dedogmadao background"  src={introBg} layout="fill" quality={100} placeholder="blur" />
+          <Image alt="dedogmadao NFT" title="dedogmadao NFT"  src={introBg} layout="fill" quality={100} placeholder="blur" />
         </span>
       </span>
       <motion.div
@@ -70,10 +70,10 @@ const InteroVideo: React.FC = () => {
         gap-y-1 pointer-events-none scale-[38%] md:scale-[60%] lg:scale-100"
               >
                 <span className="w-[26px] h-[6px] bg-primary-500" />
-                <span className="text-[2.5rem] font-bold whitespace-nowrap">
+                <h2 className="text-[2.5rem] font-bold whitespace-nowrap">
                   Odyssey of the{" "}
                   <span className="text-primary-500">Titan’s treasure</span>
-                </span>
+                </h2>
                 <span className="text-xl font-light text-center md:px-10">
                   Olympians, Titans and mortals- united in search of fortune.
                   Watch to see how it all came to be
@@ -83,7 +83,8 @@ const InteroVideo: React.FC = () => {
           </div>
         )}
         <img
-        alt="dedogmadao background" 
+        alt="dedogmadao NFT"
+        title="dedogmadao NFT" 
           src="/img/video/border.png"
           className="w-full aspect-video pl-px absolute z-30 pointer-events-none"
         />

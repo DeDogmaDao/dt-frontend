@@ -20,10 +20,15 @@ jobs:
         uses: actions/checkout@v2
 
       - name: export env
-        run: export ROBOTS_TXT_FILE=$ROBOTS_TXT_FILE
+        run:  if [ "${{ github.ref }}" == 'refs/heads/develop' ]; then export ROBOTS_TXT="${{ secrets.STAGE_ROBOTS_TXT_FILE }}" ; else  export ROBOTS_TXT="${{ secrets.PROD_ROBOTS_TXT_FILE }}"; fi
+        
+      - name: echo secret
+        run: echo "${{ secrets.STAGE_ROBOTS_TXT_FILE }}"
+        # run: echo $ROBOTS_TXT
+
 
       - name: build step
-        run: docker build -t ghcr.io/dedogmadao/dt-frontend/dt-frontend:${{ github.ref_name }}-latest --build-arg ROBOTS_TXT_FILE .
+        run: docker build -t ghcr.io/dedogmadao/dt-frontend/dt-frontend:${{ github.ref_name }}-latest --build-arg ROBOTS_TXT .
 
       - name: login to docker registry
         run: echo ${{ secrets.PERSONAL_GITHUB_TOKEN }} | docker login ghcr.io -u flokibb --password-stdin
@@ -57,7 +62,5 @@ jobs:
       BRANCH: ${{ github.ref_name }}
       PERSONAL_GITHUB_TOKEN: ${{ secrets['PERSONAL_GITHUB_TOKEN'] }}
       BACKEND_URL: ${{ secrets[format('{0}BACKEND_URL', needs.environ_step.outputs.prefix)] }}
-      ROBOTS_TXT: ${{ secrets[format('{0}ROBOTS_TXT_FILE', needs.environ_step.outputs.prefix)] }}
-
 
 
