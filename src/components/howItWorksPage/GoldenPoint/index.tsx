@@ -17,7 +17,7 @@ const GoldenPoint: React.FC = () => {
         animate={controls}
         className="text-[1.25rem] font-extralight flex gap-x-1.5 justify-center flex-wrap"
       >
-        {"It’s a sustainable economy empowered by anti-rug protocols and a daily lottery with guaranteed prizes. All by owning a NFT!"
+        {"It’s a sustainable economy powered by anti-rug protocols and a daily lottery with guaranteed prizes. All by owning an NFT!"
           .split(" ")
           .map((word, index) => {
             return (
