@@ -427,7 +427,7 @@ export const humanTabData: tabType[] = [
   {
     activeCard: false,
     name: "Beast riders",
-    titleOfHonor: "ّFollowers of Artemis",
+    titleOfHonor: "Followers of Artemis",
     image: "/img/cyc/beast-riders.png",
     desc: [
       "Attained their power from Artemis. Power is known as “card illusion”. With this power, one holds an additional card in the deck identical to the real one. This guild has 444 cards in total at the start.",
