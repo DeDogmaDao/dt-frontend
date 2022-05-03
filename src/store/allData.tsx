@@ -40,6 +40,10 @@ export const footerData: socialType[] = [
     icon: <Twitter />,
     href: "https://twitter.com/DMTtreasure",
   },
+  {
+    icon: <Github />,
+    href: "https://github.com/DeDogmaDao",
+  },
 ];
 export const mdData: string[] = ["3", "l"];
 
