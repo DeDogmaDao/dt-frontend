@@ -5,6 +5,7 @@ import { useRef, useState } from "react";
 import { videoBtnAnim } from "../../../utils/animation";
 import introBg from "../../images/bg/sec2.png";
 import videoBg from "../../images/bg/Story.png";
+import { useOnScrollAnimation } from "../../../hooks/useOnScrollAnimation";
 
 const InteroVideo: React.FC = () => {
   const [once, setOnce] = useState(false);
@@ -15,6 +16,8 @@ const InteroVideo: React.FC = () => {
       videoRef.current!.src = videoRef.current!.src + "?autoplay=1";
     }
   };
+
+  const [playElement,controls] = useOnScrollAnimation(1);
 
   return (
     <div className="w-full aspect-[16/13] sm:aspect-video flex justify-center items-center relative">
@@ -51,12 +54,14 @@ const InteroVideo: React.FC = () => {
           <div className="absolute top-0 left-0 w-full h-full z-20">
             <div className="relative w-full h-full flex justify-center items-center">
               <motion.span
+              ref={playElement}
+
                 initial="hidden"
-                animate="visible"
+                animate={controls}
                 exit="out"
                 variants={videoBtnAnim}
-                className="z-20 absolute group-hover:scale-125 w-[3rem] md:w-[5.625rem] aspect-square p-2 md:p-6 rounded-full bg-white/20 fill-white
-           group-hover:fill-primary-500 duration-150 ease-out"
+                className="z-20 absolute group-hover:!scale-125 w-[3rem] md:w-[5.625rem] aspect-square p-2 md:p-6 rounded-full bg-white/20 fill-white
+           group-hover:!fill-primary-500 duration-150 ease-out"
               >
                 <PlaySVG />
               </motion.span>
