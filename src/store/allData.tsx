@@ -34,7 +34,7 @@ export const footerData: socialType[] = [
   },
   {
     icon: <DiscordSVG />,
-    href: "https://discord.gg/dedogmadao",
+    href: "https://discord.gg/8dVfHQfxpq",
   },
   {
     icon: <Twitter />,
