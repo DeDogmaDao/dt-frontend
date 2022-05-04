@@ -928,13 +928,20 @@ export const cityAnim: Variants = {
 
 export const videoBtnAnim: Variants = {
   hidden: {
-    opacity: 0,
+    opacity: 1,
+    rotate:"0deg",
+    scale:0.7,
+    fill:["#fff"]
   },
   visible: {
     opacity: 1,
+    rotate:"1800deg",
+    scale:[0.7,1.3,1],
+    fill:["#3D14BB","#3D14BB","#fff"],
     transition: {
-      duration: 0.5,
-      delay: 0.2,
+      times:[0,0.8,1],
+      duration: 1,
+      delay: 0.1,
     },
   },
   out: {
