@@ -1,7 +1,7 @@
 import Image from "next/image";
 import PlaySVG from "../../svgs/play.svg";
-import {  motion } from "framer-motion";
-import {  useRef, useState } from "react";
+import { motion } from "framer-motion";
+import { useRef, useState } from "react";
 import { videoBtnAnim } from "../../../utils/animation";
 import introBg from "../../images/bg/sec2.png";
 import videoBg from "../../images/bg/Story.png";
@@ -22,12 +22,19 @@ const InteroVideo: React.FC = () => {
       <div className="absolute bottom-0 left-0 w-full h-[7.5rem] bg-gradient-to-t from-bodymain via-transparent to-transparent z-[1]" />
       <span className="w-full  absolute h-full lg:aspect-[1382/814]">
         <span className="w-full h-full inner-image-no-max-width">
-          <Image alt="dedogmadao NFT" title="dedogmadao NFT"  src={introBg} layout="fill" quality={100} placeholder="blur" />
+          <Image
+            alt="dedogmadao NFT"
+            title="dedogmadao NFT"
+            src={introBg}
+            layout="fill"
+            quality={100}
+            placeholder="blur"
+          />
         </span>
       </span>
       <motion.div
         onClick={videoClickHandler}
-        className="aspect-video w-[90%] sm:w-[70%] rounded-[2.2vw] z-10 mt-[-0%] flex justify-center items-center
+        className="group aspect-video w-[90%] sm:w-[70%] rounded-[2.2vw] z-10 mt-[-0%] flex justify-center items-center
       relative cursor-pointer bg-neutral-900 overflow-hidden"
       >
         <iframe
@@ -48,8 +55,8 @@ const InteroVideo: React.FC = () => {
                 animate="visible"
                 exit="out"
                 variants={videoBtnAnim}
-                className="z-20 absolute w-[3rem] md:w-[5.625rem] aspect-square p-2 md:p-6 rounded-full bg-white/20 fill-white
-          hover:scale-125 hover:fill-primary-500 duration-150 ease-out"
+                className="z-20 absolute group-hover:scale-125 w-[3rem] md:w-[5.625rem] aspect-square p-2 md:p-6 rounded-full bg-white/20 fill-white
+           group-hover:fill-primary-500 duration-150 ease-out"
               >
                 <PlaySVG />
               </motion.span>
@@ -57,7 +64,7 @@ const InteroVideo: React.FC = () => {
               <span className="w-full  absolute h-full lg:aspect-[1382/814]">
                 <span className="w-full h-full inner-image-no-max-width">
                   <Image
-                  alt="dedogmadao background" 
+                    alt="dedogmadao background"
                     src={videoBg}
                     layout="fill"
                     quality={100}
@@ -83,8 +90,8 @@ const InteroVideo: React.FC = () => {
           </div>
         )}
         <img
-        alt="dedogmadao NFT"
-        title="dedogmadao NFT" 
+          alt="dedogmadao NFT"
+          title="dedogmadao NFT"
           src="/img/video/border.png"
           className="w-full aspect-video pl-px absolute z-30 pointer-events-none"
         />
