@@ -1376,7 +1376,7 @@ export const homePageMetaData: metaDataType = {
   desc: "Demmortal Treasure is more than just a collectible. It’s a sustainable economy powered by anti-rug protocols and a daily lottery with guaranteed prizes. All by owning an NFT!",
   keywords:
     "dogma , decentralized , nft , lottery , collectible , ethereum , collectigame , titan , mythology , greek myths , zeus , card game  , no loss , pooltogether nft , demmortal , treasure , daily prize , big prize , eth , dao  , pfp , anti-rug , anti rug , protocol , erc , yield farming , guarantee , floor price, guaranteed prize",
-  imageUrl: "/dedogmadao.jpg",
+  imageUrl: "/cover.jpg",
   homePageUrl: "https://dedogmadao.com",
   pageUrl: "https://dedogmadao.com/",
 };
@@ -1386,7 +1386,7 @@ export const roadmapPageMetaData: metaDataType = {
   desc: "Demmortal Treasure is more than just a collectible. It’s a sustainable economy powered by anti-rug protocols and a daily lottery with guaranteed prizes. All by owning an NFT!",
   keywords:
     "dogma , decentralized , nft , lottery , collectible , ethereum , collectigame , titan , mythology , greek myths , zeus , card game  , no loss , pooltogether nft , demmortal , treasure , daily prize , big prize , eth , dao  , pfp , anti-rug , anti rug , protocol , erc , yield farming , guarantee , floor price, guaranteed prize",
-  imageUrl: "/dedogmadao.jpg",
+  imageUrl: "/cover.jpg",
   homePageUrl: "https://dedogmadao.com",
   pageUrl: "https://dedogmadao.com/roadmap",
 };
@@ -1396,7 +1396,7 @@ export const teamPageMetaData: metaDataType = {
   desc: "Demmortal Treasure is more than just a collectible. It’s a sustainable economy powered by anti-rug protocols and a daily lottery with guaranteed prizes. All by owning an NFT!",
   keywords:
     "dogma , decentralized , nft , lottery , collectible , ethereum , collectigame , titan , mythology , greek myths , zeus , card game  , no loss , pooltogether nft , demmortal , treasure , daily prize , big prize , eth , dao  , pfp , anti-rug , anti rug , protocol , erc , yield farming , guarantee , floor price, guaranteed prize",
-  imageUrl: "/dedogmadao.jpg",
+  imageUrl: "/cover.jpg",
   homePageUrl: "https://dedogmadao.com",
   pageUrl: "https://dedogmadao.com/team",
 };
@@ -1406,7 +1406,7 @@ export const faqPageMetaData: metaDataType = {
   desc: "Demmortal Treasure is more than just a collectible. It’s a sustainable economy powered by anti-rug protocols and a daily lottery with guaranteed prizes. All by owning an NFT!",
   keywords:
     "dogma , decentralized , nft , lottery , collectible , ethereum , collectigame , titan , mythology , greek myths , zeus , card game  , no loss , pooltogether nft , demmortal , treasure , daily prize , big prize , eth , dao  , pfp , anti-rug , anti rug , protocol , erc , yield farming , guarantee , floor price, guaranteed prize",
-  imageUrl: "/dedogmadao.jpg",
+  imageUrl: "/cover.jpg",
   homePageUrl: "https://dedogmadao.com",
   pageUrl: "https://dedogmadao.com/faq",
 };
