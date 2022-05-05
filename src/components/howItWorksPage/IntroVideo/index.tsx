@@ -3,9 +3,6 @@ import { motion } from "framer-motion";
 import introBg from "../../images/bg/sec2.png";
 
 const InteroVideo: React.FC = () => {
-
-
-
   return (
     <div className="w-full aspect-[16/13] sm:aspect-video flex justify-center items-center relative">
       <div className="absolute top-0 left-0 w-full h-[7.5rem] bg-gradient-to-b from-[#04050E] via-transparent to-transparent z-[1]" />
