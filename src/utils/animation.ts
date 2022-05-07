@@ -417,7 +417,6 @@ export const tabBlastAni: Variants = {
 
 export const carouselDisplayAni: Variants = {
   hidden: ({ cardPlace, innerWidth }) => {
-    console.log(innerWidth)
     if (innerWidth <= 1024) {
       return {
         left: 50 + cardPlace * 70 + "%",
@@ -426,8 +425,8 @@ export const carouselDisplayAni: Variants = {
       };
     } else {
       return {
-        left:-30 +"rem",
-        scale: cardPlace,
+        left: -30 + cardPlace * 30 + "rem",
+        scale: cardPlace / 1.5,
         opacity: 0.3,
       };
     }
@@ -444,10 +443,10 @@ export const carouselDisplayAni: Variants = {
       };
     } else {
       return {
-        scale: 1 + 0.2 * (cardPlace - 2),
-        left: cardPlace * 9 + "rem",
+        scale: 1 + 0.1 * (cardPlace - 2),
+        left: cardPlace * 7 * (1 + 0.1 * (cardPlace - 2)) + "rem",
         opacity: 1,
-        zIndex:200 + (cardPlace-2),
+        zIndex: 200 + (cardPlace - 2),
         transition: {
           duration: 0.4,
         },
@@ -455,25 +454,25 @@ export const carouselDisplayAni: Variants = {
     }
   },
   out: ({ cardPlace, innerWidth }) => {
-if(innerWidth<1024){
-  return {
-    left: 50 + cardPlace * 70 + "%",
-    scale: 0,
-    opacity: 0,
-    transition: {
-      duration: 0.2,
-    },
-  }
-} else {
-  return {
-    left: -30 + cardPlace * 30 + 'rem',
-    scale: cardPlace,
-    opacity: 0,
-    transition: {
-      duration: 0.2,
-    },
-  }
-}
+    if (innerWidth < 1024) {
+      return {
+        left: 50 + cardPlace * 70 + "%",
+        scale: 0,
+        opacity: 0,
+        transition: {
+          duration: 0.2,
+        },
+      };
+    } else {
+      return {
+        left: -30 + cardPlace * 30 + "rem",
+        scale: cardPlace,
+        opacity: 0,
+        transition: {
+          duration: 0.2,
+        },
+      };
+    }
   },
 };
 

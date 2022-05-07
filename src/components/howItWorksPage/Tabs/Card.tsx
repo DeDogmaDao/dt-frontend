@@ -66,7 +66,7 @@ const Card: React.FC<props> = ({
       custom={{ cardPlace, innerWidth }}
       onClick={(e) => cardClickHandler(e)}
       className={`tab-card-container h-[28.75rem] w-[18.75rem] flex  text-white absolute select-none 
-      hover:cursor-pointer !rounded-xl overflow-hidden top-0 left-4 ${
+      hover:cursor-pointer !rounded-xl overflow-hidden top-0 ml-14 ${
         innerWidth < 1024
           ? activeIndexCard[tabGroup][1] === index
             ? "grayscale-0"
