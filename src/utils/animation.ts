@@ -416,39 +416,63 @@ export const tabBlastAni: Variants = {
 };
 
 export const carouselDisplayAni: Variants = {
-  hidden: (custom) => ({
-    left: 50 + custom * 70 + "%",
-    scale: 1 - 0.8 * Math.abs(custom),
-    opacity: 0.3,
-  }),
-  visible: (custom) => {
-    if (custom === 0) {
+  hidden: ({ cardPlace, innerWidth }) => {
+    if (innerWidth < 1024) {
       return {
-        scale: 1 - 0.4 * Math.abs(custom),
-        left: 50 + custom * 35 + "%",
+        left: 50 + cardPlace * 70 + "%",
+        scale: 1 - 0.8 * Math.abs(cardPlace),
+        opacity: 0.3,
+      };
+    } else {
+      return {
+        left: 100 + "%",
+        scale: 1 - 0.8 * Math.abs(cardPlace - 1),
+        opacity: 0.3,
+      };
+    }
+  },
+  visible: ({ cardPlace, innerWidth }) => {
+    if (innerWidth < 1024) {
+      return {
+        scale: 1 - 0.4 * Math.abs(cardPlace),
+        left: 50 + cardPlace * 35 + "%",
+        opacity: 1,
+        transition: {
+          duration: 0.4,
+        },
+      };
+    } else {
+      return {
+        scale: 1 - 0.4 * Math.abs(cardPlace -1),
+        left: 50 + cardPlace * 35 + "%",
         opacity: 1,
         transition: {
           duration: 0.4,
         },
       };
     }
-    return {
-      scale: 1 - 0.4 * Math.abs(custom),
-      left: 50 + custom * 35 + "%",
-      opacity: 0.5,
-      transition: {
-        duration: 0.4,
-      },
-    };
   },
-  out: (custom) => ({
-    left: 50 + custom * 70 + "%",
+  out: ({ cardPlace, innerWidth }) => {
+if(innerWidth<1024){
+  return {
+    left: 50 + cardPlace * 70 + "%",
     scale: 0,
     opacity: 0,
     transition: {
       duration: 0.2,
     },
-  }),
+  }
+} else {
+  return {
+    left: 50 + cardPlace * 70 + "%",
+    scale: 0,
+    opacity: 0,
+    transition: {
+      duration: 0.2,
+    },
+  }
+}
+  },
 };
 
 export const tabInfoContainerAni: Variants = {
@@ -929,17 +953,17 @@ export const cityAnim: Variants = {
 export const videoBtnAnim: Variants = {
   hidden: {
     opacity: 1,
-    rotate:"0deg",
-    scale:0.7,
-    fill:["#fff"]
+    rotate: "0deg",
+    scale: 0.7,
+    fill: ["#fff"],
   },
   visible: {
     opacity: 1,
-    rotate:"1800deg",
-    scale:[0.7,1.3,1],
-    fill:["#3D14BB","#3D14BB","#fff"],
+    rotate: "1800deg",
+    scale: [0.7, 1.3, 1],
+    fill: ["#3D14BB", "#3D14BB", "#fff"],
     transition: {
-      times:[0,0.8,1],
+      times: [0, 0.8, 1],
       duration: 1,
       delay: 0.1,
     },

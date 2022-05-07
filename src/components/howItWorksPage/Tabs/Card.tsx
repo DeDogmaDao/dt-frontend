@@ -1,4 +1,11 @@
-import { Dispatch, RefObject, SetStateAction } from "react";
+import {
+  Dispatch,
+  RefObject,
+  SetStateAction,
+  useEffect,
+  useLayoutEffect,
+  useState,
+} from "react";
 import { activeIndexCardType, tabType } from "../../../types/allTypes";
 import { motion, MotionStyle } from "framer-motion";
 import Image from "next/image";
@@ -25,6 +32,20 @@ const Card: React.FC<props> = ({
   tabGroup,
   isDragged,
 }) => {
+  const [innerWidth, setInnerWidth] = useState(0);
+
+  useLayoutEffect(() => {
+    const innerwidthHandler = () => {
+      setInnerWidth(window.innerWidth);
+    };
+    innerwidthHandler();
+    window.addEventListener("resize", innerwidthHandler);
+
+    return () => {
+      window.removeEventListener("resize", innerwidthHandler);
+    };
+  }, []);
+
   const cardClickHandler = (e: any) => {
     if (isDragged) {
       e.preventDefault();
@@ -50,7 +71,7 @@ const Card: React.FC<props> = ({
       animate="visible"
       exit={"out"}
       variants={carouselDisplayAni}
-      custom={cardPlace}
+      custom={{cardPlace,innerWidth}}
       onClick={(e) => cardClickHandler(e)}
       className={`tab-card-container h-[28.75rem] w-[18.75rem] flex  text-white absolute select-none hover:cursor-pointer !rounded-xl overflow-hidden  ${
         activeIndexCard[tabGroup][1] === index ? "grayscale-0" : "grayscale"
@@ -58,7 +79,7 @@ const Card: React.FC<props> = ({
     >
       <div className="w-full h-full relative">
         <Image
-        alt={"dedogmadao " + tabGroup + " " + data.name} 
+          alt={"dedogmadao " + tabGroup + " " + data.name}
           draggable={false}
           src={imgData[tabGroup][index]}
           layout="fill"

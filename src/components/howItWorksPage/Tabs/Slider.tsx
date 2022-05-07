@@ -69,7 +69,7 @@ const Slider: React.FC<props> = ({
 
   return (
     <motion.div className="relative w-[100%] sm:w-[80%] md:w-[70%] lg:w-[90%] flex justify-center
-     lg:justify-between lg:gap-x-10 px-32">
+     lg:justify-between lg:gap-x-10 px-20">
       <motion.div
         ref={carouselRef}
         className="carousel overflow-hidden ml-0 w-full lg:w-1/2 z-10"
