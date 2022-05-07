@@ -60,7 +60,7 @@ const Card: React.FC<props> = ({
   const cardPlace = cardPlaceDetector(activeIndexCard[tabGroup], index);
   let style: MotionStyle = {
     top: 0,
-    marginLeft: "-9.375rem",
+    marginLeft: "-15.375rem",
   };
 
   return (
