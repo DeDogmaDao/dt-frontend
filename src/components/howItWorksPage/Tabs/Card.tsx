@@ -9,7 +9,11 @@ import {
 import { activeIndexCardType, tabType } from "../../../types/allTypes";
 import { motion, MotionStyle } from "framer-motion";
 import Image from "next/image";
-import { cardIndexHandler, cardPlaceDetector } from "../../../utils/util";
+import {
+  cardIndexHandler,
+  cardPlaceDetector,
+  cardPlaceDetectorUpper,
+} from "../../../utils/util";
 import { carouselDisplayAni } from "../../../utils/animation";
 import imgData from "./img/img";
 interface props {
@@ -57,10 +61,13 @@ const Card: React.FC<props> = ({
     }));
   };
 
-  const cardPlace = cardPlaceDetector(activeIndexCard[tabGroup], index);
+  const cardPlace =
+    innerWidth < 1024
+      ? cardPlaceDetector(activeIndexCard[tabGroup], index)
+      : cardPlaceDetectorUpper(activeIndexCard[tabGroup], index);
   let style: MotionStyle = {
     top: 0,
-    marginLeft: "-15.375rem",
+    marginLeft: "-13.75rem",
   };
 
   return (
@@ -71,9 +78,10 @@ const Card: React.FC<props> = ({
       animate="visible"
       exit={"out"}
       variants={carouselDisplayAni}
-      custom={{cardPlace,innerWidth}}
+      custom={{ cardPlace, innerWidth }}
       onClick={(e) => cardClickHandler(e)}
-      className={`tab-card-container h-[28.75rem] w-[18.75rem] flex  text-white absolute select-none hover:cursor-pointer !rounded-xl overflow-hidden  ${
+      className={`tab-card-container h-[28.75rem] w-[18.75rem] flex  text-white absolute select-none 
+      hover:cursor-pointer !rounded-xl overflow-hidden  ${
         activeIndexCard[tabGroup][1] === index ? "grayscale-0" : "grayscale"
       }`}
     >

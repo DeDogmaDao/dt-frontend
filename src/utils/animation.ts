@@ -425,8 +425,8 @@ export const carouselDisplayAni: Variants = {
       };
     } else {
       return {
-        left: 100 + "%",
-        scale: 1 - 0.8 * Math.abs(cardPlace - 1),
+        left: cardPlace + "rem",
+        scale: 1 - 0.8 * Math.abs(cardPlace),
         opacity: 0.3,
       };
     }
@@ -443,8 +443,8 @@ export const carouselDisplayAni: Variants = {
       };
     } else {
       return {
-        scale: 1 - 0.4 * Math.abs(cardPlace -1),
-        left: 50 + cardPlace * 35 + "%",
+        scale: 1 + 0.2 * (cardPlace - 2),
+        left: cardPlace * 30 + "rem",
         opacity: 1,
         transition: {
           duration: 0.4,
@@ -464,7 +464,7 @@ if(innerWidth<1024){
   }
 } else {
   return {
-    left: 50 + cardPlace * 70 + "%",
+    left: cardPlace * 10 + 'rem',
     scale: 0,
     opacity: 0,
     transition: {
