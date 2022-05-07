@@ -110,6 +110,9 @@ export const cardPlaceDetectorUpper = (
 };
 
 export const cardIndexHandler = (index: number, quantity: number): number[] => {
+  if(index === -1){
+    index = quantity -1;
+  }
   if (index === 0) {
     return [quantity - 1, index, index + 1];
   } else if (index === quantity - 1) {

@@ -57,7 +57,7 @@ const Card: React.FC<props> = ({
     }
     setActiveIndexCard((prevState) => ({
       ...prevState,
-      [tabGroup]: cardIndexHandler(index, tabInfo.length),
+      [tabGroup]: cardIndexHandler(index -1, tabInfo.length),
     }));
   };
 

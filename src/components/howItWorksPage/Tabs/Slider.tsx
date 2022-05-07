@@ -1,6 +1,6 @@
 import { motion, PanInfo, useAnimation } from "framer-motion";
 import Image from "next/image";
-import { Dispatch, SetStateAction, useEffect, useRef } from "react";
+import { Dispatch, SetStateAction, useEffect, useLayoutEffect, useRef, useState } from "react";
 import { activeIndexCardType } from "../../../types/allTypes";
 import { cardIndexHandler } from "../../../utils/util";
 import AngleRightSVG from "../../svgs/rightangle.svg";
@@ -20,6 +20,21 @@ const Slider: React.FC<props> = ({
   activeIndexCard,
   dataQuantity,
 }) => {
+
+  const [innerWidth, setInnerWidth] = useState(0);
+
+  useLayoutEffect(() => {
+    const innerwidthHandler = () => {
+      setInnerWidth(window.innerWidth);
+    };
+    innerwidthHandler();
+    window.addEventListener("resize", innerwidthHandler);
+
+    return () => {
+      window.removeEventListener("resize", innerwidthHandler);
+    };
+  }, []);
+
   const carouselRef = useRef<HTMLDivElement>(null);
 
   const dragHandler = (
