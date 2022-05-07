@@ -21,19 +21,6 @@ const Slider: React.FC<props> = ({
   dataQuantity,
 }) => {
 
-  const [innerWidth, setInnerWidth] = useState(0);
-
-  useLayoutEffect(() => {
-    const innerwidthHandler = () => {
-      setInnerWidth(window.innerWidth);
-    };
-    innerwidthHandler();
-    window.addEventListener("resize", innerwidthHandler);
-
-    return () => {
-      window.removeEventListener("resize", innerwidthHandler);
-    };
-  }, []);
 
   const carouselRef = useRef<HTMLDivElement>(null);
 
