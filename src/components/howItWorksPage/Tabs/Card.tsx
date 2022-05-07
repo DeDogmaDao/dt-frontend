@@ -25,6 +25,7 @@ interface props {
   activeIndexCard: activeIndexCardType;
   setActiveIndexCard: Dispatch<SetStateAction<activeIndexCardType>>;
   isDragged: boolean;
+  innerWidth:number;
 }
 const Card: React.FC<props> = ({
   data,
@@ -35,20 +36,8 @@ const Card: React.FC<props> = ({
   setActiveIndexCard,
   tabGroup,
   isDragged,
+  innerWidth
 }) => {
-  const [innerWidth, setInnerWidth] = useState(0);
-
-  useLayoutEffect(() => {
-    const innerwidthHandler = () => {
-      setInnerWidth(window.innerWidth);
-    };
-    innerwidthHandler();
-    window.addEventListener("resize", innerwidthHandler);
-
-    return () => {
-      window.removeEventListener("resize", innerwidthHandler);
-    };
-  }, []);
 
   const cardClickHandler = (e: any) => {
     if (isDragged) {
@@ -70,14 +59,14 @@ const Card: React.FC<props> = ({
   return (
     <motion.div
       layoutId={index.toString() + tabGroup}
-      initial={index !==null && "hidden"}
+      initial={"hidden"}
       animate="visible"
       exit={"out"}
       variants={carouselDisplayAni}
       custom={{ cardPlace, innerWidth }}
       onClick={(e) => cardClickHandler(e)}
       className={`tab-card-container h-[28.75rem] w-[18.75rem] flex  text-white absolute select-none 
-      hover:cursor-pointer !rounded-xl overflow-hidden top-0 ${
+      hover:cursor-pointer !rounded-xl overflow-hidden top-0 left-4 ${
         innerWidth < 1024
           ? activeIndexCard[tabGroup][1] === index
             ? "grayscale-0"

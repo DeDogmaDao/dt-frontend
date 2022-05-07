@@ -1,6 +1,6 @@
 import { AnimatePresence, LayoutGroup } from "framer-motion";
 import Image from "next/image";
-import { useRef, useState } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import { allTabs } from "../../../store/allData";
 import { activeIndexCardType } from "../../../types/allTypes";
 import Card from "./Card";
@@ -11,6 +11,24 @@ import TabInfo from "./TabInfo";
 import tabBg from "../../images/bg/sec3.png";
 
 const Tabs: React.FC = () => {
+
+
+  const [innerWidth, setInnerWidth] = useState(0);
+
+  useLayoutEffect(() => {
+    const innerwidthHandler = () => {
+      setInnerWidth(window.innerWidth);
+    };
+    innerwidthHandler();
+    window.addEventListener("resize", innerwidthHandler);
+
+    return () => {
+      window.removeEventListener("resize", innerwidthHandler);
+    };
+  }, []);
+
+
+
   const [tabs, setTabs] = useState(allTabs);
   const cardRef = useRef<HTMLDivElement>(null);
   const [activeIndexCard, setActiveIndexCard] = useState<activeIndexCardType>({
@@ -83,6 +101,7 @@ const Tabs: React.FC = () => {
                           index={index}
                           tabInfo={tab.tabInfo}
                           isDragged={isDragged}
+                          innerWidth={innerWidth}
                         />
                       );
                     })}
