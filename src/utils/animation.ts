@@ -417,7 +417,8 @@ export const tabBlastAni: Variants = {
 
 export const carouselDisplayAni: Variants = {
   hidden: ({ cardPlace, innerWidth }) => {
-    if (innerWidth < 1024) {
+    console.log(innerWidth)
+    if (innerWidth <= 1024) {
       return {
         left: 50 + cardPlace * 70 + "%",
         scale: 1 - 0.8 * Math.abs(cardPlace),
@@ -425,8 +426,8 @@ export const carouselDisplayAni: Variants = {
       };
     } else {
       return {
-        left: cardPlace + "rem",
-        scale: 1 - 0.8 * Math.abs(cardPlace),
+        left:-30 +"rem",
+        scale: cardPlace,
         opacity: 0.3,
       };
     }
