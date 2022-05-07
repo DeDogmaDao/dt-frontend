@@ -444,8 +444,9 @@ export const carouselDisplayAni: Variants = {
     } else {
       return {
         scale: 1 + 0.2 * (cardPlace - 2),
-        left: cardPlace * 30 + "rem",
+        left: cardPlace * 9 + "rem",
         opacity: 1,
+        zIndex:200 + (cardPlace-2),
         transition: {
           duration: 0.4,
         },
@@ -464,8 +465,8 @@ if(innerWidth<1024){
   }
 } else {
   return {
-    left: cardPlace * 10 + 'rem',
-    scale: 0,
+    left: -30 + cardPlace * 30 + 'rem',
+    scale: cardPlace,
     opacity: 0,
     transition: {
       duration: 0.2,

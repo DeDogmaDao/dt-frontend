@@ -67,7 +67,7 @@ const Card: React.FC<props> = ({
       : cardPlaceDetectorUpper(activeIndexCard[tabGroup], index);
   let style: MotionStyle = {
     top: 0,
-    marginLeft: "-13.75rem",
+    marginLeft: "-1rem",
   };
 
   return (
