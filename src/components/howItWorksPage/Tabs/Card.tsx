@@ -70,7 +70,7 @@ const Card: React.FC<props> = ({
   return (
     <motion.div
       layoutId={index.toString() + tabGroup}
-      initial={index !==null && "initial"}
+      initial={index !==null && "hidden"}
       animate="visible"
       exit={"out"}
       variants={carouselDisplayAni}
