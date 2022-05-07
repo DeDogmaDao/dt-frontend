@@ -82,7 +82,13 @@ const Card: React.FC<props> = ({
       onClick={(e) => cardClickHandler(e)}
       className={`tab-card-container h-[28.75rem] w-[18.75rem] flex  text-white absolute select-none 
       hover:cursor-pointer !rounded-xl overflow-hidden  ${
-        activeIndexCard[tabGroup][1] === index ? "grayscale-0" : "grayscale"
+        innerWidth < 1024
+          ? activeIndexCard[tabGroup][1] === index
+            ? "grayscale-0"
+            : "grayscale"
+          : activeIndexCard[tabGroup][2] === index
+          ? "grayscale-0"
+          : "grayscale"
       }`}
     >
       <div className="w-full h-full relative">
