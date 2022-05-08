@@ -431,7 +431,7 @@ export const carouselDisplayAni: Variants = {
       };
     }
   },
-  visible: ({ cardPlace, innerWidth,tabGroup }) => {
+  visible: ({ cardPlace, innerWidth, tabGroup }) => {
     if (innerWidth < 1280) {
       return {
         scale: 1 - 0.4 * Math.abs(cardPlace),
@@ -442,27 +442,27 @@ export const carouselDisplayAni: Variants = {
         },
       };
     } else {
-if(tabGroup === "humans"){
-  return {
-    scale: 1 + 0.25 * (cardPlace - 2),
-    left: -2 + cardPlace * 9 * (1 + 0.25 * (cardPlace - 2)) + "rem",
-    opacity: 1,
-    zIndex: 200 + (cardPlace - 2),
-    transition: {
-      duration: 0.4,
-    },
-  };
-} else {
-  return {
-    scale: 1 + 0.1 * (cardPlace - 2),
-    left: cardPlace * 8 * (1 + 0.1 * (cardPlace - 2)) + "rem",
-    opacity: 1,
-    zIndex: 200 + (cardPlace - 2),
-    transition: {
-      duration: 0.4,
-    },
-  };
-}
+      if (tabGroup === "humans") {
+        return {
+          scale: 1 + 0.25 * (cardPlace - 2),
+          left: -2 + cardPlace * 9 * (1 + 0.25 * (cardPlace - 2)) + "rem",
+          opacity: 1,
+          zIndex: 200 + (cardPlace - 2),
+          transition: {
+            duration: 0.4,
+          },
+        };
+      } else {
+        return {
+          scale: 1 + 0.1 * (cardPlace - 2),
+          left: cardPlace * 8 * (1 + 0.1 * (cardPlace - 2)) + "rem",
+          opacity: 1,
+          zIndex: 200 + (cardPlace - 2),
+          transition: {
+            duration: 0.4,
+          },
+        };
+      }
     }
   },
   out: ({ cardPlace, innerWidth }) => {
@@ -489,12 +489,23 @@ if(tabGroup === "humans"){
 };
 
 export const tabInfoContainerAni: Variants = {
-  hidden: {
-    y: -600,
-    opacity: 0,
-    scale: 0,
+  hidden: ({ innerWidth }) => {
+    if(innerWidth<1280) {
+    return {
+      y: -600,
+      opacity: 0,
+      scale: 0,
+    };
+  } else {
+    return {
+      x: -50,
+      opacity: 0,
+    };
+  }
   },
-  visible: {
+  visible: ({ innerWidth }) => {
+if(innerWidth<1280) {
+  return {
     y: 0,
     opacity: [0, 0.7, 1],
     scale: [0, 0.3, 1],
@@ -504,13 +515,37 @@ export const tabInfoContainerAni: Variants = {
       times: [0, 0.5, 1],
       ease: "easeIn",
     },
-  },
-  out: {
-    opacity: 0,
-    y: 50,
+  };
+} else {
+  return {
+    x: 0,
+    opacity: 1,
     transition: {
       duration: 0.4,
+      delay: 0.15,
     },
+  };
+}
+  },
+  out: ({ innerWidth }) => {
+    if(innerWidth<1280) {
+
+      return {
+        opacity: 0,
+        y: 50,
+        transition: {
+          duration: 0.4,
+        },
+      };
+    } else {
+      return {
+        opacity: 0,
+        x: 50,
+        transition: {
+          duration: 0.4,
+        },
+      };
+    }
   },
 };
 

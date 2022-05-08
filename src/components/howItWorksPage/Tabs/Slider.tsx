@@ -20,6 +20,7 @@ interface props {
   tabGroup: string;
   dataQuantity: number;
   tab: tabsType;
+  innerWidth: number;
 }
 const Slider: React.FC<props> = ({
   children,
@@ -29,6 +30,7 @@ const Slider: React.FC<props> = ({
   activeIndexCard,
   dataQuantity,
   tab,
+  innerWidth
 }) => {
   const carouselRef = useRef<HTMLDivElement>(null);
 
@@ -101,7 +103,7 @@ const Slider: React.FC<props> = ({
         {
           <div className="relative w-full h-full
            flex justify-center items-start mt-10">
-            {tab.tabInfo.map((data, index) => {
+            {innerWidth !== 0 && tab.tabInfo.map((data, index) => {
               return (
                 <TabInfo
                   key={data.name + index}
@@ -111,6 +113,7 @@ const Slider: React.FC<props> = ({
                   index={index}
                   activeIndexCard={activeIndexCard}
                   tabGroup={tab.tabGroup}
+                  innerWidth={innerWidth}
                 />
               );
             })}

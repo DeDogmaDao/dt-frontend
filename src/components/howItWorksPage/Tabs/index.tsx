@@ -77,6 +77,7 @@ const Tabs: React.FC = () => {
               <Slider
                 key={tab.tabGroup}
                 tab={tab}
+                innerWidth={innerWidth}
                 setIsDragged={setIsDragged}
                 tabGroup={tab.tabGroup}
                 setActiveIndexCard={setActiveIndexCard}
@@ -161,6 +162,7 @@ const Tabs: React.FC = () => {
                   index={index}
                   activeIndexCard={activeIndexCard}
                   tabGroup={tab.tabGroup}
+                  innerWidth={innerWidth}
                 />
               );
             })}
