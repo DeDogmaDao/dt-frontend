@@ -70,16 +70,16 @@ const Slider: React.FC<props> = ({
   }, [activeIndexCard]);
 
   return (
-    <motion.div className="relative w-[100%] sm:w-[80%] md:w-[70%] lg:w-[90%] flex justify-center
-     lg:justify-between lg:gap-x-10 px-20">
+    <motion.div className="relative w-[100%] sm:w-[80%] md:w-[70%] xl:w-[90%] flex justify-center
+     xl:justify-between xl:gap-x-10 px-20">
       <motion.div
         ref={carouselRef}
-        className="carousel  ml-0 w-full lg:w-[35rem] z-10"
+        className="carousel  ml-0 w-full xl:w-[35rem] z-10"
       >
         <motion.div
           onDragEnd={(event, info) => dragHandler(event, info)}
           onDragStart={() => setIsDragged(true)}
-          className={`inner-carousel flex relative w-full lg:w-[35rem] overflow-hidden h-[28.75rem] mt-[2%] bg-blue-200/50`}
+          className={`inner-carousel flex relative w-full xl:w-[35rem] overflow-hidden h-[28.75rem] mt-[2%] bg-blue-200/50`}
           drag="x"
           dragConstraints={{ right: 0, left: -0 }}
           dragElastic={0.03}
@@ -87,7 +87,7 @@ const Slider: React.FC<props> = ({
           {children}
         </motion.div>
       </motion.div>
-      <motion.div className="w-1/2 hidden lg:flex bg-red-50">
+      <motion.div className="w-1/2 hidden xl:flex bg-red-50">
 
       </motion.div>
 

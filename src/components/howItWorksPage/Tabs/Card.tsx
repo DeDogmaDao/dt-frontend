@@ -51,7 +51,7 @@ const Card: React.FC<props> = ({
   };
 
   const cardPlace =
-    innerWidth < 1024
+    innerWidth < 1280
       ? cardPlaceDetector(activeIndexCard[tabGroup], index)
       : cardPlaceDetectorUpper(activeIndexCard[tabGroup], index);
 
