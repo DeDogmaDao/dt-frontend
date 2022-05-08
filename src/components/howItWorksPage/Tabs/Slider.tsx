@@ -1,6 +1,13 @@
 import { motion, PanInfo, useAnimation } from "framer-motion";
 import Image from "next/image";
-import { Dispatch, SetStateAction, useEffect, useLayoutEffect, useRef, useState } from "react";
+import {
+  Dispatch,
+  SetStateAction,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from "react";
 import { activeIndexCardType } from "../../../types/allTypes";
 import { cardIndexHandler } from "../../../utils/util";
 import AngleRightSVG from "../../svgs/rightangle.svg";
@@ -20,8 +27,6 @@ const Slider: React.FC<props> = ({
   activeIndexCard,
   dataQuantity,
 }) => {
-
-
   const carouselRef = useRef<HTMLDivElement>(null);
 
   const dragHandler = (
@@ -70,8 +75,10 @@ const Slider: React.FC<props> = ({
   }, [activeIndexCard]);
 
   return (
-    <motion.div className="relative w-[100%] sm:w-[80%] md:w-[70%] xl:w-[90%] flex justify-center
-     xl:justify-between xl:gap-x-10 px-20">
+    <motion.div
+      className="relative w-[100%] sm:w-[80%] md:w-[70%] xl:w-[90%] flex justify-center
+     xl:justify-between xl:gap-x-10 px-20"
+    >
       <motion.div
         ref={carouselRef}
         className="carousel  ml-0 w-full xl:w-[35rem] z-10"
@@ -87,9 +94,7 @@ const Slider: React.FC<props> = ({
           {children}
         </motion.div>
       </motion.div>
-      <motion.div className="w-1/2 hidden xl:flex bg-red-50">
-
-      </motion.div>
+      <motion.div className="w-1/2 hidden xl:flex bg-red-50"></motion.div>
 
       <button
         className="absolute p-2 left-0 top-1/2 -mt-8 text-5xl scale-x-[-1] text-white ssm:text-neutral-400 z-60"
@@ -122,7 +127,7 @@ const Slider: React.FC<props> = ({
 w-[22.5rem] aspect-[444/320]"
         >
           <Image
-          alt="dedogmadao frame" 
+            alt="dedogmadao frame"
             layout="fill"
             src="/img/cyc/frame.png"
             quality={75}
@@ -137,7 +142,7 @@ w-[22.5rem] aspect-[444/320]"
 w-[20rem] aspect-[444/320] ]"
           >
             <Image
-            alt="dedogmadao portal" 
+              alt="dedogmadao portal"
               layout="fill"
               src="/img/cyc/tab-portal.png"
               quality={75}
@@ -149,7 +154,7 @@ w-[20rem] aspect-[444/320] ]"
 w-[16.4rem] aspect-[289/340] bg-red-50/0"
           >
             <Image
-            alt="dedogmadao portal" 
+              alt="dedogmadao portal"
               layout="fill"
               src="/img/cyc/tab-portal2.png"
               quality={90}

@@ -11,8 +11,6 @@ import TabInfo from "./TabInfo";
 import tabBg from "../../images/bg/sec3.png";
 
 const Tabs: React.FC = () => {
-
-
   const [innerWidth, setInnerWidth] = useState(0);
 
   useLayoutEffect(() => {
@@ -26,8 +24,6 @@ const Tabs: React.FC = () => {
       window.removeEventListener("resize", innerwidthHandler);
     };
   }, []);
-
-
 
   const [tabs, setTabs] = useState(allTabs);
   const cardRef = useRef<HTMLDivElement>(null);
@@ -46,18 +42,24 @@ const Tabs: React.FC = () => {
       <div className="absolute bottom-0 left-0 w-full h-[7.5rem] bg-gradient-to-t from-bodymain to-transparent z-[1]" />
       <span className="absolute h-full aspect-[1440/1017]">
         <span className="w-full h-full inner-image-no-max-width">
-          <Image alt="dedogmadao background"  src={tabBg} layout="fill" quality={100} placeholder="blur" />
+          <Image
+            alt="dedogmadao background"
+            src={tabBg}
+            layout="fill"
+            quality={100}
+            placeholder="blur"
+          />
         </span>
       </span>
       <h2 className="z-10 mt-14 ssm:mt-20 sm:mt-32 lg:mt-40 text-[1.25rem] ssm:text-[1.75rem] sm:text-[2.375rem] font-bold sm:font-bold">
-         <span className="text-primary-500">NFT</span> Card Collection
+        <span className="text-primary-500">NFT</span> Card Collection
       </h2>
       <div className=" flex flex-col ssm:flex-row gap-y-8 sm:gap-y-0 justify-center items-center gap-x-8 md:gap-x-16 text-2xl mt-14">
         <LayoutGroup id="tabGroup">
           {tabs.map((data) => {
             return (
               <EachGroup
-              key={data.tabGroup}
+                key={data.tabGroup}
                 tabs={tabs}
                 name={data.tabGroup}
                 activeGroup={data.activeGroup}
@@ -73,7 +75,7 @@ const Tabs: React.FC = () => {
             if (!tab.activeGroup) return null;
             return (
               <Slider
-              key={tab.tabGroup}
+                key={tab.tabGroup}
                 setIsDragged={setIsDragged}
                 tabGroup={tab.tabGroup}
                 setActiveIndexCard={setActiveIndexCard}
@@ -116,12 +118,16 @@ const Tabs: React.FC = () => {
       {tabs.map((tab) => {
         if (!tab.activeGroup) return null;
         return (
-          <div key={tab.tabGroup} className="h-16 flex justify-center items-center gap-x-[.625rem] text-2xl  rounded-full mt-28">
+          <div
+            key={tab.tabGroup}
+            className={`h-16 flex justify-center items-center
+          xl:-ml-44 xl:mt-20 gap-x-[.625rem] text-2xl  rounded-full mt-28`}
+          >
             <LayoutGroup id="eachTab">
               {tab.tabInfo.map((data, index) => {
                 return (
                   <EachTab
-                  key={data.name + index}
+                    key={data.name + index}
                     group={tab.tabGroup}
                     name={data.name}
                     activeIndexCard={activeIndexCard}
@@ -138,11 +144,14 @@ const Tabs: React.FC = () => {
       {tabs.map((tab) => {
         if (!tab.activeGroup) return null;
         return (
-          <div key={tab.tabGroup} className="relative w-full h-[34.375rem] sm:h-[21.875rem] md:h-[18.75rem] lg:h-[15.625rem] flex justify-center items-start mt-0">
+          <div
+            key={tab.tabGroup}
+            className="relative w-full h-[34.375rem] sm:h-[21.875rem] md:h-[18.75rem] lg:h-[15.625rem] flex justify-center items-start mt-0"
+          >
             {tab.tabInfo.map((data, index) => {
               return (
                 <TabInfo
-                key={data.name + index}
+                  key={data.name + index}
                   name={data.name}
                   titleOfHonor={data.titleOfHonor}
                   desc={data.desc}
