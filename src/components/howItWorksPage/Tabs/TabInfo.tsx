@@ -26,12 +26,13 @@ const TabInfo: React.FC<props> = ({
           animate="visible"
           exit="out"
           variants={tabInfoContainerAni}
-          className="absolute flex flex-col justify-start items-center w-[90%] md:w-[80%] lg:w-[65%] z-[150] pointer-events-none"
+          className="absolute flex flex-col justify-start items-center w-[90%] md:w-[80%] lg:w-[65%] xl:w-full z-[150] pointer-events-none"
         >
-          <h3 className="flex flex-col sm:flex-row justify-center items-center gap-x-2 text-2xl md:text-3xl font-bold">
-            <span>{name}</span>
+          <h3 className="flex flex-col sm:flex-row xl:flex-wrap justify-center items-center xl:justify-start
+          xl:ml-14 2xl:ml-0 gap-x-2 text-2xl md:text-3xl font-bold">
+            <span className="xl:whitespace-nowrap">{name}</span>
             {titleOfHonor && (
-              <p className="text-primary-500 text-center">“{titleOfHonor}”</p>
+              <p className="text-primary-500 text-center xl:whitespace-nowrap">“{titleOfHonor}”</p>
             )}
           </h3>
           <ul className="flex flex-col justify-start items-start mt-3 text-lg font-extralight">

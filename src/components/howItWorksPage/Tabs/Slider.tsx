@@ -99,7 +99,8 @@ const Slider: React.FC<props> = ({
       </motion.div>
       <motion.div className="w-1/2 hidden xl:flex ">
         {
-          <div className="relative w-full h-[34.375rem] sm:h-[21.875rem] md:h-[18.75rem] lg:h-[15.625rem] flex justify-center items-start mt-0">
+          <div className="relative w-full h-full
+           flex justify-center items-start mt-10">
             {tab.tabInfo.map((data, index) => {
               return (
                 <TabInfo
