@@ -55,7 +55,9 @@ const Card: React.FC<props> = ({
       ? cardPlaceDetector(activeIndexCard[tabGroup], index)
       : cardPlaceDetectorUpper(activeIndexCard[tabGroup], index);
 
-
+  const style:MotionStyle = {
+    marginLeft: innerWidth < 1280 ? "-9.375rem" : "0rem"
+  }
   return (
     <motion.div
       layoutId={index.toString() + tabGroup}
@@ -64,6 +66,7 @@ const Card: React.FC<props> = ({
       exit={"out"}
       variants={carouselDisplayAni}
       custom={{ cardPlace, innerWidth, tabGroup }}
+      style={style}
       onClick={(e) => cardClickHandler(e)}
       className={`tab-card-container h-[28.75rem] w-[18.75rem] flex  text-white absolute select-none 
       hover:cursor-pointer !rounded-xl overflow-hidden top-0   ${
