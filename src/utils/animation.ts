@@ -477,7 +477,7 @@ if(tabGroup === "humans"){
       };
     } else {
       return {
-        left: -30 + cardPlace * 30 + "rem",
+        left: -30 + cardPlace * 60 + "rem",
         scale: cardPlace,
         opacity: 0,
         transition: {
