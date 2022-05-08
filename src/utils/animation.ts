@@ -431,7 +431,7 @@ export const carouselDisplayAni: Variants = {
       };
     }
   },
-  visible: ({ cardPlace, innerWidth }) => {
+  visible: ({ cardPlace, innerWidth,tabGroup }) => {
     if (innerWidth < 1280) {
       return {
         scale: 1 - 0.4 * Math.abs(cardPlace),
@@ -442,15 +442,27 @@ export const carouselDisplayAni: Variants = {
         },
       };
     } else {
-      return {
-        scale: 1 + 0.1 * (cardPlace - 2),
-        left: cardPlace * 7 * (1 + 0.1 * (cardPlace - 2)) + "rem",
-        opacity: 1,
-        zIndex: 200 + (cardPlace - 2),
-        transition: {
-          duration: 0.4,
-        },
-      };
+if(tabGroup === "humans"){
+  return {
+    scale: 1 + 0.25 * (cardPlace - 2),
+    left: -2 + cardPlace * 9 * (1 + 0.25 * (cardPlace - 2)) + "rem",
+    opacity: 1,
+    zIndex: 200 + (cardPlace - 2),
+    transition: {
+      duration: 0.4,
+    },
+  };
+} else {
+  return {
+    scale: 1 + 0.1 * (cardPlace - 2),
+    left: cardPlace * 7 * (1 + 0.1 * (cardPlace - 2)) + "rem",
+    opacity: 1,
+    zIndex: 200 + (cardPlace - 2),
+    transition: {
+      duration: 0.4,
+    },
+  };
+}
     }
   },
   out: ({ cardPlace, innerWidth }) => {
