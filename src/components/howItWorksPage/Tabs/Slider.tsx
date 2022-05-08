@@ -118,7 +118,7 @@ const Slider: React.FC<props> = ({
 
       {tabGroup === "gods" && (
         <motion.div
-          className="absolute top-[67%] left-1/2 ml-[-11.25rem] z-50 pointer-events-none select-none
+          className="absolute top-[67%] left-1/2 xl:left-[28.5rem] ml-[-11.25rem] z-50 pointer-events-none select-none
 w-[22.5rem] aspect-[444/320]"
         >
           <Image
@@ -133,7 +133,7 @@ w-[22.5rem] aspect-[444/320]"
       {tabGroup === "humans" && (
         <>
           <motion.div
-            className="absolute top-[62%] left-1/2 ml-[-11.25rem] z-0 pointer-events-none select-none
+            className="absolute top-[62%] left-1/2 xl:left-[28.5rem] ml-[-11.25rem] z-0 pointer-events-none select-none
 w-[22.5rem] aspect-[444/320] ]"
           >
             <Image
