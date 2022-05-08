@@ -76,6 +76,7 @@ const Tabs: React.FC = () => {
             return (
               <Slider
                 key={tab.tabGroup}
+                tab={tab}
                 setIsDragged={setIsDragged}
                 tabGroup={tab.tabGroup}
                 setActiveIndexCard={setActiveIndexCard}
@@ -146,7 +147,7 @@ const Tabs: React.FC = () => {
         return (
           <div
             key={tab.tabGroup}
-            className="relative w-full h-[34.375rem] sm:h-[21.875rem] md:h-[18.75rem] lg:h-[15.625rem] flex justify-center items-start mt-0"
+            className="relative xl:hidden w-full h-[34.375rem] sm:h-[21.875rem] md:h-[18.75rem] lg:h-[15.625rem] flex justify-center items-start mt-0"
           >
             {tab.tabInfo.map((data, index) => {
               return (

@@ -8,9 +8,10 @@ import {
   useRef,
   useState,
 } from "react";
-import { activeIndexCardType } from "../../../types/allTypes";
+import { activeIndexCardType, tabsType } from "../../../types/allTypes";
 import { cardIndexHandler } from "../../../utils/util";
 import AngleRightSVG from "../../svgs/rightangle.svg";
+import TabInfo from "./TabInfo";
 
 interface props {
   setIsDragged: Dispatch<SetStateAction<boolean>>;
@@ -18,6 +19,7 @@ interface props {
   activeIndexCard: activeIndexCardType;
   tabGroup: string;
   dataQuantity: number;
+  tab: tabsType;
 }
 const Slider: React.FC<props> = ({
   children,
@@ -26,6 +28,7 @@ const Slider: React.FC<props> = ({
   tabGroup,
   activeIndexCard,
   dataQuantity,
+  tab,
 }) => {
   const carouselRef = useRef<HTMLDivElement>(null);
 
@@ -94,7 +97,25 @@ const Slider: React.FC<props> = ({
           {children}
         </motion.div>
       </motion.div>
-      <motion.div className="w-1/2 hidden xl:flex bg-red-50"></motion.div>
+      <motion.div className="w-1/2 hidden xl:flex ">
+        {
+          <div className="relative w-full h-[34.375rem] sm:h-[21.875rem] md:h-[18.75rem] lg:h-[15.625rem] flex justify-center items-start mt-0">
+            {tab.tabInfo.map((data, index) => {
+              return (
+                <TabInfo
+                  key={data.name + index}
+                  name={data.name}
+                  titleOfHonor={data.titleOfHonor}
+                  desc={data.desc}
+                  index={index}
+                  activeIndexCard={activeIndexCard}
+                  tabGroup={tab.tabGroup}
+                />
+              );
+            })}
+          </div>
+        }
+      </motion.div>
 
       <button
         className="absolute p-2 left-0 top-1/2 -mt-8 text-5xl scale-x-[-1] text-white ssm:text-neutral-400 z-60"
