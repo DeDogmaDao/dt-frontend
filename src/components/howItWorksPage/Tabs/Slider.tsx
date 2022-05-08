@@ -118,7 +118,7 @@ const Slider: React.FC<props> = ({
 
       {tabGroup === "gods" && (
         <motion.div
-          className="absolute top-[67%] left-1/2 xl:left-[28.5rem] ml-[-11.25rem] z-50 pointer-events-none select-none
+          className="absolute top-[67%] left-1/2 xl:left-[30.4rem] ml-[-11.25rem] z-50 pointer-events-none select-none
 w-[22.5rem] aspect-[444/320]"
         >
           <Image
@@ -133,8 +133,8 @@ w-[22.5rem] aspect-[444/320]"
       {tabGroup === "humans" && (
         <>
           <motion.div
-            className="absolute top-[62%] left-1/2 xl:left-[28.5rem] ml-[-11.25rem] z-0 pointer-events-none select-none
-w-[22.5rem] aspect-[444/320] ]"
+            className="absolute top-[62%] left-1/2 xl:left-[31rem] ml-[-10.4rem] z-0 pointer-events-none select-none
+w-[20rem] aspect-[444/320] ]"
           >
             <Image
             alt="dedogmadao portal" 
@@ -145,8 +145,8 @@ w-[22.5rem] aspect-[444/320] ]"
             />
           </motion.div>
           <motion.div
-            className="absolute top-[40.5%] left-1/2 ml-[-9.1875rem] z-50 pointer-events-none select-none
-w-[18.375rem] aspect-[289/340]"
+            className="absolute top-[40.7%] left-1/2 xl:left-[31.6rem] ml-[-9.1875rem] z-50 pointer-events-none select-none
+w-[16.4rem] aspect-[289/340] bg-red-50/0"
           >
             <Image
             alt="dedogmadao portal" 

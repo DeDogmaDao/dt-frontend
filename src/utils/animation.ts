@@ -455,7 +455,7 @@ if(tabGroup === "humans"){
 } else {
   return {
     scale: 1 + 0.1 * (cardPlace - 2),
-    left: cardPlace * 7 * (1 + 0.1 * (cardPlace - 2)) + "rem",
+    left: cardPlace * 8 * (1 + 0.1 * (cardPlace - 2)) + "rem",
     opacity: 1,
     zIndex: 200 + (cardPlace - 2),
     transition: {
