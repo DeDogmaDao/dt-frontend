@@ -490,7 +490,6 @@ export const carouselDisplayAni: Variants = {
 
 export const tabInfoContainerAni: Variants = {
   hidden: ({ innerWidth }) => {
-    console.log(innerWidth)
     if (innerWidth < 1280) {
       return {
         y: -600,
