@@ -54,7 +54,9 @@ const Slider: React.FC<props> = ({
         };
       });
     }
-    setIsDragged(false);
+    setTimeout(() => {
+      setIsDragged(false);
+    }, 100);
   };
 
   const leftClickHandler = () => {
