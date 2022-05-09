@@ -125,7 +125,7 @@ const Tabs: React.FC = () => {
           <div
             key={tab.tabGroup}
             className={`h-16 flex justify-center xl:self-start items-center
-           xl:mt-20 gap-x-[.625rem] text-2xl  rounded-full mt-28 ${
+           xl:mt-20 gap-x-[.625rem] text-2xl  rounded-full mt-28 z-10 ${
              tab.tabGroup === "gods" ? "xl:ml-[24.2rem]" : "xl:ml-[28.7rem]"
            }`}
           >
