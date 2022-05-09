@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Dispatch, SetStateAction, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import treasure from "../../images/logo/treasure.png";
 import AngleRightSVG from "../../svgs/rightangle.svg";
 import ETHSVG from "../../svgs/eth.svg";
@@ -10,6 +10,15 @@ interface props {
 }
 const LogoType: React.FC<props> = ({ setAnim, portalLoading }) => {
   const [ethSvg, setEthSvg] = useState(true);
+  useEffect(() => {
+    const svgTimer = setInterval(() => {
+      setEthSvg((prevState) => !prevState);
+    }, 2000);
+
+    return () => {
+      clearInterval(svgTimer);
+    };
+  }, []);
   return (
     <motion.div
       onHoverStart={() => setAnim("visible")}
@@ -38,9 +47,7 @@ const LogoType: React.FC<props> = ({ setAnim, portalLoading }) => {
          hover:border-primary-500"
       >
         {ethSvg && (
-          <motion.span
-          
-          className="flex justify-between items-center gap-x-1">
+          <motion.span className="flex justify-between items-center gap-x-1">
             Join Our Discord{" "}
             <span className=" w-[0.3rem]   stroke-white ">
               <AngleRightSVG fill="none" />
