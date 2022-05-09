@@ -1105,3 +1105,11 @@ export const goldenSecondAni: Variants = {
     },
   },
 };
+
+export const heroSvgAni: Variants = {
+  hidden: (custom)=>({ x: 20 * custom }),
+  visible: {
+    x: 0,
+    transition: { duration: 0.2, type: "spring", stiffness: 300, damping:20 },
+  },
+};

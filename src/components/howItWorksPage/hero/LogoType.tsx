@@ -4,6 +4,7 @@ import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import treasure from "../../images/logo/treasure.png";
 import AngleRightSVG from "../../svgs/rightangle.svg";
 import ETHSVG from "../../svgs/eth.svg";
+import { heroSvgAni } from "../../../utils/animation";
 interface props {
   setAnim: Dispatch<SetStateAction<string>>;
   portalLoading: number;
@@ -47,7 +48,11 @@ const LogoType: React.FC<props> = ({ setAnim, portalLoading }) => {
          hover:border-primary-500"
       >
         {ethSvg && (
-          <motion.span className="flex justify-between items-center gap-x-1">
+          <motion.span
+            variants={heroSvgAni}
+            custom={1}
+            className="flex justify-between items-center gap-x-1"
+          >
             Join Our Discord{" "}
             <span className=" w-[0.3rem]   stroke-white ">
               <AngleRightSVG fill="none" />
@@ -55,7 +60,11 @@ const LogoType: React.FC<props> = ({ setAnim, portalLoading }) => {
           </motion.span>
         )}
         {!ethSvg && (
-          <motion.span className="flex justify-between items-center gap-x-2">
+          <motion.span
+            variants={heroSvgAni}
+            custom={-1}
+            className="flex justify-between items-center gap-x-2"
+          >
             Win ETH{" "}
             <span className="w-[0.8rem]">
               <ETHSVG />
