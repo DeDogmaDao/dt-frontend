@@ -416,64 +416,135 @@ export const tabBlastAni: Variants = {
 };
 
 export const carouselDisplayAni: Variants = {
-  hidden: (custom) => ({
-    left: 50 + custom * 70 + "%",
-    scale: 1 - 0.8 * Math.abs(custom),
-    opacity: 0.3,
-  }),
-  visible: (custom) => {
-    if (custom === 0) {
+  hidden: ({ cardPlace, innerWidth }) => {
+    if (innerWidth <= 1280) {
       return {
-        scale: 1 - 0.4 * Math.abs(custom),
-        left: 50 + custom * 35 + "%",
+        left: 50 + cardPlace * 70 + "%",
+        scale: 1 - 0.8 * Math.abs(cardPlace),
+        opacity: 0.3,
+      };
+    } else {
+      return {
+        left: -30 + cardPlace * 30 + "rem",
+        scale: cardPlace / 1.5,
+        opacity: 0.3,
+      };
+    }
+  },
+  visible: ({ cardPlace, innerWidth, tabGroup }) => {
+    if (innerWidth < 1280) {
+      return {
+        scale: 1 - 0.4 * Math.abs(cardPlace),
+        left: 50 + cardPlace * 35 + "%",
         opacity: 1,
         transition: {
           duration: 0.4,
         },
       };
+    } else {
+      if (tabGroup === "humans") {
+        return {
+          scale: 1 + 0.25 * (cardPlace - 2),
+          left: -2 + cardPlace * 9 * (1 + 0.25 * (cardPlace - 2)) + "rem",
+          opacity: 1,
+          zIndex: 200 + (cardPlace - 2),
+          transition: {
+            duration: 0.4,
+          },
+        };
+      } else {
+        return {
+          scale: 1 + 0.1 * (cardPlace - 2),
+          left: cardPlace * 8 * (1 + 0.1 * (cardPlace - 2)) + "rem",
+          opacity: 1,
+          zIndex: 200 + (cardPlace - 2),
+          transition: {
+            duration: 0.4,
+          },
+        };
+      }
     }
-    return {
-      scale: 1 - 0.4 * Math.abs(custom),
-      left: 50 + custom * 35 + "%",
-      opacity: 0.5,
-      transition: {
-        duration: 0.4,
-      },
-    };
   },
-  out: (custom) => ({
-    left: 50 + custom * 70 + "%",
-    scale: 0,
-    opacity: 0,
-    transition: {
-      duration: 0.2,
-    },
-  }),
+  out: ({ cardPlace, innerWidth }) => {
+    if (innerWidth < 1280) {
+      return {
+        left: 50 + cardPlace * 70 + "%",
+        scale: 0,
+        opacity: 0,
+        transition: {
+          duration: 0.2,
+        },
+      };
+    } else {
+      return {
+        left: -30 + cardPlace * 60 + "rem",
+        scale: cardPlace,
+        opacity: 0,
+        transition: {
+          duration: 0.2,
+        },
+      };
+    }
+  },
 };
 
 export const tabInfoContainerAni: Variants = {
-  hidden: {
-    y: -600,
-    opacity: 0,
-    scale: 0,
+  hidden: ({ innerWidth }) => {
+    if (innerWidth < 1280) {
+      return {
+        y: -600,
+        opacity: 0,
+        scale: 0,
+      };
+    } else {
+      return {
+        x: -50,
+        opacity: 0,
+      };
+    }
   },
-  visible: {
-    y: 0,
-    opacity: [0, 0.7, 1],
-    scale: [0, 0.3, 1],
-    transition: {
-      duration: 0.4,
-      delay: 0.15,
-      times: [0, 0.5, 1],
-      ease: "easeIn",
-    },
+  visible: ({ innerWidth }) => {
+    if (innerWidth < 1280) {
+      return {
+        y: 0,
+        opacity: [0, 0.7, 1],
+        scale: [0, 0.3, 1],
+        transition: {
+          duration: 0.4,
+          delay: 0.15,
+          times: [0, 0.5, 1],
+          ease: "easeIn",
+        },
+      };
+    } else {
+      return {
+        x: 0,
+        opacity: 1,
+        transition: {
+          duration: 0.4,
+          delay: 0.15,
+        },
+      };
+    }
   },
-  out: {
-    opacity: 0,
-    y: 50,
-    transition: {
-      duration: 0.4,
-    },
+  out: ({ innerWidth }) => {
+    if (innerWidth < 1280) {
+      return {
+        opacity: 0,
+        y: 50,
+        transition: {
+          duration: 0.4,
+        },
+      };
+    } else {
+      return {
+        opacity: 0,
+        x: 50,
+        transition: {
+          duration: 0.4,
+        },
+      };
+    }
   },
 };
 
@@ -929,17 +1000,17 @@ export const cityAnim: Variants = {
 export const videoBtnAnim: Variants = {
   hidden: {
     opacity: 1,
-    rotate:"0deg",
-    scale:0.7,
-    fill:["#fff"]
+    rotate: "0deg",
+    scale: 0.7,
+    fill: ["#fff"],
   },
   visible: {
     opacity: 1,
-    rotate:"1800deg",
-    scale:[0.7,1.3,1],
-    fill:["#3D14BB","#3D14BB","#fff"],
+    rotate: "1800deg",
+    scale: [0.7, 1.3, 1],
+    fill: ["#3D14BB", "#3D14BB", "#fff"],
     transition: {
-      times:[0,0.8,1],
+      times: [0, 0.8, 1],
       duration: 1,
       delay: 0.1,
     },
@@ -1032,5 +1103,13 @@ export const goldenSecondAni: Variants = {
       duration: 0.4,
       staggerChildren: 0.5,
     },
+  },
+};
+
+export const heroSvgAni: Variants = {
+  hidden: (custom)=>({ x: 20 * custom }),
+  visible: {
+    x: 0,
+    transition: { duration: 0.2, type: "spring", stiffness: 300, damping:20 },
   },
 };
