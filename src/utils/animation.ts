@@ -490,46 +490,46 @@ export const carouselDisplayAni: Variants = {
 
 export const tabInfoContainerAni: Variants = {
   hidden: ({ innerWidth }) => {
-    if(innerWidth<1280) {
-    return {
-      y: -600,
-      opacity: 0,
-      scale: 0,
-    };
-  } else {
-    return {
-      x: -50,
-      opacity: 0,
-    };
-  }
+    console.log(innerWidth)
+    if (innerWidth < 1280) {
+      return {
+        y: -600,
+        opacity: 0,
+        scale: 0,
+      };
+    } else {
+      return {
+        x: -50,
+        opacity: 0,
+      };
+    }
   },
   visible: ({ innerWidth }) => {
-if(innerWidth<1280) {
-  return {
-    y: 0,
-    opacity: [0, 0.7, 1],
-    scale: [0, 0.3, 1],
-    transition: {
-      duration: 0.4,
-      delay: 0.15,
-      times: [0, 0.5, 1],
-      ease: "easeIn",
-    },
-  };
-} else {
-  return {
-    x: 0,
-    opacity: 1,
-    transition: {
-      duration: 0.4,
-      delay: 0.15,
-    },
-  };
-}
+    if (innerWidth < 1280) {
+      return {
+        y: 0,
+        opacity: [0, 0.7, 1],
+        scale: [0, 0.3, 1],
+        transition: {
+          duration: 0.4,
+          delay: 0.15,
+          times: [0, 0.5, 1],
+          ease: "easeIn",
+        },
+      };
+    } else {
+      return {
+        x: 0,
+        opacity: 1,
+        transition: {
+          duration: 0.4,
+          delay: 0.15,
+        },
+      };
+    }
   },
   out: ({ innerWidth }) => {
-    if(innerWidth<1280) {
-
+    if (innerWidth < 1280) {
       return {
         opacity: 0,
         y: 50,

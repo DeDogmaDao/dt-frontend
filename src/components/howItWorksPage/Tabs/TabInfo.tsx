@@ -20,15 +20,16 @@ const TabInfo: React.FC<props> = ({
   tabGroup,
   innerWidth,
 }) => {
+  const activeIndexBasedOnWidth = innerWidth < 1280 ? 1 : 2;
   return (
     <AnimatePresence>
-      {activeIndexCard[tabGroup][1] === index && (
+      {activeIndexCard[tabGroup][activeIndexBasedOnWidth] === index && (
         <motion.div
-          initial="hidden"
+          initial={"hidden"}
           animate="visible"
           exit="out"
           variants={tabInfoContainerAni}
-          custom={{innerWidth}}
+          custom={{ innerWidth }}
           className="absolute flex flex-col justify-start items-center w-[90%] md:w-[80%] lg:w-[65%] xl:w-full z-[150] pointer-events-none"
         >
           <h3
