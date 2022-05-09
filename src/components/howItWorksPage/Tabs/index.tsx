@@ -95,18 +95,20 @@ const Tabs: React.FC = () => {
                       });
                       if (!show) return null;
                       return (
-                        <Card
-                          key={data.name + index}
-                          tabGroup={tab.tabGroup}
-                          setActiveIndexCard={setActiveIndexCard}
-                          activeIndexCard={activeIndexCard}
-                          cardRef={cardRef}
-                          data={data}
-                          index={index}
-                          tabInfo={tab.tabInfo}
-                          isDragged={isDragged}
-                          innerWidth={innerWidth}
-                        />
+                        innerWidth !== 0 && (
+                          <Card
+                            key={data.name + index}
+                            tabGroup={tab.tabGroup}
+                            setActiveIndexCard={setActiveIndexCard}
+                            activeIndexCard={activeIndexCard}
+                            cardRef={cardRef}
+                            data={data}
+                            index={index}
+                            tabInfo={tab.tabInfo}
+                            isDragged={isDragged}
+                            innerWidth={innerWidth}
+                          />
+                        )
                       );
                     })}
                   </AnimatePresence>

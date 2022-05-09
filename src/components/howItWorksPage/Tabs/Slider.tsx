@@ -130,7 +130,6 @@ const Slider: React.FC<props> = ({
           width={21}
           height={45}
           fill="none"
-          style={{ marginTop: 22 }}
         />
       </button>
       <button
@@ -142,7 +141,6 @@ const Slider: React.FC<props> = ({
           width={21}
           height={45}
           fill="none"
-          style={{ marginTop: 22 }}
         />
       </button>
 

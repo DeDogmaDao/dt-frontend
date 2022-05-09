@@ -38,7 +38,7 @@ const Card: React.FC<props> = ({
   isDragged,
   innerWidth
 }) => {
-
+console.log(innerWidth);
   const cardClickHandler = (e: any) => {
     if (isDragged) {
       e.preventDefault();
