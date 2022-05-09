@@ -25,7 +25,7 @@ interface props {
   activeIndexCard: activeIndexCardType;
   setActiveIndexCard: Dispatch<SetStateAction<activeIndexCardType>>;
   isDragged: boolean;
-  innerWidth:number;
+  innerWidth: number;
 }
 const Card: React.FC<props> = ({
   data,
@@ -36,18 +36,26 @@ const Card: React.FC<props> = ({
   setActiveIndexCard,
   tabGroup,
   isDragged,
-  innerWidth
+  innerWidth,
 }) => {
-  console.log(isDragged);
   const cardClickHandler = (e: any) => {
     if (isDragged) {
       e.preventDefault();
       return false;
     }
-    setActiveIndexCard((prevState) => ({
-      ...prevState,
-      [tabGroup]: cardIndexHandler(index -1, tabInfo.length),
-    }));
+    setActiveIndexCard((prevState) => {
+      if (innerWidth < 1280) {
+        return {
+          ...prevState,
+          [tabGroup]: cardIndexHandler(index, tabInfo.length),
+        };
+      } else {
+        return {
+          ...prevState,
+          [tabGroup]: cardIndexHandler(index - 1, tabInfo.length),
+        };
+      }
+    });
   };
 
   const cardPlace =
@@ -55,9 +63,9 @@ const Card: React.FC<props> = ({
       ? cardPlaceDetector(activeIndexCard[tabGroup], index)
       : cardPlaceDetectorUpper(activeIndexCard[tabGroup], index);
 
-  const style:MotionStyle = {
-    marginLeft: innerWidth < 1280 ? "-9.375rem" : "0rem"
-  }
+  const style: MotionStyle = {
+    marginLeft: innerWidth < 1280 ? "-9.375rem" : "0rem",
+  };
   return (
     <motion.div
       layoutId={index.toString() + tabGroup}
