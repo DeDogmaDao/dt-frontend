@@ -31,10 +31,10 @@ const EachGroup: React.FC<props> = ({ name, activeGroup, setTabs, tabs }) => {
       {activeGroup && (
         <div
           className="absolute top-0 left-0 w-full h-full z-0 flex justify-between items-center overflow-hidden rounded-2xl
-       shadow-[0rem_1.125rem_1.25rem_-0.625rem_rgb(240,217,85,0.3)]"
+       shadow-[0rem_1.125rem_1.25rem_-0.625rem_rgb(44,237,255,0.3)]"
         >
-          <span className="w-1/2 h-1/2 self-start bg-gradient-to-br from-[#F0D955] via-transparent to-transparent"></span>
-          <span className="w-1/2 h-full bg-gradient-to-br from-transparent via-transparent to-[#F0D955]"></span>
+          <span className="w-1/2 h-1/2 self-start bg-gradient-to-br from-primary-500 via-transparent to-transparent"></span>
+          <span className="w-1/2 h-full bg-gradient-to-br from-transparent via-transparent to-primary-500"></span>
         </div>
       )}
       <div
