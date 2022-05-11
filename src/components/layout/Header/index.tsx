@@ -7,7 +7,7 @@ import { LinkType } from "../../../types/allTypes";
 import MobileMenu from "./MobileMenu";
 import { socialSVGs } from "../../../store/svg";
 import { LogoSVG } from "../../../store/svg";
-import { discordLink } from "../../../store/allLinks";
+import { discordLink, gitbookLink } from "../../../store/allLinks";
 
 const Header: React.FC = () => {
   const headerLinks: LinkType[] = [
@@ -53,7 +53,7 @@ const Header: React.FC = () => {
           })}
         </motion.ul>
         <a
-          href=""
+          href={gitbookLink}
           target="_blank"
           className="z-50 pointer-events-auto absolute top-[2rem] right-[7.7rem] px-2 ssm:w-[8.5rem] h-10 rounded-full bg-neutral-600 text-white text-sm font-bold 
     flex justify-evenly items-center hover:bg-neutral-500 duration-200 fill-primary-500 hover:fill-primary-700 cursor-pointer"

@@ -18,6 +18,10 @@ export const socialSVGs = {
 };
 
 
-//
+//logo
 import logo from "./svgs/logo.svg";
 export const LogoSVG = logo;
+
+//others
+import BackToTop from "./svgs/backtotop.svg";
+export const BackToTopSVG = BackToTop;
