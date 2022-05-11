@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { allBgImg } from "../../../store/img";
+import { introVideoLink } from "../../../store/allLinks";
 
 const InteroVideo: React.FC = () => {
   return (
@@ -26,7 +27,7 @@ const InteroVideo: React.FC = () => {
         <iframe
           className="w-full h-full z-10"
           loading="lazy"
-          src={`https://www.youtube.com/embed/amQDMEgXh1Y`}
+          src={introVideoLink}
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
