@@ -25,3 +25,6 @@ export const LogoSVG = logo;
 //others
 import BackToTop from "./svgs/backtotop.svg";
 export const BackToTopSVG = BackToTop;
+
+import AngleRight from "../../svgs/rightangle.svg";
+export const AngleRightSVG = AngleRight;
