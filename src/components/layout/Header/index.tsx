@@ -42,7 +42,7 @@ const Header: React.FC = () => {
             <div className="flex justify-start items-center gap-x-2 fill-white hover:fill-primary-500 duration-300">
               <LogoSVG width="2.5rem" />
               <span className="text-small-bold ssm:text-medium-bold hidden sm:block md:hidden ">
-                Demmortal  Treasure
+                Demmortal Treasure
               </span>
             </div>
           </Link>
@@ -53,7 +53,7 @@ const Header: React.FC = () => {
           })}
         </motion.ul>
         <a
-          href="https://docs.dedogmadao.com/"
+          href=""
           target="_blank"
           className="z-50 pointer-events-auto absolute top-[2rem] right-[7.7rem] px-2 ssm:w-[8.5rem] h-10 rounded-full bg-neutral-600 text-white text-sm font-bold 
     flex justify-evenly items-center hover:bg-neutral-500 duration-200 fill-primary-500 hover:fill-primary-700 cursor-pointer"
@@ -64,8 +64,8 @@ const Header: React.FC = () => {
           <span>Litepaper</span>
         </a>
         <a
-                  href={discordLink}
-                  target="_blank"
+          href={discordLink}
+          target="_blank"
           className="z-50 absolute cursor-pointer pointer-events-auto top-[2rem] right-[4.5rem] w-10 h-10 rounded-full bg-neutral-600
          text-white text-xl flex justify-center items-center hover:bg-neutral-500 duration-200 fill-primary-500 hover:fill-primary-700"
         >

@@ -4,6 +4,7 @@ export const youtubeLink: string =
   "https://www.youtube.com/channel/UCNGZXAcCP-xHrAVqaEWqozw";
 export const twitterLink: string = "https://twitter.com/DMTtreasure";
 export const gitHubLink: string = "https://github.com/DeDogmaDao";
+export const gitbookLink: string = "https://docs.dedogmadao.com/";
 
 //////// faq links
 //Do the NFTs have an equal chance to win the lottery?
