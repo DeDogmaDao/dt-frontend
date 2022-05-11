@@ -2,9 +2,9 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { benefitsData } from "../../../store/allData";
+import { allBgImg } from "../../../store/img";
 import EachBenefit from "./EachBenefit";
 import EachDesc from "./EachDesc";
-import benefitBg from "../../images/bg/sec1.png";
 
 const Benefits: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -39,7 +39,7 @@ const Benefits: React.FC = () => {
           <Image
           alt="dedogmadao NFT" 
           title="dedogmadao NFT"
-            src={benefitBg}
+            src={allBgImg.sec1}
             layout="fill"
             quality={100}
             placeholder="blur"
