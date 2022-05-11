@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
-import introBg from "../../images/bg/sec2.png";
+import { allBgImg } from "../../../store/img";
 
 const InteroVideo: React.FC = () => {
   return (
@@ -12,7 +12,7 @@ const InteroVideo: React.FC = () => {
           <Image
             alt="dedogmadao NFT"
             title="dedogmadao NFT"
-            src={introBg}
+            src={allBgImg.sec2}
             layout="fill"
             quality={100}
             placeholder="blur"
