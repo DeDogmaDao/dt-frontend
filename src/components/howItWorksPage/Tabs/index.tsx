@@ -8,7 +8,7 @@ import EachGroup from "./EachGroup";
 import EachTab from "./EachTab";
 import Slider from "./Slider";
 import TabInfo from "./TabInfo";
-import tabBg from "../../images/bg/sec3.png";
+import { allBgImg } from '../../../store/img';
 
 const Tabs: React.FC = () => {
   const [innerWidth, setInnerWidth] = useState(0);
@@ -44,7 +44,7 @@ const Tabs: React.FC = () => {
         <span className="w-full h-full inner-image-no-max-width">
           <Image
             alt="dedogmadao background"
-            src={tabBg}
+            src={allBgImg.sec3}
             layout="fill"
             quality={100}
             placeholder="blur"
