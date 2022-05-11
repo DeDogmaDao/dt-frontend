@@ -5,9 +5,8 @@ import { motion } from "framer-motion";
 // types
 import { LinkType } from "../../../types/allTypes";
 import MobileMenu from "./MobileMenu";
-import DiscordSVG from "../../svgs/discord.svg";
-import GitBookSVG from "../../svgs/gitbook.svg";
-import LogoSVG from "../../svgs/logo.svg";
+import { socialSVGs } from "../../../store/svg";
+import { LogoSVG } from "../../../store/svg";
 
 const Header: React.FC = () => {
   const headerLinks: LinkType[] = [
@@ -59,7 +58,7 @@ const Header: React.FC = () => {
     flex justify-evenly items-center hover:bg-neutral-500 duration-200 fill-primary-500 hover:fill-primary-700 cursor-pointer"
         >
           <span className=" ">
-            <GitBookSVG width={26} />
+            <socialSVGs.GitBookSVG width={26} />
           </span>
           <span>Litepaper</span>
         </a>
@@ -69,7 +68,7 @@ const Header: React.FC = () => {
           className="z-50 absolute cursor-pointer pointer-events-auto top-[2rem] right-[4.5rem] w-10 h-10 rounded-full bg-neutral-600
          text-white text-xl flex justify-center items-center hover:bg-neutral-500 duration-200 fill-primary-500 hover:fill-primary-700"
         >
-          <DiscordSVG width={26} />
+          <socialSVGs.DiscordSVG width={26} />
         </a>
         <MobileMenu headerLinks={headerLinks} />
       </div>
