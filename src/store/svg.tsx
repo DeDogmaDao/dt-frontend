@@ -31,3 +31,6 @@ export const AngleRightSVG = AngleRight;
 
 import ETH from "./svgs/eth.svg";
 export const ETHSVG = ETH;
+
+import Ethereum from './svgs/ethereum.svg';
+export const EthereumSVG = Ethereum;

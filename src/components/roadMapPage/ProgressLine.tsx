@@ -1,5 +1,5 @@
+import { EthereumSVG } from "../../store/svg";
 
-import EthereumSVG from '../svgs/ethereum.svg';
 interface props {
   activeSection: number;
 }
