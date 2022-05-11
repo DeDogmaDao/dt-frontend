@@ -28,3 +28,6 @@ export const BackToTopSVG = BackToTop;
 
 import AngleRight from "./svgs/rightangle.svg";
 export const AngleRightSVG = AngleRight;
+
+import ETH from "./svgs/eth.svg";
+export const ETHSVG = ETH;

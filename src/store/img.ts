@@ -47,3 +47,12 @@ export const allBgImg = {
   story,
   roadMap: [roadSec1, roadSec2, roadSec3],
 };
+
+
+//hero
+import portal from "./images/art/portal.png";
+import middlePortal from "./images/art/middle-portal.png";
+import city from "./images/art/city.png";
+import mask from "./images/art/mask.png";
+
+export const allArtImg = { portal, middlePortal, city, mask };

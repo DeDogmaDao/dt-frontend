@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Dispatch, SetStateAction, useEffect } from "react";
-import portal from "../../images/art/portal.png";
-import middlePortal from "../../images/art/middle-portal.png";
+import { allArtImg } from "../../../store/img";
+
 interface props {
   setPortalLoading: Dispatch<SetStateAction<number>>;
   portalLoading: number;
@@ -31,7 +31,7 @@ const Portal: React.FC<props> = ({
         <Image
         alt="dedogmadao portal" 
           onLoadingComplete={() => setPortalLoading((prevState) => 3)}
-          src={portal}
+          src={allArtImg.portal}
           layout="fill"
           priority={true}
           quality={75}
@@ -45,7 +45,7 @@ const Portal: React.FC<props> = ({
         <Image
         alt="dedogmadao portal" 
           onLoadingComplete={() => setPortalLoading((prevState) => 3)}
-          src={middlePortal}
+          src={allArtImg.middlePortal}
           layout="fill"
           priority={true}
           quality={75}
