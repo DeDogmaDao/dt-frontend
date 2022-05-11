@@ -34,7 +34,6 @@ import sec1 from "./images/bg/sec1.png";
 import sec2 from "./images/bg/sec2.png";
 import sec3 from "./images/bg/sec3.png";
 import sec4 from "./images/bg/sec4.png";
-import story from "./images/bg/Story.png";
 import roadSec1 from "./images/bg/road-sec1.png";
 import roadSec2 from "./images/bg/road-sec2.png";
 import roadSec3 from "./images/bg/road-sec3.png";
@@ -44,7 +43,6 @@ export const allBgImg = {
   sec2,
   sec3,
   sec4,
-  story,
   roadMap: [roadSec1, roadSec2, roadSec3],
 };
 
