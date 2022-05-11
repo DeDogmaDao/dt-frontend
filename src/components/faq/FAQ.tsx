@@ -2,10 +2,10 @@ import { LayoutGroup, motion } from "framer-motion";
 import Image from "next/image";
 import { useRef } from "react";
 import { faqData } from "../../store/allData";
+import { allBgImg } from "../../store/img";
 import { pageAnimation } from "../../utils/animation";
 import BackToTop from "../global/BackToTop";
 import EachFAQ from "./EachFAQ";
-import faqBg from '../images/bg/sec4.png';
 
 const FAQ: React.FC = () => {
   const faqRef = useRef<HTMLDivElement>(null);
@@ -21,7 +21,7 @@ const FAQ: React.FC = () => {
       <BackToTop containerRef={faqRef} />
       <motion.span layout className="absolute w-full aspect-[1440/1097] will-change-transform">
         <span className="w-full h-full inner-image-no-max-width will-change-transform">
-          <Image src={faqBg} layout="fill" quality={100} alt="dedogmadao NFT" title="dedogmadao NFT" />
+          <Image src={allBgImg.sec4} layout="fill" quality={100} alt="dedogmadao NFT" title="dedogmadao NFT" />
         </span>
       </motion.span>
       <LayoutGroup>

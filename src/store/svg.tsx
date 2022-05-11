@@ -34,3 +34,6 @@ export const ETHSVG = ETH;
 
 import Ethereum from './svgs/ethereum.svg';
 export const EthereumSVG = Ethereum;
+
+import Plus from './svgs/plus.svg';
+export const PlusSVG = Plus;
