@@ -24,3 +24,8 @@ import lottery from "./images/benefits/lottery.png";
 import pool from "./images/benefits/pool.png";
 export const benefitImg: StaticImageData[] = [floor, lottery, pool];
 
+// logo
+import treasure from './images/logo/treasure.png';
+import treasure1 from './images/logo/treasure1.png';
+export const treasuresImg:StaticImageData[] = [treasure,treasure1];
+
