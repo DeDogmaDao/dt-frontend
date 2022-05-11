@@ -18,6 +18,7 @@ export const teamImg: StaticImageData[] = [
   member7,
 ];
 
+
 // benefits
 import floor from "./images/benefits/floor.png";
 import lottery from "./images/benefits/lottery.png";
