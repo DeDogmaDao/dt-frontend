@@ -17,7 +17,8 @@ import {
 
 // images
 import { socialSVGs } from "./svg";
-//
+//links
+import { discordLink, erc721Link, gitHubLink, lotteryChanceLink, twitterLink, youtubeLink } from "./allLinks";
 //
 //
 
@@ -29,19 +30,19 @@ const { DiscordSVG, YoutubeSVG, Twitter, Github, Instagram, Linkedin } =
 export const footerData: socialType[] = [
   {
     icon: <YoutubeSVG />,
-    href: "https://www.youtube.com/channel/UCNGZXAcCP-xHrAVqaEWqozw",
+    href: youtubeLink,
   },
   {
     icon: <DiscordSVG />,
-    href: "https://discord.gg/8dVfHQfxpq",
+    href: discordLink,
   },
   {
     icon: <Twitter />,
-    href: "https://twitter.com/DMTtreasure",
+    href: twitterLink,
   },
   {
     icon: <Github />,
-    href: "https://github.com/DeDogmaDao",
+    href: gitHubLink,
   },
 ];
 export const mdData: string[] = ["3", "l"];
@@ -118,7 +119,7 @@ export const faqData: faqType[] = [
       <>
         No, it depends on your character.{" "}
         <a
-          href="https://docs.dedogmadao.com/game-structure#guilds-formed-by-special-powers-gifted-by-the-olympian-gods"
+          href={lotteryChanceLink}
           target={"_blank"}
           className="link-inside-text"
         >
@@ -156,7 +157,7 @@ export const faqData: faqType[] = [
       <>
         Yes,{" "}
         <a
-          href="https://www.azuki.com/erc721a"
+          href={erc721Link}
           target={"_blank"}
           className="link-inside-text"
         >

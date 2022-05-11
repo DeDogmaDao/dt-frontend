@@ -7,6 +7,7 @@ import { LinkType } from "../../../types/allTypes";
 import MobileMenu from "./MobileMenu";
 import { socialSVGs } from "../../../store/svg";
 import { LogoSVG } from "../../../store/svg";
+import { discordLink } from "../../../store/allLinks";
 
 const Header: React.FC = () => {
   const headerLinks: LinkType[] = [
@@ -63,7 +64,7 @@ const Header: React.FC = () => {
           <span>Litepaper</span>
         </a>
         <a
-                  href="https://discord.gg/dedogmadao"
+                  href={discordLink}
                   target="_blank"
           className="z-50 absolute cursor-pointer pointer-events-auto top-[2rem] right-[4.5rem] w-10 h-10 rounded-full bg-neutral-600
          text-white text-xl flex justify-center items-center hover:bg-neutral-500 duration-200 fill-primary-500 hover:fill-primary-700"
