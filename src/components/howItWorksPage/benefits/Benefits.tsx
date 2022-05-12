@@ -54,7 +54,7 @@ const Benefits: React.FC = () => {
         <motion.div
           onHoverStart={() => setIsPlaying(false)}
           onHoverEnd={() => setIsPlaying(true)}
-          className=" flex flex-wrap flex-col sm:flex-row gap-x-10 gap-y-5 lg:gap-12 mx-auto ssm:justify-center
+          className=" flex flex-wrap flex-col sm:flex-row gap-x-12 lg:gap-x-8 xl:gap-x-10 gap-y-5 lg:gap-12 mx-auto ssm:justify-center
            w-full
       text-large-medium lg:text-extera-large-medium z-10 mt-14"
         >
