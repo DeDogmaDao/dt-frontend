@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { RefObject, useEffect, useState } from "react";
+import { BackToTopSVG } from "../../../store/svg";
 import { backToTopAni } from "../../../utils/animation";
-import BackToTopSVG from "../../svgs/backtotop.svg";
 interface props {
   containerRef: RefObject<HTMLDivElement>;
 }

@@ -1,7 +1,7 @@
 import { Dispatch, SetStateAction } from "react";
 import { motion } from "framer-motion";
 import { roadDataType } from "../../types/allTypes";
-import AngleRightSVG from "../svgs/rightangle.svg";
+import { AngleRightSVG } from "../../store/svg";
 interface props {
   data: roadDataType;
   setDescIndex: Dispatch<SetStateAction<number>>;

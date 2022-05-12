@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { allBgImg } from "../../store/img";
 import { roadMapType } from "../../types/allTypes";
 import { roadAni, roadMapDescAni } from "../../utils/animation";
 import RoadItem from "./RoadItem";
-import roadImages from "./roadImg";
 
 interface props {
   road: roadMapType;
@@ -40,7 +40,7 @@ const Road: React.FC<props> = ({ index, activeSection, road }) => {
             <Image
               alt="dedogmadao NFT"
               title="dedogmadao NFT"
-              src={roadImages[index]}
+              src={allBgImg.roadMap[index]}
               layout="fill"
               quality={100}
               placeholder="blur"

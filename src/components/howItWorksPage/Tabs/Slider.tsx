@@ -8,9 +8,9 @@ import {
   useRef,
   useState,
 } from "react";
+import { AngleRightSVG } from "../../../store/svg";
 import { activeIndexCardType, tabsType } from "../../../types/allTypes";
 import { cardIndexHandler } from "../../../utils/util";
-import AngleRightSVG from "../../svgs/rightangle.svg";
 import TabInfo from "./TabInfo";
 
 interface props {
