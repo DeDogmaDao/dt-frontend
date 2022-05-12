@@ -38,25 +38,28 @@ const EachBenefit: React.FC<props> = ({
   return (
     <motion.button
       onTap={() => setIsPlaying(false)}
-      className={`w-[24.0625rem] h-[14.0625rem] flex flex-col justify-center items-start lg:items-center
-       relative duration-75 lg:duration-300 ml-6 ssm:ml-0 font-normal backdrop-blur-3xl  ${
-        activeIndex === index ? " text-white !font-bold -translate-y-3 scale-[1.12]" : "text-neutral-50/30 "
+      className={`h-16 ml-8 lg:w-[21.5625rem] lg:h-[12.5rem] flex flex-col justify-center items-start lg:items-center
+       relative duration-75 lg:duration-500 ssm:ml-0 font-normal backdrop-blur-3xl  ${
+        activeIndex === index ? " text-white !font-bold lg:-translate-y-3 lg:scale-[1.12]" : "text-neutral-50/30 "
       }`}
       onClick={benefitBtnClickHandler}
     >
-      <motion.span className="w-full h-full will-change-transform"
+      <motion.span className="w-[21.5625rem] h-[12.5rem] will-change-transform hidden lg:block"
       >
-        <span className="w-full h-full">
+        <span className=" w-[21.5625rem] h-[12.5rem]">
           <Image
+          objectFit="scale-down"
             alt="dedogmadao logo"
             src={benefitImg[index]}
-            layout={"fill"}
+            layout={"responsive"}
             quality={90}
             placeholder="blur"
+            width="345"
+            height="200"
           />
         </span>
       </motion.span>
-      <h3 className="lg:absolute lg:bottom-5 lg:text-white lg:font-bold lg:text-xl">{data.title}</h3>
+      <h3 className="lg:absolute lg:bottom-5 lg:text-white lg:font-bold lg:text-lg">{data.title}</h3>
       {activeIndex === index && (
         <motion.div
           initial="hidden"
