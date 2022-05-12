@@ -17,8 +17,13 @@ export const teamImg: StaticImageData[] = [
   member6,
   member7,
 ];
-import floorImage from './images/benefit/floor.png';
-export const floor = floorImage;
+import floorImage from "./images/benefit/floor.png";
+import lotteryImage from "./images/benefit/lottery.png";
+import poolImage from "./images/benefit/pool.png";
+const floor = floorImage;
+const lottery = lotteryImage;
+const pool = poolImage;
+export const benefitImg = [floor, lottery, pool];
 
 // logo
 import treasure from "./images/logo/treasure.png";
@@ -42,7 +47,6 @@ export const allBgImg = {
   roadMap: [roadSec1, roadSec2, roadSec3],
 };
 
-
 //hero
 import portal from "./images/art/portal.png";
 import middlePortal from "./images/art/middle-portal.png";
@@ -50,7 +54,6 @@ import city from "./images/art/city.png";
 import mask from "./images/art/mask.png";
 
 export const allArtImg = { portal, middlePortal, city, mask };
-
 
 //tabs
 import bandits from "./images/tabs/bandits.png";
@@ -74,7 +77,7 @@ interface tabImgDataType {
   [gods: string]: StaticImageData[];
   humans: StaticImageData[];
 }
-export const tabImgData:tabImgDataType = {
+export const tabImgData: tabImgDataType = {
   humans: [beastriders, bandits, enchants, smiths, human1, human2],
   gods: [
     zeus,
