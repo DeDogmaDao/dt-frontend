@@ -15,7 +15,8 @@ import {
   cardPlaceDetectorUpper,
 } from "../../../utils/util";
 import { carouselDisplayAni } from "../../../utils/animation";
-import imgData from "./img/img";
+import { tabImgData } from "../../../store/img";
+
 interface props {
   data: tabType;
   cardRef: RefObject<HTMLDivElement>;
@@ -91,7 +92,7 @@ const Card: React.FC<props> = ({
         <Image
           alt={"dedogmadao " + tabGroup + " " + data.name}
           draggable={false}
-          src={imgData[tabGroup][index]}
+          src={tabImgData[tabGroup][index]}
           layout="fill"
           quality={100}
           placeholder="blur"

@@ -1,10 +1,9 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
-import treasure from "../../images/logo/treasure.png";
-import AngleRightSVG from "../../svgs/rightangle.svg";
-import ETHSVG from "../../svgs/eth.svg";
 import { heroSvgAni } from "../../../utils/animation";
+import { treasuresImg } from "../../../store/img";
+import { AngleRightSVG, ETHSVG } from "../../../store/svg";
 interface props {
   setAnim: Dispatch<SetStateAction<string>>;
   portalLoading: number;
@@ -31,7 +30,7 @@ const LogoType: React.FC<props> = ({ setAnim, portalLoading }) => {
         <span className=" w-full h-full">
           <Image
             alt="dedogmadao logo"
-            src={treasure}
+            src={treasuresImg.treasure}
             layout={"fill"}
             quality={90}
             placeholder="blur"

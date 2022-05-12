@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import CallToActionSvg from "./CallToActionSvg";
-import AngleRightSVG from "../../svgs/rightangle.svg";
-import calltoactionBg from "../../images/bg/sec4.png";
+import { AngleRightSVG } from "../../../store/svg";
+import { allBgImg } from "../../../store/img";
 
 const ToRoadmapAction: React.FC = () => {
   return (
@@ -13,7 +13,7 @@ const ToRoadmapAction: React.FC = () => {
         <span className="w-full h-full inner-image-no-max-width">
           <Image
             alt="dedogmadao background"
-            src={calltoactionBg}
+            src={allBgImg.sec4}
             layout="fill"
             quality={100}
             placeholder="blur"
