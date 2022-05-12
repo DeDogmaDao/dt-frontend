@@ -40,7 +40,7 @@ const EachBenefit: React.FC<props> = ({
       onTap={() => setIsPlaying(false)}
       className={`h-16 ml-8 lg:w-[280px] lg:h-[162px] xl:w-[21.5625rem] xl:h-[12.5rem] flex flex-col justify-center items-start lg:items-center
        relative duration-75 lg:duration-500 ssm:ml-0 font-normal lg:backdrop-blur-[5.625rem] 
-        will-change-transform
+        will-change-transform lg:rounded-[.9375rem] xl:rounded-[1.25rem]
         overflow-hidden  ${
          activeIndex === index
            ? " text-white !font-bold lg:-translate-y-3 lg:scale-[1.12]"
