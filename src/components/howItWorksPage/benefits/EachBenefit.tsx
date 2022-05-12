@@ -39,7 +39,7 @@ const EachBenefit: React.FC<props> = ({
     <motion.button
       onTap={() => setIsPlaying(false)}
       className={`h-16 ml-8 lg:w-[21.5625rem] lg:h-[12.5rem] flex flex-col justify-center items-start lg:items-center
-       relative duration-75 lg:duration-500 ssm:ml-0 font-normal backdrop-blur-3xl  ${
+       relative duration-75 lg:duration-500 ssm:ml-0 font-normal lg:backdrop-blur-3xl  ${
         activeIndex === index ? " text-white !font-bold lg:-translate-y-3 lg:scale-[1.12]" : "text-neutral-50/30 "
       }`}
       onClick={benefitBtnClickHandler}

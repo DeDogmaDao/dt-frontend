@@ -23,7 +23,7 @@ import poolImage from "./images/benefit/pool.png";
 const floor = floorImage;
 const lottery = lotteryImage;
 const pool = poolImage;
-export const benefitImg = [floor, lottery, pool];
+export const benefitImg = [floor, pool,lottery];
 
 // logo
 import treasure from "./images/logo/treasure.png";
