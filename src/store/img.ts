@@ -19,12 +19,6 @@ export const teamImg: StaticImageData[] = [
 ];
 
 
-// benefits
-import floorImg from "./images/benefits/floor.png";
-import lotteryImg from "./images/benefits/lottery.png";
-import poolImg from "./images/benefits/pool.png";
-export const benefitImg: StaticImageData[] = [ floorImg, lotteryImg, poolImg ];
-
 // logo
 import treasure from "./images/logo/treasure.png";
 import treasure1 from "./images/logo/treasure1.png";
