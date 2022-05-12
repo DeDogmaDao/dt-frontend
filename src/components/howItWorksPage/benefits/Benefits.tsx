@@ -48,7 +48,7 @@ const Benefits: React.FC = () => {
       </span>
       <div
         className="flex flex-col ssm:w-11/12 lg:w-11/12 2xl:w-11/12 mx-auto
-      min-h-[50rem] ssm:min-h-[45rem] sm:min-h-[45rem] lg:min-h-[40rem] lg:h-[55rem] xl:h-auto
+      min-h-[50rem] ssm:min-h-[45rem] sm:min-h-[45rem] lg:min-h-[40rem]
       md:pt-20"
       >
         <motion.div
