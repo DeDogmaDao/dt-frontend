@@ -10,39 +10,51 @@ import {
   roadMapType,
   roadDataType,
   benefitType,
-  metaType,
   teamCardType,
   metaDataType,
 } from "../types/allTypes";
 
+// images
+import { socialSVGs } from "./svg";
+//links
+import {
+  decentralTitanSocial,
+  discordLink,
+  erc721Link,
+  flokiBBSocial,
+  georgeSocial,
+  gitHubLink,
+  katySocial,
+  lotteryChanceLink,
+  metiEthSocial,
+  saraSocial,
+  twitterLink,
+  youtubeLink,
+} from "./allLinks";
 //
 //
-//
-//
-import DiscordSVG from "../components/svgs/discord.svg";
-import YoutubeSVG from "../components/svgs/youtube.svg";
-import Twitter from "../components/svgs/twitter.svg";
-import Github from "../components/svgs/github.svg";
-import Instagram from "../components/svgs/instagram.svg";
-import Linkedin from "../components/svgs/linkedin.svg";
 
 import { teamImg } from "./img";
+
+const { DiscordSVG, YoutubeSVG, Twitter, Github, Instagram, Linkedin } =
+  socialSVGs;
+
 export const footerData: socialType[] = [
   {
     icon: <YoutubeSVG />,
-    href: "https://www.youtube.com/channel/UCNGZXAcCP-xHrAVqaEWqozw",
+    href: youtubeLink,
   },
   {
     icon: <DiscordSVG />,
-    href: "https://discord.gg/8dVfHQfxpq",
+    href: discordLink,
   },
   {
     icon: <Twitter />,
-    href: "https://twitter.com/DMTtreasure",
+    href: twitterLink,
   },
   {
     icon: <Github />,
-    href: "https://github.com/DeDogmaDao",
+    href: gitHubLink,
   },
 ];
 export const mdData: string[] = ["3", "l"];
@@ -119,7 +131,7 @@ export const faqData: faqType[] = [
       <>
         No, it depends on your character.{" "}
         <a
-          href="https://docs.dedogmadao.com/game-structure#guilds-formed-by-special-powers-gifted-by-the-olympian-gods"
+          href={lotteryChanceLink}
           target={"_blank"}
           className="link-inside-text"
         >
@@ -156,11 +168,7 @@ export const faqData: faqType[] = [
     answer: (
       <>
         Yes,{" "}
-        <a
-          href="https://www.azuki.com/erc721a"
-          target={"_blank"}
-          className="link-inside-text"
-        >
+        <a href={erc721Link} target={"_blank"} className="link-inside-text">
           Read Azuki’s post about this standard
         </a>
       </>
@@ -245,7 +253,7 @@ export const teamDataLvl1: teamCardType[] = [
     role: "Main founder and investor",
     image: teamImg[0],
     desc: "Believer in Decentral Dogma. Explorer of the first titans treasure. Full time defi user and researcher for more than 4 years. NFT market addicted.",
-    link: [{ href: "https://twitter.com/DecentralTitan", icon: <Twitter /> }],
+    link: [{ href: decentralTitanSocial.twitter, icon: <Twitter /> }],
   },
   {
     name: "Meti.eth",
@@ -254,7 +262,7 @@ export const teamDataLvl1: teamCardType[] = [
     desc: "Mehdi Salehi is a Master’s Student at Concordia University in Montreal, Canada. He mainly researches blockchain technologies and decentralized finance. He is an independent smart contract auditor, auditing several DeFi projects. He also contributed to the Meta Governance project and EIP-4824.",
     link: [
       {
-        href: "https://www.linkedin.com/in/mehdi-salehi-b16873158/",
+        href: metiEthSocial.linkedin,
         icon: <Linkedin />,
       },
     ],
@@ -266,7 +274,7 @@ export const teamDataLvl1: teamCardType[] = [
     desc: "Sara has a technical background in entertainment and fintech industry worked in companies like Spotify and iZettle. She is a true believer in Ethereum and blockchain. She has been active in this field for a couple of years now and wants to continue to have a bigger impact in this industry by building more innovative solutions.",
     link: [
       {
-        href: "https://www.linkedin.com/in/sara-rabiee-17711260/",
+        href: saraSocial.linkedin,
         icon: <Linkedin />,
       },
     ],
@@ -281,10 +289,10 @@ export const teamDataLvl2: teamCardType[] = [
     desc: "George has many years of experience in backend engineering. He has worked in companies like Spotify and successful startups like Soundwave.",
     link: [
       {
-        href: "https://www.linkedin.com/in/george-boyle-845b38b8/",
+        href: georgeSocial.linkedin,
         icon: <Linkedin />,
       },
-      { href: "https://github.com/Dockheas23", icon: <Github /> },
+      { href: georgeSocial.github, icon: <Github /> },
     ],
   },
   {
@@ -293,8 +301,8 @@ export const teamDataLvl2: teamCardType[] = [
     image: teamImg[4],
     desc: "Floki BB is a software engineer and has been in the Blockchain filed since 2016. He has worked as a Blockchain integration engineer and have been involved in the Ethereum ecosystem since 2018. An example of his remarkable work is contributing to solidity language compiler and work as DAPP engineer in couple other projects.",
     link: [
-      { href: "https://twitter.com/FlokiTheBB", icon: <Twitter /> },
-      { href: "https://github.com/FlokiBB/", icon: <Github /> },
+      { href: flokiBBSocial.twitter, icon: <Twitter /> },
+      { href: flokiBBSocial.github, icon: <Github /> },
     ],
   },
   {
@@ -302,9 +310,7 @@ export const teamDataLvl2: teamCardType[] = [
     role: "Master of lore and communications",
     image: teamImg[5],
     desc: "Katy is a linguistics enthusiast and lover of all things literature. By day, she teaches English as a foreign language and by night she spends her time building lightsabers, writing, dreaming and ever expanding her hobbies. She enjoys the company of like-minded people and bringing these people together. Inspired by web3 culture. Community building and support lies at the core of what she does at DeDogmaDao.",
-    link: [
-      { href: "https://www.instagram.com/katythemaker", icon: <Instagram /> },
-    ],
+    link: [{ href: katySocial.instagram, icon: <Instagram /> }],
   },
   {
     name: "Sofia",
@@ -1317,20 +1323,6 @@ export const benefitsData: benefitType[] = [
     ],
   },
   {
-    title: "Auto-join lottery",
-    desc: [
-      <>
-        All NFT holders will automatically participate in our{" "}
-        <span className="font-semibold">daily and weekly</span> gamified{" "}
-        <span className="font-semibold">lottery</span>.
-      </>,
-      <>
-        <span className="font-semibold">No extra gas fee</span> or action needed
-        from the holders to join the lottery unless your NFT wins the lottery.
-      </>,
-    ],
-  },
-  {
     title: "Diverse pool prizes",
     desc: [
       <>Currently, There are two types of prizes in each game:</>,
@@ -1349,19 +1341,16 @@ export const benefitsData: benefitType[] = [
     ],
   },
   {
-    title: "Game card and PFP",
+    title: "Auto-join lottery",
     desc: [
       <>
-        Demmortal Treasure is a{" "}
-        <span className="font-semibold">collectigame</span> established upon
-        composed lore. The lore is based on ancient classical myths. The NFTs
-        are the result of many hours of our talented artists’ artwork.
+        All NFT holders will automatically participate in our{" "}
+        <span className="font-semibold">daily and weekly</span> gamified{" "}
+        <span className="font-semibold">lottery</span>.
       </>,
       <>
-        The specifications of the characters (NFTs) affect the result of the
-        lottery. As an a NFT owner, one could generate{" "}
-        <span className="font-semibold">detailed artwork PFP</span>(profile
-        photo) from your unique NFT.
+        <span className="font-semibold">No extra gas fee</span> or action needed
+        from the holders to join the lottery unless your NFT wins the lottery.
       </>,
     ],
   },

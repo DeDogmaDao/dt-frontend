@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
-import introBg from "../../images/bg/sec2.png";
+import { allBgImg } from "../../../store/img";
+import { introVideoLink } from "../../../store/allLinks";
 
 const InteroVideo: React.FC = () => {
   return (
@@ -12,7 +13,7 @@ const InteroVideo: React.FC = () => {
           <Image
             alt="dedogmadao NFT"
             title="dedogmadao NFT"
-            src={introBg}
+            src={allBgImg.sec2}
             layout="fill"
             quality={100}
             placeholder="blur"
@@ -26,7 +27,7 @@ const InteroVideo: React.FC = () => {
         <iframe
           className="w-full h-full z-10"
           loading="lazy"
-          src={`https://www.youtube.com/embed/amQDMEgXh1Y`}
+          src={introVideoLink}
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen

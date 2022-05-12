@@ -96,8 +96,23 @@ export const cardPlaceDetector = (
   }
   return 0;
 };
+export const cardPlaceDetectorUpper = (
+  activeIndexCardWithGroup: number[],
+  index: number
+): number => {
+  if (index === activeIndexCardWithGroup[0]) {
+    return 0;
+  }
+  if (index === activeIndexCardWithGroup[2]) {
+    return 2;
+  }
+  return 1;
+};
 
 export const cardIndexHandler = (index: number, quantity: number): number[] => {
+  if(index === -1){
+    index = quantity -1;
+  }
   if (index === 0) {
     return [quantity - 1, index, index + 1];
   } else if (index === quantity - 1) {

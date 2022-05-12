@@ -1,8 +1,8 @@
 
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { PlusSVG } from "../../store/svg";
 import { faqType } from "../../types/allTypes";
-import PlusSVG from '../svgs/plus.svg';
 
 interface props {
   data: faqType;

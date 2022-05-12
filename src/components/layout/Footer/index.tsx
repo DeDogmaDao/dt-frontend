@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { footerData } from "../../../store/allData";
 import Social from "../../global/Social";
-import treasure1 from '../../images/logo/treasure1.png';
+import { treasuresImg } from "../../../store/img";
 const Footer: React.FC = () => {
   return (
     <>
@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
       >
         <div className="z-10 mb-[-3rem] w-[20rem] h-[12rem]  ssm:w-[25.25rem] ssm:h-[15.23rem] relative">
           <span className=" w-full h-full">
-          <Image alt="dedogmadao logo"  src={treasure1} layout="fill" quality={90} placeholder="blur"  />
+          <Image alt="dedogmadao logo"  src={treasuresImg.treasure1} layout="fill" quality={90} placeholder="blur"  />
           </span>
         </div>
         <h3 className="mb-3 text-[1.25rem] ssm:text-[1.75rem] sm:text-[2.375rem] font-bold sm:font-bold z-10">
