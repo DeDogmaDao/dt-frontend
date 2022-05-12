@@ -1323,20 +1323,6 @@ export const benefitsData: benefitType[] = [
     ],
   },
   {
-    title: "Auto-join lottery",
-    desc: [
-      <>
-        All NFT holders will automatically participate in our{" "}
-        <span className="font-semibold">daily and weekly</span> gamified{" "}
-        <span className="font-semibold">lottery</span>.
-      </>,
-      <>
-        <span className="font-semibold">No extra gas fee</span> or action needed
-        from the holders to join the lottery unless your NFT wins the lottery.
-      </>,
-    ],
-  },
-  {
     title: "Diverse pool prizes",
     desc: [
       <>Currently, There are two types of prizes in each game:</>,
@@ -1355,19 +1341,16 @@ export const benefitsData: benefitType[] = [
     ],
   },
   {
-    title: "Game card and PFP",
+    title: "Auto-join lottery",
     desc: [
       <>
-        Demmortal Treasure is a{" "}
-        <span className="font-semibold">collectigame</span> established upon
-        composed lore. The lore is based on ancient classical myths. The NFTs
-        are the result of many hours of our talented artists’ artwork.
+        All NFT holders will automatically participate in our{" "}
+        <span className="font-semibold">daily and weekly</span> gamified{" "}
+        <span className="font-semibold">lottery</span>.
       </>,
       <>
-        The specifications of the characters (NFTs) affect the result of the
-        lottery. As an a NFT owner, one could generate{" "}
-        <span className="font-semibold">detailed artwork PFP</span>(profile
-        photo) from your unique NFT.
+        <span className="font-semibold">No extra gas fee</span> or action needed
+        from the holders to join the lottery unless your NFT wins the lottery.
       </>,
     ],
   },

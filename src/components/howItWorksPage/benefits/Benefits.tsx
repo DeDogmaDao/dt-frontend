@@ -14,7 +14,7 @@ const Benefits: React.FC = () => {
     const playingBenefits = setInterval(() => {
       if (isPlaying) {
         setActiveIndex((prevState) => {
-          if (prevState === 3) {
+          if (prevState === 2) {
             return 0;
           }
           return prevState + 1;
@@ -37,8 +37,8 @@ const Benefits: React.FC = () => {
       <span className="absolute h-full min-w-[100vw] aspect-[1438/586]">
         <span className="w-full h-full inner-image-no-max-width">
           <Image
-          alt="dedogmadao NFT" 
-          title="dedogmadao NFT"
+            alt="dedogmadao NFT"
+            title="dedogmadao NFT"
             src={allBgImg.sec1}
             layout="fill"
             quality={100}
@@ -46,19 +46,21 @@ const Benefits: React.FC = () => {
           />
         </span>
       </span>
-      <div className="flex flex-col ssm:w-11/12 lg:w-10/12 2xl:w-9/12 mx-auto
+      <div
+        className="flex flex-col ssm:w-11/12 lg:w-10/12 2xl:w-11/12 mx-auto
       min-h-[50rem] ssm:min-h-[45rem] sm:min-h-[45rem] lg:min-h-[40rem]
-      md:pt-20">
+      md:pt-20"
+      >
         <motion.div
           onHoverStart={() => setIsPlaying(false)}
           onHoverEnd={() => setIsPlaying(true)}
-          className=" flex gap-x-12 lg:gap-y-12 mx-auto flex-wrap ssm:justify-center
-      text-large-medium  lg:text-extera-large-medium z-10 mt-14 "
+          className=" flex gap-x-0 lg:gap-y-12 mx-auto ssm:justify-center w-full
+      text-large-medium lg:text-extera-large-medium z-10 mt-14 "
         >
           {benefitsData.map((data, index) => {
             return (
               <EachBenefit
-              key={data.title}
+                key={data.title}
                 data={data}
                 index={index}
                 setActiveIndex={setActiveIndex}
@@ -74,7 +76,7 @@ const Benefits: React.FC = () => {
               benefitsData[activeIndex].desc.map((item, index) => {
                 return (
                   <EachDesc
-                  key={index + "benefit-desc"}
+                    key={index + "benefit-desc"}
                     setIsPlaying={setIsPlaying}
                     descData={item}
                     index={index}

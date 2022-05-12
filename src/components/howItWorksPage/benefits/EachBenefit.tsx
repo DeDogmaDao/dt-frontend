@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { Dispatch, SetStateAction } from "react";
+import { benefitImg } from "../../../store/img";
 import { benefitType } from "../../../types/allTypes";
 import { eachBenefitAni } from "../../../utils/animation";
 interface props {
@@ -36,11 +38,22 @@ const EachBenefit: React.FC<props> = ({
   return (
     <motion.button
       onTap={() => setIsPlaying(false)}
-      className={`h-12 flex flex-col justify-center items-start relative duration-75 ml-6 ssm:ml-0 font-normal  ${
+      className={`w-[24.0625rem] h-[14.0625rem] flex flex-col justify-center items-start relative duration-75 ml-6 ssm:ml-0 font-normal  ${
         activeIndex === index ? " text-white !font-bold" : "text-neutral-50/30 "
       }`}
       onClick={benefitBtnClickHandler}
     >
+      <motion.span className="w-[7.875rem] h-[6.375rem] will-change-transform">
+        <span className="w-full h-full">
+          <Image
+            alt="dedogmadao logo"
+            src={benefitImg[index]}
+            layout={"fill"}
+            quality={90}
+            placeholder="blur"
+          />
+        </span>
+      </motion.span>
       <h3>{data.title}</h3>
       {activeIndex === index && (
         <motion.div
