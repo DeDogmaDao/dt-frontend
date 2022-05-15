@@ -154,6 +154,8 @@ export interface Web3ProviderState {
   web3Provider: ethers.providers.Web3Provider | null | undefined;
   address: string | null | undefined;
   network: ethers.providers.Network | null | undefined;
+  connect: (() => Promise<void>) | null;
+  disconnect: (() => Promise<void>) | null;
 }
 
 export type Web3Action =

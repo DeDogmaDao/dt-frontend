@@ -1,7 +1,7 @@
 // types
 import type { AppProps } from "next/app";
 // libs
-import { ToastContainer } from 'react-toastify';
+import { ToastContainer } from "react-toastify";
 import { useRouter } from "next/router";
 // components
 import Layout from "../components/layout/Layout";
@@ -13,6 +13,7 @@ import "../../styles/tailwind.css";
 import Head from "next/head";
 import { useEffect, useLayoutEffect } from "react";
 import TagManager from "react-gtm-module";
+import { Web3ContextProvider } from "../store/context/Web3Context";
 function MyApp({ Component, pageProps }: AppProps) {
   // const router = useRouter();
 
@@ -46,13 +47,12 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, []);
   return (
     <>
-      <Layout>
-        <Component {...pageProps} />
-        <ToastContainer
-          position="bottom-center"
-          autoClose={3000}
-        />
-      </Layout>
+      <Web3ContextProvider>
+        <Layout>
+          <Component {...pageProps} />
+          <ToastContainer position="bottom-center" autoClose={3000} />
+        </Layout>
+      </Web3ContextProvider>
     </>
   );
 }
