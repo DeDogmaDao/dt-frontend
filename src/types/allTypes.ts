@@ -149,7 +149,7 @@ export interface metaDataType {
 }
 
 /////// web3 Types
-export interface Web3State {
+export interface Web3ProviderState {
   provider: any;
   web3Provider: ethers.providers.Web3Provider | null | undefined;
   address: string | null | undefined;
