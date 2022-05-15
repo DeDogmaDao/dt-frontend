@@ -1,7 +1,7 @@
 // types
 import type { AppProps } from "next/app";
 // libs
-
+import { ToastContainer } from 'react-toastify';
 import { useRouter } from "next/router";
 // components
 import Layout from "../components/layout/Layout";
@@ -48,6 +48,10 @@ function MyApp({ Component, pageProps }: AppProps) {
     <>
       <Layout>
         <Component {...pageProps} />
+        <ToastContainer
+          position="bottom-center"
+          autoClose={3000}
+        />
       </Layout>
     </>
   );

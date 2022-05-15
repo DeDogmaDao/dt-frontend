@@ -26,6 +26,7 @@ import { ethers } from "ethers";
 
 import { Web3Action, Web3Client } from "../types/allTypes";
 import { web3InitialState, web3Reducer } from "../store/reducers";
+import { toast } from "react-toastify";
 
 // Web3Modal code goes here
 
@@ -44,6 +45,7 @@ export const useWeb3 = ():Web3Client => {
         const address = await signer.getAddress();
         const network = await web3Provider.getNetwork();
 
+        toast.success('Connected to Web3');
         dispatch({
           type: "SET_WEB3_PROVIDER",
           provider,
@@ -65,6 +67,7 @@ export const useWeb3 = ():Web3Client => {
       if (provider?.disconnect && typeof provider.disconnect === "function") {
         await provider.disconnect();
       }
+      toast.error('Disconnected from Web3');
       dispatch({
         type: "RESET_WEB3_PROVIDER",
       } as Web3Action);
@@ -84,6 +87,7 @@ export const useWeb3 = ():Web3Client => {
   useEffect(() => {
     if (provider.on) {
       const handleAccountsChanged = (accounts: string[]) => {
+        toast.info('Changed Web3 Account');
         dispatch({
           type: "SET_ADDRESS",
           address: accounts[0],
@@ -94,6 +98,7 @@ export const useWeb3 = ():Web3Client => {
       const handleChainChanged = (_hexChainId: string) => {
         if (typeof window !== "undefined") {
           console.log("switched to chain...", _hexChainId);
+          toast.info('Web3 Network Changed');
           window.location.reload();
         } else {
           console.log("window is undefined");
