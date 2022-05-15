@@ -175,3 +175,9 @@ export type Web3Action =
   | {
       type: "RESET_WEB3_PROVIDER";
     };
+
+
+    export type Web3Client = Web3ProviderState & {
+      connect: () => Promise<void>;
+      disconnect: () => Promise<void>;
+    };
