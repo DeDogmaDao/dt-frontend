@@ -1,3 +1,4 @@
+import type { ethers } from "ethers";
 import { StaticImageData } from "next/image";
 import { ReactElement } from "react";
 
@@ -116,7 +117,7 @@ export interface activeIndexCardType {
 export interface roadDataType {
   title: string;
   desc: ReactElement<any, any>;
-  size:number;
+  size: number;
 }
 
 export interface roadMapType {
@@ -140,9 +141,17 @@ export interface metaType {
 export interface metaDataType {
   siteTitle: string;
   pageTitle: string;
-  desc:string;
+  desc: string;
   keywords: string;
-  pageUrl:string;
-  imageUrl:string;
-  homePageUrl:string;
+  pageUrl: string;
+  imageUrl: string;
+  homePageUrl: string;
+}
+
+/////// web3 Types
+export interface Web3State {
+  provider: any;
+  web3Provider: ethers.providers.Web3Provider | null | undefined;
+  address: string | null | undefined;
+  network: ethers.providers.Network | null | undefined;
 }
