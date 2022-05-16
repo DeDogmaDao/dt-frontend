@@ -85,7 +85,7 @@ export const useWeb3 = ():Web3Client => {
 
   // EIP-1193 events
   useEffect(() => {
-    if (provider.on) {
+    if (provider?.on) {
       const handleAccountsChanged = (accounts: string[]) => {
         toast.info('Changed Web3 Account');
         dispatch({

@@ -1,12 +1,35 @@
-const Web3Button:React.FC = () => {
-    return (
-        <button className="w-[12rem] h-[3rem] bg-yellow-300/50 hover:bg-yellow-300/100 hover:text-black duration-300 rounded-full">
-            transaction with web3
-        </button>
-    );
+import React from 'react'
+import { useWeb3Context } from '../../store/context/Web3Context'
 
-
+interface ConnectProps {
+  connect: (() => Promise<void>) | null
+}
+const ConnectButton = ({ connect }: ConnectProps) => {
+  return connect ? (
+    <button onClick={connect}>Connect</button>
+  ) : (
+    <button>Loading...</button>
+  )
 }
 
+interface DisconnectProps {
+  disconnect: (() => Promise<void>) | null
+}
 
-export default Web3Button;
+const DisconnectButton = ({ disconnect }: DisconnectProps) => {
+  return disconnect ? (
+    <button onClick={disconnect}>Disconnect</button>
+  ) : (
+    <button>Loading...</button>
+  )
+}
+
+export function Web3Button() {
+  const { web3Provider, connect, disconnect } = useWeb3Context();
+
+  return web3Provider ? (
+    <DisconnectButton disconnect={disconnect} />
+  ) : (
+    <ConnectButton connect={connect} />
+  )
+}
