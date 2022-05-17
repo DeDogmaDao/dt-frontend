@@ -1,11 +1,10 @@
 import { Fragment } from "react";
-import Team from "../components/teamPage/Team";
-import Web3 from "../components/web3/Web3";
+import Web3Page from "../components/web3Page";
 
 export default function web3(): JSX.Element {
   return (
     <Fragment>
-        <Web3 />
+        <Web3Page />
     </Fragment>
   );
 }

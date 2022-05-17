@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useWeb3Context } from "../../store/context/Web3Context";
 import {Web3Button} from "./Web3Button";
 
-const Web3:React.FC = () => {
+const Web3Page:React.FC = () => {
     const {address, network,provider,web3Provider} = useWeb3Context();
     useEffect(()=>{
 
@@ -26,4 +26,4 @@ const Web3:React.FC = () => {
     )
 }
 
-export default Web3;
+export default Web3Page;
