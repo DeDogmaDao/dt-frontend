@@ -17,6 +17,7 @@ import Head from "next/head";
 import { useEffect, useLayoutEffect } from "react";
 import TagManager from "react-gtm-module";
 import dynamic from "next/dynamic";
+import { Web3ContextProvider } from "../store/context/Web3Context";
 // import { Web3ContextProvider } from "../store/context/Web3Context";
 function MyApp({ Component, pageProps }: AppProps) {
   // const router = useRouter();
@@ -55,10 +56,12 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Web3GlobalProvider>
-        <Layout>
-          <Component {...pageProps} />
-          <ToastContainer position="bottom-center" autoClose={3000} />
-        </Layout>
+        <Web3ContextProvider>
+          <Layout>
+            <Component {...pageProps} />
+            <ToastContainer position="bottom-center" autoClose={3000} />
+          </Layout>
+        </Web3ContextProvider>
       </Web3GlobalProvider>
     </>
   );
