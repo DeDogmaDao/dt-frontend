@@ -31,15 +31,18 @@ function MyApp({ Component, pageProps }: AppProps) {
     TagManager.initialize({ gtmId: "GTM-KQ3KRW6" });
   }, []);
   useLayoutEffect(() => {
+    const htmlTag: HTMLHtmlElement = document.querySelector("html")!;
+    const fontSize: number = parseFloat(
+      window.getComputedStyle(htmlTag).fontSize
+    );
     const resizeHandlerFont = () => {
       if (window.innerWidth > 1536) {
-        const htmlTag = document.querySelector("html");
         const windowWidth = window.innerWidth;
         const scaleFont = windowWidth / 1536;
-        htmlTag!.style.fontSize = scaleFont * 16 + "px";
+        htmlTag!.style.fontSize = scaleFont * fontSize + "px";
       } else {
         const htmlTag = document.querySelector("html");
-        htmlTag!.style.fontSize = 16 + "px";
+        htmlTag!.style.fontSize = fontSize + "px";
       }
     };
     resizeHandlerFont();
