@@ -1,8 +1,22 @@
-export {}
-// import React, {  createContext, useContext } from "react";
-// import { useWeb3 } from "../../hooks/useWeb3";
-// import { Web3ProviderState } from "../../types/allTypes";
-// import { web3InitialState } from "../reducers";
+import { WalletLinkConnector } from "@web3-react/walletlink-connector";
+import { WalletConnectConnector } from "@web3-react/walletconnect-connector";
+import { InjectedConnector } from "@web3-react/injected-connector";
+
+const CoinbaseWallet = new WalletLinkConnector({
+  url: `https://mainnet.infura.io/v3/${process.env.NEXT_PUBLIC_INFURA_ID}`,
+  appName: "DeDogmaDao",
+  supportedChainIds: [1, 3, 4, 5, 42],
+});
+
+const WalletConnect = new WalletConnectConnector({
+  rpc: `https://mainnet.infura.io/v3/${process.env.NEXT_PUBLIC_INFURA_ID}`,
+  bridge: "https://bridge.walletconnect.org",
+  qrcode: true,
+});
+
+const Injected = new InjectedConnector({
+  supportedChainIds: [1, 3, 4, 5, 42],
+});
 
 // const Web3Context = createContext<Web3ProviderState>(web3InitialState);
 
