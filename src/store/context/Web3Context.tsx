@@ -20,9 +20,31 @@ const Injected = new InjectedConnector({
   supportedChainIds: [1, 3, 4, 5, 42],
 });
 
-interface Web3ProviderStateType {}
+interface Web3ProviderStateType {
+  metaMaskConnection: () => void;
+  walletConnectConnection: () => void;
+  coinBaseConnection: () => void;
+  closeConnection: () => void;
+  active: boolean;
+  error: Error | undefined;
+  account: string | null | undefined;
+  chainId: number | undefined;
+  connector: any;
+  library: any;
+}
 
-const Web3Context = createContext<Web3ProviderStateType>({});
+const Web3Context = createContext<Web3ProviderStateType>({
+  metaMaskConnection: () => {},
+  walletConnectConnection: () => {},
+  coinBaseConnection: () => {},
+  closeConnection: () => {},
+  active: false,
+  error: undefined,
+  account: undefined,
+  chainId: undefined,
+  connector: undefined,
+  library: undefined,
+});
 
 export const Web3ContextProvider: React.FC = ({ children }) => {
   const {
@@ -49,7 +71,22 @@ export const Web3ContextProvider: React.FC = ({ children }) => {
     deactivate();
   }, [deactivate]);
 
-  return <Web3Context.Provider value={{}}>{children}</Web3Context.Provider>;
+  const contextValue = {
+    metaMaskConnection,
+    walletConnectConnection,
+    coinBaseConnection,
+    closeConnection,
+    active,
+    error,
+    account,
+    chainId,
+    connector,
+    library,
+  };
+
+  return (
+    <Web3Context.Provider value={contextValue}>{children}</Web3Context.Provider>
+  );
 };
 
 // export function useWeb3Context() {
