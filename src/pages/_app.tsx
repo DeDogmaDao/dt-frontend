@@ -36,7 +36,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       window.getComputedStyle(htmlTag).fontSize
     );
     const resizeHandlerFont = () => {
-      if (window.innerWidth > 1536) {
+      if (window.innerWidth > 1535) {
         const windowWidth = window.innerWidth;
         const scaleFont = windowWidth / 1536;
         htmlTag!.style.fontSize = scaleFont * fontSize + "px";
