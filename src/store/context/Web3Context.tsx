@@ -2,7 +2,7 @@ import { WalletLinkConnector } from "@web3-react/walletlink-connector";
 import { WalletConnectConnector } from "@web3-react/walletconnect-connector";
 import { InjectedConnector } from "@web3-react/injected-connector";
 import { useWeb3React } from "@web3-react/core";
-import { createContext, useCallback } from "react";
+import { createContext, useCallback, useContext } from "react";
 
 const CoinbaseWallet = new WalletLinkConnector({
   url: `https://mainnet.infura.io/v3/${process.env.NEXT_PUBLIC_INFURA_ID}`,
@@ -89,6 +89,6 @@ export const Web3ContextProvider: React.FC = ({ children }) => {
   );
 };
 
-// export function useWeb3Context() {
-//   return useContext(Web3Context);
-// }
+export function useWeb3Context() {
+  return useContext(Web3Context);
+}
