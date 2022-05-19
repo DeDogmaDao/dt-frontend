@@ -2,7 +2,13 @@ import { WalletLinkConnector } from "@web3-react/walletlink-connector";
 import { WalletConnectConnector } from "@web3-react/walletconnect-connector";
 import { InjectedConnector } from "@web3-react/injected-connector";
 import { useWeb3React } from "@web3-react/core";
-import { createContext, useCallback, useContext } from "react";
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 
 const CoinbaseWallet = new WalletLinkConnector({
   url: `https://mainnet.infura.io/v3/${process.env.NEXT_PUBLIC_INFURA_ID}`,
@@ -47,6 +53,18 @@ const Web3Context = createContext<Web3ProviderStateType>({
 });
 
 export const Web3ContextProvider: React.FC = ({ children }) => {
+  const [contextValue, setContextValue] = useState<Web3ProviderStateType>({
+    metaMaskConnection: () => {},
+    walletConnectConnection: () => {},
+    coinBaseConnection: () => {},
+    closeConnection: () => {},
+    active: false,
+    error: undefined,
+    account: undefined,
+    chainId: undefined,
+    connector: undefined,
+    library: undefined,
+  });
   const {
     activate,
     deactivate,
@@ -71,7 +89,20 @@ export const Web3ContextProvider: React.FC = ({ children }) => {
     deactivate();
   }, [deactivate]);
 
-  const contextValue = {
+  useEffect(() => {
+    setContextValue({
+      metaMaskConnection,
+      walletConnectConnection,
+      coinBaseConnection,
+      closeConnection,
+      active,
+      error,
+      account,
+      chainId,
+      connector,
+      library,
+    });
+  }, [
     metaMaskConnection,
     walletConnectConnection,
     coinBaseConnection,
@@ -82,7 +113,7 @@ export const Web3ContextProvider: React.FC = ({ children }) => {
     chainId,
     connector,
     library,
-  };
+  ]);
 
   return (
     <Web3Context.Provider value={contextValue}>{children}</Web3Context.Provider>
