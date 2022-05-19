@@ -17,7 +17,8 @@ const CoinbaseWallet = new WalletLinkConnector({
 });
 
 const WalletConnect = new WalletConnectConnector({
-  rpc: `https://mainnet.infura.io/v3/${process.env.NEXT_PUBLIC_INFURA_ID}`,
+  //@ts-ignore
+  rpcUrl: `https://mainnet.infura.io/v3/${process.env.NEXT_PUBLIC_INFURA_ID}`,
   bridge: "https://bridge.walletconnect.org",
   qrcode: true,
 });

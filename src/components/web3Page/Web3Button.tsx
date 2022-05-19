@@ -1,36 +1,14 @@
-export {}
-// import React from 'react'
-// // import { useWeb3Context } from '../../store/context/Web3Context'
+interface props {
+    onclick:any;
+}
+const Web3Button:React.FC<props> =({onclick}) => {
 
-// interface ConnectProps {
-//   connect: (() => Promise<void>) | null
-// }
-// const ConnectButton = ({ connect }: ConnectProps) => {
-//   return connect ? (
-//     <button onClick={connect}>Connect</button>
-//   ) : (
-//     <button>Loading...</button>
-//   )
-// }
+  return (
+      <button onClick={onclick}>
+          connect to network
+      </button>
+  ) 
+  
+}
 
-// interface DisconnectProps {
-//   disconnect: (() => Promise<void>) | null
-// }
-
-// const DisconnectButton = ({ disconnect }: DisconnectProps) => {
-//   return disconnect ? (
-//     <button onClick={disconnect}>Disconnect</button>
-//   ) : (
-//     <button>Loading...</button>
-//   )
-// }
-
-// export function Web3Button() {
-//   const { web3Provider, connect, disconnect } = useWeb3Context();
-
-//   return web3Provider ? (
-//     <DisconnectButton disconnect={disconnect} />
-//   ) : (
-//     <ConnectButton connect={connect} />
-//   )
-// }
+export default Web3Button;
