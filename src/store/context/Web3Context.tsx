@@ -41,12 +41,14 @@ interface Web3ProviderStateType {
   metaMaskConnection: () => void;
   walletConnectConnection: () => void;
   coinBaseConnection: () => void;
+  data:any;
 }
 
 const Web3Context = createContext<Web3ProviderStateType>({
   metaMaskConnection: () => {},
   walletConnectConnection: () => {},
   coinBaseConnection: () => {},
+  data:"",
 });
 
 export const Web3ContextProvider: React.FC = ({ children }) => {
@@ -54,6 +56,7 @@ export const Web3ContextProvider: React.FC = ({ children }) => {
     metaMaskConnection: () => {},
     walletConnectConnection: () => {},
     coinBaseConnection: () => {},
+    data:"",
   });
   const {
     activeConnector,
@@ -62,8 +65,10 @@ export const Web3ContextProvider: React.FC = ({ children }) => {
     error,
     isConnecting,
     pendingConnector,
+    data,
+
+    connectAsync
   } = useConnect();
-  console.log(pendingConnector);
   const metaMaskConnection = useCallback(() => {
     connect(InjectedWallet);
   }, [connect, InjectedWallet]);
@@ -73,15 +78,17 @@ export const Web3ContextProvider: React.FC = ({ children }) => {
   const coinBaseConnection = useCallback(() => {
     connect(CoinbaseWallet);
   }, [connect, CoinbaseWallet]);
-
+  
   useEffect(() => {
     setContextValue({
       metaMaskConnection,
       walletConnectConnection,
       coinBaseConnection,
+      data
     });
   }, [metaMaskConnection, walletConnectConnection, coinBaseConnection]);
-
+  
+  console.log(connectors);
   return (
     <Web3Context.Provider value={contextValue}>{children}</Web3Context.Provider>
   );
