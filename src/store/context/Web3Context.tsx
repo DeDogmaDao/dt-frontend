@@ -1,7 +1,8 @@
-import { WalletLinkConnector } from "@web3-react/walletlink-connector";
-import { WalletConnectConnector } from "@web3-react/walletconnect-connector";
-import { InjectedConnector } from "@web3-react/injected-connector";
-import { useWeb3React } from "@web3-react/core";
+import { chain, useConnect } from "wagmi";
+import { MetaMaskConnector } from "wagmi/connectors/metaMask";
+import { WalletConnectConnector } from "wagmi/connectors/walletConnect";
+import { CoinbaseWalletConnector } from "wagmi/connectors/coinbaseWallet";
+
 import {
   createContext,
   useCallback,
@@ -10,47 +11,42 @@ import {
   useState,
 } from "react";
 
-const CoinbaseWallet = new WalletLinkConnector({
-  url: `https://mainnet.infura.io/v3/${process.env.NEXT_PUBLIC_INFURA_ID}`,
-  appName: "DeDogmaDao",
-  supportedChainIds: [1, 3, 4, 5, 42],
-});
+// API key for Ethereum node
+// Two popular services are Infura (infura.io) and Alchemy (alchemy.com)
+const infuraMainNet = `https://mainnet.infura.io/v3/${process.env.NEXT_PUBLIC_INFURA_ID}`;
 
 const WalletConnect = new WalletConnectConnector({
-  //@ts-ignore
-  rpcUrl: `https://mainnet.infura.io/v3/${process.env.NEXT_PUBLIC_INFURA_ID}`,
-  bridge: "https://bridge.walletconnect.org",
-  qrcode: true,
+  chains: [chain.mainnet],
+  options: {
+    qrcode: true,
+    rpc: {
+      1: infuraMainNet,
+    },
+  },
 });
 
-const Injected = new InjectedConnector({
-  supportedChainIds: [1, 3, 4, 5, 42],
+const InjectedWallet = new MetaMaskConnector({
+  chains: [chain.mainnet],
+});
+
+const CoinbaseWallet = new CoinbaseWalletConnector({
+  options: {
+    appName: "DeDogmaDAO",
+    jsonRpcUrl: infuraMainNet,
+  },
+  chains: [chain.mainnet],
 });
 
 interface Web3ProviderStateType {
   metaMaskConnection: () => void;
   walletConnectConnection: () => void;
   coinBaseConnection: () => void;
-  closeConnection: () => void;
-  active: boolean;
-  error: Error | undefined;
-  account: string | null | undefined;
-  chainId: number | undefined;
-  connector: any;
-  library: any;
 }
 
 const Web3Context = createContext<Web3ProviderStateType>({
   metaMaskConnection: () => {},
   walletConnectConnection: () => {},
   coinBaseConnection: () => {},
-  closeConnection: () => {},
-  active: false,
-  error: undefined,
-  account: undefined,
-  chainId: undefined,
-  connector: undefined,
-  library: undefined,
 });
 
 export const Web3ContextProvider: React.FC = ({ children }) => {
@@ -58,63 +54,33 @@ export const Web3ContextProvider: React.FC = ({ children }) => {
     metaMaskConnection: () => {},
     walletConnectConnection: () => {},
     coinBaseConnection: () => {},
-    closeConnection: () => {},
-    active: false,
-    error: undefined,
-    account: undefined,
-    chainId: undefined,
-    connector: undefined,
-    library: undefined,
   });
   const {
-    activate,
-    deactivate,
-    active,
-    setError,
-    account,
-    chainId,
-    connector,
+    activeConnector,
+    connect,
+    connectors,
     error,
-    library,
-  } = useWeb3React();
+    isConnecting,
+    pendingConnector,
+  } = useConnect();
+  console.log(pendingConnector);
   const metaMaskConnection = useCallback(() => {
-    activate(Injected);
-  }, [activate, Injected]);
+    connect(InjectedWallet);
+  }, [connect, InjectedWallet]);
   const walletConnectConnection = useCallback(() => {
-    activate(WalletConnect);
-  }, [activate, WalletConnect]);
+    connect(WalletConnect);
+  }, [connect, WalletConnect]);
   const coinBaseConnection = useCallback(() => {
-    activate(CoinbaseWallet);
-  }, [activate, CoinbaseWallet]);
-  const closeConnection = useCallback(() => {
-    deactivate();
-  }, [deactivate]);
+    connect(CoinbaseWallet);
+  }, [connect, CoinbaseWallet]);
 
   useEffect(() => {
     setContextValue({
       metaMaskConnection,
       walletConnectConnection,
       coinBaseConnection,
-      closeConnection,
-      active,
-      error,
-      account,
-      chainId,
-      connector,
-      library,
     });
-  }, [
-    metaMaskConnection,
-    walletConnectConnection,
-    coinBaseConnection,
-    closeConnection,
-    active,
-    error,
-    account,
-    chainId,
-    connector,
-    library,
-  ]);
+  }, [metaMaskConnection, walletConnectConnection, coinBaseConnection]);
 
   return (
     <Web3Context.Provider value={contextValue}>{children}</Web3Context.Provider>

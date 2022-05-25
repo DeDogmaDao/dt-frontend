@@ -1,4 +1,3 @@
-import type { WalletLinkConnector } from "@web3-react/walletlink-connector";
 import type { ethers } from "ethers";
 import { StaticImageData } from "next/image";
 import { ReactElement } from "react";
