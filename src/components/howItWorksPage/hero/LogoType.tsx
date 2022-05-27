@@ -24,9 +24,9 @@ const LogoType: React.FC<props> = ({ setAnim, portalLoading }) => {
       onHoverStart={() => setAnim("visible")}
       onHoverEnd={() => setAnim("hidden")}
       style={{ visibility: portalLoading > 3 ? "visible" : "hidden" }}
-      className="mt-[-1%] ssm:mt-[1%] lg:mt-[2%] xl:mt-[7%]  absolute flex flex-col justify-start items-center z-110 "
+      className="mt-[-1%] ssm:mt-[1%] lg:mt-[2%] xl:mt-[7%]  absolute flex flex-col justify-start items-center z-110 will-change-transform"
     >
-      <motion.span className="w-[20rem] aspect-[1207/728]   will-change-transform">
+      <motion.span className="w-[20rem] h-[12.06rem] will-change-transform">
         <span className=" w-full h-full">
           <Image
             alt="dedogmadao logo"

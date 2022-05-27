@@ -38,17 +38,17 @@ const EachBenefit: React.FC<props> = ({
   return (
     <motion.button
       onTap={() => setIsPlaying(false)}
-      className={`h-16 ml-8 lg:w-[280px] lg:h-[162px] xl:w-[21.5625rem] xl:h-[12.5rem] flex flex-col justify-center items-start lg:items-center
-       relative duration-75 lg:duration-500 ssm:ml-0 font-normal lg:backdrop-blur-[5.625rem] 
-        will-change-transform lg:rounded-[.9375rem] xl:rounded-[1.25rem]
+      className={`h-16 ml-8 sm:w-[11.25rem] sm:h-[6.5rem] md:w-[13.125rem] md:h-[7.5625rem]  lg:w-[17.5rem] lg:h-[10.125rem] xl:w-[21.5625rem] xl:h-[12.5rem] flex flex-col justify-center items-start sm:items-center
+       relative duration-75 sm:duration-500 ssm:ml-0 font-normal sm:backdrop-blur-[5.625rem] 
+        will-change-transform sm:rounded-[.9375rem] xl:rounded-[1.25rem]
         overflow-hidden  ${
          activeIndex === index
-           ? " text-white !font-bold lg:-translate-y-3 lg:scale-[1.12]"
+           ? " text-white !font-bold sm:-translate-y-3 sm:scale-[1.12]"
            : "text-neutral-50/30 "
        }`}
       onClick={benefitBtnClickHandler}
     >
-      <motion.span className=" lg:w-[280px] lg:h-[162px] xl:w-[21.5625rem] xl:h-[12.5rem]  hidden lg:block will-change-transform">
+      <motion.span className="sm:w-[11.25rem] sm:h-[6.5rem] md:w-[13.125rem] md:h-[7.5625rem] lg:w-[17.5rem] lg:h-[10.125rem] xl:w-[21.5625rem] xl:h-[12.5rem]  hidden sm:block will-change-transform">
         <span className=" w-full h-full will-change-transform">
           <Image
             alt="dedogmadao logo"
@@ -61,7 +61,10 @@ const EachBenefit: React.FC<props> = ({
           />
         </span>
       </motion.span>
-      <h3 className="lg:absolute lg:bottom-5 lg:text-white lg:font-bold lg:text-lg will-change-transform">
+      <h3 className="sm:absolute sm:bottom-2 lg:bottom-5 sm:text-white
+      sm:font-bold text-lg sm:text-xs md:text-sm lg:text-lg will-change-transform"
+      style={{backfaceVisibility:"hidden", transform:"translateZ(0)"}}
+      >
         {data.title}
       </h3>
       {activeIndex === index && (
@@ -69,7 +72,7 @@ const EachBenefit: React.FC<props> = ({
           initial="hidden"
           animate="visible"
           variants={eachBenefitAni}
-          className="w-[1.625rem] h-[.375rem] bg-primary-500 absolute bottom-1 left-0 lg:hidden will-change-transform"
+          className="w-[1.625rem] h-[.375rem] bg-primary-500 absolute bottom-1 left-0 sm:hidden will-change-transform"
         ></motion.div>
       )}
     </motion.button>
