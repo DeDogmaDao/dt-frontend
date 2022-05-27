@@ -45,7 +45,7 @@ const Card: React.FC<props> = ({
       return false;
     }
     setActiveIndexCard((prevState) => {
-      if (innerWidth <= 1280) {
+      if (innerWidth < 1280) {
         return {
           ...prevState,
           [tabGroup]: cardIndexHandler(index, tabInfo.length),
@@ -60,12 +60,12 @@ const Card: React.FC<props> = ({
   };
 
   const cardPlace =
-    innerWidth <= 1280
+    innerWidth < 1280
       ? cardPlaceDetector(activeIndexCard[tabGroup], index)
       : cardPlaceDetectorUpper(activeIndexCard[tabGroup], index);
 
   const style: MotionStyle = {
-    marginLeft: innerWidth <= 1280 ? "-9.375rem" : "0rem",
+    marginLeft: innerWidth < 1280 ? "-9.375rem" : "0rem",
   };
   return (
     <motion.div
@@ -79,7 +79,7 @@ const Card: React.FC<props> = ({
       onClick={(e) => cardClickHandler(e)}
       className={`tab-card-container h-[28.75rem] w-[18.75rem] flex  text-white absolute select-none 
       hover:cursor-pointer !rounded-xl overflow-hidden top-0   ${
-        innerWidth <= 1280
+        innerWidth < 1280
           ? activeIndexCard[tabGroup][1] === index
             ? "grayscale-0"
             : "grayscale"
