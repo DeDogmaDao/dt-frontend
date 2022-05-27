@@ -432,7 +432,7 @@ export const carouselDisplayAni: Variants = {
     }
   },
   visible: ({ cardPlace, innerWidth, tabGroup }) => {
-    if (innerWidth < 1280) {
+    if (innerWidth <= 1280) {
       return {
         scale: 1 - 0.4 * Math.abs(cardPlace),
         left: 50 + cardPlace * 35 + "%",
@@ -466,7 +466,7 @@ export const carouselDisplayAni: Variants = {
     }
   },
   out: ({ cardPlace, innerWidth }) => {
-    if (innerWidth < 1280) {
+    if (innerWidth <= 1280) {
       return {
         left: 50 + cardPlace * 70 + "%",
         scale: 0,
@@ -490,7 +490,7 @@ export const carouselDisplayAni: Variants = {
 
 export const tabInfoContainerAni: Variants = {
   hidden: ({ innerWidth }) => {
-    if (innerWidth < 1280) {
+    if (innerWidth <= 1280) {
       return {
         y: -600,
         opacity: 0,
@@ -504,7 +504,7 @@ export const tabInfoContainerAni: Variants = {
     }
   },
   visible: ({ innerWidth }) => {
-    if (innerWidth < 1280) {
+    if (innerWidth <= 1280) {
       return {
         y: 0,
         opacity: [0, 0.7, 1],
@@ -528,7 +528,7 @@ export const tabInfoContainerAni: Variants = {
     }
   },
   out: ({ innerWidth }) => {
-    if (innerWidth < 1280) {
+    if (innerWidth <= 1280) {
       return {
         opacity: 0,
         y: 50,
