@@ -47,14 +47,14 @@ const Benefits: React.FC = () => {
         </span>
       </span>
       <div
-        className="flex flex-col ssm:w-11/12 md:w-11/12 2xl:w-11/12 mx-auto
-      min-h-[50rem] ssm:min-h-[45rem] sm:min-h-[45rem] md:min-h-[45rem]
-      md:pt-20"
+        className="flex flex-col ssm:w-11/12 sm:w-11/12 2xl:w-11/12 mx-auto
+      min-h-[50rem] ssm:min-h-[45rem] sm:min-h-[45rem] 
+      sm:pt-20"
       >
         <motion.div
           onHoverStart={() => setIsPlaying(false)}
           onHoverEnd={() => setIsPlaying(true)}
-          className=" flex flex-wrap flex-col sm:flex-row gap-x-12 md:gap-x-5 lg:gap-x-8 xl:gap-x-10 gap-y-5 md:gap-12 mx-auto ssm:justify-center
+          className=" flex flex-wrap flex-col sm:flex-row gap-x-12 sm:gap-x-5 lg:gap-x-8 xl:gap-x-10 gap-y-5 sm:gap-12 mx-auto ssm:justify-center
            w-full
       text-large-medium lg:text-extera-large-medium z-10 mt-14"
         >
