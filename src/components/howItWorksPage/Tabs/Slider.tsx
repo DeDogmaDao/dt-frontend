@@ -83,7 +83,7 @@ const Slider: React.FC<props> = ({
 
   return (
     <motion.div
-      className="relative w-[100%] sm:w-[80%] md:w-[70%] xl:w-[90%] flex justify-center
+      className="relative w-[100%] sm:w-[80%] md:w-[70%] xl:w-[90%] flex justify-center 
      xl:justify-between xl:gap-x-10 px-20"
     >
       <motion.div
