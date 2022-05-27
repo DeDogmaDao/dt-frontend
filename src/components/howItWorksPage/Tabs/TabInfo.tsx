@@ -20,7 +20,7 @@ const TabInfo: React.FC<props> = ({
   tabGroup,
   innerWidth,
 }) => {
-  const activeIndexBasedOnWidth = innerWidth < 1280 ? 1 : 2;
+  const activeIndexBasedOnWidth = innerWidth <= 1280 ? 1 : 2;
   return (
     <AnimatePresence>
       {activeIndexCard[tabGroup][activeIndexBasedOnWidth] === index && (
