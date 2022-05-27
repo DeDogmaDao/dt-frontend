@@ -10,7 +10,7 @@ const DiscordBtn: React.FC = () => {
       onHoverEnd={() => controls.start("hidden")}
       onTapStart={() => controls.start("visible")}
       onTapCancel={() => controls.start("hidden")}
-      className=" relative w-[180px] h-[50px] flex justify-center items-center gap-x-5 bg-primary-500 hover:bg-opacity-90 hover:scale-110 duration-500 text-blackPrime font-bold text-xl rounded-2xl overflow-hidden"
+      className=" relative w-[11.25rem] h-[3.125rem] flex justify-center items-center gap-x-5 bg-primary-500 hover:bg-opacity-90 hover:scale-110 duration-500 text-blackPrime font-bold text-xl rounded-2xl overflow-hidden"
     >
       <motion.svg
         width="180px"
