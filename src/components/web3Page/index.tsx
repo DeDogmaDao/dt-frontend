@@ -12,7 +12,7 @@ const Web3Page:React.FC = () => {
     const prov = useWeb3Context();
     const { data: signer } = useSigner();
     const {data, write, isSuccess, } = useContractWrite({
-      addressOrName: '0x2E983A1Ba5e8b38AAAeC4B440B9dDcFBf72E15d1',
+      addressOrName: '0x663F3ad617193148711d28f5334eE4Ed07016602',
       contractInterface: deDogmaDaoABI,
       signerOrProvider: signer,
     },
@@ -20,7 +20,7 @@ const Web3Page:React.FC = () => {
     {
       args:[1],
       overrides:{
-        value: utils.parseEther("0.07"),
+        value: utils.parseEther("5"),
         gasLimit: 200000,
       }
     }
