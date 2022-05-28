@@ -12,27 +12,19 @@ const Web3Page:React.FC = () => {
     const prov = useWeb3Context();
     const { data: signer } = useSigner();
     const {data, write, isSuccess, } = useContractWrite({
-      addressOrName: '0x663F3ad617193148711d28f5334eE4Ed07016602',
+      addressOrName: '0x2E983A1Ba5e8b38AAAeC4B440B9dDcFBf72E15d1',
       contractInterface: deDogmaDaoABI,
       signerOrProvider: signer,
     },
     "publicMint",
     {
-      args:[2],
+      args:[1],
       overrides:{
-        value: utils.parseEther("0.14"),
+        value: utils.parseEther("0.07"),
         gasLimit: 200000,
       }
     }
     )
-      // const { data, isIdle, isError, isLoading, isSuccess, sendTransaction } =
-      // useSendTransaction({
-      //   request: {
-      //     to: '0xe3af8b5Bdd1155e78E67Be558C04D3fa6647365d',
-      //     value: BigNumber.from('100000000000000000000'), // 1 ETH
-      //   },
-      // })
-
       const {data:waitedData } = useWaitForTransaction({
         hash: data?.hash
       })

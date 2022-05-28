@@ -70,7 +70,6 @@ export const Web3ContextProvider: React.FC = ({ children }) => {
     isConnecting,
     pendingConnector,
     data,
-
   } = useConnect();
   const metaMaskConnection = useCallback(() => {
     connect(InjectedWallet);
@@ -94,6 +93,9 @@ export const Web3ContextProvider: React.FC = ({ children }) => {
       data
     });
   }, [metaMaskConnection, walletConnectConnection, coinBaseConnection]);
+  useEffect(() => {
+    console.log(data);
+  }, [data ]);
   
   return (
     <Web3Context.Provider value={contextValue}>{children}</Web3Context.Provider>
