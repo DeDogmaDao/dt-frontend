@@ -7,7 +7,7 @@ import { useWeb3Contract } from "../../hooks/useWeb3Contract";
 const Web3Page:React.FC = () => {
 
     const prov = useWeb3Context();
-    const {write, waitedData} = useWeb3Contract({functionName:"publicMint",args:[1],ethersValue:"12.87"})
+    const {write, waitedData} = useWeb3Contract({functionName:"publicMint",args:[2],ethersValue:"1.5"})
     return (
         <div className="w-full h-screen flex flex-col justify-center items-center">
             <div className="w-1/2 h-1/2  flex flex-col gap-5 justify-center items-center">
