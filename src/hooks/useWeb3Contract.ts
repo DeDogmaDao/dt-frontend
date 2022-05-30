@@ -18,7 +18,7 @@ export const useWeb3Contract = ({
   const { data: signer } = useSigner();
   const { data, write } = useContractWrite(
     {
-      addressOrName: "0x2E983A1Ba5e8b38AAAeC4B440B9dDcFBf72E15d1",
+      addressOrName: "0x663f3ad617193148711d28f5334ee4ed07016602",
       contractInterface: deDogmaDaoABI,
       signerOrProvider: signer,
     },
