@@ -2,7 +2,7 @@ import { chain, useConnect } from "wagmi";
 import { MetaMaskConnector } from "wagmi/connectors/metaMask";
 import { WalletConnectConnector } from "wagmi/connectors/walletConnect";
 import { CoinbaseWalletConnector } from "wagmi/connectors/coinbaseWallet";
-
+import { useDisconnect } from 'wagmi';
 import {
   createContext,
   useCallback,
@@ -16,7 +16,7 @@ import {
 const infuraMainNet = `https://mainnet.infura.io/v3/${process.env.NEXT_PUBLIC_INFURA_ID}`;
 
 const WalletConnect = new WalletConnectConnector({
-  chains: [chain.mainnet],
+  chains: [chain.hardhat],
   options: {
     qrcode: true,
     rpc: {
@@ -26,7 +26,7 @@ const WalletConnect = new WalletConnectConnector({
 });
 
 const InjectedWallet = new MetaMaskConnector({
-  chains: [chain.mainnet],
+  chains: [chain.hardhat],
 });
 
 const CoinbaseWallet = new CoinbaseWalletConnector({
@@ -34,13 +34,14 @@ const CoinbaseWallet = new CoinbaseWalletConnector({
     appName: "DeDogmaDAO",
     jsonRpcUrl: infuraMainNet,
   },
-  chains: [chain.mainnet],
+  chains: [chain.hardhat],
 });
 
 interface Web3ProviderStateType {
   metaMaskConnection: () => void;
   walletConnectConnection: () => void;
   coinBaseConnection: () => void;
+  disconnection:()=>void;
   data:any;
 }
 
@@ -48,7 +49,8 @@ const Web3Context = createContext<Web3ProviderStateType>({
   metaMaskConnection: () => {},
   walletConnectConnection: () => {},
   coinBaseConnection: () => {},
-  data:"",
+  disconnection:()=>{},
+  data:""
 });
 
 export const Web3ContextProvider: React.FC = ({ children }) => {
@@ -56,8 +58,10 @@ export const Web3ContextProvider: React.FC = ({ children }) => {
     metaMaskConnection: () => {},
     walletConnectConnection: () => {},
     coinBaseConnection: () => {},
-    data:"",
+    disconnection:()=>{},
+    data:""
   });
+  const { disconnect } = useDisconnect();
   const {
     activeConnector,
     connect,
@@ -66,8 +70,6 @@ export const Web3ContextProvider: React.FC = ({ children }) => {
     isConnecting,
     pendingConnector,
     data,
-
-    connectAsync
   } = useConnect();
   const metaMaskConnection = useCallback(() => {
     connect(InjectedWallet);
@@ -78,17 +80,23 @@ export const Web3ContextProvider: React.FC = ({ children }) => {
   const coinBaseConnection = useCallback(() => {
     connect(CoinbaseWallet);
   }, [connect, CoinbaseWallet]);
+  const disconnection = useCallback(() => {
+    disconnect();
+  }, [connect, CoinbaseWallet]);
   
   useEffect(() => {
     setContextValue({
       metaMaskConnection,
       walletConnectConnection,
       coinBaseConnection,
+      disconnection,
       data
     });
   }, [metaMaskConnection, walletConnectConnection, coinBaseConnection]);
+  useEffect(() => {
+    console.log(data);
+  }, [data ]);
   
-  console.log(connectors);
   return (
     <Web3Context.Provider value={contextValue}>{children}</Web3Context.Provider>
   );
