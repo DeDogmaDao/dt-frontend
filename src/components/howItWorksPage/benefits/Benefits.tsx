@@ -47,7 +47,7 @@ const Benefits: React.FC = () => {
         </span>
       </span>
       <div
-        className="flex flex-col ssm:w-11/12 sm:w-11/12 2xl:w-11/12 mx-auto
+        className="flex flex-col w-full ssm:w-11/12 sm:w-11/12 2xl:w-11/12 mx-auto
       min-h-[50rem] ssm:min-h-[45rem] sm:min-h-[45rem] 
       sm:pt-20"
       >
