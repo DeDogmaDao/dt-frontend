@@ -12,6 +12,7 @@ import {
   benefitType,
   teamCardType,
   metaDataType,
+  web3walletType,
 } from "../types/allTypes";
 
 // images
@@ -34,7 +35,7 @@ import {
 //
 //
 
-import { teamImg } from "./img";
+import { teamImg, walletImgData } from "./img";
 
 const { DiscordSVG, YoutubeSVG, Twitter, Github, Instagram, Linkedin } =
   socialSVGs;
@@ -1399,3 +1400,18 @@ export const faqPageMetaData: metaDataType = {
   homePageUrl: "https://dedogmadao.com",
   pageUrl: "https://dedogmadao.com/faq",
 };
+
+export const web3Wallets: web3walletType[] = [
+  {
+    name: "MetaMask",
+    icon: walletImgData.metaMask,
+  },
+  {
+    name: "CoinBase",
+    icon: walletImgData.coinBase,
+  },
+  {
+    name: "WalletConnect",
+    icon: walletImgData.walletConnect,
+  },
+];
