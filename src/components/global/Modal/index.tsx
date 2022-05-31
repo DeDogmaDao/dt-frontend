@@ -4,16 +4,21 @@ import ClientOnly from "../../../hoc/ClientOnly";
 import Portal from "../Portal";
 interface props {
   isOpen: boolean;
+  id:string;
   onBackdropClick: MouseEventHandler<HTMLDivElement> | undefined;
 }
-const Modal: React.FC<props> = ({ isOpen, onBackdropClick, children }) => {
+const Modal: React.FC<props> = ({ isOpen,id, onBackdropClick, children }) => {
   useEffect(() => {
-    document.body.style.overflow = "hidden";
-  }, []);
+    if (!isOpen) {
+      document.body.style.overflow = "auto";
+    } else {
+      document.body.style.overflow = "hidden";
+    }
+  }, [isOpen]);
 
   return (
     <ClientOnly>
-      <Portal id="connect-wallet-modal">
+      <Portal id={id}>
         <AnimatePresence>
           {isOpen && (
             <motion.div

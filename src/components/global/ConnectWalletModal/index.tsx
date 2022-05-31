@@ -25,6 +25,7 @@ const ConnectWalletModal: React.FC = () => {
   return (
     <Modal
       isOpen={isOpenModal}
+      id="connect-wallet-modal"
       onBackdropClick={(e) => modalBackdropClickHandler(e)}
     >
       <div className="relative w-full h-full flex justify-center items-center backdrop-blur-[.8125rem]">
