@@ -1,10 +1,10 @@
 import { useEffect } from "react";
 // import { useWeb3Context } from "../../store/context/Web3Context";
 import Web3Button from "./Web3Button";
-import {useWeb3Context} from "../../store/context/Web3Context";
-import { useWeb3Contract } from "../../hooks/useWeb3Contract";
+import {useWeb3Context} from "../../../store/context/Web3Context";
+import { useWeb3Contract } from "../../../hooks/useWeb3Contract";
 
-const Web3Page:React.FC = () => {
+const ConnectWalletModal:React.FC = () => {
 
     const prov = useWeb3Context();
     const {write, waitedData} = useWeb3Contract({functionName:"publicMint",args:[2],ethersValue:"1.5"})
@@ -32,4 +32,4 @@ const Web3Page:React.FC = () => {
     )
 }
 
-export default Web3Page;
+export default ConnectWalletModal;
