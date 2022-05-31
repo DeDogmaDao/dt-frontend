@@ -13,6 +13,7 @@ export default function Document() {
 
       <body>
         <Main />
+        <div id="connect-wallet-modal" />
         <NextScript />
       </body>
     </Html>
