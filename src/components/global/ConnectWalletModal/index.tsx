@@ -1,4 +1,4 @@
-import { MouseEventHandler, useState } from "react";
+import { Dispatch, MouseEventHandler, SetStateAction, useState } from "react";
 // import { useWeb3Context } from "../../store/context/Web3Context";
 import Web3Button from "./Web3Button";
 import { useWeb3Context } from "../../../store/context/Web3Context";
@@ -11,8 +11,11 @@ import { web3Wallets } from "../../../store/allData";
 import { privacyLink, tosLink } from "../../../store/allLinks";
 import { AngleRightSVG } from "../../../store/svg";
 
-const ConnectWalletModal: React.FC = () => {
-  const [isOpenModal, setIsOpenModal] = useState(true);
+interface props{
+  setIsOpenModal:Dispatch<SetStateAction<boolean>>;
+  isOpenModal:boolean;
+}
+const ConnectWalletModal: React.FC<props> = ({isOpenModal, setIsOpenModal}) => {
 
   const walletsHandler = useWeb3Context();
   // const { write, waitedData } = useWeb3Contract({
