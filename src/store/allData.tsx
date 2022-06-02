@@ -1404,14 +1404,11 @@ export const faqPageMetaData: metaDataType = {
 export const web3Wallets: web3walletType[] = [
   {
     name: "MetaMask",
-    icon: walletImgData.metaMask,
-  },
-  {
-    name: "CoinBase",
-    icon: walletImgData.coinBase,
   },
   {
     name: "WalletConnect",
-    icon: walletImgData.walletConnect,
+  },
+  {
+    name: "CoinBase",
   },
 ];

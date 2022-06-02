@@ -99,4 +99,4 @@ export const web3ModalHeaderImg: StaticImageData = web3ModalHeader;
 import metaMask from "./images/web3/metamask.png";
 import coinBase from "./images/web3/coinbase.png";
 import walletConnect from "./images/web3/walletConnect.png";
-export const walletImgData = { metaMask, coinBase, walletConnect };
+export const walletImgData = [metaMask, walletConnect, coinBase];

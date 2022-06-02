@@ -7,6 +7,7 @@ import Modal from "../Modal";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { web3ModalHeaderImg } from "../../../store/img";
+import { web3Wallets } from "../../../store/allData";
 
 const ConnectWalletModal: React.FC = () => {
   const [isOpenModal, setIsOpenModal] = useState(true);
@@ -48,26 +49,37 @@ const ConnectWalletModal: React.FC = () => {
               />
             </span>
           </motion.span>
-          <div className="w-1/2 h-1/2  flex flex-col gap-5 justify-center items-center">
+          <div className="w-full h-full  flex flex-col justify-center items-center">
             <Web3Button
-              name="connect"
+              index={0}
+              name={web3Wallets[0].name}
               onclick={() => {
                 prov.metaMaskConnection();
               }}
             />
-            <Web3Button
-              name="disconnect"
-              onclick={() => {
-                prov.disconnection();
-              }}
-            />
-            <Web3Button
-              name="send"
+                        <Web3Button
+              index={1}
+              name={web3Wallets[1].name}
               onclick={() => {
                 write();
                 console.log(waitedData);
               }}
             />
+            <Web3Button
+              index={2}
+              name={web3Wallets[2].name}
+              onclick={() => {
+                prov.disconnection();
+              }}
+            />
+
+          </div>
+          <div className="w-full h-20 flex flex-col justify-center items-center text-center">
+            <p className="w-9/12">
+              By connecting your wallet, you agree to our Terms of Service and
+              our Privacy Policy.
+            </p>
+            <p>Learn more about wallets</p>
           </div>
         </div>
       </div>
