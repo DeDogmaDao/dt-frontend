@@ -13,6 +13,7 @@ const Web3GlobalProvider = dynamic(
 );
 // utils & animation
 import "../../styles/tailwind.css";
+import 'react-toastify/dist/ReactToastify.css';
 import Head from "next/head";
 import { useEffect, useLayoutEffect } from "react";
 import TagManager from "react-gtm-module";
@@ -59,7 +60,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <Web3ContextProvider>
           <Layout>
             <Component {...pageProps} />
-            <ToastContainer position="bottom-center" autoClose={3000} />
+            <ToastContainer position="bottom-center" autoClose={5000} bodyStyle={{zIndex:9999999}} />
           </Layout>
         </Web3ContextProvider>
       </Web3GlobalProvider>

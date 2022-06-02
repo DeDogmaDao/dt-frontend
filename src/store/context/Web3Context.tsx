@@ -1,4 +1,4 @@
-import { chain, useConnect } from "wagmi";
+import { chain, Connector, useConnect } from "wagmi";
 import { MetaMaskConnector } from "wagmi/connectors/metaMask";
 import { WalletConnectConnector } from "wagmi/connectors/walletConnect";
 import { CoinbaseWalletConnector } from "wagmi/connectors/coinbaseWallet";
@@ -10,6 +10,7 @@ import {
   useEffect,
   useState,
 } from "react";
+import { toast } from "react-toastify";
 
 // API key for Ethereum node
 // Two popular services are Infura (infura.io) and Alchemy (alchemy.com)
@@ -71,6 +72,22 @@ export const Web3ContextProvider: React.FC = ({ children }) => {
     pendingConnector,
     data,
   } = useConnect();
+
+
+  useEffect(() =>{
+    if(typeof activeConnector !== "undefined"){
+      toast.success(`🎉You'r connected! your provider: ${activeConnector.name}`, {
+        autoClose: 10000,
+        pauseOnHover: true,
+        draggable: true,
+        });
+    }
+  },[activeConnector?.name])
+
+
+
+
+
   const metaMaskConnection = useCallback(() => {
     connect(InjectedWallet);
   }, [connect, InjectedWallet]);
@@ -93,9 +110,7 @@ export const Web3ContextProvider: React.FC = ({ children }) => {
       data
     });
   }, [metaMaskConnection, walletConnectConnection, coinBaseConnection]);
-  useEffect(() => {
-    console.log(data);
-  }, [data ]);
+
   
   return (
     <Web3Context.Provider value={contextValue}>{children}</Web3Context.Provider>
