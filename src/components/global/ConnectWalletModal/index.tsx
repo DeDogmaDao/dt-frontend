@@ -9,6 +9,7 @@ import Image from "next/image";
 import { web3ModalHeaderImg } from "../../../store/img";
 import { web3Wallets } from "../../../store/allData";
 import { privacyLink, tosLink } from "../../../store/allLinks";
+import { AngleRightSVG } from "../../../store/svg";
 
 const ConnectWalletModal: React.FC = () => {
   const [isOpenModal, setIsOpenModal] = useState(true);
@@ -28,6 +29,12 @@ const ConnectWalletModal: React.FC = () => {
     }
   };
 
+  const learnMoreAboutWallets = () => {
+    window.open(
+      "https://metamask.io/download.html",
+      "_blank"
+    );
+  }
   return (
     <Modal
       isOpen={isOpenModal}
@@ -93,7 +100,12 @@ const ConnectWalletModal: React.FC = () => {
                 Privacy Policy.
               </a>
             </p>
-            <p>Learn more about wallets</p>
+            <button onClick={learnMoreAboutWallets} className="flex items-center gap-1 text-[.75rem] hover:text-primary-500 duration-500">
+              Learn more about wallets{" "}
+              <span className="w-1 stroke-white">
+                <AngleRightSVG />
+              </span>
+            </button>
           </div>
         </div>
       </div>
