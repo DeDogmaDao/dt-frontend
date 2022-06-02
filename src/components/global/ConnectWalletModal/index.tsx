@@ -30,11 +30,8 @@ const ConnectWalletModal: React.FC = () => {
   };
 
   const learnMoreAboutWallets = () => {
-    window.open(
-      "https://metamask.io/download.html",
-      "_blank"
-    );
-  }
+    window.open("https://metamask.io/download.html", "_blank");
+  };
   return (
     <Modal
       isOpen={isOpenModal}
@@ -46,7 +43,8 @@ const ConnectWalletModal: React.FC = () => {
           className="w-[30.8125rem] h-[30.1875rem] rounded-[1.25rem] bg-body-800
          overflow-hidden ring-2 ring-primary-500/30 flex flex-col justify-start"
         >
-          <motion.span className="w-full h-[6.3125rem] will-change-transform">
+          <motion.span className="w-full h-[6.3125rem] will-change-transform relative flex justify-center items-center">
+            <h3 className="text-2xl font-bold absolute z-10">Connect Wallet</h3>
             <span className=" w-full h-full">
               <Image
                 alt="modal header"
@@ -100,7 +98,10 @@ const ConnectWalletModal: React.FC = () => {
                 Privacy Policy.
               </a>
             </p>
-            <button onClick={learnMoreAboutWallets} className="flex items-center gap-1 text-[.75rem] hover:text-primary-500 duration-500">
+            <button
+              onClick={learnMoreAboutWallets}
+              className="flex items-center gap-1 text-[.75rem] hover:text-primary-500 duration-500"
+            >
               Learn more about wallets{" "}
               <span className="w-1 stroke-white">
                 <AngleRightSVG />
