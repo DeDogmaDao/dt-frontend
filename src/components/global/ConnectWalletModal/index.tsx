@@ -67,15 +67,14 @@ const ConnectWalletModal: React.FC = () => {
               index={1}
               name={web3Wallets[1].name}
               onclick={() => {
-                write();
-                console.log(waitedData);
+                prov.walletConnectConnection();
               }}
             />
             <Web3Button
               index={2}
               name={web3Wallets[2].name}
               onclick={() => {
-                prov.disconnection();
+                prov.coinBaseConnection();
               }}
             />
           </div>
