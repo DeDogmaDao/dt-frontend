@@ -14,12 +14,12 @@ import { AngleRightSVG } from "../../../store/svg";
 const ConnectWalletModal: React.FC = () => {
   const [isOpenModal, setIsOpenModal] = useState(true);
 
-  const prov = useWeb3Context();
-  const { write, waitedData } = useWeb3Contract({
-    functionName: "publicMint",
-    args: [2],
-    ethersValue: "1.5",
-  });
+  const walletsHandler = useWeb3Context();
+  // const { write, waitedData } = useWeb3Contract({
+  //   functionName: "publicMint",
+  //   args: [2],
+  //   ethersValue: "1.5",
+  // });
 
   const modalBackdropClickHandler: MouseEventHandler = (e) => {
     const el = e.target as HTMLDivElement;
@@ -60,21 +60,21 @@ const ConnectWalletModal: React.FC = () => {
               index={0}
               name={web3Wallets[0].name}
               onclick={() => {
-                prov.metaMaskConnection();
+                walletsHandler.metaMaskConnection();
               }}
             />
             <Web3Button
               index={1}
               name={web3Wallets[1].name}
               onclick={() => {
-                prov.walletConnectConnection();
+                walletsHandler.walletConnectConnection();
               }}
             />
             <Web3Button
               index={2}
               name={web3Wallets[2].name}
               onclick={() => {
-                prov.coinBaseConnection();
+                walletsHandler.coinBaseConnection();
               }}
             />
           </div>
