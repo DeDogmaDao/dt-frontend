@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { web3ModalHeaderImg } from "../../../store/img";
 import { web3Wallets } from "../../../store/allData";
+import { privacyLink, tosLink } from "../../../store/allLinks";
 
 const ConnectWalletModal: React.FC = () => {
   const [isOpenModal, setIsOpenModal] = useState(true);
@@ -36,7 +37,7 @@ const ConnectWalletModal: React.FC = () => {
       <div className="relative w-full h-full flex justify-center items-center backdrop-blur-[.8125rem] ">
         <div
           className="w-[30.8125rem] h-[30.1875rem] rounded-[1.25rem] bg-body-800
-         overflow-hidden ring-2 ring-primary-500/30 flex flex-col justify-between"
+         overflow-hidden ring-2 ring-primary-500/30 flex flex-col justify-start"
         >
           <motion.span className="w-full h-[6.3125rem] will-change-transform">
             <span className=" w-full h-full">
@@ -49,7 +50,7 @@ const ConnectWalletModal: React.FC = () => {
               />
             </span>
           </motion.span>
-          <div className="w-full h-full  flex flex-col justify-center items-center">
+          <div className="w-full mt-12 flex flex-col justify-center items-center">
             <Web3Button
               index={0}
               name={web3Wallets[0].name}
@@ -57,7 +58,7 @@ const ConnectWalletModal: React.FC = () => {
                 prov.metaMaskConnection();
               }}
             />
-                        <Web3Button
+            <Web3Button
               index={1}
               name={web3Wallets[1].name}
               onclick={() => {
@@ -72,12 +73,25 @@ const ConnectWalletModal: React.FC = () => {
                 prov.disconnection();
               }}
             />
-
           </div>
-          <div className="w-full h-20 flex flex-col justify-center items-center text-center">
-            <p className="w-9/12">
-              By connecting your wallet, you agree to our Terms of Service and
-              our Privacy Policy.
+          <div className="w-full h-20 mt-6 flex flex-col justify-center items-center gap-y-3 text-center">
+            <p className="w-8/12">
+              By connecting your wallet, you agree to our{" "}
+              <a
+                href={tosLink}
+                target={"_blank"}
+                className="link-inside-text font-bold"
+              >
+                Terms of Service
+              </a>{" "}
+              and our{" "}
+              <a
+                href={privacyLink}
+                target={"_blank"}
+                className="link-inside-text font-bold"
+              >
+                Privacy Policy.
+              </a>
             </p>
             <p>Learn more about wallets</p>
           </div>
