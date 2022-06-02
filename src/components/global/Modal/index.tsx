@@ -1,6 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { MouseEvent, MouseEventHandler, useEffect } from "react";
 import ClientOnly from "../../../hoc/ClientOnly";
+import { web3ConnectWalletModalAni } from "../../../utils/animation";
 import Portal from "../Portal";
 interface props {
   isOpen: boolean;
@@ -22,6 +23,7 @@ const Modal: React.FC<props> = ({ isOpen,id, onBackdropClick, children }) => {
         <AnimatePresence>
           {isOpen && (
             <motion.div
+            initial="hidden" animate="visible" exit="out" variants={web3ConnectWalletModalAni}
               className="overflow-hidden fixed top-0 left-0 w-screen h-screen z-[15000] backdrop-blur-[.8125rem]"
               onClick={onBackdropClick}
             >
