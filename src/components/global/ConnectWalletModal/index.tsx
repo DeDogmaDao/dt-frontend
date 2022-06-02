@@ -41,7 +41,7 @@ const ConnectWalletModal: React.FC<props> = ({isOpenModal, setIsOpenModal}) => {
       id="connect-wallet-modal"
       onBackdropClick={(e) => modalBackdropClickHandler(e)}
     >
-      <div className="relative w-full h-full flex justify-center items-center backdrop-blur-[.8125rem] ">
+      <div className="relative w-full h-full flex justify-center items-center backdrop-blur-[.8125rem]">
         <div
           className="w-[30.8125rem] h-[30.1875rem] rounded-[1.25rem] bg-body-800
          overflow-hidden ring-2 ring-primary-500/30 flex flex-col justify-start"

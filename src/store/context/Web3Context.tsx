@@ -77,9 +77,6 @@ export const Web3ContextProvider: React.FC = ({ children }) => {
   useEffect(() =>{
     if(typeof activeConnector !== "undefined"){
       toast.success(`🎉You'r connected! your provider: ${activeConnector.name}`, {
-        autoClose: 10000,
-        pauseOnHover: true,
-        draggable: true,
         });
     }
   },[activeConnector?.name])

@@ -1,7 +1,6 @@
 // types
 import type { AppProps } from "next/app";
 // libs
-import { ToastContainer } from "react-toastify";
 import { useRouter } from "next/router";
 // components
 import Layout from "../components/layout/Layout";
@@ -13,12 +12,13 @@ const Web3GlobalProvider = dynamic(
 );
 // utils & animation
 import "../../styles/tailwind.css";
-import 'react-toastify/dist/ReactToastify.css';
 import Head from "next/head";
 import { useEffect, useLayoutEffect } from "react";
 import TagManager from "react-gtm-module";
 import dynamic from "next/dynamic";
 import { Web3ContextProvider } from "../store/context/Web3Context";
+import Modal from "../components/global/Modal";
+import ToastProvider from "../components/global/ToastProvider";
 // import { Web3ContextProvider } from "../store/context/Web3Context";
 function MyApp({ Component, pageProps }: AppProps) {
   // const router = useRouter();
@@ -60,7 +60,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <Web3ContextProvider>
           <Layout>
             <Component {...pageProps} />
-            <ToastContainer position="bottom-center" autoClose={5000} bodyStyle={{zIndex:9999999}} />
+            <ToastProvider />
           </Layout>
         </Web3ContextProvider>
       </Web3GlobalProvider>

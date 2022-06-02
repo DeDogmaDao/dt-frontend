@@ -24,7 +24,7 @@ const Modal: React.FC<props> = ({ isOpen,id, onBackdropClick, children }) => {
           {isOpen && (
             <motion.div
             initial="hidden" animate="visible" exit="out" variants={web3ConnectWalletModalAni}
-              className="overflow-hidden fixed top-0 left-0 w-screen h-screen z-[15000] backdrop-blur-[.8125rem]"
+              className="overflow-hidden fixed top-0 left-0 w-screen h-screen z-[15000] "
               onClick={onBackdropClick}
             >
               {children}
