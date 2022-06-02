@@ -1,4 +1,4 @@
-import { MouseEvent, MouseEventHandler, useEffect, useState } from "react";
+import { MouseEventHandler, useState } from "react";
 // import { useWeb3Context } from "../../store/context/Web3Context";
 import Web3Button from "./Web3Button";
 import { useWeb3Context } from "../../../store/context/Web3Context";
