@@ -13,7 +13,7 @@ const Web3Button:React.FC<props> =({onclick,name,index}) => {
       <button className="px-5 w-10/12 h-16 hover:bg-primary-500/10 py-1 text-white 
        duration-300 active:scale-95 flex justify-start items-center gap-x-7 rounded-[.625rem]"
        onClick={onclick}>
-          <motion.span className="w-10 h-10 will-change-transform">
+          <motion.span className="w-10 h-10 ml-14 will-change-transform">
             <span className="w-full h-full flex justify-center items-center">
               <Image
                 alt="wallet"
