@@ -64,6 +64,9 @@ const ConnectWalletModal: React.FC<props> = ({isOpenModal, setIsOpenModal}) => {
               name={web3Wallets[0].name}
               onclick={() => {
                 walletsHandler.metaMaskConnection();
+                if(walletsHandler.activeConnector?.id === "metaMask"){
+                  setIsOpenModal(false);
+                }
               }}
             />
             <Web3Button

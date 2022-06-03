@@ -43,6 +43,7 @@ interface Web3ProviderStateType {
   walletConnectConnection: () => void;
   coinBaseConnection: () => void;
   disconnection:()=>void;
+  activeConnector:Connector<any, any> | undefined;
   data:any;
 }
 
@@ -51,7 +52,8 @@ const Web3Context = createContext<Web3ProviderStateType>({
   walletConnectConnection: () => {},
   coinBaseConnection: () => {},
   disconnection:()=>{},
-  data:""
+  data:"",
+  activeConnector: undefined,
 });
 
 export const Web3ContextProvider: React.FC = ({ children }) => {
@@ -60,7 +62,8 @@ export const Web3ContextProvider: React.FC = ({ children }) => {
     walletConnectConnection: () => {},
     coinBaseConnection: () => {},
     disconnection:()=>{},
-    data:""
+    data:"",
+    activeConnector: undefined,
   });
   const { disconnect } = useDisconnect();
   const {
@@ -75,11 +78,11 @@ export const Web3ContextProvider: React.FC = ({ children }) => {
 
 
   useEffect(() =>{
-    if(typeof activeConnector !== "undefined"){
+    if(activeConnector){
       toast.success(`🎉You'r connected! your provider: ${activeConnector.name}`, {
         });
     }
-  },[activeConnector?.name])
+  },[activeConnector])
 
 
 
@@ -96,7 +99,7 @@ export const Web3ContextProvider: React.FC = ({ children }) => {
   }, [connect, CoinbaseWallet]);
   const disconnection = useCallback(() => {
     disconnect();
-  }, [connect, CoinbaseWallet]);
+  }, [disconnect]);
   
   useEffect(() => {
     setContextValue({
@@ -104,7 +107,8 @@ export const Web3ContextProvider: React.FC = ({ children }) => {
       walletConnectConnection,
       coinBaseConnection,
       disconnection,
-      data
+      data,
+      activeConnector,
     });
   }, [metaMaskConnection, walletConnectConnection, coinBaseConnection]);
 
