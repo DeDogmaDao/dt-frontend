@@ -95,7 +95,6 @@ const Web3ConnectProvider: React.FC = ({ children }) => {
   }, [activeConnector]);
   useEffect(() => {
     setConnectionData(data);
-    console.log(data);
   }, [data]);
 
   return <>{children}</>;
