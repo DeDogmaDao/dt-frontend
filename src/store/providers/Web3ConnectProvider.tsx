@@ -39,7 +39,7 @@ export const CoinbaseWallet = new CoinbaseWalletConnector({
   chains: [chain.hardhat],
 });
 
-const Web3MainProvider: React.FC = ({ children }) => {
+const Web3ConnectProvider: React.FC = ({ children }) => {
   const { disconnect } = useDisconnect();
   const {
     activeConnector,
@@ -87,4 +87,4 @@ const Web3MainProvider: React.FC = ({ children }) => {
   return <>{children}</>;
 };
 
-export default Web3MainProvider;
+export default Web3ConnectProvider;

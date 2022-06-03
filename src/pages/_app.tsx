@@ -8,7 +8,7 @@ import Layout from "../components/layout/Layout";
 // hooks
 // store
 const Web3GlobalProvider = dynamic(
-  () => import("../store/context/Web3GlobalProvider")
+  () => import("../store/providers/Web3GlobalProvider")
 );
 // utils & animation
 import "../../styles/tailwind.css";
@@ -18,7 +18,7 @@ import TagManager from "react-gtm-module";
 import dynamic from "next/dynamic";
 import Modal from "../components/global/Modal";
 import ToastProvider from "../components/global/ToastProvider";
-import Web3MainProvider from "../store/context/Web3Context";
+import Web3ConnectProvider from "../store/providers/Web3ConnectProvider";
 // import { Web3ContextProvider } from "../store/context/Web3Context";
 function MyApp({ Component, pageProps }: AppProps) {
   // const router = useRouter();
@@ -57,12 +57,12 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Web3GlobalProvider>
-        <Web3MainProvider>
+        <Web3ConnectProvider>
           <Layout>
             <Component {...pageProps} />
             <ToastProvider />
           </Layout>
-        </Web3MainProvider>
+        </Web3ConnectProvider>
       </Web3GlobalProvider>
     </>
   );

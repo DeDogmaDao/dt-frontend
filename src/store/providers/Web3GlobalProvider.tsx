@@ -1,4 +1,4 @@
-import { CoinbaseWallet, MetaMaskWallet, WalletConnect } from "./Web3Context";
+import { CoinbaseWallet, MetaMaskWallet, WalletConnect } from "./Web3ConnectProvider";
 import { WagmiConfig, createClient } from "wagmi";
 
 const client = createClient({
