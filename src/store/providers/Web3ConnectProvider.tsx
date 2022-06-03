@@ -1,4 +1,4 @@
-import { chain, Connector, useConnect } from "wagmi";
+import { chain, Connector, useAccount, useConnect } from "wagmi";
 import { MetaMaskConnector } from "wagmi/connectors/metaMask";
 import { WalletConnectConnector } from "wagmi/connectors/walletConnect";
 import { CoinbaseWalletConnector } from "wagmi/connectors/coinbaseWallet";
@@ -48,8 +48,9 @@ const Web3ConnectProvider: React.FC = ({ children }) => {
     error,
     isConnecting,
     pendingConnector,
-    data,
   } = useConnect();
+
+  const { data } = useAccount();
 
   useEffect(() => {
     if (activeConnector) {
@@ -59,7 +60,6 @@ const Web3ConnectProvider: React.FC = ({ children }) => {
       );
     }
   }, [activeConnector]);
-
   const metaMaskConnection = useCallback(() => {
     connect(MetaMaskWallet);
   }, [connect, MetaMaskWallet]);
@@ -75,14 +75,28 @@ const Web3ConnectProvider: React.FC = ({ children }) => {
 
   const setConnectors = useWeb3Store((state) => state.setConnectors);
   const setActiveConnector = useWeb3Store((state) => state.setActiveConnector);
-  setConnectors({
-    metaMask: metaMaskConnection,
-    walletConnect: walletConnectConnection,
-    coinBase: coinBaseConnection,
-    disconnect: disconnection,
-  });
-  setActiveConnector(activeConnector);
+  const setConnectionData = useWeb3Store((state) => state.setConnectionData);
 
+  useEffect(() => {
+    setConnectors({
+      metaMask: metaMaskConnection,
+      walletConnect: walletConnectConnection,
+      coinBase: coinBaseConnection,
+      disconnect: disconnection,
+    });
+  }, [
+    disconnection,
+    metaMaskConnection,
+    walletConnectConnection,
+    coinBaseConnection,
+  ]);
+  useEffect(() => {
+    setActiveConnector(activeConnector);
+  }, [activeConnector]);
+  useEffect(() => {
+    setConnectionData(data);
+    console.log(data);
+  }, [data]);
 
   return <>{children}</>;
 };

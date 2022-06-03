@@ -26,6 +26,8 @@ const ConnectWalletModal: React.FC<props> = ({
 }) => {
   const walletsHandler = useWeb3Store((state) => state.connectors);
   const activeConnector = useWeb3Store((state) => state.activeConnector);
+  const connectionData = useWeb3Store((state) => state.connectionData);
+
   // const { write, waitedData } = useWeb3Contract({
   //   functionName: "publicMint",
   //   args: [2],
