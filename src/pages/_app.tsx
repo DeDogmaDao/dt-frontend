@@ -16,9 +16,9 @@ import Head from "next/head";
 import { useEffect, useLayoutEffect } from "react";
 import TagManager from "react-gtm-module";
 import dynamic from "next/dynamic";
-import { Web3ContextProvider } from "../store/context/Web3Context";
 import Modal from "../components/global/Modal";
 import ToastProvider from "../components/global/ToastProvider";
+import Web3MainProvider from "../store/context/Web3Context";
 // import { Web3ContextProvider } from "../store/context/Web3Context";
 function MyApp({ Component, pageProps }: AppProps) {
   // const router = useRouter();
@@ -57,12 +57,12 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Web3GlobalProvider>
-        <Web3ContextProvider>
+        <Web3MainProvider>
           <Layout>
             <Component {...pageProps} />
             <ToastProvider />
           </Layout>
-        </Web3ContextProvider>
+        </Web3MainProvider>
       </Web3GlobalProvider>
     </>
   );

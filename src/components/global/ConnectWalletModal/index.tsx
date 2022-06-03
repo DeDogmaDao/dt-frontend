@@ -1,23 +1,31 @@
-import { Dispatch, MouseEventHandler, SetStateAction, useState } from "react";
+import {
+  Dispatch,
+  MouseEventHandler,
+  SetStateAction,
+  useEffect,
+  useState,
+} from "react";
 // import { useWeb3Context } from "../../store/context/Web3Context";
 import Web3Button from "./Web3Button";
-import { useWeb3Context } from "../../../store/context/Web3Context";
-import { useWeb3Contract } from "../../../hooks/useWeb3Contract";
 import Modal from "../Modal";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { web3ModalHeaderImg } from "../../../store/img";
-import { web3Wallets } from "../../../store/allData";
+import { walletsID, web3Wallets } from "../../../store/allData";
 import { privacyLink, tosLink } from "../../../store/allLinks";
 import { AngleRightSVG } from "../../../store/svg";
+import { useWeb3Store } from "../../../store/global/web3Store";
 
-interface props{
-  setIsOpenModal:Dispatch<SetStateAction<boolean>>;
-  isOpenModal:boolean;
+interface props {
+  setIsOpenModal: Dispatch<SetStateAction<boolean>>;
+  isOpenModal: boolean;
 }
-const ConnectWalletModal: React.FC<props> = ({isOpenModal, setIsOpenModal}) => {
-
-  const walletsHandler = useWeb3Context();
+const ConnectWalletModal: React.FC<props> = ({
+  isOpenModal,
+  setIsOpenModal,
+}) => {
+  const walletsHandler = useWeb3Store((state) => state.connectors);
+  const activeConnector = useWeb3Store((state) => state.activeConnector);
   // const { write, waitedData } = useWeb3Contract({
   //   functionName: "publicMint",
   //   args: [2],
@@ -32,6 +40,11 @@ const ConnectWalletModal: React.FC<props> = ({isOpenModal, setIsOpenModal}) => {
     }
   };
 
+  useEffect(() => {
+    if (walletsID.some((el) => activeConnector?.id.includes(el))) {
+      setIsOpenModal(false);
+    }
+  }, [activeConnector?.id]);
   const learnMoreAboutWallets = () => {
     window.open("https://metamask.io/download.html", "_blank");
   };
@@ -63,24 +76,21 @@ const ConnectWalletModal: React.FC<props> = ({isOpenModal, setIsOpenModal}) => {
               index={0}
               name={web3Wallets[0].name}
               onclick={() => {
-                walletsHandler.metaMaskConnection();
-                if(walletsHandler.activeConnector?.id === "metaMask"){
-                  setIsOpenModal(false);
-                }
+                walletsHandler.metaMask();
               }}
             />
             <Web3Button
               index={1}
               name={web3Wallets[1].name}
               onclick={() => {
-                walletsHandler.walletConnectConnection();
+                walletsHandler.walletConnect();
               }}
             />
             <Web3Button
               index={2}
               name={web3Wallets[2].name}
               onclick={() => {
-                walletsHandler.coinBaseConnection();
+                walletsHandler.coinBase();
               }}
             />
           </div>

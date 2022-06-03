@@ -1,14 +1,17 @@
+import { Connector } from "wagmi";
 import create from "zustand";
 interface connectorsType {
-    metaMask: () => void;
-    walletConnect: () => void;
-    coinBase: () => void;
-    disconnect: () => void;
+  metaMask: () => void;
+  walletConnect: () => void;
+  coinBase: () => void;
+  disconnect: () => void;
 }
 
 interface web3StoreType {
   connectors: connectorsType;
-  setConnectors:(connectors: connectorsType) => void;
+  setConnectors: (connectors: connectorsType) => void;
+  activeConnector: Connector<any, any> | undefined;
+  setActiveConnector: (connector: Connector<any, any> | undefined) => void;
 }
 export const useWeb3Store = create<web3StoreType>((set) => ({
   connectors: {
@@ -17,7 +20,7 @@ export const useWeb3Store = create<web3StoreType>((set) => ({
     coinBase: () => {},
     disconnect: () => {},
   },
-  setConnectors: (connectors:connectorsType) =>
+  setConnectors: (connectors) =>
     set({
       connectors: {
         metaMask: connectors.metaMask,
@@ -26,4 +29,6 @@ export const useWeb3Store = create<web3StoreType>((set) => ({
         disconnect: connectors.disconnect,
       },
     }),
+  activeConnector: undefined,
+  setActiveConnector: (connector) => set({ activeConnector: connector }),
 }));

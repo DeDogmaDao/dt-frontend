@@ -1412,3 +1412,5 @@ export const web3Wallets: web3walletType[] = [
     name: "CoinBase",
   },
 ];
+
+export const walletsID = ["metaMask", "coinbaseWallet", "walletConnect"];

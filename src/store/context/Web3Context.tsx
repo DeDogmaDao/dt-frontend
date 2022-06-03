@@ -39,33 +39,7 @@ export const CoinbaseWallet = new CoinbaseWalletConnector({
   chains: [chain.hardhat],
 });
 
-interface Web3ProviderStateType {
-  metaMaskConnection: () => void;
-  walletConnectConnection: () => void;
-  coinBaseConnection: () => void;
-  disconnection: () => void;
-  activeConnector: Connector<any, any> | undefined;
-  data: any;
-}
-
-const Web3Context = createContext<Web3ProviderStateType>({
-  metaMaskConnection: () => {},
-  walletConnectConnection: () => {},
-  coinBaseConnection: () => {},
-  disconnection: () => {},
-  data: "",
-  activeConnector: undefined,
-});
-
-export const Web3ContextProvider: React.FC = ({ children }) => {
-  const [contextValue, setContextValue] = useState<Web3ProviderStateType>({
-    metaMaskConnection: () => {},
-    walletConnectConnection: () => {},
-    coinBaseConnection: () => {},
-    disconnection: () => {},
-    data: "",
-    activeConnector: undefined,
-  });
+const Web3MainProvider: React.FC = ({ children }) => {
   const { disconnect } = useDisconnect();
   const {
     activeConnector,
@@ -99,30 +73,18 @@ export const Web3ContextProvider: React.FC = ({ children }) => {
     disconnect();
   }, [disconnect]);
 
-  useEffect(() => {
-    setContextValue({
-      metaMaskConnection,
-      walletConnectConnection,
-      coinBaseConnection,
-      disconnection,
-      data,
-      activeConnector,
-    });
-  }, [metaMaskConnection, walletConnectConnection, coinBaseConnection]);
-
   const setConnectors = useWeb3Store((state) => state.setConnectors);
+  const setActiveConnector = useWeb3Store((state) => state.setActiveConnector);
   setConnectors({
     metaMask: metaMaskConnection,
     walletConnect: walletConnectConnection,
     coinBase: coinBaseConnection,
     disconnect: disconnection,
   });
-  console.log(activeConnector);
-  return (
-    <Web3Context.Provider value={contextValue}>{children}</Web3Context.Provider>
-  );
+  setActiveConnector(activeConnector);
+
+
+  return <>{children}</>;
 };
 
-export function useWeb3Context() {
-  return useContext(Web3Context);
-}
+export default Web3MainProvider;
