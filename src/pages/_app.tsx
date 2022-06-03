@@ -43,7 +43,6 @@ function MyApp({ Component, pageProps }: AppProps) {
         const scaleFont = windowWidth / 1536;
         htmlTag!.style.fontSize = scaleFont * fontSize + "px";
       } else {
-        const htmlTag = document.querySelector("html");
         htmlTag!.style.fontSize = fontSize + "px";
       }
     };
