@@ -19,8 +19,10 @@ import dynamic from "next/dynamic";
 import Modal from "../components/global/Modal";
 import ToastProvider from "../components/global/ToastProvider";
 import Web3ConnectProvider from "../store/providers/Web3ConnectProvider";
+import { useFontScale } from "../hooks/useFontScale";
 // import { Web3ContextProvider } from "../store/context/Web3Context";
 function MyApp({ Component, pageProps }: AppProps) {
+  useFontScale();
   // const router = useRouter();
 
   // useLayoutEffect(() => {
@@ -28,31 +30,10 @@ function MyApp({ Component, pageProps }: AppProps) {
   //     router.push("/underconstruction");
   //   }
   // }, []);
-
   useEffect(() => {
     TagManager.initialize({ gtmId: "GTM-KQ3KRW6" });
   }, []);
-  useLayoutEffect(() => {
-    const htmlTag: HTMLHtmlElement = document.querySelector("html")!;
-    const fontSize: number = parseFloat(
-      window.getComputedStyle(htmlTag).fontSize
-    );
-    const resizeHandlerFont = () => {
-      if (window.innerWidth > 1535) {
-        const windowWidth = window.innerWidth;
-        const scaleFont = windowWidth / 1536;
-        htmlTag!.style.fontSize = scaleFont * fontSize + "px";
-      } else {
-        htmlTag!.style.fontSize = fontSize + "px";
-      }
-    };
-    resizeHandlerFont();
-    window.addEventListener("resize", resizeHandlerFont);
 
-    return () => {
-      window.removeEventListener("resize", resizeHandlerFont);
-    };
-  }, []);
   return (
     <>
       <Web3GlobalProvider>
