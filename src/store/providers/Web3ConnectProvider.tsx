@@ -48,6 +48,7 @@ const Web3ConnectProvider: React.FC = ({ children }) => {
     error,
     isConnecting,
     pendingConnector,
+    reset
   } = useConnect();
 
   const { data } = useAccount();
@@ -96,7 +97,11 @@ const Web3ConnectProvider: React.FC = ({ children }) => {
   useEffect(() => {
     setConnectionData(data);
   }, [data]);
-
+  useEffect(()=>{
+    reset();
+    disconnect();
+  },[])
+  console.log(data);
   return <>{children}</>;
 };
 
