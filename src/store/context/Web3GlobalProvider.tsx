@@ -1,7 +1,9 @@
+import { CoinbaseWallet, MetaMaskWallet, WalletConnect } from "./Web3Context";
 import { WagmiConfig, createClient } from "wagmi";
 
 const client = createClient({
   autoConnect: true,
+  connectors: [MetaMaskWallet, WalletConnect, CoinbaseWallet],
 });
 
 const Web3GlobalProvider: React.FC = ({ children }) => {

@@ -16,7 +16,7 @@ import { toast } from "react-toastify";
 // Two popular services are Infura (infura.io) and Alchemy (alchemy.com)
 const infuraMainNet = `https://mainnet.infura.io/v3/${process.env.NEXT_PUBLIC_INFURA_ID}`;
 
-const WalletConnect = new WalletConnectConnector({
+export const WalletConnect = new WalletConnectConnector({
   chains: [chain.hardhat],
   options: {
     qrcode: true,
@@ -26,11 +26,11 @@ const WalletConnect = new WalletConnectConnector({
   },
 });
 
-const InjectedWallet = new MetaMaskConnector({
+export const MetaMaskWallet = new MetaMaskConnector({
   chains: [chain.hardhat],
 });
 
-const CoinbaseWallet = new CoinbaseWalletConnector({
+export const CoinbaseWallet = new CoinbaseWalletConnector({
   options: {
     appName: "DeDogmaDAO",
     jsonRpcUrl: infuraMainNet,
@@ -89,8 +89,8 @@ export const Web3ContextProvider: React.FC = ({ children }) => {
 
 
   const metaMaskConnection = useCallback(() => {
-    connect(InjectedWallet);
-  }, [connect, InjectedWallet]);
+    connect(MetaMaskWallet);
+  }, [connect, MetaMaskWallet]);
   const walletConnectConnection = useCallback(() => {
     connect(WalletConnect);
   }, [connect, WalletConnect]);
@@ -112,7 +112,7 @@ export const Web3ContextProvider: React.FC = ({ children }) => {
     });
   }, [metaMaskConnection, walletConnectConnection, coinBaseConnection]);
 
-  
+  console.log(activeConnector)
   return (
     <Web3Context.Provider value={contextValue}>{children}</Web3Context.Provider>
   );
