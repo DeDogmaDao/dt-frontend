@@ -9,13 +9,6 @@ interface props {
   onBackdropClick: MouseEventHandler<HTMLDivElement> | undefined;
 }
 const Modal: React.FC<props> = ({ isOpen,id, onBackdropClick, children }) => {
-  useEffect(() => {
-    if (!isOpen) {
-      document.body.style.overflow = "auto";
-    } else {
-      document.body.style.overflow = "hidden";
-    }
-  }, [isOpen]);
 
   return (
     <ClientOnly>

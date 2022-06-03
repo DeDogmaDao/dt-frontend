@@ -24,6 +24,13 @@ const ConnectWalletModal: React.FC<props> = ({
   isOpenModal,
   setIsOpenModal,
 }) => {
+  useEffect(() => {
+    if (!isOpenModal) {
+      document.body.style.overflow = "auto";
+    } else {
+      document.body.style.overflow = "hidden";
+    }
+  }, [isOpenModal]);
   const walletsHandler = useWeb3Store((state) => state.connectors);
   const activeConnector = useWeb3Store((state) => state.activeConnector);
   const connectionData = useWeb3Store((state) => state.connectionData);
