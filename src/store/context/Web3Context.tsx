@@ -2,7 +2,7 @@ import { chain, Connector, useConnect } from "wagmi";
 import { MetaMaskConnector } from "wagmi/connectors/metaMask";
 import { WalletConnectConnector } from "wagmi/connectors/walletConnect";
 import { CoinbaseWalletConnector } from "wagmi/connectors/coinbaseWallet";
-import { useDisconnect } from 'wagmi';
+import { useDisconnect } from "wagmi";
 import {
   createContext,
   useCallback,
@@ -11,6 +11,7 @@ import {
   useState,
 } from "react";
 import { toast } from "react-toastify";
+import { useWeb3Store } from "../global/web3Store";
 
 // API key for Ethereum node
 // Two popular services are Infura (infura.io) and Alchemy (alchemy.com)
@@ -42,17 +43,17 @@ interface Web3ProviderStateType {
   metaMaskConnection: () => void;
   walletConnectConnection: () => void;
   coinBaseConnection: () => void;
-  disconnection:()=>void;
-  activeConnector:Connector<any, any> | undefined;
-  data:any;
+  disconnection: () => void;
+  activeConnector: Connector<any, any> | undefined;
+  data: any;
 }
 
 const Web3Context = createContext<Web3ProviderStateType>({
   metaMaskConnection: () => {},
   walletConnectConnection: () => {},
   coinBaseConnection: () => {},
-  disconnection:()=>{},
-  data:"",
+  disconnection: () => {},
+  data: "",
   activeConnector: undefined,
 });
 
@@ -61,8 +62,8 @@ export const Web3ContextProvider: React.FC = ({ children }) => {
     metaMaskConnection: () => {},
     walletConnectConnection: () => {},
     coinBaseConnection: () => {},
-    disconnection:()=>{},
-    data:"",
+    disconnection: () => {},
+    data: "",
     activeConnector: undefined,
   });
   const { disconnect } = useDisconnect();
@@ -76,17 +77,14 @@ export const Web3ContextProvider: React.FC = ({ children }) => {
     data,
   } = useConnect();
 
-
-  useEffect(() =>{
-    if(activeConnector){
-      toast.success(`🎉You'r connected! your provider: ${activeConnector.name}`, {
-        });
+  useEffect(() => {
+    if (activeConnector) {
+      toast.success(
+        `🎉You'r connected! your provider: ${activeConnector.name}`,
+        {}
+      );
     }
-  },[activeConnector])
-
-
-
-
+  }, [activeConnector]);
 
   const metaMaskConnection = useCallback(() => {
     connect(MetaMaskWallet);
@@ -100,7 +98,7 @@ export const Web3ContextProvider: React.FC = ({ children }) => {
   const disconnection = useCallback(() => {
     disconnect();
   }, [disconnect]);
-  
+
   useEffect(() => {
     setContextValue({
       metaMaskConnection,
@@ -112,7 +110,14 @@ export const Web3ContextProvider: React.FC = ({ children }) => {
     });
   }, [metaMaskConnection, walletConnectConnection, coinBaseConnection]);
 
-  console.log(activeConnector)
+  const setConnectors = useWeb3Store((state) => state.setConnectors);
+  setConnectors({
+    metaMask: metaMaskConnection,
+    walletConnect: walletConnectConnection,
+    coinBase: coinBaseConnection,
+    disconnect: disconnection,
+  });
+  console.log(activeConnector);
   return (
     <Web3Context.Provider value={contextValue}>{children}</Web3Context.Provider>
   );
