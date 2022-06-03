@@ -15,6 +15,7 @@ import { walletsID, web3Wallets } from "../../../store/allData";
 import { privacyLink, tosLink } from "../../../store/allLinks";
 import { AngleRightSVG } from "../../../store/svg";
 import { useWeb3Store } from "../../../store/global/web3Store";
+import { useFreeze } from "../../../hooks/useFreeze";
 
 interface props {
   setIsOpenModal: Dispatch<SetStateAction<boolean>>;
@@ -24,13 +25,7 @@ const ConnectWalletModal: React.FC<props> = ({
   isOpenModal,
   setIsOpenModal,
 }) => {
-  useEffect(() => {
-    if (!isOpenModal) {
-      document.body.style.overflow = "auto";
-    } else {
-      document.body.style.overflow = "hidden";
-    }
-  }, [isOpenModal]);
+  useFreeze(isOpenModal);
   const walletsHandler = useWeb3Store((state) => state.connectors);
   const activeConnector = useWeb3Store((state) => state.activeConnector);
   const connectionData = useWeb3Store((state) => state.connectionData);
