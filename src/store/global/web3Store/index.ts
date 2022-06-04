@@ -5,6 +5,7 @@ interface connectorsType {
   walletConnect: () => void;
   coinBase: () => void;
   disconnect: () => void;
+  // reset: () => void;
 }
 interface connectionDataType {
   address?:string;
@@ -31,6 +32,7 @@ export const useWeb3Store = create<web3StoreType>((set) => ({
     walletConnect: () => {},
     coinBase: () => {},
     disconnect: () => {},
+    // reset: () => {},
   },
   setConnectors: (connectors) =>
     set({
@@ -39,6 +41,7 @@ export const useWeb3Store = create<web3StoreType>((set) => ({
         walletConnect: connectors.walletConnect,
         coinBase: connectors.coinBase,
         disconnect: connectors.disconnect,
+        // reset: connectors.reset,
       },
     }),
   activeConnector: undefined,

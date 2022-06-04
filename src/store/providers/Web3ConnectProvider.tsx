@@ -12,6 +12,7 @@ import {
 } from "react";
 import { toast } from "react-toastify";
 import { useWeb3Store } from "../global/web3Store";
+import { useRouter } from "next/router";
 
 // API key for Ethereum node
 // Two popular services are Infura (infura.io) and Alchemy (alchemy.com)
@@ -40,6 +41,7 @@ export const CoinbaseWallet = new CoinbaseWalletConnector({
 });
 
 const Web3ConnectProvider: React.FC = ({ children }) => {
+  const router = useRouter();
   const { disconnect } = useDisconnect();
   const {
     activeConnector,
@@ -48,7 +50,6 @@ const Web3ConnectProvider: React.FC = ({ children }) => {
     error,
     isConnecting,
     pendingConnector,
-    reset
   } = useConnect();
 
   const { data } = useAccount();
@@ -72,7 +73,11 @@ const Web3ConnectProvider: React.FC = ({ children }) => {
   }, [connect, CoinbaseWallet]);
   const disconnection = useCallback(() => {
     disconnect();
+    router.push("/");
   }, [disconnect]);
+  // const reseting = useCallback(() => {
+  //   reset();
+  // }, [reset]);
 
   const setConnectors = useWeb3Store((state) => state.setConnectors);
   const setActiveConnector = useWeb3Store((state) => state.setActiveConnector);
@@ -84,6 +89,7 @@ const Web3ConnectProvider: React.FC = ({ children }) => {
       walletConnect: walletConnectConnection,
       coinBase: coinBaseConnection,
       disconnect: disconnection,
+      // reset:reseting
     });
   }, [
     disconnection,
@@ -97,10 +103,6 @@ const Web3ConnectProvider: React.FC = ({ children }) => {
   useEffect(() => {
     setConnectionData(data);
   }, [data]);
-  useEffect(()=>{
-    reset();
-    disconnect();
-  },[])
   // console.log(data);
   return <>{children}</>;
 };
