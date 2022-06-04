@@ -23,7 +23,7 @@ import poolImage from "./images/benefit/pool.png";
 const floor = floorImage;
 const lottery = lotteryImage;
 const pool = poolImage;
-export const benefitImg = [floor, pool,lottery];
+export const benefitImg = [floor, pool, lottery];
 
 // logo
 import treasure from "./images/logo/treasure.png";
@@ -92,3 +92,11 @@ export const tabImgData: tabImgDataType = {
     hera,
   ],
 };
+
+import web3ModalHeader from "./images/web3/modalHeader.png";
+export const web3ModalHeaderImg: StaticImageData = web3ModalHeader;
+
+import metaMask from "./images/web3/metamask.png";
+import coinBase from "./images/web3/coinbase.png";
+import walletConnect from "./images/web3/walletConnect.png";
+export const walletImgData = [metaMask, walletConnect, coinBase];

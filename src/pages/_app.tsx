@@ -1,7 +1,6 @@
 // types
 import type { AppProps } from "next/app";
 // libs
-import { ToastContainer } from "react-toastify";
 import { useRouter } from "next/router";
 // components
 import Layout from "../components/layout/Layout";
@@ -9,7 +8,7 @@ import Layout from "../components/layout/Layout";
 // hooks
 // store
 const Web3GlobalProvider = dynamic(
-  () => import("../store/context/Web3GlobalProvider")
+  () => import("../store/providers/Web3GlobalProvider")
 );
 // utils & animation
 import "../../styles/tailwind.css";
@@ -17,9 +16,13 @@ import Head from "next/head";
 import { useEffect, useLayoutEffect } from "react";
 import TagManager from "react-gtm-module";
 import dynamic from "next/dynamic";
-import { Web3ContextProvider } from "../store/context/Web3Context";
+import Modal from "../components/global/Modal";
+import ToastProvider from "../components/global/ToastProvider";
+import Web3ConnectProvider from "../store/providers/Web3ConnectProvider";
+import { useFontScale } from "../hooks/useFontScale";
 // import { Web3ContextProvider } from "../store/context/Web3Context";
 function MyApp({ Component, pageProps }: AppProps) {
+  useFontScale();
   // const router = useRouter();
 
   // useLayoutEffect(() => {
@@ -27,41 +30,19 @@ function MyApp({ Component, pageProps }: AppProps) {
   //     router.push("/underconstruction");
   //   }
   // }, []);
-
   useEffect(() => {
     TagManager.initialize({ gtmId: "GTM-KQ3KRW6" });
   }, []);
-  useLayoutEffect(() => {
-    const htmlTag: HTMLHtmlElement = document.querySelector("html")!;
-    const fontSize: number = parseFloat(
-      window.getComputedStyle(htmlTag).fontSize
-    );
-    const resizeHandlerFont = () => {
-      if (window.innerWidth > 1535) {
-        const windowWidth = window.innerWidth;
-        const scaleFont = windowWidth / 1536;
-        htmlTag!.style.fontSize = scaleFont * fontSize + "px";
-      } else {
-        const htmlTag = document.querySelector("html");
-        htmlTag!.style.fontSize = fontSize + "px";
-      }
-    };
-    resizeHandlerFont();
-    window.addEventListener("resize", resizeHandlerFont);
 
-    return () => {
-      window.removeEventListener("resize", resizeHandlerFont);
-    };
-  }, []);
   return (
     <>
       <Web3GlobalProvider>
-        <Web3ContextProvider>
+        <Web3ConnectProvider>
           <Layout>
             <Component {...pageProps} />
-            <ToastContainer position="bottom-center" autoClose={3000} />
+            <ToastProvider />
           </Layout>
-        </Web3ContextProvider>
+        </Web3ConnectProvider>
       </Web3GlobalProvider>
     </>
   );

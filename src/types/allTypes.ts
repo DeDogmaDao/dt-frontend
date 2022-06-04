@@ -149,3 +149,6 @@ export interface metaDataType {
 }
 
 /////// web3 Types
+export interface web3walletType {
+  name:string;
+}
