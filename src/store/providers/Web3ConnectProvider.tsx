@@ -101,7 +101,7 @@ const Web3ConnectProvider: React.FC = ({ children }) => {
     reset();
     disconnect();
   },[])
-  console.log(data);
+  // console.log(data);
   return <>{children}</>;
 };
 
