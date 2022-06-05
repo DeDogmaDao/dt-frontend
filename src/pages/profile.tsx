@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { Fragment } from "react";
 import Profile from "../components/Profile";
+import WithAuth from "../store/providers/AuthProvider";
 
 export default function profile(): JSX.Element {
   return (
@@ -34,7 +35,9 @@ export default function profile(): JSX.Element {
         <meta name="twitter:creator" content="@DeDogmaDao" />
         <meta name="twitter:site" content="@DeDogmaDao" />
       </Head> */}
+      <WithAuth>
       <Profile />
+      </WithAuth>
     </Fragment>
   );
 }
