@@ -1,7 +1,7 @@
-import { useAuth } from "../contexts/authContext";
+import { useAuthStore } from "../global/authStore";
 
 const AuthProvider: React.FC = ({ children }) => {
-  const { auth } = useAuth();
+const auth = useAuthStore(state=>state.auth);
 
   if (auth) {
     return <p>Loading</p>;

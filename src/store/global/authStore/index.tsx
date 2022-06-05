@@ -7,5 +7,5 @@ interface authStoreType {
 
 export const useAuthStore = create<authStoreType>((set) => ({
   auth: false,
-  setAuth: (status) => {},
+  setAuth: (status) =>set({auth:status}),
 }));
