@@ -1,6 +1,6 @@
 import { utils } from "ethers";
 import { useContractWrite, useSigner, useWaitForTransaction } from "wagmi";
-import { deDogmaDaoABI } from "../components/web3Page/abi";
+import { deDogmaDaoABI } from "../components/global/ConnectWalletModal/abi";
 
 interface useWeb3ContractType {
   functionName: string;

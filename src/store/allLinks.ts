@@ -52,3 +52,10 @@ export const katySocial = {
     instagram: "https://www.instagram.com/katythemaker"
 }
 
+
+////////////////
+//Global
+// terms of service
+export const tosLink: string = "https://docs.dedogmadao.com/terms-of-service";
+// privacy policy
+export const privacyLink: string = "https://docs.dedogmadao.com/privacy-policy";

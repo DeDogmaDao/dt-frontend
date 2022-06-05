@@ -21,7 +21,7 @@
   scrollbar-color: darkgray;
 }
 .link-inside-text {
-  @apply !text-primary-500 !underline hover:!text-primary-500 duration-500; 
+  @apply !text-primary-500 !underline hover:!text-secondary-500 duration-500; 
 }
 
 @layer base {
