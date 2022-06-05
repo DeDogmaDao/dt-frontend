@@ -20,6 +20,7 @@ import Modal from "../components/global/Modal";
 import ToastProvider from "../components/global/ToastProvider";
 import Web3ConnectProvider from "../store/providers/Web3ConnectProvider";
 import { useFontScale } from "../hooks/useFontScale";
+import ErrorBoundary from "../hoc/ErrorBoundary";
 // import { Web3ContextProvider } from "../store/context/Web3Context";
 function MyApp({ Component, pageProps }: AppProps) {
   useFontScale();
@@ -36,14 +37,16 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <>
-      <Web3GlobalProvider>
-        <Web3ConnectProvider>
-          <Layout>
-            <Component {...pageProps} />
-            <ToastProvider />
-          </Layout>
-        </Web3ConnectProvider>
-      </Web3GlobalProvider>
+      <ErrorBoundary>
+        <Web3GlobalProvider>
+          <Web3ConnectProvider>
+            <Layout>
+              <Component {...pageProps} />
+              <ToastProvider />
+            </Layout>
+          </Web3ConnectProvider>
+        </Web3GlobalProvider>
+      </ErrorBoundary>
     </>
   );
 }

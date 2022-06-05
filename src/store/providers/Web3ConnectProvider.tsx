@@ -52,9 +52,10 @@ const Web3ConnectProvider: React.FC = ({ children }) => {
     error,
     isConnecting,
     pendingConnector,
+    isError
   } = useConnect();
-
-  const { data } = useAccount();
+  const { data, isError:err } = useAccount();
+  console.log(err);
 
   useEffect(() => {
     if (activeConnector) {
