@@ -23,6 +23,7 @@ import { useFontScale } from "../hooks/useFontScale";
 import ErrorBoundary from "../hoc/ErrorBoundary";
 // import { Web3ContextProvider } from "../store/context/Web3Context";
 function MyApp({ Component, pageProps }: AppProps) {
+  
   useFontScale();
   // const router = useRouter();
 

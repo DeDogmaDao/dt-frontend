@@ -38,7 +38,7 @@ export const CoinbaseWallet = new CoinbaseWalletConnector({
     appName: "DeDogmaDAO",
     jsonRpcUrl: infuraMainNet,
   },
-  chains: [chain.mainnet],
+  chains: [chain.hardhat],
 });
 
 const Web3ConnectProvider: React.FC = ({ children }) => {
