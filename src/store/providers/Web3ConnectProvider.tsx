@@ -14,6 +14,7 @@ import { toast } from "react-toastify";
 import { useWeb3Store } from "../global/web3Store";
 import { useRouter } from "next/router";
 import { useAuthStore } from "../global/authStore";
+import { utils } from "ethers";
 
 // API key for Ethereum node
 // Two popular services are Infura (infura.io) and Alchemy (alchemy.com)
@@ -43,6 +44,7 @@ export const CoinbaseWallet = new CoinbaseWalletConnector({
 
 const Web3ConnectProvider: React.FC = ({ children }) => {
   const setAuth = useAuthStore((state) => state.setAuth);
+  const setIsVerified = useAuthStore((state) => state.setIsVerified);
   const router = useRouter();
   const { disconnect } = useDisconnect();
   const {
@@ -65,7 +67,6 @@ const Web3ConnectProvider: React.FC = ({ children }) => {
         {}
       );
     }
-    signMessage();
   }, [activeConnector]);
   const metaMaskConnection = useCallback(() => {
     connect(MetaMaskWallet);
@@ -80,6 +81,9 @@ const Web3ConnectProvider: React.FC = ({ children }) => {
     disconnect();
     router.push("/");
   }, [disconnect]);
+  const signingMsg = useCallback(() => {
+    signMessage();
+  }, [signMessage]);
   // const reseting = useCallback(() => {
   //   reset();
   // }, [reset]);
@@ -94,9 +98,10 @@ const Web3ConnectProvider: React.FC = ({ children }) => {
       walletConnect: walletConnectConnection,
       coinBase: coinBaseConnection,
       disconnect: disconnection,
-      // reset:reseting
+      signingMsg: signingMsg,
     });
   }, [
+    signingMsg,
     disconnection,
     metaMaskConnection,
     walletConnectConnection,
@@ -104,6 +109,8 @@ const Web3ConnectProvider: React.FC = ({ children }) => {
   ]);
   useEffect(() => {
     setActiveConnector(activeConnector);
+    signMessage()
+
   }, [activeConnector]);
   useEffect(() => {
     setConnectionData(data);
@@ -122,6 +129,21 @@ const Web3ConnectProvider: React.FC = ({ children }) => {
       toast.error(connectError?.message);
     }
   }, [accountIsError, connectIsError]);
+
+  useEffect(()=>{
+    console.log(signMsgData);
+if(signMsgData !==undefined){
+  const signerAddress = utils.verifyMessage("upgrade",`${signMsgData}`);
+  if(signerAddress === data?.address){
+    toast.success("You are verified");
+    setIsVerified(true);
+  } else{
+    toast.error("You are not verified");
+    setIsVerified(false)
+  }
+}
+     
+  },[signMsgData])
   return <>{children}</>;
 };
 
