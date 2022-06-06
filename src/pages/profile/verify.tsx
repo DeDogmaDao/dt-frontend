@@ -1,8 +1,8 @@
 import Head from "next/head";
 import { Fragment } from "react";
-import Profile from "../components/Profile";
-import AuthProvider from "../store/providers/AuthProvider";
-import VerifyingProvider from "../store/providers/VerifyingProvider";
+import Profile from "../../components/Profile";
+import AuthProvider from "../../store/providers/AuthProvider";
+import VerifyingProvider from "../../store/providers/VerifyingProvider";
 
 export default function profile(): JSX.Element {
   return (
@@ -36,11 +36,11 @@ export default function profile(): JSX.Element {
         <meta name="twitter:creator" content="@DeDogmaDao" />
         <meta name="twitter:site" content="@DeDogmaDao" />
       </Head> */}
-      <AuthProvider>
         <VerifyingProvider>
-          <Profile />
+          <p className="w-screen h-screen flex justify-center items-center text-3xl font-bold">
+            you are verified
+          </p>
         </VerifyingProvider>
-      </AuthProvider>
     </Fragment>
   );
 }
