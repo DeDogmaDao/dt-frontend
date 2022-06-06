@@ -12,33 +12,48 @@ interface AuthType {
 interface setAuthType {
   setAuth: (status: boolean) => void;
 }
-const AuthStateContext = createContext<AuthType>({ auth: false });
-const AuthDispatchContext = createContext<setAuthType>({
+const AuthContext = createContext<AuthType>({ auth: false });
+const IsVerifiedContext = createContext<AuthType>({ auth: false });
+const SetAuthContext = createContext<setAuthType>({
+  setAuth: (status) => {},
+});
+const SetIsVerifiedContext = createContext<setAuthType>({
   setAuth: (status) => {},
 });
 
 const AuthProvider: React.FC = ({ children }) => {
   const [auth, setAuth] = useState(false);
+  const [isVerified, setIsVerified] = useState(false);
   const setAuthAction = useCallback(
     (status: boolean) => {
       setAuth(status);
     },
     [setAuth]
   );
-
-  useEffect(() => {}, []);
+  const setIsVerifiedAction = useCallback(
+    (status: boolean) => {
+      setIsVerified(status);
+    },
+    [setIsVerified]
+  );
 
   return (
-    <AuthStateContext.Provider value={{ auth: auth }}>
-      <AuthDispatchContext.Provider value={{setAuth:setAuthAction}}>
-        {children}
-      </AuthDispatchContext.Provider>
-    </AuthStateContext.Provider>
+    <AuthContext.Provider value={{ auth: auth }}>
+      <IsVerifiedContext.Provider value={{ auth: auth }}>
+        <SetAuthContext.Provider value={{ setAuth: setAuthAction }}>
+          <SetIsVerifiedContext.Provider value={{ setAuth: setAuthAction }}>
+            {children}
+          </SetIsVerifiedContext.Provider>
+        </SetAuthContext.Provider>
+      </IsVerifiedContext.Provider>
+    </AuthContext.Provider>
   );
 };
 
-const useAuth = () => useContext(AuthStateContext);
-const useSetAuth = () => useContext(AuthDispatchContext);
+const useAuth = () => useContext(AuthContext);
+const useSetAuth = () => useContext(SetAuthContext);
+const useIsVerified = () => useContext(IsVerifiedContext);
+const useSetIsVerified = () => useContext(SetIsVerifiedContext);
 
 export default AuthProvider;
-export { useAuth, useSetAuth };
+export { useAuth, useSetAuth, useIsVerified, useSetIsVerified };
