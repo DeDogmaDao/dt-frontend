@@ -11,6 +11,7 @@ const VerifyingProvider:React.FC = ({children}) => {
             toast.error("You are not verified, connect your wallet again!");
             disconnect();
         }, 0);
+        return null
     }
     return<>{children}</>
 }

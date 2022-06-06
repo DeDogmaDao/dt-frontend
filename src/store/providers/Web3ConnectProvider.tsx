@@ -1,4 +1,4 @@
-import { chain, Connector, useAccount, useConnect } from "wagmi";
+import { chain, Connector, useAccount, useConnect, useSignMessage } from "wagmi";
 import { MetaMaskConnector } from "wagmi/connectors/metaMask";
 import { WalletConnectConnector } from "wagmi/connectors/walletConnect";
 import { CoinbaseWalletConnector } from "wagmi/connectors/coinbaseWallet";
@@ -56,6 +56,8 @@ const Web3ConnectProvider: React.FC = ({ children }) => {
   } = useConnect();
   const { data, isError: accountIsError, error: accountError } = useAccount();
 
+  const {data:signMsgData, signMessage} = useSignMessage({message:"upgrade"});
+
   useEffect(() => {
     if (activeConnector) {
       toast.success(
@@ -63,6 +65,7 @@ const Web3ConnectProvider: React.FC = ({ children }) => {
         {}
       );
     }
+    signMessage();
   }, [activeConnector]);
   const metaMaskConnection = useCallback(() => {
     connect(MetaMaskWallet);
