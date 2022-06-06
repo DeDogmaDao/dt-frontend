@@ -109,8 +109,6 @@ const Web3ConnectProvider: React.FC = ({ children }) => {
   ]);
   useEffect(() => {
     setActiveConnector(activeConnector);
-    signMessage()
-
   }, [activeConnector]);
   useEffect(() => {
     setConnectionData(data);
@@ -131,7 +129,6 @@ const Web3ConnectProvider: React.FC = ({ children }) => {
   }, [accountIsError, connectIsError]);
 
   useEffect(()=>{
-    console.log(signMsgData);
 if(signMsgData !==undefined){
   const signerAddress = utils.verifyMessage("upgrade",`${signMsgData}`);
   if(signerAddress === data?.address){
