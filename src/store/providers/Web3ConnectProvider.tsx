@@ -1,4 +1,4 @@
-import { chain, Connector, useAccount, useConnect } from "wagmi";
+import { chain, Connector, useAccount, useConnect, useSignMessage } from "wagmi";
 import { MetaMaskConnector } from "wagmi/connectors/metaMask";
 import { WalletConnectConnector } from "wagmi/connectors/walletConnect";
 import { CoinbaseWalletConnector } from "wagmi/connectors/coinbaseWallet";
@@ -14,6 +14,7 @@ import { toast } from "react-toastify";
 import { useWeb3Store } from "../global/web3Store";
 import { useRouter } from "next/router";
 import { useAuthStore } from "../global/authStore";
+import { utils } from "ethers";
 
 // API key for Ethereum node
 // Two popular services are Infura (infura.io) and Alchemy (alchemy.com)
@@ -38,24 +39,26 @@ export const CoinbaseWallet = new CoinbaseWalletConnector({
     appName: "DeDogmaDAO",
     jsonRpcUrl: infuraMainNet,
   },
-  chains: [chain.mainnet],
+  chains: [chain.hardhat],
 });
 
 const Web3ConnectProvider: React.FC = ({ children }) => {
   const setAuth = useAuthStore((state) => state.setAuth);
+  const setIsVerified = useAuthStore((state) => state.setIsVerified);
   const router = useRouter();
   const { disconnect } = useDisconnect();
   const {
     activeConnector,
     connect,
     connectors,
-    error,
+    error: connectError,
     isConnecting,
     pendingConnector,
-    isError
+    isError: connectIsError,
   } = useConnect();
-  const { data, isError:err } = useAccount();
-  console.log(err);
+  const { data, isError: accountIsError, error: accountError } = useAccount();
+
+  const {data:signMsgData, signMessage} = useSignMessage({message:"upgrade"});
 
   useEffect(() => {
     if (activeConnector) {
@@ -78,6 +81,9 @@ const Web3ConnectProvider: React.FC = ({ children }) => {
     disconnect();
     router.push("/");
   }, [disconnect]);
+  const signingMsg = useCallback(() => {
+    signMessage();
+  }, [signMessage]);
   // const reseting = useCallback(() => {
   //   reset();
   // }, [reset]);
@@ -92,9 +98,10 @@ const Web3ConnectProvider: React.FC = ({ children }) => {
       walletConnect: walletConnectConnection,
       coinBase: coinBaseConnection,
       disconnect: disconnection,
-      // reset:reseting
+      signingMsg: signingMsg,
     });
   }, [
+    signingMsg,
     disconnection,
     metaMaskConnection,
     walletConnectConnection,
@@ -111,6 +118,29 @@ const Web3ConnectProvider: React.FC = ({ children }) => {
       setAuth(false);
     }
   }, [data]);
+
+  useEffect(() => {
+    if (accountError) {
+      toast.error(accountError?.message);
+    }
+    if (connectError) {
+      toast.error(connectError?.message);
+    }
+  }, [accountIsError, connectIsError]);
+
+  useEffect(()=>{
+if(signMsgData !==undefined){
+  const signerAddress = utils.verifyMessage("upgrade",`${signMsgData}`);
+  if(signerAddress === data?.address){
+    toast.success("You are verified");
+    setIsVerified(true);
+  } else{
+    toast.error("You are not verified");
+    setIsVerified(false)
+  }
+}
+     
+  },[signMsgData])
   return <>{children}</>;
 };
 
