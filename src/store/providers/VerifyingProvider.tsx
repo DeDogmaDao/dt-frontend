@@ -9,10 +9,10 @@ const VerifyingProvider:React.FC = ({children}) => {
     const disconnect= useWeb3Store(state=> state.connectors.disconnect);
 
     if(!isVerified){
-        toast.error("You are not verified, connect your wallet again!");
-        disconnect();
-        router.push("/");
-        return null
+        setTimeout(() => {
+            toast.error("You are not verified, connect your wallet again!");
+            disconnect();
+        }, 0);
     }
     return<>{children}</>
 }
