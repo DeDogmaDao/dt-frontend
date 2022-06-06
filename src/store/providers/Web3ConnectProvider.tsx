@@ -118,7 +118,6 @@ const Web3ConnectProvider: React.FC = ({ children }) => {
     if (connectError) {
       toast.error(connectError?.message);
     }
-    console.log(accountIsError, connectIsError);
   }, [accountIsError, connectIsError]);
   return <>{children}</>;
 };
