@@ -49,13 +49,12 @@ const Web3ConnectProvider: React.FC = ({ children }) => {
     activeConnector,
     connect,
     connectors,
-    error,
+    error: connectError,
     isConnecting,
     pendingConnector,
-    isError
+    isError: connectIsError,
   } = useConnect();
-  const { data, isError:err } = useAccount();
-  console.log(err);
+  const { data, isError: accountIsError, error: accountError } = useAccount();
 
   useEffect(() => {
     if (activeConnector) {
@@ -111,6 +110,16 @@ const Web3ConnectProvider: React.FC = ({ children }) => {
       setAuth(false);
     }
   }, [data]);
+
+  useEffect(() => {
+    if (accountError) {
+      toast.error(accountError?.message);
+    }
+    if (connectError) {
+      toast.error(connectError?.message);
+    }
+    console.log(accountIsError, connectIsError);
+  }, [accountIsError, connectIsError]);
   return <>{children}</>;
 };
 
