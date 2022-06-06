@@ -8,10 +8,11 @@ const VerifyingProvider:React.FC = ({children}) => {
 
     if(!isVerified){
         setTimeout(() => {
-            toast.error("You are not verified, connect your wallet again!");
             disconnect();
+            setTimeout(() => {
+                toast.error("You are not verified, connect your wallet again!");
+            }, 300);
         }, 0);
-        return null
     }
     return<>{children}</>
 }
