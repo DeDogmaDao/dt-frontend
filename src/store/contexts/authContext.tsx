@@ -39,9 +39,9 @@ const AuthProvider: React.FC = ({ children }) => {
 
   return (
     <AuthContext.Provider value={{ auth: auth }}>
-      <IsVerifiedContext.Provider value={{ auth: auth }}>
+      <IsVerifiedContext.Provider value={{ auth: isVerified }}>
         <SetAuthContext.Provider value={{ setAuth: setAuthAction }}>
-          <SetIsVerifiedContext.Provider value={{ setAuth: setAuthAction }}>
+          <SetIsVerifiedContext.Provider value={{ setAuth: setIsVerifiedAction }}>
             {children}
           </SetIsVerifiedContext.Provider>
         </SetAuthContext.Provider>
