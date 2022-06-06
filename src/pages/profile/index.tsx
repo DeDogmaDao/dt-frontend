@@ -37,9 +37,7 @@ export default function profile(): JSX.Element {
         <meta name="twitter:site" content="@DeDogmaDao" />
       </Head> */}
       <AuthProvider>
-        <VerifyingProvider>
           <Profile />
-        </VerifyingProvider>
       </AuthProvider>
     </Fragment>
   );

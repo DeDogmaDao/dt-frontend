@@ -36,11 +36,13 @@ export default function profile(): JSX.Element {
         <meta name="twitter:creator" content="@DeDogmaDao" />
         <meta name="twitter:site" content="@DeDogmaDao" />
       </Head> */}
+      <AuthProvider>
         <VerifyingProvider>
           <p className="w-screen h-screen flex justify-center items-center text-3xl font-bold">
             you are verified
           </p>
         </VerifyingProvider>
+        </AuthProvider>
     </Fragment>
   );
 }
