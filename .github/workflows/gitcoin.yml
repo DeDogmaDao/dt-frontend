@@ -30,6 +30,7 @@ jobs:
   deploy:
     needs: build_and_push
     name: deploy
+    runs-on: ubuntu-latest
     steps:
       - name: deploy step
         uses: fifsky/ssh-action@master
