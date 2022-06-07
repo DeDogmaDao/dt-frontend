@@ -26,6 +26,16 @@ module.exports = {
         destination: "/404",
         permanent: false,
       },
+      {
+        source: "/faq",
+        destination: "/404",
+        permanent: false,
+      },
+      {
+        source: "/roadmap",
+        destination: "/404",
+        permanent: false,
+      },
     ];
   },
   // async redirects() {

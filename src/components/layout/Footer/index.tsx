@@ -12,17 +12,31 @@ const Footer: React.FC = () => {
       >
         <div className="z-10 mb-[-3rem] w-[20rem] h-[12rem]  ssm:w-[25.25rem] ssm:h-[15.23rem] relative">
           <span className=" w-full h-full">
-          <Image alt="dedogmadao logo"  src={treasuresImg.treasure1} layout="fill" quality={90} placeholder="blur"  />
+            <Image
+              alt="dedogmadao logo"
+              src={treasuresImg.treasure1}
+              layout="fill"
+              quality={90}
+              placeholder="blur"
+            />
           </span>
         </div>
-        <h3 className="mb-3 text-[1.25rem] ssm:text-[1.75rem] sm:text-[2.375rem] font-bold sm:font-bold z-10">
-          NFT Game and Collection by
+        <h3 className="mb-3 text-[1rem] ssm:text-[1.75rem] sm:text-[2.375rem] font-bold sm:font-bold z-10">
+          NFT launchpad and game by
           <span className="text-primary-500"> DDD</span>
         </h3>
         <span className="w-[1.875rem] h-[.375rem] mb-6 bg-primary-500 z-10 " />
         <ul className="flex justify-center items-center gap-x-1 sm:gap-x-3 mb-36 z-10">
           {footerData.map((data) => {
-            return <Social key={data.href} data={data} width="3.375rem" svgWidth="1.625rem" hasTransition={true} />;
+            return (
+              <Social
+                key={data.href}
+                data={data}
+                width="3.375rem"
+                svgWidth="1.625rem"
+                hasTransition={true}
+              />
+            );
           })}
         </ul>
         <p className="mb-10 text-xs ssm:text-medium-light !font-thin z-10">

@@ -8,9 +8,8 @@ import Layout from "../components/layout/Layout";
 
 // hooks
 // store
-const Web3GlobalProvider = dynamic(
-  () => import("../store/context/Web3GlobalProvider")
-);
+import Web3GlobalProvider from "../store/context/Web3GlobalProvider";
+
 // utils & animation
 import "../../styles/tailwind.css";
 import Head from "next/head";

@@ -1307,50 +1307,53 @@ export const roadMapData: roadMapType[] = [
 
 export const benefitsData: benefitType[] = [
   {
-    title: "Guaranteed floor price",
+    title: "Unique judgment protocol",
     desc: [
       <>
-        The money collected from the minting goes to the{" "}
-        <span className="font-semibold">buyback treasury</span>. This will
-        guarantee the floor price of the NFTs to mint price and can raise by
-        time. Any NFT holder has the right to burn their NFTs and receive their
-        funds back.
-      </>,
-      <>
-        Additionally, part of the money earned from the secondary market sales
-        and yield farming will go to this treasury for refueling.
+        The judgment protocol is exclusively designed to address the trust and
+        credit issues during the launch and production states with a combination
+        of on-chain and off-chain votings.
       </>,
     ],
   },
   {
-    title: "Diverse pool prizes",
+    title: "Minimize risks of Rugs",
     desc: [
-      <>Currently, There are two types of prizes in each game:</>,
-      <p>
-        <span className="font-semibold">1- Dynamic</span> prize based on
-        secondary sales (main prize).
-      </p>,
-      <p>
-        <span className="font-semibold">2- Guaranteed</span> prize based on
-        yield farming of investment treasury.
-      </p>,
       <>
-        Note: The investment treasury is a self-growing pool which can only grow
-        bigger and guarantees a minimum prize.
+        DeDogma launchpad has been designed to minimize risks of loss for users
+        due to project failures in production, rugpools, or any other
+        unpredicted bugs which can affect the projects and their final products.
+      </>,
+      <>
+        It can be used for any project which needs time between selling their
+        assets or fundraising and reveling the final product, like gaming NFTs
+        or any collectible with milestones in their roadmap.
       </>,
     ],
   },
   {
-    title: "Auto-join lottery",
+    title: "Added value by DEFI",
     desc: [
       <>
-        All NFT holders will automatically participate in our{" "}
-        <span className="font-semibold">daily and weekly</span> gamified{" "}
-        <span className="font-semibold">lottery</span>.
+        The protocol uses the funds in the guarantee pools toward DEFI protocols
+        and yield farm by them and uses the benefits of it for paying prizes to
+        both communities of builders and users. The share of projects from yield
+        farming, prizes, and slashes are directly related to their history.
       </>,
       <>
-        <span className="font-semibold">No extra gas fee</span> or action needed
-        from the holders to join the lottery unless your NFT wins the lottery.
+        The prizes are also boosted by the projects that are getting launched on
+        this platform and free mints will be offered to lucky users.
+      </>,
+    ],
+  },
+  {
+    title: "Smoothing project marketings",
+    desc: [
+      <>
+        By offering a safe launch to users and sharing parts of the invested
+        values between them, your project can be involved in a bigger community.
+        And in the other hand establishing AMAs between the council members and
+        project teams can introduce them to this wide range of users.
       </>,
     ],
   },
