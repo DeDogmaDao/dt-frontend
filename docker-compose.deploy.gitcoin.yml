@@ -8,6 +8,8 @@ services:
       - BACKEND_URL
       - ROBOTS_TXT
     command: sh /app/frontend/src/run.sh
+    ports:
+      - "3000:3000"
 
 networks:
   default:
