@@ -14,7 +14,7 @@ const Footer: React.FC = () => {
           <span className=" w-full h-full">
             <Image
               alt="dedogmadao logo"
-              src={treasuresImg.treasure1}
+              src={treasuresImg.treasure}
               layout="fill"
               quality={90}
               placeholder="blur"

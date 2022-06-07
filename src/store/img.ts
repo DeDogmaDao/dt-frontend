@@ -27,8 +27,7 @@ export const benefitImg = [floor, pool,lottery];
 
 // logo
 import treasure from "./images/logo/treasure.png";
-import treasure1 from "./images/logo/treasure1.png";
-export const treasuresImg = { treasure, treasure1 };
+export const treasuresImg = { treasure };
 
 // backgrounds
 import sec1 from "./images/bg/sec1.png";
