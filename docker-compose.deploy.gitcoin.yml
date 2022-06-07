@@ -1,0 +1,15 @@
+version: "3.4"
+
+services:
+  frontend:
+    restart: always
+    image: "ghcr.io/dedogmadao/dt-frontend/dt-frontend:gitcoin-latest"
+    environment:
+      - BACKEND_URL
+      - ROBOTS_TXT
+    command: sh /app/frontend/src/run.sh
+
+networks:
+  default:
+    external:
+      name: ddd_network
