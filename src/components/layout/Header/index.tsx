@@ -16,8 +16,8 @@ const Header: React.FC = () => {
       text: "Home",
     },
     {
-      ref: "/#cards",
-      text: "Cards",
+      ref: "/#sample-mvp",
+      text: "Sample MVP",
     },
     {
       ref: "/team",
