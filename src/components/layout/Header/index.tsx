@@ -19,14 +19,14 @@ const Header: React.FC = () => {
       ref: "/#cards",
       text: "Cards",
     },
-    {
-      ref: "/roadmap",
-      text: "Roadmap",
-    },
-    {
-      ref: "/faq",
-      text: "FAQ",
-    },
+    // {
+    //   ref: "/roadmap",
+    //   text: "Roadmap",
+    // },
+    // {
+    //   ref: "/faq",
+    //   text: "FAQ",
+    // },
     {
       ref: "/team",
       text: "Team",
