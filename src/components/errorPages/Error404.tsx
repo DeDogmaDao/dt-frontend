@@ -1,19 +1,23 @@
 import Image from "next/image";
+import { errorImgs } from "../../store/img";
 
 const Error404: React.FC = () => {
   return (
     <div className="w-full h-screen flex flex-col justify-center items-center">
-      <span className="absolute h-full xl:w-full aspect-[1440/1017]">
-        <span className="w-full h-full inner-image-no-max-width">
+      <span className="w-[25rem] h-[15.25rem] relative">
+        <span className="w-full h-full">
           <Image
-            alt="dedogmadao background"
-            src={allBgImg.sec3}
+            alt="dedogmadao 404"
+            src={errorImgs.error404}
             layout="fill"
             quality={100}
             placeholder="blur"
           />
         </span>
       </span>
+      <h1>404</h1>
+      <p>Opps, Something went wrong!</p>
+      <button>Back to home</button>
     </div>
   );
 };

@@ -1,4 +1,8 @@
+import { Fragment } from "react";
+import Error404 from "../components/errorPages/Error404";
 
 export default function Custom404() {
-    return <h1>404 - Page Not Found</h1>
+    return <Fragment>
+        <Error404 />
+    </Fragment>
   }
