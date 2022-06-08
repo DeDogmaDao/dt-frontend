@@ -8,7 +8,7 @@ import EachGroup from "./EachGroup";
 import EachTab from "./EachTab";
 import Slider from "./Slider";
 import TabInfo from "./TabInfo";
-import { allBgImg } from '../../../store/img';
+import { allBgImg } from "../../../store/img";
 
 const Tabs: React.FC = () => {
   const [innerWidth, setInnerWidth] = useState(0);
@@ -54,7 +54,12 @@ const Tabs: React.FC = () => {
       <h2 className="z-10 mt-14 ssm:mt-20 sm:mt-32 lg:mt-40 text-[1.25rem] ssm:text-[1.75rem] sm:text-[2.375rem] font-bold sm:font-bold">
         Sample<span className="text-primary-500"> MVP</span>
       </h2>
-      <p className="z-10 w-10/12 md:w-7/12 mt-10 text-lg ">Demmortal treasure is the first collectible being launched through this launchpad and used for testing some parts of codes, ideas and building an MVP for the platform. Some of its cards and their properties in the game are shown here.</p>
+      <p className="z-10 w-10/12 md:w-7/12 mt-10 text-lg ">
+        Demmortal treasure is the first collectible being launched through this
+        launchpad and used for testing some parts of code, ideas and building an
+        MVP for the platform. Some of its cards and their properties in the game
+        are shown as follows:
+      </p>
       <div className=" flex flex-col ssm:flex-row gap-y-8 sm:gap-y-0 justify-center items-center gap-x-8 md:gap-x-16 text-2xl mt-14">
         <LayoutGroup id="tabGroup">
           {tabs.map((data) => {
