@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { errorImgs } from "../../store/img";
-import { ArrowRightSVG } from "../../store/svg";
+import { ReloadSVG } from "../../store/svg";
 
 const Error500: React.FC = () => {
   return (
@@ -22,10 +22,10 @@ const Error500: React.FC = () => {
         We’re working on fixing the problem. Please try again.
       </p>
       <Link href={"/"}>
-        <a className="bg-primary-500 hover:bg-primary-800 duration-300 flex justify-center items-center gap-x-3 px-5 py-2 mt-8 rounded-full text-xl font-medium text-black">
+        <a className="duration-300 flex justify-center items-center gap-x-3 px-5 py-2 mt-8 rounded-full text-xl font-medium text-primary-500">
           Back to home
-          <span className="fill-black w-4 h-4">
-            <ArrowRightSVG />
+          <span className="stroke-primary-500 fill-primary-500 w-6 h-6">
+            <ReloadSVG />
           </span>
         </a>
       </Link>
