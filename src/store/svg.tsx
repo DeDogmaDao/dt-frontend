@@ -37,3 +37,6 @@ export const EthereumSVG = Ethereum;
 
 import Plus from './svgs/plus.svg';
 export const PlusSVG = Plus;
+
+import ArrowRight from './svgs/arrowright.svg';
+export const ArrowRightSVG = ArrowRight;
