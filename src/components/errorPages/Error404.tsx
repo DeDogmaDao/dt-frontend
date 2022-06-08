@@ -15,8 +15,8 @@ const Error404: React.FC = () => {
           />
         </span>
       </span>
-      <h1>404</h1>
-      <p>Opps, Something went wrong!</p>
+      <h1 className="text-6xl font-medium">404</h1>
+      <p className="text-xl font-bold mt-4">Opps, Something went wrong!</p>
       <button>Back to home</button>
     </div>
   );
