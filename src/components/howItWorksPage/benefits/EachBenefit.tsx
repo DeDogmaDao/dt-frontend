@@ -36,12 +36,12 @@ const EachBenefit: React.FC<props> = ({
   return (
     <motion.button
       onTap={() => setIsPlaying(false)}
-      className={`h-12 flex flex-col justify-center items-start relative duration-75 ml-6 ssm:ml-0 font-normal  ${
+      className={`h-12 pr-4 flex flex-col justify-center items-start relative duration-75 ml-6 ssm:ml-0 font-normal  ${
         activeIndex === index ? " text-white !font-bold" : "text-neutral-50/30 "
       }`}
       onClick={benefitBtnClickHandler}
     >
-      <h3>{data.title}</h3>
+      <h3 className="whitespace-nowrap text-lg ssm:text-xl lg:text-2xl">{data.title}</h3>
       {activeIndex === index && (
         <motion.div
           initial="hidden"
