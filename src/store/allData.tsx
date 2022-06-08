@@ -1307,6 +1307,21 @@ export const roadMapData: roadMapType[] = [
 
 export const benefitsData: benefitType[] = [
   {
+    title: "Minimize risks of Rugs",
+    desc: [
+      <>
+        DeDogma launchpad has been designed to minimize risks of loss for users
+        due to project failures in production, rugpools, or any other
+        unpredicted bugs which may affect the projects and their final products.
+      </>,
+      <>
+        It can be used for any project which needs time between selling their
+        assets or fundraising and revealing the final product, like gaming NFTs
+        or any collectible with milestones in their roadmap.
+      </>,
+    ],
+  },
+  {
     title: "Unique judgment protocol",
     desc: [
       <>
@@ -1317,43 +1332,30 @@ export const benefitsData: benefitType[] = [
     ],
   },
   {
-    title: "Minimize risks of Rugs",
-    desc: [
-      <>
-        DeDogma launchpad has been designed to minimize risks of loss for users
-        due to project failures in production, rugpools, or any other
-        unpredicted bugs which can affect the projects and their final products.
-      </>,
-      <>
-        It can be used for any project which needs time between selling their
-        assets or fundraising and reveling the final product, like gaming NFTs
-        or any collectible with milestones in their roadmap.
-      </>,
-    ],
-  },
-  {
     title: "Added value by DEFI",
     desc: [
       <>
-        The protocol uses the funds in the guarantee pools toward DEFI protocols
-        and yield farm by them and uses the benefits of it for paying prizes to
-        both communities of builders and users. The share of projects from yield
-        farming, prizes, and slashes are directly related to their history.
+        The protocol uses funds from the guarantee pools and puts it towards
+        DEFI protocols. and yield farm by them and uses the benefits of it for
+        paying prizes to both communities of builders and users. The share of
+        projects from yield farming, prizes, and slashes are directly related to
+        their history.
       </>,
       <>
-        The prizes are also boosted by the projects that are getting launched on
-        this platform and free mints will be offered to lucky users.
+        The prizes are, along with the funds from the guarantee pools to boost
+        the projects that are WIPs (Work in Progress) and will be launched on
+        this platform and Free mints will be offered to lucky users!
       </>,
     ],
   },
   {
-    title: "Smoothing project marketings",
+    title: "Smoothing out project marketing",
     desc: [
       <>
         By offering a safe launch to users and sharing parts of the invested
         values between them, your project can be involved in a bigger community.
-        And in the other hand establishing AMAs between the council members and
-        project teams can introduce them to this wide range of users.
+        Establishing AMAs between the council members and project teams could
+        introduce them to this wide range of users.
       </>,
     ],
   },
