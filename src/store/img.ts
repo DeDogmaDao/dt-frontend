@@ -100,3 +100,8 @@ import metaMask from "./images/web3/metamask.png";
 import coinBase from "./images/web3/coinbase.png";
 import walletConnect from "./images/web3/walletConnect.png";
 export const walletImgData = [metaMask, walletConnect, coinBase];
+
+// error
+import error404 from "./images/errors/error404.png";
+import error500 from "./images/errors/error500.png";
+export const errorImgs = { error404, error500 };

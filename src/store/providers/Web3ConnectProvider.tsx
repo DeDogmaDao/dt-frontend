@@ -18,7 +18,7 @@ import { utils } from "ethers";
 
 // API key for Ethereum node
 // Two popular services are Infura (infura.io) and Alchemy (alchemy.com)
-const infuraMainNet = `https://mainnet.infura.io/v3/${process.env.NEXT_PUBLIC_INFURA_ID}`;
+const infuraMainNet = `https://mainnet.infura.io/v3/65051aee8c444f7db0f4b0869e108bca`;
 
 export const WalletConnect = new WalletConnectConnector({
   chains: [chain.hardhat],
@@ -139,6 +139,7 @@ if(signMsgData !==undefined){
     setIsVerified(false)
   }
 }
+
      
   },[signMsgData])
   return <>{children}</>;
