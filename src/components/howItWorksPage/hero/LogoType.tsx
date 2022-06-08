@@ -61,7 +61,7 @@ const LogoType: React.FC<props> = ({ setAnim, portalLoading }) => {
             custom={-1}
             className="flex justify-between items-center gap-x-2"
           >
-            Trust Codes!{" "}
+            Trust Code!{" "}
           </motion.span>
         )}
       </motion.a>

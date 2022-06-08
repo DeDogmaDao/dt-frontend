@@ -91,3 +91,8 @@ export const tabImgData: tabImgDataType = {
     hera,
   ],
 };
+
+// errors
+import error404 from "./images/errors/error404.png";
+import error500 from "./images/errors/error500.png";
+export const errorImgs = { error404, error500 };
