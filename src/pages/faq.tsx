@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { Fragment } from "react";
-import FAQ from "../components/faqPage";
+import FaqPage from "../components/FaqPage";
 import { faqPageMetaData } from "../store/allData";
 
 export default function faq(): JSX.Element {
@@ -36,7 +36,7 @@ export default function faq(): JSX.Element {
         <meta name="twitter:creator" content="@DeDogmaDao" />
         <meta name="twitter:site" content="@DeDogmaDao" />
       </Head>
-      <FAQ />
+      <FaqPage />
     </Fragment>
   );
 }
