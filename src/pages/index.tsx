@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { Fragment } from "react";
-import HowItWorks from "../components/howItWorksPage/HowItWorks";
+import HowItWorksPage from "../components/HowItWorksPage";
 import { homePageMetaData } from "../store/allData";
 export default function home(): JSX.Element {
   return (
@@ -34,7 +34,7 @@ export default function home(): JSX.Element {
         <meta name="twitter:creator" content="@DeDogmaDao" />
         <meta name="twitter:site" content="@DeDogmaDao" />
       </Head>
-      <HowItWorks />
+      <HowItWorksPage />
     </Fragment>
   );
 }

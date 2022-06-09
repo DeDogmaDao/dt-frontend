@@ -9,7 +9,7 @@ import Hero from "./hero/Hero";
 import InteroVideo from "./IntroVideo";
 import Tabs from "./Tabs";
 
-const HowItWorks: React.FC = () => {
+const HowItWorksPage: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   return (
     <motion.div
@@ -31,4 +31,4 @@ const HowItWorks: React.FC = () => {
   );
 };
 
-export default HowItWorks;
+export default HowItWorksPage;
