@@ -41,5 +41,6 @@ export const PlusSVG = Plus;
 import ArrowRight from './svgs/arrowright.svg';
 export const ArrowRightSVG = ArrowRight;
 
+
 import Reload from './svgs/reload.svg';
 export const ReloadSVG = Reload;
