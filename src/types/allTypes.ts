@@ -155,7 +155,7 @@ export interface web3walletType {
 
 export interface pricesType{
   start:number;
-  drop:number;
+  drop?:number;
+  purchase?:number;
   resting:number;
-  purchase:number;
 }
