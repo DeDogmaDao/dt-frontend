@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { useWeb3Store } from "../../store/global/web3Store";
 
-const Profile: React.FC = () => {
+const ProfilePage: React.FC = () => {
   const disconnect = useWeb3Store((state) => state.connectors.disconnect);
   const signMessage = useWeb3Store((state) => state.connectors.signingMsg);
 
@@ -22,4 +22,4 @@ const Profile: React.FC = () => {
   );
 };
 
-export default Profile;
+export default ProfilePage;
