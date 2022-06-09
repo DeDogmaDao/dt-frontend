@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { Fragment } from "react";
-import Team from "../components/teamPage/Team";
+import TeamPage from "../components/TeamPage";
 import { teamPageMetaData } from "../store/allData";
 
 export default function team(): JSX.Element {
@@ -35,7 +35,7 @@ export default function team(): JSX.Element {
         <meta name="twitter:creator" content="@DeDogmaDao" />
         <meta name="twitter:site" content="@DeDogmaDao" />
       </Head>
-        <Team />
+        <TeamPage />
     </Fragment>
   );
 }
