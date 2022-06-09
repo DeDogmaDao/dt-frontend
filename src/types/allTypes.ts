@@ -152,3 +152,10 @@ export interface metaDataType {
 export interface web3walletType {
   name:string;
 }
+
+export interface pricesType{
+  start:number;
+  drop:number;
+  resting:number;
+  purchase:number;
+}
