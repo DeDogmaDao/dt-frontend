@@ -150,5 +150,33 @@ export interface metaDataType {
 
 /////// web3 Types
 export interface web3walletType {
-  name:string;
+  name: string;
+}
+
+export interface pricesType {
+  start: number;
+  resting: number;
+  drop?: number;
+  purchase?: number;
+  current?: number;
+}
+export interface auctionMintType {
+    stage: -1 | 0 | 1;
+    prices: pricesType;
+    owner:string;
+    nextReduction: Date;
+}
+
+export interface auctionGodHolderType {
+  day: number;
+  godName: string;
+  price:number;
+  owner:number;
+  moreInfoUrl:string;
+}
+export interface auctionDataType {
+  day: number;
+  mint: auctionMintType;
+  about: ReactElement<any, any>[];
+  godHolders: auctionGodHolderType[];
 }

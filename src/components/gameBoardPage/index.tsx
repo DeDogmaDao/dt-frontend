@@ -20,7 +20,7 @@ import SpellCounter from "./SpellCounter";
 import Door from "./Door";
 import Lightning from "./Lightning";
 
-const GameBoard: React.FC = () => {
+const GameBoardPage: React.FC = () => {
   const [turnNumber, setTurnNumber] = useState<number | null>(null);
   const [spellNumber, setSpellNumber] = useState<spellNumber>({
     yellow: 0,
@@ -137,4 +137,4 @@ const GameBoard: React.FC = () => {
   );
 };
 
-export default GameBoard;
+export default GameBoardPage;

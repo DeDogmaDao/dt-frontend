@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { Fragment } from "react";
-import Profile from "../../components/Profile";
+import ProfilePage from "../../components/ProfilePage";
 import AuthProvider from "../../store/providers/AuthProvider";
 import VerifyingProvider from "../../store/providers/VerifyingProvider";
 
@@ -37,7 +37,7 @@ export default function profile(): JSX.Element {
         <meta name="twitter:site" content="@DeDogmaDao" />
       </Head> */}
       <AuthProvider>
-          <Profile />
+          <ProfilePage />
       </AuthProvider>
     </Fragment>
   );

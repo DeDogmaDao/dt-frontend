@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { Fragment } from "react";
-import GameBoard from "../components/gameBoardPage/GameBoard";
+import GameBoardPage from "../components/GameBoardPage";
 
 export default function gameboard(): JSX.Element {
   return (
@@ -15,7 +15,7 @@ export default function gameboard(): JSX.Element {
         {/* <meta name="keywords" content={careerMeta.keywords} />
         <meta name="author" content={careerMeta.author} /> */}
       </Head>
-      <GameBoard />
+      <GameBoardPage />
     </Fragment>
   );
 }
