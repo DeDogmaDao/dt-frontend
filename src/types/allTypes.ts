@@ -153,19 +153,6 @@ export interface web3walletType {
   name: string;
 }
 
-export interface pricesType {
-  start: number;
-  resting: number;
-  drop?: number;
-  purchase?: number;
-  current?: number;
-}
-export interface auctionMintType {
-    stage: -1 | 0 | 1;
-    prices: pricesType;
-    owner:string;
-    nextReduction: Date;
-}
 
 export interface auctionGodHolderType {
   day: number;
@@ -175,8 +162,10 @@ export interface auctionGodHolderType {
   moreInfoUrl:string;
 }
 export interface auctionDataType {
-  day: number;
-  mint: auctionMintType;
+  godNumber:number;
+  godName:string;
+  godUrl:string;
+  godPrice:number| null;
+  godOwner:string| null;
   about: ReactElement<any, any>[];
-  godHolders: auctionGodHolderType[];
 }
