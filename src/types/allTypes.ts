@@ -154,13 +154,6 @@ export interface web3walletType {
 }
 
 
-export interface auctionGodHolderType {
-  day: number;
-  godName: string;
-  price:number;
-  owner:number;
-  moreInfoUrl:string;
-}
 export interface auctionDataType {
   godNumber:number;
   godName:string;
