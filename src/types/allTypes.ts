@@ -158,7 +158,5 @@ export interface auctionDataType {
   godNumber:number;
   godName:string;
   godUrl:string;
-  godPrice:number| null;
-  godOwner:string| null;
   about: ReactElement<any, any>[];
 }
