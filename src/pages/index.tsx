@@ -11,7 +11,8 @@ export default function home(): JSX.Element {
       addressOrName: "0x663f3ad617193148711d28f5334ee4ed07016602",
       contractInterface: deDogmaDaoABI,
     },
-    "MAX_MINT_PER_ADDRESS",
+    "auctions",
+    {args:[10]}
   );
   console.log(start);
   return (

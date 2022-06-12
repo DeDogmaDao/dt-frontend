@@ -1,7 +1,27 @@
-import { CoinbaseWallet, MetaMaskWallet, WalletConnect } from "./Web3ConnectProvider";
+import {
+  CoinbaseWallet,
+  MetaMaskWallet,
+  WalletConnect,
+} from "./Web3ConnectProvider";
 import { WagmiConfig, createClient } from "wagmi";
+import { providers } from "ethers";
+
+import { chain, configureChains } from 'wagmi'
+import { jsonRpcProvider } from 'wagmi/providers/jsonRpc'
+
+const { chains, provider } = configureChains(
+  [chain.hardhat],
+  [
+    jsonRpcProvider({
+      rpc: (chain) => ({
+        http: `https://blockchain.dedogmadao.com`,
+      }),
+    }),
+  ],
+)
 
 const client = createClient({
+  provider:provider,
   autoConnect: true,
   connectors: [MetaMaskWallet, WalletConnect, CoinbaseWallet],
 });
