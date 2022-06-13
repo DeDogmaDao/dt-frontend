@@ -1,18 +1,16 @@
-import { pricesType } from "../../../types/allTypes";
+import { useWeb3Auction } from "../../../hooks/useWeb3Auction";
 import Prices from "./Prices";
-const priceValues:pricesType = {
-    start:0.9,
-    drop:0.1,
-    purchase:0.8,
-    resting:0.7
-}
-const Mint:React.FC = () => {
 
-    return(
-        <div className="w-[42.3125rem] h-[20.25rem] flex justify-center items-center">
-            <Prices prices={priceValues} />
-        </div>
-    )
+interface props {
+  index: number;
 }
+const Mint: React.FC<props> = ({ index }) => {
+  const auctionData = useWeb3Auction({ argument: [index + 1] });
+  return (
+    <div className="w-[42.3125rem] h-[20.25rem] flex justify-center items-center">
+      <Prices prices={1} />
+    </div>
+  );
+};
 
 export default Mint;

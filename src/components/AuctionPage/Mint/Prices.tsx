@@ -1,7 +1,6 @@
-import { pricesType } from "../../../types/allTypes";
 
 interface props {
-    prices: pricesType;
+    prices?: any;
 }
 
 const Prices:React.FC<props> = ({prices}) => {
