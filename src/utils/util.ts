@@ -124,7 +124,7 @@ export const cardIndexHandler = (index: number, quantity: number): number[] => {
 
 
 
-export const secondsToDhms = (seconds:number, dhms:string) => {
+export const secondsToDhms = (seconds:number, dhms:"dhms"|"dhm") => {
   seconds = Number(seconds);
   let d = Math.floor(seconds / (3600 * 24));
   let h = Math.floor((seconds % (3600 * 24)) / 3600);
