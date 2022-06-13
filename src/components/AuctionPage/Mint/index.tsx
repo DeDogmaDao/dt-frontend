@@ -6,11 +6,15 @@ interface props {
 }
 const Mint: React.FC<props> = ({ index }) => {
   const auctionData = useWeb3Auction({ argument: [index + 1] });
-  console.log(auctionData);
-  const prices = {auctionData.}
+
+  const prices = {
+    startPrice: auctionData.startPrice,
+    endPrice: auctionData.endPrice,
+    auctionDropPerStep: auctionData.auctionDropPerStep,
+  };
   return (
     <div className="w-[42.3125rem] h-[20.25rem] flex justify-center items-center">
-      <Prices prices={1} />
+      <Prices prices={prices} />
     </div>
   );
 };
