@@ -2,6 +2,7 @@ import { ethers } from "ethers";
 import { useEffect, useState } from "react";
 import { useContractRead } from "wagmi";
 import { deDogmaDaoABI } from "../components/global/ConnectWalletModal/abi";
+import { contractAddress } from "../store/constants";
 
 interface useWeb3AuctionType {
   argument: any[];
@@ -22,7 +23,7 @@ export const useWeb3Auction = ({ argument }: useWeb3AuctionType) => {
   const [results, setResults] = useState<any>({});
   const { data, isError, isLoading, isSuccess } = useContractRead(
     {
-      addressOrName: "0x663f3ad617193148711d28f5334ee4ed07016602",
+      addressOrName: contractAddress,
       contractInterface: deDogmaDaoABI,
     },
     "auctions",
