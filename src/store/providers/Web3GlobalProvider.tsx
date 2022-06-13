@@ -8,13 +8,14 @@ import { providers } from "ethers";
 
 import { chain, configureChains } from 'wagmi'
 import { jsonRpcProvider } from 'wagmi/providers/jsonRpc'
+import { providerRPC } from "../constants";
 
 const { chains, provider } = configureChains(
   [chain.hardhat],
   [
     jsonRpcProvider({
       rpc: (chain) => ({
-        http: `https://blockchain.dedogmadao.com`,
+        http: providerRPC,
       }),
     }),
   ],
