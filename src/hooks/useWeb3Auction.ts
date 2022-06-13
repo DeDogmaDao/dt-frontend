@@ -6,6 +6,18 @@ import { deDogmaDaoABI } from "../components/global/ConnectWalletModal/abi";
 interface useWeb3AuctionType {
   argument: any[];
 }
+interface resultType {
+  tokenId: number;
+  startTime: number;
+  endTime: number;
+  startPrice: string;
+  endPrice: string;
+  auctionDropPerStep: string;
+  isSold: boolean;
+  isError: boolean;
+  isLoading: boolean;
+  isSuccess: boolean;
+}
 export const useWeb3Auction = ({ argument }: useWeb3AuctionType) => {
   const [results, setResults] = useState<any>({});
   const { data, isError, isLoading, isSuccess } = useContractRead(
@@ -41,5 +53,5 @@ export const useWeb3Auction = ({ argument }: useWeb3AuctionType) => {
     isError,
     isLoading,
     isSuccess,
-  };
+  } as resultType;
 };
