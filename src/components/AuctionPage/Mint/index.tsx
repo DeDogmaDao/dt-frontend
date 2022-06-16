@@ -25,7 +25,7 @@ const Mint: React.FC<props> = ({ index }) => {
     auctionDropPerStep: auctionDropPerStep,
   };
   return (
-    <div className="w-[42.3125rem] h-[20.25rem] flex flex-col gap-10 justify-center items-start">
+    <div className="w-[42.3125rem] h-[20.25rem] flex flex-col gap-10 justify-start items-start">
       <Prices
         auctionDropPerStep={auctionDropPerStep}
         endPrice={endPrice}

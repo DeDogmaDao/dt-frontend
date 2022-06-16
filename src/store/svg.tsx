@@ -53,5 +53,6 @@ import AuctionTab3 from "./svgs/auctionTab3.svg";
 export const auctionTabsSVGS = {AuctionTab1, AuctionTab2, AuctionTab3};
 
 import AuctionHorizontalDashLine from "./svgs/auctionHorizontalDashLine.svg";
+export const AuctionHorizontalDashLineSVG = AuctionHorizontalDashLine;
 import auctionVerticalDashLine from "./svgs/auctionVerticalDashLine.svg";
-export const auctionDashLinesSVGS = {AuctionHorizontalDashLine, auctionVerticalDashLine};
+export const AuctionVerticalDashLineSVG = auctionVerticalDashLine;
