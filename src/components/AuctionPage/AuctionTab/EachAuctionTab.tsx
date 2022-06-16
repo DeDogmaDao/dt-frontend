@@ -1,5 +1,4 @@
 import { Dispatch, ReactElement, SetStateAction } from "react";
-import { auctionTabsSVGS } from "../../../store/svg";
 interface props {
   tabName: string;
   tabIcon:ReactElement<any>;
@@ -18,7 +17,7 @@ const EachAuctionTab: React.FC<props> = ({
   return (
     <button
       onClick={() => setActiveTab(index)}
-      className={`flex justify-center items-center w-full h-full px-6 py-3 gap-x-2 duration-300 hover:bg-red-900 ${
+      className={`flex justify-center items-center w-max h-full px-6 py-3 gap-x-2 duration-300 hover:bg-red-900 ${
         activeTab === index && "bg-red-700"
       }`}
     >
