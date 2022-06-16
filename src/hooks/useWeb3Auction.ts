@@ -26,8 +26,7 @@ export const useWeb3Auction = ({ argument }: useWeb3AuctionType) => {
       addressOrName: contractAddress,
       contractInterface: deDogmaDaoABI,
     },
-    "auctions",
-    { args: [...argument] }
+    "getAuctionsData",
   );
   useEffect(() => {
     if (data) {
