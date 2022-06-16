@@ -7,17 +7,8 @@ interface props {
 }
 const Mint: React.FC<props> = ({ index }) => {
   const {
-    auctionDropPerStep,
-    endPrice,
-    endTime,
-    isError,
-    isLoading,
-    isSold,
-    isSuccess,
-    startPrice,
-    startTime,
-    tokenId,
-  } = useWeb3Auction({ argument: [index + 1] });
+result
+  } = useWeb3Auction();
 
   const prices = {
     startPrice: startPrice,
