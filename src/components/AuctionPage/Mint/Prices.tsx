@@ -9,7 +9,7 @@ interface props {
 const Prices:React.FC<props> = ({auctionDropPerStep,endPrice,startPrice}) => {
 
     return(
-        <div className="flex flex-col gap-y-4 relative mt-8 ml-10 font-bold text-xl">
+        <div className="flex flex-col gap-y-4 relative mt-8 ml-4 font-bold text-xl">
             <div>Start Price: 10 ETH</div>
             <div>The amount of price drop: 0.075 ETH</div>
             <div>Resting Price: 1 ETH</div>

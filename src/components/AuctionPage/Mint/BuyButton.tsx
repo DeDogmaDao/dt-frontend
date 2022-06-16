@@ -35,8 +35,8 @@ const BuyButton: React.FC<props> = ({
   }, [startTime]);
 
   return (
-    <div>
-      <div>timer:{timer}</div>
+    <div className="flex flex-col text-xl font-normal">
+      <div>The next reduction occurs in:{timer}</div>
       <button>buy : {currentPrice} ETH</button>
     </div>
   );
