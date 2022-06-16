@@ -22,7 +22,7 @@ const EachAuctionTab: React.FC<props> = ({
         activeTab === index && "bg-red-700"
       }`}
     >
-      <span className="stroke-primary-500 w-6 h-6">{tabIcon}</span>
+      <span className=" stroke-primary-500 w-6 h-6">{tabIcon}</span>
       <p>{tabName}</p>
     </button>
   );
