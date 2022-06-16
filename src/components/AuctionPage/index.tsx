@@ -16,7 +16,9 @@ const AuctionPage: React.FC = () => {
         }
         return (
           <>
-            <Mint index={index} />
+            {activeTab === 0 && <Mint index={index} />}
+            {activeTab === 1 && "<Mint index={index} />"}
+            {activeTab === 2 && "<Mint index={index} />"}
           </>
         );
       })}
