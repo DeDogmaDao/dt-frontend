@@ -8,7 +8,7 @@ const AuctionPage: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [activeTab, setActiveTab] = useState(0);
   return (
-    <div className="w-screen min-h-screen flex justify-center items-center px-20">
+    <div className="w-screen min-h-screen flex justify-center items-center px-20 mb-20">
       <div className="w-1/2 h-full flex flex-col justify-center items-start bg-red-200/20">
         <AuctionTab activeTab={activeTab} setActiveTab={setActiveTab} />
 
