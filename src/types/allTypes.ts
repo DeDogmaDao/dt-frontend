@@ -165,3 +165,15 @@ export interface auctionTabDataType {
   tabName: string;
   tabIcon: ReactElement<any>;
 }
+
+export interface auctionResultType {
+  tokenId: number;
+  startTime: number;
+  endTime: number;
+  startPrice: string;
+  endPrice: string;
+  purchasePrice:string;
+  owner:string;
+  auctionDropPerStep: string;
+  isSold: boolean;
+}

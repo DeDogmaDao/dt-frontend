@@ -3,26 +3,17 @@ import { useEffect, useState } from "react";
 import { useContractRead } from "wagmi";
 import { deDogmaDaoABI } from "../components/global/ConnectWalletModal/abi";
 import { contractAddress } from "../store/constants";
+import { auctionResultType } from "../types/allTypes";
 
-interface resultType {
-  tokenId: number;
-  startTime: number;
-  endTime: number;
-  startPrice: string;
-  endPrice: string;
-  purchasePrice:string;
-  owner:string;
-  auctionDropPerStep: string;
-  isSold: boolean;
-}
+
 interface returnType {
-  results: resultType[];
+  results: auctionResultType[];
   isError: boolean;
   isLoading: boolean;
   isSuccess: boolean;
 }
 export const useWeb3Auction = () => {
-  const [results, setResults] = useState<resultType[]>([]);
+  const [results, setResults] = useState<auctionResultType[]>([]);
   const { data, isError, isLoading, isSuccess } = useContractRead(
     {
       addressOrName: contractAddress,
