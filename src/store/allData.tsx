@@ -14,10 +14,11 @@ import {
   metaDataType,
   web3walletType,
   auctionDataType,
+  auctionTabDataType,
 } from "../types/allTypes";
 
 // images
-import { socialSVGs } from "./svg";
+import { auctionTabsSVGS, socialSVGs } from "./svg";
 //links
 import {
   decentralTitanSocial,
@@ -1439,13 +1440,18 @@ export const auctionData: auctionDataType[] = [
     godName: "Artemis",
     about: [
       <>
-        Beautiful moon maiden, goddess of the hunt. Twin to Apollo, the sun god. Fingers laced with silver and a deadly accuracy with her bow and arrows- all who pursue the art of archery strive to attain only a sliver of her skill.
+        Beautiful moon maiden, goddess of the hunt. Twin to Apollo, the sun god.
+        Fingers laced with silver and a deadly accuracy with her bow and arrows-
+        all who pursue the art of archery strive to attain only a sliver of her
+        skill.
       </>,
       <>
-        Artemis created the beast rider guild by sending her goat to help them. She takes 3% share of the beast rider's win of the treasury.
+        Artemis created the beast rider guild by sending her goat to help them.
+        She takes 3% share of the beast rider's win of the treasury.
       </>,
       <>
-       Artemis has 18X more chance to compare to other cards to win the lottery.
+        Artemis has 18X more chance to compare to other cards to win the
+        lottery.
       </>,
     ],
     godUrl: "/Artemis",
@@ -1455,16 +1461,16 @@ export const auctionData: auctionDataType[] = [
     godName: "Hermes",
     about: [
       <>
-        Master of thievery and poetry. With his wing-threaded sandals, he can spread news at the blink of an eye to those who are willing to lend him an ear. The words that leave his mouth are nothing short of poetical.
+        Master of thievery and poetry. With his wing-threaded sandals, he can
+        spread news at the blink of an eye to those who are willing to lend him
+        an ear. The words that leave his mouth are nothing short of poetical.
       </>,
       <>
         Hermes created the Bandits guild by placing a magnetic power in humans.
       </>,
+      <>Hermes takes 3% share of the Bandits guilds‘ win of treasury.</>,
       <>
-       Hermes takes 3% share of the Bandits guilds‘ win of treasury.
-      </>,
-      <>
-       Hermes has 18X more chance to compare to other cards to win the lottery.
+        Hermes has 18X more chance to compare to other cards to win the lottery.
       </>,
     ],
     godUrl: "/Hermes",
@@ -1474,16 +1480,17 @@ export const auctionData: auctionDataType[] = [
     godName: "Hephaestus",
     about: [
       <>
-        God of craftsmen and invention, son of Hera. A blazing forge with his blessing yields the sharpest daggers and the most balanced swords. His inventive spirit can solve any problem with an ingenious idea.
+        God of craftsmen and invention, son of Hera. A blazing forge with his
+        blessing yields the sharpest daggers and the most balanced swords. His
+        inventive spirit can solve any problem with an ingenious idea.
       </>,
       <>
         Hephaestus created the Smiths guild by giving them the box of pandora.
       </>,
+      <>Hephaestus takes 3% share of the Smiths guilds‘ win of treasury.</>,
       <>
-       Hephaestus takes 3% share of the Smiths guilds‘ win of treasury.
-      </>,
-      <>
-       Hephaestus has 18X more chance to compare to other cards to win the lottery.
+        Hephaestus has 18X more chance to compare to other cards to win the
+        lottery.
       </>,
     ],
     godUrl: "/Hephaestus",
@@ -1493,16 +1500,13 @@ export const auctionData: auctionDataType[] = [
     godName: "Hecate",
     about: [
       <>
-        Goddess of necromancy and sorcery. Accompanied by her double shadow, her magical abilities knows no boundaries.
+        Goddess of necromancy and sorcery. Accompanied by her double shadow, her
+        magical abilities knows no boundaries.
       </>,
+      <>Hecate created the Enchants by the power of her magic and fire.</>,
+      <>Hecate takes 3% share of the Enchants guild’s win of treasury.</>,
       <>
-       Hecate created the Enchants by the power of her magic and fire.
-      </>,
-      <>
-       Hecate takes 3% share of the Enchants guild’s win of  treasury.
-      </>,
-      <>
-      Hecate has 18X more chance to compare to other cards to win the lottery.
+        Hecate has 18X more chance to compare to other cards to win the lottery.
       </>,
     ],
     godUrl: "/Hecate",
@@ -1512,11 +1516,13 @@ export const auctionData: auctionDataType[] = [
     godName: "Hades",
     about: [
       <>
-        God of the afterlife and Lord of the underworld. No mortal man could bare a single second in his presence, as he emits a strong sense of death and loss.
+        God of the afterlife and Lord of the underworld. No mortal man could
+        bare a single second in his presence, as he emits a strong sense of
+        death and loss.
       </>,
       <>
-       Hades has 18X more chance to compare to other cards to win the lottery.
-      </>
+        Hades has 18X more chance to compare to other cards to win the lottery.
+      </>,
     ],
     godUrl: "/Hades",
   },
@@ -1525,11 +1531,14 @@ export const auctionData: auctionDataType[] = [
     godName: "Aphrodite",
     about: [
       <>
-        Goddess of beauty and passion. Seductive, beautiful and wistful, this goddess could make a man swoon at her while holding a dagger to his throat. A dangerous-but-fantastic deity.
+        Goddess of beauty and passion. Seductive, beautiful and wistful, this
+        goddess could make a man swoon at her while holding a dagger to his
+        throat. A dangerous-but-fantastic deity.
       </>,
       <>
-       Aphrodite has 18X more chance to compare to other cards to win the lottery.
-      </>
+        Aphrodite has 18X more chance to compare to other cards to win the
+        lottery.
+      </>,
     ],
     godUrl: "/Aphrodite",
   },
@@ -1538,11 +1547,14 @@ export const auctionData: auctionDataType[] = [
     godName: "Poseidon",
     about: [
       <>
-        God of the oceans and Lord of the seas. Father of horses and all sea creatures. With his power to control large bodies of water, he can influence the climate of the earth like no other.
+        God of the oceans and Lord of the seas. Father of horses and all sea
+        creatures. With his power to control large bodies of water, he can
+        influence the climate of the earth like no other.
       </>,
       <>
-       Poseidon has 18X more chance to compare to other cards to win the lottery.
-      </>
+        Poseidon has 18X more chance to compare to other cards to win the
+        lottery.
+      </>,
     ],
     godUrl: "/Poseidon",
   },
@@ -1551,11 +1563,13 @@ export const auctionData: auctionDataType[] = [
     godName: "Ares",
     about: [
       <>
-        God of War and bloodlust. The most hostile god to deal with, but the most useful to have with you in battle. His combat intelligence and street smarts cannot be humbled.
+        God of War and bloodlust. The most hostile god to deal with, but the
+        most useful to have with you in battle. His combat intelligence and
+        street smarts cannot be humbled.
       </>,
       <>
-       Ares has 18X more chance to compare to other cards to win the lottery.
-      </>
+        Ares has 18X more chance to compare to other cards to win the lottery.
+      </>,
     ],
     godUrl: "/Ares",
   },
@@ -1564,15 +1578,29 @@ export const auctionData: auctionDataType[] = [
     godName: "Hera",
     about: [
       <>
-        Goddess of marriage and patroness of women. Daughter of Kronos and Hera. Her loyalty to Zeus cannot be restrained and her dedication towards women and  children is admirable.
+        Goddess of marriage and patroness of women. Daughter of Kronos and Hera.
+        Her loyalty to Zeus cannot be restrained and her dedication towards
+        women and children is admirable.
       </>,
       <>
-       Hera has 18X more chance to compare to other cards to win the lottery
-      </>
+        Hera has 18X more chance to compare to other cards to win the lottery
+      </>,
     ],
     godUrl: "/Hera",
   },
-
 ];
 
-export const auctionTabData:string[] = ["Mint", "About", "Other GodHolders"];
+export const auctionTabData: auctionTabDataType[] = [
+  {
+    tabName: "Mint",
+    tabIcon: auctionTabsSVGS.AuctionTab1,
+  },
+  {
+    tabName: "About",
+    tabIcon: auctionTabsSVGS.AuctionTab2,
+  },
+  {
+    tabName: "Other GodHolders",
+    tabIcon: auctionTabsSVGS.AuctionTab3,
+  },
+];

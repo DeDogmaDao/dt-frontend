@@ -160,3 +160,8 @@ export interface auctionDataType {
   godUrl:string;
   about: ReactElement<any, any>[];
 }
+
+export interface auctionTabDataType {
+  tabName: string;
+  tabIcon: ReactElement<any>;
+}
