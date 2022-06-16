@@ -44,3 +44,14 @@ export const ArrowRightSVG = ArrowRight;
 
 import Reload from './svgs/reload.svg';
 export const ReloadSVG = Reload;
+
+
+// auction page svgs
+import AuctionTab1 from "./svgs/auctionTab1.svg";
+import AuctionTab2 from "./svgs/auctionTab2.svg";
+import AuctionTab3 from "./svgs/auctionTab3.svg";
+export const auctionTabsSVGS = [AuctionTab1, AuctionTab2, AuctionTab3];
+
+import AuctionHorizontalDashLine from "./svgs/auctionHorizontalDashLine.svg";
+import auctionVerticalDashLine from "./svgs/auctionVerticalDashLine.svg";
+export const auctionDashLinesSVGS = [AuctionHorizontalDashLine, auctionVerticalDashLine];
