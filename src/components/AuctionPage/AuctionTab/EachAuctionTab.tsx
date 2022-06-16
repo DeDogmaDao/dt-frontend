@@ -1,16 +1,19 @@
-import { Dispatch, SetStateAction } from "react";
+import { Dispatch, ReactElement, SetStateAction } from "react";
 import { auctionTabsSVGS } from "../../../store/svg";
 interface props {
   tabName: string;
+  tabIcon:ReactElement<any>;
   activeTab: number;
   index: number;
   setActiveTab: Dispatch<SetStateAction<number>>;
+
 }
 const EachAuctionTab: React.FC<props> = ({
   tabName,
   activeTab,
   setActiveTab,
   index,
+  tabIcon
 }) => {
   return (
     <button
@@ -19,7 +22,7 @@ const EachAuctionTab: React.FC<props> = ({
         activeTab === index && "bg-red-700"
       }`}
     >
-      <span className="stroke-primary-500 w-6 h-6">{}</span>
+      <span className="stroke-primary-500 w-6 h-6">{tabIcon}</span>
       <p>{tabName}</p>
     </button>
   );

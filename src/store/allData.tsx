@@ -1589,18 +1589,18 @@ export const auctionData: auctionDataType[] = [
     godUrl: "/Hera",
   },
 ];
-
+const {AuctionTab1,AuctionTab2,AuctionTab3} = auctionTabsSVGS;
 export const auctionTabData: auctionTabDataType[] = [
   {
     tabName: "Mint",
-    tabIcon: auctionTabsSVGS.AuctionTab1,
+    tabIcon: <AuctionTab1 />,
   },
   {
     tabName: "About",
-    tabIcon: auctionTabsSVGS.AuctionTab2,
+    tabIcon: <AuctionTab2 />,
   },
   {
     tabName: "Other GodHolders",
-    tabIcon: auctionTabsSVGS.AuctionTab3,
+    tabIcon: <AuctionTab3 />,
   },
 ];
