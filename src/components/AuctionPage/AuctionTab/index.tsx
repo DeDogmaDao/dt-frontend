@@ -1,7 +1,7 @@
 import { Dispatch, SetStateAction } from "react";
+import { auctionTabData } from "../../../store/allData";
 import EachAuctionTab from "./EachAuctionTab";
 
-const auctionTabData = ["Mint", "About", "Other GodHolders"];
 
 interface props {
   setActiveTab: Dispatch<SetStateAction<number>>;

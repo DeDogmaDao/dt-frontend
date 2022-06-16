@@ -1574,3 +1574,5 @@ export const auctionData: auctionDataType[] = [
   },
 
 ];
+
+export const auctionTabData:string[] = ["Mint", "About", "Other GodHolders"];
