@@ -8,7 +8,6 @@ interface props {
 }
 
 const Prices: React.FC<props> = ({ data, status }) => {
-  console.log(data?.purchasePrice);
   return (
     <div className="flex flex-col gap-y-4 relative mt-8 ml-4 font-bold text-xl">
       <div className="flex items-center">
