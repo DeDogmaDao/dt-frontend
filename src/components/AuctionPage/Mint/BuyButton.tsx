@@ -3,6 +3,7 @@ import { auctionDropInterval } from "../../../store/constants";
 import { auctionResultType, statusType } from "../../../types/allTypes";
 import { secondsToDhms } from "../../../utils/util";
 import Skeleton from "../../global/Skeleton";
+import Timer from "../../global/Timer";
 
 interface props {
   data: auctionResultType | undefined;
@@ -32,7 +33,7 @@ const BuyButton: React.FC<props> = ({ data, status }) => {
       <div className="flex justify-center items-center flex-nowrap">
         The next reduction occurs in:
         {status.isLoading ? (
-          timer
+          <Timer time={timer} />
         ) : (
           <Skeleton size={{ width: 100, height: 20 }} />
         )}
