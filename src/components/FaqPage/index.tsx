@@ -7,7 +7,8 @@ import { pageAnimation } from "../../utils/animation";
 import BackToTop from "../global/BackToTop";
 import EachFAQ from "./EachFAQ";
 
-const FAQ: React.FC = () => {
+const FaqPage:React.FC = () => {
+
   const faqRef = useRef<HTMLDivElement>(null);
   return (
     <motion.div
@@ -50,4 +51,4 @@ const FAQ: React.FC = () => {
   );
 };
 
-export default FAQ;
+export default FaqPage;

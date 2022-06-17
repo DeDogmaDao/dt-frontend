@@ -6,7 +6,7 @@ import { allBgImg } from "../../store/img";
 import { pageAnimation, teamMemberAni } from "../../utils/animation";
 import BackToTop from "../global/BackToTop";
 import TeamCard from "./TeamCard";
-const Team: React.FC = () => {
+const TeamPage: React.FC = () => {
   const teamRef = useRef<HTMLDivElement>(null);
   return (
     <motion.div
@@ -60,4 +60,4 @@ const Team: React.FC = () => {
   );
 };
 
-export default Team;
+export default TeamPage;

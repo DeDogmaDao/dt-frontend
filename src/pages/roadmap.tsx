@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { Fragment } from "react";
-import RoadMapPage from "../components/roadMapPage/RoadMapPage";
+import RoadMapPage from "../components/RoadMapPage";
 import { roadmapPageMetaData } from "../store/allData";
 
 export default function roadmap(): JSX.Element {

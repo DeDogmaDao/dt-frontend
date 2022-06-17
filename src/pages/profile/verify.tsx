@@ -1,6 +1,5 @@
 import Head from "next/head";
 import { Fragment } from "react";
-import Profile from "../../components/Profile";
 import AuthProvider from "../../store/providers/AuthProvider";
 import VerifyingProvider from "../../store/providers/VerifyingProvider";
 

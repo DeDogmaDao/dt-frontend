@@ -1,8 +1,13 @@
+import { ethers } from "ethers";
 import Head from "next/head";
-import { Fragment } from "react";
-import HowItWorks from "../components/howItWorksPage/HowItWorks";
+import { Fragment, useEffect, useState } from "react";
+import { useContractRead } from "wagmi";
+import { deDogmaDaoABI } from "../components/global/ConnectWalletModal/abi";
+import HowItWorksPage from "../components/HowItWorksPage";
+import { useWeb3Contract } from "../hooks/useWeb3Contract";
 import { homePageMetaData } from "../store/allData";
 export default function home(): JSX.Element {
+
   return (
     <Fragment>
       <Head>
@@ -30,11 +35,14 @@ export default function home(): JSX.Element {
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="480" />
         <meta property="og:image:type" content="image/jpg" />
-        <meta property="og:image:secure_url" content={homePageMetaData.imageUrl} />
+        <meta
+          property="og:image:secure_url"
+          content={homePageMetaData.imageUrl}
+        />
         <meta name="twitter:creator" content="@DeDogmaDao" />
         <meta name="twitter:site" content="@DeDogmaDao" />
       </Head>
-      <HowItWorks />
+      <HowItWorksPage />
     </Fragment>
   );
 }

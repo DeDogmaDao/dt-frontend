@@ -150,5 +150,36 @@ export interface metaDataType {
 
 /////// web3 Types
 export interface web3walletType {
-  name:string;
+  name: string;
+}
+
+
+export interface auctionDataType {
+  godNumber:number;
+  godName:string;
+  godUrl:string;
+  about: ReactElement<any, any>[];
+}
+
+export interface auctionTabDataType {
+  tabName: string;
+  tabIcon: ReactElement<any>;
+}
+
+export interface auctionResultType {
+  tokenId: number;
+  startTime: number;
+  endTime: number;
+  startPrice: string;
+  endPrice: string;
+  purchasePrice:string;
+  owner:string;
+  auctionDropPerStep: string;
+  isSold: boolean;
+}
+
+export interface statusType {
+  isLoading: boolean;
+  isError: boolean;
+  isSuccess: boolean;
 }
