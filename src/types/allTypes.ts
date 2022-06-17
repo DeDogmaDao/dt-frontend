@@ -176,4 +176,7 @@ export interface auctionResultType {
   owner:string;
   auctionDropPerStep: string;
   isSold: boolean;
+  isError: boolean;
+  isLoading: boolean;
+  isSuccess: boolean;
 }

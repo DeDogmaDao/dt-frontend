@@ -5,12 +5,8 @@ import { deDogmaDaoABI } from "../components/global/ConnectWalletModal/abi";
 import { contractAddress } from "../store/constants";
 import { auctionResultType } from "../types/allTypes";
 
-
 interface returnType {
   results: auctionResultType[];
-  isError: boolean;
-  isLoading: boolean;
-  isSuccess: boolean;
 }
 export const useWeb3Auction = () => {
   const [results, setResults] = useState<auctionResultType[]>([]);
@@ -47,6 +43,9 @@ export const useWeb3Auction = () => {
               18
             ),
             owner: el[8],
+            isError,
+            isLoading,
+            isSuccess,
           };
         });
       });
@@ -55,8 +54,5 @@ export const useWeb3Auction = () => {
 
   return {
     results,
-    isError,
-    isLoading,
-    isSuccess,
   } as returnType;
 };
