@@ -3,15 +3,16 @@ interface props {
     width: number | string;
     height: number | string;
   };
-  type: "circle" | "rectangle";
   color?: string;
   classNames?: string;
 }
-const Skeleton: React.FC<props> = ({ size, type, classNames, color }) => {
+const Skeleton: React.FC<props> = ({ size, classNames, color }) => {
   return (
     <div
-      style={{ ...size }}
-      className={`bg-secondary-50 rounded-full ${" " + classNames}`}
+      style={{ ...size, backgroundColor: color }}
+      className={`bg-secondary-200 rounded-full animate-pulse ${
+        " " + classNames
+      }`}
     ></div>
   );
 };

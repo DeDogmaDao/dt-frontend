@@ -31,17 +31,29 @@ const BuyButton: React.FC<props> = ({ data, status }) => {
     <div className="flex flex-col justify-start items-start text-xl font-normal">
       <div className="flex justify-center items-center flex-nowrap">
         The next reduction occurs in:
-        {!status.isLoading ? (
+        {status.isLoading ? (
           timer
         ) : (
-          <Skeleton size={{ width: 100, height: 16 }} type="rectangle" />
+          <Skeleton size={{ width: 100, height: 20 }} />
         )}
       </div>
       <div className="flex justify-start items-center gap-x-4 mt-8">
-        <button className="px-14 py-3 text-xl font-medium bg-primary-500 hover:bg-primary-500/50 border-2 border-primary-500 duration-300 rounded-full text-black">
+        <button
+          disabled={status.isSuccess}
+          className="px-14 py-3 text-xl font-medium 
+        bg-primary-500 hover:bg-primary-500/50 border-2 border-primary-500 duration-300 rounded-full text-black
+        disabled:bg-neutral-300 disabled:hover:bg-neutral-300 disabled:border-neutral-100"
+        >
           Buy Now
         </button>
-        <p className="text-xl font-normal"> Current Price: 3 ETH</p>
+        <p className="text-xl font-normal flex justify-center items-center">
+          Current Price:
+          {status.isLoading ? (
+            currentPrice
+          ) : (
+            <Skeleton size={{ width: 100, height: 20 }} />
+          )}
+        </p>
       </div>
     </div>
   );
