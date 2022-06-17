@@ -5,6 +5,7 @@ import AuctionTab from "./AuctionTab";
 import About from "./About";
 import OtherGodHolders from "./OtherGodHolders";
 import { useWeb3Auction } from "../../hooks/useWeb3Auction";
+import Skeleton from "../global/Skeleton";
 const AuctionPage: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [activeTab, setActiveTab] = useState(0);
@@ -15,6 +16,7 @@ const AuctionPage: React.FC = () => {
         <AuctionTab activeTab={activeTab} setActiveTab={setActiveTab} />
 
         <div className="w-[42.3125rem] h-[20.9375rem] bg-green-400/20">
+        
           {auctionData.map((auction, index) => {
             if (index !== activeIndex) {
               return null;

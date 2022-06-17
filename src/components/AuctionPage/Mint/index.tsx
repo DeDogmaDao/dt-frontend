@@ -1,4 +1,5 @@
 import { auctionResultType } from "../../../types/allTypes";
+import Skeleton from "../../global/Skeleton";
 import BuyButton from "./BuyButton";
 import Prices from "./Prices";
 
