@@ -1138,3 +1138,21 @@ export const connectWalletHoverTolltipAni:Variants = {
     scale: 0.8,
   }
 }
+
+export const timerAni:Variants = {
+  hidden: { y:-100},
+  visible: {
+    y:0,
+    transition: {
+      duration: 0.3,
+      ease: "easeInOut",
+    },
+  },
+  out:{
+    y:100,
+    transition: {
+      duration: 0.3,
+      ease: "easeInOut",
+    },
+  }
+}
