@@ -1,38 +1,31 @@
 import { useEffect, useState } from "react";
 import { auctionDropInterval } from "../../../store/constants";
+import { auctionResultType } from "../../../types/allTypes";
 import { secondsToDhms } from "../../../utils/util";
 
 interface props {
-  startPrice: string;
-  endPrice: string;
-  auctionDropPerStep: string;
-  startTime: number;
-  endTime: number;
+  data:auctionResultType;
 }
 const BuyButton: React.FC<props> = ({
-  auctionDropPerStep,
-  endPrice,
-  endTime,
-  startPrice,
-  startTime,
+data
 }) => {
   const [timer, setTimer] = useState(0);
-  const [currentPrice, setCurrentPrice] = useState(Number(startPrice));
+  const [currentPrice, setCurrentPrice] = useState(Number(data.startPrice));
   useEffect(() => {
-    if (startTime) {
+    if (data.startTime) {
       const now = new Date().getTime();
-      setTimer(Math.round(startTime - now / 1000));
-      const elapsedTime: number = Math.round(now / 1000 - startTime);
+      setTimer(Math.round(data.startTime - now / 1000));
+      const elapsedTime: number = Math.round(now / 1000 - data.startTime);
       const price: number =
-        Number(startPrice) -
-        (Number(auctionDropPerStep) * elapsedTime) / auctionDropInterval;
-      if (price < Number(endPrice)) {
-        setCurrentPrice(Number(endPrice));
+        Number(data.startPrice) -
+        (Number(data.auctionDropPerStep) * elapsedTime) / auctionDropInterval;
+      if (price < Number(data.endPrice)) {
+        setCurrentPrice(Number(data.endPrice));
       } else {
         setCurrentPrice(price);
       }
     }
-  }, [startTime]);
+  }, [data.startTime]);
 
   return (
     <div className="flex flex-col justify-start items-start text-xl font-normal">

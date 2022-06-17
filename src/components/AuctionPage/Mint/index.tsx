@@ -4,22 +4,14 @@ import Prices from "./Prices";
 
 interface props {
   index: number;
-  data:auctionResultType;
+  data: auctionResultType;
 }
-const Mint: React.FC<props> = ({ index,data }) => {
+const Mint: React.FC<props> = ({ index, data }) => {
   if (!data) return null;
   return (
     <div className="w-[42.3125rem] h-[20.25rem] flex flex-col justify-start items-start gap-10 ml-6">
-      <Prices
-data={data}
-      />
-      <BuyButton
-        auctionDropPerStep={data.auctionDropPerStep}
-        endPrice={data.endPrice}
-        endTime={data.endTime}
-        startPrice={data.startPrice}
-        startTime={data.startTime}
-      />
+      <Prices data={data} />
+      <BuyButton data={data} />
     </div>
   );
 };
