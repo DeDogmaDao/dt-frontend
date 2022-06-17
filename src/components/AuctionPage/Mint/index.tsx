@@ -11,7 +11,7 @@ interface props {
 const Mint: React.FC<props> = ({ index, data , status}) => {
   return (
     <div className="w-[42.3125rem] h-[20.25rem] flex flex-col justify-start items-start gap-10 ml-6">
-      <Prices data={data} />
+      <Prices data={data} status={status} />
       <BuyButton data={data} status={status} />
     </div>
   );
