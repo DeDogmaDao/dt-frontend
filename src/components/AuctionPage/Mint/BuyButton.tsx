@@ -33,7 +33,7 @@ const BuyButton: React.FC<props> = ({ data, status }) => {
       <div className="flex justify-center items-center flex-nowrap">
         The next reduction occurs in:
         {status.isLoading ? (
-          <Timer time={timer} />
+          <Timer time={timer} classNames="ml-2" />
         ) : (
           <Skeleton size={{ width: 100, height: 20 }} />
         )}

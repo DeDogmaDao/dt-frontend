@@ -17,23 +17,31 @@ const TimeTrack: React.FC<props> = ({ time, type }) => {
       setTimeLeft(Math.floor((time % 3600) / 60));
     }
     if (type === "H") {
-      setTimeLeft(Math.floor(((time % 3600) * 24) / 3600));
+      setTimeLeft(Math.floor((time % (3600 * 24)) / 3600));
     }
     if (type === "D") {
-      setTimeLeft(Math.floor(time / 3600 / 24));
+      setTimeLeft(Math.floor(time / (3600 * 24)));
     }
   }, [time]);
 
+  if (type === "D" && timeLeft === 0) {
+    return <></>;
+  }
+  if (type === "H" && timeLeft === 0 && Math.floor(time / (3600 * 24)) === 0) {
+    return <></>;
+  }
+
+  
   return (
-    <div className="flex justify-center items-center h-full gap-x-2">
-      <motion.span className="text-[2rem] w-10 font-bold flex justify-center items-center relative">
+    <motion.div  className="flex justify-center items-center h-full ">
+      <motion.span  className="text-[2rem] w-10 font-bold flex justify-center items-center relative">
         <AnimatePresence>
           {nums.map((item) => {
             if (Math.floor(timeLeft / 10) !== item) return null;
             return (
               <motion.span
-              key={"tens"+item}
-                className="absolute left-0 w-5"
+                key={"tens" + item}
+                className="absolute left-0 w-5 text-center"
                 initial={"hidden"}
                 animate={"visible"}
                 exit={"out"}
@@ -47,8 +55,8 @@ const TimeTrack: React.FC<props> = ({ time, type }) => {
             if (timeLeft % 10 !== item) return null;
             return (
               <motion.span
-                key={"first"+item}
-                className="absolute right-0 w-5"
+                key={"first" + item}
+                className="absolute right-0 w-5 text-center"
                 initial={"hidden"}
                 animate={"visible"}
                 exit={"out"}
@@ -60,8 +68,8 @@ const TimeTrack: React.FC<props> = ({ time, type }) => {
           })}
         </AnimatePresence>
       </motion.span>
-      <span className="self-end text-base font-normal">{type}</span>
-    </div>
+      <motion.span  className="self-end text-base font-normal">{type}</motion.span>
+    </motion.div>
   );
 };
 
