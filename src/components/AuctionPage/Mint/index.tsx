@@ -7,7 +7,6 @@ interface props {
   data: auctionResultType;
 }
 const Mint: React.FC<props> = ({ index, data }) => {
-  if (!data) return null;
   return (
     <div className="w-[42.3125rem] h-[20.25rem] flex flex-col justify-start items-start gap-10 ml-6">
       <Prices data={data} />
