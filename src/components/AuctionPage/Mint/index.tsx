@@ -11,9 +11,7 @@ const Mint: React.FC<props> = ({ index,data }) => {
   return (
     <div className="w-[42.3125rem] h-[20.25rem] flex flex-col justify-start items-start gap-10 ml-6">
       <Prices
-        auctionDropPerStep={data.auctionDropPerStep}
-        endPrice={data.endPrice}
-        startPrice={data.startPrice}
+data={data}
       />
       <BuyButton
         auctionDropPerStep={data.auctionDropPerStep}

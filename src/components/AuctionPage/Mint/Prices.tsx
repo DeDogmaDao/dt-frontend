@@ -1,12 +1,11 @@
 import { AuctionVerticalDashLineSVG } from "../../../store/svg";
+import { auctionResultType } from "../../../types/allTypes";
 
 interface props {
-        startPrice: string;
-        endPrice: string;
-        auctionDropPerStep: string;
+    data:auctionResultType;
 }
 
-const Prices:React.FC<props> = ({auctionDropPerStep,endPrice,startPrice}) => {
+const Prices:React.FC<props> = ({data}) => {
 
     return(
         <div className="flex flex-col gap-y-4 relative mt-8 ml-4 font-bold text-xl">
