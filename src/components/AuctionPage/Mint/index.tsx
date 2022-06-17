@@ -5,7 +5,7 @@ import Prices from "./Prices";
 
 interface props {
   index: number;
-  data: auctionResultType;
+  data: auctionResultType | undefined;
   status:statusType;
 }
 const Mint: React.FC<props> = ({ index, data , status}) => {
