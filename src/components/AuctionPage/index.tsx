@@ -10,6 +10,7 @@ const AuctionPage: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [activeTab, setActiveTab] = useState(0);
   const { results, status } = useWeb3Auction();
+
   return (
     <div className="w-screen min-h-screen flex justify-center items-center px-20 mb-20">
       <div className="w-1/2 h-full flex flex-col justify-center items-start bg-red-200/20">
@@ -24,7 +25,7 @@ const AuctionPage: React.FC = () => {
             return (
               <>
                 {activeTab === 0 && (
-                  <Mint index={index} data={results[index]} />
+                  <Mint index={index} data={results[index]} status={status} />
                 )}
                 {activeTab === 1 && <About />}
                 {activeTab === 2 && <OtherGodHolders />}
