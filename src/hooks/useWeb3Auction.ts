@@ -3,10 +3,11 @@ import { useEffect, useState } from "react";
 import { useContractRead } from "wagmi";
 import { deDogmaDaoABI } from "../components/global/ConnectWalletModal/abi";
 import { contractAddress } from "../store/constants";
-import { auctionResultType } from "../types/allTypes";
+import { auctionResultType, statusType } from "../types/allTypes";
 
 interface returnType {
   results: auctionResultType[];
+  status:statusType;
 }
 export const useWeb3Auction = () => {
   const [results, setResults] = useState<auctionResultType[]>([]);
@@ -43,9 +44,6 @@ export const useWeb3Auction = () => {
               18
             ),
             owner: el[8],
-            isError,
-            isLoading,
-            isSuccess,
           };
         });
       });
@@ -54,5 +52,6 @@ export const useWeb3Auction = () => {
 
   return {
     results,
+    status: { isError, isLoading, isSuccess },
   } as returnType;
 };
