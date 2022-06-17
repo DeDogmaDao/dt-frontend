@@ -11,7 +11,7 @@ interface returnType {
 }
 export const useWeb3Auction = () => {
   const [results, setResults] = useState<auctionResultType[]>([]);
-  const { data, isError, isLoading, isSuccess } = useContractRead(
+  const { data, isError, isSuccess,internal } = useContractRead(
     {
       addressOrName: contractAddress,
       contractInterface: deDogmaDaoABI,
@@ -52,6 +52,6 @@ export const useWeb3Auction = () => {
 
   return {
     results,
-    status: { isError, isLoading, isSuccess },
+    status: { isError, isLoading:internal.isFetchedAfterMount, isSuccess },
   } as returnType;
 };

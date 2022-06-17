@@ -8,29 +8,29 @@ interface props {
 }
 
 const Prices: React.FC<props> = ({ data, status }) => {
-    console.log(data?.purchasePrice);
+  console.log(data?.purchasePrice);
   return (
     <div className="flex flex-col gap-y-4 relative mt-8 ml-4 font-bold text-xl">
       <div className="flex items-center">
         Start Price:{" "}
-        {!status.isLoading ? (
-          data?.startPrice + "ETH"
+        {status.isLoading ? (
+          data?.startPrice + " ETH"
         ) : (
           <Skeleton size={{ width: 100, height: 20 }} />
         )}
       </div>
       <div className="flex items-center">
         The amount of price drop:{" "}
-        {!status.isLoading ? (
-          data?.auctionDropPerStep + "ETH"
+        {status.isLoading ? (
+          data?.auctionDropPerStep + " ETH"
         ) : (
           <Skeleton size={{ width: 100, height: 20 }} />
         )}
       </div>
       <div className="flex items-center">
         Resting Price:{" "}
-        {!status.isLoading ? (
-          data?.endPrice + "ETH"
+        {status.isLoading ? (
+          data?.endPrice + " ETH"
         ) : (
           <Skeleton size={{ width: 100, height: 20 }} />
         )}
@@ -38,8 +38,8 @@ const Prices: React.FC<props> = ({ data, status }) => {
       {data?.isSold && (
         <div className="flex items-center">
           purchase Price:{" "}
-          {!status.isLoading ? (
-            data?.purchasePrice + "ETH"
+          {status.isLoading ? (
+            data?.purchasePrice + " ETH"
           ) : (
             <Skeleton size={{ width: 100, height: 20 }} />
           )}

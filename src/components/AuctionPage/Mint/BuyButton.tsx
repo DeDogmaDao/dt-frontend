@@ -49,7 +49,7 @@ const BuyButton: React.FC<props> = ({ data, status }) => {
         <p className="text-xl font-normal flex justify-center items-center">
           Current Price:
           {status.isLoading ? (
-            currentPrice
+            currentPrice.toFixed(4) + " ETH"
           ) : (
             <Skeleton size={{ width: 100, height: 20 }} />
           )}
