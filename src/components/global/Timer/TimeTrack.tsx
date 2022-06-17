@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 interface props {
     type:string;
@@ -6,6 +6,7 @@ interface props {
 }
 const TimeTrack: React.FC<props> = ({time,type}) => {
     const [timeLeft, setTimeLeft] = useState("00");
+useEffect(()=>{
     if(type==="Sec"){
         setTimeLeft(Math.floor(time%60).toString());
     }
@@ -18,9 +19,11 @@ const TimeTrack: React.FC<props> = ({time,type}) => {
     if(type==="D"){
         setTimeLeft(Math.floor(time/3600/24).toString());
     }
+},[time])
+
   return (
     <div className="flex justify-center items-center h-full">
-      <span className="text-[2rem] font-bold">50</span>
+      <span className="text-[2rem] font-bold">{timeLeft}</span>
       <span className="self-end text-base font-normal">{type}</span>
     </div>
   );
