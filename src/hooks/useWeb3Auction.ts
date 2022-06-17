@@ -6,7 +6,7 @@ import { contractAddress } from "../store/constants";
 import { auctionResultType, statusType } from "../types/allTypes";
 
 interface returnType {
-  results: auctionResultType[];
+  results: auctionResultType[] | [];
   status:statusType;
 }
 export const useWeb3Auction = () => {

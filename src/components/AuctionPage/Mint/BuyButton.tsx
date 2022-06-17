@@ -5,7 +5,7 @@ import { secondsToDhms } from "../../../utils/util";
 import Skeleton from "../../global/Skeleton";
 
 interface props {
-  data: auctionResultType;
+  data: auctionResultType | undefined;
   status: statusType;
 }
 const BuyButton: React.FC<props> = ({ data, status }) => {
