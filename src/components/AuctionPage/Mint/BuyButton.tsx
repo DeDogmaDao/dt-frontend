@@ -28,18 +28,14 @@ const BuyButton: React.FC<props> = ({ data, status }) => {
     }
   }, [data]);
 
-  if(timer<=0) return null;
+  if (timer <= 0) return null;
   return (
     <div className="flex flex-col justify-start items-start text-xl font-normal">
-      <div className="flex justify-center items-center flex-nowrap">
+      <div className="flex justify-center items-center flex-nowrap h-14">
         The next reduction occurs in:
-        {status.isLoading ? (
-          <Timer time={timer} classNames="ml-2" />
-        ) : (
-          <Skeleton size={{ width: 100, height: 20 }} />
-        )}
+        {<Timer time={timer} classNames="ml-2" />}
       </div>
-      <div className="flex justify-start items-center gap-x-4 mt-8">
+      <div className="flex justify-start items-center gap-x-4 mt-6">
         <button
           disabled={!status.isLoading}
           className="px-14 py-3 text-xl font-medium 
@@ -50,11 +46,7 @@ const BuyButton: React.FC<props> = ({ data, status }) => {
         </button>
         <p className="text-xl font-normal flex justify-center items-center">
           Current Price:
-          {status.isLoading ? (
-            currentPrice.toFixed(4) + " ETH"
-          ) : (
-            <Skeleton size={{ width: 100, height: 20 }} />
-          )}
+          {currentPrice.toFixed(4) + " ETH"}
         </p>
       </div>
     </div>
