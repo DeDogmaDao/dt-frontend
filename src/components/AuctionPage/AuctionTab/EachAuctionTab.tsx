@@ -17,8 +17,8 @@ const EachAuctionTab: React.FC<props> = ({
   return (
     <button
       onClick={() => setActiveTab(index)}
-      className={`flex justify-center items-center w-max h-full px-6 py-3 gap-x-2 duration-300 hover:bg-red-900 ${
-        activeTab === index && "bg-red-700"
+      className={`flex justify-center items-center w-max h-full rounded-t-lg px-6 py-3 gap-x-2 duration-300 hover:bg-[#191C3A5C]/60 ${
+        activeTab === index && "bg-[#191C3A5C]/30"
       }`}
     >
       <span className=" stroke-primary-500 w-6 h-6">{tabIcon}</span>
