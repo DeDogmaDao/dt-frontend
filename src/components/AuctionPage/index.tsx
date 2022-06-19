@@ -7,10 +7,10 @@ import OtherGodHolders from "./OtherGodHolders";
 import { useWeb3Auction } from "../../hooks/useWeb3Auction";
 import Skeleton from "../global/Skeleton";
 const AuctionPage: React.FC = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(9);
   const [activeTab, setActiveTab] = useState(0);
   const { results, status } = useWeb3Auction();
-
+// console.log(results, status)
   return (
     <div className="w-screen min-h-screen flex justify-center items-center px-20 mb-20">
       <div className="w-1/2 h-full flex flex-col justify-center items-start bg-red-200/20">
