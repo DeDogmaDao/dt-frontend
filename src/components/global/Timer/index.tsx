@@ -7,8 +7,8 @@ interface props{
 }
 
 const Timer:React.FC<props> = ({time,classNames}) => {
-    if(Math.abs(time)===0) return null;
-    const [currentTime, setCurrentTime] = useState(Math.abs(time));
+    if(time<=0) return null;
+    const [currentTime, setCurrentTime] = useState(time);
     useEffect(()=>{
         const interval = setInterval(()=>{
             setCurrentTime(prevState=>prevState-1);
