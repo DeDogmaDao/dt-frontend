@@ -5,45 +5,28 @@ import Skeleton from "../../global/Skeleton";
 interface props {
   data: auctionResultType | undefined;
   status: statusType;
+  isAuctionOver: boolean;
 }
 
-const Prices: React.FC<props> = ({ data, status }) => {
+const Prices: React.FC<props> = ({ data, status, isAuctionOver }) => {
   return (
-    <div className={`flex flex-col gap-x-10 gap-y-4 relative mt-8 ml-4 font-bold text-xl`}>
+    <div
+      className={`flex flex-col gap-x-10 gap-y-4 relative mt-8 ml-4 font-bold text-xl`}
+    >
       <div className="flex items-center">
-        Start Price:{" "}
-        {status.isLoading ? (
-          data?.startPrice + " ETH"
-        ) : (
-          <Skeleton size={{ width: 100, height: 20 }} />
-        )}
+        Start Price: {data?.startPrice + " ETH"}
       </div>
-      {!data?.isSold && (
+      {!isAuctionOver && (
         <div className="flex items-center">
-          The amount of price drop:{" "}
-          {status.isLoading ? (
-            data?.auctionDropPerStep + " ETH"
-          ) : (
-            <Skeleton size={{ width: 100, height: 20 }} />
-          )}
+          The amount of price drop: {data?.auctionDropPerStep + " ETH"}
         </div>
       )}
       <div className="flex items-center">
-        Resting Price:{" "}
-        {status.isLoading ? (
-          data?.endPrice + " ETH"
-        ) : (
-          <Skeleton size={{ width: 100, height: 20 }} />
-        )}
+        Resting Price: {data?.endPrice + " ETH"}
       </div>
-      {data?.isSold && (
+      {isAuctionOver && (
         <div className="flex items-center">
-          purchase Price:{" "}
-          {status.isLoading ? (
-            data?.purchasePrice + " ETH"
-          ) : (
-            <Skeleton size={{ width: 100, height: 20 }} />
-          )}
+          purchase Price: {data?.purchasePrice + " ETH"}
         </div>
       )}
       <span className="h-[7.375rem] w-[.125rem] fill-primary-50 absolute -left-4">
