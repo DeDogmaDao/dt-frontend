@@ -13,7 +13,7 @@ const AuctionPage: React.FC = () => {
 // console.log(results, status)
   return (
     <div className="w-screen min-h-screen flex justify-center items-center px-20 mb-20">
-      <div className="w-1/2 h-full flex flex-col justify-center items-start bg-red-200/20">
+      <div className=" h-full flex flex-col justify-center items-start bg-red-200/20">
         <AuctionTab activeTab={activeTab} setActiveTab={setActiveTab} />
 
         <div className="w-[42.3125rem] h-[20.9375rem] bg-green-400/20">
@@ -27,7 +27,7 @@ const AuctionPage: React.FC = () => {
                 {activeTab === 0 && (
                   <Mint index={index} data={results[index]} status={status} />
                 )}
-                {activeTab === 1 && <About />}
+                {activeTab === 1 && <About data={auction} />}
                 {activeTab === 2 && <OtherGodHolders />}
               </>
             );
