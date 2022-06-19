@@ -46,7 +46,7 @@ const BuyButton: React.FC<props> = ({ data, status }) => {
         </button>
         <p className="text-xl font-normal flex justify-center items-center">
           Current Price:
-          {currentPrice.toFixed(4) + " ETH"}
+          {" " + currentPrice.toFixed(4) + " ETH"}
         </p>
       </div>
     </div>
