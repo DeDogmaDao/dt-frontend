@@ -20,7 +20,7 @@ const AuctionTable: React.FC<props> = ({apiData,data}) => {
 {data.map((item,index)=>{
     return (
         <tr className="h-16  text-left border-b border-neutral-500/50">
-        <td className="text-lg font-normal">day {index}</td>
+        <td className="text-lg font-normal">day {index + 1}</td>
         <td className="text-lg font-normal">{item.godName}</td>
         <td className="text-lg font-normal">{apiData[index].purchasePrice}</td>
         <td className="text-lg font-normal">{apiData[index].owner.substring(0,10)}</td>
