@@ -16,7 +16,7 @@ const AuctionPage: React.FC = () => {
       <div className=" h-full flex flex-col justify-center items-start ">
         <AuctionTab activeTab={activeTab} setActiveTab={setActiveTab} />
 
-        <div className="w-[42.3125rem] h-[20.9375rem] bg-[#191C3A5C]/30">
+        <div className="w-[42.3125rem] h-[20.9375rem] bg-[#191C3A5C]/30 rounded-b-lg rounded-tr-lg">
         
           {auctionData.map((auction, index) => {
             if (index !== activeIndex) {
