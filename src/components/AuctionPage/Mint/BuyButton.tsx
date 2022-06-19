@@ -38,8 +38,8 @@ const BuyButton: React.FC<props> = ({ data, status }) => {
       <div className="flex justify-start items-center gap-x-4 mt-6">
         <button
           disabled={!status.isLoading}
-          className="px-14 py-3 text-xl font-medium 
-        bg-primary-500 hover:bg-primary-500/50 border-2 border-primary-500 duration-300 rounded-full text-black
+          className="h-12 w-44 text-xl font-medium flex justify-center items-center
+        bg-primary-500 hover:bg-primary-500/50 border-2 border-primary-500 duration-300 rounded-xl text-black
         disabled:bg-neutral-300 disabled:hover:bg-neutral-300 disabled:border-neutral-100"
         >
           Buy Now

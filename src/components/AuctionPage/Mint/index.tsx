@@ -2,6 +2,7 @@ import { useEffect, useLayoutEffect, useState } from "react";
 import { auctionResultType, statusType } from "../../../types/allTypes";
 import Skeleton from "../../global/Skeleton";
 import BuyButton from "./BuyButton";
+import MintSkeleton from "./MintSkeleton";
 import Prices from "./Prices";
 
 interface props {
@@ -22,11 +23,13 @@ const Mint: React.FC<props> = ({ index, data, status }) => {
   }, [data?.isSold, data?.endTime]);
   return (
     <div className="w-[42.3125rem] h-[20.25rem] flex flex-col justify-start items-start gap-10 ml-6">
-      {status.isLoading && (
+      {status.isLoading ? (
         <>
           <Prices data={data} status={status} isAuctionOver={isAuctionOver} />
           <BuyButton data={data} status={status} />
         </>
+      ) : (
+        <MintSkeleton />
       )}
     </div>
   );
