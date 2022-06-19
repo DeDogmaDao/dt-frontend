@@ -23,7 +23,7 @@ const AuctionTable: React.FC<props> = ({apiData,data}) => {
         <td className="text-lg font-normal">day {index + 1}</td>
         <td className="text-lg font-normal">{item.godName}</td>
         <td className="text-lg font-normal">{apiData[index].purchasePrice}</td>
-        <td className="text-lg font-normal">{apiData[index].owner.substring(0,10)}</td>
+        <td className="text-lg font-normal">{apiData[index].owner.substring(0,5) + "..." + apiData[index].owner.substring(apiData[index].owner.length-5)}</td>
         <td className="font-medium text-base">more info</td>
       </tr>
     )
