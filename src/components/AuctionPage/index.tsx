@@ -28,7 +28,7 @@ const AuctionPage: React.FC = () => {
                   <Mint index={index} data={results[index]} status={status} />
                 )}
                 {activeTab === 1 && <About data={auction} />}
-                {activeTab === 2 && <OtherGodHolders />}
+                {activeTab === 2 && <OtherGodHolders apiData={results} data={auctionData} />}
               </>
             );
           })}
