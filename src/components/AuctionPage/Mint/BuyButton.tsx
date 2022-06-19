@@ -28,6 +28,7 @@ const BuyButton: React.FC<props> = ({ data, status }) => {
     }
   }, [data]);
 
+  if(timer<=0) return null;
   return (
     <div className="flex flex-col justify-start items-start text-xl font-normal">
       <div className="flex justify-center items-center flex-nowrap">
