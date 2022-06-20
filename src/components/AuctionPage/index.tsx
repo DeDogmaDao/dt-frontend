@@ -37,7 +37,7 @@ const AuctionPage: React.FC = () => {
           })}
         </div>
       </div>
-   <AuctionSlider data={auctionData} activeIndex={activeIndex} />
+   <AuctionSlider data={auctionData} activeIndex={activeIndex} setActiveIndex={setActiveIndex} />
     </div>
   );
 };
