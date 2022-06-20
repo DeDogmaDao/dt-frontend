@@ -21,12 +21,15 @@ const Mint: React.FC<props> = ({ index, data, status }) => {
       }
     }
   }, [data?.isSold, data?.endTime]);
+  if(data){
+    console.log(isAuctionOver, data?.startTime - Date.now() / 1000);
+  }
   return (
     <div className="w-[42.3125rem] h-[20.25rem] flex flex-col justify-start items-start gap-10 ml-6">
       {status.isLoading ? (
         <>
           <Prices data={data} status={status} isAuctionOver={isAuctionOver} />
-          <BuyButton data={data} status={status} />
+          <BuyButton data={data} status={status} isAuctionOver={isAuctionOver} />
         </>
       ) : (
         <MintSkeleton />
