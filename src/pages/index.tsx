@@ -1,19 +1,13 @@
+import { ethers } from "ethers";
 import Head from "next/head";
-import { Fragment, useEffect } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { useContractRead } from "wagmi";
 import { deDogmaDaoABI } from "../components/global/ConnectWalletModal/abi";
 import HowItWorksPage from "../components/HowItWorksPage";
 import { useWeb3Contract } from "../hooks/useWeb3Contract";
 import { homePageMetaData } from "../store/allData";
 export default function home(): JSX.Element {
-  const start = useContractRead(
-    {
-      addressOrName: "0x663f3ad617193148711d28f5334ee4ed07016602",
-      contractInterface: deDogmaDaoABI,
-    },
-    "MAX_MINT_PER_ADDRESS",
-  );
-  console.log(start);
+
   return (
     <Fragment>
       <Head>
