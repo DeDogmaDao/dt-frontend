@@ -58,13 +58,13 @@ const AuctionSlider: React.FC<props> = ({
         })}
       </div>
       <button
-        className="absolute p-2 left-0 top-1/2 -mt-8 text-5xl scale-x-[-1] text-white ssm:text-neutral-400 z-60"
+        className="absolute p-2 left-10 top-1/2 -mt-12 text-5xl scale-x-[-1] text-white ssm:text-neutral-400 z-60"
         onClick={leftClickHandler}
       >
         <AngleRightSVG stroke="#66666A" width={21} height={45} fill="none" />
       </button>
       <button
-        className="absolute p-2 right-0 top-1/2 -mt-8 text-5xl  text-white ssm:text-neutral-400 z-60"
+        className="absolute p-2 right-10 top-1/2 -mt-12 text-5xl  text-white ssm:text-neutral-400 z-60"
         onClick={rightClickHandler}
       >
         <AngleRightSVG stroke="#66666A" width={21} height={45} fill="none" />

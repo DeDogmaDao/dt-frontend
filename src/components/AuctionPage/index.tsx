@@ -13,7 +13,7 @@ const AuctionPage: React.FC = () => {
   const { results, status } = useWeb3Auction();
 // console.log(results, status)
   return (
-    <div className="w-screen min-h-screen flex justify-center items-center px-20 mb-32 mt-20">
+    <div className="w-screen min-h-screen flex justify-center items-center px-20 mb-32 mt-8">
       <div className="h-full flex flex-col justify-center items-start relative ">
       <h1 className="absolute -top-16 left-0 text-5xl font-bold">DUTCH AUCTION
       <span className=" ml-4 text-xl font-semibold text-neutral-200/80"> <span className="text-primary-500 ">Day {activeIndex + 1}</span> / 10</span></h1>
