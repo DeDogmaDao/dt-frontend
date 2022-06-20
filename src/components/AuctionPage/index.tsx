@@ -16,7 +16,7 @@ const AuctionPage: React.FC = () => {
     <div className="w-screen min-h-screen flex justify-center items-center px-20 mb-32">
       <div className="h-full flex flex-col justify-center items-start relative mt-32">
       <h1 className="absolute -top-16 left-0 text-5xl font-bold">DUTCH AUCTION
-      <span className=" ml-4 text-xl font-semibold"> <span className="text-primary-500 ">Day {activeIndex + 1}</span>/10</span></h1>
+      <span className=" ml-4 text-xl font-semibold text-neutral-200/80"> <span className="text-primary-500 ">Day {activeIndex + 1}</span> / 10</span></h1>
         <AuctionTab activeTab={activeTab} setActiveTab={setActiveTab} />
 
         <div className="w-[42.3125rem] h-[20.9375rem] bg-[#191C3A5C]/30 rounded-b-lg rounded-tr-lg">
