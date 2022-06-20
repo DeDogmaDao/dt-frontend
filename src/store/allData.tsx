@@ -1421,6 +1421,7 @@ export const auctionData: auctionDataType[] = [
   {
     godNumber: 0,
     godName: "Zeus",
+    titleOfHonor:"The God of the Sky",
     about: [
       <>
         Lord of the skies and king of the Olympians. Strong-willed and astute,
@@ -1438,6 +1439,7 @@ export const auctionData: auctionDataType[] = [
   {
     godNumber: 1,
     godName: "Artemis",
+    titleOfHonor:"The God of the Hunt",
     about: [
       <>
         Beautiful moon maiden, goddess of the hunt. Twin to Apollo, the sun god.
@@ -1459,6 +1461,7 @@ export const auctionData: auctionDataType[] = [
   {
     godNumber: 2,
     godName: "Hermes",
+    titleOfHonor:"The God of the Mail",
     about: [
       <>
         Master of thievery and poetry. With his wing-threaded sandals, he can
@@ -1478,6 +1481,7 @@ export const auctionData: auctionDataType[] = [
   {
     godNumber: 3,
     godName: "Hephaestus",
+    titleOfHonor:"The God of the Sun",
     about: [
       <>
         God of craftsmen and invention, son of Hera. A blazing forge with his
@@ -1498,6 +1502,7 @@ export const auctionData: auctionDataType[] = [
   {
     godNumber: 4,
     godName: "Hecate",
+    titleOfHonor:"The God of the Moon",
     about: [
       <>
         Goddess of necromancy and sorcery. Accompanied by her double shadow, her
@@ -1514,6 +1519,7 @@ export const auctionData: auctionDataType[] = [
   {
     godNumber: 5,
     godName: "Hades",
+    titleOfHonor:"The God of the Underworld",
     about: [
       <>
         God of the afterlife and Lord of the underworld. No mortal man could
@@ -1529,6 +1535,7 @@ export const auctionData: auctionDataType[] = [
   {
     godNumber: 6,
     godName: "Aphrodite",
+    titleOfHonor:"The God of Love",
     about: [
       <>
         Goddess of beauty and passion. Seductive, beautiful and wistful, this
@@ -1545,6 +1552,7 @@ export const auctionData: auctionDataType[] = [
   {
     godNumber: 7,
     godName: "Poseidon",
+    titleOfHonor: "The God Of Sea" ,
     about: [
       <>
         God of the oceans and Lord of the seas. Father of horses and all sea
@@ -1561,6 +1569,7 @@ export const auctionData: auctionDataType[] = [
   {
     godNumber: 8,
     godName: "Ares",
+    titleOfHonor: "hhhh",
     about: [
       <>
         God of War and bloodlust. The most hostile god to deal with, but the
@@ -1576,6 +1585,7 @@ export const auctionData: auctionDataType[] = [
   {
     godNumber: 9,
     godName: "Hera",
+    titleOfHonor: "hhhh",
     about: [
       <>
         Goddess of marriage and patroness of women. Daughter of Kronos and Hera.

@@ -159,6 +159,7 @@ export interface auctionDataType {
   godName:string;
   godUrl:string;
   about: ReactElement<any, any>[];
+  titleOfHonor:string;
 }
 
 export interface auctionTabDataType {
