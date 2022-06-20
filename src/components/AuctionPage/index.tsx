@@ -6,6 +6,7 @@ import About from "./About";
 import OtherGodHolders from "./OtherGodHolders";
 import { useWeb3Auction } from "../../hooks/useWeb3Auction";
 import Skeleton from "../global/Skeleton";
+import AuctionSlider from "./AuctionSlider";
 const AuctionPage: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(9);
   const [activeTab, setActiveTab] = useState(0);
@@ -34,7 +35,7 @@ const AuctionPage: React.FC = () => {
           })}
         </div>
       </div>
-      <div className="w-1/2 h-full flex flex-col justify-center items-center bg-red-100"></div>
+   <AuctionSlider data={auctionData} activeIndex={activeIndex} />
     </div>
   );
 };
