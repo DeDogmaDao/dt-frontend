@@ -82,6 +82,9 @@ module.exports = {
         900: "#212121",
       },
       bodymain: "#090919",
+      body: {
+        800: "#171726",
+      },
     }),
     columns: {
       auto: "auto",
@@ -1046,7 +1049,7 @@ module.exports = {
     "disabled",
   ],
   plugins: [
-    require('tailwindcss-labeled-groups')(['1', '2',]),
+    require("tailwindcss-labeled-groups")(["1", "2"]),
     plugin(function ({ addBase, addComponents, addUtilities, theme }) {
       addComponents({
         ".text-extera-large-bold": {

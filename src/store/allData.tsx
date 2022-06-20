@@ -12,10 +12,13 @@ import {
   benefitType,
   teamCardType,
   metaDataType,
+  web3walletType,
+  auctionDataType,
+  auctionTabDataType,
 } from "../types/allTypes";
 
 // images
-import { socialSVGs } from "./svg";
+import { auctionTabsSVGS, socialSVGs } from "./svg";
 //links
 import {
   decentralTitanSocial,
@@ -34,7 +37,7 @@ import {
 //
 //
 
-import { teamImg } from "./img";
+import { teamImg, walletImgData } from "./img";
 
 const { DiscordSVG, YoutubeSVG, Twitter, Github, Instagram, Linkedin } =
   socialSVGs;
@@ -1399,3 +1402,215 @@ export const faqPageMetaData: metaDataType = {
   homePageUrl: "https://dedogmadao.com",
   pageUrl: "https://dedogmadao.com/faq",
 };
+
+export const web3Wallets: web3walletType[] = [
+  {
+    name: "MetaMask",
+  },
+  {
+    name: "WalletConnect",
+  },
+  {
+    name: "CoinBase",
+  },
+];
+
+export const walletsID = ["metaMask", "coinbaseWallet", "walletConnect"];
+
+export const auctionData: auctionDataType[] = [
+  {
+    godNumber: 0,
+    godName: "Zeus",
+    titleOfHonor:"The God of the Sky",
+    about: [
+      <>
+        Lord of the skies and king of the Olympians. Strong-willed and astute,
+        he empowers mortals with his greatness to surface their potential. His
+        thunderbolt has the power to induce fear and dominate like no other.
+      </>,
+      <>
+        Zeus takes 1.5 % of every mortal player's prize share in case of
+        winning. Zeus has 18X more chance to compare to other cards to win the
+        lottery.
+      </>,
+    ],
+    godUrl: "/zeus",
+  },
+  {
+    godNumber: 1,
+    godName: "Artemis",
+    titleOfHonor:"The God of the Hunt",
+    about: [
+      <>
+        Beautiful moon maiden, goddess of the hunt. Twin to Apollo, the sun god.
+        Fingers laced with silver and a deadly accuracy with her bow and arrows-
+        all who pursue the art of archery strive to attain only a sliver of her
+        skill.
+      </>,
+      <>
+        Artemis created the beast rider guild by sending her goat to help them.
+        She takes 3% share of the beast rider's win of the treasury.
+      </>,
+      <>
+        Artemis has 18X more chance to compare to other cards to win the
+        lottery.
+      </>,
+    ],
+    godUrl: "/Artemis",
+  },
+  {
+    godNumber: 2,
+    godName: "Hermes",
+    titleOfHonor:"The God of the Mail",
+    about: [
+      <>
+        Master of thievery and poetry. With his wing-threaded sandals, he can
+        spread news at the blink of an eye to those who are willing to lend him
+        an ear. The words that leave his mouth are nothing short of poetical.
+      </>,
+      <>
+        Hermes created the Bandits guild by placing a magnetic power in humans.
+      </>,
+      <>Hermes takes 3% share of the Bandits guilds‘ win of treasury.</>,
+      <>
+        Hermes has 18X more chance to compare to other cards to win the lottery.
+      </>,
+    ],
+    godUrl: "/Hermes",
+  },
+  {
+    godNumber: 3,
+    godName: "Hephaestus",
+    titleOfHonor:"The God of the Sun",
+    about: [
+      <>
+        God of craftsmen and invention, son of Hera. A blazing forge with his
+        blessing yields the sharpest daggers and the most balanced swords. His
+        inventive spirit can solve any problem with an ingenious idea.
+      </>,
+      <>
+        Hephaestus created the Smiths guild by giving them the box of pandora.
+      </>,
+      <>Hephaestus takes 3% share of the Smiths guilds‘ win of treasury.</>,
+      <>
+        Hephaestus has 18X more chance to compare to other cards to win the
+        lottery.
+      </>,
+    ],
+    godUrl: "/Hephaestus",
+  },
+  {
+    godNumber: 4,
+    godName: "Hecate",
+    titleOfHonor:"The God of the Moon",
+    about: [
+      <>
+        Goddess of necromancy and sorcery. Accompanied by her double shadow, her
+        magical abilities knows no boundaries.
+      </>,
+      <>Hecate created the Enchants by the power of her magic and fire.</>,
+      <>Hecate takes 3% share of the Enchants guild’s win of treasury.</>,
+      <>
+        Hecate has 18X more chance to compare to other cards to win the lottery.
+      </>,
+    ],
+    godUrl: "/Hecate",
+  },
+  {
+    godNumber: 5,
+    godName: "Hades",
+    titleOfHonor:"The God of the Underworld",
+    about: [
+      <>
+        God of the afterlife and Lord of the underworld. No mortal man could
+        bare a single second in his presence, as he emits a strong sense of
+        death and loss.
+      </>,
+      <>
+        Hades has 18X more chance to compare to other cards to win the lottery.
+      </>,
+    ],
+    godUrl: "/Hades",
+  },
+  {
+    godNumber: 6,
+    godName: "Aphrodite",
+    titleOfHonor:"The God of Love",
+    about: [
+      <>
+        Goddess of beauty and passion. Seductive, beautiful and wistful, this
+        goddess could make a man swoon at her while holding a dagger to his
+        throat. A dangerous-but-fantastic deity.
+      </>,
+      <>
+        Aphrodite has 18X more chance to compare to other cards to win the
+        lottery.
+      </>,
+    ],
+    godUrl: "/Aphrodite",
+  },
+  {
+    godNumber: 7,
+    godName: "Poseidon",
+    titleOfHonor: "The God Of Sea" ,
+    about: [
+      <>
+        God of the oceans and Lord of the seas. Father of horses and all sea
+        creatures. With his power to control large bodies of water, he can
+        influence the climate of the earth like no other.
+      </>,
+      <>
+        Poseidon has 18X more chance to compare to other cards to win the
+        lottery.
+      </>,
+    ],
+    godUrl: "/Poseidon",
+  },
+  {
+    godNumber: 8,
+    godName: "Ares",
+    titleOfHonor: "hhhh",
+    about: [
+      <>
+        God of War and bloodlust. The most hostile god to deal with, but the
+        most useful to have with you in battle. His combat intelligence and
+        street smarts cannot be humbled.
+      </>,
+      <>
+        Ares has 18X more chance to compare to other cards to win the lottery.
+      </>,
+    ],
+    godUrl: "/Ares",
+  },
+  {
+    godNumber: 9,
+    godName: "Hera",
+    titleOfHonor: "hhhh",
+    about: [
+      <>
+        Goddess of marriage and patroness of women. Daughter of Kronos and Hera.
+        Her loyalty to Zeus cannot be restrained and her dedication towards
+        women and children is admirable.
+      </>,
+      <>
+        Hera has 18X more chance to compare to other cards to win the lottery
+      </>,
+    ],
+    godUrl: "/Hera",
+  },
+];
+const {AuctionTab1,AuctionTab2,AuctionTab3} = auctionTabsSVGS;
+export const auctionTabData: auctionTabDataType[] = [
+  {
+    tabName: "Mint",
+    tabIcon: <AuctionTab1 />,
+  },
+  {
+    tabName: "About",
+    tabIcon: <AuctionTab2 />,
+  },
+  {
+    tabName: "Other GodHolders",
+    tabIcon: <AuctionTab3 />,
+  },
+];

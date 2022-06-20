@@ -1107,9 +1107,52 @@ export const goldenSecondAni: Variants = {
 };
 
 export const heroSvgAni: Variants = {
-  hidden: (custom)=>({ x: 20 * custom }),
+  hidden: (custom) => ({ x: 20 * custom }),
   visible: {
     x: 0,
-    transition: { duration: 0.2, type: "spring", stiffness: 300, damping:20 },
+    transition: { duration: 0.2, type: "spring", stiffness: 300, damping: 20 },
   },
 };
+
+export const web3ConnectWalletModalAni: Variants = {
+  hidden: { opacity: 0, scale: 0,
+  rotate:"720deg" },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    rotate:"0deg",
+    transition: { duration: 0.3, ease: "easeInOut" },
+  },
+  out: {
+    opacity: 0,
+    scale: 0,
+    rotate : "720deg",
+    transition: { duration: 0.3, ease: "easeInOut" },
+  },
+};
+
+export const connectWalletHoverTolltipAni:Variants = {
+  hidden: { opacity: 0, scale: 0.5},
+  visible: {
+    opacity: 1,
+    scale: 0.8,
+  }
+}
+
+export const timerAni:Variants = {
+  hidden: { y:-100},
+  visible: {
+    y:0,
+    transition: {
+      duration: 0.3,
+      ease: "easeInOut",
+    },
+  },
+  out:{
+    y:100,
+    transition: {
+      duration: 0.3,
+      ease: "easeInOut",
+    },
+  }
+}

@@ -1,6 +1,7 @@
 import { utils } from "ethers";
 import { useContractWrite, useSigner, useWaitForTransaction } from "wagmi";
-import { deDogmaDaoABI } from "../components/web3Page/abi";
+import { deDogmaDaoABI } from "../components/global/ConnectWalletModal/abi";
+import { contractAddress } from "../store/constants";
 
 interface useWeb3ContractType {
   functionName: string;
@@ -18,7 +19,7 @@ export const useWeb3Contract = ({
   const { data: signer } = useSigner();
   const { data, write } = useContractWrite(
     {
-      addressOrName: "0x663f3ad617193148711d28f5334ee4ed07016602",
+      addressOrName: contractAddress,
       contractInterface: deDogmaDaoABI,
       signerOrProvider: signer,
     },
