@@ -39,7 +39,7 @@ const BuyButton: React.FC<props> = ({
     if (data && auctionStage === 1) {
       const price: number =
         Number(data.startPrice) -
-        Math.floor(144 - tensTimer) * Number(data.auctionDropPerStep);
+        Math.floor((3600*24/auctionDropInterval) - tensTimer) * Number(data.auctionDropPerStep);
       if (price < Number(data.endPrice)) {
         setCurrentPrice(Number(data.endPrice));
       } else {
