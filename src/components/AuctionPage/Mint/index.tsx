@@ -11,7 +11,7 @@ interface props {
   status: statusType;
 }
 const Mint: React.FC<props> = ({ index, data, status }) => {
-  const [isAuctionOver, setIsAuctionOver] = useState(false);
+  const [auctionStage, setAuctionStage] = useState(2);
   useLayoutEffect(() => {
     if (data) {
       if (data?.isSold) {
