@@ -8,9 +8,9 @@ import Timer from "../../global/Timer";
 interface props {
   data: auctionResultType | undefined;
   status: statusType;
-  isAuctionOver: boolean;
+  auctionStage: number;
 }
-const BuyButton: React.FC<props> = ({ data, status, isAuctionOver }) => {
+const BuyButton: React.FC<props> = ({ data, status, auctionStage }) => {
   const [timer, setTimer] = useState(0);
   const [currentPrice, setCurrentPrice] = useState(Number(0));
   useEffect(() => {

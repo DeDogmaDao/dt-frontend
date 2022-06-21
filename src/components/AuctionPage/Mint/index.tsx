@@ -15,9 +15,15 @@ const Mint: React.FC<props> = ({ index, data, status }) => {
   useLayoutEffect(() => {
     if (data) {
       if (data?.isSold) {
-        setIsAuctionOver(true);
+        setAuctionStage(0);
       } else if (data?.endTime < Date.now() / 1000) {
-        setIsAuctionOver(true);
+        setAuctionStage(0);
+      }
+      if(data.endTime > Date.now() / 1000 && data.startTime < Date.now() / 1000) {
+        setAuctionStage(1);
+      }
+      if(data.startTime > Date.now() / 1000) {
+        setAuctionStage(2);
       }
     }
   }, [data?.isSold, data?.endTime]);
@@ -26,8 +32,8 @@ const Mint: React.FC<props> = ({ index, data, status }) => {
     <div className="w-[42.3125rem] h-[20.25rem] flex flex-col justify-start items-start gap-10 ml-6">
       {status.isLoading ? (
         <>
-          <Prices data={data} status={status} isAuctionOver={isAuctionOver} />
-          <BuyButton data={data} status={status} isAuctionOver={isAuctionOver} />
+          <Prices data={data} status={status} auctionStage={auctionStage} />
+          <BuyButton data={data} status={status} auctionStage={auctionStage} />
         </>
       ) : (
         <MintSkeleton />
