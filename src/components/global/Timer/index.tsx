@@ -4,9 +4,11 @@ import TimeTrack from "./TimeTrack";
 interface props{
     time: number; //second
     classNames?: string | undefined;
+    setTensTimer:Dispatch<SetStateAction<number>>;
+    tensTimer:number;
 }
 
-const Timer:React.FC<props> = ({time,classNames}) => {
+const Timer:React.FC<props> = ({time,classNames,setTensTimer,tensTimer}) => {
     if(time<=0) return null;
     const [currentTime, setCurrentTime] = useState(time);
     useEffect(()=>{
@@ -19,8 +21,9 @@ const Timer:React.FC<props> = ({time,classNames}) => {
     },[time])
 
     useEffect(()=>{
-        if(currentTime===0){
+        if(currentTime===0 && tensTimer>0){
             setCurrentTime(600);
+            setTensTimer(prevState=>prevState-1);
         }
     },[currentTime])
 

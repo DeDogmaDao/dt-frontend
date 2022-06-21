@@ -13,28 +13,26 @@ interface props {
 const BuyButton: React.FC<props> = ({ data, status, auctionStage }) => {
   const [timer, setTimer] = useState(0);
   const [currentPrice, setCurrentPrice] = useState(Number(0));
+  const [tensTimer, setTensTimer] = useState(0);
   useEffect(() => {
     if (data && auctionStage > 0) {
       const now = new Date().getTime();
-      const timeStep = (data.endTime - now / 1000) / 600;
+      const timeStep = (data.endTime - now / 1000) / auctionDropInterval;
+      setTensTimer(Math.floor(timeStep))
       if (auctionStage === 2) {
         setTimer(Math.round(data.startTime - now / 1000));
       } else if (auctionStage === 1) {
-        setTimer(Math.round((timeStep - Math.floor(timeStep)) * 600));
+        setTimer(Math.round((timeStep - Math.floor(timeStep)) * auctionDropInterval));
       }
-      const elapsedTime: number = Math.round(now / 1000 - data.startTime);
-      const price: number =
-        Number(data.startPrice) -
-        (Number(data.auctionDropPerStep) * elapsedTime) / auctionDropInterval;
+      const price: number = Number(data.startPrice) - (Math.floor(144 - tensTimer)) * Number(data.auctionDropPerStep);
       if (price < Number(data.endPrice)) {
         setCurrentPrice(Number(data.endPrice));
       } else {
         setCurrentPrice(price);
       }
 
-      console.log(timer);
     }
-  }, [data, auctionStage]);
+  }, [data, auctionStage, tensTimer]);
 
   return (
     <div className="flex flex-col justify-start items-start text-xl font-normal">
@@ -42,7 +40,7 @@ const BuyButton: React.FC<props> = ({ data, status, auctionStage }) => {
         {auctionStage === 1 ? (
           <>
             The next reduction occurs in:
-            <Timer time={timer} classNames="ml-2" />
+            <Timer time={timer} classNames="ml-2" setTensTimer={setTensTimer} tensTimer={tensTimer}/>
           </>
         ) : (
           ""
