@@ -11,13 +11,14 @@ interface props {
   status: statusType;
 }
 const Mint: React.FC<props> = ({ index, data, status }) => {
-  const [auctionStage, setAuctionStage] = useState(2);
+  const [auctionStage, setAuctionStage] = useState(-1);
   useLayoutEffect(() => {
     if (data) {
       if (data?.isSold) {
         setAuctionStage(0);
       } else if (data?.endTime < Date.now() / 1000) {
         setAuctionStage(0);
+        console.log("sold")
       }
       if(data.endTime > Date.now() / 1000 && data.startTime < Date.now() / 1000) {
         setAuctionStage(1);
@@ -33,7 +34,7 @@ const Mint: React.FC<props> = ({ index, data, status }) => {
       {status.isLoading ? (
         <>
           <Prices data={data} status={status} auctionStage={auctionStage} />
-          <BuyButton data={data} status={status} auctionStage={auctionStage} />
+          <BuyButton data={data} status={status} auctionStage={auctionStage} setAuctionStage={setAuctionStage} />
         </>
       ) : (
         <MintSkeleton />

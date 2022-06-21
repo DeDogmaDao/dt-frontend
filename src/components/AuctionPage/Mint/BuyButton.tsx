@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { auctionDropInterval } from "../../../store/constants";
 import { auctionResultType, statusType } from "../../../types/allTypes";
 import { secondsToDhms } from "../../../utils/util";
@@ -9,38 +9,59 @@ interface props {
   data: auctionResultType | undefined;
   status: statusType;
   auctionStage: number;
+  setAuctionStage: Dispatch<SetStateAction<number>>;
 }
-const BuyButton: React.FC<props> = ({ data, status, auctionStage }) => {
-  const [timer, setTimer] = useState(0);
+const BuyButton: React.FC<props> = ({
+  data,
+  status,
+  auctionStage,
+  setAuctionStage,
+}) => {
+  const [timer, setTimer] = useState<number | null>(null);
   const [currentPrice, setCurrentPrice] = useState(Number(0));
-  const [tensTimer, setTensTimer] = useState(0);
+  const [tensTimer, setTensTimer] = useState(-1);
   useEffect(() => {
     if (data && auctionStage > 0) {
       const now = new Date().getTime();
       const timeStep = (data.endTime - now / 1000) / auctionDropInterval;
-      setTensTimer(Math.floor(timeStep))
+      setTensTimer(Math.floor(timeStep));
       if (auctionStage === 2) {
         setTimer(Math.round(data.startTime - now / 1000));
       } else if (auctionStage === 1) {
-        setTimer(Math.round((timeStep - Math.floor(timeStep)) * auctionDropInterval));
+        setTimer(
+          Math.round((timeStep - Math.floor(timeStep)) * auctionDropInterval)
+        );
       }
-      const price: number = Number(data.startPrice) - (Math.floor(144 - tensTimer)) * Number(data.auctionDropPerStep);
+    }
+  }, [data, auctionStage]);
+
+  useEffect(() => {
+    if (data && auctionStage === 1) {
+      const price: number =
+        Number(data.startPrice) -
+        Math.floor(144 - tensTimer) * Number(data.auctionDropPerStep);
       if (price < Number(data.endPrice)) {
         setCurrentPrice(Number(data.endPrice));
       } else {
         setCurrentPrice(price);
       }
-
+      if (tensTimer === 0) {
+        setAuctionStage(0);
+      }
     }
-  }, [data, auctionStage, tensTimer]);
-
+  }, [tensTimer]);
   return (
     <div className="flex flex-col justify-start items-start text-xl font-normal">
       <div className="flex justify-center items-center flex-nowrap h-14">
         {auctionStage === 1 ? (
           <>
             The next reduction occurs in:
-            <Timer time={timer} classNames="ml-2" setTensTimer={setTensTimer} tensTimer={tensTimer}/>
+            <Timer
+              time={timer}
+              classNames="ml-2"
+              setTensTimer={setTensTimer}
+              tensTimer={tensTimer}
+            />
           </>
         ) : (
           ""

@@ -1,15 +1,18 @@
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import { auctionDropInterval } from "../../../store/constants";
 import TimeTrack from "./TimeTrack";
 
 interface props{
-    time: number; //second
+    time: number|null; //second
     classNames?: string | undefined;
     setTensTimer:Dispatch<SetStateAction<number>>;
     tensTimer:number;
 }
 
 const Timer:React.FC<props> = ({time,classNames,setTensTimer,tensTimer}) => {
-    if(time<=0) return null;
+    if(time===null) {
+        return <></>
+    }
     const [currentTime, setCurrentTime] = useState(time);
     useEffect(()=>{
         const interval = setInterval(()=>{
@@ -22,7 +25,7 @@ const Timer:React.FC<props> = ({time,classNames,setTensTimer,tensTimer}) => {
 
     useEffect(()=>{
         if(currentTime===0 && tensTimer>0){
-            setCurrentTime(600);
+            setCurrentTime(auctionDropInterval);
             setTensTimer(prevState=>prevState-1);
         }
     },[currentTime])

@@ -10,7 +10,7 @@ const AuctionTable: React.FC<props> = ({ apiData, data }) => {
     <table className="table-auto w-full table border-collapse">
       <thead>
         <tr className="h-11 text-white/60 text-left">
-          <th className="text-base font-normal">N.</th>
+          <th className="text-base font-normal pl-4">N.</th>
           <th className="text-base font-normal">Name</th>
           <th className="text-base font-normal">Price</th>
           <th className="text-base font-normal">Owner</th>
