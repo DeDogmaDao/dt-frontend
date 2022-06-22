@@ -106,8 +106,8 @@ const BuyButton: React.FC<props> = ({
             <span className="font-normal flex gap-x-2">
               Current Price:
               <span className="font-bold">
-                {currentPrice.toFixed(4) + " ETH"}
-              </span>{" "}
+                {auctionStage===1 ? currentPrice.toFixed(4) + " ETH" : Number(data?.startPrice).toFixed(4) + " ETH"}
+              </span>
             </span>
           )}
         </p>
