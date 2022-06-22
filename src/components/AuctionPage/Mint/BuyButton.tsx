@@ -20,7 +20,7 @@ const BuyButton: React.FC<props> = ({
   setActiveIndex,
 }) => {
   const [timer, setTimer] = useState<number | null>(null);
-  const [currentPrice, setCurrentPrice] = useState(Number(0));
+  const [currentPrice, setCurrentPrice] = useState(0);
   const [tensTimer, setTensTimer] = useState(-2);
   useEffect(() => {
     if (data && auctionStage > 0) {
@@ -41,11 +41,11 @@ const BuyButton: React.FC<props> = ({
   useEffect(() => {
     if (data && auctionStage === 1) {
       const price: number =
-        Number(data.startPrice) -
+        data.startPrice -
         Math.floor(auctionDuration / auctionDropInterval - tensTimer) *
-          Number(data.auctionDropPerStep);
-      if (price < Number(data.endPrice)) {
-        setCurrentPrice(Number(data.endPrice));
+          data.auctionDropPerStep;
+      if (price < data.endPrice) {
+        setCurrentPrice(data.endPrice);
       } else {
         setCurrentPrice(price);
       }
@@ -106,7 +106,7 @@ const BuyButton: React.FC<props> = ({
             <span className="font-normal flex gap-x-2">
               Current Price:
               <span className="font-bold">
-                {auctionStage===1 ? currentPrice.toFixed(4) + " ETH" : Number(data?.startPrice).toFixed(4) + " ETH"}
+                {auctionStage===1 ? currentPrice.toFixed(4) + " ETH" : data?.startPrice.toFixed(4) + " ETH"}
               </span>
             </span>
           )}
