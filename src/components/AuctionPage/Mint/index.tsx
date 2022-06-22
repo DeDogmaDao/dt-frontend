@@ -27,14 +27,10 @@ const Mint: React.FC<props> = ({ index, data, status,activeIndex,setActiveIndex 
       if(data.startTime > Math.floor(Date.now() / 1000)) {
         setAuctionStage(2);
       }
-      if(index===9 && data){
-      console.log("00000____ " + data?.isSold,data?.endTime < Math.floor(Date.now() / 1000),data.endTime > Math.floor(Date.now() / 1000) && data.startTime < Math.floor(Date.now() / 1000),data.startTime > Math.floor(Date.now() / 1000))
-    }
+
   }
   }, [data?.isSold, data?.endTime,activeIndex]);
-  if(index===9 && data){
-    console.log("dindin " + auctionStage,"___ time=" + (data.startTime - Math.floor(Date.now()/1000)));
-  }
+
 
   return (
     <div className="w-[42.3125rem] h-[20.25rem] flex flex-col justify-start items-start gap-10 ml-6">

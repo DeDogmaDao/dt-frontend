@@ -1,5 +1,5 @@
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
-import { auctionDropInterval } from "../../../store/constants";
+import { auctionDropInterval, auctionDuration } from "../../../store/constants";
 import { auctionResultType, statusType } from "../../../types/allTypes";
 import { secondsToDhms } from "../../../utils/util";
 import Skeleton from "../../global/Skeleton";
@@ -25,11 +25,7 @@ const BuyButton: React.FC<props> = ({
   useEffect(() => {
     if (data && auctionStage > 0) {
       const now = new Date().getTime();
-      console.log(
-        ((data.endTime - now / 1000) % 3600) / 60,
-        data.isSold,
-        auctionStage
-      );
+
       const timeStep = (data.endTime - now / 1000) / auctionDropInterval;
       setTensTimer(Math.floor(timeStep));
       if (auctionStage === 2) {
@@ -46,7 +42,7 @@ const BuyButton: React.FC<props> = ({
     if (data && auctionStage === 1) {
       const price: number =
         Number(data.startPrice) -
-        Math.floor((5 * 60) / auctionDropInterval - tensTimer) *
+        Math.floor(auctionDuration / auctionDropInterval - tensTimer) *
           Number(data.auctionDropPerStep);
       if (price < Number(data.endPrice)) {
         setCurrentPrice(Number(data.endPrice));
@@ -54,7 +50,6 @@ const BuyButton: React.FC<props> = ({
         setCurrentPrice(price);
       }
       if (tensTimer === -1) {
-        console.log(tensTimer + "+++++++");
         setAuctionStage(0);
         setTimeout(() => {
           setActiveIndex((prevState) => {
@@ -67,7 +62,6 @@ const BuyButton: React.FC<props> = ({
       }
     }
   }, [tensTimer]);
-  console.log(auctionStage);
   return (
     <div className="flex flex-col justify-start items-start text-xl font-normal">
       <div className="flex justify-center items-center flex-nowrap h-14">
