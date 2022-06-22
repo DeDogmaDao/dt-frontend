@@ -103,7 +103,12 @@ const BuyButton: React.FC<props> = ({
               </span>
             </span>
           ) : (
-            "Current Price: " + currentPrice.toFixed(4) + " ETH"
+            <span className="font-normal flex gap-x-2">
+              Current Price:
+              <span className="font-bold">
+                {currentPrice.toFixed(4) + " ETH"}
+              </span>{" "}
+            </span>
           )}
         </p>
       </div>
