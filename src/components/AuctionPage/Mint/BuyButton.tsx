@@ -10,19 +10,26 @@ interface props {
   status: statusType;
   auctionStage: number;
   setAuctionStage: Dispatch<SetStateAction<number>>;
+  setActiveIndex: Dispatch<SetStateAction<number>>;
 }
 const BuyButton: React.FC<props> = ({
   data,
   status,
   auctionStage,
   setAuctionStage,
+  setActiveIndex,
 }) => {
   const [timer, setTimer] = useState<number | null>(null);
   const [currentPrice, setCurrentPrice] = useState(Number(0));
-  const [tensTimer, setTensTimer] = useState(-1);
+  const [tensTimer, setTensTimer] = useState(-2);
   useEffect(() => {
     if (data && auctionStage > 0) {
       const now = new Date().getTime();
+      console.log(
+        ((data.endTime - now / 1000) % 3600) / 60,
+        data.isSold,
+        auctionStage
+      );
       const timeStep = (data.endTime - now / 1000) / auctionDropInterval;
       setTensTimer(Math.floor(timeStep));
       if (auctionStage === 2) {
@@ -39,17 +46,28 @@ const BuyButton: React.FC<props> = ({
     if (data && auctionStage === 1) {
       const price: number =
         Number(data.startPrice) -
-        Math.floor((3600*24/auctionDropInterval) - tensTimer) * Number(data.auctionDropPerStep);
+        Math.floor((5 * 60) / auctionDropInterval - tensTimer) *
+          Number(data.auctionDropPerStep);
       if (price < Number(data.endPrice)) {
         setCurrentPrice(Number(data.endPrice));
       } else {
         setCurrentPrice(price);
       }
-      if (tensTimer === 0) {
+      if (tensTimer === -1) {
+        console.log(tensTimer + "+++++++");
         setAuctionStage(0);
+        setTimeout(() => {
+          setActiveIndex((prevState) => {
+            if (prevState !== 9) {
+              return prevState + 1;
+            }
+            return 9;
+          });
+        }, 1000);
       }
     }
   }, [tensTimer]);
+  console.log(auctionStage);
   return (
     <div className="flex flex-col justify-start items-start text-xl font-normal">
       <div className="flex justify-center items-center flex-nowrap h-14">

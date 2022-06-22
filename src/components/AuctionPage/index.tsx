@@ -8,7 +8,7 @@ import { useWeb3Auction } from "../../hooks/useWeb3Auction";
 import Skeleton from "../global/Skeleton";
 import AuctionSlider from "./AuctionSlider";
 const AuctionPage: React.FC = () => {
-  const [activeIndex, setActiveIndex] = useState(5);
+  const [activeIndex, setActiveIndex] = useState(8);
   const [activeTab, setActiveTab] = useState(0);
   const { results, status } = useWeb3Auction();
 // console.log(results, status)
@@ -28,7 +28,7 @@ const AuctionPage: React.FC = () => {
             return (
               <>
                 {activeTab === 0 && (
-                  <Mint index={index} data={results[index]} status={status} />
+                  <Mint index={index} data={results[index]} status={status} activeIndex={activeIndex} setActiveIndex={setActiveIndex} />
                 )}
                 {activeTab === 1 && <About data={auction} />}
                 {activeTab === 2 && <OtherGodHolders apiData={results} data={auctionData} />}

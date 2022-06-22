@@ -24,7 +24,7 @@ const Timer:React.FC<props> = ({time,classNames,setTensTimer,tensTimer}) => {
     },[time])
 
     useEffect(()=>{
-        if(currentTime===0 && tensTimer>0){
+        if(currentTime===0 && tensTimer>=0){
             setCurrentTime(auctionDropInterval);
             setTensTimer(prevState=>prevState-1);
         }
