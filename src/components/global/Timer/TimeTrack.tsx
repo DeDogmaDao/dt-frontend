@@ -9,6 +9,7 @@ interface props {
 const nums: number[] = Array.from(Array(10).keys());
 const TimeTrack: React.FC<props> = ({ time, type }) => {
   const [timeLeft, setTimeLeft] = useState(0);
+  
   useEffect(() => {
     if (type === "Sec") {
       setTimeLeft(Math.floor(time % 60));
@@ -23,7 +24,6 @@ const TimeTrack: React.FC<props> = ({ time, type }) => {
       setTimeLeft(Math.floor(time / (3600 * 24)));
     }
   }, [time]);
-
   if (type === "D" && timeLeft === 0) {
     return <></>;
   }
@@ -31,9 +31,10 @@ const TimeTrack: React.FC<props> = ({ time, type }) => {
     return <></>;
   }
 
+
   
   return (
-    <motion.div  className="flex justify-center items-center h-full ">
+    <motion.div  className="flex justify-center items-center h-full">
       <motion.span  className="text-[2rem] w-10 font-bold flex justify-center items-center relative">
         <AnimatePresence>
           {nums.map((item) => {

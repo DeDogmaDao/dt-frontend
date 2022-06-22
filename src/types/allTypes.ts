@@ -159,6 +159,7 @@ export interface auctionDataType {
   godName:string;
   godUrl:string;
   about: ReactElement<any, any>[];
+  titleOfHonor:string;
 }
 
 export interface auctionTabDataType {
@@ -170,11 +171,11 @@ export interface auctionResultType {
   tokenId: number;
   startTime: number;
   endTime: number;
-  startPrice: string;
-  endPrice: string;
-  purchasePrice:string;
+  startPrice: number;
+  endPrice: number;
+  purchasePrice:number;
   owner:string;
-  auctionDropPerStep: string;
+  auctionDropPerStep: number;
   isSold: boolean;
 }
 

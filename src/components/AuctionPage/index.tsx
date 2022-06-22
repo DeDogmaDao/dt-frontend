@@ -1,23 +1,41 @@
 import Mint from "./Mint";
 import { auctionData } from "../../store/allData";
-import { useState } from "react";
+import { useLayoutEffect, useState } from "react";
 import AuctionTab from "./AuctionTab";
 import About from "./About";
 import OtherGodHolders from "./OtherGodHolders";
 import { useWeb3Auction } from "../../hooks/useWeb3Auction";
-import Skeleton from "../global/Skeleton";
+import AuctionSlider from "./AuctionSlider";
 const AuctionPage: React.FC = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(5);
   const [activeTab, setActiveTab] = useState(0);
   const { results, status } = useWeb3Auction();
-
+  useLayoutEffect(() => {
+    results.map((data, index) => {
+      if (
+        data &&
+        data.endTime > Math.floor(Date.now() / 1000) &&
+        data.startTime <= Math.floor(Date.now() / 1000)
+      ) {
+        console.log(activeIndex, index);
+        setActiveIndex(index);
+      }
+    });
+  }, [results[0]]);
   return (
-    <div className="w-screen min-h-screen flex justify-center items-center px-20 mb-20">
-      <div className="w-1/2 h-full flex flex-col justify-center items-start bg-red-200/20">
+    <div className="w-screen min-h-screen flex justify-center items-center px-20 mb-32 mt-8">
+      <div className="h-full flex flex-col justify-center items-start relative ">
+        <h1 className="absolute -top-16 left-0 text-5xl font-bold">
+          DUTCH AUCTION
+          <span className=" ml-4 text-xl font-semibold text-neutral-200/80">
+            {" "}
+            <span className="text-primary-500 ">Day {activeIndex + 1}</span> /
+            10
+          </span>
+        </h1>
         <AuctionTab activeTab={activeTab} setActiveTab={setActiveTab} />
 
-        <div className="w-[42.3125rem] h-[20.9375rem] bg-green-400/20">
-        
+        <div className="w-[42.3125rem] h-[20.9375rem] bg-[#191C3A5C]/30 rounded-b-lg rounded-tr-lg">
           {auctionData.map((auction, index) => {
             if (index !== activeIndex) {
               return null;
@@ -25,16 +43,34 @@ const AuctionPage: React.FC = () => {
             return (
               <>
                 {activeTab === 0 && (
-                  <Mint index={index} data={results[index]} status={status} />
+                  <Mint
+                    index={index}
+                    data={results[index]}
+                    status={status}
+                    activeIndex={activeIndex}
+                    setActiveIndex={setActiveIndex}
+                  />
                 )}
-                {activeTab === 1 && <About />}
-                {activeTab === 2 && <OtherGodHolders />}
+                {activeTab === 1 && <About data={auction} />}
+                {activeTab === 2 && (
+                  <OtherGodHolders
+                    apiData={results}
+                    data={auctionData}
+                    setActiveIndex={setActiveIndex}
+                    setActiveTab={setActiveTab}
+                    activeIndex={activeIndex}
+                  />
+                )}
               </>
             );
           })}
         </div>
       </div>
-      <div className="w-1/2 h-full flex flex-col justify-center items-center bg-red-100"></div>
+      <AuctionSlider
+        data={auctionData}
+        activeIndex={activeIndex}
+        setActiveIndex={setActiveIndex}
+      />
     </div>
   );
 };
