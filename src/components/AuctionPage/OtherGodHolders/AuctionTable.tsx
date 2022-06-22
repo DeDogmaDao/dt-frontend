@@ -7,8 +7,9 @@ interface props {
   data: auctionDataType[];
   setActiveIndex:Dispatch<SetStateAction<number>>;
   setActiveTab:Dispatch<SetStateAction<number>>;
+  activeIndex:number;
 }
-const AuctionTable: React.FC<props> = ({ apiData, data,setActiveIndex,setActiveTab }) => {
+const AuctionTable: React.FC<props> = ({ apiData, data,setActiveIndex,setActiveTab,activeIndex }) => {
   const moreInfoClickHandler = (index:number) => {
     setActiveIndex(index);
     setActiveTab(0);
@@ -28,7 +29,7 @@ const AuctionTable: React.FC<props> = ({ apiData, data,setActiveIndex,setActiveT
       <tbody>
         {data.map((item, index) => {
           return (
-            <tr className="h-16  text-left border-b last-of-type:border-0 border-neutral-500/50 hover:bg-primary-500/20 duration-300">
+            <tr className={`h-16  text-left border-b last-of-type:border-0 border-neutral-500/50 hover:bg-primary-500/20 duration-300 ${activeIndex ===index && "bg-primary-500/20"}`}>
               <td className="text-lg font-normal pl-4">day {index + 1}</td>
               <td className="text-lg font-normal">{item.godName}</td>
               <td className="text-lg font-normal">

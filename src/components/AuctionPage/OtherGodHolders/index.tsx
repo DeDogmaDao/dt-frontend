@@ -7,8 +7,9 @@ interface props {
     data:auctionDataType[];
     setActiveIndex:Dispatch<SetStateAction<number>>;
     setActiveTab:Dispatch<SetStateAction<number>>;
+    activeIndex:number;
 }
-const OtherGodHolders: React.FC<props> = ({apiData,data,setActiveIndex,setActiveTab}) => {
+const OtherGodHolders: React.FC<props> = ({apiData,data,setActiveIndex,setActiveTab,activeIndex}) => {
   return (
     <div className="w-full h-full flex flex-col">
       <p className="text-xl font-light px-14 pt-9 pb-5">
@@ -16,7 +17,7 @@ const OtherGodHolders: React.FC<props> = ({apiData,data,setActiveIndex,setActive
         auction.
       </p>
       <div className="w-full px-6 overflow-y-scroll">
-        <AuctionTable apiData={apiData} data={data} setActiveIndex={setActiveIndex} setActiveTab={setActiveTab} />
+        <AuctionTable apiData={apiData} data={data} setActiveIndex={setActiveIndex} setActiveTab={setActiveTab} activeIndex={activeIndex} />
       </div>
     </div>
   );

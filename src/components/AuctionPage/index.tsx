@@ -48,6 +48,7 @@ const AuctionPage: React.FC = () => {
                     data={auctionData}
                     setActiveIndex={setActiveIndex}
                     setActiveTab={setActiveTab}
+                    activeIndex={activeIndex}
                   />
                 )}
               </>
