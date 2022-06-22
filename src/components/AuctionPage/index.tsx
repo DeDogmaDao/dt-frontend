@@ -1,17 +1,27 @@
 import Mint from "./Mint";
 import { auctionData } from "../../store/allData";
-import { useState } from "react";
+import { useLayoutEffect, useState } from "react";
 import AuctionTab from "./AuctionTab";
 import About from "./About";
 import OtherGodHolders from "./OtherGodHolders";
 import { useWeb3Auction } from "../../hooks/useWeb3Auction";
-import Skeleton from "../global/Skeleton";
 import AuctionSlider from "./AuctionSlider";
 const AuctionPage: React.FC = () => {
-  const [activeIndex, setActiveIndex] = useState(8);
+  const [activeIndex, setActiveIndex] = useState(5);
   const [activeTab, setActiveTab] = useState(0);
   const { results, status } = useWeb3Auction();
-  // console.log(results, status)
+  useLayoutEffect(() => {
+    results.map((data, index) => {
+      if (
+        data &&
+        data.endTime > Math.floor(Date.now() / 1000) &&
+        data.startTime <= Math.floor(Date.now() / 1000)
+      ) {
+        console.log(activeIndex, index);
+        setActiveIndex(index);
+      }
+    });
+  }, [results[0]]);
   return (
     <div className="w-screen min-h-screen flex justify-center items-center px-20 mb-32 mt-8">
       <div className="h-full flex flex-col justify-center items-start relative ">

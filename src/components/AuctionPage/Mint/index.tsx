@@ -32,6 +32,7 @@ const Mint: React.FC<props> = ({ index, data, status,activeIndex,setActiveIndex 
   }, [data?.isSold, data?.endTime,activeIndex]);
 
 
+
   return (
     <div className="w-[42.3125rem] h-[20.25rem] flex flex-col justify-start items-start gap-10 ml-6">
       {status.isLoading ? (
