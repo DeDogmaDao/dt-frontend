@@ -91,7 +91,7 @@ const BuyButton: React.FC<props> = ({
             !status.isLoading || auctionStage === 0 || auctionStage === 2
           }
           className="h-12 w-44 text-xl font-medium flex justify-center items-center
-        bg-primary-500 hover:bg-primary-500/50 border-2 border-primary-500 duration-300 rounded-full text-black
+        bg-primary-500 hover:bg-primary-500/50 hover:text-white border-2 border-primary-500 duration-300 rounded-full text-black
         disabled:bg-neutral-800 disabled:hover:bg-neutral-800 disabled:border-primary-500/10 disabled:text-white/60"
         >
           {(auctionStage === 1 && "Buy Now") ||
