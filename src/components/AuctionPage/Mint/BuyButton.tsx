@@ -1,7 +1,14 @@
+import { ethers } from "ethers";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
-import { auctionDropInterval, auctionDuration } from "../../../store/constants";
+import { useContractRead } from "wagmi";
+import {
+  auctionDropInterval,
+  auctionDuration,
+  contractAddress,
+} from "../../../store/constants";
 import { auctionResultType, statusType } from "../../../types/allTypes";
 import { secondsToDhms } from "../../../utils/util";
+import { deDogmaDaoABI } from "../../global/ConnectWalletModal/abi";
 import Skeleton from "../../global/Skeleton";
 import Timer from "../../global/Timer";
 
@@ -42,7 +49,11 @@ const BuyButton: React.FC<props> = ({
     if (data && auctionStage === 1) {
       const price: number =
         data.startPrice -
-        Math.floor(auctionDuration / auctionDropInterval - tensTimer) *
+        Math.floor(
+          auctionDuration / auctionDropInterval -
+            1 /*** -1 bcs we dont have any drop in the beggining of auction ***/ -
+            tensTimer
+        ) *
           data.auctionDropPerStep;
       if (price < data.endPrice) {
         setCurrentPrice(data.endPrice);
@@ -62,6 +73,21 @@ const BuyButton: React.FC<props> = ({
       }
     }
   }, [tensTimer]);
+
+  const { data: priceData } = useContractRead(
+    {
+      addressOrName: contractAddress,
+      contractInterface: deDogmaDaoABI,
+    },
+    "getAuctionPrice",
+    { args: [1] }
+  );
+  const buyHandler = () => {
+    console.log(
+      currentPrice,
+      ethers.utils.formatUnits(ethers.BigNumber.from(priceData), 18)
+    );
+  };
   return (
     <div className="flex flex-col justify-start items-start text-xl font-normal">
       <div className="flex justify-center items-center flex-nowrap h-14">
@@ -81,6 +107,7 @@ const BuyButton: React.FC<props> = ({
       </div>
       <div className="flex justify-start items-center gap-x-4 mt-6">
         <button
+          onClick={buyHandler}
           disabled={
             !status.isLoading || auctionStage === 0 || auctionStage === 2
           }
@@ -106,7 +133,9 @@ const BuyButton: React.FC<props> = ({
             <span className="font-normal flex gap-x-2">
               Current Price:
               <span className="font-bold">
-                {auctionStage===1 ? currentPrice.toFixed(4) + " ETH" : data?.startPrice.toFixed(4) + " ETH"}
+                {auctionStage === 1
+                  ? currentPrice.toFixed(4) + " ETH"
+                  : data?.startPrice.toFixed(4) + " ETH"}
               </span>
             </span>
           )}
