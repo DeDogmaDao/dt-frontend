@@ -17,7 +17,6 @@ const AuctionPage: React.FC = () => {
         data.endTime > Math.floor(Date.now() / 1000) &&
         data.startTime <= Math.floor(Date.now() / 1000)
       ) {
-        console.log(activeIndex, index);
         setActiveIndex(index);
       }
     });

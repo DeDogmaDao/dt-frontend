@@ -29,6 +29,24 @@ const BuyButton: React.FC<props> = ({
   const [timer, setTimer] = useState<number | null>(null);
   const [currentPrice, setCurrentPrice] = useState(0);
   const [tensTimer, setTensTimer] = useState(-2);
+
+  const { data: priceData, refetch: refetchPriceData } = useContractRead(
+    {
+      addressOrName: contractAddress,
+      contractInterface: deDogmaDaoABI,
+    },
+    "getAuctionPrice",
+    { args: [1] }
+  );
+  const { data: updatedData, refetch: refetchUpdatedData } = useContractRead(
+    {
+      addressOrName: contractAddress,
+      contractInterface: deDogmaDaoABI,
+    },
+    "auctions",
+    { args: [1] }
+  );
+
   useEffect(() => {
     if (data && auctionStage > 0) {
       const now = new Date().getTime();
@@ -71,22 +89,28 @@ const BuyButton: React.FC<props> = ({
           });
         }, 1000);
       }
+      refetchPriceData();
     }
+    
   }, [tensTimer]);
 
-  const { data: priceData } = useContractRead(
-    {
-      addressOrName: contractAddress,
-      contractInterface: deDogmaDaoABI,
-    },
-    "getAuctionPrice",
-    { args: [1] }
-  );
+//   useEffect(() => {
+// const func = async () =>{
+//   const updatedPrice = (await refetchPriceData()).data
+//   console.log(
+//     currentPrice,
+//     ethers.utils.formatUnits(ethers.BigNumber.from(priceData), 18),
+//     ethers.utils.formatUnits(ethers.BigNumber.from(updatedPrice), 18)
+//   );
+// }
+
+console.log();
   const buyHandler = () => {
-    console.log(
-      currentPrice,
-      ethers.utils.formatUnits(ethers.BigNumber.from(priceData), 18)
-    );
+    if(updatedData && updatedData[6] === false){
+      const mintValue = ethers.utils.formatUnits(ethers.BigNumber.from(priceData), 18);
+      
+    }
+    
   };
   return (
     <div className="flex flex-col justify-start items-start text-xl font-normal">

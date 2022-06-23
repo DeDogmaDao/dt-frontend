@@ -28,7 +28,6 @@ const Mint: React.FC<props> = ({ index, data, status,activeIndex,setActiveIndex 
         setAuctionStage(2);
       }
 
-      console.log(data.endTime - Math.floor(Date.now() / 1000))
   }
   }, [data?.isSold, data?.endTime,activeIndex]);
 
