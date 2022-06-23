@@ -38,7 +38,7 @@ const Mint: React.FC<props> = ({ index, data, status,activeIndex,setActiveIndex 
       {status.isLoading ? (
         <>
           <Prices data={data} status={status} auctionStage={auctionStage} />
-          <BuyButton data={data} status={status} auctionStage={auctionStage} setAuctionStage={setAuctionStage} setActiveIndex={setActiveIndex} />
+          <BuyButton data={data} status={status} auctionStage={auctionStage} setAuctionStage={setAuctionStage} setActiveIndex={setActiveIndex} index={index} />
         </>
       ) : (
         <MintSkeleton />

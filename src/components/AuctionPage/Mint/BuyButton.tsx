@@ -1,6 +1,7 @@
 import { ethers } from "ethers";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { useContractRead } from "wagmi";
+import { useWeb3Contract } from "../../../hooks/useWeb3Contract";
 import {
   auctionDropInterval,
   auctionDuration,
@@ -18,6 +19,7 @@ interface props {
   auctionStage: number;
   setAuctionStage: Dispatch<SetStateAction<number>>;
   setActiveIndex: Dispatch<SetStateAction<number>>;
+  index: number;
 }
 const BuyButton: React.FC<props> = ({
   data,
@@ -25,6 +27,7 @@ const BuyButton: React.FC<props> = ({
   auctionStage,
   setAuctionStage,
   setActiveIndex,
+  index,
 }) => {
   const [timer, setTimer] = useState<number | null>(null);
   const [currentPrice, setCurrentPrice] = useState(0);
@@ -47,6 +50,11 @@ const BuyButton: React.FC<props> = ({
     { args: [1] }
   );
 
+  const { data: buyGodData,write,waitedData:buyGodWaiteddata } = useWeb3Contract({
+    functionName: "buyAGodInAuction",
+    args: [index+1],
+    ethersValue: ethers.utils.formatUnits(ethers.BigNumber.from(priceData), 18),
+  });
   useEffect(() => {
     if (data && auctionStage > 0) {
       const now = new Date().getTime();
@@ -90,27 +98,18 @@ const BuyButton: React.FC<props> = ({
         }, 1000);
       }
       refetchPriceData();
+      refetchUpdatedData();
     }
-    
   }, [tensTimer]);
 
-//   useEffect(() => {
-// const func = async () =>{
-//   const updatedPrice = (await refetchPriceData()).data
-//   console.log(
-//     currentPrice,
-//     ethers.utils.formatUnits(ethers.BigNumber.from(priceData), 18),
-//     ethers.utils.formatUnits(ethers.BigNumber.from(updatedPrice), 18)
-//   );
-// }
 
-console.log();
+useEffect(()=>{
+  console.log(buyGodWaiteddata);
+},[buyGodWaiteddata])
   const buyHandler = () => {
-    if(updatedData && updatedData[6] === false){
-      const mintValue = ethers.utils.formatUnits(ethers.BigNumber.from(priceData), 18);
-      
+    if (updatedData && updatedData[6] === false) {
+      write()
     }
-    
   };
   return (
     <div className="flex flex-col justify-start items-start text-xl font-normal">
