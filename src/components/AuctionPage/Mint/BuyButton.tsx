@@ -32,7 +32,6 @@ const BuyButton: React.FC<props> = ({
   index,
 }) => {
   const activeConnector = useWeb3Store(state=>state.activeConnector);
-  console.log(activeConnector);
   const [isOpenModal, setIsOpenModal] = useState(false);
   const [timer, setTimer] = useState<number | null>(null);
   const [currentPrice, setCurrentPrice] = useState(0);
@@ -108,9 +107,9 @@ const BuyButton: React.FC<props> = ({
   }, [tensTimer]);
 
 
-useEffect(()=>{
-  console.log(buyGodWaiteddata);
-},[buyGodWaiteddata])
+// useEffect(()=>{
+//   console.log(buyGodWaiteddata);
+// },[buyGodWaiteddata])
   const buyHandler = () => {
     if(activeConnector){
       if (updatedData && updatedData[6] === false) {

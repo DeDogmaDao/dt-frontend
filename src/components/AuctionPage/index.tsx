@@ -8,12 +8,12 @@ import { useWeb3Auction } from "../../hooks/useWeb3Auction";
 import AuctionSlider from "./AuctionSlider";
 import { AnimatePresence, motion } from "framer-motion";
 import { auctionContainerAni } from "../../utils/animation";
+import usePrevious from "../../hooks/usePrevious";
 const AuctionPage: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(5);
-  const [toLeft,setToLeft] = useState<boolean|null>(null);
+  const previousActiveIndex = usePrevious(activeIndex);
   const [activeTab, setActiveTab] = useState(0);
   const { results, status } = useWeb3Auction();
-  console.log(toLeft)
   useLayoutEffect(() => {
     results.map((data, index) => {
       if (
@@ -25,7 +25,6 @@ const AuctionPage: React.FC = () => {
       }
     });
   }, [results[0]]);
-  
   return (
     <div className="w-screen min-h-screen flex justify-center items-center px-20 mb-32 mt-8">
       <div className="h-full flex flex-col justify-center items-start relative ">
@@ -40,7 +39,7 @@ const AuctionPage: React.FC = () => {
         <AuctionTab activeTab={activeTab} setActiveTab={setActiveTab} />
 
         <div className="w-[42.3125rem] h-[20.9375rem] bg-[#191C3A5C]/30 rounded-b-lg rounded-tr-lg relative">
-          <AnimatePresence>
+          <AnimatePresence custom={(previousActiveIndex>activeIndex)}>
           {auctionData.map((auction, index) => {
             if (index !== activeIndex) {
               return null;
@@ -48,7 +47,7 @@ const AuctionPage: React.FC = () => {
             return (
               <motion.div className="w-full h-full absolute top-0 left-0"
               variants={auctionContainerAni}
-              custom={{index,toLeft}}
+              custom={(previousActiveIndex>activeIndex)}
               initial="hidden"
               animate="visible"
               exit={"out"}
@@ -83,8 +82,7 @@ const AuctionPage: React.FC = () => {
         data={auctionData}
         activeIndex={activeIndex}
         setActiveIndex={setActiveIndex}
-        setToLeft={setToLeft}
-        toLeft={toLeft}
+        previousActiveIndex={previousActiveIndex}
       />
     </div>
   );

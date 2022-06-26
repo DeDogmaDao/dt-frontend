@@ -9,21 +9,18 @@ import { auctionContainerAni } from "../../../utils/animation";
 interface props {
   data: auctionDataType[];
   activeIndex: number;
+  previousActiveIndex: number;
   setActiveIndex: Dispatch<SetStateAction<number>>;
-  setToLeft: Dispatch<SetStateAction<boolean|null>>;
-  toLeft:boolean|null;
 }
 const AuctionSlider: React.FC<props> = ({
   data,
   activeIndex,
   setActiveIndex,
-  setToLeft,
-  toLeft
+  previousActiveIndex
 }) => {
   const leftClickHandler = () => {
     setActiveIndex((prevState) => {
       if (prevState > 0) {
-        setToLeft(true);
         return prevState - 1;
       } else {
         return prevState;
@@ -34,7 +31,6 @@ const AuctionSlider: React.FC<props> = ({
   const rightClickHandler = () => {
     setActiveIndex((prevState) => {
       if (prevState < 9) {
-        setToLeft(false)
         return prevState + 1;
       } else {
         return prevState;
@@ -44,7 +40,7 @@ const AuctionSlider: React.FC<props> = ({
   return (
     <div className="w-[33.75rem] h-[40rem] flex justify-center items-center mt-20 relative select-none">
       <div className="w-[22.5rem] h-[38.125rem] flex flex-col justify-center items-center relative select-none">
-        <AnimatePresence>
+        <AnimatePresence custom={(previousActiveIndex>activeIndex)}>
         {data.map((item, index) => {
           if (index !== activeIndex) {
             return null;
@@ -52,7 +48,7 @@ const AuctionSlider: React.FC<props> = ({
           return (
             <motion.div className="w-full h-full absolute top-0 left-0"
             variants={auctionContainerAni}
-            custom={{ index, toLeft }}
+            custom={(previousActiveIndex>activeIndex)}
             initial="hidden"
             animate="visible"
             exit={"out"}

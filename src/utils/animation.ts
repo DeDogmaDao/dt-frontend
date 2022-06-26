@@ -1157,16 +1157,17 @@ export const timerAni: Variants = {
 };
 
 export const auctionContainerAni: Variants = {
-  hidden: (custom: { index: number; toLeft: boolean | null }) => {
+  hidden: (custom) => {
     return {
-      x: custom.toLeft ? -20 : 20,
+      x: custom ? -200 : 200,
       opacity: 0,
       transition: {
         duration: 0.3,
       },
     };
   },
-  visible: (custom: { index: number; toLeft: boolean | null }) => {
+  visible: (custom) => {
+    
     return {
       x: 0,
       opacity: 1,
@@ -1175,12 +1176,13 @@ export const auctionContainerAni: Variants = {
       },
     };
   },
-  out:(custom: { index: number; toLeft: boolean | null }) => {
+  out:(custom) => {
+console.log(custom)
     return {
-      x: custom.toLeft ? 20 : -20,
+      x: custom ? 200 : -200,
       opacity: 0,
       transition: {
-        duration: 0.3,
+        duration: 0.9,
       },
     }
   }
