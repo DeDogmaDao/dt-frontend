@@ -58,7 +58,7 @@ const BuyButton: React.FC<props> = ({
   const { data: buyGodData,write,waitedData:buyGodWaiteddata } = useWeb3Contract({
     functionName: "buyAGodInAuction",
     args: [index+1],
-    ethersValue: ethers.utils.formatUnits(ethers.BigNumber.from(priceData), 18),
+    ethersValue: ethers.utils.formatUnits(ethers.BigNumber.from(priceData ?? "100"), 18),
   });
   useEffect(() => {
     if (data && auctionStage > 0) {
