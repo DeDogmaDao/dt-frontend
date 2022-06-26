@@ -8,15 +8,18 @@ interface props {
   data: auctionDataType[];
   activeIndex: number;
   setActiveIndex: Dispatch<SetStateAction<number>>;
+  setToLeft: Dispatch<SetStateAction<boolean|null>>;
 }
 const AuctionSlider: React.FC<props> = ({
   data,
   activeIndex,
   setActiveIndex,
+  setToLeft
 }) => {
   const leftClickHandler = () => {
     setActiveIndex((prevState) => {
       if (prevState > 0) {
+        setToLeft(true);
         return prevState - 1;
       } else {
         return prevState;
@@ -26,6 +29,7 @@ const AuctionSlider: React.FC<props> = ({
   const rightClickHandler = () => {
     setActiveIndex((prevState) => {
       if (prevState < 9) {
+        setToLeft(false)
         return prevState + 1;
       } else {
         return prevState;
