@@ -1159,7 +1159,7 @@ export const timerAni: Variants = {
 export const auctionContainerAni: Variants = {
   hidden: (custom) => {
     return {
-      x: custom ? -200 : 200,
+      x: custom ? -30 : 30,
       opacity: 0,
       transition: {
         duration: 0.3,
@@ -1177,12 +1177,11 @@ export const auctionContainerAni: Variants = {
     };
   },
   out:(custom) => {
-console.log(custom)
     return {
-      x: custom ? 200 : -200,
+      x: custom ? 30 : -30,
       opacity: 0,
       transition: {
-        duration: 0.9,
+        duration: 0.3,
       },
     }
   }
