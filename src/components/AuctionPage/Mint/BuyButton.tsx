@@ -1,9 +1,19 @@
+import { ethers } from "ethers";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
-import { auctionDropInterval, auctionDuration } from "../../../store/constants";
+import { useContractRead } from "wagmi";
+import { useWeb3Contract } from "../../../hooks/useWeb3Contract";
+import {
+  auctionDropInterval,
+  auctionDuration,
+  contractAddress,
+} from "../../../store/constants";
 import { auctionResultType, statusType } from "../../../types/allTypes";
 import { secondsToDhms } from "../../../utils/util";
+import ConnectWalletModal from "../../global/ConnectWalletModal";
+import { deDogmaDaoABI } from "../../global/ConnectWalletModal/abi";
 import Skeleton from "../../global/Skeleton";
 import Timer from "../../global/Timer";
+import {useWeb3Store} from '../../../store/global/web3Store'
 
 interface props {
   data: auctionResultType | undefined;
@@ -11,6 +21,7 @@ interface props {
   auctionStage: number;
   setAuctionStage: Dispatch<SetStateAction<number>>;
   setActiveIndex: Dispatch<SetStateAction<number>>;
+  index: number;
 }
 const BuyButton: React.FC<props> = ({
   data,
@@ -18,10 +29,36 @@ const BuyButton: React.FC<props> = ({
   auctionStage,
   setAuctionStage,
   setActiveIndex,
+  index,
 }) => {
+  const activeConnector = useWeb3Store(state=>state.activeConnector);
+  const [isOpenModal, setIsOpenModal] = useState(false);
   const [timer, setTimer] = useState<number | null>(null);
   const [currentPrice, setCurrentPrice] = useState(0);
   const [tensTimer, setTensTimer] = useState(-2);
+
+  const { data: priceData, refetch: refetchPriceData } = useContractRead(
+    {
+      addressOrName: contractAddress,
+      contractInterface: deDogmaDaoABI,
+    },
+    "getAuctionPrice",
+    { args: [1] }
+  );
+  const { data: updatedData, refetch: refetchUpdatedData } = useContractRead(
+    {
+      addressOrName: contractAddress,
+      contractInterface: deDogmaDaoABI,
+    },
+    "auctions",
+    { args: [1] }
+  );
+
+  const { data: buyGodData,write,waitedData:buyGodWaiteddata } = useWeb3Contract({
+    functionName: "buyAGodInAuction",
+    args: [index+1],
+    ethersValue: ethers.utils.formatUnits(ethers.BigNumber.from(priceData ?? "100"), 18),
+  });
   useEffect(() => {
     if (data && auctionStage > 0) {
       const now = new Date().getTime();
@@ -42,7 +79,11 @@ const BuyButton: React.FC<props> = ({
     if (data && auctionStage === 1) {
       const price: number =
         data.startPrice -
-        Math.floor(auctionDuration / auctionDropInterval - tensTimer) *
+        Math.floor(
+          auctionDuration / auctionDropInterval -
+            1 /*** -1 bcs we dont have any drop in the beggining of auction ***/ -
+            tensTimer
+        ) *
           data.auctionDropPerStep;
       if (price < data.endPrice) {
         setCurrentPrice(data.endPrice);
@@ -60,8 +101,24 @@ const BuyButton: React.FC<props> = ({
           });
         }, 1000);
       }
+      refetchPriceData();
+      refetchUpdatedData();
     }
   }, [tensTimer]);
+
+
+// useEffect(()=>{
+//   console.log(buyGodWaiteddata);
+// },[buyGodWaiteddata])
+  const buyHandler = () => {
+    if(activeConnector){
+      if (updatedData && updatedData[6] === false) {
+        write()
+      }
+    } else {
+      setIsOpenModal(true);
+    }
+  };
   return (
     <div className="flex flex-col justify-start items-start text-xl font-normal">
       <div className="flex justify-center items-center flex-nowrap h-14">
@@ -81,6 +138,7 @@ const BuyButton: React.FC<props> = ({
       </div>
       <div className="flex justify-start items-center gap-x-4 mt-6">
         <button
+          onClick={buyHandler}
           disabled={
             !status.isLoading || auctionStage === 0 || auctionStage === 2
           }
@@ -106,12 +164,18 @@ const BuyButton: React.FC<props> = ({
             <span className="font-normal flex gap-x-2">
               Current Price:
               <span className="font-bold">
-                {auctionStage===1 ? currentPrice.toFixed(4) + " ETH" : data?.startPrice.toFixed(4) + " ETH"}
+                {auctionStage === 1
+                  ? currentPrice.toFixed(4) + " ETH"
+                  : data?.startPrice.toFixed(4) + " ETH"}
               </span>
             </span>
           )}
         </p>
       </div>
+      <ConnectWalletModal
+        isOpenModal={isOpenModal}
+        setIsOpenModal={setIsOpenModal}
+      />
     </div>
   );
 };

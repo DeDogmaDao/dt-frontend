@@ -6,8 +6,12 @@ import About from "./About";
 import OtherGodHolders from "./OtherGodHolders";
 import { useWeb3Auction } from "../../hooks/useWeb3Auction";
 import AuctionSlider from "./AuctionSlider";
+import { AnimatePresence, motion } from "framer-motion";
+import { auctionContainerAni } from "../../utils/animation";
+import usePrevious from "../../hooks/usePrevious";
 const AuctionPage: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(5);
+  const previousActiveIndex = usePrevious(activeIndex);
   const [activeTab, setActiveTab] = useState(0);
   const { results, status } = useWeb3Auction();
   useLayoutEffect(() => {
@@ -17,7 +21,6 @@ const AuctionPage: React.FC = () => {
         data.endTime > Math.floor(Date.now() / 1000) &&
         data.startTime <= Math.floor(Date.now() / 1000)
       ) {
-        console.log(activeIndex, index);
         setActiveIndex(index);
       }
     });
@@ -35,13 +38,21 @@ const AuctionPage: React.FC = () => {
         </h1>
         <AuctionTab activeTab={activeTab} setActiveTab={setActiveTab} />
 
-        <div className="w-[42.3125rem] h-[20.9375rem] bg-[#191C3A5C]/30 rounded-b-lg rounded-tr-lg">
+        <div className="w-[42.3125rem] h-[20.9375rem] bg-[#191C3A5C]/30 rounded-b-lg rounded-tr-lg relative">
+          <AnimatePresence custom={(previousActiveIndex>activeIndex)}>
           {auctionData.map((auction, index) => {
             if (index !== activeIndex) {
               return null;
             }
             return (
-              <>
+              <motion.div className="w-full h-full absolute top-0 left-0"
+              variants={auctionContainerAni}
+              custom={(previousActiveIndex>activeIndex)}
+              initial="hidden"
+              animate="visible"
+              exit={"out"}
+              key={index}
+              >
                 {activeTab === 0 && (
                   <Mint
                     index={index}
@@ -61,15 +72,17 @@ const AuctionPage: React.FC = () => {
                     activeIndex={activeIndex}
                   />
                 )}
-              </>
+              </motion.div>
             );
           })}
+          </AnimatePresence>
         </div>
       </div>
       <AuctionSlider
         data={auctionData}
         activeIndex={activeIndex}
         setActiveIndex={setActiveIndex}
+        previousActiveIndex={previousActiveIndex}
       />
     </div>
   );
