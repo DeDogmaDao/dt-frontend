@@ -1115,44 +1115,74 @@ export const heroSvgAni: Variants = {
 };
 
 export const web3ConnectWalletModalAni: Variants = {
-  hidden: { opacity: 0, scale: 0,
-  rotate:"720deg" },
+  hidden: { opacity: 0, scale: 0, rotate: "720deg" },
   visible: {
     opacity: 1,
     scale: 1,
-    rotate:"0deg",
+    rotate: "0deg",
     transition: { duration: 0.3, ease: "easeInOut" },
   },
   out: {
     opacity: 0,
     scale: 0,
-    rotate : "720deg",
+    rotate: "720deg",
     transition: { duration: 0.3, ease: "easeInOut" },
   },
 };
 
-export const connectWalletHoverTolltipAni:Variants = {
-  hidden: { opacity: 0, scale: 0.5},
+export const connectWalletHoverTolltipAni: Variants = {
+  hidden: { opacity: 0, scale: 0.5 },
   visible: {
     opacity: 1,
     scale: 0.8,
-  }
-}
+  },
+};
 
-export const timerAni:Variants = {
-  hidden: { y:-100},
+export const timerAni: Variants = {
+  hidden: { y: -100 },
   visible: {
-    y:0,
+    y: 0,
     transition: {
       duration: 0.3,
       ease: "easeInOut",
     },
   },
-  out:{
-    y:100,
+  out: {
+    y: 100,
     transition: {
       duration: 0.3,
       ease: "easeInOut",
     },
+  },
+};
+
+export const auctionContainerAni: Variants = {
+  hidden: (custom) => {
+    return {
+      x: custom ? -30 : 30,
+      opacity: 0,
+      transition: {
+        duration: 0.3,
+      },
+    };
+  },
+  visible: (custom) => {
+    
+    return {
+      x: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.3,
+      },
+    };
+  },
+  out:(custom) => {
+    return {
+      x: custom ? 30 : -30,
+      opacity: 0,
+      transition: {
+        duration: 0.3,
+      },
+    }
   }
-}
+};
