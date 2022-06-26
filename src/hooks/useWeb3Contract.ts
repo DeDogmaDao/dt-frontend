@@ -13,7 +13,7 @@ interface useWeb3ContractType {
 export const useWeb3Contract = ({
   functionName,
   args,
-  ethersValue,
+  ethersValue="100",
   transactionGasLimit = 200000,
 }: useWeb3ContractType) => {
   const { data: signer } = useSigner();
@@ -40,7 +40,6 @@ export const useWeb3Contract = ({
   } = useWaitForTransaction({
     hash: data?.hash,
   });
-
   return {
     waitedData,
     waitedIsError,
