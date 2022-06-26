@@ -40,7 +40,6 @@ export const useWeb3Contract = ({
   } = useWaitForTransaction({
     hash: data?.hash,
   });
-console.log("hi")
   return {
     waitedData,
     waitedIsError,

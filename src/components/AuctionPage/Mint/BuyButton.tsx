@@ -9,9 +9,11 @@ import {
 } from "../../../store/constants";
 import { auctionResultType, statusType } from "../../../types/allTypes";
 import { secondsToDhms } from "../../../utils/util";
+import ConnectWalletModal from "../../global/ConnectWalletModal";
 import { deDogmaDaoABI } from "../../global/ConnectWalletModal/abi";
 import Skeleton from "../../global/Skeleton";
 import Timer from "../../global/Timer";
+import {useWeb3Store} from '../../../store/global/web3Store'
 
 interface props {
   data: auctionResultType | undefined;
@@ -29,6 +31,9 @@ const BuyButton: React.FC<props> = ({
   setActiveIndex,
   index,
 }) => {
+  const activeConnector = useWeb3Store(state=>state.activeConnector);
+  console.log(activeConnector);
+  const [isOpenModal, setIsOpenModal] = useState(false);
   const [timer, setTimer] = useState<number | null>(null);
   const [currentPrice, setCurrentPrice] = useState(0);
   const [tensTimer, setTensTimer] = useState(-2);
@@ -107,8 +112,12 @@ useEffect(()=>{
   console.log(buyGodWaiteddata);
 },[buyGodWaiteddata])
   const buyHandler = () => {
-    if (updatedData && updatedData[6] === false) {
-      write()
+    if(activeConnector){
+      if (updatedData && updatedData[6] === false) {
+        write()
+      }
+    } else {
+      setIsOpenModal(true);
     }
   };
   return (
@@ -164,6 +173,10 @@ useEffect(()=>{
           )}
         </p>
       </div>
+      <ConnectWalletModal
+        isOpenModal={isOpenModal}
+        setIsOpenModal={setIsOpenModal}
+      />
     </div>
   );
 };
