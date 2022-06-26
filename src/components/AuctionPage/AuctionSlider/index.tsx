@@ -33,24 +33,25 @@ const AuctionSlider: React.FC<props> = ({
     });
   };
   return (
-    <div className="w-[33.75rem] h-[40rem] flex justify-center items-center mt-20 relative">
-      <div className="w-[22.5rem] h-[38.125rem] flex flex-col justify-center items-center">
+    <div className="w-[33.75rem] h-[40rem] flex justify-center items-center mt-20 relative select-none">
+      <div className="w-[22.5rem] h-[38.125rem] flex flex-col justify-center items-center select-none">
         {data.map((item, index) => {
           if (index !== activeIndex) {
             return null;
           }
           return (
             <>
-              <div className="w-full h-full relative">
+              <div className="w-full h-full relative select-none">
                 <Image
                   src={tabImgData["gods"][index]}
                   layout="fill"
                   quality={100}
                   placeholder="blur"
+                  className="select-none"
                 />
               </div>
-              <h3 className="text-[2rem] font-medium mt-2">{item.godName}</h3>
-              <h3 className="text-xl font-medium text-primary-500 -mt-1">
+              <h3 className="text-[2rem] font-medium mt-2 select-none">{item.godName}</h3>
+              <h3 className="text-xl font-medium text-primary-500 -mt-1 select-none">
                 “{item.titleOfHonor}”
               </h3>
             </>

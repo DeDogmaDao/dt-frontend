@@ -40,7 +40,7 @@ const AuctionPage: React.FC = () => {
               return null;
             }
             return (
-              <>
+              <div className="w-full h-full">
                 {activeTab === 0 && (
                   <Mint
                     index={index}
@@ -60,7 +60,7 @@ const AuctionPage: React.FC = () => {
                     activeIndex={activeIndex}
                   />
                 )}
-              </>
+              </div>
             );
           })}
         </div>
