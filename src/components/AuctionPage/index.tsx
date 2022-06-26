@@ -39,18 +39,19 @@ const AuctionPage: React.FC = () => {
         </h1>
         <AuctionTab activeTab={activeTab} setActiveTab={setActiveTab} />
 
-        <div className="w-[42.3125rem] h-[20.9375rem] bg-[#191C3A5C]/30 rounded-b-lg rounded-tr-lg">
+        <div className="w-[42.3125rem] h-[20.9375rem] bg-[#191C3A5C]/30 rounded-b-lg rounded-tr-lg relative">
           <AnimatePresence>
           {auctionData.map((auction, index) => {
             if (index !== activeIndex) {
               return null;
             }
             return (
-              <motion.div className="w-full h-full"
+              <motion.div className="w-full h-full absolute top-0 left-0"
               variants={auctionContainerAni}
               custom={{index,toLeft}}
               initial="hidden"
               animate="visible"
+              exit={"out"}
               key={index}
               >
                 {activeTab === 0 && (
@@ -83,6 +84,7 @@ const AuctionPage: React.FC = () => {
         activeIndex={activeIndex}
         setActiveIndex={setActiveIndex}
         setToLeft={setToLeft}
+        toLeft={toLeft}
       />
     </div>
   );
