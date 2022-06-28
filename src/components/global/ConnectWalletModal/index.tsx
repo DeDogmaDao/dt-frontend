@@ -59,18 +59,6 @@ const ConnectWalletModal: React.FC<props> = ({
       id="pop-up"
       onBackdropClick={(e) => modalBackdropClickHandler(e)}
     >
-      <motion.span className="w-full h-[6.3125rem] will-change-transform relative flex justify-center items-center">
-        <h3 className="text-2xl font-bold absolute z-10">Connect Wallet</h3>
-        <span className=" w-full h-full">
-          <Image
-            alt="modal header"
-            src={web3ModalHeaderImg}
-            layout={"fill"}
-            quality={90}
-            placeholder="blur"
-          />
-        </span>
-      </motion.span>
       <div className="w-full mt-12 flex flex-col justify-center items-center">
         <Web3Button
           index={0}
