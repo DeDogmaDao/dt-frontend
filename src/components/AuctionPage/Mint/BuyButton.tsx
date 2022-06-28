@@ -38,6 +38,7 @@ const BuyButton: React.FC<props> = ({
   const [timer, setTimer] = useState<number | null>(null);
   const [currentPrice, setCurrentPrice] = useState(0);
   const [tensTimer, setTensTimer] = useState(-2);
+  const [once, setOnce] = useState(false);
 
   const { data: priceData, refetch: refetchPriceData } = useContractRead(
     {
@@ -97,10 +98,15 @@ const BuyButton: React.FC<props> = ({
       if (price < data.endPrice) {
         setCurrentPrice(data.endPrice);
       } else {
-        setCurrentPrice(-1);
-        setTimeout(() => {
+        if (once) {
+          setCurrentPrice(-1);
+          setTimeout(() => {
+            setCurrentPrice(price);
+          }, 1900);
+        } else {
+          setOnce(true);
           setCurrentPrice(price);
-        }, 1900);
+        }
       }
       if (tensTimer === -1) {
         setAuctionStage(0);
