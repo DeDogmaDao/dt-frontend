@@ -38,15 +38,15 @@ const AuctionSlider: React.FC<props> = ({
     });
   };
   return (
-    <div className="w-[33.75rem] h-[40rem] flex justify-center items-center mt-20 relative select-none">
-      <div className="w-[22.5rem] h-[38.125rem] flex flex-col justify-center items-center relative select-none">
+    <div className="w-[34rem] h-[30rem] flex justify-center items-center mt-20 relative select-none">
+      <div className="w-[20rem] h-[30rem] flex flex-col justify-center items-center relative select-none">
         <AnimatePresence custom={(previousActiveIndex>activeIndex)}>
         {data.map((item, index) => {
           if (index !== activeIndex) {
             return null;
           }
           return (
-            <motion.div className="w-full h-full absolute top-0 left-0"
+            <motion.div className="w-full h-full absolute top-0 left-0 -mt-8"
             variants={auctionContainerAni}
             custom={(previousActiveIndex>activeIndex)}
             initial="hidden"
@@ -64,8 +64,8 @@ const AuctionSlider: React.FC<props> = ({
                   className="select-none"
                 />
               </div>
-              <h3 className="text-[2rem] font-medium mt-2 select-none">{item.godName}</h3>
-              <h3 className="text-xl font-medium text-primary-500 -mt-1 select-none">
+              <h3 className="text-[2rem] font-medium select-none text-center">{item.godName}</h3>
+              <h3 className="text-xl font-medium text-primary-500 -mt-1 select-none text-center">
                 “{item.titleOfHonor}”
               </h3>
             </motion.div>
@@ -74,13 +74,13 @@ const AuctionSlider: React.FC<props> = ({
         </AnimatePresence>
       </div>
       <button
-        className="absolute p-2 left-10 top-1/2 -mt-12 text-5xl scale-x-[-1] text-white ssm:text-neutral-400 z-60"
+        className="absolute p-2 left-16 top-1/2 -mt-16 text-5xl scale-x-[-1] text-white ssm:text-neutral-400 z-60"
         onClick={leftClickHandler}
       >
         <AngleRightSVG stroke="#66666A" width={21} height={45} fill="none" />
       </button>
       <button
-        className="absolute p-2 right-10 top-1/2 -mt-12 text-5xl  text-white ssm:text-neutral-400 z-60"
+        className="absolute p-2 right-16 top-1/2 -mt-16 text-5xl  text-white ssm:text-neutral-400 z-60"
         onClick={rightClickHandler}
       >
         <AngleRightSVG stroke="#66666A" width={21} height={45} fill="none" />
