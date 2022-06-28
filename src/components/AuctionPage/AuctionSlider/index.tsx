@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import { Dispatch, SetStateAction } from "react";
-import { tabImgData } from "../../../store/img";
+import {auctionImgs} from '../../../store/img';
 import { AngleRightSVG } from "../../../store/svg";
 import { auctionDataType } from "../../../types/allTypes";
 import { auctionContainerAni } from "../../../utils/animation";
@@ -57,7 +57,7 @@ const AuctionSlider: React.FC<props> = ({
             >
               <div className="w-full h-full relative select-none">
                 <Image
-                  src={tabImgData["gods"][index]}
+                  src={auctionImgs[index]}
                   layout="fill"
                   quality={100}
                   placeholder="blur"
