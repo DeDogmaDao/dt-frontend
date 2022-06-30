@@ -7,6 +7,7 @@ interface props {
   id: string;
   onBackdropClick: MouseEventHandler<HTMLDivElement> | undefined;
 }
+const colors={successed:"#2FFF69",failed:"#E31515"}
 const PopUp: React.FC<props> = ({ id, isOpen, onBackdropClick, children }) => {
   return (
     <Modal id={id} isOpen={isOpen} onBackdropClick={onBackdropClick}>
@@ -17,7 +18,7 @@ const PopUp: React.FC<props> = ({ id, isOpen, onBackdropClick, children }) => {
         >
           <span className="w-full h-[6.3125rem] will-change-transform relative flex justify-center items-center">
             <h3 className="text-2xl font-bold absolute z-10">Connect Wallet</h3>
-            <span className=" w-full h-full">
+            <span className=" w-full h-full relative">
               <Image
                 alt="modal header"
                 src={web3ModalHeaderImg}
@@ -25,6 +26,7 @@ const PopUp: React.FC<props> = ({ id, isOpen, onBackdropClick, children }) => {
                 quality={90}
                 placeholder="blur"
               />
+              <span className="w-full h-full absolute top-0 left-0 opacity-30" style={{backgroundColor:colors.failed}}  />
             </span>
           </span>
           {children}

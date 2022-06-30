@@ -18,7 +18,9 @@ const MinReceipt :React.FC = () => {
         id="pop-up"
         onBackdropClick={(e) => modalBackdropClickHandler(e)}
         >
-            
+            <div>
+                
+            </div>
         </PopUp>
     );
 }
