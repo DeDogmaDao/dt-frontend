@@ -23,7 +23,7 @@ const MinReceipt: React.FC<props> = ({ status }) => {
       setModalType("failed");
       setIsOpenModal(true);
     } else if (status.isSuccess) {
-      setModalType("succeeded");
+      setModalType("successful");
       setIsOpenModal(true);
     } else {
       setModalType("neutral");
