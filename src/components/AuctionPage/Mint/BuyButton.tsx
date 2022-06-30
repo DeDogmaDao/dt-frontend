@@ -1,5 +1,11 @@
 import { ethers } from "ethers";
-import { Dispatch, MouseEventHandler, SetStateAction, useEffect, useState } from "react";
+import {
+  Dispatch,
+  MouseEventHandler,
+  SetStateAction,
+  useEffect,
+  useState,
+} from "react";
 import { useContractRead } from "wagmi";
 import { useWeb3Contract } from "../../../hooks/useWeb3Contract";
 import {
@@ -8,16 +14,12 @@ import {
   contractAddress,
 } from "../../../store/constants";
 import { auctionResultType, statusType } from "../../../types/allTypes";
-import { secondsToDhms } from "../../../utils/util";
 import ConnectWalletModal from "../../global/ConnectWalletModal";
 import { deDogmaDaoABI } from "../../global/ConnectWalletModal/abi";
-import Skeleton from "../../global/Skeleton";
 import Timer from "../../global/Timer";
 import { useWeb3Store } from "../../../store/global/web3Store";
 import CurrentPrice from "./CurrentPrice";
-import { AnimatePresence } from "framer-motion";
-import PopUp from "../../global/PopUp";
-import { useFreeze } from "../../../hooks/useFreeze";
+import MinReceipt from "./MinReceipt";
 
 interface props {
   data: auctionResultType | undefined;
@@ -63,6 +65,9 @@ const BuyButton: React.FC<props> = ({
     data: buyGodData,
     write,
     waitedData: buyGodWaiteddata,
+    isErrorWrite,
+    isLoadingWrite,
+    isSuccessWrite,
   } = useWeb3Contract({
     functionName: "buyAGodInAuction",
     args: [index + 1],
@@ -139,8 +144,6 @@ const BuyButton: React.FC<props> = ({
     }
   };
 
-
-
   return (
     <div className="flex flex-col justify-start items-start text-xl font-normal">
       <div className="flex justify-center items-center flex-nowrap h-14">
@@ -199,6 +202,13 @@ const BuyButton: React.FC<props> = ({
       <ConnectWalletModal
         isOpenModal={isOpenModal}
         setIsOpenModal={setIsOpenModal}
+      />
+      <MinReceipt
+        status={{
+          isError: isErrorWrite,
+          isLoading: isLoadingWrite,
+          isSuccess: isSuccessWrite,
+        }}
       />
     </div>
   );

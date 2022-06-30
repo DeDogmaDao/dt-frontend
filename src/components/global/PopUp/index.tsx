@@ -1,14 +1,16 @@
 import Image from "next/image";
 import { MouseEventHandler } from "react";
 import { web3ModalHeaderImg } from "../../../store/img";
+import { popUpType } from "../../../types/allTypes";
 import Modal from "../Modal";
 interface props {
   isOpen: boolean;
   id: string;
   onBackdropClick: MouseEventHandler<HTMLDivElement> | undefined;
+  type:popUpType;
 }
-const colors={successed:"#2FFF69",failed:"#E31515"}
-const PopUp: React.FC<props> = ({ id, isOpen, onBackdropClick, children }) => {
+const colors={successed:"#2FFF69",failed:"#E31515",neutral:""}
+const PopUp: React.FC<props> = ({ id, isOpen, onBackdropClick, children,type }) => {
   return (
     <Modal id={id} isOpen={isOpen} onBackdropClick={onBackdropClick}>
       <div className="relative w-full h-full flex justify-center items-center backdrop-blur-[.8125rem]">
@@ -26,7 +28,7 @@ const PopUp: React.FC<props> = ({ id, isOpen, onBackdropClick, children }) => {
                 quality={90}
                 placeholder="blur"
               />
-              <span className="w-full h-full absolute top-0 left-0 opacity-30" style={{backgroundColor:colors.failed}}  />
+              <span className="w-full h-full absolute top-0 left-0 opacity-30" style={{backgroundColor:colors[type]}}  />
             </span>
           </span>
           {children}
