@@ -36,6 +36,13 @@ const MinReceipt: React.FC<props> = ({ status }) => {
       id="pop-up"
       onBackdropClick={(e) => modalBackdropClickHandler(e)}
       type={modalType}
+      title={
+        status.isError
+          ? "Oh no, payment failed!"
+          : status.isSuccess
+          ? "Payment successful!"
+          : ""
+      }
     >
       <div className="w-full h-full flex flex-col px-8 gap-y-6 pt-10 text-base font-normal text-white/60">
         <div className="w-full flex justify-between text-base font-normal">
@@ -55,7 +62,10 @@ const MinReceipt: React.FC<props> = ({ status }) => {
           <span className="text-white">{"2022/4/1 15:46"}</span>
         </div>
         <div className="w-full border-t-2 border-white/40 border-dashed" />
-        <p className="text-center text-sm"> See more details of the transaction in Profile</p>
+        <p className="text-center text-sm">
+          {" "}
+          See more details of the transaction in Profile
+        </p>
       </div>
     </PopUp>
   );

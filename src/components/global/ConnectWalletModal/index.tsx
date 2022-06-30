@@ -60,6 +60,7 @@ const ConnectWalletModal: React.FC<props> = ({
       id="pop-up"
       onBackdropClick={(e) => modalBackdropClickHandler(e)}
       type={"neutral"}
+      title={"Connect Wallet"}
     >
       <div className="w-full mt-12 flex flex-col justify-center items-center">
         <Web3Button
