@@ -17,7 +17,13 @@ export const useWeb3Contract = ({
   transactionGasLimit = 200000,
 }: useWeb3ContractType) => {
   const { data: signer } = useSigner();
-  const { data, write } = useContractWrite(
+  const {
+    data,
+    write,
+    isError: isErrorWrite,
+    isLoading: isLoadingWrite,
+    isSuccess: isSuccessWrite,
+  } = useContractWrite(
     {
       addressOrName: contractAddress,
       contractInterface: deDogmaDaoABI,
@@ -32,19 +38,14 @@ export const useWeb3Contract = ({
       },
     }
   );
-  const {
-    data: waitedData,
-    isLoading: waitedIsLoading,
-    isError: waitedIsError,
-    isSuccess: waitedIsSuccess,
-  } = useWaitForTransaction({
+  const { data: waitedData } = useWaitForTransaction({
     hash: data?.hash,
   });
   return {
+    isErrorWrite,
+    isLoadingWrite,
+    isSuccessWrite,
     waitedData,
-    waitedIsError,
-    waitedIsLoading,
-    waitedIsSuccess,
     data,
     write,
   };

@@ -1186,3 +1186,35 @@ export const auctionContainerAni: Variants = {
     }
   }
 };
+
+export const auctionPriceAni: Variants = {
+  hidden: {
+    opacity: 0,
+    scale:0.1,
+    y:-50
+  },
+  visible: (custom)=>({
+    opacity: [0,1,1],
+    scale:[0.1,1,1],
+    y:[-50,0,0],
+    color:["#2CEDFF","#2CEDFF","#EEEE"],
+    transition: {
+      times:[0,0.333,1],
+      duration:2.4,
+      delay:custom * 0.05,
+      ease:"easeInOut"
+    }
+  }),
+  out: (custom)=>({
+    opacity: [1,1,0],
+    scale:[1,1,0.1],
+    y:[0,0,50],
+    color:["#EEEE","#fc0317","#fc0317"],
+    transition:{
+      times:[0,0.4,1],
+      duration:1.1,
+      delay:custom * 0.05,
+      ease:"easeInOut",
+    },
+  }),
+}

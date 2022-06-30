@@ -184,3 +184,5 @@ export interface statusType {
   isError: boolean;
   isSuccess: boolean;
 }
+
+export type popUpType = "successful" | "failed" | "neutral";

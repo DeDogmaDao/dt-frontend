@@ -14,6 +14,7 @@ export default function Document() {
       <body>
         <Main />
         <div id="connect-wallet-modal" />
+        <div id="pop-up" />
         <div id="toast-container-document" style={{pointerEvents:"none"}} />
         <NextScript />
       </body>

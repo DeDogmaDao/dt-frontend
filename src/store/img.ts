@@ -105,3 +105,13 @@ export const walletImgData = [metaMask, walletConnect, coinBase];
 import error404 from "./images/errors/error404.png";
 import error500 from "./images/errors/error500.png";
 export const errorImgs = { error404, error500 };
+
+
+// auction
+import auctionAphrodite from './images/auctions/aphrodite.png';
+import auctionArtemis from './images/auctions/artemis.png';
+import auctionHades from './images/auctions/hades.png';
+import auctionHecate from './images/auctions/hecate.png';
+import auctionHera from './images/auctions/hera.png';
+import auctionPoseidon from './images/auctions/poseidon.png';
+export const auctionImgs = [auctionAphrodite, auctionArtemis, auctionHades, auctionHecate, auctionHera, auctionPoseidon, auctionArtemis, auctionAphrodite,auctionHades,auctionHera];

@@ -15,7 +15,7 @@ import { useEffect, useLayoutEffect } from "react";
 import TagManager from "react-gtm-module";
 import dynamic from "next/dynamic";
 import Modal from "../components/global/Modal";
-import ToastProvider from "../components/global/ToastProvider";
+import ToastProvider from "../store/providers/ToastProvider";
 import Web3ConnectProvider from "../store/providers/Web3ConnectProvider";
 import { useFontScale } from "../hooks/useFontScale";
 import ErrorBoundary from "../hoc/ErrorBoundary";
