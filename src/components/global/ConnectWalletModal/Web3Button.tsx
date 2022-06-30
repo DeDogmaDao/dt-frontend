@@ -30,5 +30,4 @@ const Web3Button:React.FC<props> =({onclick,name,index}) => {
   
 }
 
-
 export default Web3Button;

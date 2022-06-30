@@ -1,5 +1,5 @@
 import { ethers } from "ethers";
-import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import { Dispatch, MouseEventHandler, SetStateAction, useEffect, useState } from "react";
 import { useContractRead } from "wagmi";
 import { useWeb3Contract } from "../../../hooks/useWeb3Contract";
 import {
@@ -16,6 +16,8 @@ import Timer from "../../global/Timer";
 import { useWeb3Store } from "../../../store/global/web3Store";
 import CurrentPrice from "./CurrentPrice";
 import { AnimatePresence } from "framer-motion";
+import PopUp from "../../global/PopUp";
+import { useFreeze } from "../../../hooks/useFreeze";
 
 interface props {
   data: auctionResultType | undefined;
@@ -136,6 +138,9 @@ const BuyButton: React.FC<props> = ({
       setIsOpenModal(true);
     }
   };
+
+
+
   return (
     <div className="flex flex-col justify-start items-start text-xl font-normal">
       <div className="flex justify-center items-center flex-nowrap h-14">

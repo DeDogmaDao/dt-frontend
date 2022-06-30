@@ -18,6 +18,7 @@ import { useWeb3Store } from "../../../store/global/web3Store";
 import { useFreeze } from "../../../hooks/useFreeze";
 import PopUp from "../PopUp";
 
+
 interface props {
   setIsOpenModal: Dispatch<SetStateAction<boolean>>;
   isOpenModal: boolean;
