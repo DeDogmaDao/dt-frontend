@@ -21,8 +21,10 @@ const MinReceipt: React.FC<props> = ({ status }) => {
   useEffect(() => {
     if (status.isError) {
       setModalType("failed");
+      setIsOpenModal(true);
     } else if (status.isSuccess) {
-      setModalType("successed");
+      setModalType("succeeded");
+      setIsOpenModal(true);
     } else {
       setModalType("neutral");
     }

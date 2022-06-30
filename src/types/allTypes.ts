@@ -185,4 +185,4 @@ export interface statusType {
   isSuccess: boolean;
 }
 
-export type popUpType = "successed" | "failed" | "neutral";
+export type popUpType = "succeeded" | "failed" | "neutral";

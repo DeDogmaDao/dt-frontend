@@ -9,7 +9,7 @@ interface props {
   onBackdropClick: MouseEventHandler<HTMLDivElement> | undefined;
   type:popUpType;
 }
-const colors={successed:"#2FFF69",failed:"#E31515",neutral:""}
+const colors={succeeded:"#2FFF69",failed:"#E31515",neutral:""}
 const PopUp: React.FC<props> = ({ id, isOpen, onBackdropClick, children,type }) => {
   return (
     <Modal id={id} isOpen={isOpen} onBackdropClick={onBackdropClick}>
