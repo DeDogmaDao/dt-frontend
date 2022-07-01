@@ -53,9 +53,7 @@ export const useWeb3Contract = ({
     }
   },[error1])
 
-
-  console.log("data", data);
-  console.log("waited data", waitedData);
+console.log(data?.timestamp)
   return {
     isErrorWrite,
     isLoadingWrite,

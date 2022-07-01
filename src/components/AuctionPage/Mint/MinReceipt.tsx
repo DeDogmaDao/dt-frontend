@@ -85,11 +85,29 @@ const MinReceipt: React.FC<props> = ({
 
         <div className="w-full flex justify-between">
           <span>Transaction ID</span>
-          <span className="text-white">
+          <a
+            className="text-white hover:text-primary-500 cursor-pointer duration-300"
+            target={"_blank"}
+            href={
+              (modalType === "successful" &&
+                "https://etherscan.io/tx/" +
+                  buyGodWaiteddata?.transactionHash) ||
+              (modalType === "failed" &&
+                "https://etherscan.io/tx/" + error.txHash) ||
+              ""
+            }
+          >
             {(modalType === "successful" &&
-              buyGodWaiteddata?.transactionHash) ||
-              (modalType === "failed" && error.txHash)}
-          </span>
+              buyGodWaiteddata?.transactionHash.substring(0, 7) +
+                "..." +
+                buyGodWaiteddata?.transactionHash.substring(
+                  buyGodWaiteddata?.transactionHash.length - 7
+                )) ||
+              (modalType === "failed" &&
+                error.txHash.substring(0, 7) +
+                  "..." +
+                  error.txHash.substring(error.txHash.length - 7))}
+          </a>
         </div>
         <div className="w-full flex justify-between">
           <span>Transaction time</span>
