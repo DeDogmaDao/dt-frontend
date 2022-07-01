@@ -1,5 +1,5 @@
 import { ToastContainer } from "react-toastify";
-import Modal from "../Modal";
+import Modal from "../../components/global/Modal";
 import "react-toastify/dist/ReactToastify.css";
 
 const ToastProvider: React.FC = () => {

@@ -1,5 +1,11 @@
 import { ethers } from "ethers";
-import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import {
+  Dispatch,
+  MouseEventHandler,
+  SetStateAction,
+  useEffect,
+  useState,
+} from "react";
 import { useContractRead } from "wagmi";
 import { useWeb3Contract } from "../../../hooks/useWeb3Contract";
 import {
@@ -7,13 +13,13 @@ import {
   auctionDuration,
   contractAddress,
 } from "../../../store/constants";
-import { auctionResultType, statusType } from "../../../types/allTypes";
-import { secondsToDhms } from "../../../utils/util";
+import { auctionDataType, auctionResultType, statusType } from "../../../types/allTypes";
 import ConnectWalletModal from "../../global/ConnectWalletModal";
 import { deDogmaDaoABI } from "../../global/ConnectWalletModal/abi";
-import Skeleton from "../../global/Skeleton";
 import Timer from "../../global/Timer";
-import {useWeb3Store} from '../../../store/global/web3Store'
+import { useWeb3Store } from "../../../store/global/web3Store";
+import CurrentPrice from "./CurrentPrice";
+import MinReceipt from "./MinReceipt";
 
 interface props {
   data: auctionResultType | undefined;
@@ -22,6 +28,7 @@ interface props {
   setAuctionStage: Dispatch<SetStateAction<number>>;
   setActiveIndex: Dispatch<SetStateAction<number>>;
   index: number;
+  auctionData:auctionDataType;
 }
 const BuyButton: React.FC<props> = ({
   data,
@@ -30,12 +37,14 @@ const BuyButton: React.FC<props> = ({
   setAuctionStage,
   setActiveIndex,
   index,
+  auctionData
 }) => {
-  const activeConnector = useWeb3Store(state=>state.activeConnector);
+  const activeConnector = useWeb3Store((state) => state.activeConnector);
   const [isOpenModal, setIsOpenModal] = useState(false);
   const [timer, setTimer] = useState<number | null>(null);
   const [currentPrice, setCurrentPrice] = useState(0);
   const [tensTimer, setTensTimer] = useState(-2);
+  const [once, setOnce] = useState(false);
 
   const { data: priceData, refetch: refetchPriceData } = useContractRead(
     {
@@ -43,7 +52,7 @@ const BuyButton: React.FC<props> = ({
       contractInterface: deDogmaDaoABI,
     },
     "getAuctionPrice",
-    { args: [1] }
+    { args: [index+1] }
   );
   const { data: updatedData, refetch: refetchUpdatedData } = useContractRead(
     {
@@ -52,13 +61,25 @@ const BuyButton: React.FC<props> = ({
     },
     "auctions",
     { args: [1] }
-  );
+    );
+    
+    const {
+      data: buyGodData,
+      write,
+      waitedData: buyGodWaiteddata,
+      isErrorWrite,
+      isLoadingWrite,
+      isSuccessWrite,
+      error
+    } = useWeb3Contract({
+      functionName: "buyAGodInAuction",
+      args: [index + 1],
+      ethersValue: ethers.utils.formatUnits(
+        ethers.BigNumber.from(priceData ?? "100"),
+        18
+        ),
+      });
 
-  const { data: buyGodData,write,waitedData:buyGodWaiteddata } = useWeb3Contract({
-    functionName: "buyAGodInAuction",
-    args: [index+1],
-    ethersValue: ethers.utils.formatUnits(ethers.BigNumber.from(priceData ?? "100"), 18),
-  });
   useEffect(() => {
     if (data && auctionStage > 0) {
       const now = new Date().getTime();
@@ -76,7 +97,7 @@ const BuyButton: React.FC<props> = ({
   }, [data, auctionStage]);
 
   useEffect(() => {
-    if (data && auctionStage === 1) {
+    if (data && auctionStage === 1 && tensTimer !== -2) {
       const price: number =
         data.startPrice -
         Math.floor(
@@ -88,7 +109,15 @@ const BuyButton: React.FC<props> = ({
       if (price < data.endPrice) {
         setCurrentPrice(data.endPrice);
       } else {
-        setCurrentPrice(price);
+        if (once) {
+          setCurrentPrice(-1);
+          setTimeout(() => {
+            setCurrentPrice(price);
+          }, 1900);
+        } else {
+          setOnce(true);
+          setCurrentPrice(price);
+        }
       }
       if (tensTimer === -1) {
         setAuctionStage(0);
@@ -107,18 +136,16 @@ const BuyButton: React.FC<props> = ({
   }, [tensTimer]);
 
 
-// useEffect(()=>{
-//   console.log(buyGodWaiteddata);
-// },[buyGodWaiteddata])
   const buyHandler = () => {
-    if(activeConnector){
+    if (activeConnector) {
       if (updatedData && updatedData[6] === false) {
-        write()
+        write();
       }
     } else {
       setIsOpenModal(true);
     }
   };
+
   return (
     <div className="flex flex-col justify-start items-start text-xl font-normal">
       <div className="flex justify-center items-center flex-nowrap h-14">
@@ -132,9 +159,17 @@ const BuyButton: React.FC<props> = ({
               tensTimer={tensTimer}
             />
           </>
-        ) : (
-          ""
-        )}
+        ) : (auctionStage === 2 ? (
+          <>
+          Until this Auction starts:
+          <Timer
+            time={timer}
+            classNames="ml-2"
+            setTensTimer={setTensTimer}
+            tensTimer={tensTimer}
+          />
+        </>
+        ):"")}
       </div>
       <div className="flex justify-start items-center gap-x-4 mt-6">
         <button
@@ -164,9 +199,11 @@ const BuyButton: React.FC<props> = ({
             <span className="font-normal flex gap-x-2">
               Current Price:
               <span className="font-bold">
-                {auctionStage === 1
-                  ? currentPrice.toFixed(4) + " ETH"
-                  : data?.startPrice.toFixed(4) + " ETH"}
+                {auctionStage === 1 ? (
+                  <CurrentPrice price={currentPrice.toFixed(4)} />
+                ) : (
+                  data?.startPrice.toFixed(4) + " ETH"
+                )}
               </span>
             </span>
           )}
@@ -175,6 +212,19 @@ const BuyButton: React.FC<props> = ({
       <ConnectWalletModal
         isOpenModal={isOpenModal}
         setIsOpenModal={setIsOpenModal}
+      />
+      <MinReceipt
+        status={{
+          isError: isErrorWrite,
+          isLoading: isLoadingWrite,
+          isSuccess: isSuccessWrite,
+        }}
+        write={write}
+        buyGodWaiteddata={buyGodWaiteddata}
+        buyGodData={buyGodData}
+          auctionData={auctionData}
+          error={error}
+          refetchUpdatedData={refetchUpdatedData}
       />
     </div>
   );
