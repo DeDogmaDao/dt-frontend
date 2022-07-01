@@ -14,6 +14,7 @@ const AuctionPage: React.FC = () => {
   const previousActiveIndex = usePrevious(activeIndex);
   const [activeTab, setActiveTab] = useState(0);
   const { results, status } = useWeb3Auction();
+  console.log(results)
   useLayoutEffect(() => {
     results.map((data, index) => {
       if (

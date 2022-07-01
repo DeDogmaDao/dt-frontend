@@ -50,7 +50,7 @@ const BuyButton: React.FC<props> = ({
       contractInterface: deDogmaDaoABI,
     },
     "getAuctionPrice",
-    { args: [1] }
+    { args: [index+1] }
   );
   const { data: updatedData, refetch: refetchUpdatedData } = useContractRead(
     {
@@ -59,23 +59,27 @@ const BuyButton: React.FC<props> = ({
     },
     "auctions",
     { args: [1] }
-  );
-
-  const {
-    data: buyGodData,
-    write,
-    waitedData: buyGodWaiteddata,
-    isErrorWrite,
-    isLoadingWrite,
-    isSuccessWrite,
-  } = useWeb3Contract({
-    functionName: "buyAGodInAuction",
-    args: [index + 1],
-    ethersValue: ethers.utils.formatUnits(
-      ethers.BigNumber.from(priceData ?? "100"),
-      18
-    ),
-  });
+    );
+    
+    const {
+      data: buyGodData,
+      write,
+      waitedData: buyGodWaiteddata,
+      isErrorWrite,
+      isLoadingWrite,
+      isSuccessWrite,
+    } = useWeb3Contract({
+      functionName: "buyAGodInAuction",
+      args: [index + 1],
+      ethersValue: ethers.utils.formatUnits(
+        ethers.BigNumber.from(priceData ?? "100"),
+        18
+        ),
+      });
+      console.log(ethers.utils.formatUnits(
+        ethers.BigNumber.from(priceData ?? "100"),
+        18
+        ),)
   useEffect(() => {
     if (data && auctionStage > 0) {
       const now = new Date().getTime();
@@ -131,9 +135,9 @@ const BuyButton: React.FC<props> = ({
     }
   }, [tensTimer]);
 
-  // useEffect(()=>{
-  //   console.log(buyGodWaiteddata);
-  // },[buyGodWaiteddata])
+   useEffect(()=>{
+     console.log(buyGodWaiteddata);
+   },[buyGodWaiteddata])
   const buyHandler = () => {
     if (activeConnector) {
       if (updatedData && updatedData[6] === false) {
