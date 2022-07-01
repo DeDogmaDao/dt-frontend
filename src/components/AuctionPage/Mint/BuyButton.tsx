@@ -209,6 +209,7 @@ const BuyButton: React.FC<props> = ({
           isLoading: isLoadingWrite,
           isSuccess: isSuccessWrite,
         }}
+        write={write}
       />
     </div>
   );
