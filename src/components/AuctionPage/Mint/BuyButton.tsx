@@ -37,6 +37,7 @@ const BuyButton: React.FC<props> = ({
   setAuctionStage,
   setActiveIndex,
   index,
+  auctionData
 }) => {
   const activeConnector = useWeb3Store((state) => state.activeConnector);
   const [isOpenModal, setIsOpenModal] = useState(false);
@@ -220,6 +221,7 @@ const BuyButton: React.FC<props> = ({
           ethers.BigNumber.from(priceData ?? "100"),
           18
           )}
+          auctionData={auctionData}
       />
     </div>
   );

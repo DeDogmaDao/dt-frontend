@@ -4,7 +4,7 @@ import Link from "next/link";
 import { MouseEventHandler, useEffect, useState } from "react";
 import { useFreeze } from "../../../hooks/useFreeze";
 import { AngleRightSVG } from "../../../store/svg";
-import { popUpType, statusType } from "../../../types/allTypes";
+import { auctionDataType, popUpType, statusType } from "../../../types/allTypes";
 import PopUp from "../../global/PopUp";
 
 interface props {
@@ -12,8 +12,9 @@ interface props {
   write: (overrideConfig?: WriteContractConfig | undefined) => void;
   buyGodWaiteddata: ethers.providers.TransactionReceipt | undefined;
   paidValue:string;
+  auctionData:auctionDataType;
 }
-const MinReceipt: React.FC<props> = ({ status, write,buyGodWaiteddata,paidValue }) => {
+const MinReceipt: React.FC<props> = ({ status, write,buyGodWaiteddata,paidValue,auctionData }) => {
   const [modalType, setModalType] = useState<popUpType>("neutral");
   const [isOpenModal, setIsOpenModal] = useState(false);
   useFreeze(isOpenModal);
