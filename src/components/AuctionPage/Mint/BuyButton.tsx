@@ -13,7 +13,7 @@ import {
   auctionDuration,
   contractAddress,
 } from "../../../store/constants";
-import { auctionResultType, statusType } from "../../../types/allTypes";
+import { auctionDataType, auctionResultType, statusType } from "../../../types/allTypes";
 import ConnectWalletModal from "../../global/ConnectWalletModal";
 import { deDogmaDaoABI } from "../../global/ConnectWalletModal/abi";
 import Timer from "../../global/Timer";
@@ -28,6 +28,7 @@ interface props {
   setAuctionStage: Dispatch<SetStateAction<number>>;
   setActiveIndex: Dispatch<SetStateAction<number>>;
   index: number;
+  auctionData:auctionDataType;
 }
 const BuyButton: React.FC<props> = ({
   data,
