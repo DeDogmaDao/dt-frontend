@@ -4,17 +4,30 @@ import Link from "next/link";
 import { MouseEventHandler, useEffect, useState } from "react";
 import { useFreeze } from "../../../hooks/useFreeze";
 import { AngleRightSVG } from "../../../store/svg";
-import { auctionDataType, popUpType, statusType } from "../../../types/allTypes";
+import {
+  auctionDataType,
+  popUpType,
+  statusType,
+  transactionResErrorType,
+} from "../../../types/allTypes";
 import PopUp from "../../global/PopUp";
 
 interface props {
   status: statusType;
   write: (overrideConfig?: WriteContractConfig | undefined) => void;
   buyGodWaiteddata: ethers.providers.TransactionReceipt | undefined;
-  paidValue:string;
-  auctionData:auctionDataType;
+  buyGodData: ethers.providers.TransactionResponse | undefined;
+  auctionData: auctionDataType;
+  error: transactionResErrorType;
 }
-const MinReceipt: React.FC<props> = ({ status, write,buyGodWaiteddata,paidValue,auctionData }) => {
+const MinReceipt: React.FC<props> = ({
+  status,
+  write,
+  buyGodWaiteddata,
+  error,
+  auctionData,
+  buyGodData,
+}) => {
   const [modalType, setModalType] = useState<popUpType>("neutral");
   const [isOpenModal, setIsOpenModal] = useState(false);
   useFreeze(isOpenModal);
@@ -60,22 +73,29 @@ const MinReceipt: React.FC<props> = ({ status, write,buyGodWaiteddata,paidValue,
         {modalType === "successful" && (
           <div className="w-full flex justify-between text-base font-normal">
             <span>Card name</span>
-            <span className="text-white">{"cardName"}</span>
+            <span className="text-white">{auctionData.godName}</span>
           </div>
         )}
         {modalType === "successful" && (
           <div className="w-full flex justify-between">
             <span>Amount paid</span>
-            <span className="text-white">{paidValue + " ETH"}</span>
+            <span className="text-white">{buyGodData?.timestamp + " ETH"}</span>
           </div>
         )}
+
         <div className="w-full flex justify-between">
           <span>Transaction ID</span>
-          <span className="text-white">{buyGodWaiteddata?.transactionHash}</span>
+          <span className="text-white">
+            {(modalType === "successful" &&
+              buyGodWaiteddata?.transactionHash) ||
+              (modalType === "failed" && error.txHash)}
+          </span>
         </div>
         <div className="w-full flex justify-between">
           <span>Transaction time</span>
-          <span className="text-white">{"2022/4/1 15:46"}</span>
+          <span className="text-white">
+            {buyGodData?.timestamp ?? new Date().toUTCString()}
+          </span>
         </div>
         {modalType === "failed" && (
           <button

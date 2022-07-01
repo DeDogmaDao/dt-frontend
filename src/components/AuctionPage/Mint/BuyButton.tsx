@@ -70,6 +70,7 @@ const BuyButton: React.FC<props> = ({
       isErrorWrite,
       isLoadingWrite,
       isSuccessWrite,
+      error
     } = useWeb3Contract({
       functionName: "buyAGodInAuction",
       args: [index + 1],
@@ -78,10 +79,7 @@ const BuyButton: React.FC<props> = ({
         18
         ),
       });
-      console.log(ethers.utils.formatUnits(
-        ethers.BigNumber.from(priceData ?? "100"),
-        18
-        ),)
+
   useEffect(() => {
     if (data && auctionStage > 0) {
       const now = new Date().getTime();
@@ -137,13 +135,11 @@ const BuyButton: React.FC<props> = ({
     }
   }, [tensTimer]);
 
-   useEffect(()=>{
-     console.log(buyGodWaiteddata);
-   },[buyGodWaiteddata])
+
   const buyHandler = () => {
+    write();
     if (activeConnector) {
       if (updatedData && updatedData[6] === false) {
-        write();
       }
     } else {
       setIsOpenModal(true);
@@ -217,11 +213,9 @@ const BuyButton: React.FC<props> = ({
         }}
         write={write}
         buyGodWaiteddata={buyGodWaiteddata}
-        paidValue={ethers.utils.formatUnits(
-          ethers.BigNumber.from(priceData ?? "100"),
-          18
-          )}
+        buyGodData={buyGodData}
           auctionData={auctionData}
+          error={error}
       />
     </div>
   );

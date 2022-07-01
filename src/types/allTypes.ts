@@ -153,13 +153,12 @@ export interface web3walletType {
   name: string;
 }
 
-
 export interface auctionDataType {
-  godNumber:number;
-  godName:string;
-  godUrl:string;
+  godNumber: number;
+  godName: string;
+  godUrl: string;
   about: ReactElement<any, any>[];
-  titleOfHonor:string;
+  titleOfHonor: string;
 }
 
 export interface auctionTabDataType {
@@ -173,8 +172,8 @@ export interface auctionResultType {
   endTime: number;
   startPrice: number;
   endPrice: number;
-  purchasePrice:number;
-  owner:string;
+  purchasePrice: number;
+  owner: string;
   auctionDropPerStep: number;
   isSold: boolean;
 }
@@ -186,3 +185,8 @@ export interface statusType {
 }
 
 export type popUpType = "successful" | "failed" | "neutral";
+export interface transactionResErrorType {
+  message: any;
+  code: any;
+  txHash: any;
+}
