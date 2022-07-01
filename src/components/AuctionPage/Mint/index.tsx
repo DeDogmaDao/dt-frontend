@@ -22,10 +22,10 @@ const Mint: React.FC<props> = ({ index, data, status,activeIndex,setActiveIndex,
       } else if (data?.endTime < Math.floor(Date.now() / 1000)) {
         setAuctionStage(0);
       }
-       if(data.endTime > Math.floor(Date.now() / 1000) && data.startTime <= Math.floor(Date.now() / 1000)) {
+      else if(data.endTime > Math.floor(Date.now() / 1000) && data.startTime <= Math.floor(Date.now() / 1000)) {
         setAuctionStage(1);
       }
-       if(data.startTime > Math.floor(Date.now() / 1000)) {
+      else if(data.startTime > Math.floor(Date.now() / 1000)) {
         setAuctionStage(2);
       }
 

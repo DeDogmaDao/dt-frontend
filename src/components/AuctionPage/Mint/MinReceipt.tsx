@@ -139,14 +139,16 @@ const MinReceipt: React.FC<props> = ({
                 <p className="text-white">{error.message}</p>
               )}
             </div>
-            {error.hasTx && (<div className="w-full flex justify-between">
-              <span>Transaction time</span>
-              <span className="text-white">
-                {buyGodData
-                  ? new Date(buyGodData.timestamp!).toLocaleString()
-                  : new Date().toLocaleString()}
-              </span>
-            </div>)}
+            {error.hasTx && (
+              <div className="w-full flex justify-between">
+                <span>Transaction time</span>
+                <span className="text-white">
+                  {buyGodData
+                    ? new Date(buyGodData.timestamp!).toLocaleString()
+                    : new Date().toLocaleString()}
+                </span>
+              </div>
+            )}
           </>
         )}
 

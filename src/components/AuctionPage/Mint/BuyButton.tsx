@@ -137,9 +137,9 @@ const BuyButton: React.FC<props> = ({
 
 
   const buyHandler = () => {
-    write();
     if (activeConnector) {
       if (updatedData && updatedData[6] === false) {
+        write();
       }
     } else {
       setIsOpenModal(true);
