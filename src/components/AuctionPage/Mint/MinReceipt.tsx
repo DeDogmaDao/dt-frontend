@@ -19,6 +19,7 @@ interface props {
   buyGodData: ethers.providers.TransactionResponse | undefined;
   auctionData: auctionDataType;
   error: transactionResErrorType;
+  refetchUpdatedData: any;
 }
 const MinReceipt: React.FC<props> = ({
   status,
@@ -27,6 +28,7 @@ const MinReceipt: React.FC<props> = ({
   error,
   auctionData,
   buyGodData,
+  refetchUpdatedData,
 }) => {
   const [modalType, setModalType] = useState<popUpType>("neutral");
   const [isOpenModal, setIsOpenModal] = useState(false);
@@ -52,8 +54,11 @@ const MinReceipt: React.FC<props> = ({
   }, [status.isError, status.isLoading, status.isSuccess]);
 
   const tryAgainHandler = () => {
-    write();
-    setIsOpenModal(false);
+    refetchUpdatedData();
+    setTimeout(() => {
+      write();
+      setIsOpenModal(false);
+    }, 1000);
   };
   return (
     <PopUp
@@ -79,42 +84,72 @@ const MinReceipt: React.FC<props> = ({
         {modalType === "successful" && (
           <div className="w-full flex justify-between">
             <span>Amount paid</span>
-            <span className="text-white">{buyGodData?.timestamp + " ETH"}</span>
+            <span className="text-white">
+              {ethers.utils.formatUnits(
+                ethers.BigNumber.from(buyGodData?.value ?? "100"),
+                18
+              ) + " ETH"}
+            </span>
           </div>
         )}
 
-        <div className="w-full flex justify-between">
-          <span>Transaction ID</span>
-          <a
-            className="text-white hover:text-primary-500 cursor-pointer duration-300"
-            target={"_blank"}
-            href={
-              (modalType === "successful" &&
-                "https://etherscan.io/tx/" +
-                  buyGodWaiteddata?.transactionHash) ||
-              (modalType === "failed" &&
-                "https://etherscan.io/tx/" + error.txHash) ||
-              ""
-            }
-          >
-            {(modalType === "successful" &&
-              buyGodWaiteddata?.transactionHash.substring(0, 7) +
-                "..." +
-                buyGodWaiteddata?.transactionHash.substring(
-                  buyGodWaiteddata?.transactionHash.length - 7
-                )) ||
-              (modalType === "failed" &&
-                error.txHash.substring(0, 7) +
+        {modalType === "successful" && (
+          <>
+            <div className="w-full flex justify-between">
+              <span>Transaction ID</span>
+              <a
+                className="text-primary-500 hover:text-secondary-500 cursor-pointer duration-300"
+                target={"_blank"}
+                href={
+                  "https://etherscan.io/tx/" + buyGodWaiteddata?.transactionHash
+                }
+              >
+                {buyGodWaiteddata?.transactionHash.substring(0, 7) +
                   "..." +
-                  error.txHash.substring(error.txHash.length - 7))}
-          </a>
-        </div>
-        <div className="w-full flex justify-between">
-          <span>Transaction time</span>
-          <span className="text-white">
-            {buyGodData ? new Date(buyGodData.timestamp!).toLocaleString() : new Date().toLocaleString()}
-          </span>
-        </div>
+                  buyGodWaiteddata?.transactionHash.substring(
+                    buyGodWaiteddata?.transactionHash.length - 7
+                  )}
+              </a>
+            </div>
+            <div className="w-full flex justify-between">
+              <span>Transaction time</span>
+              <span className="text-white">
+                {buyGodData
+                  ? new Date(buyGodData.timestamp!).toLocaleString()
+                  : new Date().toLocaleString()}
+              </span>
+            </div>
+          </>
+        )}
+        {modalType === "failed" && (
+          <>
+            <div className="w-full flex justify-between">
+              <span>{error.hasTx ? "Transaction ID" : "Error"}</span>
+              {error.hasTx ? (
+                <a
+                  className="text-primary-500 hover:text-secondary-500 cursor-pointer duration-300"
+                  target={"_blank"}
+                  href={"https://etherscan.io/tx/" + error.txHash}
+                >
+                  {error.txHash.substring(0, 7) +
+                    "..." +
+                    error.txHash.substring(error.txHash.length - 7)}
+                </a>
+              ) : (
+                <p className="text-white">{error.message}</p>
+              )}
+            </div>
+            {error.hasTx && (<div className="w-full flex justify-between">
+              <span>Transaction time</span>
+              <span className="text-white">
+                {buyGodData
+                  ? new Date(buyGodData.timestamp!).toLocaleString()
+                  : new Date().toLocaleString()}
+              </span>
+            </div>)}
+          </>
+        )}
+
         {modalType === "failed" && (
           <button
             className="bg-primary-500 w-52 h-12 self-center rounded-full text-xl font-medium text-black hover:bg-primary-500/50 hover:text-white duration-300 border-2 border-primary-500"

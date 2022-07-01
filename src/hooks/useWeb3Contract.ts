@@ -18,7 +18,12 @@ export const useWeb3Contract = ({
   ethersValue,
   transactionGasLimit = 200000,
 }: useWeb3ContractType) => {
-  const [error, setError] = useState<transactionResErrorType>({code: 0, message: "",txHash: ""});
+  const [error, setError] = useState<transactionResErrorType>({
+    code: 0,
+    message: "",
+    txHash: "",
+    hasTx: false,
+  });
   const { data: signer } = useSigner();
   const {
     data,
@@ -46,14 +51,21 @@ export const useWeb3Contract = ({
     hash: data?.hash,
     wait: data?.wait,
   });
-  useEffect(()=>{
-    if(error1){
-      const err = error1 && JSON.parse(error1.message.match(/{(.*)}/g)![0]).value.data;
-      setError({code: err.code, message: err.message, txHash: err.data.txHash});
+  useEffect(() => {
+    if (error1?.message.match(/{(.*)}/g)) {
+      const err =
+        error1 && JSON.parse(error1.message.match(/{(.*)}/g)![0]).value.data;
+      setError({
+        code: err.code,
+        message: err.message,
+        txHash: err.data.txHash,
+        hasTx: true,
+      });
+    } else {
+      setError({ code: 0, message: error1?.message, txHash: "", hasTx: false });
     }
-  },[error1])
+  }, [error1]);
 
-console.log(data?.timestamp)
   return {
     isErrorWrite,
     isLoadingWrite,

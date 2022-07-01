@@ -189,4 +189,5 @@ export interface transactionResErrorType {
   message: any;
   code: any;
   txHash: any;
+  hasTx:boolean;
 }

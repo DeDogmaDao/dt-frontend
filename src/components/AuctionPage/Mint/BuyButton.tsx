@@ -216,6 +216,7 @@ const BuyButton: React.FC<props> = ({
         buyGodData={buyGodData}
           auctionData={auctionData}
           error={error}
+          refetchUpdatedData={refetchUpdatedData}
       />
     </div>
   );
