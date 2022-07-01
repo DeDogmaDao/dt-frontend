@@ -1,4 +1,5 @@
 import { WriteContractConfig } from "@wagmi/core";
+import { ethers } from "ethers";
 import Link from "next/link";
 import { MouseEventHandler, useEffect, useState } from "react";
 import { useFreeze } from "../../../hooks/useFreeze";
@@ -9,8 +10,10 @@ import PopUp from "../../global/PopUp";
 interface props {
   status: statusType;
   write: (overrideConfig?: WriteContractConfig | undefined) => void;
+  buyGodWaiteddata: ethers.providers.TransactionReceipt | undefined;
+  paidValue:string;
 }
-const MinReceipt: React.FC<props> = ({ status, write }) => {
+const MinReceipt: React.FC<props> = ({ status, write,buyGodWaiteddata,paidValue }) => {
   const [modalType, setModalType] = useState<popUpType>("neutral");
   const [isOpenModal, setIsOpenModal] = useState(false);
   useFreeze(isOpenModal);
@@ -62,12 +65,12 @@ const MinReceipt: React.FC<props> = ({ status, write }) => {
         {modalType === "successful" && (
           <div className="w-full flex justify-between">
             <span>Amount paid</span>
-            <span className="text-white">{"6.687" + " ETH"}</span>
+            <span className="text-white">{paidValue + " ETH"}</span>
           </div>
         )}
         <div className="w-full flex justify-between">
           <span>Transaction ID</span>
-          <span className="text-white">{"jhkjh329874"}</span>
+          <span className="text-white">{buyGodWaiteddata?.transactionHash}</span>
         </div>
         <div className="w-full flex justify-between">
           <span>Transaction time</span>

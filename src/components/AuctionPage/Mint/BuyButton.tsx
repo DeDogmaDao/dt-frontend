@@ -214,6 +214,11 @@ const BuyButton: React.FC<props> = ({
           isSuccess: isSuccessWrite,
         }}
         write={write}
+        buyGodWaiteddata={buyGodWaiteddata}
+        paidValue={ethers.utils.formatUnits(
+          ethers.BigNumber.from(priceData ?? "100"),
+          18
+          )}
       />
     </div>
   );
