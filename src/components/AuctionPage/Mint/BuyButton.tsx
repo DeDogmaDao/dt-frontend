@@ -13,7 +13,7 @@ import {
   auctionDuration,
   contractAddress,
 } from "../../../store/constants";
-import { auctionResultType, statusType } from "../../../types/allTypes";
+import { auctionDataType, auctionResultType, statusType } from "../../../types/allTypes";
 import ConnectWalletModal from "../../global/ConnectWalletModal";
 import { deDogmaDaoABI } from "../../global/ConnectWalletModal/abi";
 import Timer from "../../global/Timer";
@@ -28,6 +28,7 @@ interface props {
   setAuctionStage: Dispatch<SetStateAction<number>>;
   setActiveIndex: Dispatch<SetStateAction<number>>;
   index: number;
+  auctionData:auctionDataType;
 }
 const BuyButton: React.FC<props> = ({
   data,
@@ -36,6 +37,7 @@ const BuyButton: React.FC<props> = ({
   setAuctionStage,
   setActiveIndex,
   index,
+  auctionData
 }) => {
   const activeConnector = useWeb3Store((state) => state.activeConnector);
   const [isOpenModal, setIsOpenModal] = useState(false);
@@ -50,7 +52,7 @@ const BuyButton: React.FC<props> = ({
       contractInterface: deDogmaDaoABI,
     },
     "getAuctionPrice",
-    { args: [1] }
+    { args: [index+1] }
   );
   const { data: updatedData, refetch: refetchUpdatedData } = useContractRead(
     {
@@ -59,23 +61,25 @@ const BuyButton: React.FC<props> = ({
     },
     "auctions",
     { args: [1] }
-  );
+    );
+    
+    const {
+      data: buyGodData,
+      write,
+      waitedData: buyGodWaiteddata,
+      isErrorWrite,
+      isLoadingWrite,
+      isSuccessWrite,
+      error
+    } = useWeb3Contract({
+      functionName: "buyAGodInAuction",
+      args: [index + 1],
+      ethersValue: ethers.utils.formatUnits(
+        ethers.BigNumber.from(priceData ?? "100"),
+        18
+        ),
+      });
 
-  const {
-    data: buyGodData,
-    write,
-    waitedData: buyGodWaiteddata,
-    isErrorWrite,
-    isLoadingWrite,
-    isSuccessWrite,
-  } = useWeb3Contract({
-    functionName: "buyAGodInAuction",
-    args: [index + 1],
-    ethersValue: ethers.utils.formatUnits(
-      ethers.BigNumber.from(priceData ?? "100"),
-      18
-    ),
-  });
   useEffect(() => {
     if (data && auctionStage > 0) {
       const now = new Date().getTime();
@@ -131,9 +135,7 @@ const BuyButton: React.FC<props> = ({
     }
   }, [tensTimer]);
 
-  // useEffect(()=>{
-  //   console.log(buyGodWaiteddata);
-  // },[buyGodWaiteddata])
+
   const buyHandler = () => {
     if (activeConnector) {
       if (updatedData && updatedData[6] === false) {
@@ -157,9 +159,17 @@ const BuyButton: React.FC<props> = ({
               tensTimer={tensTimer}
             />
           </>
-        ) : (
-          ""
-        )}
+        ) : (auctionStage === 2 ? (
+          <>
+          Until this Auction starts:
+          <Timer
+            time={timer}
+            classNames="ml-2"
+            setTensTimer={setTensTimer}
+            tensTimer={tensTimer}
+          />
+        </>
+        ):"")}
       </div>
       <div className="flex justify-start items-center gap-x-4 mt-6">
         <button
@@ -209,6 +219,12 @@ const BuyButton: React.FC<props> = ({
           isLoading: isLoadingWrite,
           isSuccess: isSuccessWrite,
         }}
+        write={write}
+        buyGodWaiteddata={buyGodWaiteddata}
+        buyGodData={buyGodData}
+          auctionData={auctionData}
+          error={error}
+          refetchUpdatedData={refetchUpdatedData}
       />
     </div>
   );

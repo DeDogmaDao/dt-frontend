@@ -1,5 +1,5 @@
 import { Dispatch, SetStateAction, useEffect, useLayoutEffect, useState } from "react";
-import { auctionResultType, statusType } from "../../../types/allTypes";
+import { auctionDataType, auctionResultType, statusType } from "../../../types/allTypes";
 import Skeleton from "../../global/Skeleton";
 import BuyButton from "./BuyButton";
 import MintSkeleton from "./MintSkeleton";
@@ -8,11 +8,12 @@ import Prices from "./Prices";
 interface props {
   index: number;
   data: auctionResultType | undefined;
+  auctionData:auctionDataType;
   status: statusType;
   activeIndex:number;
   setActiveIndex:Dispatch<SetStateAction<number>>;
 }
-const Mint: React.FC<props> = ({ index, data, status,activeIndex,setActiveIndex }) => {
+const Mint: React.FC<props> = ({ index, data, status,activeIndex,setActiveIndex,auctionData }) => {
   const [auctionStage, setAuctionStage] = useState(-1);
   useLayoutEffect(() => {
     if (data) {
@@ -21,10 +22,10 @@ const Mint: React.FC<props> = ({ index, data, status,activeIndex,setActiveIndex 
       } else if (data?.endTime < Math.floor(Date.now() / 1000)) {
         setAuctionStage(0);
       }
-      if(data.endTime > Math.floor(Date.now() / 1000) && data.startTime <= Math.floor(Date.now() / 1000)) {
+      else if(data.endTime > Math.floor(Date.now() / 1000) && data.startTime <= Math.floor(Date.now() / 1000)) {
         setAuctionStage(1);
       }
-      if(data.startTime > Math.floor(Date.now() / 1000)) {
+      else if(data.startTime > Math.floor(Date.now() / 1000)) {
         setAuctionStage(2);
       }
 
@@ -38,7 +39,7 @@ const Mint: React.FC<props> = ({ index, data, status,activeIndex,setActiveIndex 
       {status.isLoading ? (
         <>
           <Prices data={data} status={status} auctionStage={auctionStage} />
-          <BuyButton data={data} status={status} auctionStage={auctionStage} setAuctionStage={setAuctionStage} setActiveIndex={setActiveIndex} index={index} />
+          <BuyButton auctionData={auctionData} data={data} status={status} auctionStage={auctionStage} setAuctionStage={setAuctionStage} setActiveIndex={setActiveIndex} index={index} />
         </>
       ) : (
         <MintSkeleton />

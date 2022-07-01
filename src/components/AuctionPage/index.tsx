@@ -60,6 +60,7 @@ const AuctionPage: React.FC = () => {
                     status={status}
                     activeIndex={activeIndex}
                     setActiveIndex={setActiveIndex}
+                    auctionData={auction}
                   />
                 )}
                 {activeTab === 1 && <About data={auction} />}
