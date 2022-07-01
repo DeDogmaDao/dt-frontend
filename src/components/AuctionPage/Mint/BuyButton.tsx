@@ -159,9 +159,17 @@ const BuyButton: React.FC<props> = ({
               tensTimer={tensTimer}
             />
           </>
-        ) : (
-          ""
-        )}
+        ) : (auctionStage === 2 ? (
+          <>
+          Until this Auction starts:
+          <Timer
+            time={timer}
+            classNames="ml-2"
+            setTensTimer={setTensTimer}
+            tensTimer={tensTimer}
+          />
+        </>
+        ):"")}
       </div>
       <div className="flex justify-start items-center gap-x-4 mt-6">
         <button
