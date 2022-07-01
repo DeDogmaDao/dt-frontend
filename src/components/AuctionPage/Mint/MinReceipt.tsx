@@ -112,7 +112,7 @@ const MinReceipt: React.FC<props> = ({
         <div className="w-full flex justify-between">
           <span>Transaction time</span>
           <span className="text-white">
-            {buyGodData?.timestamp ?? new Date().toUTCString()}
+            {buyGodData ? new Date(buyGodData.timestamp!) : new Date().toLocaleString()}
           </span>
         </div>
         {modalType === "failed" && (
