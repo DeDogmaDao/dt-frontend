@@ -25,6 +25,7 @@ const AuctionPage: React.FC = () => {
       }
     });
   }, [results[0]]);
+  
   return (
     <div className="w-screen min-h-screen flex justify-center items-center px-20 mb-40 mt-8">
       <div className="h-full flex flex-col justify-center items-start relative ">

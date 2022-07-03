@@ -31,14 +31,12 @@ export const useWeb3Contract = ({
     isError: isErrorWrite,
     isLoading: isLoadingWrite,
     isSuccess: isSuccessWrite,
-  } = useContractWrite(
-    {
+  } = useContractWrite({
+    
       addressOrName: contractAddress,
       contractInterface: deDogmaDaoABI,
       signerOrProvider: signer,
-    },
-    functionName,
-    {
+      functionName:functionName,
       args: args,
       overrides: {
         value: utils.parseEther(ethersValue),
@@ -70,7 +68,6 @@ export const useWeb3Contract = ({
     hash: data?.hash,
     wait: data?.wait,
   });
-
   return {
     isErrorWrite,
     isLoadingWrite,

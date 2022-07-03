@@ -9,13 +9,7 @@ interface connectorsType {
 }
 interface connectionDataType {
   address?:string;
-  account?: string;
-  chain?: {
-    id: number;
-    unsupported: boolean;
-  };
   connector?: Connector<any, any> | undefined;
-  provider?: any;
 }
 
 interface web3StoreType {

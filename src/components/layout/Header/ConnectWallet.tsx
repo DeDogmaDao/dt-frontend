@@ -10,8 +10,9 @@ const ConnectWallet: React.FC = () => {
   const [isOpenModal, setIsOpenModal] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const account = useWeb3Store((state) => state.connectionData);
-  const modifiedAddress: string =
-  account?.address!.slice(0, 5) + "..." + account?.address!.slice(-5);
+  
+  const modifiedAddress: string = account?.address ? 
+  account?.address!.slice(0, 5) + "..." + account?.address!.slice(-5) :"";
   
   const walletModalClickHandler = () => {
 if(account?.address){
