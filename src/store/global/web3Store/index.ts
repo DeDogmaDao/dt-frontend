@@ -8,14 +8,8 @@ interface connectorsType {
   signingMsg: () => void;
 }
 interface connectionDataType {
-  address?:string;
-  account?: string;
-  chain?: {
-    id: number;
-    unsupported: boolean;
-  };
+  address?: string;
   connector?: Connector<any, any> | undefined;
-  provider?: any;
 }
 
 interface web3StoreType {
@@ -23,8 +17,8 @@ interface web3StoreType {
   setConnectors: (connectors: connectorsType) => void;
   activeConnector: Connector<any, any> | undefined;
   setActiveConnector: (connector: Connector<any, any> | undefined) => void;
-  connectionData:connectionDataType | undefined;
-  setConnectionData: (connectionData:connectionDataType | undefined) => void;
+  connectionData: connectionDataType | undefined;
+  setConnectionData: (connectionData: connectionDataType | undefined) => void;
 }
 export const useWeb3Store = create<web3StoreType>((set) => ({
   connectors: {

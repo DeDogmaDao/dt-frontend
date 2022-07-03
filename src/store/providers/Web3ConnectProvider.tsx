@@ -1,4 +1,10 @@
-import { chain, Connector, useAccount, useConnect, useSignMessage } from "wagmi";
+import {
+  chain,
+  Connector,
+  useAccount,
+  useConnect,
+  useSignMessage,
+} from "wagmi";
 import { MetaMaskConnector } from "wagmi/connectors/metaMask";
 import { WalletConnectConnector } from "wagmi/connectors/walletConnect";
 import { CoinbaseWalletConnector } from "wagmi/connectors/coinbaseWallet";
@@ -48,17 +54,15 @@ const Web3ConnectProvider: React.FC = ({ children }) => {
   const router = useRouter();
   const { disconnect } = useDisconnect();
   const {
-    activeConnector,
     connect,
-    connectors,
     error: connectError,
-    isConnecting,
-    pendingConnector,
     isError: connectIsError,
   } = useConnect();
-  const { data, isError: accountIsError, error: accountError } = useAccount();
+  const { address, connector: activeConnector } = useAccount();
 
-  const {data:signMsgData, signMessage} = useSignMessage({message:"upgrade"});
+  const { data: signMsgData, signMessage } = useSignMessage({
+    message: "upgrade",
+  });
 
   useEffect(() => {
     if (activeConnector) {
@@ -69,13 +73,13 @@ const Web3ConnectProvider: React.FC = ({ children }) => {
     }
   }, [activeConnector]);
   const metaMaskConnection = useCallback(() => {
-    connect(MetaMaskWallet);
+    connect({ connector: MetaMaskWallet });
   }, [connect, MetaMaskWallet]);
   const walletConnectConnection = useCallback(() => {
-    connect(WalletConnect);
+    connect({ connector: WalletConnect });
   }, [connect, WalletConnect]);
   const coinBaseConnection = useCallback(() => {
-    connect(CoinbaseWallet);
+    connect({ connector: CoinbaseWallet });
   }, [connect, CoinbaseWallet]);
   const disconnection = useCallback(() => {
     disconnect();
@@ -111,37 +115,32 @@ const Web3ConnectProvider: React.FC = ({ children }) => {
     setActiveConnector(activeConnector);
   }, [activeConnector]);
   useEffect(() => {
-    setConnectionData(data);
-    if (typeof data?.address === "string") {
+    setConnectionData({ address: address, connector: activeConnector });
+    if (typeof address === "string") {
       setAuth(true);
     } else {
       setAuth(false);
     }
-  }, [data]);
+  }, [address]);
 
   useEffect(() => {
-    if (accountError) {
-      toast.error(accountError?.message);
-    }
     if (connectError) {
       toast.error(connectError?.message);
     }
-  }, [accountIsError, connectIsError]);
+  }, [connectIsError]);
 
-  useEffect(()=>{
-if(signMsgData !==undefined){
-  const signerAddress = utils.verifyMessage("upgrade",`${signMsgData}`);
-  if(signerAddress === data?.address){
-    toast.success("You are verified");
-    setIsVerified(true);
-  } else{
-    toast.error("You are not verified");
-    setIsVerified(false)
-  }
-}
-
-     
-  },[signMsgData])
+  useEffect(() => {
+    if (signMsgData !== undefined) {
+      const signerAddress = utils.verifyMessage("upgrade", `${signMsgData}`);
+      if (signerAddress === address) {
+        toast.success("You are verified");
+        setIsVerified(true);
+      } else {
+        toast.error("You are not verified");
+        setIsVerified(false);
+      }
+    }
+  }, [signMsgData]);
   return <>{children}</>;
 };
 

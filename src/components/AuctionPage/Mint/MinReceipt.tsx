@@ -1,7 +1,13 @@
 import { WriteContractConfig } from "@wagmi/core";
 import { ethers } from "ethers";
 import Link from "next/link";
-import { MouseEventHandler, useEffect, useState } from "react";
+import {
+  Dispatch,
+  MouseEventHandler,
+  SetStateAction,
+  useEffect,
+  useState,
+} from "react";
 import { useFreeze } from "../../../hooks/useFreeze";
 import { AngleRightSVG } from "../../../store/svg";
 import {
@@ -20,6 +26,7 @@ interface props {
   auctionData: auctionDataType;
   error: transactionResErrorType;
   refetchUpdatedData: any;
+  setActiveIndex: Dispatch<SetStateAction<number>>;
 }
 const MinReceipt: React.FC<props> = ({
   status,
@@ -29,6 +36,7 @@ const MinReceipt: React.FC<props> = ({
   auctionData,
   buyGodData,
   refetchUpdatedData,
+  setActiveIndex,
 }) => {
   const [modalType, setModalType] = useState<popUpType>("neutral");
   const [isOpenModal, setIsOpenModal] = useState(false);
@@ -52,6 +60,12 @@ const MinReceipt: React.FC<props> = ({
       setModalType("neutral");
     }
   }, [status.isError, status.isLoading, status.isSuccess]);
+  useEffect(() => {
+    if (isOpenModal === false && status.isSuccess === true) {
+      refetchUpdatedData();
+      setActiveIndex((prevState) => prevState + 1);
+    }
+  }, [status.isSuccess, isOpenModal]);
 
   const tryAgainHandler = () => {
     refetchUpdatedData();
@@ -76,25 +90,21 @@ const MinReceipt: React.FC<props> = ({
     >
       <div className="w-full h-full flex flex-col px-8 gap-y-6 pt-10 text-base font-normal text-white/60">
         {modalType === "successful" && (
-          <div className="w-full flex justify-between text-base font-normal">
-            <span>Card name</span>
-            <span className="text-white">{auctionData.godName}</span>
-          </div>
-        )}
-        {modalType === "successful" && (
-          <div className="w-full flex justify-between">
-            <span>Amount paid</span>
-            <span className="text-white">
-              {ethers.utils.formatUnits(
-                ethers.BigNumber.from(buyGodData?.value ?? "100"),
-                18
-              ) + " ETH"}
-            </span>
-          </div>
-        )}
-
-        {modalType === "successful" && (
           <>
+            <div className="w-full flex justify-between text-base font-normal">
+              <span>Card name</span>
+              <span className="text-white">{auctionData.godName}</span>
+            </div>
+
+            <div className="w-full flex justify-between">
+              <span>Amount paid</span>
+              <span className="text-white">
+                {ethers.utils.formatUnits(
+                  ethers.BigNumber.from(buyGodData?.value ?? "100"),
+                  18
+                ) + " ETH"}
+              </span>
+            </div>
             <div className="w-full flex justify-between">
               <span>Transaction ID</span>
               <a
@@ -114,8 +124,8 @@ const MinReceipt: React.FC<props> = ({
             <div className="w-full flex justify-between">
               <span>Transaction time</span>
               <span className="text-white">
-                {buyGodData
-                  ? new Date(buyGodData.timestamp!).toLocaleString()
+                {buyGodData?.timestamp
+                  ? new Date(buyGodData.timestamp).toLocaleString()
                   : new Date().toLocaleString()}
               </span>
             </div>
@@ -143,22 +153,19 @@ const MinReceipt: React.FC<props> = ({
               <div className="w-full flex justify-between">
                 <span>Transaction time</span>
                 <span className="text-white">
-                  {buyGodData
-                    ? new Date(buyGodData.timestamp!).toLocaleString()
+                  {buyGodData?.timestamp
+                    ? new Date(buyGodData.timestamp).toLocaleString()
                     : new Date().toLocaleString()}
                 </span>
               </div>
             )}
+            <button
+              className="bg-primary-500 w-52 h-12 self-center rounded-full text-xl font-medium text-black hover:bg-primary-500/50 hover:text-white duration-300 border-2 border-primary-500"
+              onClick={tryAgainHandler}
+            >
+              Try again
+            </button>
           </>
-        )}
-
-        {modalType === "failed" && (
-          <button
-            className="bg-primary-500 w-52 h-12 self-center rounded-full text-xl font-medium text-black hover:bg-primary-500/50 hover:text-white duration-300 border-2 border-primary-500"
-            onClick={tryAgainHandler}
-          >
-            Try again
-          </button>
         )}
         <div className="w-full border-t-2 border-white/40 border-dashed" />
         <p className="text-center text-sm flex justify-center items-center">

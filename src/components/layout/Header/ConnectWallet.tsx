@@ -10,20 +10,22 @@ const ConnectWallet: React.FC = () => {
   const [isOpenModal, setIsOpenModal] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const account = useWeb3Store((state) => state.connectionData);
-  const modifiedAddress: string =
-  account?.address!.slice(0, 5) + "..." + account?.address!.slice(-5);
-  
+
+  const modifiedAddress: string = account?.address
+    ? account?.address!.slice(0, 5) + "..." + account?.address!.slice(-5)
+    : "";
+
   const walletModalClickHandler = () => {
-if(account?.address){
-  router.push("/profile")
-} else {
-  setIsOpenModal((prevState) => {
-    if (prevState === true) {
-      return false;
+    if (account?.address) {
+      router.push("/profile");
+    } else {
+      setIsOpenModal((prevState) => {
+        if (prevState === true) {
+          return false;
+        }
+        return true;
+      });
     }
-    return true;
-  });
-}
   };
   return (
     <>
@@ -38,9 +40,9 @@ if(account?.address){
           <p>{account?.address ? modifiedAddress : "Connect Wallet"}</p>
           {isHovered && (
             <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={connectWalletHoverTolltipAni}
+              initial="hidden"
+              animate="visible"
+              variants={connectWalletHoverTolltipAni}
               className="absolute left-0 top-full mt-1 w-full h-full
            bg-neutral-500/50 text-white/40 rounded-full flex justify-center items-center"
             >
