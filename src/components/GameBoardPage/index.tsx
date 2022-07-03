@@ -68,7 +68,7 @@ const GameBoardPage: React.FC = () => {
           {gameCardData.map((data, index) => {
             return (
               <CardGame
-              key={data.total + data.spellGroup + data.spellValue.length}
+                key={data.total + data.spellGroup + data.spellValue.length}
                 layoutID={"cardGame" + data.id}
                 data={data}
                 cardIndex={index}
