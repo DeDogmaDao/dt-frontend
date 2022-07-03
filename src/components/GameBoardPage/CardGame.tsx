@@ -1,6 +1,5 @@
 import { motion, useAnimation } from "framer-motion";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
-import { useGameStore } from "../../store/global/gameStore";
 import { gameCardType, spellNumber } from "../../types/allTypes";
 import { gameCardAni } from "../../utils/animation";
 import CardNum from "./CardNum";
@@ -11,6 +10,8 @@ interface props {
   gameCardData: gameCardType[];
   cardIndex: number;
   layoutID: string;
+  turnNumber: number | null;
+  setTurnNumber: Dispatch<SetStateAction<number | null>>;
   spellNumber: spellNumber;
   setSpellNumber: Dispatch<SetStateAction<spellNumber>>;
   setCurrentCard: Dispatch<SetStateAction<gameCardType | null>>;
@@ -22,6 +23,8 @@ interface props {
 const CardGame: React.FC<props> = ({
   data,
   cardIndex,
+  turnNumber,
+  setTurnNumber,
   gameCardData,
   spellNumber,
   setSpellNumber,
@@ -37,7 +40,6 @@ const CardGame: React.FC<props> = ({
   const column = (cardIndex % 3) + 1;
   const [stage, setStage] = useState(0);
   const aniControls = useAnimation();
-  const {turnNumber,setTurnNumber}=useGameStore(state=>({turnNumber:state.turnNumber,setTurnNumber:state.setTurnNumber}))
 
   useEffect(() => {
     aniControls.start("visible");
