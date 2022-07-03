@@ -21,7 +21,7 @@ import Door from "./Door";
 import Lightning from "./Lightning";
 
 const GameBoardPage: React.FC = () => {
-  const [turnNumber, setTurnNumber] = useState<number | null>(null);
+
   const [spellNumber, setSpellNumber] = useState<spellNumber>({
     yellow: 0,
     blue: 0,
@@ -72,8 +72,6 @@ const GameBoardPage: React.FC = () => {
                 layoutID={"cardGame" + data.id}
                 data={data}
                 cardIndex={index}
-                turnNumber={turnNumber}
-                setTurnNumber={setTurnNumber}
                 gameCardData={gameCardData}
                 spellNumber={spellNumber}
                 setSpellNumber={setSpellNumber}
