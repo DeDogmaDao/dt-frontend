@@ -25,7 +25,6 @@ const AuctionPage: React.FC = () => {
       }
     });
   }, [results[0]]);
-  
   return (
     <div className="w-screen min-h-screen flex justify-center items-center px-20 mb-40 mt-8">
       <div className="h-full flex flex-col justify-center items-start relative ">
@@ -40,43 +39,44 @@ const AuctionPage: React.FC = () => {
         <AuctionTab activeTab={activeTab} setActiveTab={setActiveTab} />
 
         <div className="w-[42.3125rem] h-[20.9375rem] bg-[#191C3A5C]/30 rounded-b-lg rounded-tr-lg relative">
-          <AnimatePresence custom={(previousActiveIndex>activeIndex)}>
-          {auctionData.map((auction, index) => {
-            if (index !== activeIndex) {
-              return null;
-            }
-            return (
-              <motion.div className="w-full h-full absolute top-0 left-0"
-              variants={auctionContainerAni}
-              custom={(previousActiveIndex>activeIndex)}
-              initial="hidden"
-              animate="visible"
-              exit={"out"}
-              key={index}
-              >
-                {activeTab === 0 && (
-                  <Mint
-                    index={index}
-                    data={results[index]}
-                    status={status}
-                    activeIndex={activeIndex}
-                    setActiveIndex={setActiveIndex}
-                    auctionData={auction}
-                  />
-                )}
-                {activeTab === 1 && <About data={auction} />}
-                {activeTab === 2 && (
-                  <OtherGodHolders
-                    apiData={results}
-                    data={auctionData}
-                    setActiveIndex={setActiveIndex}
-                    setActiveTab={setActiveTab}
-                    activeIndex={activeIndex}
-                  />
-                )}
-              </motion.div>
-            );
-          })}
+          <AnimatePresence custom={previousActiveIndex > activeIndex}>
+            {auctionData.map((auction, index) => {
+              if (index !== activeIndex) {
+                return null;
+              }
+              return (
+                <motion.div
+                  className="w-full h-full absolute top-0 left-0"
+                  variants={auctionContainerAni}
+                  custom={previousActiveIndex > activeIndex}
+                  initial="hidden"
+                  animate="visible"
+                  exit={"out"}
+                  key={index}
+                >
+                  {activeTab === 0 && (
+                    <Mint
+                      index={index}
+                      data={results[index]}
+                      status={status}
+                      activeIndex={activeIndex}
+                      setActiveIndex={setActiveIndex}
+                      auctionData={auction}
+                    />
+                  )}
+                  {activeTab === 1 && <About data={auction} />}
+                  {activeTab === 2 && (
+                    <OtherGodHolders
+                      apiData={results}
+                      data={auctionData}
+                      setActiveIndex={setActiveIndex}
+                      setActiveTab={setActiveTab}
+                      activeIndex={activeIndex}
+                    />
+                  )}
+                </motion.div>
+              );
+            })}
           </AnimatePresence>
         </div>
       </div>

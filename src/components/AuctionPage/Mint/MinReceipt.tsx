@@ -1,7 +1,13 @@
 import { WriteContractConfig } from "@wagmi/core";
 import { ethers } from "ethers";
 import Link from "next/link";
-import { MouseEventHandler, useEffect, useState } from "react";
+import {
+  Dispatch,
+  MouseEventHandler,
+  SetStateAction,
+  useEffect,
+  useState,
+} from "react";
 import { useFreeze } from "../../../hooks/useFreeze";
 import { AngleRightSVG } from "../../../store/svg";
 import {
@@ -20,6 +26,7 @@ interface props {
   auctionData: auctionDataType;
   error: transactionResErrorType;
   refetchUpdatedData: any;
+  setActiveIndex: Dispatch<SetStateAction<number>>;
 }
 const MinReceipt: React.FC<props> = ({
   status,
@@ -29,6 +36,7 @@ const MinReceipt: React.FC<props> = ({
   auctionData,
   buyGodData,
   refetchUpdatedData,
+  setActiveIndex,
 }) => {
   const [modalType, setModalType] = useState<popUpType>("neutral");
   const [isOpenModal, setIsOpenModal] = useState(false);
@@ -52,6 +60,12 @@ const MinReceipt: React.FC<props> = ({
       setModalType("neutral");
     }
   }, [status.isError, status.isLoading, status.isSuccess]);
+  useEffect(() => {
+    if (isOpenModal === false && status.isSuccess === true) {
+      refetchUpdatedData();
+      setActiveIndex((prevState) => prevState + 1);
+    }
+  }, [status.isSuccess, isOpenModal]);
 
   const tryAgainHandler = () => {
     refetchUpdatedData();

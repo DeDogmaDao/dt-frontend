@@ -62,7 +62,7 @@ const BuyButton: React.FC<props> = ({
     contractInterface: deDogmaDaoABI,
 
     functionName: "auctions",
-    args: index+1,
+    args: index + 1,
   });
 
   const {
@@ -228,6 +228,7 @@ const BuyButton: React.FC<props> = ({
         auctionData={auctionData}
         error={error}
         refetchUpdatedData={refetchUpdatedData}
+        setActiveIndex={setActiveIndex}
       />
     </div>
   );
