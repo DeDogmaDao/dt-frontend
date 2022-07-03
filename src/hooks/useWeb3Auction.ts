@@ -11,15 +11,11 @@ interface returnType {
 }
 export const useWeb3Auction = () => {
   const [results, setResults] = useState<auctionResultType[]>([]);
-  const { data, isError, isSuccess, internal } = useContractRead(
-    {
-      addressOrName: contractAddress,
-      contractInterface: deDogmaDaoABI,
-    },
-    "getAuctionsData"
-  );
-  useEffect(() => {
-    if (data) {
+  const { isError, isSuccess, internal } = useContractRead({
+    addressOrName: contractAddress,
+    contractInterface: deDogmaDaoABI,
+    functionName: "getAuctionsData",
+    onSuccess(data) {
       setResults(() => {
         return data.map((el) => {
           return {
@@ -43,8 +39,11 @@ export const useWeb3Auction = () => {
           };
         });
       });
-    }
-  }, [data]);
+    },
+    onError: (error) => {
+      throw new Error(error.message);
+    },
+  });
 
   return {
     results,
