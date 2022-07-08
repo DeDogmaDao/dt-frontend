@@ -12,6 +12,7 @@ interface props {
   showOrHidden: boolean;
   spellStyles: bottomRightPosition;
 }
+const color=(condition:boolean) => condition ? "yellow" : "#00FFFF";
 const Spell: React.FC<props> = ({
   spellIndex,
   spellNumber,
@@ -20,16 +21,13 @@ const Spell: React.FC<props> = ({
   spellStyles,
 }) => {
   const [isShowed, setIsShowed] = useState(showOrHidden);
-  const [once, setOnce] = useState(false);
 
   useEffect(() => {
-    if (once === false && spellNumber[spellGroup] >= spellIndex) {
+    if (isShowed === showOrHidden && spellNumber[spellGroup] >= spellIndex) {
       setIsShowed((prevState) => !prevState);
-      setOnce(true);
     }
   }, [spellNumber]);
 
-  const color = spellGroup === "yellow" ? "yellow" : "#00FFFF";
   return (
     <div className="rounded-full bg-white absolute" style={spellStyles}>
       {isShowed && (
@@ -40,9 +38,9 @@ const Spell: React.FC<props> = ({
           initial="hidden"
           animate="visible"
           variants={spellAni}
-          custom={{num:spellIndex, color:color}}
+          custom={{num:spellIndex, color:color(spellGroup === "yellow")}}
           className="w-full h-full rounded-full z-110"
-          style={{backgroundColor:color}}
+          style={{backgroundColor:color(spellGroup === "yellow")}}
         ></motion.div>
       )}
     </div>
