@@ -1,3 +1,5 @@
+import { Transition } from "framer-motion";
+
 export const bottomSpells: number[] = Array.from(Array(40).keys());
 export const topSpells: number[] = Array.from(Array(10).keys());
 export const bottomPosition = {
@@ -59,3 +61,6 @@ export const spellStyles = (spellIndex: number) => {
     height: 0.2 + "vw",
   };
 };
+
+export const transitionSpell =(spellIndex:number):Transition=>({ duration: 5, type:"spring", stiffness:(spellIndex%3+1) * 200 *(Math.floor(Math.random()*4 + 7)/10), mass:10 * (Math.floor(Math.random()*4 + 7)/10), damping:40 * (Math.floor(Math.random()*4 + 7)/10), velocity:-10 })
+export const colorSpell=(condition:boolean) => condition ? "yellow" : "#00FFFF";
