@@ -66,7 +66,9 @@ const CardGame: React.FC<props> = ({
   // Stages
   if (turnNumber === cardIndex) {
     if (doorStage === -1 && data.isWinner === true) {
-      setDoorStage(0);
+      setTimeout(() => {
+        setDoorStage(0);
+      }, 0);
     }
     if (stage === 0) {
       setStage(1);
