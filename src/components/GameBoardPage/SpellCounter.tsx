@@ -77,7 +77,7 @@ const SpellCounter: React.FC<props> = ({
       <motion.div className="relative flex justify-center items-center w-full h-full -rotate-45">
         {nums.map((num) => {
           return (
-            <React.Fragment key={num + "counter"}>
+            <React.Fragment key={num.number + "counter"}>
               <AnimatePresence exitBeforeEnter>
                 {num.active && (
                   <motion.span

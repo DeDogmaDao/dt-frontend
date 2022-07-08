@@ -48,7 +48,6 @@ const DoorSpells: React.FC<props> = ({
       <div className="relative w-full h-full">
         {spells.map((spell) => {
           return (
-            <>
               <Spell
               key={spell + "d-spell"}
                 spellIndex={spellIndex(spell)}
@@ -57,7 +56,6 @@ const DoorSpells: React.FC<props> = ({
                 showOrHidden={false}
                 spellStyles={spellStyles(spell, spellPosition, spells)}
               />
-            </>
           );
         })}
       </div>
