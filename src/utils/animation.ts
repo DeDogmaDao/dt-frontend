@@ -712,7 +712,7 @@ export const doorRingAni: Variants = {
     pathLength: 1,
     transition: {
       duration: 2,
-      delay: 5,
+      // delay: 5,
     },
   },
 };

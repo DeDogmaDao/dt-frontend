@@ -49,7 +49,7 @@ const Door: React.FC<props> = ({ spellNumber, doorStage }) => {
         >
           <RingPin spellNumber={spellNumber} />
 
-          {spellNumber.blue === spellNumber.yellow && (
+          {/* {spellNumber.blue === spellNumber.yellow && (
             <motion.svg className="absolute overflow-visible top-[13.17vw] left-[7.65vw] z-0">
               <motion.circle
                 initial="hidden"
@@ -63,7 +63,7 @@ const Door: React.FC<props> = ({ spellNumber, doorStage }) => {
                 fill="none"
               />
             </motion.svg>
-          )}
+          )} */}
         </motion.div>
       </div>
     </div>
