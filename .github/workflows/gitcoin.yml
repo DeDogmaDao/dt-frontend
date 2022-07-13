@@ -1,0 +1,59 @@
+name: Build and deploy
+
+on:
+  push:
+    branches:
+      - gitcoin
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'
+        required: true
+        default: 'info'
+
+jobs:
+  build_and_push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: pull latest code
+        uses: actions/checkout@v2
+
+      - name: build step
+        run: docker build -t ghcr.io/dedogmadao/dt-frontend/dt-frontend:gitcoin-latest .
+
+      - name: login to docker registry
+        run: echo ${{ secrets.PERSONAL_GITHUB_TOKEN }} | docker login ghcr.io -u flokibb --password-stdin
+
+      - name: push docker image to package registry
+        run: docker push ghcr.io/dedogmadao/dt-frontend/dt-frontend:gitcoin-latest
+
+  deploy:
+    needs: build_and_push
+    runs-on: ubuntu-latest
+    name: deploy
+    steps:
+      - name: deploy step
+        uses: fifsky/ssh-action@master
+        with:
+          command: |
+              export BACKEND_URL=${{ secrets.BACKEND_URL }}
+              export ROBOTS_TXT=${{ secrets.ROBOTS_TXT }}
+              export DOMAIN=${{ secrets.PROD_DISCORD_DOMAIN }}
+              curl -H "Authorization: token ${{ secrets.PERSONAL_GITHUB_TOKEN }}" https://raw.githubusercontent.com/DeDogmaDao/dt-frontend/gitcoin/docker-compose.deploy.gitcoin.yml > docker-compose.deploy.gitcoin.yml
+              echo ${{ secrets.PERSONAL_GITHUB_TOKEN }} | docker login ghcr.io -u flokibb --password-stdin
+              docker network create ddd_network || true
+              docker volume create --name=mediafiles || true
+              docker volume create --name=staticfiles || true
+              docker volume create --name=database || true
+              docker rmi -f ghcr.io/dedogmadao/dt-frontend/dt-frontend:gitcoin-latest  || echo "Ok"
+              docker pull ghcr.io/dedogmadao/dt-frontend/dt-frontend:gitcoin-latest 
+              docker-compose -f docker-compose.deploy.gitcoin.yml down
+              docker-compose -f docker-compose.deploy.gitcoin.yml up -d
+              rm -rf docker-compose.deploy.gitcoin.yml
+          host: ${{ secrets.PROD_DISCORD_SSH_ACTION_HOST }}
+          user: ${{ secrets.PROD_DISCORD_SSH_ACTION_USER }}
+          key: ${{ secrets.PROD_DISCORD_SSH_ACTION_KEY }}
+          port: ${{ secrets.PROD_DISCORD_SSH_ACTION_PORT }}
+
+
+

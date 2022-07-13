@@ -21,11 +21,16 @@ module.exports = {
         destination: "/404",
         permanent: false,
       },
-      // {
-      //   source: "/web3",
-      //   destination: "/404",
-      //   permanent: false,
-      // },
+      {
+        source: "/auction",
+        destination: "/404",
+        permanent: false,
+      },
+      {
+        source: "/gallery",
+        destination: "/404",
+        permanent: false,
+      },
     ];
   },
   // async redirects() {
