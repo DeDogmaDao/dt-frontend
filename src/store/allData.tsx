@@ -541,7 +541,7 @@ export const gameCardData: gameCardType[] = [
   {
     id: "1",
     name: "Zeus",
-    image: "/img/game/characters/1.png",
+    image: "/img/game/characters/7.png",
     spellGroup: "blue",
     spellValue: [1, 2, 3],
     total: 3,
@@ -553,7 +553,7 @@ export const gameCardData: gameCardType[] = [
   {
     id: "2",
     name: "Hades",
-    image: "/img/game/characters/2.png",
+    image: "/img/game/characters/9.png",
     spellGroup: "blue",
     spellValue: [1, 2, 3],
     total: 6,
@@ -565,7 +565,7 @@ export const gameCardData: gameCardType[] = [
   {
     id: "3",
     name: "Laya",
-    image: "/img/game/characters/1.png",
+    image: "/img/game/characters/8.png",
     spellGroup: "blue",
     spellValue: [1],
     total: 7,
@@ -577,7 +577,7 @@ export const gameCardData: gameCardType[] = [
   {
     id: "4",
     name: "Desmond",
-    image: "/img/game/characters/3.png",
+    image: "/img/game/characters/10.png",
     spellGroup: "yellow",
     spellValue: [1, 2],
     total: 2,
@@ -589,7 +589,7 @@ export const gameCardData: gameCardType[] = [
   {
     id: "5",
     name: "Hero",
-    image: "/img/game/characters/2.png",
+    image: "/img/game/characters/11.png",
     spellGroup: "yellow",
     spellValue: [1],
     total: 3,
@@ -601,7 +601,7 @@ export const gameCardData: gameCardType[] = [
   {
     id: "6",
     name: "Cool guy",
-    image: "/img/game/characters/3.png",
+    image: "/img/game/characters/12.png",
     spellGroup: "blue",
     spellValue: [1, 2],
     total: 9,
@@ -613,7 +613,7 @@ export const gameCardData: gameCardType[] = [
   {
     id: "7",
     name: "Peter pan",
-    image: "/img/game/characters/1.png",
+    image: "/img/game/characters/10.png",
     spellGroup: "yellow",
     spellValue: [1, 2, 3],
     total: 6,
@@ -625,7 +625,7 @@ export const gameCardData: gameCardType[] = [
   {
     id: "8",
     name: "Edmownd",
-    image: "/img/game/characters/2.png",
+    image: "/img/game/characters/12.png",
     spellGroup: "yellow",
     spellValue: [1, 2, 3],
     total: 9,
@@ -637,7 +637,7 @@ export const gameCardData: gameCardType[] = [
   {
     id: "9",
     name: "Zeus",
-    image: "/img/game/characters/1.png",
+    image: "/img/game/characters/7.png",
     spellGroup: "blue",
     spellValue: [1],
     total: 10,
@@ -649,7 +649,7 @@ export const gameCardData: gameCardType[] = [
   {
     id: "10",
     name: "Hades",
-    image: "/img/game/characters/2.png",
+    image: "/img/game/characters/9.png",
     spellGroup: "blue",
     spellValue: [1, 2, 3],
     total: 13,
@@ -661,7 +661,7 @@ export const gameCardData: gameCardType[] = [
   {
     id: "11",
     name: "Desmond",
-    image: "/img/game/characters/3.png",
+    image: "/img/game/characters/8.png",
     spellGroup: "yellow",
     spellValue: [1, 2],
     total: 11,
@@ -673,7 +673,7 @@ export const gameCardData: gameCardType[] = [
   {
     id: "12",
     name: "Laya",
-    image: "/img/game/characters/1.png",
+    image: "/img/game/characters/7.png",
     spellGroup: "blue",
     spellValue: [1, 2],
     total: 15,
@@ -685,7 +685,7 @@ export const gameCardData: gameCardType[] = [
   {
     id: "13",
     name: "Hero",
-    image: "/img/game/characters/2.png",
+    image: "/img/game/characters/3.png",
     spellGroup: "yellow",
     spellValue: [1],
     total: 12,
@@ -697,7 +697,7 @@ export const gameCardData: gameCardType[] = [
   {
     id: "14",
     name: "Cool guy",
-    image: "/img/game/characters/3.png",
+    image: "/img/game/characters/2.png",
     spellGroup: "blue",
     spellValue: [1, 2],
     total: 17,
@@ -721,7 +721,7 @@ export const gameCardData: gameCardType[] = [
   {
     id: "16",
     name: "Edmownd",
-    image: "/img/game/characters/2.png",
+    image: "/img/game/characters/4.png",
     spellGroup: "yellow",
     spellValue: [1, 2, 3],
     total: 18,
@@ -733,7 +733,7 @@ export const gameCardData: gameCardType[] = [
   {
     id: "17",
     name: "Zeus",
-    image: "/img/game/characters/1.png",
+    image: "/img/game/characters/5.png",
     spellGroup: "blue",
     spellValue: [1],
     total: 18,
@@ -745,7 +745,7 @@ export const gameCardData: gameCardType[] = [
   {
     id: "18",
     name: "Hades",
-    image: "/img/game/characters/2.png",
+    image: "/img/game/characters/6.png",
     spellGroup: "blue",
     spellValue: [1, 2, 3],
     total: 21,
@@ -781,7 +781,7 @@ export const gameCardData: gameCardType[] = [
   {
     id: "21",
     name: "Hero",
-    image: "/img/game/characters/2.png",
+    image: "/img/game/characters/9.png",
     spellGroup: "yellow",
     spellValue: [1],
     total: 21,
@@ -805,7 +805,7 @@ export const gameCardData: gameCardType[] = [
   {
     id: "23",
     name: "Peter pan",
-    image: "/img/game/characters/1.png",
+    image: "/img/game/characters/10.png",
     spellGroup: "yellow",
     spellValue: [1],
     total: 22,
@@ -817,7 +817,7 @@ export const gameCardData: gameCardType[] = [
   {
     id: "24",
     name: "Edmownd",
-    image: "/img/game/characters/2.png",
+    image: "/img/game/characters/12.png",
     spellGroup: "yellow",
     spellValue: [1, 2, 3],
     total: 25,
@@ -829,7 +829,7 @@ export const gameCardData: gameCardType[] = [
   {
     id: "25",
     name: "Zeus",
-    image: "/img/game/characters/1.png",
+    image: "/img/game/characters/11.png",
     spellGroup: "blue",
     spellValue: [1, 2],
     total: 28,
@@ -841,7 +841,7 @@ export const gameCardData: gameCardType[] = [
   {
     id: "26",
     name: "Hades",
-    image: "/img/game/characters/2.png",
+    image: "/img/game/characters/12.png",
     spellGroup: "blue",
     spellValue: [1, 2, 3],
     total: 31,
@@ -865,7 +865,7 @@ export const gameCardData: gameCardType[] = [
   {
     id: "28",
     name: "Laya",
-    image: "/img/game/characters/1.png",
+    image: "/img/game/characters/10.png",
     spellGroup: "blue",
     spellValue: [1, 2, 3],
     total: 34,
@@ -889,7 +889,7 @@ export const gameCardData: gameCardType[] = [
   {
     id: "30",
     name: "Cool guy",
-    image: "/img/game/characters/3.png",
+    image: "/img/game/characters/1.png",
     spellGroup: "blue",
     spellValue: [1, 2],
     total: 36,
@@ -901,7 +901,7 @@ export const gameCardData: gameCardType[] = [
   {
     id: "31",
     name: "Peter pan",
-    image: "/img/game/characters/1.png",
+    image: "/img/game/characters/10.png",
     spellGroup: "yellow",
     spellValue: [1, 2, 3],
     total: 31,
@@ -913,7 +913,7 @@ export const gameCardData: gameCardType[] = [
   {
     id: "32",
     name: "Edmownd",
-    image: "/img/game/characters/2.png",
+    image: "/img/game/characters/12.png",
     spellGroup: "yellow",
     spellValue: [1, 2, 3],
     total: 34,
