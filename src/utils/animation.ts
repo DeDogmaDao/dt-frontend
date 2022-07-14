@@ -181,7 +181,7 @@ export const gameCardAni: Variants = {
           75,
           true,
           0.7,
-          22,
+          21.5,
           95
         );
       }
@@ -196,7 +196,7 @@ export const gameCardAni: Variants = {
           43,
           true,
           0.4,
-          20.5,
+          20,
           110,
           -1.5
         );
@@ -212,7 +212,7 @@ export const gameCardAni: Variants = {
           23,
           true,
           0.2,
-          20,
+          19.5,
           135,
           -3.5
         );
@@ -227,7 +227,7 @@ export const gameCardAni: Variants = {
           75,
           false,
           0.7,
-          22,
+          21.5,
           95
         );
       }
@@ -242,7 +242,7 @@ export const gameCardAni: Variants = {
           43,
           false,
           0.4,
-          20.5,
+          20,
           110,
           -1.5
         );
@@ -258,7 +258,7 @@ export const gameCardAni: Variants = {
           23,
           false,
           0.2,
-          20,
+          19.5,
           135,
           -3.5
         );

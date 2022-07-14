@@ -120,8 +120,6 @@ useLayoutEffect(()=>{
       style={{
         ...styles((cardIndex % 3) + 1,cardIndex),
         transformStyle: "preserve-3d",
-        perspective: "1000px",
-        perspectiveOrigin: "50% 50%",
       }}
     >
       <motion.div
