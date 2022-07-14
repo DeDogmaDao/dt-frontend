@@ -119,14 +119,14 @@ const Calculation: React.FC<props> = ({
     <>
       <CalcItem
         framerVariant={calcCardSideAni}
-        tailwindClasses="absolute left-[3vw] top-[20.5vw] bg-blue-900/0 text-white p-3"
+        tailwindClasses="absolute left-[3vw] top-[20.5vw] bg-blue-900/0 text-[1.4vw] text-white p-3"
       >
         {firstCardNum}
       </CalcItem>
       {showNum === false && (
         <CalcItem
           framerLayoutId={resultLayoutId.sideCard}
-          tailwindClasses="absolute left-[3vw] top-[22vw] bg-blue-900/0 text-white p-3"
+          tailwindClasses="absolute left-[3vw] top-[22vw] bg-blue-900/0 text-[1.4vw] text-white p-3"
         >
           {resultRef.current && resultRef.current % 5250}
         </CalcItem>
@@ -135,7 +135,7 @@ const Calculation: React.FC<props> = ({
         initial="hidden"
         animate="visible"
         exit="out"
-        className="flex flex-col justify-start items-center absolute left-[5.5vw] bottom-[2.6vw] text-2xl bg-red-400/0 w-[22vw] h-[5vw]"
+        className="flex flex-col justify-start items-center absolute left-[5.5vw] bottom-[2.6vw] text-[1.4vw] w-[22vw] h-[5vw]"
       >
         <AnimatePresence>
           {showNum && calcStage === 0 && (
