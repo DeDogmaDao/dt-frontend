@@ -41,12 +41,12 @@ export const topLeftSpell = {
 
 
 export const communityNumStyles: React.CSSProperties = {
-  left: "0.3vw",
-  bottom: "0vw",
+  left: "0.6vw",
+  bottom: "0.55vw",
 };
 export const individualNumStyles: React.CSSProperties = {
-  right: "0.5vw",
-  bottom: "0vw",
+  right: "0.6vw",
+  bottom: "0.55vw",
 };
 export const styles = (column:number,cardIndex:number):React.CSSProperties=> ({
   left: 6.55 + (column % 3) * 6.7 + "vw",
