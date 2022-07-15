@@ -118,7 +118,7 @@ export const gameCardAni: Variants = {
     left: [custom.styles.left, "13.2vw", "14vw", "13vw", "13vw"],
     z: [-0.1, -0.1, 50, 100, 0],
     scale: [1, 1.5, 1.5, 2.5, 2.5],
-    top: [custom.styles.top, "-5.5vw", "-5vw", "19vw", "20vw"],
+    top: [custom.styles.top, "-5.5vw", "-5vw", "19vw", "22vw"],
     rotateY: ["180deg", "180deg", "180deg", "270deg", "360deg"],
     transition: {
       duration: 0.8,
@@ -181,7 +181,7 @@ export const gameCardAni: Variants = {
           75,
           true,
           0.7,
-          22,
+          19.5,
           95
         );
       }
@@ -196,7 +196,7 @@ export const gameCardAni: Variants = {
           43,
           true,
           0.4,
-          20.5,
+          18,
           110,
           -1.5
         );
@@ -212,7 +212,7 @@ export const gameCardAni: Variants = {
           23,
           true,
           0.2,
-          20,
+          17.5,
           135,
           -3.5
         );
@@ -227,7 +227,7 @@ export const gameCardAni: Variants = {
           75,
           false,
           0.7,
-          22,
+          19.5,
           95
         );
       }
@@ -242,7 +242,7 @@ export const gameCardAni: Variants = {
           43,
           false,
           0.4,
-          20.5,
+          18,
           110,
           -1.5
         );
@@ -258,7 +258,7 @@ export const gameCardAni: Variants = {
           23,
           false,
           0.2,
-          20,
+          17.5,
           135,
           -3.5
         );
@@ -712,7 +712,7 @@ export const doorRingAni: Variants = {
     pathLength: 1,
     transition: {
       duration: 2,
-      delay: 5,
+      // delay: 5,
     },
   },
 };
