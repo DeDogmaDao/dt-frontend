@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 interface props {
   num?: number;
@@ -9,24 +9,31 @@ interface props {
   transferNum: boolean;
 }
 
-const CardNum: React.FC<props> = ({ num, styles, layoutID, showHidden,transferNum }) => {
+const CardNum: React.FC<props> = ({
+  num,
+  styles,
+  layoutID,
+  showHidden,
+  transferNum,
+}) => {
   const [isShowing, setIsShowing] = useState(showHidden);
-  const [once, setOnce] = useState(false);
-
   useEffect(() => {
-    
-    if(transferNum===true){
-      setIsShowing((prevState)=>!prevState)
+    if (transferNum === true && isShowing === showHidden) {
+      setIsShowing((prevState) => !prevState);
     }
-    
+  }, [transferNum]);
 
-  }, [transferNum])
-  
-  
   return (
     <>
       {isShowing && (
-        <motion.div style={styles} layoutId={layoutID} className="absolute ">
+        <motion.div
+          style={styles}
+          layoutId={layoutID}
+          className={`absolute ${
+            showHidden === true &&
+            "text-[0.5vw] flex justify-center items-center w-[1vw] h-[1vw]"
+          }`}
+        >
           {num}
         </motion.div>
       )}
@@ -34,4 +41,4 @@ const CardNum: React.FC<props> = ({ num, styles, layoutID, showHidden,transferNu
   );
 };
 
-export default CardNum;
+export default React.memo(CardNum);

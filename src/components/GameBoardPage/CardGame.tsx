@@ -1,7 +1,8 @@
 import { motion, useAnimation } from "framer-motion";
-import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import React, { Dispatch, SetStateAction, useEffect, useLayoutEffect, useState } from "react";
 import { gameCardType, spellNumber } from "../../types/allTypes";
 import { gameCardAni } from "../../utils/animation";
+import { communityNumStyles, individualNumStyles, spellStyles, styles } from "../../utils/game";
 import CardNum from "./CardNum";
 import Spell from "./Spell";
 
@@ -20,6 +21,8 @@ interface props {
   doorStage: number;
   setDoorStage: Dispatch<SetStateAction<number>>;
 }
+
+
 const CardGame: React.FC<props> = ({
   data,
   cardIndex,
@@ -37,7 +40,6 @@ const CardGame: React.FC<props> = ({
   // states
   const [once, setOnce] = useState(false);
   const [onceStage2, setOnceStage2] = useState(false);
-  const column = (cardIndex % 3) + 1;
   const [stage, setStage] = useState(0);
   const aniControls = useAnimation();
 
@@ -64,63 +66,43 @@ const CardGame: React.FC<props> = ({
   };
 
   // Stages
+useLayoutEffect(()=>{  
   if (turnNumber === cardIndex) {
-    if (doorStage === -1 && data.isWinner === true) {
+  if (doorStage === -1 && data.isWinner === true) {
+    setTimeout(() => {
       setDoorStage(0);
-    }
-    if (stage === 0) {
-      setStage(1);
-      setTimeout(() => {
-        setTransferNum(true);
-      }, 1900);
-    }
-    if (stage === 1 && !once) {
-      aniControls.start("stage1");
-      setTimeout(() => {
-        setSpellNumber((prevState) => ({
-          ...prevState,
-          [data.spellGroup + "CardCount"]:
-            prevState[data.spellGroup + "CardCount"] + 1,
-          [data.spellGroup]: data.total,
-        }));
-      }, 1000);
-      setTimeout(() => {
-        setTransferNum(false);
-        setStage(2);
-      }, 9000);
-      setOnce(true);
-    }
-
-    if (stage === 2 && !onceStage2) {
-      setTimeout(() => {
-        aniControls.start("stage2");
-      }, 200);
-      setOnceStage2(true);
-    }
+    }, 0);
+  }
+  if (stage === 0) {
+    setStage(1);
+    setTimeout(() => {
+      setTransferNum(true);
+    }, 1900);
+  }
+  if (stage === 1 && !once) {
+    aniControls.start("stage1");
+    setTimeout(() => {
+      setSpellNumber((prevState) => ({
+        ...prevState,
+        [data.spellGroup + "CardCount"]:
+          prevState[data.spellGroup + "CardCount"] + 1,
+        [data.spellGroup]: data.total,
+      }));
+    }, 1000);
+    setTimeout(() => {
+      setTransferNum(false);
+      setStage(2);
+    }, 9000);
+    setOnce(true);
   }
 
-  const styles = {
-    left: 6.55 + (column % 3) * 6.7 + "vw",
-    top: 4 + cardIndex / 50 + "vw",
-  };
-  const spellStyles = (spellIndex: number) => {
-    const column = (spellIndex % 3) + 1;
-    return {
-      right: 5 - column * 0.5 + "vw",
-      bottom: -5 + Math.floor(spellIndex / 3) * 0.5 + "vw",
-      width: 0.2 + "vw",
-      height: 0.2 + "vw",
-    };
-  };
-
-  const communityNumStyles: React.CSSProperties = {
-    left: "0.3vw",
-    bottom: "0vw",
-  };
-  const individualNumStyles: React.CSSProperties = {
-    right: "0.5vw",
-    bottom: "0vw",
-  };
+  if (stage === 2 && !onceStage2) {
+    setTimeout(() => {
+      aniControls.start("stage2");
+    }, 200);
+    setOnceStage2(true);
+  }
+}},[doorStage,turnNumber,stage])
 
   return (
     <motion.div
@@ -130,16 +112,14 @@ const CardGame: React.FC<props> = ({
       variants={gameCardAni}
       custom={{
         cardIndex: cardIndex,
-        styles: styles,
+        styles: styles((cardIndex % 3) + 1,cardIndex),
         spellGroup: data.spellGroup,
         spellNumber: spellNumber,
       }}
       className="w-[5.15vw] flex flex-col justify-center items-center text-white absolute z-10"
       style={{
-        ...styles,
+        ...styles((cardIndex % 3) + 1,cardIndex),
         transformStyle: "preserve-3d",
-        perspective: "1000px",
-        perspectiveOrigin: "50% 50%",
       }}
     >
       <motion.div
@@ -164,7 +144,7 @@ const CardGame: React.FC<props> = ({
         <motion.img
           style={{ translateZ: "-1px" }}
           className="w-full object-contain absolute top-0 left-0"
-          src={"/img/team/member3.png"}
+          src={"/img/game/cardBack.png"}
         />
         <motion.img className="w-full object-contain" src={data.image} />
         {stage === 1 && (

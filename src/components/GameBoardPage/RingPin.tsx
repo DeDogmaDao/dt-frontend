@@ -29,7 +29,7 @@ const RingPin: React.FC<props> = ({ spellNumber }) => {
   return (
     <motion.div
       style={styles.ring}
-      className="absolute top-[12.5vw] left-1/2 ml-[-0.7vw] w-[1.4vw] h-[1.4vw] z-10 duration-2000"
+      className="absolute top-[12vw] left-1/2 ml-[-0.8vw] w-[1.6vw] h-[1.6vw] z-10 duration-2000"
     >
       <div className="relative w-full h-full">
         <img
@@ -40,7 +40,7 @@ const RingPin: React.FC<props> = ({ spellNumber }) => {
         <motion.img
           style={styles.topPin}
           src="/img/game/pin.png"
-          className="absolute top-[-0.5vw] left-1/2 ml-[-0.33vw] w-[0.66vw] z-10 duration-2000"
+          className="absolute top-[-0.3vw] left-1/2 ml-[-0.33vw] w-[0.66vw] z-10 duration-2000"
         />
         <motion.img
           style={{ ...styles.bottomPin, scaleY: -1 }}

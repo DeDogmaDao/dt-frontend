@@ -1,17 +1,16 @@
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
-import {
-  bottomRightPosition,
-  spellNumber,
-} from "../../types/allTypes";
+import { CSSProperties, useEffect, useState } from "react";
+import { bottomRightPosition, spellNumber } from "../../types/allTypes";
 import { spellAni } from "../../utils/animation";
+import { colorSpell, transitionSpell } from "../../utils/game";
 interface props {
   spellIndex: number;
   spellNumber: spellNumber;
   spellGroup: string;
   showOrHidden: boolean;
-  spellStyles: bottomRightPosition;
+  spellStyles: CSSProperties;
 }
+
 const Spell: React.FC<props> = ({
   spellIndex,
   spellNumber,
@@ -20,32 +19,31 @@ const Spell: React.FC<props> = ({
   spellStyles,
 }) => {
   const [isShowed, setIsShowed] = useState(showOrHidden);
-  const [once, setOnce] = useState(false);
 
   useEffect(() => {
-    if (once === false && spellNumber[spellGroup] >= spellIndex) {
+    if (isShowed === showOrHidden && spellNumber[spellGroup] >= spellIndex) {
       setIsShowed((prevState) => !prevState);
-      setOnce(true);
     }
   }, [spellNumber]);
 
-  const color = spellGroup === "yellow" ? "yellow" : "#00FFFF";
   return (
-    <div className="rounded-full bg-white absolute" style={spellStyles}>
+    <motion.div className={`bg-white absolute ${!showOrHidden && "rounded-full"}`} style={spellStyles}>
       {isShowed && (
         <motion.div
           layoutId={`${spellGroup}${spellIndex}`}
-          // @ts-ignore
-          transition={{ duration: 5, ease:[.92,.08,.59,.88], type:"spring", stiffness:(spellIndex%3+1) * 200 *(Math.floor(Math.random()*4 + 7)/10), mass:10 * (Math.floor(Math.random()*4 + 7)/10), damping:40 * (Math.floor(Math.random()*4 + 7)/10), velocity:-10 }}
+          transition={transitionSpell(spellIndex)}
           initial="hidden"
           animate="visible"
           variants={spellAni}
-          custom={{num:spellIndex, color:color}}
-          className="w-full h-full rounded-full z-110"
-          style={{backgroundColor:color}}
+          custom={{
+            num: spellIndex,
+            color: colorSpell(spellGroup === "yellow"),
+          }}
+          className={`w-full h-full z-110 ${!showOrHidden && "rounded-full"}`}
+          style={{ backgroundColor: colorSpell(spellGroup === "yellow") }}
         ></motion.div>
       )}
-    </div>
+    </motion.div>
   );
 };
 
