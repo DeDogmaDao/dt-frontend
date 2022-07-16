@@ -29,6 +29,8 @@ const Calculation: React.FC<props> = ({
   setTransferNum,
   firstCardNum,
 }) => {
+  const [isWinner, setIsWinner] = useState(false);
+
   const [showNum, setShowNum] = useState(true);
   const [layId, setLayId] = useState({
     community: "communityNum",
@@ -61,6 +63,11 @@ const Calculation: React.FC<props> = ({
           currentCard.cardNum * currentCard.communityNum +
           currentCard.individualNum;
       }, 1000);
+    }
+    if(currentCard?.isWinner){
+      setTimeout(() => {
+        setIsWinner(true);
+      }, 9000);
     }
   }, [currentCard]);
 
@@ -114,6 +121,7 @@ const Calculation: React.FC<props> = ({
       }, 2000);
     }
   }, [calcStage]);
+  if(isWinner) return null;
 
   return (
     <>

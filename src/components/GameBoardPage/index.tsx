@@ -48,6 +48,9 @@ const GameBoardPage: React.FC = () => {
       }
     }
   }, [doorStage]);
+
+    console.log(currentCard);
+
   return (
     <LayoutGroup>
       <div className="flex justify-between items-center w-screen h-[calc(900/1920*100vw)] relative">
