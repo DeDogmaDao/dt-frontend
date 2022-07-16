@@ -19,6 +19,7 @@ import Calculation from "./Calculation";
 import SpellCounter from "./SpellCounter";
 import Door from "./Door";
 import Lightning from "./Lightning";
+import Diamond from "./Diamond";
 
 const GameBoardPage: React.FC = () => {
   const [turnNumber, setTurnNumber] = useState<number | null>(null);
@@ -57,6 +58,7 @@ const GameBoardPage: React.FC = () => {
           src="/img/game/main.png"
           className="absolute top-0 left-0 w-full h-full z-10"
         />
+        <Diamond />
         <Door spellNumber={spellNumber} doorStage={doorStage} />
         <Lightning doorStage={doorStage} />
         <div
