@@ -49,7 +49,6 @@ const GameBoardPage: React.FC = () => {
     }
   }, [doorStage]);
 
-    console.log(currentCard);
 
   return (
     <LayoutGroup>
