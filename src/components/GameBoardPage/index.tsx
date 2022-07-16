@@ -58,7 +58,7 @@ const GameBoardPage: React.FC = () => {
           src="/img/game/main.png"
           className="absolute top-0 left-0 w-full h-full z-10"
         />
-        <Diamond />
+        <Diamond spellNumber={spellNumber} />
         <Door spellNumber={spellNumber} doorStage={doorStage} />
         <Lightning doorStage={doorStage} />
         <div
