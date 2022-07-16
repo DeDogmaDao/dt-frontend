@@ -52,8 +52,11 @@ const CardGame: React.FC<props> = ({
     if (turnNumber === null && cardIndex === gameCardData.length - 1) {
       setTurnNumber(0);
     }
-    if (turnNumber === cardIndex && doorStage === -1) {
+    if(turnNumber === cardIndex) {
       setCurrentCard(data);
+    }
+    if (turnNumber === cardIndex && doorStage === -1) {
+
       setTimeout(() => {
         setTurnNumber((prevState) => {
           if (prevState !== null) {

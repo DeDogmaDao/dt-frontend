@@ -312,9 +312,9 @@ export const spellAni: Variants = {
   visible: (custom) => ({
     x: [-50 * (custom.num % 3), 50 * (custom.num % 3), 0],
     y: [50 * (custom.num % 3), -50 * (custom.num % 3), 0],
-    scale: [1.5, 2.5, 1],
+    scale: [1.5, 2, 1],
     boxShadow: [
-      `0px 0px 5px 5px ${custom.color}`,
+      `0px 0px 3px 3px ${custom.color}`,
       `0px 0px 2px 2px ${custom.color}`,
       `0px 0px 0px 0px ${custom.color}`,
     ],
