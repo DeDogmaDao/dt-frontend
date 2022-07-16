@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { spellNumber } from "../../types/allTypes";
-import { spellStyles, topSpells } from "../../utils/game";
+import { diamondSpells } from "../../utils/game";
 import Spell from "./Spell";
 
 interface props {
@@ -15,7 +15,7 @@ console.log(spellNumber)
             className="w-full h-full z-100"
              src="/img/game/diamond.png" />
              <span className="w-full h-full z-110">
-             {topSpells.map((spell) => {
+             {diamondSpells.map((spell) => {
           return (
               <Spell
               key={spell + "d-spell"}
