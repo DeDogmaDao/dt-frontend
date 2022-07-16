@@ -29,6 +29,8 @@ const Calculation: React.FC<props> = ({
   setTransferNum,
   firstCardNum,
 }) => {
+  const [isWinner, setIsWinner] = useState(false);
+
   const [showNum, setShowNum] = useState(true);
   const [layId, setLayId] = useState({
     community: "communityNum",
@@ -61,6 +63,11 @@ const Calculation: React.FC<props> = ({
           currentCard.cardNum * currentCard.communityNum +
           currentCard.individualNum;
       }, 1000);
+    }
+    if(currentCard?.isWinner){
+      setTimeout(() => {
+        setIsWinner(true);
+      }, 9000);
     }
   }, [currentCard]);
 
@@ -123,7 +130,7 @@ const Calculation: React.FC<props> = ({
       >
         {firstCardNum}
       </CalcItem>
-      {showNum === false && (
+      {(showNum === false || isWinner === true) && (
         <CalcItem
           framerLayoutId={resultLayoutId.sideCard}
           tailwindClasses="absolute left-[3vw] top-[22vw] bg-blue-900/0 text-[1.4vw] text-white p-3"
@@ -131,7 +138,9 @@ const Calculation: React.FC<props> = ({
           {resultRef.current && resultRef.current % 5250}
         </CalcItem>
       )}
-      <motion.div
+
+      {!isWinner && (
+        <motion.div
         initial="hidden"
         animate="visible"
         exit="out"
@@ -254,6 +263,7 @@ const Calculation: React.FC<props> = ({
           )}
         </AnimatePresence>
       </motion.div>
+      )}
     </>
   );
 };

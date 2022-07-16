@@ -3,6 +3,7 @@ import { CSSProperties } from "react";
 
 export const bottomSpells: number[] = Array.from(Array(40).keys());
 export const topSpells: number[] = Array.from(Array(10).keys());
+export const diamondSpells: number[] = Array.from(Array(20).keys());
 export const bottomPosition = {
   top: 118.5,
   right: 428.5,
