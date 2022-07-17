@@ -27,7 +27,7 @@ const Spell: React.FC<props> = ({
   }, [spellNumber]);
 
   return (
-    <motion.div className={`bg-white absolute ${!showOrHidden && "rounded-full"}`} style={spellStyles}>
+    <motion.div className={`bg-neutral-400 absolute ${!showOrHidden && "rounded-full"}`} style={spellStyles}>
       {isShowed && (
         <motion.div
           layoutId={`${spellGroup}${spellIndex}`}
