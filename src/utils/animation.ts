@@ -869,7 +869,7 @@ export const mobileMenuContainerAni: Variants = {
 
 export const mobileMenuAni: Variants = {
   opened: (custom = 1000) => ({
-    clipPath: `circle(${custom * 2 + 200}px at calc(100% - 45px) 50px)`,
+    clipPath: `circle(${custom * 2 + 200}px at calc(100% - 46px) 51px)`,
     backgroundColor: "#212121",
     transition: {
       clipPath: { type: "spring", stiffness: 20, restDelta: 2 },
