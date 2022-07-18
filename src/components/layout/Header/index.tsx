@@ -56,8 +56,8 @@ const Header: React.FC = () => {
         <a
           href={gitbookLink}
           target="_blank"
-          className="z-50 pointer-events-auto absolute top-[2rem] right-[6.9rem] px-2 ssm:w-[8.5rem] h-9 rounded-full bg-neutral-600 text-white text-sm font-bold 
-          flex gap-x-px justify-evenly items-center hover:bg-neutral-500 duration-200 fill-primary-500 hover:fill-primary-700 cursor-pointer "
+          className="z-50 pointer-events-auto absolute top-[2rem] right-[16rem] px-2 ssm:w-[8.5rem] h-10 rounded-full bg-neutral-600 text-white text-sm font-bold 
+          hidden sm:flex gap-x-px justify-evenly items-center hover:bg-neutral-500 duration-200 fill-primary-500 hover:fill-primary-700 cursor-pointer "
         >
           <span className="">
             <socialSVGs.GitBookSVG width={26} />
@@ -67,12 +67,12 @@ const Header: React.FC = () => {
         <a
           href={discordLink}
           target="_blank"
-          className="z-50 absolute cursor-pointer pointer-events-auto top-[2rem] right-[4.2rem] w-9 h-9 rounded-full bg-neutral-600
+          className="z-50 absolute cursor-pointer pointer-events-auto top-[2rem] right-[13rem] w-10 h-10 rounded-full bg-neutral-600
           text-white text-xl flex justify-center items-center hover:bg-neutral-500 duration-200 fill-primary-500 hover:fill-primary-700"
         >
           <socialSVGs.DiscordSVG width={26} />
         </a>
-        {/* <ConnectWallet /> */}
+        <ConnectWallet />
         <MobileMenu headerLinks={headerLinks} />
       </div>
     </div>
