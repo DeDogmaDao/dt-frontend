@@ -56,8 +56,8 @@ const Header: React.FC = () => {
         <a
           href={gitbookLink}
           target="_blank"
-          className="z-50 pointer-events-auto absolute top-[2rem] right-[16rem] px-2 ssm:w-[8.5rem] h-10 rounded-full bg-neutral-600 text-white text-sm font-bold 
-          hidden sm:flex gap-x-px justify-evenly items-center hover:bg-neutral-500 duration-200 fill-primary-500 hover:fill-primary-700 cursor-pointer "
+          className="z-50 pointer-events-auto absolute top-[2rem] right-[7rem] px-2 ssm:w-[8.5rem] h-10 rounded-full bg-neutral-600 text-white text-sm font-bold 
+          justify-evenly items-center hover:bg-neutral-500 duration-200 fill-primary-500 hover:fill-primary-700 cursor-pointer "
         >
           <span className="">
             <socialSVGs.GitBookSVG width={26} />
