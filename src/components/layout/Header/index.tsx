@@ -38,7 +38,7 @@ const Header: React.FC = () => {
     <div className="absolute top-0 left-0 w-full h-[5.25rem] z-[10000] pointer-events-none">
       <div className="flex justify-start items-center w-full h-full relative">
         <div className="absolute top-0 left-0 w-full h-[7.5rem] bg-gradient-to-b from-[#090919] via-[#090919]/50 to-transparent " />
-        <span className="absolute top-[2.3rem]  left-5 ssm:left-16 z-100 pointer-events-auto cursor-pointer">
+        <span className="absolute top-[2.3rem]  left-5 md:left-16 z-100 pointer-events-auto cursor-pointer">
           <Link href="/">
             <div className="flex justify-start items-center gap-x-2 fill-white hover:fill-primary-500 duration-300">
               <LogoSVG width="2.5rem" />
@@ -48,7 +48,7 @@ const Header: React.FC = () => {
             </div>
           </Link>
         </span>
-        <motion.ul className="absolute pointer-events-auto top-[2.565rem] mt-[-.3rem] 2xl:mt-0 left-[7.125rem] lg:left-[9.625rem] hidden md:flex justify-start items-center gap-x-5 lg:gap-x-8 z-110">
+        <motion.ul className="absolute pointer-events-auto top-[2.565rem] mt-[-.3rem] 2xl:mt-0 left-[7.125rem] lg:left-[9.625rem] hidden lg:flex justify-start items-center gap-x-5 lg:gap-x-8 z-110">
           {headerLinks.map((headLink) => {
             return <EachLink key={headLink.ref} headLink={headLink} />;
           })}
@@ -56,13 +56,13 @@ const Header: React.FC = () => {
         <a
           href={gitbookLink}
           target="_blank"
-          className="z-50 pointer-events-auto absolute top-[2rem] right-[16rem] px-2 ssm:w-[8.5rem] h-10 rounded-full bg-neutral-600 text-white text-sm font-bold 
-          hidden sm:flex justify-evenly items-center hover:bg-neutral-500 duration-200 fill-primary-500 hover:fill-primary-700 cursor-pointer "
+          className="z-50 pointer-events-auto absolute top-[2rem] right-[16rem] px-2 sm:w-[8.5rem] h-10 rounded-full bg-neutral-600 text-white text-sm font-bold 
+         hidden ssm:flex justify-evenly items-center hover:bg-neutral-500 duration-200 fill-primary-500 hover:fill-primary-700 cursor-pointer "
         >
           <span className="">
             <socialSVGs.GitBookSVG width={26} />
           </span>
-          <span>Litepaper</span>
+          <span className="hidden sm:block">Litepaper</span>
         </a>
         <a
           href={discordLink}

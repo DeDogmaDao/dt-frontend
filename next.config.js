@@ -22,7 +22,12 @@ module.exports = {
       //   permanent: false,
       // },
       // {
-      //   source: "/web3",
+      //   source: "/gallery",
+      //   destination: "/404",
+      //   permanent: false,
+      // },
+      // {
+      //   source: "/auction",
       //   destination: "/404",
       //   permanent: false,
       // },
