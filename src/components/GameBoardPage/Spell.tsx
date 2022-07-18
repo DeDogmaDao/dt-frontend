@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { CSSProperties, useEffect, useState } from "react";
 import { bottomRightPosition, spellNumber } from "../../types/allTypes";
 import { spellAni } from "../../utils/animation";
 import { colorSpell, transitionSpell } from "../../utils/game";
@@ -8,7 +8,7 @@ interface props {
   spellNumber: spellNumber;
   spellGroup: string;
   showOrHidden: boolean;
-  spellStyles: bottomRightPosition;
+  spellStyles: CSSProperties;
 }
 
 const Spell: React.FC<props> = ({
@@ -27,7 +27,7 @@ const Spell: React.FC<props> = ({
   }, [spellNumber]);
 
   return (
-    <div className="rounded-full bg-white absolute" style={spellStyles}>
+    <motion.div className={`bg-neutral-400 absolute ${!showOrHidden && "rounded-full"}`} style={spellStyles}>
       {isShowed && (
         <motion.div
           layoutId={`${spellGroup}${spellIndex}`}
@@ -39,11 +39,11 @@ const Spell: React.FC<props> = ({
             num: spellIndex,
             color: colorSpell(spellGroup === "yellow"),
           }}
-          className="w-full h-full rounded-full z-110"
+          className={`w-full h-full z-110 ${!showOrHidden && "rounded-full"}`}
           style={{ backgroundColor: colorSpell(spellGroup === "yellow") }}
         ></motion.div>
       )}
-    </div>
+    </motion.div>
   );
 };
 

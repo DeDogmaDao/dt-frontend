@@ -52,8 +52,11 @@ const CardGame: React.FC<props> = ({
     if (turnNumber === null && cardIndex === gameCardData.length - 1) {
       setTurnNumber(0);
     }
-    if (turnNumber === cardIndex && doorStage === -1) {
+    if(turnNumber === cardIndex) {
       setCurrentCard(data);
+    }
+    if (turnNumber === cardIndex && doorStage === -1) {
+
       setTimeout(() => {
         setTurnNumber((prevState) => {
           if (prevState !== null) {
@@ -120,8 +123,6 @@ useLayoutEffect(()=>{
       style={{
         ...styles((cardIndex % 3) + 1,cardIndex),
         transformStyle: "preserve-3d",
-        perspective: "1000px",
-        perspectiveOrigin: "50% 50%",
       }}
     >
       <motion.div
@@ -146,7 +147,7 @@ useLayoutEffect(()=>{
         <motion.img
           style={{ translateZ: "-1px" }}
           className="w-full object-contain absolute top-0 left-0"
-          src={"/img/team/member3.png"}
+          src={"/img/game/cardBack.png"}
         />
         <motion.img className="w-full object-contain" src={data.image} />
         {stage === 1 && (

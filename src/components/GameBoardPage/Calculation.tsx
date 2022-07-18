@@ -29,6 +29,8 @@ const Calculation: React.FC<props> = ({
   setTransferNum,
   firstCardNum,
 }) => {
+  const [isWinner, setIsWinner] = useState(false);
+
   const [showNum, setShowNum] = useState(true);
   const [layId, setLayId] = useState({
     community: "communityNum",
@@ -61,6 +63,11 @@ const Calculation: React.FC<props> = ({
           currentCard.cardNum * currentCard.communityNum +
           currentCard.individualNum;
       }, 1000);
+    }
+    if(currentCard?.isWinner){
+      setTimeout(() => {
+        setIsWinner(true);
+      }, 9000);
     }
   }, [currentCard]);
 
@@ -119,23 +126,25 @@ const Calculation: React.FC<props> = ({
     <>
       <CalcItem
         framerVariant={calcCardSideAni}
-        tailwindClasses="absolute left-[3vw] top-[20.5vw] bg-blue-900/0 text-white p-3"
+        tailwindClasses="absolute left-[3vw] top-[20.5vw] bg-blue-900/0 text-[1.4vw] text-white p-3"
       >
         {firstCardNum}
       </CalcItem>
-      {showNum === false && (
+      {(showNum === false || isWinner === true) && (
         <CalcItem
           framerLayoutId={resultLayoutId.sideCard}
-          tailwindClasses="absolute left-[3vw] top-[22vw] bg-blue-900/0 text-white p-3"
+          tailwindClasses="absolute left-[3vw] top-[22vw] bg-blue-900/0 text-[1.4vw] text-white p-3"
         >
           {resultRef.current && resultRef.current % 5250}
         </CalcItem>
       )}
-      <motion.div
+
+      {!isWinner && (
+        <motion.div
         initial="hidden"
         animate="visible"
         exit="out"
-        className="flex flex-col justify-start items-center absolute left-[5.5vw] bottom-[2.6vw] text-2xl bg-red-400/0 w-[22vw] h-[5vw]"
+        className="flex flex-col justify-start items-center absolute left-[5.5vw] bottom-[2.6vw] text-[1.4vw] w-[22vw] h-[5vw]"
       >
         <AnimatePresence>
           {showNum && calcStage === 0 && (
@@ -254,6 +263,7 @@ const Calculation: React.FC<props> = ({
           )}
         </AnimatePresence>
       </motion.div>
+      )}
     </>
   );
 };

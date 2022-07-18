@@ -22,12 +22,12 @@ module.exports = {
         permanent: false,
       },
       {
-        source: "/auction",
+        source: "/gallery",
         destination: "/404",
         permanent: false,
       },
       {
-        source: "/gallery",
+        source: "/auction",
         destination: "/404",
         permanent: false,
       },
