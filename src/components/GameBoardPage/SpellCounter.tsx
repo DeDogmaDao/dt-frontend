@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { numsList } from "../../store/allData";
 import { spellNumber } from "../../types/allTypes";
 import { spellCounterAni } from "../../utils/animation";
+import { colorSpell } from "../../utils/game";
 
 interface props {
   spellNumber: spellNumber;
@@ -18,8 +19,8 @@ const styles = (spellGroup: string): MotionStyle => {
       rotateY: "70deg",
       scaleY: 0.8,
       fontSize: "1.5vw",
-      textShadow: "0px 0px 10px yellow",
-      color: "yellow",
+      textShadow: `0px 0px 10px ${colorSpell(spellGroup === "yellow")}`,
+      color: colorSpell(spellGroup === "yellow"),
     };
   }
   return {
@@ -29,8 +30,8 @@ const styles = (spellGroup: string): MotionStyle => {
     rotateZ: "40deg",
     rotateY: "-65deg",
     fontSize: "1.7vw",
-    textShadow: "0px 0px 10px #00FFFF",
-    color: "#00FFFF",
+    textShadow: `0px 0px 10px ${colorSpell(spellGroup === "yellow")}`,
+    color: colorSpell(spellGroup === "yellow"),
   };
 };
 
