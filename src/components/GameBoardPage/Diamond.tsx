@@ -9,12 +9,10 @@ interface props {
 }
 
 const Diamond: React.FC<props> = ({ spellNumber, currentCard }) => {
-   const hue = useMotionValue(0);
-   hue.set(spellNumber.blue - spellNumber.yellow);
-   if(currentCard?.isWinner){
-       hue.set(spellNumber[currentCard.spellGroup]);
-   }
-   const hueTransform = useTransform(hue, [-1, 1], [-105, 0]);
+  const hue = useMotionValue(0);
+  hue.set(spellNumber.blue - spellNumber.yellow);
+
+  const hueTransform = useTransform(hue, [-3, 3], ["#1F51FF", "#FF10F0"]);
   return (
     <>
       <motion.div className="w-[1.8vw] h-[3vw] absolute top-[2.55vw] right-[32.4vw] z-100">
@@ -36,10 +34,24 @@ const Diamond: React.FC<props> = ({ spellNumber, currentCard }) => {
           );
         })}
       </motion.div>
-      <motion.div 
-      style={{filter: `hue-rotate(${hueTransform.get()}deg)`}}
-      className="w-[1.8vw] h-[3vw] absolute top-[2.55vw] right-[32.4vw] z-110 hover:scale-125 duration-300">
-        <img className="w-full h-full z-[1000]" src="/img/game/diamond.png" />
+      <motion.div className="w-[1.8vw] h-[3vw] absolute top-[2.55vw] right-[32.4vw] hover:scale-125 duration-300 z-[1000]">
+        <div className="w-ful h-full relative flex justify-center items-center">
+          <motion.span
+          style={{borderBottomColor: hueTransform}}
+          transition={{type:"spring", stiffness:500}}
+            className="z-0 w-0 h-0 border-[0.9vw] border-transparent border-b-[1.5vw] relative top-[-1.3vw]"
+          >
+            <motion.span
+            style={{borderTopColor: hueTransform}}
+              className="absolute left-[-0.9vw] top-[1.5vw] w-0 h-0  border-[0.9vw]
+          border-transparent border-t-[1.55vw] "
+            ></motion.span>
+          </motion.span>
+          <motion.img
+            className="w-full h-full z-110 absolute left-0 top-0"
+            src="/img/game/diamond.png"
+          />
+        </div>
       </motion.div>
     </>
   );
