@@ -1,5 +1,7 @@
-import { motion, useMotionValue, useTransform } from "framer-motion";
+import { motion, useAnimation, useMotionValue, useTransform } from "framer-motion";
+import { useEffect } from "react";
 import { gameCardType, spellNumber } from "../../types/allTypes";
+import { diamondAni } from "../../utils/animation";
 import { colorSpell, diamondSpells } from "../../utils/game";
 import Spell from "./Spell";
 
@@ -9,6 +11,10 @@ interface props {
 }
 
 const Diamond: React.FC<props> = ({ spellNumber, currentCard }) => {
+  const controls = useAnimation();
+  useEffect(()=>{
+    controls.start("visible")
+  },[spellNumber])
   return (
     <>
       <motion.div className="w-[1.8vw] h-[3vw] absolute top-[2.55vw] right-[32.4vw] z-100">
@@ -33,6 +39,10 @@ const Diamond: React.FC<props> = ({ spellNumber, currentCard }) => {
       <motion.div className="w-[1.8vw] h-[3vw] absolute top-[2.55vw] right-[32.4vw] hover:scale-125 duration-300 z-[1000]">
         <div className="w-ful h-full relative flex justify-center items-center">
           <motion.span
+          initial="hidden"
+          animate={controls}
+          variants={diamondAni}
+          custom={{color:currentCard?.spellGroup,spellDiff:spellNumber.blue - spellNumber.yellow}}
             // style={{ borderBottomColor: diamondColorTransform }}
             transition={{ type: "spring", stiffness: 500 }}
             className="z-0 w-0 h-0 border-[0.9vw] border-transparent border-b-[1.5vw] relative top-[-1.3vw]"
