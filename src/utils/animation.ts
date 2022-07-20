@@ -1,4 +1,5 @@
 import { Variants } from "framer-motion";
+import { colorSpell } from "./game";
 
 export const pageAnimation: Variants = {
   hidden: {
@@ -652,6 +653,49 @@ export const spellCounterAni: Variants = {
     },
   }),
 };
+
+export const diamondAniUp: Variants = {
+  hidden: {
+    opacity: 1,
+  },
+  visible: (custom) => ({
+    opacity: custom.spellSum === 0 ? 0 : 1,
+    borderBottomColor:
+      custom.spellDiff !== 0
+        ? colorSpell(custom.spellDiff < 0)
+        : colorSpell(custom.color === "yellow"),
+    transition: {
+      duration: 2,
+    },
+  }),
+};
+export const diamondAniDown: Variants = {
+  hidden: {
+    opacity: 1,
+  },
+  visible: (custom) => ({
+    opacity: custom.spellSum === 0 ? 0 : 1,
+    borderTopColor:
+      custom.spellDiff !== 0
+        ? colorSpell(custom.spellDiff < 0)
+        : colorSpell(custom.color === "yellow"),
+    transition: {
+      duration: 2,
+    },
+  }),
+};
+
+export const allDiamondAni: Variants = {
+  hidden: {},
+  visible: (custom) => ({
+    scale: [1, 1.2, 1, 1.3, 1, 1.2, 1],
+    transition: {
+      duration: 3,
+      times:[0,0.15,0.3,0.45,0.6,0.75,1],
+    }
+  })
+}
+
 export const calcFadeAni: Variants = {
   hidden: {
     opacity: 0,
@@ -1167,7 +1211,6 @@ export const auctionContainerAni: Variants = {
     };
   },
   visible: (custom) => {
-    
     return {
       x: 0,
       opacity: 1,
@@ -1176,45 +1219,45 @@ export const auctionContainerAni: Variants = {
       },
     };
   },
-  out:(custom) => {
+  out: (custom) => {
     return {
       x: custom ? 30 : -30,
       opacity: 0,
       transition: {
         duration: 0.3,
       },
-    }
-  }
+    };
+  },
 };
 
 export const auctionPriceAni: Variants = {
   hidden: {
     opacity: 0,
-    scale:0.1,
-    y:-50
+    scale: 0.1,
+    y: -50,
   },
-  visible: (custom)=>({
-    opacity: [0,1,1],
-    scale:[0.1,1,1],
-    y:[-50,0,0],
-    color:["#2CEDFF","#2CEDFF","#EEEE"],
+  visible: (custom) => ({
+    opacity: [0, 1, 1],
+    scale: [0.1, 1, 1],
+    y: [-50, 0, 0],
+    color: ["#2CEDFF", "#2CEDFF", "#EEEE"],
     transition: {
-      times:[0,0.333,1],
-      duration:2.4,
-      delay:custom * 0.05,
-      ease:"easeInOut"
-    }
-  }),
-  out: (custom)=>({
-    opacity: [1,1,0],
-    scale:[1,1,0.1],
-    y:[0,0,50],
-    color:["#EEEE","#fc0317","#fc0317"],
-    transition:{
-      times:[0,0.4,1],
-      duration:1.1,
-      delay:custom * 0.05,
-      ease:"easeInOut",
+      times: [0, 0.333, 1],
+      duration: 2.4,
+      delay: custom * 0.05,
+      ease: "easeInOut",
     },
   }),
-}
+  out: (custom) => ({
+    opacity: [1, 1, 0],
+    scale: [1, 1, 0.1],
+    y: [0, 0, 50],
+    color: ["#EEEE", "#fc0317", "#fc0317"],
+    transition: {
+      times: [0, 0.4, 1],
+      duration: 1.1,
+      delay: custom * 0.05,
+      ease: "easeInOut",
+    },
+  }),
+};
