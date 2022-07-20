@@ -665,7 +665,7 @@ export const diamondAniUp: Variants = {
         ? colorSpell(custom.spellDiff < 0)
         : colorSpell(custom.color === "yellow"),
     transition: {
-      duration: 2,
+      duration: 5,
     },
   }),
 };
@@ -680,7 +680,7 @@ export const diamondAniDown: Variants = {
         ? colorSpell(custom.spellDiff < 0)
         : colorSpell(custom.color === "yellow"),
     transition: {
-      duration: 2,
+      duration: 5,
     },
   }),
 };
