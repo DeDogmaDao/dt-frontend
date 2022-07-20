@@ -49,9 +49,7 @@ const Lightning: React.FC<props> = ({doorStage}) => {
       }
       ctx!.stroke();
       // what da fuck?
-      setTimeout(() => {
         requestAnimationFrame(renderLightning);
-      }, 40);
     };
 
     if(doorStage === 0){
