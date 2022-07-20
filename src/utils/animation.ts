@@ -654,13 +654,28 @@ export const spellCounterAni: Variants = {
   }),
 };
 
-export const diamondAni: Variants = {
+export const diamondAniUp: Variants = {
   hidden: {
     opacity: 1,
   },
   visible: (custom) => ({
     opacity: custom.spellSum === 0 ? 0 : 1,
     borderBottomColor:
+      custom.spellDiff !== 0
+        ? colorSpell(custom.spellDiff < 0)
+        : colorSpell(custom.color === "yellow"),
+    transition: {
+      duration: 2,
+    },
+  }),
+};
+export const diamondAniDown: Variants = {
+  hidden: {
+    opacity: 1,
+  },
+  visible: (custom) => ({
+    opacity: custom.spellSum === 0 ? 0 : 1,
+    borderTopColor:
       custom.spellDiff !== 0
         ? colorSpell(custom.spellDiff < 0)
         : colorSpell(custom.color === "yellow"),

@@ -1,7 +1,7 @@
 import { motion, useAnimation, useMotionValue, useTransform } from "framer-motion";
 import { useEffect } from "react";
 import { gameCardType, spellNumber } from "../../types/allTypes";
-import { diamondAni } from "../../utils/animation";
+import { diamondAniDown, diamondAniUp } from "../../utils/animation";
 import { colorSpell, diamondSpells } from "../../utils/game";
 import Spell from "./Spell";
 
@@ -41,14 +41,15 @@ const Diamond: React.FC<props> = ({ spellNumber, currentCard }) => {
           <motion.span
           initial="hidden"
           animate={controls}
-          variants={diamondAni}
+          variants={diamondAniUp}
           custom={{color:currentCard?.spellGroup,spellDiff:spellNumber.blue - spellNumber.yellow, spellSum:spellNumber.blue + spellNumber.yellow}}
-            // style={{ borderBottomColor: diamondColorTransform }}
-            transition={{ type: "spring", stiffness: 500 }}
             className="z-0 w-0 h-0 border-[0.9vw] border-transparent border-b-[1.5vw] relative top-[-1.3vw]"
           >
             <motion.span
-              // style={{ borderTopColor: diamondColorTransform }}
+              initial="hidden"
+              animate={controls}
+              variants={diamondAniDown}
+              custom={{color:currentCard?.spellGroup,spellDiff:spellNumber.blue - spellNumber.yellow, spellSum:spellNumber.blue + spellNumber.yellow}}
               className="absolute left-[-0.9vw] top-[1.5vw] w-0 h-0  border-[0.9vw]
           border-transparent border-t-[1.55vw] "
             ></motion.span>
