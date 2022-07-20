@@ -685,6 +685,17 @@ export const diamondAniDown: Variants = {
   }),
 };
 
+export const allDiamondAni: Variants = {
+  hidden: {},
+  visible: (custom) => ({
+    scale: [1, 1.2, 1, 1.3, 1, 1.2, 1],
+    transition: {
+      duration: 3,
+      times:[0,0.15,0.3,0.45,0.6,0.75,1],
+    }
+  })
+}
+
 export const calcFadeAni: Variants = {
   hidden: {
     opacity: 0,
