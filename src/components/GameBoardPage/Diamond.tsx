@@ -1,6 +1,6 @@
 import { motion, useMotionValue, useTransform } from "framer-motion";
 import { gameCardType, spellNumber } from "../../types/allTypes";
-import { diamondSpells } from "../../utils/game";
+import { colorSpell, diamondSpells } from "../../utils/game";
 import Spell from "./Spell";
 
 interface props {
@@ -10,9 +10,15 @@ interface props {
 
 const Diamond: React.FC<props> = ({ spellNumber, currentCard }) => {
   const diamondColor = useMotionValue(0);
+
   diamondColor.set(spellNumber.blue - spellNumber.yellow);
 
-  const diamondColorTransform = useTransform(diamondColor, [-10, 10], ["#1F51FF", "#FF10F0"],{clamp: true});
+  const diamondColorTransform = useTransform(
+    diamondColor,
+    [-0.5, 0, 0.5],
+    ["#1F51FF", colorSpell(currentCard?.spellGroup === "yellow"), "#FF10F0"],
+    { clamp: true }
+  );
   return (
     <>
       <motion.div className="w-[1.8vw] h-[3vw] absolute top-[2.55vw] right-[32.4vw] z-100">
@@ -37,12 +43,12 @@ const Diamond: React.FC<props> = ({ spellNumber, currentCard }) => {
       <motion.div className="w-[1.8vw] h-[3vw] absolute top-[2.55vw] right-[32.4vw] hover:scale-125 duration-300 z-[1000]">
         <div className="w-ful h-full relative flex justify-center items-center">
           <motion.span
-          style={{borderBottomColor: diamondColorTransform}}
-          transition={{type:"spring", stiffness:500}}
+            style={{ borderBottomColor: diamondColorTransform }}
+            transition={{ type: "spring", stiffness: 500 }}
             className="z-0 w-0 h-0 border-[0.9vw] border-transparent border-b-[1.5vw] relative top-[-1.3vw]"
           >
             <motion.span
-            style={{borderTopColor: diamondColorTransform}}
+              style={{ borderTopColor: diamondColorTransform }}
               className="absolute left-[-0.9vw] top-[1.5vw] w-0 h-0  border-[0.9vw]
           border-transparent border-t-[1.55vw] "
             ></motion.span>
