@@ -659,10 +659,9 @@ export const diamondAni: Variants = {
     opacity: 1,
   },
   visible: (custom) => ({
+    opacity: custom.spellSum === 0 ? 0 : 1,
     borderBottomColor:
-      custom.color === null
-        ? "transparent"
-        : custom.spellDiff !== 0
+      custom.spellDiff !== 0
         ? colorSpell(custom.spellDiff < 0)
         : colorSpell(custom.color === "yellow"),
     transition: {

@@ -42,7 +42,7 @@ const Diamond: React.FC<props> = ({ spellNumber, currentCard }) => {
           initial="hidden"
           animate={controls}
           variants={diamondAni}
-          custom={{color:currentCard?.spellGroup,spellDiff:spellNumber.blue - spellNumber.yellow}}
+          custom={{color:currentCard?.spellGroup,spellDiff:spellNumber.blue - spellNumber.yellow, spellSum:spellNumber.blue + spellNumber.yellow}}
             // style={{ borderBottomColor: diamondColorTransform }}
             transition={{ type: "spring", stiffness: 500 }}
             className="z-0 w-0 h-0 border-[0.9vw] border-transparent border-b-[1.5vw] relative top-[-1.3vw]"
