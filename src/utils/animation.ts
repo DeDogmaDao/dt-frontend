@@ -789,6 +789,18 @@ export const doorToLeftAnimation: Variants = {
   },
 };
 
+export const doorLightAnimation: Variants = {
+  hidden: {
+    width:"0%"
+  },
+  visible:{
+    width: "100%",
+    transition:{
+      duration:5
+    }
+  }
+}
+
 export const teamMemberAni: Variants = {
   hidden: {
     opacity: 0,
