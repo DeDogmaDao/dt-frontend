@@ -44,11 +44,11 @@ const Door: React.FC<props> = ({ spellNumber, doorStage }) => {
               initial="hidden"
               animate={lightControls}
               variants={doorLightAnimation}
-              className="absolute right-0 bottom-0 overflow-hidden"
+              className="absolute left-0 bottom-0 overflow-hidden"
             >
               <motion.img
                 src="/img/game/light.png"
-                className="w-[7.7vw] h-[26vw] max-w-[100vw] float-right"
+                className="w-[7.7vw] h-[26vw] max-w-[100vw] float-left"
               />
             </motion.span>
           </span>
@@ -68,12 +68,12 @@ const Door: React.FC<props> = ({ spellNumber, doorStage }) => {
               initial="hidden"
               animate={lightControls}
               variants={doorLightAnimation}
-              className="absolute right-0 bottom-0 overflow-hidden"
+              className="absolute left-0 bottom-0 overflow-hidden"
             >
 
             <img
               src="/img/game/light.png"
-              className="w-[7.7vw] h-[26vw] max-w-[100vw] float-right "
+              className="w-[7.7vw] h-[26vw] max-w-[100vw] float-left "
               />
               </motion.span>
           </span>
