@@ -774,7 +774,7 @@ export const doorToRightAnimation: Variants = {
     },
   },
 };
-export const doorToLefttAnimation: Variants = {
+export const doorToLeftAnimation: Variants = {
   hidden: {
     translateX: "0vw",
     scaleX: "-1",
