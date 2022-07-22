@@ -791,10 +791,12 @@ export const doorToLeftAnimation: Variants = {
 
 export const doorLightAnimation: Variants = {
   hidden: {
-    width:"0%"
+    width:"100%",
+    opacity:0
   },
   visible:{
     width: "100%",
+    opacity:1,
     transition:{
       duration:5
     }
