@@ -37,16 +37,23 @@ const RingPin: React.FC<props> = ({ spellNumber }) => {
           className="absolute bottom-0 left-0 w-full h-full"
         />
 
-        <motion.img
+        <motion.div
           style={styles.topPin}
-          src="/img/game/pin.png"
-          className="absolute top-[-0.3vw] left-1/2 ml-[-0.33vw] w-[0.66vw] z-10 duration-2000"
-        />
-        <motion.img
+          className="absolute  left-1/2 ml-[-0.33vw] top-[-0.6vw] z-100 duration-2000 flex justify-start items-start"
+        >
+          <span className="border-[0.3vw] border-transparent border-b-[0.28vw] border-b-red-500 w-0 h-0 relative">
+            <span className="w-0 h-0 absolute left-[-0.34vw] top-[0.27vw] border-[0.33vw] border-transparent border-t-[0.7vw] border-t-red-500 "></span>
+          </span>
+        </motion.div>
+        <motion.div
           style={{ ...styles.bottomPin, scaleY: -1 }}
-          src="/img/game/pin.png"
-          className="absolute bottom-[-0.6vw] left-1/2 ml-[-0.33vw] w-[0.66vw] z-10 duration-2000"
-        />
+          className="absolute bottom-[-0.8vw] left-1/2 ml-[-0.33vw] w-0 h-0 z-10 duration-2000 flex justify-start items-start"
+        >
+          <span className="border-[0.3vw] border-transparent border-b-[0.28vw] border-b-red-500 w-0 h-0 relative">
+            <span className="w-0 h-0 absolute left-[-0.34vw] top-[0.27vw] border-[0.33vw] border-transparent border-t-[0.7vw] border-t-red-500 "></span>
+          </span>
+        </motion.div>
+
       </div>
     </motion.div>
   );
