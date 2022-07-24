@@ -1,5 +1,5 @@
 import { motion, useAnimation } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { Dispatch, SetStateAction, useEffect, useRef } from "react";
 import { gameCardType, spellNumber } from "../../types/allTypes";
 import {
   doorLightAnimation,
@@ -13,15 +13,22 @@ interface props {
   spellNumber: spellNumber;
   doorStage: number;
   currentCard: gameCardType | null;
+  setDoorStage:Dispatch<SetStateAction<number>>;
 }
 
-const Door: React.FC<props> = ({ spellNumber, doorStage, currentCard }) => {
+const Door: React.FC<props> = ({ spellNumber, doorStage, currentCard,setDoorStage }) => {
   const doorAnimControls = useAnimation();
   const rightDoorRef = useRef<HTMLVideoElement>(null);
   const leftDoorRef = useRef<HTMLVideoElement>(null);
   useEffect(() => {
-    rightDoorRef.current!.playbackRate = 0.5;
-    leftDoorRef.current!.playbackRate = 0.498;
+    if (doorStage === 1) {
+      rightDoorRef.current!.playbackRate = 0.5;
+      leftDoorRef.current!.playbackRate = 0.498;
+      setTimeout(() => {
+        leftDoorRef.current!.play();
+        rightDoorRef.current!.play();
+      }, 5000);
+    }
   }, [doorStage]);
 
   return (
@@ -35,7 +42,6 @@ const Door: React.FC<props> = ({ spellNumber, doorStage, currentCard }) => {
         >
           <motion.video
             ref={rightDoorRef}
-            autoPlay
             muted
             className="w-full h-full"
           >
@@ -50,7 +56,6 @@ const Door: React.FC<props> = ({ spellNumber, doorStage, currentCard }) => {
         >
           <motion.video
             ref={leftDoorRef}
-            autoPlay
             muted
             className="w-full h-full"
           >
@@ -68,6 +73,7 @@ const Door: React.FC<props> = ({ spellNumber, doorStage, currentCard }) => {
             spellNumber={spellNumber}
             currentCard={currentCard}
             doorStage={doorStage}
+            setDoorStage={setDoorStage}
           />
 
           {/* {spellNumber.blue === spellNumber.yellow && (

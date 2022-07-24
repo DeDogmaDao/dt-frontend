@@ -62,6 +62,7 @@ const GameBoardPage: React.FC = () => {
           spellNumber={spellNumber}
           doorStage={doorStage}
           currentCard={currentCard}
+          setDoorStage={setDoorStage}
         />
         {/* <Lightning doorStage={doorStage} /> */}
         <div

@@ -1,5 +1,5 @@
 import { motion, MotionStyle, useAnimation } from "framer-motion";
-import { useEffect, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { gameCardType, spellNumber } from "../../types/allTypes";
 import { opacityBlinkAni, pinAniDown, pinAniUp } from "../../utils/animation";
 
@@ -7,8 +7,9 @@ interface props {
   spellNumber: spellNumber;
   currentCard: gameCardType | null;
   doorStage: number;
+  setDoorStage:Dispatch<SetStateAction<number>>;
 }
-const RingPin: React.FC<props> = ({ spellNumber, currentCard, doorStage }) => {
+const RingPin: React.FC<props> = ({ spellNumber, currentCard, doorStage, setDoorStage }) => {
   const [styles, setStyles] = useState({
     topPin: {} as MotionStyle,
     bottomPin: {} as MotionStyle,
@@ -39,6 +40,7 @@ const RingPin: React.FC<props> = ({ spellNumber, currentCard, doorStage }) => {
       setTimeout(() => {
         opacityControls.start("visible");
         controls.start("blink");
+        setDoorStage(1);
       }, 7000);
     }
   }, [doorStage]);
