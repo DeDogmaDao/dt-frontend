@@ -36,10 +36,14 @@ const RingPin: React.FC<props> = ({ spellNumber }) => {
           src="/img/game/ring.png"
           className="absolute bottom-0 left-0 w-full h-full"
         />
+        <img
+          src="/img/game/ringLight.png"
+          className="absolute top-px left-0 w-full h-full z-10"
+        />
 
         <motion.div
           style={styles.topPin}
-          className="absolute  left-1/2 ml-[-0.33vw] top-[-0.6vw] z-100 duration-2000 flex justify-start items-start"
+          className="absolute  left-1/2 ml-[-0.33vw] top-[-0.6vw] z-20 duration-2000 flex justify-start items-start"
         >
           <span className="border-[0.3vw] border-transparent border-b-[0.28vw] border-b-red-500 w-0 h-0 relative">
             <span className="w-0 h-0 absolute left-[-0.34vw] top-[0.27vw] border-[0.33vw] border-transparent border-t-[0.7vw] border-t-red-500 "></span>
@@ -47,7 +51,7 @@ const RingPin: React.FC<props> = ({ spellNumber }) => {
         </motion.div>
         <motion.div
           style={{ ...styles.bottomPin, scaleY: -1 }}
-          className="absolute bottom-[-0.8vw] left-1/2 ml-[-0.33vw] w-0 h-0 z-10 duration-2000 flex justify-start items-start"
+          className="absolute bottom-[-0.8vw] left-1/2 ml-[-0.33vw] w-0 h-0 z-20 duration-2000 flex justify-start items-start"
         >
           <span className="border-[0.3vw] border-transparent border-b-[0.28vw] border-b-red-500 w-0 h-0 relative">
             <span className="w-0 h-0 absolute left-[-0.34vw] top-[0.27vw] border-[0.33vw] border-transparent border-t-[0.7vw] border-t-red-500 "></span>
