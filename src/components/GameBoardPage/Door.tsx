@@ -30,6 +30,7 @@ const Door: React.FC<props> = ({ spellNumber, doorStage, currentCard,setDoorStag
         setDoorStage(2);
       }, 4000);
     }
+    
   }, [doorStage]);
 
   return (

@@ -1,10 +1,12 @@
-import { useEffect, useRef } from "react";
+import { Dispatch, SetStateAction, useEffect, useRef } from "react";
 import { createLightning } from "../../utils/util";
 
 interface props {
   doorStage: number;
+  setDoorStage:Dispatch<SetStateAction<number>>;
+
 }
-const Lightning: React.FC<props> = ({doorStage}) => {
+const Lightning: React.FC<props> = ({doorStage,setDoorStage}) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   useEffect(() => {
     const aspectRatio = window.innerWidth / 1536;
@@ -55,6 +57,9 @@ const Lightning: React.FC<props> = ({doorStage}) => {
     if(doorStage === 3){
       setTimeout(() => {
         renderLightning();
+        setTimeout(() => {
+          setDoorStage(4);
+        }, 4000);
       }, 3000);
     }
   }, [doorStage]);
