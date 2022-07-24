@@ -1,5 +1,5 @@
 import { motion, useAnimation } from "framer-motion";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { spellNumber } from "../../types/allTypes";
 import {
   doorLightAnimation,
@@ -17,12 +17,16 @@ interface props {
 const Door: React.FC<props> = ({ spellNumber, doorStage }) => {
   const doorAnimControls = useAnimation();
   const lightControls = useAnimation();
-
+  const rightDoorRef = useRef<HTMLVideoElement>(null);
+  const leftDoorRef = useRef<HTMLVideoElement>(null);
   useEffect(() => {
+    rightDoorRef.current!.playbackRate = 0.5;
+    leftDoorRef.current!.playbackRate = 0.5;
+
     // if (doorStage === 0) {
-      setTimeout(() => {
-        lightControls.start("visible");
-      }, 1000);
+    setTimeout(() => {
+      lightControls.start("visible");
+    }, 1000);
     // }
   }, [doorStage]);
 
@@ -30,12 +34,21 @@ const Door: React.FC<props> = ({ spellNumber, doorStage }) => {
     <div className="absolute  top-[10.53vw] left-[59.05vw] w-[15.391vw] h-[26vw] bg-red-500">
       <div className="relative w-full h-full">
         <motion.div
-          className="absolute bottom-0 right-0 w-[7.7vw] h-full z-0"
+          className="absolute bottom-0 right-0 w-[7.8vw] h-full z-0"
           initial="hidden"
           animate={doorAnimControls}
           variants={doorToRightAnimation}
         >
-          <span className="w-full h-full relative">
+          <motion.video
+            ref={rightDoorRef}
+            autoPlay
+            loop
+            muted
+            className="w-full h-full"
+          >
+            <source src={"/img/game/door.mp4"} type="video/mp4" />
+          </motion.video>
+          {/* <span className="w-full h-full relative">
             <motion.img
               src="/img/game/door.png"
               className="w-full h-full z-0"
@@ -51,15 +64,24 @@ const Door: React.FC<props> = ({ spellNumber, doorStage }) => {
                 className="w-[7.7vw] h-[26vw] max-w-[100vw] float-left"
               />
             </motion.span>
-          </span>
+          </span> */}
         </motion.div>
         <motion.div
-          className="absolute bottom-0 left-0 w-[7.7vw] h-full z-0 scale-x-[-1]"
+          className="absolute bottom-0 left-0 w-[7.8vw] h-full z-0 scale-x-[-1]"
           initial="hidden"
           animate={doorAnimControls}
           variants={doorToLeftAnimation}
         >
-          <span className="w-full h-full relative">
+          <motion.video
+            ref={leftDoorRef}
+            loop
+            autoPlay
+            muted
+            className="w-full h-full"
+          >
+            <source src={"/img/game/door.mp4"} type="video/mp4" />
+          </motion.video>
+          {/* <span className="w-full h-full relative">
             <motion.img
               src="/img/game/door.png"
               className="w-full h-full z-0 "
@@ -76,7 +98,7 @@ const Door: React.FC<props> = ({ spellNumber, doorStage }) => {
               className="w-[7.7vw] h-[26vw] max-w-[100vw] float-left "
               />
               </motion.span>
-          </span>
+          </span> */}
         </motion.div>
 
         <motion.div
