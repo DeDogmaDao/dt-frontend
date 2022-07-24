@@ -37,7 +37,7 @@ const GameBoardPage: React.FC = () => {
 
   // we added here a for loop to change the behavior of spell transfer on winner animation
   useEffect(() => {
-    if (doorStage === 0) {
+    if (doorStage === 2) {
       for (let i = 1; i < 5; i++) {
         setTimeout(() => {
           setSpellNumber((prevState) => ({
@@ -45,7 +45,7 @@ const GameBoardPage: React.FC = () => {
             ["yellow"]: prevState.yellow + 20,
             ["blue"]: prevState.blue + 20,
           }));
-        }, 6000 + Math.pow(i, 2) * 200);
+        }, 2000 + Math.pow(i, 2) * 200);
       }
     }
   }, [doorStage]);
@@ -57,7 +57,7 @@ const GameBoardPage: React.FC = () => {
           src="/img/game/main.png"
           className="absolute top-0 left-0 w-full h-full z-10"
         />
-        <Diamond spellNumber={spellNumber} currentCard={currentCard} />
+        <Diamond spellNumber={spellNumber} currentCard={currentCard} doorStage={doorStage} />
         <Door
           spellNumber={spellNumber}
           doorStage={doorStage}

@@ -17,22 +17,22 @@ import Spell from "./Spell";
 interface props {
   spellNumber: spellNumber;
   currentCard: gameCardType | null;
+  doorStage: number;
 }
 
-const Diamond: React.FC<props> = ({ spellNumber, currentCard }) => {
+const Diamond: React.FC<props> = ({ spellNumber, currentCard,doorStage }) => {
   const controls = useAnimation();
   const allControls = useAnimation();
   useEffect(() => {
     controls.start("visible");
-    if (
-      currentCard?.isWinner &&
-      spellNumber[currentCard.spellGroup] === currentCard.total
-    ) {
+  }, [spellNumber]);
+  useEffect(()=>{
+    if(doorStage===2){
       setTimeout(() => {
         allControls.start("visible");
-      }, 8000);
+      }, 4800);
     }
-  }, [spellNumber]);
+  },[doorStage])
   return (
     <>
       <motion.div className="w-[1.8vw] h-[3vw] absolute top-[2.55vw] right-[32.4vw] z-100">
