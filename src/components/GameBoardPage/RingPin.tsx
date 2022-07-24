@@ -1,7 +1,7 @@
 import { motion, MotionStyle, useAnimation } from "framer-motion";
 import { useEffect, useState } from "react";
 import { gameCardType, spellNumber } from "../../types/allTypes";
-import { diamondAniDown, diamondAniUp, pinAniDown, pinAniUp } from "../../utils/animation";
+import { pinAniDown, pinAniUp } from "../../utils/animation";
 
 interface props {
   spellNumber: spellNumber;
