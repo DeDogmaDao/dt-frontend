@@ -1,18 +1,22 @@
-import { motion, MotionStyle } from "framer-motion";
+import { motion, MotionStyle, useAnimation } from "framer-motion";
 import { useEffect, useState } from "react";
-import { spellNumber } from "../../types/allTypes";
+import { gameCardType, spellNumber } from "../../types/allTypes";
+import { diamondAniDown, diamondAniUp } from "../../utils/animation";
 
 interface props {
   spellNumber: spellNumber;
+  currentCard: gameCardType | null;
 }
-const RingPin: React.FC<props> = ({ spellNumber }) => {
+const RingPin: React.FC<props> = ({ spellNumber, currentCard }) => {
   const [styles, setStyles] = useState({
     topPin: {} as MotionStyle,
     bottomPin: {} as MotionStyle,
     ring: {} as MotionStyle,
   });
+  const controls = useAnimation();
 
   useEffect(() => {
+    controls.start("visible");
     setTimeout(() => {
       const plusOrMinus = spellNumber.blue - spellNumber.yellow >= 0 ? -1 : 1;
       const delta: number = spellNumber.yellow - spellNumber.blue;
@@ -26,6 +30,11 @@ const RingPin: React.FC<props> = ({ spellNumber }) => {
     }, 3000);
   }, [spellNumber]);
 
+  const customAni = {
+    color: currentCard?.spellGroup,
+    spellDiff: spellNumber.blue - spellNumber.yellow,
+    spellSum: spellNumber.blue + spellNumber.yellow,
+  };
   return (
     <motion.div
       style={styles.ring}
@@ -43,21 +52,44 @@ const RingPin: React.FC<props> = ({ spellNumber }) => {
 
         <motion.div
           style={styles.topPin}
-          className="absolute  left-1/2 ml-[-0.33vw] top-[-0.6vw] z-20 duration-2000 flex justify-start items-start"
+          className="absolute  left-1/2 ml-[-0.33vw] top-[-0.58vw] z-20 duration-2000 flex"
         >
-          <span className="border-[0.3vw] border-transparent border-b-[0.28vw] border-b-red-500 w-0 h-0 relative">
-            <span className="w-0 h-0 absolute left-[-0.34vw] top-[0.27vw] border-[0.33vw] border-transparent border-t-[0.7vw] border-t-red-500 "></span>
-          </span>
+          <motion.span
+            initial="hidden"
+            animate={controls}
+            variants={diamondAniUp}
+            custom={customAni}
+            className="border-[0.3vw] border-transparent border-b-[0.28vw]  w-0 h-0 relative"
+          >
+            <motion.span
+              initial="hidden"
+              animate={controls}
+              variants={diamondAniDown}
+              custom={customAni}
+              className="w-0 h-0 absolute left-[-0.34vw] top-[0.27vw] border-[0.33vw] border-transparent border-t-[0.7vw] "
+            ></motion.span>
+          </motion.span>
         </motion.div>
         <motion.div
           style={{ ...styles.bottomPin, scaleY: -1 }}
           className="absolute bottom-[-0.8vw] left-1/2 ml-[-0.33vw] w-0 h-0 z-20 duration-2000 flex justify-start items-start"
         >
-          <span className="border-[0.3vw] border-transparent border-b-[0.28vw] border-b-red-500 w-0 h-0 relative">
-            <span className="w-0 h-0 absolute left-[-0.34vw] top-[0.27vw] border-[0.33vw] border-transparent border-t-[0.7vw] border-t-red-500 "></span>
-          </span>
+          <motion.span
+            initial="hidden"
+            animate={controls}
+            variants={diamondAniUp}
+            custom={customAni}
+            className="border-[0.3vw] border-transparent border-b-[0.28vw] w-0 h-0 relative"
+          >
+            <motion.span
+              initial="hidden"
+              animate={controls}
+              variants={diamondAniDown}
+              custom={customAni}
+              className="w-0 h-0 absolute left-[-0.34vw] top-[0.27vw] border-[0.33vw] border-transparent border-t-[0.7vw]  "
+            ></motion.span>
+          </motion.span>
         </motion.div>
-
       </div>
     </motion.div>
   );

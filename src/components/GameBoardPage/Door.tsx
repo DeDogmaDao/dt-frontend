@@ -1,6 +1,6 @@
 import { motion, useAnimation } from "framer-motion";
 import { useEffect, useRef } from "react";
-import { spellNumber } from "../../types/allTypes";
+import { gameCardType, spellNumber } from "../../types/allTypes";
 import {
   doorLightAnimation,
   doorRingAni,
@@ -12,9 +12,10 @@ import RingPin from "./RingPin";
 interface props {
   spellNumber: spellNumber;
   doorStage: number;
+  currentCard: gameCardType | null;
 }
 
-const Door: React.FC<props> = ({ spellNumber, doorStage }) => {
+const Door: React.FC<props> = ({ spellNumber, doorStage,currentCard }) => {
   const doorAnimControls = useAnimation();
   const lightControls = useAnimation();
   const rightDoorRef = useRef<HTMLVideoElement>(null);
@@ -72,7 +73,7 @@ const Door: React.FC<props> = ({ spellNumber, doorStage }) => {
           variants={doorToLeftAnimation}
           className="relative w-full h-full"
         >
-          <RingPin spellNumber={spellNumber} />
+          <RingPin spellNumber={spellNumber} currentCard={currentCard} />
 
           {/* {spellNumber.blue === spellNumber.yellow && (
             <motion.svg className="absolute overflow-visible top-[13.17vw] left-[7.65vw] z-0">

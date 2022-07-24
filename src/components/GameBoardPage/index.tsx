@@ -58,7 +58,7 @@ const GameBoardPage: React.FC = () => {
           className="absolute top-0 left-0 w-full h-full z-10"
         />
         <Diamond spellNumber={spellNumber} currentCard={currentCard} />
-        <Door spellNumber={spellNumber} doorStage={doorStage} />
+        <Door spellNumber={spellNumber} doorStage={doorStage} currentCard={currentCard} />
         <Lightning doorStage={doorStage} />
         <div
           className="w-full h-full flex justify-center items-start flex-wrap relative z-10"
