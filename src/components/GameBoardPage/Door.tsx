@@ -15,20 +15,14 @@ interface props {
   currentCard: gameCardType | null;
 }
 
-const Door: React.FC<props> = ({ spellNumber, doorStage,currentCard }) => {
+const Door: React.FC<props> = ({ spellNumber, doorStage, currentCard }) => {
   const doorAnimControls = useAnimation();
-  const lightControls = useAnimation();
   const rightDoorRef = useRef<HTMLVideoElement>(null);
   const leftDoorRef = useRef<HTMLVideoElement>(null);
   useEffect(() => {
     rightDoorRef.current!.playbackRate = 0.5;
     leftDoorRef.current!.playbackRate = 0.498;
 
-    // if (doorStage === 0) {
-    setTimeout(() => {
-      lightControls.start("visible");
-    }, 1000);
-    // }
   }, [doorStage]);
 
   return (
@@ -43,7 +37,6 @@ const Door: React.FC<props> = ({ spellNumber, doorStage,currentCard }) => {
           <motion.video
             ref={rightDoorRef}
             autoPlay
-            
             muted
             className="w-full h-full"
           >
@@ -58,7 +51,6 @@ const Door: React.FC<props> = ({ spellNumber, doorStage,currentCard }) => {
         >
           <motion.video
             ref={leftDoorRef}
-            
             autoPlay
             muted
             className="w-full h-full"
