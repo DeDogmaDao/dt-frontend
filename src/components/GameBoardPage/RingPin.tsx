@@ -1,7 +1,7 @@
 import { motion, MotionStyle, useAnimation } from "framer-motion";
 import { useEffect, useState } from "react";
 import { gameCardType, spellNumber } from "../../types/allTypes";
-import { diamondAniDown, diamondAniUp } from "../../utils/animation";
+import { diamondAniDown, diamondAniUp, pinAniDown, pinAniUp } from "../../utils/animation";
 
 interface props {
   spellNumber: spellNumber;
@@ -16,7 +16,9 @@ const RingPin: React.FC<props> = ({ spellNumber, currentCard }) => {
   const controls = useAnimation();
 
   useEffect(() => {
-    controls.start("visible");
+    if(spellNumber.blue + spellNumber.yellowCardCount > 0){
+      controls.start("visible");
+    }
     setTimeout(() => {
       const plusOrMinus = spellNumber.blue - spellNumber.yellow >= 0 ? -1 : 1;
       const delta: number = spellNumber.yellow - spellNumber.blue;
@@ -57,14 +59,14 @@ const RingPin: React.FC<props> = ({ spellNumber, currentCard }) => {
           <motion.span
             initial="hidden"
             animate={controls}
-            variants={diamondAniUp}
+            variants={pinAniUp}
             custom={customAni}
             className="border-[0.3vw] border-transparent border-b-[0.28vw]  w-0 h-0 relative"
           >
             <motion.span
               initial="hidden"
               animate={controls}
-              variants={diamondAniDown}
+              variants={pinAniDown}
               custom={customAni}
               className="w-0 h-0 absolute left-[-0.34vw] top-[0.27vw] border-[0.33vw] border-transparent border-t-[0.7vw] "
             ></motion.span>
@@ -77,14 +79,14 @@ const RingPin: React.FC<props> = ({ spellNumber, currentCard }) => {
           <motion.span
             initial="hidden"
             animate={controls}
-            variants={diamondAniUp}
+            variants={pinAniUp}
             custom={customAni}
             className="border-[0.3vw] border-transparent border-b-[0.28vw] w-0 h-0 relative"
           >
             <motion.span
               initial="hidden"
               animate={controls}
-              variants={diamondAniDown}
+              variants={pinAniDown}
               custom={customAni}
               className="w-0 h-0 absolute left-[-0.34vw] top-[0.27vw] border-[0.33vw] border-transparent border-t-[0.7vw]  "
             ></motion.span>

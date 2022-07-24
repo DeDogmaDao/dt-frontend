@@ -684,6 +684,34 @@ export const diamondAniDown: Variants = {
     },
   }),
 };
+export const pinAniUp: Variants = {
+  hidden: {
+    borderBottomColor: "#4A4A4A"
+  },
+  visible: (custom) => ({
+    borderBottomColor:
+      custom.spellDiff !== 0
+        ? colorSpell(custom.spellDiff < 0)
+        : colorSpell(custom.color === "yellow"),
+    transition: {
+      duration: 5,
+    },
+  }),
+};
+export const pinAniDown: Variants = {
+  hidden: {
+    borderTopColor:"#4A4A4A"
+  },
+  visible: (custom) => ({
+    borderTopColor:
+      custom.spellDiff !== 0
+        ? colorSpell(custom.spellDiff < 0)
+        : colorSpell(custom.color === "yellow"),
+    transition: {
+      duration: 5,
+    },
+  }),
+};
 
 export const allDiamondAni: Variants = {
   hidden: {},
