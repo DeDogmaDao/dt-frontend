@@ -29,7 +29,7 @@ const Lightning: React.FC<props> = ({doorStage,setDoorStage}) => {
     ctx!.clearRect(0, 0, canvasSize, canvasSize);
     ctx!.fillStyle = "hsla(0, 0%, 10%, 0.2)";
 
-    ctx!.globalAlpha = 1.0;
+    ctx!.globalAlpha = 1;
 
     const renderLightning = () => {
       ctx!.shadowBlur = 0;
@@ -37,6 +37,7 @@ const Lightning: React.FC<props> = ({doorStage,setDoorStage}) => {
       ctx!.clearRect(0, 0, canvasSize, canvasSize);
       ctx!.globalCompositeOperation = "lighter";
       ctx!.shadowBlur = 15;
+      ctx!.lineWidth = 3;
       const Lightning = createLightning(
         groundHeight,
         center,
@@ -56,12 +57,12 @@ const Lightning: React.FC<props> = ({doorStage,setDoorStage}) => {
 
     if(doorStage === 3){
       setTimeout(() => {
-        renderLightning();
         setTimeout(() => {
           setDoorStage(4);
         }, 4000);
       }, 3000);
     }
+    renderLightning();
   }, [doorStage]);
   return (
     <div className="absolute top-[5.8vw] left-[51.4vw] z-110 h-[96] ">
