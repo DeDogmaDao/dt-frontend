@@ -698,7 +698,7 @@ export const pinAniUp: Variants = {
     },
   }),
   blink: {
-    opacity: [1, 0, 1, 0, 1, 0, 1],
+    opacity: [1, 0.5, 1, 0.5, 1, 0.5, 1],
     transition: {
       duration: 5,
       times: [0, 0.15, 0.3, 0.45, 0.6, 0.75, 1],
@@ -719,7 +719,7 @@ export const pinAniDown: Variants = {
     },
   }),
   blink: {
-    opacity: [1, 0, 1, 0, 1, 0, 1],
+    opacity: [1, 0.5, 1, 0.5, 1, 0.5, 1],
     transition: {
       duration: 5,
       times: [0, 0.15, 0.3, 0.45, 0.6, 0.75, 1],
@@ -1321,7 +1321,7 @@ export const auctionPriceAni: Variants = {
 export const opacityBlinkAni: Variants = {
   hidden: {},
   visible: {
-    opacity: [1, 0, 1, 0, 1, 0, 1],
+    opacity: [1, 0.5, 1, 0.5, 1, 0.5, 1],
     transition: {
       duration: 5,
       times: [0, 0.15, 0.3, 0.45, 0.6, 0.75, 1],

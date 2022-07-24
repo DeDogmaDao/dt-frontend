@@ -28,7 +28,7 @@ const Door: React.FC<props> = ({ spellNumber, doorStage, currentCard,setDoorStag
         leftDoorRef.current!.play();
         rightDoorRef.current!.play();
         setDoorStage(2);
-      }, 5000);
+      }, 4000);
     }
   }, [doorStage]);
 
