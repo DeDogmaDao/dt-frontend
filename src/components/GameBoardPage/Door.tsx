@@ -21,7 +21,7 @@ const Door: React.FC<props> = ({ spellNumber, doorStage }) => {
   const leftDoorRef = useRef<HTMLVideoElement>(null);
   useEffect(() => {
     rightDoorRef.current!.playbackRate = 0.5;
-    leftDoorRef.current!.playbackRate = 0.5;
+    leftDoorRef.current!.playbackRate = 0.498;
 
     // if (doorStage === 0) {
     setTimeout(() => {
@@ -34,7 +34,7 @@ const Door: React.FC<props> = ({ spellNumber, doorStage }) => {
     <div className="absolute  top-[10.53vw] left-[59.05vw] w-[15.391vw] h-[26vw] bg-red-500">
       <div className="relative w-full h-full">
         <motion.div
-          className="absolute bottom-0 right-0 w-[7.8vw] h-full z-0"
+          className="absolute bottom-0 right-0 w-[7.788vw] h-full z-0"
           initial="hidden"
           animate={doorAnimControls}
           variants={doorToRightAnimation}
@@ -50,7 +50,7 @@ const Door: React.FC<props> = ({ spellNumber, doorStage }) => {
           </motion.video>
         </motion.div>
         <motion.div
-          className="absolute bottom-0 left-0 w-[7.8vw] h-full z-0 scale-x-[-1]"
+          className="absolute bottom-0 left-0 w-[7.788vw] h-full z-0 scale-x-[-1]"
           initial="hidden"
           animate={doorAnimControls}
           variants={doorToLeftAnimation}
