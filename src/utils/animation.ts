@@ -686,7 +686,7 @@ export const diamondAniDown: Variants = {
 };
 export const pinAniUp: Variants = {
   hidden: {
-    borderBottomColor: "#4A4A4A"
+    borderBottomColor: "#4A4A4A",
   },
   visible: (custom) => ({
     borderBottomColor:
@@ -697,10 +697,17 @@ export const pinAniUp: Variants = {
       duration: 5,
     },
   }),
+  blink: {
+    opacity: [1, 0, 1, 0, 1, 0, 1],
+    transition: {
+      duration: 5,
+      times: [0, 0.15, 0.3, 0.45, 0.6, 0.75, 1],
+    },
+  },
 };
 export const pinAniDown: Variants = {
   hidden: {
-    borderTopColor:"#4A4A4A"
+    borderTopColor: "#4A4A4A",
   },
   visible: (custom) => ({
     borderTopColor:
@@ -711,6 +718,13 @@ export const pinAniDown: Variants = {
       duration: 5,
     },
   }),
+  blink: {
+    opacity: [1, 0, 1, 0, 1, 0, 1],
+    transition: {
+      duration: 5,
+      times: [0, 0.15, 0.3, 0.45, 0.6, 0.75, 1],
+    },
+  },
 };
 
 export const allDiamondAni: Variants = {
@@ -719,10 +733,10 @@ export const allDiamondAni: Variants = {
     scale: [1, 1.2, 1, 1.3, 1, 1.2, 1],
     transition: {
       duration: 3,
-      times:[0,0.15,0.3,0.45,0.6,0.75,1],
-    }
-  })
-}
+      times: [0, 0.15, 0.3, 0.45, 0.6, 0.75, 1],
+    },
+  }),
+};
 
 export const calcFadeAni: Variants = {
   hidden: {
@@ -819,17 +833,17 @@ export const doorToLeftAnimation: Variants = {
 
 export const doorLightAnimation: Variants = {
   hidden: {
-    width:"100%",
-    opacity:0
-  },
-  visible:{
     width: "100%",
-    opacity:1,
-    transition:{
-      duration:5
-    }
-  }
-}
+    opacity: 0,
+  },
+  visible: {
+    width: "100%",
+    opacity: 1,
+    transition: {
+      duration: 5,
+    },
+  },
+};
 
 export const teamMemberAni: Variants = {
   hidden: {
@@ -1302,4 +1316,15 @@ export const auctionPriceAni: Variants = {
       ease: "easeInOut",
     },
   }),
+};
+
+export const opacityBlinkAni: Variants = {
+  hidden: {},
+  visible: {
+    opacity: [1, 0, 1, 0, 1, 0, 1],
+    transition: {
+      duration: 5,
+      times: [0, 0.15, 0.3, 0.45, 0.6, 0.75, 1],
+    },
+  },
 };

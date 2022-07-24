@@ -1,22 +1,24 @@
 import { motion, MotionStyle, useAnimation } from "framer-motion";
 import { useEffect, useState } from "react";
 import { gameCardType, spellNumber } from "../../types/allTypes";
-import { pinAniDown, pinAniUp } from "../../utils/animation";
+import { opacityBlinkAni, pinAniDown, pinAniUp } from "../../utils/animation";
 
 interface props {
   spellNumber: spellNumber;
   currentCard: gameCardType | null;
+  doorStage: number;
 }
-const RingPin: React.FC<props> = ({ spellNumber, currentCard }) => {
+const RingPin: React.FC<props> = ({ spellNumber, currentCard, doorStage }) => {
   const [styles, setStyles] = useState({
     topPin: {} as MotionStyle,
     bottomPin: {} as MotionStyle,
     ring: {} as MotionStyle,
   });
   const controls = useAnimation();
+  const opacityControls = useAnimation();
 
   useEffect(() => {
-    if(spellNumber.blue + spellNumber.yellowCardCount > 0){
+    if (spellNumber.blue + spellNumber.yellowCardCount > 0) {
       controls.start("visible");
     }
     setTimeout(() => {
@@ -31,6 +33,15 @@ const RingPin: React.FC<props> = ({ spellNumber, currentCard }) => {
       });
     }, 3000);
   }, [spellNumber]);
+
+  useEffect(() => {
+    if (doorStage === 0) {
+      setTimeout(() => {
+        opacityControls.start("visible");
+        controls.start("blink");
+      }, 7000);
+    }
+  }, [doorStage]);
 
   const customAni = {
     color: currentCard?.spellGroup,
@@ -47,7 +58,10 @@ const RingPin: React.FC<props> = ({ spellNumber, currentCard }) => {
           src="/img/game/ring.png"
           className="absolute bottom-0 left-0 w-full h-full"
         />
-        <img
+        <motion.img
+          initial="hidden"
+          animate={opacityControls}
+          variants={opacityBlinkAni}
           src="/img/game/ringLight.png"
           className="absolute top-px left-0 w-full h-full z-10"
         />

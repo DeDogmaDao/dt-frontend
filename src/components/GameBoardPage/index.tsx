@@ -42,10 +42,10 @@ const GameBoardPage: React.FC = () => {
         setTimeout(() => {
           setSpellNumber((prevState) => ({
             ...prevState,
-            ["yellow"]: prevState.yellow +  20,
-            ["blue"]: prevState.blue +  20,
+            ["yellow"]: prevState.yellow + 20,
+            ["blue"]: prevState.blue + 20,
           }));
-        }, 6000 + Math.pow(i,2) * 200);
+        }, 6000 + Math.pow(i, 2) * 200);
       }
     }
   }, [doorStage]);
@@ -58,7 +58,11 @@ const GameBoardPage: React.FC = () => {
           className="absolute top-0 left-0 w-full h-full z-10"
         />
         <Diamond spellNumber={spellNumber} currentCard={currentCard} />
-        <Door spellNumber={spellNumber} doorStage={doorStage} currentCard={currentCard} />
+        <Door
+          spellNumber={spellNumber}
+          doorStage={doorStage}
+          currentCard={currentCard}
+        />
         {/* <Lightning doorStage={doorStage} /> */}
         <div
           className="w-full h-full flex justify-center items-start flex-wrap relative z-10"
@@ -71,7 +75,7 @@ const GameBoardPage: React.FC = () => {
           {gameCardData.map((data, index) => {
             return (
               <CardGame
-              key={data.total + data.spellGroup + data.spellValue.length}
+                key={data.total + data.spellGroup + data.spellValue.length}
                 layoutID={"cardGame" + data.id}
                 data={data}
                 cardIndex={index}

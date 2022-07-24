@@ -22,7 +22,6 @@ const Door: React.FC<props> = ({ spellNumber, doorStage, currentCard }) => {
   useEffect(() => {
     rightDoorRef.current!.playbackRate = 0.5;
     leftDoorRef.current!.playbackRate = 0.498;
-
   }, [doorStage]);
 
   return (
@@ -65,7 +64,11 @@ const Door: React.FC<props> = ({ spellNumber, doorStage, currentCard }) => {
           variants={doorToLeftAnimation}
           className="relative w-full h-full"
         >
-          <RingPin spellNumber={spellNumber} currentCard={currentCard} />
+          <RingPin
+            spellNumber={spellNumber}
+            currentCard={currentCard}
+            doorStage={doorStage}
+          />
 
           {/* {spellNumber.blue === spellNumber.yellow && (
             <motion.svg className="absolute overflow-visible top-[13.17vw] left-[7.65vw] z-0">
