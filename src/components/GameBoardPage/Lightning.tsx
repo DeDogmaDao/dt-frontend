@@ -57,12 +57,12 @@ const Lightning: React.FC<props> = ({doorStage,setDoorStage}) => {
 
     if(doorStage === 3){
       setTimeout(() => {
+        renderLightning();
         setTimeout(() => {
           setDoorStage(4);
         }, 4000);
       }, 3000);
     }
-    renderLightning();
   }, [doorStage]);
   return (
     <div className="absolute top-[5.8vw] left-[51.4vw] z-110 h-[96] ">
