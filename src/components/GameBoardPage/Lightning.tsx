@@ -1,10 +1,12 @@
-import { useEffect, useRef } from "react";
+import { Dispatch, SetStateAction, useEffect, useRef } from "react";
 import { createLightning } from "../../utils/util";
 
 interface props {
   doorStage: number;
+  setDoorStage:Dispatch<SetStateAction<number>>;
+
 }
-const Lightning: React.FC<props> = ({doorStage}) => {
+const Lightning: React.FC<props> = ({doorStage,setDoorStage}) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   useEffect(() => {
     const aspectRatio = window.innerWidth / 1536;
@@ -27,7 +29,7 @@ const Lightning: React.FC<props> = ({doorStage}) => {
     ctx!.clearRect(0, 0, canvasSize, canvasSize);
     ctx!.fillStyle = "hsla(0, 0%, 10%, 0.2)";
 
-    ctx!.globalAlpha = 1.0;
+    ctx!.globalAlpha = 1;
 
     const renderLightning = () => {
       ctx!.shadowBlur = 0;
@@ -35,6 +37,7 @@ const Lightning: React.FC<props> = ({doorStage}) => {
       ctx!.clearRect(0, 0, canvasSize, canvasSize);
       ctx!.globalCompositeOperation = "lighter";
       ctx!.shadowBlur = 15;
+      ctx!.lineWidth = 3;
       const Lightning = createLightning(
         groundHeight,
         center,
@@ -49,15 +52,16 @@ const Lightning: React.FC<props> = ({doorStage}) => {
       }
       ctx!.stroke();
       // what da fuck?
-      setTimeout(() => {
         requestAnimationFrame(renderLightning);
-      }, 40);
     };
 
-    if(doorStage === 0){
+    if(doorStage === 3){
       setTimeout(() => {
         renderLightning();
-      }, 5000);
+        setTimeout(() => {
+          setDoorStage(4);
+        }, 4000);
+      }, 3000);
     }
   }, [doorStage]);
   return (

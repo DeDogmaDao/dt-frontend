@@ -37,15 +37,15 @@ const GameBoardPage: React.FC = () => {
 
   // we added here a for loop to change the behavior of spell transfer on winner animation
   useEffect(() => {
-    if (doorStage === 0) {
+    if (doorStage === 2) {
       for (let i = 1; i < 5; i++) {
         setTimeout(() => {
           setSpellNumber((prevState) => ({
             ...prevState,
-            ["yellow"]: prevState.yellow +  20,
-            ["blue"]: prevState.blue +  20,
+            ["yellow"]: prevState.yellow + 20,
+            ["blue"]: prevState.blue + 20,
           }));
-        }, 6000 + Math.pow(i,2) * 200);
+        }, 2000 + Math.pow(i, 2) * 200);
       }
     }
   }, [doorStage]);
@@ -57,9 +57,14 @@ const GameBoardPage: React.FC = () => {
           src="/img/game/main.png"
           className="absolute top-0 left-0 w-full h-full z-10"
         />
-        <Diamond spellNumber={spellNumber} currentCard={currentCard} />
-        <Door spellNumber={spellNumber} doorStage={doorStage} />
-        <Lightning doorStage={doorStage} />
+        <Diamond spellNumber={spellNumber} currentCard={currentCard} doorStage={doorStage} setDoorStage={setDoorStage} />
+        <Door
+          spellNumber={spellNumber}
+          doorStage={doorStage}
+          currentCard={currentCard}
+          setDoorStage={setDoorStage}
+        />
+        {doorStage !== 4 && (<Lightning doorStage={doorStage} setDoorStage={setDoorStage} />)}
         <div
           className="w-full h-full flex justify-center items-start flex-wrap relative z-10"
           style={{
@@ -71,7 +76,7 @@ const GameBoardPage: React.FC = () => {
           {gameCardData.map((data, index) => {
             return (
               <CardGame
-              key={data.total + data.spellGroup + data.spellValue.length}
+                key={data.total + data.spellGroup + data.spellValue.length}
                 layoutID={"cardGame" + data.id}
                 data={data}
                 cardIndex={index}

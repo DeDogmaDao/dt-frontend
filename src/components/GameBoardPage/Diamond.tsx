@@ -4,28 +4,42 @@ import {
   useMotionValue,
   useTransform,
 } from "framer-motion";
-import { useEffect } from "react";
+import { Dispatch, SetStateAction, useEffect } from "react";
 import { gameCardType, spellNumber } from "../../types/allTypes";
-import { allDiamondAni, diamondAniDown, diamondAniUp } from "../../utils/animation";
+import {
+  allDiamondAni,
+  diamondAniDown,
+  diamondAniUp,
+} from "../../utils/animation";
 import { colorSpell, diamondSpells } from "../../utils/game";
 import Spell from "./Spell";
 
 interface props {
   spellNumber: spellNumber;
   currentCard: gameCardType | null;
+  doorStage: number;
+  setDoorStage: Dispatch<SetStateAction<number>>;
 }
 
-const Diamond: React.FC<props> = ({ spellNumber, currentCard }) => {
+const Diamond: React.FC<props> = ({
+  spellNumber,
+  currentCard,
+  doorStage,
+  setDoorStage,
+}) => {
   const controls = useAnimation();
   const allControls = useAnimation();
   useEffect(() => {
     controls.start("visible");
-    if(currentCard?.isWinner && spellNumber[currentCard.spellGroup] === currentCard.total){
-      setTimeout(() => {
-        allControls.start("visible")
-      }, 8000);
-    }
   }, [spellNumber]);
+  useEffect(() => {
+    if (doorStage === 2) {
+      setTimeout(() => {
+        allControls.start("visible");
+        setDoorStage(3);
+      }, 4800);
+    }
+  }, [doorStage]);
   return (
     <>
       <motion.div className="w-[1.8vw] h-[3vw] absolute top-[2.55vw] right-[32.4vw] z-100">
@@ -49,10 +63,11 @@ const Diamond: React.FC<props> = ({ spellNumber, currentCard }) => {
       </motion.div>
       <motion.div className="w-[1.8vw] h-[3vw] absolute top-[2.55vw] right-[32.4vw] hover:scale-125 duration-300 z-[1000]">
         <motion.div
-                    initial="hidden"
-                    animate={allControls}
-                    variants={allDiamondAni}
-        className="w-ful h-full relative flex justify-center items-center">
+          initial="hidden"
+          animate={allControls}
+          variants={allDiamondAni}
+          className="w-ful h-full relative flex justify-center items-center"
+        >
           <motion.span
             initial="hidden"
             animate={controls}

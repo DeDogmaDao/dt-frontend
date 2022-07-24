@@ -665,7 +665,7 @@ export const diamondAniUp: Variants = {
         ? colorSpell(custom.spellDiff < 0)
         : colorSpell(custom.color === "yellow"),
     transition: {
-      duration: 2,
+      duration: 5,
     },
   }),
 };
@@ -680,9 +680,51 @@ export const diamondAniDown: Variants = {
         ? colorSpell(custom.spellDiff < 0)
         : colorSpell(custom.color === "yellow"),
     transition: {
-      duration: 2,
+      duration: 5,
     },
   }),
+};
+export const pinAniUp: Variants = {
+  hidden: {
+    borderBottomColor: "#4A4A4A",
+  },
+  visible: (custom) => ({
+    borderBottomColor:
+      custom.spellDiff !== 0
+        ? colorSpell(custom.spellDiff < 0)
+        : colorSpell(custom.color === "yellow"),
+    transition: {
+      duration: 5,
+    },
+  }),
+  blink: {
+    opacity: [1, 0.5, 1, 0.5, 1, 0.5, 1],
+    transition: {
+      duration: 5,
+      times: [0, 0.15, 0.3, 0.45, 0.6, 0.75, 1],
+    },
+  },
+};
+export const pinAniDown: Variants = {
+  hidden: {
+    borderTopColor: "#4A4A4A",
+  },
+  visible: (custom) => ({
+    borderTopColor:
+      custom.spellDiff !== 0
+        ? colorSpell(custom.spellDiff < 0)
+        : colorSpell(custom.color === "yellow"),
+    transition: {
+      duration: 5,
+    },
+  }),
+  blink: {
+    opacity: [1, 0.5, 1, 0.5, 1, 0.5, 1],
+    transition: {
+      duration: 5,
+      times: [0, 0.15, 0.3, 0.45, 0.6, 0.75, 1],
+    },
+  },
 };
 
 export const allDiamondAni: Variants = {
@@ -691,10 +733,10 @@ export const allDiamondAni: Variants = {
     scale: [1, 1.2, 1, 1.3, 1, 1.2, 1],
     transition: {
       duration: 3,
-      times:[0,0.15,0.3,0.45,0.6,0.75,1],
-    }
-  })
-}
+      times: [0, 0.15, 0.3, 0.45, 0.6, 0.75, 1],
+    },
+  }),
+};
 
 export const calcFadeAni: Variants = {
   hidden: {
@@ -774,7 +816,7 @@ export const doorToRightAnimation: Variants = {
     },
   },
 };
-export const doorToLefttAnimation: Variants = {
+export const doorToLeftAnimation: Variants = {
   hidden: {
     translateX: "0vw",
     scaleX: "-1",
@@ -785,6 +827,20 @@ export const doorToLefttAnimation: Variants = {
       duration: 3,
       mass: 10,
       ease: "easeIn",
+    },
+  },
+};
+
+export const doorLightAnimation: Variants = {
+  hidden: {
+    width: "100%",
+    opacity: 0,
+  },
+  visible: {
+    width: "100%",
+    opacity: 1,
+    transition: {
+      duration: 5,
     },
   },
 };
@@ -1260,4 +1316,15 @@ export const auctionPriceAni: Variants = {
       ease: "easeInOut",
     },
   }),
+};
+
+export const opacityBlinkAni: Variants = {
+  hidden: {},
+  visible: {
+    opacity: [1, 0.5, 1, 0.5, 1, 0.5, 1],
+    transition: {
+      duration: 5,
+      times: [0, 0.15, 0.3, 0.45, 0.6, 0.75, 1],
+    },
+  },
 };
