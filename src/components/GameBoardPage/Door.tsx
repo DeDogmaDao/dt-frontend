@@ -48,23 +48,6 @@ const Door: React.FC<props> = ({ spellNumber, doorStage }) => {
           >
             <source src={"/img/game/door.mp4"} type="video/mp4" />
           </motion.video>
-          {/* <span className="w-full h-full relative">
-            <motion.img
-              src="/img/game/door.png"
-              className="w-full h-full z-0"
-            />
-            <motion.span
-              initial="hidden"
-              animate={lightControls}
-              variants={doorLightAnimation}
-              className="absolute left-0 bottom-0 overflow-hidden"
-            >
-              <motion.img
-                src="/img/game/light.png"
-                className="w-[7.7vw] h-[26vw] max-w-[100vw] float-left"
-              />
-            </motion.span>
-          </span> */}
         </motion.div>
         <motion.div
           className="absolute bottom-0 left-0 w-[7.8vw] h-full z-0 scale-x-[-1]"
@@ -81,24 +64,6 @@ const Door: React.FC<props> = ({ spellNumber, doorStage }) => {
           >
             <source src={"/img/game/door.mp4"} type="video/mp4" />
           </motion.video>
-          {/* <span className="w-full h-full relative">
-            <motion.img
-              src="/img/game/door.png"
-              className="w-full h-full z-0 "
-            />
-              <motion.span
-              initial="hidden"
-              animate={lightControls}
-              variants={doorLightAnimation}
-              className="absolute left-0 bottom-0 overflow-hidden"
-            >
-
-            <img
-              src="/img/game/light.png"
-              className="w-[7.7vw] h-[26vw] max-w-[100vw] float-left "
-              />
-              </motion.span>
-          </span> */}
         </motion.div>
 
         <motion.div
