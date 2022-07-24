@@ -43,7 +43,7 @@ const Door: React.FC<props> = ({ spellNumber, doorStage,currentCard }) => {
           <motion.video
             ref={rightDoorRef}
             autoPlay
-            loop
+            
             muted
             className="w-full h-full"
           >
@@ -58,7 +58,7 @@ const Door: React.FC<props> = ({ spellNumber, doorStage,currentCard }) => {
         >
           <motion.video
             ref={leftDoorRef}
-            loop
+            
             autoPlay
             muted
             className="w-full h-full"
