@@ -30,7 +30,9 @@ const Door: React.FC<props> = ({ spellNumber, doorStage, currentCard,setDoorStag
         setDoorStage(2);
       }, 4000);
     }
-    
+    if(doorStage===4){
+      doorAnimControls.start("visible");
+    }
   }, [doorStage]);
 
   return (
