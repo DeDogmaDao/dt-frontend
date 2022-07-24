@@ -52,10 +52,10 @@ const Lightning: React.FC<props> = ({doorStage}) => {
         requestAnimationFrame(renderLightning);
     };
 
-    if(doorStage === 0){
+    if(doorStage === 3){
       setTimeout(() => {
         renderLightning();
-      }, 5000);
+      }, 3000);
     }
   }, [doorStage]);
   return (

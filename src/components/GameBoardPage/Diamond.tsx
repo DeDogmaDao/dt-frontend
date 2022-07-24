@@ -4,7 +4,7 @@ import {
   useMotionValue,
   useTransform,
 } from "framer-motion";
-import { useEffect } from "react";
+import { Dispatch, SetStateAction, useEffect } from "react";
 import { gameCardType, spellNumber } from "../../types/allTypes";
 import {
   allDiamondAni,
@@ -18,21 +18,28 @@ interface props {
   spellNumber: spellNumber;
   currentCard: gameCardType | null;
   doorStage: number;
+  setDoorStage: Dispatch<SetStateAction<number>>;
 }
 
-const Diamond: React.FC<props> = ({ spellNumber, currentCard,doorStage }) => {
+const Diamond: React.FC<props> = ({
+  spellNumber,
+  currentCard,
+  doorStage,
+  setDoorStage,
+}) => {
   const controls = useAnimation();
   const allControls = useAnimation();
   useEffect(() => {
     controls.start("visible");
   }, [spellNumber]);
-  useEffect(()=>{
-    if(doorStage===2){
+  useEffect(() => {
+    if (doorStage === 2) {
       setTimeout(() => {
         allControls.start("visible");
+        setDoorStage(3);
       }, 4800);
     }
-  },[doorStage])
+  }, [doorStage]);
   return (
     <>
       <motion.div className="w-[1.8vw] h-[3vw] absolute top-[2.55vw] right-[32.4vw] z-100">
