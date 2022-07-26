@@ -57,14 +57,26 @@ const GameBoardPage: React.FC = () => {
           src="/img/game/main.png"
           className="absolute top-0 left-0 w-full h-full z-10"
         />
-        <Diamond spellNumber={spellNumber} currentCard={currentCard} doorStage={doorStage} setDoorStage={setDoorStage} />
+        <Diamond
+          spellNumber={spellNumber}
+          currentCard={currentCard}
+          doorStage={doorStage}
+          setDoorStage={setDoorStage}
+        />
         <Door
           spellNumber={spellNumber}
           doorStage={doorStage}
           currentCard={currentCard}
           setDoorStage={setDoorStage}
         />
-        {doorStage !== 5 && (<Lightning doorStage={doorStage} setDoorStage={setDoorStage} />)}
+        {doorStage !== 5 && (
+          <Lightning
+            doorStage={doorStage}
+            setDoorStage={setDoorStage}
+            currentCard={currentCard}
+            spellNumber={spellNumber}
+          />
+        )}
         <div
           className="w-full h-full flex justify-center items-start flex-wrap relative z-10"
           style={{
