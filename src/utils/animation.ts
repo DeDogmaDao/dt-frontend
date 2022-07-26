@@ -700,7 +700,7 @@ export const pinAniUp: Variants = {
   blink: {
     opacity: [1, 0.5, 1, 0.5, 1, 0.5, 1],
     transition: {
-      duration: 1,
+      duration: 2,
       times: [0, 0.15, 0.3, 0.45, 0.6, 0.75, 1],
     },
   },
@@ -721,38 +721,45 @@ export const pinAniDown: Variants = {
   blink: {
     opacity: [1, 0.5, 1, 0.5, 1, 0.5, 1],
     transition: {
-      duration: 1,
+      duration: 2,
       times: [0, 0.15, 0.3, 0.45, 0.6, 0.75, 1],
     },
   },
 };
 export const ringPinAni: Variants = {
-  hidden:{
-    boxShadow:`0px 0px 5px 3px #fff`
+  hidden: {
+    boxShadow: `0px 0px 5px 3px #fff`,
   },
-  visible:(custom)=>({
-    boxShadow:`0px 0px 5px 3px ${custom.spellDiff !== 0
-      ? colorSpell(custom.spellDiff < 0)
-      : colorSpell(custom.color === "yellow")}`,
-      transition: {
-        duration: 5,
-      }
+  visible: (custom) => ({
+    boxShadow: `0px 0px 5px 3px ${
+      custom.spellDiff !== 0
+        ? colorSpell(custom.spellDiff < 0)
+        : colorSpell(custom.color === "yellow")
+    }`,
+    transition: {
+      duration: 5,
+    },
   }),
 
-  blink:(custom)=>{
-    const color = custom.spellDiff !== 0
-    ? colorSpell(custom.spellDiff < 0)
-    : colorSpell(custom.color === "yellow");
+  blink: (custom) => {
+    const color =
+      custom.spellDiff !== 0
+        ? colorSpell(custom.spellDiff < 0)
+        : colorSpell(custom.color === "yellow");
 
     return {
-      boxShadow:[`0px 0px 5px 3px ${color}`,`0px 0px 30px 30px ${color}`,`0px 0px 5px 3px ${color}`],
+      boxShadow: [
+        `0px 0px 5px 3px ${color}`,
+        `0px 0px 30px 30px ${color}`,
+        `0px 0px 5px 3px ${color}`,
+      ],
       transition: {
         duration: 2,
-        times: [0,0.2,1],
-      }
-    }
-  }
-}
+        times: [0, 0.2, 1],
+      },
+    };
+  },
+};
 
 export const opacityBlinkAni: Variants = {
   hidden: {},
@@ -1355,5 +1362,3 @@ export const auctionPriceAni: Variants = {
     },
   }),
 };
-
-
