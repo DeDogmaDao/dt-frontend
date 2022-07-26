@@ -695,6 +695,7 @@ export const pinAniUp: Variants = {
         : colorSpell(custom.color === "yellow"),
     transition: {
       duration: 5,
+      delay:2,
     },
   }),
   blink: {
@@ -716,6 +717,7 @@ export const pinAniDown: Variants = {
         : colorSpell(custom.color === "yellow"),
     transition: {
       duration: 5,
+      delay:2,
     },
   }),
   blink: {
@@ -738,6 +740,7 @@ export const ringPinAni: Variants = {
     }`,
     transition: {
       duration: 5,
+      delay:2,
     },
   }),
 
