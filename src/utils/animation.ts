@@ -727,13 +727,15 @@ export const pinAniDown: Variants = {
   },
 };
 export const ringPinAni: Variants = {
-  hidden:{},
+  hidden:{
+    boxShadow:`0px 0px 5px 3px #fff`
+  },
   visible:(custom)=>({
     boxShadow:`0px 0px 5px 3px ${custom.spellDiff !== 0
       ? colorSpell(custom.spellDiff < 0)
       : colorSpell(custom.color === "yellow")}`,
       transition: {
-        delay:1
+        duration: 5,
       }
   })
 }

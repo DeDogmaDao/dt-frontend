@@ -16,11 +16,13 @@ const RingPin: React.FC<props> = ({ spellNumber, currentCard, doorStage, setDoor
     ring: {} as MotionStyle,
   });
   const controls = useAnimation();
+  const ringPinControls = useAnimation();
   const opacityControls = useAnimation();
 
   useEffect(() => {
     if (spellNumber.blue + spellNumber.yellowCardCount > 0) {
       controls.start("visible");
+      ringPinControls.start("visible");
     }
     setTimeout(() => {
       const plusOrMinus = spellNumber.blue - spellNumber.yellow >= 0 ? -1 : 1;
@@ -53,14 +55,16 @@ const RingPin: React.FC<props> = ({ spellNumber, currentCard, doorStage, setDoor
   return (
     <motion.div
       style={styles.ring}
-      initial="hidden"
-      animate={"visible"}
-      variants={ringPinAni}
-      custom={customAni}
+
       className="absolute top-[12vw] left-1/2 ml-[-0.8vw] w-[1.6vw] h-[1.6vw] z-10 duration-2000 rounded-full
        "
     >
-      <div className="relative w-full h-full">
+      <motion.div
+            initial="hidden"
+            animate={ringPinControls}
+            variants={ringPinAni}
+            custom={customAni}
+      className="relative w-full h-full rounded-full">
         <img
           src="/img/game/ring.png"
           className="absolute bottom-0 left-0 w-full h-full"
@@ -113,7 +117,7 @@ const RingPin: React.FC<props> = ({ spellNumber, currentCard, doorStage, setDoor
             ></motion.span>
           </motion.span>
         </motion.div>
-      </div>
+      </motion.div>
     </motion.div>
   );
 };
