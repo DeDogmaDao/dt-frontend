@@ -1,7 +1,7 @@
 import { motion, MotionStyle, useAnimation } from "framer-motion";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { gameCardType, spellNumber } from "../../types/allTypes";
-import { opacityBlinkAni, pinAniDown, pinAniUp } from "../../utils/animation";
+import { opacityBlinkAni, pinAniDown, pinAniUp, ringPinAni } from "../../utils/animation";
 
 interface props {
   spellNumber: spellNumber;
@@ -53,7 +53,12 @@ const RingPin: React.FC<props> = ({ spellNumber, currentCard, doorStage, setDoor
   return (
     <motion.div
       style={styles.ring}
-      className="absolute top-[12vw] left-1/2 ml-[-0.8vw] w-[1.6vw] h-[1.6vw] z-10 duration-2000"
+      initial="hidden"
+      animate={"visible"}
+      variants={ringPinAni}
+      custom={customAni}
+      className="absolute top-[12vw] left-1/2 ml-[-0.8vw] w-[1.6vw] h-[1.6vw] z-10 duration-2000 rounded-full
+       "
     >
       <div className="relative w-full h-full">
         <img
