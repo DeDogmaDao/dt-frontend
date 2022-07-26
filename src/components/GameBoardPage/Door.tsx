@@ -39,7 +39,7 @@ const Door: React.FC<props> = ({ spellNumber, doorStage, currentCard,setDoorStag
   }, [doorStage]);
 
   return (
-    <div className="absolute  top-[10.53vw] left-[59.05vw] w-[15.391vw] h-[26vw] bg-red-500">
+    <div className="absolute  top-[10.53vw] left-[59.05vw] w-[15.391vw] h-[26vw] bg-neutral-900">
       <div className="relative w-full h-full">
         <motion.div
           className="absolute bottom-0 right-0 w-[7.788vw] h-full z-0"
@@ -83,21 +83,6 @@ const Door: React.FC<props> = ({ spellNumber, doorStage, currentCard,setDoorStag
             setDoorStage={setDoorStage}
           />
 
-          {/* {spellNumber.blue === spellNumber.yellow && (
-            <motion.svg className="absolute overflow-visible top-[13.17vw] left-[7.65vw] z-0">
-              <motion.circle
-                initial="hidden"
-                animate="visible"
-                variants={doorRingAni}
-                cx="0"
-                cy="0"
-                r="0.68vw"
-                stroke="#16FBFF"
-                strokeWidth="0.4vw"
-                fill="none"
-              />
-            </motion.svg>
-          )} */}
         </motion.div>
       </div>
     </div>
