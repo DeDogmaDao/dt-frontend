@@ -60,7 +60,7 @@ const Lightning: React.FC<props> = ({doorStage,setDoorStage}) => {
         renderLightning();
         setTimeout(() => {
           setDoorStage(4);
-        }, 4000);
+        }, 1500);
       }, 3000);
     }
   }, [doorStage]);

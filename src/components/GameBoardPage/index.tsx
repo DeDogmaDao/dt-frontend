@@ -64,7 +64,7 @@ const GameBoardPage: React.FC = () => {
           currentCard={currentCard}
           setDoorStage={setDoorStage}
         />
-        {doorStage !== 4 && (<Lightning doorStage={doorStage} setDoorStage={setDoorStage} />)}
+        {doorStage !== 5 && (<Lightning doorStage={doorStage} setDoorStage={setDoorStage} />)}
         <div
           className="w-full h-full flex justify-center items-start flex-wrap relative z-10"
           style={{

@@ -750,7 +750,7 @@ export const ringPinAni: Variants = {
     return {
       boxShadow: [
         `0px 0px 5px 3px ${color}`,
-        `0px 0px 30px 30px ${color}`,
+        `0px 0px 200px 200px ${color}`,
         `0px 0px 5px 3px ${color}`,
       ],
       transition: {
