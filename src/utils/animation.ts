@@ -737,7 +737,21 @@ export const ringPinAni: Variants = {
       transition: {
         duration: 5,
       }
-  })
+  }),
+
+  blink:(custom)=>{
+    const color = custom.spellDiff !== 0
+    ? colorSpell(custom.spellDiff < 0)
+    : colorSpell(custom.color === "yellow");
+
+    return {
+      boxShadow:[`0px 0px 5px 3px ${color}`,`0px 0px 30px 30px ${color}`,`0px 0px 5px 3px ${color}`],
+      transition: {
+        duration: 2,
+        times: [0,0.2,1],
+      }
+    }
+  }
 }
 
 export const opacityBlinkAni: Variants = {

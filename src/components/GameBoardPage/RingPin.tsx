@@ -36,12 +36,13 @@ const RingPin: React.FC<props> = ({ spellNumber, currentCard, doorStage, setDoor
       });
     }, 3000);
   }, [spellNumber]);
-
+  
   useEffect(() => {
     if (doorStage === 0) {
       setTimeout(() => {
         opacityControls.start("visible");
         controls.start("blink");
+        ringPinControls.start("blink");
         setDoorStage(1);
       }, 7000);
     }
