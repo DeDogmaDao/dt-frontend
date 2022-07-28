@@ -52,7 +52,7 @@ const Door: React.FC<props> = ({ spellNumber, doorStage, currentCard,setDoorStag
             muted
             className="w-full h-full"
           >
-            <source src={"/img/game/door.mp4"} type="video/mp4" />
+            <source src={"/img/game/purpleDoor.mp4"} type="video/mp4" />
           </motion.video>
         </motion.div>
         <motion.div
@@ -66,7 +66,7 @@ const Door: React.FC<props> = ({ spellNumber, doorStage, currentCard,setDoorStag
             muted
             className="w-full h-full"
           >
-            <source src={"/img/game/door.mp4"} type="video/mp4" />
+            <source src={"/img/game/yellowDoor.mp4"} type="video/mp4" />
           </motion.video>
         </motion.div>
 

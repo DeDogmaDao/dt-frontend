@@ -759,8 +759,8 @@ export const ringPinAni: Variants = {
         `0px 0px 5px 3px ${color}`,
       ],
       transition: {
-        duration: 2,
-        times: [0, 0.2,0.4,0.6, 1],
+        duration: 2.5,
+        times: [0, 0.3,0.4,0.6, 1],
       },
     };
   },
