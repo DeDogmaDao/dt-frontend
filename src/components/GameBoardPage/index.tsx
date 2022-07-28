@@ -1,5 +1,5 @@
 import { LayoutGroup } from "framer-motion";
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { gameCardData } from "../../store/allData";
 import CardGame from "./CardGame";
 import DoorSpells from "./DoorSpells";
@@ -35,16 +35,6 @@ const GameBoardPage: React.FC = () => {
 
   const [doorStage, setDoorStage] = useState(-1);
 
-  const [winnerCard, setWinnerCard] = useState<gameCardType | null>(null);
-
-  useEffect(()=>{
-    gameCardData.forEach(card=>{
-      if(card.isWinner === true){
-      setWinnerCard(card);
-      }
-    })
-  },[])
-
   // we added here a for loop to change the behavior of spell transfer on winner animation
   useEffect(() => {
     if (doorStage === 2) {
@@ -60,6 +50,10 @@ const GameBoardPage: React.FC = () => {
     }
   }, [doorStage]);
 
+  const videoSource = useMemo(() => {
+    return gameCardData.find((card) => card.isWinner);
+  }, [gameCardData]);
+
   return (
     <LayoutGroup>
       <div className="flex justify-between items-center w-screen h-[calc(900/1920*100vw)] relative">
@@ -73,13 +67,15 @@ const GameBoardPage: React.FC = () => {
           doorStage={doorStage}
           setDoorStage={setDoorStage}
         />
-        <Door
-          spellNumber={spellNumber}
-          doorStage={doorStage}
-          currentCard={currentCard}
-          setDoorStage={setDoorStage}
-          winnerCard={winnerCard}
-        />
+        {videoSource && (
+          <Door
+            spellNumber={spellNumber}
+            doorStage={doorStage}
+            currentCard={currentCard}
+            setDoorStage={setDoorStage}
+            videoSource={videoSource}
+          />
+        )}
         {doorStage !== 5 && (
           <Lightning
             doorStage={doorStage}

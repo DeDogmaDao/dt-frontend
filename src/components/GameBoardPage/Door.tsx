@@ -5,6 +5,7 @@ import {
   SetStateAction,
   useEffect,
   useRef,
+  useState,
 } from "react";
 import { gameCardType, spellNumber } from "../../types/allTypes";
 import {
@@ -20,7 +21,7 @@ interface props {
   doorStage: number;
   currentCard: gameCardType | null;
   setDoorStage: Dispatch<SetStateAction<number>>;
-  winnerCard: gameCardType | null;
+  videoSource: gameCardType;
 }
 
 const Door: React.FC<props> = ({
@@ -28,7 +29,7 @@ const Door: React.FC<props> = ({
   doorStage,
   currentCard,
   setDoorStage,
-  winnerCard,
+  videoSource,
 }) => {
   const doorAnimControls = useAnimation();
   const rightDoorRef = useRef<HTMLVideoElement>(null);
@@ -63,11 +64,7 @@ const Door: React.FC<props> = ({
           <motion.video ref={rightDoorRef} muted className="w-full h-full">
             <source
               src={
-                winnerCard
-                  ? winnerCard.spellGroup === "blue"
-                    ? "/img/game/purpleDoor.mp4"
-                    : "/img/game/yellowDoor.mp4"
-                  : ""
+                `/img/game/${videoSource.spellGroup}Door.mp4`
               }
               type="video/mp4"
             />
@@ -80,16 +77,7 @@ const Door: React.FC<props> = ({
           variants={doorToLeftAnimation}
         >
           <motion.video ref={leftDoorRef} muted className="w-full h-full">
-            <source
-              src={
-                winnerCard
-                  ? winnerCard.spellGroup === "blue"
-                    ? "/img/game/purpleDoor.mp4"
-                    : "/img/game/yellowDoor.mp4"
-                  : ""
-              }
-              type="video/mp4"
-            />
+            <source src={`/img/game/${videoSource.spellGroup}Door.mp4`} type="video/mp4" />
           </motion.video>
         </motion.div>
 
