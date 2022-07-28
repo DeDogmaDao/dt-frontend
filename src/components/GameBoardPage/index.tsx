@@ -1,5 +1,5 @@
 import { LayoutGroup } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { gameCardData } from "../../store/allData";
 import CardGame from "./CardGame";
 import DoorSpells from "./DoorSpells";
@@ -35,6 +35,16 @@ const GameBoardPage: React.FC = () => {
 
   const [doorStage, setDoorStage] = useState(-1);
 
+  const [winnerCard, setWinnerCard] = useState<gameCardType | null>(null);
+
+  useEffect(()=>{
+    gameCardData.forEach(card=>{
+      if(card.isWinner === true){
+      setWinnerCard(card);
+      }
+    })
+  },[])
+
   // we added here a for loop to change the behavior of spell transfer on winner animation
   useEffect(() => {
     if (doorStage === 2) {
@@ -68,6 +78,7 @@ const GameBoardPage: React.FC = () => {
           doorStage={doorStage}
           currentCard={currentCard}
           setDoorStage={setDoorStage}
+          winnerCard={winnerCard}
         />
         {doorStage !== 5 && (
           <Lightning

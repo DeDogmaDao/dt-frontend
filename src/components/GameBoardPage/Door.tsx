@@ -1,5 +1,11 @@
 import { motion, useAnimation } from "framer-motion";
-import { Dispatch, SetStateAction, useEffect, useRef } from "react";
+import {
+  Dispatch,
+  MutableRefObject,
+  SetStateAction,
+  useEffect,
+  useRef,
+} from "react";
 import { gameCardType, spellNumber } from "../../types/allTypes";
 import {
   doorLightAnimation,
@@ -13,10 +19,17 @@ interface props {
   spellNumber: spellNumber;
   doorStage: number;
   currentCard: gameCardType | null;
-  setDoorStage:Dispatch<SetStateAction<number>>;
+  setDoorStage: Dispatch<SetStateAction<number>>;
+  winnerCard: gameCardType | null;
 }
 
-const Door: React.FC<props> = ({ spellNumber, doorStage, currentCard,setDoorStage }) => {
+const Door: React.FC<props> = ({
+  spellNumber,
+  doorStage,
+  currentCard,
+  setDoorStage,
+  winnerCard,
+}) => {
   const doorAnimControls = useAnimation();
   const rightDoorRef = useRef<HTMLVideoElement>(null);
   const leftDoorRef = useRef<HTMLVideoElement>(null);
@@ -30,7 +43,7 @@ const Door: React.FC<props> = ({ spellNumber, doorStage, currentCard,setDoorStag
         setDoorStage(2);
       }, 1000);
     }
-    if(doorStage===4){
+    if (doorStage === 4) {
       doorAnimControls.start("visible");
       setTimeout(() => {
         setDoorStage(5);
@@ -47,12 +60,17 @@ const Door: React.FC<props> = ({ spellNumber, doorStage, currentCard,setDoorStag
           animate={doorAnimControls}
           variants={doorToRightAnimation}
         >
-          <motion.video
-            ref={rightDoorRef}
-            muted
-            className="w-full h-full"
-          >
-            <source src={"/img/game/purpleDoor.mp4"} type="video/mp4" />
+          <motion.video ref={rightDoorRef} muted className="w-full h-full">
+            <source
+              src={
+                winnerCard
+                  ? winnerCard.spellGroup === "blue"
+                    ? "/img/game/purpleDoor.mp4"
+                    : "/img/game/yellowDoor.mp4"
+                  : ""
+              }
+              type="video/mp4"
+            />
           </motion.video>
         </motion.div>
         <motion.div
@@ -61,12 +79,17 @@ const Door: React.FC<props> = ({ spellNumber, doorStage, currentCard,setDoorStag
           animate={doorAnimControls}
           variants={doorToLeftAnimation}
         >
-          <motion.video
-            ref={leftDoorRef}
-            muted
-            className="w-full h-full"
-          >
-            <source src={"/img/game/yellowDoor.mp4"} type="video/mp4" />
+          <motion.video ref={leftDoorRef} muted className="w-full h-full">
+            <source
+              src={
+                winnerCard
+                  ? winnerCard.spellGroup === "blue"
+                    ? "/img/game/purpleDoor.mp4"
+                    : "/img/game/yellowDoor.mp4"
+                  : ""
+              }
+              type="video/mp4"
+            />
           </motion.video>
         </motion.div>
 
@@ -82,7 +105,6 @@ const Door: React.FC<props> = ({ spellNumber, doorStage, currentCard,setDoorStag
             doorStage={doorStage}
             setDoorStage={setDoorStage}
           />
-
         </motion.div>
       </div>
     </div>
