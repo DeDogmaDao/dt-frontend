@@ -63,6 +63,7 @@ export interface gameCardType {
   individualNum: number;
   cardNum: number;
   isWinner: boolean;
+  type:"human"|"enchant"| "beast_rider";
 }
 
 export interface topRightPosition {

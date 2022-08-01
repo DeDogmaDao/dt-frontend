@@ -1,12 +1,27 @@
-import { useEffect, useRef } from "react";
+import { Dispatch, SetStateAction, useEffect, useRef } from "react";
+import { gameCardType, spellNumber } from "../../types/allTypes";
+import { colorSpell } from "../../utils/game";
 import { createLightning } from "../../utils/util";
 
 interface props {
   doorStage: number;
+  setDoorStage: Dispatch<SetStateAction<number>>;
+  spellNumber: spellNumber;
+  currentCard: gameCardType | null;
 }
-const Lightning: React.FC<props> = ({doorStage}) => {
+const Lightning: React.FC<props> = ({
+  doorStage,
+  setDoorStage,
+  spellNumber,
+  currentCard,
+}) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   useEffect(() => {
+    const spellDiff = spellNumber.blue - spellNumber.yellow;
+    const spellColor =
+      spellDiff !== 0
+        ? colorSpell(spellDiff < 0)
+        : colorSpell(currentCard?.spellGroup === "yellow");
     const aspectRatio = window.innerWidth / 1536;
     const canvasSize = 470 * aspectRatio;
     canvasRef.current!.width = canvasSize;
@@ -15,7 +30,7 @@ const Lightning: React.FC<props> = ({doorStage}) => {
     const center = { x: canvasSize / 2, y: 0 };
     const minSegmentHeight = 5;
     const groundHeight = canvasSize - 0;
-    const color = "hsl(180,80%,80%)";
+    const color = spellColor;
     const roughness = 2;
     const maxDifference = canvasSize / 5;
     ctx!.globalCompositeOperation = "lighter";
@@ -25,9 +40,9 @@ const Lightning: React.FC<props> = ({doorStage}) => {
     ctx!.fillStyle = color;
 
     ctx!.clearRect(0, 0, canvasSize, canvasSize);
-    ctx!.fillStyle = "hsla(0, 0%, 10%, 0.2)";
+    ctx!.fillStyle = spellColor;
 
-    ctx!.globalAlpha = 1.0;
+    ctx!.globalAlpha = 1;
 
     const renderLightning = () => {
       ctx!.shadowBlur = 0;
@@ -35,6 +50,7 @@ const Lightning: React.FC<props> = ({doorStage}) => {
       ctx!.clearRect(0, 0, canvasSize, canvasSize);
       ctx!.globalCompositeOperation = "lighter";
       ctx!.shadowBlur = 15;
+      ctx!.lineWidth = 3;
       const Lightning = createLightning(
         groundHeight,
         center,
@@ -49,15 +65,16 @@ const Lightning: React.FC<props> = ({doorStage}) => {
       }
       ctx!.stroke();
       // what da fuck?
-      setTimeout(() => {
-        requestAnimationFrame(renderLightning);
-      }, 40);
+      requestAnimationFrame(renderLightning);
     };
 
-    if(doorStage === 0){
+    if (doorStage === 3) {
       setTimeout(() => {
         renderLightning();
-      }, 5000);
+        setTimeout(() => {
+          setDoorStage(4);
+        }, 1500);
+      }, 3000);
     }
   }, [doorStage]);
   return (

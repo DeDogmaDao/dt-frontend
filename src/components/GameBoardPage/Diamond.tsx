@@ -1,20 +1,45 @@
-import { motion, useMotionValue, useTransform } from "framer-motion";
+import {
+  motion,
+  useAnimation,
+  useMotionValue,
+  useTransform,
+} from "framer-motion";
+import { Dispatch, SetStateAction, useEffect } from "react";
 import { gameCardType, spellNumber } from "../../types/allTypes";
-import { diamondSpells } from "../../utils/game";
+import {
+  allDiamondAni,
+  diamondAniDown,
+  diamondAniUp,
+} from "../../utils/animation";
+import { colorSpell, diamondSpells } from "../../utils/game";
 import Spell from "./Spell";
 
 interface props {
   spellNumber: spellNumber;
   currentCard: gameCardType | null;
+  doorStage: number;
+  setDoorStage: Dispatch<SetStateAction<number>>;
 }
 
-const Diamond: React.FC<props> = ({ spellNumber, currentCard }) => {
-   const hue = useMotionValue(0);
-   hue.set(spellNumber.blue - spellNumber.yellow);
-   if(currentCard?.isWinner){
-       hue.set(spellNumber[currentCard.spellGroup]);
-   }
-   const hueTransform = useTransform(hue, [-1, 1], [-105, 0]);
+const Diamond: React.FC<props> = ({
+  spellNumber,
+  currentCard,
+  doorStage,
+  setDoorStage,
+}) => {
+  const controls = useAnimation();
+  const allControls = useAnimation();
+  useEffect(() => {
+    controls.start("visible");
+  }, [spellNumber]);
+  useEffect(() => {
+    if (doorStage === 2) {
+      setTimeout(() => {
+        allControls.start("visible");
+        setDoorStage(3);
+      }, 4800);
+    }
+  }, [doorStage]);
   return (
     <>
       <motion.div className="w-[1.8vw] h-[3vw] absolute top-[2.55vw] right-[32.4vw] z-100">
@@ -36,10 +61,42 @@ const Diamond: React.FC<props> = ({ spellNumber, currentCard }) => {
           );
         })}
       </motion.div>
-      <motion.div 
-      style={{filter: `hue-rotate(${hueTransform.get()}deg)`}}
-      className="w-[1.8vw] h-[3vw] absolute top-[2.55vw] right-[32.4vw] z-110 hover:scale-125 duration-300">
-        <img className="w-full h-full z-[1000]" src="/img/game/diamond.png" />
+      <motion.div className="w-[1.8vw] h-[3vw] absolute top-[2.55vw] right-[32.4vw] hover:scale-125 duration-300 z-[1000]">
+        <motion.div
+          initial="hidden"
+          animate={allControls}
+          variants={allDiamondAni}
+          className="w-ful h-full relative flex justify-center items-center"
+        >
+          <motion.span
+            initial="hidden"
+            animate={controls}
+            variants={diamondAniUp}
+            custom={{
+              color: currentCard?.spellGroup,
+              spellDiff: spellNumber.blue - spellNumber.yellow,
+              spellSum: spellNumber.blue + spellNumber.yellow,
+            }}
+            className="z-0 w-0 h-0 border-[0.9vw] border-transparent border-b-[1.5vw] relative top-[-1.3vw]"
+          >
+            <motion.span
+              initial="hidden"
+              animate={controls}
+              variants={diamondAniDown}
+              custom={{
+                color: currentCard?.spellGroup,
+                spellDiff: spellNumber.blue - spellNumber.yellow,
+                spellSum: spellNumber.blue + spellNumber.yellow,
+              }}
+              className="absolute left-[-0.9vw] top-[1.5vw] w-0 h-0  border-[0.9vw]
+          border-transparent border-t-[1.55vw] "
+            ></motion.span>
+          </motion.span>
+          <motion.img
+            className="w-full h-full z-110 absolute left-0 top-0"
+            src="/img/game/diamond.png"
+          />
+        </motion.div>
       </motion.div>
     </>
   );

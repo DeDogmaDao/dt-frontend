@@ -42,13 +42,13 @@ const Header: React.FC = () => {
           <Link href="/">
             <div className="flex justify-start items-center gap-x-2 fill-white hover:fill-primary-500 duration-300">
               <LogoSVG width="2.5rem" />
-              <span className="text-small-bold ssm:text-medium-bold hidden ssm:block md:hidden ">
+              <span className="text-small-bold ssm:text-medium-bold hidden sm:block md:hidden ">
                 Demmortal Treasure
               </span>
             </div>
           </Link>
         </span>
-        <motion.ul className="absolute pointer-events-auto top-[2.565rem] mt-[-.3rem] 2xl:mt-0 left-[7.125rem] lg:left-[9.625rem] hidden md:flex justify-start items-center gap-x-5 lg:gap-x-8 z-110">
+        <motion.ul className="absolute pointer-events-auto top-[2.565rem] mt-[-.3rem] 2xl:mt-0 left-[7.125rem] lg:left-[9.625rem] hidden lg:flex justify-start items-center gap-x-5 lg:gap-x-8 z-110">
           {headerLinks.map((headLink) => {
             return <EachLink key={headLink.ref} headLink={headLink} />;
           })}
@@ -57,7 +57,7 @@ const Header: React.FC = () => {
           href={gitbookLink}
           target="_blank"
           className="z-50 pointer-events-auto absolute top-[2rem] right-[7.5rem] px-2 sm:w-[8.5rem] h-10 rounded-full bg-neutral-600 text-white text-sm font-bold 
-         flex justify-evenly items-center hover:bg-neutral-500 duration-200 fill-primary-500 hover:fill-primary-700 cursor-pointer "
+         hidden ssm:flex justify-evenly items-center hover:bg-neutral-500 duration-200 fill-primary-500 hover:fill-primary-700 cursor-pointer "
         >
           <span className="">
             <socialSVGs.GitBookSVG width={26} />
