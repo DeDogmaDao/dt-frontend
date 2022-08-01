@@ -262,7 +262,7 @@ export const teamDataLvl1: teamCardType[] = [
     name: "Meti.eth",
     role: "Blockchain Engineer",
     image: teamImg[1],
-    desc: "Mehdi Salehi is a Master’s Student at Concordia University in Montreal, Canada. He mainly researches blockchain technologies and decentralized finance. He is an independent smart contract auditor, auditing several DeFi projects. He also contributed to the Meta Governance project and EIP-4824.",
+    desc: "Mehdi Salehi is an integration engineer at Arbitrum. He graduated from Concordia University in Montreal, Canada. He mainly researches blockchain technologies and decentralized finance. Before this, he used to be an independent smart contract auditor, auditing several DeFi projects. He also contributed to the Meta Governance project and EIP-4824.",
     link: [
       {
         href: metiEthSocial.linkedin,
