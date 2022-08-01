@@ -1,5 +1,5 @@
 import { LayoutGroup } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { gameCardData } from "../../store/allData";
 import CardGame from "./CardGame";
 import DoorSpells from "./DoorSpells";
@@ -37,18 +37,22 @@ const GameBoardPage: React.FC = () => {
 
   // we added here a for loop to change the behavior of spell transfer on winner animation
   useEffect(() => {
-    if (doorStage === 0) {
+    if (doorStage === 2) {
       for (let i = 1; i < 5; i++) {
         setTimeout(() => {
           setSpellNumber((prevState) => ({
             ...prevState,
-            ["yellow"]: prevState.yellow +  20,
-            ["blue"]: prevState.blue +  20,
+            ["yellow"]: prevState.yellow + 20,
+            ["blue"]: prevState.blue + 20,
           }));
-        }, 6000 + Math.pow(i,2) * 200);
+        }, 2000 + Math.pow(i, 2) * 200);
       }
     }
   }, [doorStage]);
+
+  const videoSource = useMemo(() => {
+    return gameCardData.find((card) => card.isWinner);
+  }, [gameCardData]);
 
   return (
     <LayoutGroup>
@@ -57,9 +61,29 @@ const GameBoardPage: React.FC = () => {
           src="/img/game/main.png"
           className="absolute top-0 left-0 w-full h-full z-10"
         />
-        <Diamond spellNumber={spellNumber} currentCard={currentCard} />
-        <Door spellNumber={spellNumber} doorStage={doorStage} />
-        <Lightning doorStage={doorStage} />
+        <Diamond
+          spellNumber={spellNumber}
+          currentCard={currentCard}
+          doorStage={doorStage}
+          setDoorStage={setDoorStage}
+        />
+        {videoSource && (
+          <Door
+            spellNumber={spellNumber}
+            doorStage={doorStage}
+            currentCard={currentCard}
+            setDoorStage={setDoorStage}
+            videoSource={videoSource}
+          />
+        )}
+        {doorStage !== 5 && (
+          <Lightning
+            doorStage={doorStage}
+            setDoorStage={setDoorStage}
+            currentCard={currentCard}
+            spellNumber={spellNumber}
+          />
+        )}
         <div
           className="w-full h-full flex justify-center items-start flex-wrap relative z-10"
           style={{
@@ -71,7 +95,7 @@ const GameBoardPage: React.FC = () => {
           {gameCardData.map((data, index) => {
             return (
               <CardGame
-              key={data.total + data.spellGroup + data.spellValue.length}
+                key={data.total + data.spellGroup + data.spellValue.length}
                 layoutID={"cardGame" + data.id}
                 data={data}
                 cardIndex={index}

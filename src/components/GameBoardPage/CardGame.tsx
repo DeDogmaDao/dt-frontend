@@ -99,7 +99,7 @@ useLayoutEffect(()=>{
     setOnce(true);
   }
 
-  if (stage === 2 && !onceStage2) {
+  if (stage === 2 && !onceStage2 && !data.isWinner) {
     setTimeout(() => {
       aniControls.start("stage2");
     }, 200);

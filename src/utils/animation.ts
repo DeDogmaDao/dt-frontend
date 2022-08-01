@@ -665,7 +665,7 @@ export const diamondAniUp: Variants = {
         ? colorSpell(custom.spellDiff < 0)
         : colorSpell(custom.color === "yellow"),
     transition: {
-      duration: 2,
+      duration: 5,
     },
   }),
 };
@@ -680,9 +680,101 @@ export const diamondAniDown: Variants = {
         ? colorSpell(custom.spellDiff < 0)
         : colorSpell(custom.color === "yellow"),
     transition: {
-      duration: 2,
+      duration: 5,
     },
   }),
+};
+export const pinAniUp: Variants = {
+  hidden: {
+    borderBottomColor: "#4A4A4A",
+  },
+  visible: (custom) => ({
+    borderBottomColor:
+      custom.spellDiff !== 0
+        ? colorSpell(custom.spellDiff < 0)
+        : colorSpell(custom.color === "yellow"),
+    transition: {
+      duration: 5,
+      delay:2,
+    },
+  }),
+  blink: {
+    opacity: [1, 0.5, 1, 0.5, 1, 0.5, 1],
+    transition: {
+      duration: 2,
+      times: [0, 0.15, 0.3, 0.45, 0.6, 0.75, 1],
+    },
+  },
+};
+export const pinAniDown: Variants = {
+  hidden: {
+    borderTopColor: "#4A4A4A",
+  },
+  visible: (custom) => ({
+    borderTopColor:
+      custom.spellDiff !== 0
+        ? colorSpell(custom.spellDiff < 0)
+        : colorSpell(custom.color === "yellow"),
+    transition: {
+      duration: 5,
+      delay:2,
+    },
+  }),
+  blink: {
+    opacity: [1, 0.5, 1, 0.5, 1, 0.5, 1],
+    transition: {
+      duration: 2,
+      times: [0, 0.15, 0.3, 0.45, 0.6, 0.75, 1],
+    },
+  },
+};
+export const ringPinAni: Variants = {
+  hidden: {
+    boxShadow: `0px 0px 5px 3px #fff`,
+  },
+  visible: (custom) => ({
+    boxShadow: `0px 0px 5px 3px ${
+      custom.spellDiff !== 0
+        ? colorSpell(custom.spellDiff < 0)
+        : colorSpell(custom.color === "yellow")
+    }`,
+    transition: {
+      duration: 5,
+      delay:2,
+    },
+  }),
+
+  blink: (custom) => {
+    const color =
+      custom.spellDiff !== 0
+        ? colorSpell(custom.spellDiff < 0)
+        : colorSpell(custom.color === "yellow");
+
+    return {
+      boxShadow: [
+        `0px 0px 5px 3px ${color}`,
+        `0px 0px 200px 50px ${color}`,
+        `0px 0px 300px 30px ${color}`,
+        `0px 0px 200px 70px ${color}`,
+        `0px 0px 5px 3px ${color}`,
+      ],
+      transition: {
+        duration: 2.5,
+        times: [0, 0.3,0.4,0.6, 1],
+      },
+    };
+  },
+};
+
+export const opacityBlinkAni: Variants = {
+  hidden: {},
+  visible: {
+    opacity: [1, 0.5, 1, 0.5, 1, 0.5, 1],
+    transition: {
+      duration: 1,
+      times: [0, 0.15, 0.3, 0.45, 0.6, 0.75, 1],
+    },
+  },
 };
 
 export const allDiamondAni: Variants = {
@@ -691,10 +783,10 @@ export const allDiamondAni: Variants = {
     scale: [1, 1.2, 1, 1.3, 1, 1.2, 1],
     transition: {
       duration: 3,
-      times:[0,0.15,0.3,0.45,0.6,0.75,1],
-    }
-  })
-}
+      times: [0, 0.15, 0.3, 0.45, 0.6, 0.75, 1],
+    },
+  }),
+};
 
 export const calcFadeAni: Variants = {
   hidden: {
@@ -774,7 +866,7 @@ export const doorToRightAnimation: Variants = {
     },
   },
 };
-export const doorToLefttAnimation: Variants = {
+export const doorToLeftAnimation: Variants = {
   hidden: {
     translateX: "0vw",
     scaleX: "-1",
@@ -785,6 +877,20 @@ export const doorToLefttAnimation: Variants = {
       duration: 3,
       mass: 10,
       ease: "easeIn",
+    },
+  },
+};
+
+export const doorLightAnimation: Variants = {
+  hidden: {
+    width: "100%",
+    opacity: 0,
+  },
+  visible: {
+    width: "100%",
+    opacity: 1,
+    transition: {
+      duration: 5,
     },
   },
 };
