@@ -11,7 +11,7 @@ import {
   diamondAniDown,
   diamondAniUp,
 } from "../../utils/animation";
-import { colorSpell, diamondSpells } from "../../utils/game";
+import { colorSpell, diamondSpells, times } from "../../utils/game";
 import Spell from "./Spell";
 
 interface props {
@@ -37,7 +37,7 @@ const Diamond: React.FC<props> = ({
       setTimeout(() => {
         allControls.start("visible");
         setDoorStage(3);
-      }, 4800);
+      }, times.door3StageTime);
     }
   }, [doorStage]);
   return (

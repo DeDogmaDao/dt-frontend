@@ -87,8 +87,9 @@ export const colorSpell=(condition:boolean) => condition ? "#d8fa37" : "#d41dba"
 export const times = {
   turnTime:9000,
   door0StageTime:0,
-  door4StageTime:1500,
   door2StageTime:1000,
+  door3StageTime:4800,
+  door4StageTime:1500,
   door5StageTime:3000,
   transferNumTime:1900,
   transferSpellTime:1000,
