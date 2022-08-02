@@ -93,5 +93,7 @@ export const times = {
   cardStage2AnimTime:200,
   winnerSpellBombTime:2000,
   lightningDelayTime:3000,
+  ringTransferDelayTime:3000,
+  ringWinnerDelayTime:7000,
 
 }
