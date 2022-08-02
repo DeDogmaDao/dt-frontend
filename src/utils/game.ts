@@ -83,3 +83,12 @@ return {
 
 export const transitionSpell =(spellIndex:number):Transition=>({ duration: 5, type:"spring", stiffness:(spellIndex%3+1) * 200 *(Math.floor(Math.random()*4 + 7)/10), mass:10 * (Math.floor(Math.random()*4 + 7)/10), damping:40 * (Math.floor(Math.random()*4 + 7)/10), velocity:-10 })
 export const colorSpell=(condition:boolean) => condition ? "#d8fa37" : "#d41dba";
+
+export const times = {
+  turnTime:9000,
+  zeroDoorStageTime:0,
+  transferNumTime:1900,
+  transferSpellTime:1000,
+  cardStage2AnimTime:200,
+
+}

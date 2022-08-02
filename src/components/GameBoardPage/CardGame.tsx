@@ -2,7 +2,7 @@ import { motion, useAnimation } from "framer-motion";
 import React, { Dispatch, SetStateAction, useEffect, useLayoutEffect, useState } from "react";
 import { gameCardType, spellNumber } from "../../types/allTypes";
 import { gameCardAni } from "../../utils/animation";
-import { communityNumStyles, individualNumStyles, spellStyles, styles } from "../../utils/game";
+import { communityNumStyles, individualNumStyles, spellStyles, styles, times } from "../../utils/game";
 import CardNum from "./CardNum";
 import Spell from "./Spell";
 
@@ -64,7 +64,7 @@ const CardGame: React.FC<props> = ({
           }
           return null;
         });
-      }, 9000);
+      }, times.turnTime);
     }
   };
 
@@ -74,13 +74,13 @@ useLayoutEffect(()=>{
   if (doorStage === -1 && data.isWinner === true) {
     setTimeout(() => {
       setDoorStage(0);
-    }, 0);
+    }, times.zeroDoorStageTime);
   }
   if (stage === 0) {
     setStage(1);
     setTimeout(() => {
       setTransferNum(true);
-    }, 1900);
+    }, times.transferNumTime);
   }
   if (stage === 1 && !once) {
     aniControls.start("stage1");
@@ -91,18 +91,18 @@ useLayoutEffect(()=>{
           prevState[data.spellGroup + "CardCount"] + 1,
         [data.spellGroup]: data.total,
       }));
-    }, 1000);
+    }, times.transferSpellTime);
     setTimeout(() => {
       setTransferNum(false);
       setStage(2);
-    }, 9000);
+    }, times.turnTime);
     setOnce(true);
   }
 
   if (stage === 2 && !onceStage2 && !data.isWinner) {
     setTimeout(() => {
       aniControls.start("stage2");
-    }, 200);
+    }, times.cardStage2AnimTime);
     setOnceStage2(true);
   }
 }},[doorStage,turnNumber,stage])
