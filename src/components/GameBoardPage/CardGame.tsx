@@ -1,8 +1,20 @@
 import { motion, useAnimation } from "framer-motion";
-import React, { Dispatch, SetStateAction, useEffect, useLayoutEffect, useState } from "react";
+import React, {
+  Dispatch,
+  SetStateAction,
+  useEffect,
+  useLayoutEffect,
+  useState,
+} from "react";
 import { gameCardType, spellNumber } from "../../types/allTypes";
 import { gameCardAni } from "../../utils/animation";
-import { communityNumStyles, individualNumStyles, spellStyles, styles, times } from "../../utils/game";
+import {
+  communityNumStyles,
+  individualNumStyles,
+  spellStyles,
+  styles,
+  times,
+} from "../../utils/game";
 import CardNum from "./CardNum";
 import Spell from "./Spell";
 
@@ -21,7 +33,6 @@ interface props {
   doorStage: number;
   setDoorStage: Dispatch<SetStateAction<number>>;
 }
-
 
 const CardGame: React.FC<props> = ({
   data,
@@ -52,60 +63,55 @@ const CardGame: React.FC<props> = ({
     if (turnNumber === null && cardIndex === gameCardData.length - 1) {
       setTurnNumber(0);
     }
-    if(turnNumber === cardIndex) {
+    if (turnNumber === cardIndex) {
       setCurrentCard(data);
     }
     if (turnNumber === cardIndex && doorStage === -1) {
-
       setTimeout(() => {
-        setTurnNumber((prevState) => {
-          if (prevState !== null) {
-            return prevState + 1;
-          }
-          return null;
-        });
+        setTurnNumber(prevState => prevState! + 1);
       }, times.turnTime);
     }
   };
 
   // Stages
-useLayoutEffect(()=>{  
-  if (turnNumber === cardIndex) {
-  if (doorStage === -1 && data.isWinner === true) {
-    setTimeout(() => {
-      setDoorStage(0);
-    }, times.door0StageTime);
-  }
-  if (stage === 0) {
-    setStage(1);
-    setTimeout(() => {
-      setTransferNum(true);
-    }, times.transferNumTime);
-  }
-  if (stage === 1 && !once) {
-    aniControls.start("stage1");
-    setTimeout(() => {
-      setSpellNumber((prevState) => ({
-        ...prevState,
-        [data.spellGroup + "CardCount"]:
-          prevState[data.spellGroup + "CardCount"] + 1,
-        [data.spellGroup]: data.total,
-      }));
-    }, times.transferSpellTime);
-    setTimeout(() => {
-      setTransferNum(false);
-      setStage(2);
-    }, times.turnTime);
-    setOnce(true);
-  }
+  useLayoutEffect(() => {
+    if (turnNumber === cardIndex) {
+      if (doorStage === -1 && data.isWinner === true) {
+        setTimeout(() => {
+          setDoorStage(0);
+        }, times.door0StageTime);
+      }
+      if (stage === 0) {
+        setStage(1);
+        setTimeout(() => {
+          setTransferNum(true);
+        }, times.transferNumTime);
+      }
+      if (stage === 1 && !once) {
+        aniControls.start("stage1");
+        setTimeout(() => {
+          setSpellNumber((prevState) => ({
+            ...prevState,
+            [data.spellGroup + "CardCount"]:
+              prevState[data.spellGroup + "CardCount"] + 1,
+            [data.spellGroup]: data.total,
+          }));
+        }, times.transferSpellTime);
+        setTimeout(() => {
+          setTransferNum(false);
+          setStage(2);
+        }, times.turnTime);
+        setOnce(true);
+      }
 
-  if (stage === 2 && !onceStage2 && !data.isWinner) {
-    setTimeout(() => {
-      aniControls.start("stage2");
-    }, times.cardStage2AnimTime);
-    setOnceStage2(true);
-  }
-}},[doorStage,turnNumber,stage])
+      if (stage === 2 && !onceStage2 && !data.isWinner) {
+        setTimeout(() => {
+          aniControls.start("stage2");
+        }, times.cardStage2AnimTime);
+        setOnceStage2(true);
+      }
+    }
+  }, [doorStage, turnNumber, stage]);
 
   return (
     <motion.div
@@ -115,13 +121,13 @@ useLayoutEffect(()=>{
       variants={gameCardAni}
       custom={{
         cardIndex: cardIndex,
-        styles: styles((cardIndex % 3) + 1,cardIndex),
+        styles: styles((cardIndex % 3) + 1, cardIndex),
         spellGroup: data.spellGroup,
         spellNumber: spellNumber,
       }}
       className="w-[5.15vw] flex flex-col justify-center items-center text-white absolute z-10"
       style={{
-        ...styles((cardIndex % 3) + 1,cardIndex),
+        ...styles((cardIndex % 3) + 1, cardIndex),
         transformStyle: "preserve-3d",
       }}
     >
@@ -134,7 +140,7 @@ useLayoutEffect(()=>{
           {data.spellValue.map((spell) => {
             return (
               <Spell
-              key={spell + "d-spell"}
+                key={spell + "d-spell"}
                 spellIndex={data.total - data.spellValue.length + spell}
                 spellNumber={spellNumber}
                 spellGroup={data.spellGroup}
