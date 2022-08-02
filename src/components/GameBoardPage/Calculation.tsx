@@ -57,7 +57,6 @@ const Calculation: React.FC<props> = ({
         });
       }, 8000);
 
-      // there is an issue here************** come back to fix it (resultRef.current)
       setTimeout(() => {
         resultRef.current =
           currentCard.cardNum * currentCard.communityNum +
