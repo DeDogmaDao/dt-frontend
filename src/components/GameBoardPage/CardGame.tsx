@@ -49,7 +49,6 @@ const CardGame: React.FC<props> = ({
   setDoorStage,
 }) => {
   // states
-  const [onceStage2, setOnceStage2] = useState(false);
   const [stage, setStage] = useState(0);
   const aniControls = useAnimation();
 
