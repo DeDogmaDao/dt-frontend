@@ -92,7 +92,6 @@ export const times = {
   door3StageTime:4800,
   door4StageTime:1500,
   door5StageTime:3000,
-  transferNumTime:1900,
   transferSpellTime:1000,
   cardStage2AnimTime:200,
   winnerSpellBombTime:2000,
@@ -100,5 +99,13 @@ export const times = {
   ringTransferDelayTime:3000,
   ringWinnerDelayTime:7000,
   spellCounterDelayTime:3000,
-
+  transferNumTime:1900,
+  calcStateSetDelayTime:8000,
+  calcResultSetDelayTime:1000,
+  calcWinnerSetDelayTime:9000,
+  calcStage0DelayTime:2000,
+  calcStage1DelayTime:5000,
+  calcStage0DelayTimeFixFor0:6500,
+  calcStage1DelayTimeFixFor0:7000,
+  calcTransferToSideCardDelayTime:2000,
 }
