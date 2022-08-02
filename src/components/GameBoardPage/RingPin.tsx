@@ -45,7 +45,7 @@ const RingPin: React.FC<props> = ({ spellNumber, currentCard, doorStage, setDoor
         controls.start("blink");
         ringPinControls.start("blink");
         setDoorStage(1);
-      }, 7000);
+      }, times.door1StageTime);
     }
   }, [doorStage]);
 
