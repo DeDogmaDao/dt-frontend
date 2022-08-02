@@ -86,8 +86,7 @@ const CardGame: React.FC<props> = ({
           setTransferNum(true);
         }, times.transferNumTime);
       }
-      if (stage === 1) {
-        console.log("first");
+      if (stage === 1 && doorStage < 0) {
         aniControls.start("stage1");
         setTimeout(() => {
           setSpellNumber((prevState) => ({
@@ -103,11 +102,11 @@ const CardGame: React.FC<props> = ({
         }, times.turnTime);
       }
 
-      if (stage === 2 && !onceStage2 && !data.isWinner) {
+      if (stage === 2 && !data.isWinner) {
+        console.log("first");
         setTimeout(() => {
           aniControls.start("stage2");
         }, times.cardStage2AnimTime);
-        setOnceStage2(true);
       }
     }
   }, [doorStage, turnNumber, stage]);
