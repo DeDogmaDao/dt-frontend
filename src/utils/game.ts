@@ -88,6 +88,8 @@ export const times = {
   turnTime:9000,
   door0StageTime:0,
   door4StageTime:1500,
+  door2StageTime:1000,
+  door5StageTime:3000,
   transferNumTime:1900,
   transferSpellTime:1000,
   cardStage2AnimTime:200,
