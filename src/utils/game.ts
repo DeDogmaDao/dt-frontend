@@ -55,7 +55,7 @@ export const styles = (column:number,cardIndex:number):React.CSSProperties=> ({
   top: 4 + cardIndex / 50 + "vw",
 });
 export const spellStyles = (spellIndex: number):CSSProperties => {
-if(spellIndex === 1){
+if(spellIndex === 1 || spellIndex === 4){
   return {
     right: 2.8 + "vw",
     bottom: -7.725 + "vw",
@@ -64,7 +64,7 @@ if(spellIndex === 1){
     transform:"rotate(15deg) skew(30deg,0deg)",
   };
 }
-if(spellIndex === 2){
+if(spellIndex === 2 || spellIndex === 5){
   return {
     right: 2.1 + "vw",
     bottom: -7.725  + "vw",
