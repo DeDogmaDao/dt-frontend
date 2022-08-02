@@ -95,5 +95,6 @@ export const times = {
   lightningDelayTime:3000,
   ringTransferDelayTime:3000,
   ringWinnerDelayTime:7000,
+  spellCounterDelayTime:3000,
 
 }
