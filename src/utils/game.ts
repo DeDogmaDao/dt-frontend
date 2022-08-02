@@ -92,7 +92,6 @@ export const times = {
   door3StageTime:4800,
   door4StageTime:1500,
   door5StageTime:3000,
-  transferSpellTime:1000,
   cardStage2AnimTime:200,
   winnerSpellBombTime:2000,
   lightningDelayTime:3000,

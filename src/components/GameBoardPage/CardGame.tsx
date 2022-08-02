@@ -86,15 +86,14 @@ const CardGame: React.FC<props> = ({
         }, times.transferNumTime);
       }
       if (stage === 1 && doorStage < 0) {
-        aniControls.start("stage1");
-        setTimeout(() => {
+        aniControls.start("stage1").then(()=>{
           setSpellNumber((prevState) => ({
             ...prevState,
             [data.spellGroup + "CardCount"]:
-              prevState[data.spellGroup + "CardCount"] + 1,
+            prevState[data.spellGroup + "CardCount"] + 1,
             [data.spellGroup]: data.total,
           }));
-        }, times.transferSpellTime);
+        })
         setTimeout(() => {
           setTransferNum(false);
           setStage(2);
