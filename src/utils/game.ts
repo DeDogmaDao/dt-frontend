@@ -86,10 +86,12 @@ export const colorSpell=(condition:boolean) => condition ? "#d8fa37" : "#d41dba"
 
 export const times = {
   turnTime:9000,
-  zeroDoorStageTime:0,
+  door0StageTime:0,
+  door4StageTime:1500,
   transferNumTime:1900,
   transferSpellTime:1000,
   cardStage2AnimTime:200,
   winnerSpellBombTime:2000,
+  lightningDelayTime:3000,
 
 }

@@ -74,7 +74,7 @@ useLayoutEffect(()=>{
   if (doorStage === -1 && data.isWinner === true) {
     setTimeout(() => {
       setDoorStage(0);
-    }, times.zeroDoorStageTime);
+    }, times.door0StageTime);
   }
   if (stage === 0) {
     setStage(1);

@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction, useEffect, useRef } from "react";
 import { gameCardType, spellNumber } from "../../types/allTypes";
-import { colorSpell } from "../../utils/game";
+import { colorSpell, times } from "../../utils/game";
 import { createLightning } from "../../utils/util";
 
 interface props {
@@ -73,8 +73,8 @@ const Lightning: React.FC<props> = ({
         renderLightning();
         setTimeout(() => {
           setDoorStage(4);
-        }, 1500);
-      }, 3000);
+        }, times.door4StageTime);
+      }, times.lightningDelayTime);
     }
   }, [doorStage]);
   return (
