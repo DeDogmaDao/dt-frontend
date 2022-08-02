@@ -102,7 +102,6 @@ const CardGame: React.FC<props> = ({
       }
 
       if (stage === 2 && !data.isWinner) {
-        console.log("first");
         setTimeout(() => {
           aniControls.start("stage2");
         }, times.cardStage2AnimTime);
