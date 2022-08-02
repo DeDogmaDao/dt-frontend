@@ -90,5 +90,6 @@ export const times = {
   transferNumTime:1900,
   transferSpellTime:1000,
   cardStage2AnimTime:200,
+  winnerSpellBombTime:2000,
 
 }

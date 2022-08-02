@@ -12,6 +12,7 @@ import {
   bottomRightSpell,
   topLeftSpell,
   topRightSpell,
+  times,
 } from "../../utils/game";
 import { gameCardType, spellNumber } from "../../types/allTypes";
 import Calculation from "./Calculation";
@@ -45,7 +46,7 @@ const GameBoardPage: React.FC = () => {
             ["yellow"]: prevState.yellow + 20,
             ["blue"]: prevState.blue + 20,
           }));
-        }, 2000 + Math.pow(i, 2) * 200);
+        }, times.winnerSpellBombTime + Math.pow(i, 2) * 200);
       }
     }
   }, [doorStage]);
