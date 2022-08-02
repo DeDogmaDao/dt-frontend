@@ -84,7 +84,7 @@ const Calculation: React.FC<props> = ({
       }, times.calcStage0DelayTime + times.calcStage0DelayTimeFixFor0);
       setTimeout(() => {
         setCalcStage(1);
-      }, times.calcStage0DelayTime + times.calcStage1DelayTimeFixFor0);
+      }, times.calcStage1DelayTime + times.calcStage1DelayTimeFixFor0);
     }
 
     // for second card and more
