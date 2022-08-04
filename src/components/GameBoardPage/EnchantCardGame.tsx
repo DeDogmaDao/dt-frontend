@@ -12,6 +12,7 @@ import {
   communityNumStyles,
   individualNumStyles,
   spellStyles,
+  spellStylesForEnchant,
   styles,
   times,
 } from "../../utils/game";
@@ -170,7 +171,7 @@ const EnchantCardGame: React.FC<props> = ({
                 spellNumber={spellNumber}
                 spellGroup={data.spellGroup}
                 showOrHidden={true}
-                spellStyles={spellStyles(spell)}
+                spellStyles={spellStylesForEnchant(spell,data.spellValue.length)}
               />
             );
           })}
