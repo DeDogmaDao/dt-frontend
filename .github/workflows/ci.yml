@@ -23,7 +23,7 @@ jobs:
         run: docker build -t ghcr.io/dedogmadao/dt-frontend/dt-frontend:${{ github.ref_name }}-latest .
 
       - name: login to docker registry
-        run: echo ${{ secrets.PERSONAL_GITHUB_TOKEN }} | docker login ghcr.io -u flokibb --password-stdin
+        run: docker login ghcr.io -u flokibb -p ${{ secrets.PERSONAL_GITHUB_TOKEN }} 
 
       - name: push docker image to package registry
         run: docker push ghcr.io/dedogmadao/dt-frontend/dt-frontend:${{ github.ref_name }}-latest
