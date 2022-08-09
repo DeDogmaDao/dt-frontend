@@ -12,6 +12,7 @@ import {
   communityNumStyles,
   individualNumStyles,
   spellStyles,
+  spellStylesForEnchant,
   styles,
   times,
 } from "../../utils/game";
@@ -64,7 +65,7 @@ const CardGame: React.FC<props> = ({
     if (turnNumber === cardIndex) {
       setCurrentCard(data);
     }
-    if (turnNumber === cardIndex && doorStage === -1) {
+    if (turnNumber === cardIndex && data.isWinner === false) {
       setTimeout(() => {
         setTurnNumber((prevState) => prevState! + 1);
       }, times.turnTime);
@@ -74,10 +75,19 @@ const CardGame: React.FC<props> = ({
   // Stages
   useLayoutEffect(() => {
     if (turnNumber === cardIndex) {
-      if (doorStage === -1 && data.isWinner === true) {
-        setTimeout(() => {
-          setDoorStage(0);
-        }, times.door0StageTime);
+      if (doorStage === -1 && data.isWinner === true && stage === 0) {
+        if (
+          data.total - data.spellValue.length / 2 ===
+          spellNumber[data.spellGroup === "yellow" ? "blue" : "yellow"]
+        ) {
+          setTimeout(() => {
+            setDoorStage(0);
+          }, times.door0StageTime);
+        } else {
+          setTimeout(() => {
+            setDoorStage(0);
+          }, times.door0StageTime + 6500);
+        }
       }
       if (stage === 0) {
         setStage(1);
@@ -91,13 +101,22 @@ const CardGame: React.FC<props> = ({
             ...prevState,
             [data.spellGroup + "CardCount"]:
               prevState[data.spellGroup + "CardCount"] + 1,
-            [data.spellGroup]: data.total,
+            [data.spellGroup]: data.total - data.spellValue.length / 2,
           }));
         });
         setTimeout(() => {
+          setStage(1.5);
+        }, times.turnTime - 3000);
+      }
+      if (stage === 1.5 && doorStage < 0) {
+        setSpellNumber((prevState) => ({
+          ...prevState,
+          [data.spellGroup]: data.total,
+        }));
+        setTimeout(() => {
           setTransferNum(false);
           setStage(2);
-        }, times.turnTime);
+        }, 3000);
       }
 
       if (stage === 2 && !data.isWinner) {
@@ -140,7 +159,7 @@ const CardGame: React.FC<props> = ({
                 spellNumber={spellNumber}
                 spellGroup={data.spellGroup}
                 showOrHidden={true}
-                spellStyles={spellStyles(spell)}
+                spellStyles={spellStylesForEnchant(spell, data.spellValue.length)}
               />
             );
           })}

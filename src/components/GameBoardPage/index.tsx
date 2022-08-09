@@ -1,5 +1,5 @@
 import { LayoutGroup } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { gameCardData } from "../../store/allData";
 import CardGame from "./CardGame";
 import DoorSpells from "./DoorSpells";
@@ -12,6 +12,7 @@ import {
   bottomRightSpell,
   topLeftSpell,
   topRightSpell,
+  times,
 } from "../../utils/game";
 import { gameCardType, spellNumber } from "../../types/allTypes";
 import Calculation from "./Calculation";
@@ -20,6 +21,7 @@ import SpellCounter from "./SpellCounter";
 import Door from "./Door";
 import Lightning from "./Lightning";
 import Diamond from "./Diamond";
+import EnchantCardGame from "./EnchantCardGame";
 
 const GameBoardPage: React.FC = () => {
   const [turnNumber, setTurnNumber] = useState<number | null>(null);
@@ -45,10 +47,14 @@ const GameBoardPage: React.FC = () => {
             ["yellow"]: prevState.yellow + 20,
             ["blue"]: prevState.blue + 20,
           }));
-        }, 2000 + Math.pow(i, 2) * 200);
+        }, times.winnerSpellBombTime + Math.pow(i, 2) * 200);
       }
     }
   }, [doorStage]);
+
+  const videoSource = useMemo(() => {
+    return gameCardData.find((card) => card.isWinner);
+  }, [gameCardData]);
 
   return (
     <LayoutGroup>
@@ -57,14 +63,29 @@ const GameBoardPage: React.FC = () => {
           src="/img/game/main.png"
           className="absolute top-0 left-0 w-full h-full z-10"
         />
-        <Diamond spellNumber={spellNumber} currentCard={currentCard} doorStage={doorStage} setDoorStage={setDoorStage} />
-        <Door
+        <Diamond
           spellNumber={spellNumber}
-          doorStage={doorStage}
           currentCard={currentCard}
+          doorStage={doorStage}
           setDoorStage={setDoorStage}
         />
-        {doorStage !== 4 && (<Lightning doorStage={doorStage} setDoorStage={setDoorStage} />)}
+        {videoSource && (
+          <Door
+            spellNumber={spellNumber}
+            doorStage={doorStage}
+            currentCard={currentCard}
+            setDoorStage={setDoorStage}
+            videoSource={videoSource}
+          />
+        )}
+        {doorStage !== 5 && (
+          <Lightning
+            doorStage={doorStage}
+            setDoorStage={setDoorStage}
+            currentCard={currentCard}
+            spellNumber={spellNumber}
+          />
+        )}
         <div
           className="w-full h-full flex justify-center items-start flex-wrap relative z-10"
           style={{
@@ -74,6 +95,26 @@ const GameBoardPage: React.FC = () => {
           }}
         >
           {gameCardData.map((data, index) => {
+            if(data.type ==="enchant"){
+              return (
+                <EnchantCardGame
+                  key={data.total + data.spellGroup + data.spellValue.length}
+                  layoutID={"cardGame" + data.id}
+                  data={data}
+                  cardIndex={index}
+                  turnNumber={turnNumber}
+                  setTurnNumber={setTurnNumber}
+                  gameCardData={gameCardData}
+                  spellNumber={spellNumber}
+                  setSpellNumber={setSpellNumber}
+                  setCurrentCard={setCurrentCard}
+                  transferNum={transferNum}
+                  setTransferNum={setTransferNum}
+                  setDoorStage={setDoorStage}
+                  doorStage={doorStage}
+                />
+              );
+            }
             return (
               <CardGame
                 key={data.total + data.spellGroup + data.spellValue.length}

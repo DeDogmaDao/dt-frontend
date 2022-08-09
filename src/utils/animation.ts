@@ -695,12 +695,13 @@ export const pinAniUp: Variants = {
         : colorSpell(custom.color === "yellow"),
     transition: {
       duration: 5,
+      delay:2,
     },
   }),
   blink: {
     opacity: [1, 0.5, 1, 0.5, 1, 0.5, 1],
     transition: {
-      duration: 5,
+      duration: 2,
       times: [0, 0.15, 0.3, 0.45, 0.6, 0.75, 1],
     },
   },
@@ -716,12 +717,61 @@ export const pinAniDown: Variants = {
         : colorSpell(custom.color === "yellow"),
     transition: {
       duration: 5,
+      delay:2,
     },
   }),
   blink: {
     opacity: [1, 0.5, 1, 0.5, 1, 0.5, 1],
     transition: {
+      duration: 2,
+      times: [0, 0.15, 0.3, 0.45, 0.6, 0.75, 1],
+    },
+  },
+};
+export const ringPinAni: Variants = {
+  hidden: {
+    boxShadow: `0px 0px 5px 3px #fff`,
+  },
+  visible: (custom) => ({
+    boxShadow: `0px 0px 5px 3px ${
+      custom.spellDiff !== 0
+        ? colorSpell(custom.spellDiff < 0)
+        : colorSpell(custom.color === "yellow")
+    }`,
+    transition: {
       duration: 5,
+      delay:2,
+    },
+  }),
+
+  blink: (custom) => {
+    const color =
+      custom.spellDiff !== 0
+        ? colorSpell(custom.spellDiff < 0)
+        : colorSpell(custom.color === "yellow");
+
+    return {
+      boxShadow: [
+        `0px 0px 5px 3px ${color}`,
+        `0px 0px 200px 50px ${color}`,
+        `0px 0px 300px 30px ${color}`,
+        `0px 0px 200px 70px ${color}`,
+        `0px 0px 5px 3px ${color}`,
+      ],
+      transition: {
+        duration: 2.5,
+        times: [0, 0.3,0.4,0.6, 1],
+      },
+    };
+  },
+};
+
+export const opacityBlinkAni: Variants = {
+  hidden: {},
+  visible: {
+    opacity: [1, 0.5, 1, 0.5, 1, 0.5, 1],
+    transition: {
+      duration: 1,
       times: [0, 0.15, 0.3, 0.45, 0.6, 0.75, 1],
     },
   },
@@ -1316,15 +1366,4 @@ export const auctionPriceAni: Variants = {
       ease: "easeInOut",
     },
   }),
-};
-
-export const opacityBlinkAni: Variants = {
-  hidden: {},
-  visible: {
-    opacity: [1, 0.5, 1, 0.5, 1, 0.5, 1],
-    transition: {
-      duration: 5,
-      times: [0, 0.15, 0.3, 0.45, 0.6, 0.75, 1],
-    },
-  },
 };

@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { numsList } from "../../store/allData";
 import { spellNumber } from "../../types/allTypes";
 import { spellCounterAni } from "../../utils/animation";
-import { colorSpell } from "../../utils/game";
+import { colorSpell, times } from "../../utils/game";
 
 interface props {
   spellNumber: spellNumber;
@@ -64,11 +64,13 @@ const SpellCounter: React.FC<props> = ({
           }
         }, (i - activeIndex) * timeBetweenTwoCounts);
       }
-    }, 3000);
+    }, times.spellCounterDelayTime);
     if (doorStage > -1) {
-      setOff(true);
+      setTimeout(() => {
+        setOff(true);
+      }, 3000);
     }
-  }, [spellNumber]);
+  }, [spellNumber,doorStage]);
 
   return (
     <motion.div

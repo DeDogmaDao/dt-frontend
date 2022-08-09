@@ -1,14 +1,27 @@
 import { Dispatch, SetStateAction, useEffect, useRef } from "react";
+import { gameCardType, spellNumber } from "../../types/allTypes";
+import { colorSpell, times } from "../../utils/game";
 import { createLightning } from "../../utils/util";
 
 interface props {
   doorStage: number;
-  setDoorStage:Dispatch<SetStateAction<number>>;
-
+  setDoorStage: Dispatch<SetStateAction<number>>;
+  spellNumber: spellNumber;
+  currentCard: gameCardType | null;
 }
-const Lightning: React.FC<props> = ({doorStage,setDoorStage}) => {
+const Lightning: React.FC<props> = ({
+  doorStage,
+  setDoorStage,
+  spellNumber,
+  currentCard,
+}) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   useEffect(() => {
+    const spellDiff = spellNumber.blue - spellNumber.yellow;
+    const spellColor =
+      spellDiff !== 0
+        ? colorSpell(spellDiff < 0)
+        : colorSpell(currentCard?.spellGroup === "yellow");
     const aspectRatio = window.innerWidth / 1536;
     const canvasSize = 470 * aspectRatio;
     canvasRef.current!.width = canvasSize;
@@ -17,7 +30,7 @@ const Lightning: React.FC<props> = ({doorStage,setDoorStage}) => {
     const center = { x: canvasSize / 2, y: 0 };
     const minSegmentHeight = 5;
     const groundHeight = canvasSize - 0;
-    const color = "hsl(180,80%,80%)";
+    const color = spellColor;
     const roughness = 2;
     const maxDifference = canvasSize / 5;
     ctx!.globalCompositeOperation = "lighter";
@@ -27,7 +40,7 @@ const Lightning: React.FC<props> = ({doorStage,setDoorStage}) => {
     ctx!.fillStyle = color;
 
     ctx!.clearRect(0, 0, canvasSize, canvasSize);
-    ctx!.fillStyle = "hsla(0, 0%, 10%, 0.2)";
+    ctx!.fillStyle = spellColor;
 
     ctx!.globalAlpha = 1;
 
@@ -52,16 +65,16 @@ const Lightning: React.FC<props> = ({doorStage,setDoorStage}) => {
       }
       ctx!.stroke();
       // what da fuck?
-        requestAnimationFrame(renderLightning);
+      requestAnimationFrame(renderLightning);
     };
 
-    if(doorStage === 3){
+    if (doorStage === 3) {
       setTimeout(() => {
         renderLightning();
         setTimeout(() => {
           setDoorStage(4);
-        }, 4000);
-      }, 3000);
+        }, times.door4StageTime);
+      }, times.lightningDelayTime);
     }
   }, [doorStage]);
   return (

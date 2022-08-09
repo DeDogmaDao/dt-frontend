@@ -262,7 +262,7 @@ export const teamDataLvl1: teamCardType[] = [
     name: "Meti.eth",
     role: "Blockchain Engineer",
     image: teamImg[1],
-    desc: "Mehdi Salehi is a Master’s Student at Concordia University in Montreal, Canada. He mainly researches blockchain technologies and decentralized finance. He is an independent smart contract auditor, auditing several DeFi projects. He also contributed to the Meta Governance project and EIP-4824.",
+    desc: "Mehdi Salehi is an integration engineer at Arbitrum. He graduated from Concordia University in Montreal, Canada. He mainly researches blockchain technologies and decentralized finance. Before this, he used to be an independent smart contract auditor, auditing several DeFi projects. He also contributed to the Meta Governance project and EIP-4824.",
     link: [
       {
         href: metiEthSocial.linkedin,
@@ -549,30 +549,33 @@ export const gameCardData: gameCardType[] = [
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
     isWinner: false,
+    type: "human",
   },
   {
     id: "2",
     name: "Hades",
     image: "/img/game/characters/9.png",
     spellGroup: "yellow",
-    spellValue: [1, 2, 3],
-    total: 3,
+    spellValue: [1, 2, 3, 4],
+    total: 4,
     communityNum: Math.round(Math.random() * 9),
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
     isWinner: false,
+    type: "enchant",
   },
   {
     id: "3",
     name: "Laya",
     image: "/img/game/characters/8.png",
     spellGroup: "yellow",
-    spellValue: [1],
-    total: 4,
+    spellValue: [1, 2],
+    total: 6,
     communityNum: Math.round(Math.random() * 9),
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
     isWinner: false,
+    type: "human",
   },
   {
     id: "4",
@@ -585,6 +588,7 @@ export const gameCardData: gameCardType[] = [
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
     isWinner: false,
+    type: "human",
   },
   {
     id: "5",
@@ -592,35 +596,38 @@ export const gameCardData: gameCardType[] = [
     image: "/img/game/characters/11.png",
     spellGroup: "yellow",
     spellValue: [1],
-    total: 5,
+    total: 7,
     communityNum: Math.round(Math.random() * 9),
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
     isWinner: false,
+    type: "human",
   },
   {
     id: "6",
     name: "Cool guy",
     image: "/img/game/characters/12.png",
     spellGroup: "blue",
-    spellValue: [1, 2, 3],
-    total: 8,
+    spellValue: [1, 2],
+    total: 7,
     communityNum: Math.round(Math.random() * 9),
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
-    isWinner: false,
+    isWinner: true,
+    type: "enchant",
   },
   {
     id: "7",
     name: "Peter pan",
     image: "/img/game/characters/10.png",
     spellGroup: "yellow",
-    spellValue: [1, 2, 3],
+    spellValue: [1],
     total: 8,
     communityNum: Math.round(Math.random() * 9),
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
-    isWinner: true,
+    isWinner: false,
+    type: "human",
   },
   {
     id: "8",
@@ -633,30 +640,33 @@ export const gameCardData: gameCardType[] = [
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
     isWinner: false,
+    type: "human",
   },
   {
     id: "9",
     name: "Zeus",
     image: "/img/game/characters/7.png",
     spellGroup: "blue",
-    spellValue: [1,2],
-    total: 10,
+    spellValue: [1, 2],
+    total: 9,
     communityNum: Math.round(Math.random() * 9),
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
     isWinner: false,
+    type: "human",
   },
   {
     id: "10",
     name: "Hades",
     image: "/img/game/characters/9.png",
     spellGroup: "blue",
-    spellValue: [1, 2, 3],
-    total: 13,
+    spellValue: [1, 2],
+    total: 11,
     communityNum: Math.round(Math.random() * 9),
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
     isWinner: false,
+    type: "human",
   },
   {
     id: "11",
@@ -669,18 +679,20 @@ export const gameCardData: gameCardType[] = [
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
     isWinner: false,
+    type: "human",
   },
   {
     id: "12",
     name: "Laya",
     image: "/img/game/characters/7.png",
     spellGroup: "blue",
-    spellValue: [1, 2],
-    total: 15,
+    spellValue: [1, 2, 3],
+    total: 14,
     communityNum: Math.round(Math.random() * 9),
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
     isWinner: false,
+    type: "human",
   },
   {
     id: "13",
@@ -693,18 +705,20 @@ export const gameCardData: gameCardType[] = [
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
     isWinner: false,
+    type: "human",
   },
   {
     id: "14",
     name: "Cool guy",
     image: "/img/game/characters/2.png",
     spellGroup: "blue",
-    spellValue: [1, 2],
+    spellValue: [1, 2, 3],
     total: 17,
     communityNum: Math.round(Math.random() * 9),
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
     isWinner: false,
+    type: "human",
   },
   {
     id: "15",
@@ -717,6 +731,7 @@ export const gameCardData: gameCardType[] = [
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
     isWinner: false,
+    type: "human",
   },
   {
     id: "16",
@@ -729,6 +744,7 @@ export const gameCardData: gameCardType[] = [
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
     isWinner: false,
+    type: "human",
   },
   {
     id: "17",
@@ -741,6 +757,7 @@ export const gameCardData: gameCardType[] = [
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
     isWinner: false,
+    type: "human",
   },
   {
     id: "18",
@@ -753,6 +770,7 @@ export const gameCardData: gameCardType[] = [
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
     isWinner: false,
+    type: "human",
   },
   {
     id: "19",
@@ -765,6 +783,7 @@ export const gameCardData: gameCardType[] = [
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
     isWinner: false,
+    type: "human",
   },
   {
     id: "20",
@@ -777,6 +796,7 @@ export const gameCardData: gameCardType[] = [
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
     isWinner: false,
+    type: "human",
   },
   {
     id: "21",
@@ -789,6 +809,7 @@ export const gameCardData: gameCardType[] = [
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
     isWinner: false,
+    type: "human",
   },
   {
     id: "22",
@@ -801,6 +822,7 @@ export const gameCardData: gameCardType[] = [
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
     isWinner: false,
+    type: "human",
   },
   {
     id: "23",
@@ -813,6 +835,7 @@ export const gameCardData: gameCardType[] = [
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
     isWinner: false,
+    type: "human",
   },
   {
     id: "24",
@@ -825,6 +848,7 @@ export const gameCardData: gameCardType[] = [
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
     isWinner: false,
+    type: "human",
   },
   {
     id: "25",
@@ -837,6 +861,7 @@ export const gameCardData: gameCardType[] = [
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
     isWinner: false,
+    type: "human",
   },
   {
     id: "26",
@@ -849,6 +874,7 @@ export const gameCardData: gameCardType[] = [
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
     isWinner: false,
+    type: "human",
   },
   {
     id: "27",
@@ -861,6 +887,7 @@ export const gameCardData: gameCardType[] = [
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
     isWinner: false,
+    type: "human",
   },
   {
     id: "28",
@@ -873,6 +900,7 @@ export const gameCardData: gameCardType[] = [
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
     isWinner: false,
+    type: "human",
   },
   {
     id: "29",
@@ -885,6 +913,7 @@ export const gameCardData: gameCardType[] = [
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
     isWinner: false,
+    type: "human",
   },
   {
     id: "30",
@@ -897,6 +926,7 @@ export const gameCardData: gameCardType[] = [
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
     isWinner: false,
+    type: "human",
   },
   {
     id: "31",
@@ -909,6 +939,7 @@ export const gameCardData: gameCardType[] = [
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
     isWinner: false,
+    type: "human",
   },
   {
     id: "32",
@@ -921,6 +952,7 @@ export const gameCardData: gameCardType[] = [
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
     isWinner: false,
+    type: "human",
   },
   {
     id: "33",
@@ -933,6 +965,7 @@ export const gameCardData: gameCardType[] = [
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
     isWinner: false,
+    type: "human",
   },
   {
     id: "34",
@@ -945,6 +978,7 @@ export const gameCardData: gameCardType[] = [
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
     isWinner: false,
+    type: "human",
   },
   {
     id: "35",
@@ -957,6 +991,7 @@ export const gameCardData: gameCardType[] = [
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
     isWinner: false,
+    type: "human",
   },
   {
     id: "36",
@@ -969,6 +1004,7 @@ export const gameCardData: gameCardType[] = [
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
     isWinner: false,
+    type: "human",
   },
   {
     id: "37",
@@ -981,6 +1017,7 @@ export const gameCardData: gameCardType[] = [
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
     isWinner: false,
+    type: "human",
   },
   {
     id: "38",
@@ -993,6 +1030,7 @@ export const gameCardData: gameCardType[] = [
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
     isWinner: false,
+    type: "human",
   },
   {
     id: "39",
@@ -1005,6 +1043,7 @@ export const gameCardData: gameCardType[] = [
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
     isWinner: false,
+    type: "human",
   },
   {
     id: "40",
@@ -1017,6 +1056,7 @@ export const gameCardData: gameCardType[] = [
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
     isWinner: false,
+    type: "human",
   },
   {
     id: "41",
@@ -1029,6 +1069,7 @@ export const gameCardData: gameCardType[] = [
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
     isWinner: false,
+    type: "human",
   },
   {
     id: "42",
@@ -1041,6 +1082,7 @@ export const gameCardData: gameCardType[] = [
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
     isWinner: false,
+    type: "human",
   },
   {
     id: "43",
@@ -1053,6 +1095,7 @@ export const gameCardData: gameCardType[] = [
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
     isWinner: false,
+    type: "human",
   },
   {
     id: "44",
@@ -1065,6 +1108,7 @@ export const gameCardData: gameCardType[] = [
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
     isWinner: false,
+    type: "human",
   },
   {
     id: "45",
@@ -1077,6 +1121,7 @@ export const gameCardData: gameCardType[] = [
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
     isWinner: false,
+    type: "human",
   },
   {
     id: "46",
@@ -1089,6 +1134,7 @@ export const gameCardData: gameCardType[] = [
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
     isWinner: false,
+    type: "human",
   },
   {
     id: "47",
@@ -1101,6 +1147,7 @@ export const gameCardData: gameCardType[] = [
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
     isWinner: false,
+    type: "human",
   },
   {
     id: "48",
@@ -1113,6 +1160,7 @@ export const gameCardData: gameCardType[] = [
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
     isWinner: false,
+    type: "human",
   },
   {
     id: "49",
@@ -1125,6 +1173,7 @@ export const gameCardData: gameCardType[] = [
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
     isWinner: false,
+    type: "human",
   },
   {
     id: "50",
@@ -1137,6 +1186,7 @@ export const gameCardData: gameCardType[] = [
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
     isWinner: false,
+    type: "human",
   },
   {
     id: "51",
@@ -1149,6 +1199,7 @@ export const gameCardData: gameCardType[] = [
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
     isWinner: false,
+    type: "human",
   },
   {
     id: "52",
@@ -1161,6 +1212,7 @@ export const gameCardData: gameCardType[] = [
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
     isWinner: false,
+    type: "human",
   },
   {
     id: "53",
@@ -1168,11 +1220,12 @@ export const gameCardData: gameCardType[] = [
     image: "/img/game/characters/2.png",
     spellGroup: "yellow",
     spellValue: [1, 2, 3],
-    total: 61,
+    total: 60,
     communityNum: Math.round(Math.random() * 9),
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
     isWinner: false,
+    type: "human",
   },
   {
     id: "54",
@@ -1180,11 +1233,12 @@ export const gameCardData: gameCardType[] = [
     image: "/img/game/characters/2.png",
     spellGroup: "yellow",
     spellValue: [1, 2, 3],
-    total: 64,
+    total: 63,
     communityNum: Math.round(Math.random() * 9),
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
     isWinner: false,
+    type: "human",
   },
   {
     id: "55",
@@ -1192,11 +1246,12 @@ export const gameCardData: gameCardType[] = [
     image: "/img/game/characters/2.png",
     spellGroup: "yellow",
     spellValue: [1, 2, 3],
-    total: 67,
+    total: 66,
     communityNum: Math.round(Math.random() * 9),
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
     isWinner: false,
+    type: "human",
   },
   {
     id: "56",
@@ -1204,14 +1259,28 @@ export const gameCardData: gameCardType[] = [
     image: "/img/game/characters/2.png",
     spellGroup: "yellow",
     spellValue: [1, 2, 3],
+    total: 69,
+    communityNum: Math.round(Math.random() * 9),
+    individualNum: Math.round(Math.random() * 99),
+    cardNum: Math.floor(Math.random() * 5250 + 1),
+    isWinner: false,
+    type: "human",
+  },
+  {
+    id: "57",
+    name: "Edmownd",
+    image: "/img/game/characters/2.png",
+    spellGroup: "yellow",
+    spellValue: [1],
     total: 70,
     communityNum: Math.round(Math.random() * 9),
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
     isWinner: false,
+    type: "human",
   },
   {
-    id: "57",
+    id: "58",
     name: "Edmownd",
     image: "/img/game/characters/2.png",
     spellGroup: "blue",
@@ -1221,9 +1290,10 @@ export const gameCardData: gameCardType[] = [
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
     isWinner: false,
+    type: "human",
   },
   {
-    id: "58",
+    id: "59",
     name: "Edmownd",
     image: "/img/game/characters/2.png",
     spellGroup: "blue",
@@ -1233,9 +1303,10 @@ export const gameCardData: gameCardType[] = [
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
     isWinner: false,
+    type: "human",
   },
   {
-    id: "59",
+    id: "60",
     name: "Edmownd",
     image: "/img/game/characters/2.png",
     spellGroup: "blue",
@@ -1245,9 +1316,10 @@ export const gameCardData: gameCardType[] = [
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
     isWinner: false,
+    type: "human",
   },
   {
-    id: "60",
+    id: "61",
     name: "Edmownd",
     image: "/img/game/characters/2.png",
     spellGroup: "blue",
@@ -1257,9 +1329,10 @@ export const gameCardData: gameCardType[] = [
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
     isWinner: false,
+    type: "human",
   },
   {
-    id: "61",
+    id: "62",
     name: "Edmownd",
     image: "/img/game/characters/2.png",
     spellGroup: "blue",
@@ -1269,9 +1342,10 @@ export const gameCardData: gameCardType[] = [
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
     isWinner: false,
+    type: "human",
   },
   {
-    id: "62",
+    id: "63",
     name: "Edmownd",
     image: "/img/game/characters/2.png",
     spellGroup: "blue",
@@ -1281,6 +1355,7 @@ export const gameCardData: gameCardType[] = [
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
     isWinner: false,
+    type: "human",
   },
 ];
 
@@ -1541,7 +1616,7 @@ export const auctionData: auctionDataType[] = [
   {
     godNumber: 0,
     godName: "Zeus",
-    titleOfHonor:"The God of the Sky",
+    titleOfHonor: "The God of the Sky",
     about: [
       <>
         Lord of the skies and king of the Olympians. Strong-willed and astute,
@@ -1559,7 +1634,7 @@ export const auctionData: auctionDataType[] = [
   {
     godNumber: 1,
     godName: "Artemis",
-    titleOfHonor:"The God of the Hunt",
+    titleOfHonor: "The God of the Hunt",
     about: [
       <>
         Beautiful moon maiden, goddess of the hunt. Twin to Apollo, the sun god.
@@ -1581,7 +1656,7 @@ export const auctionData: auctionDataType[] = [
   {
     godNumber: 2,
     godName: "Hermes",
-    titleOfHonor:"The God of the Mail",
+    titleOfHonor: "The God of the Mail",
     about: [
       <>
         Master of thievery and poetry. With his wing-threaded sandals, he can
@@ -1601,7 +1676,7 @@ export const auctionData: auctionDataType[] = [
   {
     godNumber: 3,
     godName: "Hephaestus",
-    titleOfHonor:"The God of the Sun",
+    titleOfHonor: "The God of the Sun",
     about: [
       <>
         God of craftsmen and invention, son of Hera. A blazing forge with his
@@ -1622,7 +1697,7 @@ export const auctionData: auctionDataType[] = [
   {
     godNumber: 4,
     godName: "Hecate",
-    titleOfHonor:"The God of the Moon",
+    titleOfHonor: "The God of the Moon",
     about: [
       <>
         Goddess of necromancy and sorcery. Accompanied by her double shadow, her
@@ -1639,7 +1714,7 @@ export const auctionData: auctionDataType[] = [
   {
     godNumber: 5,
     godName: "Hades",
-    titleOfHonor:"The God of the Underworld",
+    titleOfHonor: "The God of the Underworld",
     about: [
       <>
         God of the afterlife and Lord of the underworld. No mortal man could
@@ -1655,7 +1730,7 @@ export const auctionData: auctionDataType[] = [
   {
     godNumber: 6,
     godName: "Aphrodite",
-    titleOfHonor:"The God of Love",
+    titleOfHonor: "The God of Love",
     about: [
       <>
         Goddess of beauty and passion. Seductive, beautiful and wistful, this
@@ -1672,7 +1747,7 @@ export const auctionData: auctionDataType[] = [
   {
     godNumber: 7,
     godName: "Poseidon",
-    titleOfHonor: "The God Of Sea" ,
+    titleOfHonor: "The God Of Sea",
     about: [
       <>
         God of the oceans and Lord of the seas. Father of horses and all sea
@@ -1719,7 +1794,7 @@ export const auctionData: auctionDataType[] = [
     godUrl: "/Hera",
   },
 ];
-const {AuctionTab1,AuctionTab2,AuctionTab3} = auctionTabsSVGS;
+const { AuctionTab1, AuctionTab2, AuctionTab3 } = auctionTabsSVGS;
 export const auctionTabData: auctionTabDataType[] = [
   {
     tabName: "Mint",
