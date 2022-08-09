@@ -12,7 +12,6 @@ import {
   communityNumStyles,
   individualNumStyles,
   spellStyles,
-  spellStylesForEnchant,
   styles,
   times,
 } from "../../utils/game";
@@ -35,7 +34,7 @@ interface props {
   setDoorStage: Dispatch<SetStateAction<number>>;
 }
 
-const EnchantCardGame: React.FC<props> = ({
+const CardGame: React.FC<props> = ({
   data,
   cardIndex,
   turnNumber,
@@ -51,7 +50,6 @@ const EnchantCardGame: React.FC<props> = ({
 }) => {
   // states
   const [stage, setStage] = useState(0);
-  const [isWinnerStage, setIsWinnerStage] = useState(-1);
   const aniControls = useAnimation();
 
   useEffect(() => {
@@ -66,10 +64,11 @@ const EnchantCardGame: React.FC<props> = ({
     if (turnNumber === cardIndex) {
       setCurrentCard(data);
     }
-    if (turnNumber === cardIndex && doorStage === -1) {
+    if (turnNumber === cardIndex && data.isWinner === false) {
+      console.log("1");
       setTimeout(() => {
         setTurnNumber((prevState) => prevState! + 1);
-      }, times.turnTime + 8000);
+      }, times.turnTime);
     }
   };
 
@@ -77,21 +76,18 @@ const EnchantCardGame: React.FC<props> = ({
   useLayoutEffect(() => {
     if (turnNumber === cardIndex) {
       if (doorStage === -1 && data.isWinner === true) {
-        // double check if the card is a winner with current spell or second chance
-        if ( isWinnerStage === -1 &&
+        if (
           data.total - data.spellValue.length / 2 ===
-          spellNumber[data.spellGroup === "blue" ? "yellow" : "blue"]
+          spellNumber[data.spellGroup === "yellow" ? "blue" : "yellow"]
         ) {
-          setIsWinnerStage(0);
-        } else {
-          setIsWinnerStage(1);
-        }
-        if (isWinnerStage === 0) {
           setTimeout(() => {
             setDoorStage(0);
           }, times.door0StageTime);
+        } else {
+          setTimeout(() => {
+            setDoorStage(0);
+          }, times.door0StageTime + 6000);
         }
-        
       }
       if (stage === 0) {
         setStage(1);
@@ -104,37 +100,29 @@ const EnchantCardGame: React.FC<props> = ({
           setSpellNumber((prevState) => ({
             ...prevState,
             [data.spellGroup + "CardCount"]:
-            prevState[data.spellGroup + "CardCount"] + 1,
-            [data.spellGroup]: data.total - data.spellValue.length/2,
+              prevState[data.spellGroup + "CardCount"] + 1,
+            [data.spellGroup]: data.total - data.spellValue.length / 2,
           }));
         });
         setTimeout(() => {
+          setStage(1.5);
+        }, times.turnTime - 3000);
+      }
+      if (stage === 1.5 && doorStage < 0) {
+        setSpellNumber((prevState) => ({
+          ...prevState,
+          [data.spellGroup]: data.total,
+        }));
+        setTimeout(() => {
           setTransferNum(false);
           setStage(2);
-        }, times.turnTime);
+        }, 3000);
       }
-      
+
       if (stage === 2 && !data.isWinner) {
         setTimeout(() => {
           aniControls.start("stage2");
         }, times.cardStage2AnimTime);
-      } else {
-        if(isWinnerStage === 1 && doorStage < 0) {
-          setTimeout(() => {
-            setSpellNumber((prevState) => ({
-              ...prevState,
-              [data.spellGroup]: data.total,
-            }));
-            setTimeout(() => {
-              setDoorStage(0);
-            }, times.door0StageTime);
-          }, 8000);
-        }
-        if(isWinnerStage === 0 && doorStage < 0) {
-          setTimeout(() => {
-            setDoorStage(0);
-          }, times.door0StageTime);
-        }
       }
     }
   }, [doorStage, turnNumber, stage]);
@@ -171,7 +159,7 @@ const EnchantCardGame: React.FC<props> = ({
                 spellNumber={spellNumber}
                 spellGroup={data.spellGroup}
                 showOrHidden={true}
-                spellStyles={spellStylesForEnchant(spell,data.spellValue.length)}
+                spellStyles={spellStyles(spell)}
               />
             );
           })}
@@ -205,4 +193,4 @@ const EnchantCardGame: React.FC<props> = ({
   );
 };
 
-export default EnchantCardGame;
+export default CardGame;
