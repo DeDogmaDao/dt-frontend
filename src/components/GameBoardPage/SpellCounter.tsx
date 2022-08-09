@@ -66,9 +66,11 @@ const SpellCounter: React.FC<props> = ({
       }
     }, times.spellCounterDelayTime);
     if (doorStage > -1) {
-      setOff(true);
+      setTimeout(() => {
+        setOff(true);
+      }, 3000);
     }
-  }, [spellNumber]);
+  }, [spellNumber,doorStage]);
 
   return (
     <motion.div

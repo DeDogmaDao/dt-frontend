@@ -548,7 +548,7 @@ export const gameCardData: gameCardType[] = [
     communityNum: Math.round(Math.random() * 9),
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
-    isWinner: true,
+    isWinner: false,
     type: "human",
   },
   {
