@@ -70,21 +70,20 @@ const CardGame: React.FC<props> = ({
       }, times.turnTime);
     }
   };
-  
+
   // Stages
   useLayoutEffect(() => {
     if (turnNumber === cardIndex) {
-      if (doorStage === -1 && data.isWinner === true && stage===0) {
+      if (doorStage === -1 && data.isWinner === true && stage === 0) {
         if (
           data.total - data.spellValue.length / 2 ===
           spellNumber[data.spellGroup === "yellow" ? "blue" : "yellow"]
-          ) {
+        ) {
           setTimeout(() => {
             setDoorStage(0);
           }, times.door0StageTime);
         } else {
           setTimeout(() => {
-            console.log("1");
             setDoorStage(0);
           }, times.door0StageTime + 6500);
         }
@@ -96,22 +95,19 @@ const CardGame: React.FC<props> = ({
         }, times.transferNumTime);
       }
       if (stage === 1 && doorStage < 0) {
-        console.log("2");
         aniControls.start("stage1").then(() => {
           setSpellNumber((prevState) => ({
             ...prevState,
             [data.spellGroup + "CardCount"]:
-            prevState[data.spellGroup + "CardCount"] + 1,
+              prevState[data.spellGroup + "CardCount"] + 1,
             [data.spellGroup]: data.total - data.spellValue.length / 2,
           }));
         });
         setTimeout(() => {
-          console.log("3");
           setStage(1.5);
         }, times.turnTime - 3000);
       }
       if (stage === 1.5 && doorStage < 0) {
-        console.log("4");
         setSpellNumber((prevState) => ({
           ...prevState,
           [data.spellGroup]: data.total,
@@ -121,7 +117,7 @@ const CardGame: React.FC<props> = ({
           setStage(2);
         }, 3000);
       }
-      
+
       if (stage === 2 && !data.isWinner) {
         setTimeout(() => {
           aniControls.start("stage2");
