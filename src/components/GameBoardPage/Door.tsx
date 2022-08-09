@@ -14,6 +14,7 @@ import {
   doorToLeftAnimation,
   doorToRightAnimation,
 } from "../../utils/animation";
+import { times } from "../../utils/game";
 import RingPin from "./RingPin";
 
 interface props {
@@ -42,13 +43,13 @@ const Door: React.FC<props> = ({
         leftDoorRef.current!.play();
         rightDoorRef.current!.play();
         setDoorStage(2);
-      }, 1000);
+      }, times.door2StageTime);
     }
     if (doorStage === 4) {
       doorAnimControls.start("visible");
       setTimeout(() => {
         setDoorStage(5);
-      }, 3000);
+      }, times.door5StageTime);
     }
   }, [doorStage]);
 

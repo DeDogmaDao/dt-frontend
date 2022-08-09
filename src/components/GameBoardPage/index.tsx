@@ -12,6 +12,7 @@ import {
   bottomRightSpell,
   topLeftSpell,
   topRightSpell,
+  times,
 } from "../../utils/game";
 import { gameCardType, spellNumber } from "../../types/allTypes";
 import Calculation from "./Calculation";
@@ -20,6 +21,7 @@ import SpellCounter from "./SpellCounter";
 import Door from "./Door";
 import Lightning from "./Lightning";
 import Diamond from "./Diamond";
+import EnchantCardGame from "./EnchantCardGame";
 
 const GameBoardPage: React.FC = () => {
   const [turnNumber, setTurnNumber] = useState<number | null>(null);
@@ -45,7 +47,7 @@ const GameBoardPage: React.FC = () => {
             ["yellow"]: prevState.yellow + 20,
             ["blue"]: prevState.blue + 20,
           }));
-        }, 2000 + Math.pow(i, 2) * 200);
+        }, times.winnerSpellBombTime + Math.pow(i, 2) * 200);
       }
     }
   }, [doorStage]);
@@ -93,6 +95,26 @@ const GameBoardPage: React.FC = () => {
           }}
         >
           {gameCardData.map((data, index) => {
+            if(data.type ==="enchant"){
+              return (
+                <EnchantCardGame
+                  key={data.total + data.spellGroup + data.spellValue.length}
+                  layoutID={"cardGame" + data.id}
+                  data={data}
+                  cardIndex={index}
+                  turnNumber={turnNumber}
+                  setTurnNumber={setTurnNumber}
+                  gameCardData={gameCardData}
+                  spellNumber={spellNumber}
+                  setSpellNumber={setSpellNumber}
+                  setCurrentCard={setCurrentCard}
+                  transferNum={transferNum}
+                  setTransferNum={setTransferNum}
+                  setDoorStage={setDoorStage}
+                  doorStage={doorStage}
+                />
+              );
+            }
             return (
               <CardGame
                 key={data.total + data.spellGroup + data.spellValue.length}

@@ -2,6 +2,7 @@ import { motion, MotionStyle, useAnimation } from "framer-motion";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { gameCardType, spellNumber } from "../../types/allTypes";
 import { opacityBlinkAni, pinAniDown, pinAniUp, ringPinAni } from "../../utils/animation";
+import { times } from "../../utils/game";
 
 interface props {
   spellNumber: spellNumber;
@@ -34,7 +35,7 @@ const RingPin: React.FC<props> = ({ spellNumber, currentCard, doorStage, setDoor
           translateY: (plusOrMinus * -Math.pow(delta, 2)) / 400 + "vw",
         },
       });
-    }, 3000);
+    }, times.ringTransferDelayTime);
   }, [spellNumber]);
   
   useEffect(() => {
@@ -44,7 +45,7 @@ const RingPin: React.FC<props> = ({ spellNumber, currentCard, doorStage, setDoor
         controls.start("blink");
         ringPinControls.start("blink");
         setDoorStage(1);
-      }, 7000);
+      }, times.door1StageTime);
     }
   }, [doorStage]);
 

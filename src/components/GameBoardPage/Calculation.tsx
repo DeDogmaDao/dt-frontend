@@ -6,6 +6,7 @@ import {
   calcFadeAni,
   calcFirstResultAni,
 } from "../../utils/animation";
+import { times } from "../../utils/game";
 import CalcItem from "./CalcItem";
 import CardNum from "./CardNum";
 interface props {
@@ -55,19 +56,18 @@ const Calculation: React.FC<props> = ({
           community: "",
           individual: "",
         });
-      }, 8000);
+      }, times.calcStateSetDelayTime);
 
-      // there is an issue here************** come back to fix it (resultRef.current)
       setTimeout(() => {
         resultRef.current =
           currentCard.cardNum * currentCard.communityNum +
           currentCard.individualNum;
-      }, 1000);
+      }, times.calcResultSetDelayTime);
     }
     if(currentCard?.isWinner){
       setTimeout(() => {
         setIsWinner(true);
-      }, 9000);
+      }, times.calcWinnerSetDelayTime);
     }
   }, [currentCard]);
 
@@ -81,10 +81,10 @@ const Calculation: React.FC<props> = ({
           community: "communityNum",
           individual: "individualNum",
         });
-      }, 2000 + 6500);
+      }, times.calcStage0DelayTime + times.calcStage0DelayTimeFixFor0);
       setTimeout(() => {
         setCalcStage(1);
-      }, 5000 + 7000);
+      }, times.calcStage1DelayTime + times.calcStage1DelayTimeFixFor0);
     }
 
     // for second card and more
@@ -96,10 +96,10 @@ const Calculation: React.FC<props> = ({
           community: "communityNum",
           individual: "individualNum",
         });
-      }, 2000);
+      }, times.calcStage0DelayTime);
       setTimeout(() => {
         setCalcStage(1);
-      }, 5000);
+      }, times.calcStage1DelayTime);
     }
   }, [transferNum]);
 
@@ -118,7 +118,7 @@ const Calculation: React.FC<props> = ({
           firstLine: "",
           secondLine: "sideCardNum",
         });
-      }, 2000);
+      }, times.calcTransferToSideCardDelayTime);
     }
   }, [calcStage]);
 
