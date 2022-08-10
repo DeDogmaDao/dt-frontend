@@ -22,6 +22,7 @@ import Door from "./Door";
 import Lightning from "./Lightning";
 import Diamond from "./Diamond";
 import EnchantCardGame from "./EnchantCardGame";
+import MagnetAlert from "./MagnetAlert";
 
 const GameBoardPage: React.FC = () => {
   const [turnNumber, setTurnNumber] = useState<number | null>(null);
@@ -94,6 +95,7 @@ const GameBoardPage: React.FC = () => {
             perspectiveOrigin: "66.66% 50%",
           }}
         >
+          <MagnetAlert />
           {gameCardData.map((data, index) => {
             if(data.type ==="enchant"){
               return (
