@@ -95,7 +95,7 @@ const GameBoardPage: React.FC = () => {
             perspectiveOrigin: "66.66% 50%",
           }}
         >
-          <MagnetAlert />
+          <MagnetAlert currentCard={currentCard} />
           {gameCardData.map((data, index) => {
             if(data.type ==="enchant"){
               return (
