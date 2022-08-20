@@ -1,6 +1,10 @@
 import { useAuthStore } from "../global/authStore";
 
-const AuthProvider: React.FC = ({ children }) => {
+interface props {
+  children:React.ReactNode;
+}
+
+const AuthProvider: React.FC<props> = ({ children }) => {
 const auth = useAuthStore(state=>state.auth);
 
   if (!auth) {
