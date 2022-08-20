@@ -3,6 +3,7 @@ import { createPortal } from "react-dom";
 
 interface props {
   id: string;
+  children:React.ReactNode;
 }
 const Portal: React.FC<props> = ({ id, children }):ReactPortal | null => {
   const [node, setNode] = useState<HTMLElement | null>();
