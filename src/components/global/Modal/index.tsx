@@ -7,6 +7,7 @@ interface props {
   isOpen: boolean;
   id:string;
   onBackdropClick: MouseEventHandler<HTMLDivElement> | undefined;
+  children:React.ReactNode;
 }
 const Modal: React.FC<props> = ({ isOpen,id, onBackdropClick, children }) => {
 
