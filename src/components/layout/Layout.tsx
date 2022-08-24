@@ -4,7 +4,12 @@ import Main from "./Main";
 import { useRouter } from "next/router";
 import { AnimatePresence, LayoutGroup } from "framer-motion";
 import { useMemo } from "react";
-const Layout: React.FC = (props) => {
+
+interface props {
+  children:React.ReactNode;
+}
+
+const Layout: React.FC<props> = (props) => {
   const router = useRouter();
 
   const gameBoardCondition = router.asPath === "/gameboard";

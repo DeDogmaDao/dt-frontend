@@ -9,6 +9,7 @@ interface props {
   onBackdropClick: MouseEventHandler<HTMLDivElement> | undefined;
   type: popUpType;
   title: string;
+  children:React.ReactNode;
 }
 const colors = { successful: "#2FFF69", failed: "#E31515", neutral: "" };
 const PopUp: React.FC<props> = ({

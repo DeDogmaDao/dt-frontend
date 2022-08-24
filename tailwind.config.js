@@ -159,6 +159,7 @@ module.exports = {
       bounceY: "bounceY 1s infinite",
       bounceX: "bounceX 1s infinite",
       glow: "glow 1s ease-in-out infinite alternate",
+      glowText: "glowText 2s ease-in-out infinite alternate",
     },
     aspectRatio: {
       auto: "auto",
@@ -655,6 +656,16 @@ module.exports = {
         "100%": {
           boxShadow:
             "0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6",
+        },
+      },
+      glowText: {
+        "0%": {
+          textShadow:
+            "0 0 10px #ef4444, 0 0 20px #ef4444, 0 0 30px #ef4444, 0 0 40px #ef4444, 0 0 50px #ef4444, 0 0 60px #ef4444, 0 0 70px #e60073",
+        },
+        "100%": {
+          textShadow:
+            "0 0 40px #ef4444, 0 0 30px #ef4444, 0 0 40px #ef4444, 0 0 50px #ef4444, 0 0 60px #ef4444, 0 0 70px #ef4444, 0 0 80px #ef4444",
         },
       },
     },

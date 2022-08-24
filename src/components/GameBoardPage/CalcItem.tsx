@@ -4,6 +4,7 @@ interface props {
   framerVariant?: Variants;
   framerCustom?: any;
   framerLayoutId?: string;
+  children:React.ReactNode;
 }
 
 const CalcItem: React.FC<props> = ({

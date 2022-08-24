@@ -4,5 +4,24 @@
         "dedogmadao",
         "elgohr",
         "fifsky"
-    ]
+    ],
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        ".dockerignore": true,
+        ".gitignore": true,
+        "docker-compose.deploy.yml": true,
+        "Dockerfile": true,
+        "jest.config.js": true,
+        "jest.setup.js": true,
+        "node_modules": true,
+        ".vscode": true,
+        ".next": true,
+        ".github": true
+    },
+    "explorerExclude.backup": {}
 }
