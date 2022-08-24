@@ -48,7 +48,11 @@ export const CoinbaseWallet = new CoinbaseWalletConnector({
   chains: [chain.hardhat],
 });
 
-const Web3ConnectProvider: React.FC = ({ children }) => {
+interface props {
+  children:React.ReactNode;
+}
+
+const Web3ConnectProvider: React.FC<props> = ({ children }) => {
   const setAuth = useAuthStore((state) => state.setAuth);
   const setIsVerified = useAuthStore((state) => state.setIsVerified);
   const router = useRouter();

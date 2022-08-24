@@ -21,6 +21,7 @@ interface props {
   dataQuantity: number;
   tab: tabsType;
   innerWidth: number;
+  children:React.ReactNode;
 }
 const Slider: React.FC<props> = ({
   children,
@@ -30,7 +31,7 @@ const Slider: React.FC<props> = ({
   activeIndexCard,
   dataQuantity,
   tab,
-  innerWidth
+  innerWidth,
 }) => {
   const carouselRef = useRef<HTMLDivElement>(null);
 

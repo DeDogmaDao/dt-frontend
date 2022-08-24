@@ -27,7 +27,11 @@ const client = createClient({
   connectors: [MetaMaskWallet, WalletConnect, CoinbaseWallet],
 });
 
-const Web3GlobalProvider: React.FC = ({ children }) => {
+interface props {
+  children:React.ReactNode;
+}
+
+const Web3GlobalProvider: React.FC<props> = ({ children }) => {
   return <WagmiConfig client={client}>{children}</WagmiConfig>;
 };
 export default Web3GlobalProvider;

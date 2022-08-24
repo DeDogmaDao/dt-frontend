@@ -549,7 +549,7 @@ export const gameCardData: gameCardType[] = [
     individualNum: Math.round(Math.random() * 99),
     cardNum: Math.floor(Math.random() * 5250 + 1),
     isWinner: false,
-    type: "human",
+    type: "bandit",
   },
   {
     id: "2",
