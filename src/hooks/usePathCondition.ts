@@ -4,7 +4,7 @@ import { useRef } from "react";
 export const usePathCondition = (url: string | string[]): boolean => {
   const router = useRouter();
   const result = useRef(false);
-
+console.log(router.asPath);
   if (url[0]) {
     if (typeof url === "string") {
       if (router.asPath === url) {
