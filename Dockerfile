@@ -1,15 +1,12 @@
-FROM node:14 as dependencies
+FROM node:14
 USER root
 WORKDIR /app/frontend/src
 
-ENV ROBOTS_TXT=$ROBOTS_TXT
-ARG ROBOTS_TXT=$ROBOTS_TXT
 
 COPY package*.json ./
 RUN npm install
 
 # Bundle app source
 COPY . .
-
+RUN chmod +x run.sh
 EXPOSE 3000
-RUN  echo $ROBOTS_TXT > /app/frontend/src/public/robots.txt
