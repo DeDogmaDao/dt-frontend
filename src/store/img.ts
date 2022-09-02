@@ -1,5 +1,6 @@
 import { StaticImageData } from "next/image";
 
+
 // teams
 import member1 from "./images/team/member1.png";
 import member2 from "./images/team/member2.png";
