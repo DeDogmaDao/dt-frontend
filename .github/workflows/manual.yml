@@ -23,32 +23,22 @@ jobs:
 
       - name: push docker image to package registry
         run: docker push ghcr.io/dedogmadao/dt-frontend/dt-frontend:${{ github.ref_name }}-latest
-
-  environ_step:
-    needs: build_and_push
-    runs-on: ubuntu-latest
-    outputs:
-      prefix: ${{ steps.env_step.outputs.env_prefix }}
-    steps:
-      - name: Check out current repository and set ENV
-        id: env_step
-        run: if [ "${{ github.ref }}" == 'refs/heads/develop' ]; then echo "::set-output name=env_prefix::STAGE_"; else echo "::set-output name=env_prefix::PROD_"; fi
-        
+ 
   update_services:
-    needs: environ_step
+    needs: build_and_push
     runs-on: ubuntu-latest
     steps:
     - name: run command on remote
       uses: appleboy/ssh-action@master
       with:
-        host: ${{ secrets[format('{0}SSH_ACTION_HOST', needs.environ_step.outputs.prefix)] }}
-        username: ${{ secrets[format('{0}SSH_ACTION_USER', needs.environ_step.outputs.prefix)] }}
-        key: ${{ secrets[format('{0}SSH_ACTION_KEY', needs.environ_step.outputs.prefix)] }}
-        port: ${{ secrets[format('{0}SSH_ACTION_PORT', needs.environ_step.outputs.prefix)] }}
+        host: ${{ secrets.PROD_SSH_ACTION_HOST }}
+        username: ${{ secrets.PROD_SSH_ACTION_USER }}
+        key: ${{ secrets.PROD_SSH_ACTION_KEY }}
+        port: ${{ secrets.PROD_SSH_ACTION_PROT }}
         script: |
-          export DOMAIN= ${{ secrets[format('{0}DOMAIN', needs.environ_step.outputs.prefix)] }}
-          export BACKEND_URL=${{ secrets[format('{0}BACKEND_URL', needs.environ_step.outputs.prefix)] }}
-          export ROBOTS_TXT=${{ secrets[format('{0}ROBOTS_TXT_FILE', needs.environ_step.outputs.prefix)] }}     
+          export DOMAIN=${{ secrets.PROD_DOMAIN }}
+          export BACKEND_URL=${{ secrets.PROD_BACKEND_URL }}
+          export ROBOTS_TXT=${{ secrets.PROD_ROBOTS_TXT_FILE }}
           curl -H "Authorization: token ${{ secrets.PERSONAL_GITHUB_TOKEN }}" https://raw.githubusercontent.com/DeDogmaDao/dt-frontend/master/docker-compose.deploy.yml > docker-compose.deploy.yml
           echo ${{ secrets.PERSONAL_GITHUB_TOKEN }} | docker login ghcr.io -u flokibb --password-stdin
           docker network create ddd_network || true
