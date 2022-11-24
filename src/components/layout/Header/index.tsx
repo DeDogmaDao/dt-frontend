@@ -72,7 +72,7 @@ const Header: React.FC = () => {
         >
           <socialSVGs.DiscordSVG width={26} />
         </a>
-<!--         <ConnectWallet /> -->
+        {/* <ConnectWallet /> */}
         <MobileMenu headerLinks={headerLinks} />
       </div>
     </div>
