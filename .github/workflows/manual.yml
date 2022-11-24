@@ -34,7 +34,7 @@ jobs:
         host: ${{ secrets.PROD_SSH_ACTION_HOST }}
         username: ${{ secrets.PROD_SSH_ACTION_USER }}
         key: ${{ secrets.PROD_SSH_ACTION_KEY }}
-        port: ${{ secrets.PROD_SSH_ACTION_PROT }}
+        port: ${{ secrets.PROD_SSH_ACTION_PORT }}
         script: |
           export DOMAIN=${{ secrets.PROD_DOMAIN }}
           export BACKEND_URL=${{ secrets.PROD_BACKEND_URL }}
