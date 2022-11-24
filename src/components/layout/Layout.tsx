@@ -4,6 +4,7 @@ import Main from "./Main";
 import { useRouter } from "next/router";
 import { AnimatePresence, LayoutGroup } from "framer-motion";
 import { useMemo } from "react";
+import { usePathCondition } from "../../hooks/usePathCondition";
 
 interface props {
   children:React.ReactNode;
@@ -12,16 +13,18 @@ interface props {
 const Layout: React.FC<props> = (props) => {
   const router = useRouter();
 
-  const gameBoardCondition = router.asPath === "/gameboard";
-  const underConstructionCondition = router.asPath === "/underconstruction";
-  const roadmapCondition = router.asPath === "/roadmap";
+  // const gameBoardCondition = router.asPath === "/gameboard";
+  // const underConstructionCondition = router.asPath === "/underconstruction";
+  // const roadmapCondition = router.asPath === "/roadmap";
 
-  const layoutCondition = useMemo(() => {
-    return [
-      !gameBoardCondition && !underConstructionCondition,
-      !gameBoardCondition && !underConstructionCondition && !roadmapCondition,
-    ];
-  }, [router.pathname]);
+  // const layoutCondition = useMemo(() => {
+  //   return [
+  //     !gameBoardCondition && !underConstructionCondition,
+  //     !gameBoardCondition && !underConstructionCondition && !roadmapCondition,
+  //   ];
+  // }, [router.pathname]);
+
+
 
   const exitCompleteHandler = () => {
     const urlHash = window.location.hash;
@@ -34,16 +37,20 @@ const Layout: React.FC<props> = (props) => {
       window.scrollTo(0, 0);
     }
   };
+
+  const layoutHeaderException = usePathCondition(["/gameboard","/underconstruction"]);
+  const layoutFooterException = usePathCondition(["/gameboard","/underconstruction", "/roadmap"]);
+
   return (
     <LayoutGroup>
       <div
         id="__layout"
         className="w-full h-full  flex flex-col justify-between items-start overflow-hidden relative"
       >
-        {layoutCondition[0] && <Header />}
+        {!layoutHeaderException && <Header />}
         <AnimatePresence exitBeforeEnter onExitComplete={exitCompleteHandler}>
           <Main key={router.pathname}>{props.children}</Main>
-          {layoutCondition[1] && <Footer />}
+          {!layoutFooterException && <Footer />}
         </AnimatePresence>
       </div>
     </LayoutGroup>
