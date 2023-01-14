@@ -23,6 +23,7 @@ import { auctionTabsSVGS, socialSVGs } from "./svg";
 import {
   decentralTitanSocial,
   discordLink,
+  elaheSocial,
   erc721Link,
   flokiBBSocial,
   georgeSocial,
@@ -39,7 +40,7 @@ import {
 
 import { teamImg, walletImgData } from "./img";
 
-const { DiscordSVG, YoutubeSVG, Twitter, Github, Instagram, Linkedin } =
+const { DiscordSVG, YoutubeSVG, Twitter, Github, Instagram, Linkedin,WebsiteSVG } =
   socialSVGs;
 
 export const footerData: socialType[] = [
@@ -316,10 +317,11 @@ export const teamDataLvl2: teamCardType[] = [
     link: [{ href: katySocial.instagram, icon: <Instagram /> }],
   },
   {
-    name: "Sofia",
+    name: "Elahe",
     role: "Head of art",
     image: teamImg[6],
     desc: "Full-time artist for more than 10 years. Specialised in Illustration, character and motion design in the video production and game industry. On the introverted side, but an amazing teammate. Perhaps she’ll decide to be doxed one day.",
+    link: [{ href: elaheSocial.site, icon: <WebsiteSVG /> }],
   },
 ];
 
