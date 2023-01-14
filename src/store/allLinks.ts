@@ -52,6 +52,11 @@ export const katySocial = {
     instagram: "https://www.instagram.com/katythemaker"
 }
 
+//Elahe
+export const elaheSocial = {
+  site: "https://www.artstation.com/elahe_afroozan"
+}
+
 
 ////////////////
 //Global
