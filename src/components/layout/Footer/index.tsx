@@ -26,7 +26,7 @@ const Footer: React.FC = () => {
           })}
         </ul>
         <p className="mb-10 text-xs ssm:text-medium-light !font-thin z-10">
-          &copy; COPYRIGHT 2022 DDD. ALL RIGHTS RESERVED
+          &copy; COPYRIGHT 2023 DDD. ALL RIGHTS RESERVED
         </p>
       </motion.footer>
     </>

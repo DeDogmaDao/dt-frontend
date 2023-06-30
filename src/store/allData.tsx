@@ -89,7 +89,7 @@ export const faqData: faqType[] = [
   },
   {
     question: "Mint date",
-    answer: <>June 2022</>,
+    answer: <>November 2023</>,
   },
   {
     question: "When is the reveal?",
@@ -1466,16 +1466,16 @@ export const roadDataQ2: roadDataType[] = [
   },
 ];
 export const roadDataQ3: roadDataType[] = [
-  {
-    title: "Platformization of the lottery format for other collectibles",
-    desc: (
-      <>
-        This is possible via fractionalizing to ERC20. DDD will host at least 10
-        lotteries for popular collectibles by the end of 2022.
-      </>
-    ),
-    size: 2,
-  },
+  // {
+  //   title: "Platformization of the lottery format for other collectibles",
+  //   desc: (
+  //     <>
+  //       This is possible via fractionalizing to ERC20. DDD will host at least 10
+  //       lotteries for popular collectibles by the end of 2023.
+  //     </>
+  //   ),
+  //   size: 2,
+  // },
   {
     title: "Expanding the games and protocols on ethereum layer2 networks",
     desc: <> Building fully on-chain games with cost efficient fees.</>,
