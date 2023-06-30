@@ -4,7 +4,7 @@ export const youtubeLink: string =
   "https://www.youtube.com/channel/UCNGZXAcCP-xHrAVqaEWqozw";
 export const twitterLink: string = "https://twitter.com/DMTtreasure";
 export const gitHubLink: string = "https://github.com/DeDogmaDao";
-export const gitbookLink: string = "https://docs.dedogmadao.com/";
+export const gitbookLink: string = "https://dedogmadao.gitbook.io/intro/";
 
 ////////video links
 //intro video
@@ -14,7 +14,7 @@ export const introVideoLink: string = "https://www.youtube.com/embed/amQDMEgXh1Y
 //////// faq links
 //Do the NFTs have an equal chance to win the lottery?
 export const lotteryChanceLink: string =
-  "https://docs.dedogmadao.com/game-structure#guilds-formed-by-special-powers-gifted-by-the-olympian-gods";
+  "https://dedogmadao.gitbook.io/intro/game-structure#guilds-formed-by-special-powers-gifted-by-the-olympian-gods";
 
 // Will Demmortal Treasure be minted on ERC-721A standard?
 export const erc721Link: string = "https://www.azuki.com/erc721a";
@@ -61,6 +61,6 @@ export const elaheSocial = {
 ////////////////
 //Global
 // terms of service
-export const tosLink: string = "https://docs.dedogmadao.com/terms-of-service";
+export const tosLink: string = "https://dedogmadao.gitbook.io/intro/terms-of-service";
 // privacy policy
-export const privacyLink: string = "https://docs.dedogmadao.com/privacy-policy";
+export const privacyLink: string = "https://dedogmadao.gitbook.io/intro/privacy-policy";
