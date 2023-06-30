@@ -1439,16 +1439,16 @@ export const roadDataQ2: roadDataType[] = [
     ),
     size: 2.5,
   },
-  {
-    title: "Expanding DDD collictigames to Sandbox platform",
-    desc: (
-      <>
-        This is an ongoing project. This is expected to be released by the end
-        of 2022.
-      </>
-    ),
-    size: 1.5,
-  },
+  // {
+  //   title: "Expanding DDD collictigames to Sandbox platform",
+  //   desc: (
+  //     <>
+  //       This is an ongoing project. This is expected to be released by the end
+  //       of 2022.
+  //     </>
+  //   ),
+  //   size: 1.5,
+  // },
   {
     title: "Merging other investment DeFi protocols to our existing games",
     desc: <>To add more diverse funds to the lottery prize.</>,
@@ -1466,16 +1466,16 @@ export const roadDataQ2: roadDataType[] = [
   },
 ];
 export const roadDataQ3: roadDataType[] = [
-  // {
-  //   title: "Platformization of the lottery format for other collectibles",
-  //   desc: (
-  //     <>
-  //       This is possible via fractionalizing to ERC20. DDD will host at least 10
-  //       lotteries for popular collectibles by the end of 2023.
-  //     </>
-  //   ),
-  //   size: 2,
-  // },
+  {
+    title: "Platformization of the lottery format for other collectibles",
+    desc: (
+      <>
+        This is possible via fractionalizing to ERC20. DDD will host at least 10
+        lotteries for popular collectibles by the end of 2023.
+      </>
+    ),
+    size: 2,
+  },
   {
     title: "Expanding the games and protocols on ethereum layer2 networks",
     desc: <> Building fully on-chain games with cost efficient fees.</>,
