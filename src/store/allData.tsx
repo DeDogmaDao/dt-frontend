@@ -1541,12 +1541,12 @@ export const benefitsData: benefitType[] = [
     ],
   },
   {
-    title: "Auto-join lottery",
+    title: "Automated Entry Contest",
     desc: [
       <>
-        All NFT holders will automatically participate in our{" "}
-        <span className="font-semibold">daily and weekly</span> gamified{" "}
-        <span className="font-semibold">lottery</span>.
+        All NFT holders will involuntarily enter{" "}
+        <span className="font-semibold">daily and weekly</span> game{" "}
+        <span className="font-semibold"> of chance</span>. No added fees or actions required unless your NFT wins.
       </>,
       <>
         <span className="font-semibold">No extra gas fee</span> or action needed
@@ -1562,7 +1562,7 @@ export const benefitsData: benefitType[] = [
 export const homePageMetaData: metaDataType = {
   siteTitle: "DeDogma Dao",
   pageTitle: "Home",
-  desc: "Demmortal Treasure is more than just a collectible. It’s a sustainable economy powered by anti-rug protocols and a daily lottery with guaranteed prizes. All by owning an NFT!",
+  desc: "Demmortal Treasure is more than just a collectible. It's a self-sustaining economy driven by anti-rug protocols and a daily draw offering assured rewards, all through NFT ownership!",
   keywords:
     "dogma , decentralized , nft , lottery , collectible , ethereum , collectigame , titan , mythology , greek myths , zeus , card game  , no loss , pooltogether nft , demmortal , treasure , daily prize , big prize , eth , dao  , pfp , anti-rug , anti rug , protocol , erc , yield farming , guarantee , floor price, guaranteed prize",
   imageUrl: "/cover.jpg",
@@ -1572,7 +1572,7 @@ export const homePageMetaData: metaDataType = {
 export const roadmapPageMetaData: metaDataType = {
   siteTitle: "DeDogma Dao",
   pageTitle: "Roadmap",
-  desc: "Demmortal Treasure is more than just a collectible. It’s a sustainable economy powered by anti-rug protocols and a daily lottery with guaranteed prizes. All by owning an NFT!",
+  desc: "Demmortal Treasure is more than just a collectible. It's a self-sustaining economy driven by anti-rug protocols and a daily draw offering assured rewards, all through NFT ownership!",
   keywords:
     "dogma , decentralized , nft , lottery , collectible , ethereum , collectigame , titan , mythology , greek myths , zeus , card game  , no loss , pooltogether nft , demmortal , treasure , daily prize , big prize , eth , dao  , pfp , anti-rug , anti rug , protocol , erc , yield farming , guarantee , floor price, guaranteed prize",
   imageUrl: "/cover.jpg",
@@ -1582,7 +1582,7 @@ export const roadmapPageMetaData: metaDataType = {
 export const teamPageMetaData: metaDataType = {
   siteTitle: "DeDogma Dao",
   pageTitle: "Team",
-  desc: "Demmortal Treasure is more than just a collectible. It’s a sustainable economy powered by anti-rug protocols and a daily lottery with guaranteed prizes. All by owning an NFT!",
+  desc: "Demmortal Treasure is more than just a collectible. It's a self-sustaining economy driven by anti-rug protocols and a daily draw offering assured rewards, all through NFT ownership!",
   keywords:
     "dogma , decentralized , nft , lottery , collectible , ethereum , collectigame , titan , mythology , greek myths , zeus , card game  , no loss , pooltogether nft , demmortal , treasure , daily prize , big prize , eth , dao  , pfp , anti-rug , anti rug , protocol , erc , yield farming , guarantee , floor price, guaranteed prize",
   imageUrl: "/cover.jpg",
@@ -1592,7 +1592,7 @@ export const teamPageMetaData: metaDataType = {
 export const faqPageMetaData: metaDataType = {
   siteTitle: "DeDogma Dao",
   pageTitle: "FAQ",
-  desc: "Demmortal Treasure is more than just a collectible. It’s a sustainable economy powered by anti-rug protocols and a daily lottery with guaranteed prizes. All by owning an NFT!",
+  desc: "Demmortal Treasure is more than just a collectible. It's a self-sustaining economy driven by anti-rug protocols and a daily draw offering assured rewards, all through NFT ownership!",
   keywords:
     "dogma , decentralized , nft , lottery , collectible , ethereum , collectigame , titan , mythology , greek myths , zeus , card game  , no loss , pooltogether nft , demmortal , treasure , daily prize , big prize , eth , dao  , pfp , anti-rug , anti rug , protocol , erc , yield farming , guarantee , floor price, guaranteed prize",
   imageUrl: "/cover.jpg",
