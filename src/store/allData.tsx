@@ -1425,7 +1425,7 @@ export const roadDataQ2: roadDataType[] = [
         Providing more prizes for users by adding Blast native token as a new prize pool
       </>
     ),
-    size: 2.5,
+    size: 1,
   },
   {
     title: "Integration of ERC-20s with nft boost option",
@@ -1434,7 +1434,7 @@ export const roadDataQ2: roadDataType[] = [
         Allowing users to participate in new pools by depositing Eth and USDC at first, and more ERC-20 tokens in the future. With capability of boost for nft holders
       </>
     ),
-    size: 2.5,
+    size: 2,
   },
   {
     title: "Secure Mint launchpad for external projects",
@@ -1448,7 +1448,7 @@ export const roadDataQ2: roadDataType[] = [
   {
     title: "Offering NFTs as new prize pools",
     desc: <>DT new collections and other projects that uses DT launchpad can offer a share of NFTs to the prize pools as the launching Fee.</>,
-    size: 1,
+    size: 2,
   },
   {
     title: "Integrating new Blast Features to the platform",
