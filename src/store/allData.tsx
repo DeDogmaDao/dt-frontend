@@ -1385,19 +1385,13 @@ export const numsList: counterNumType[] = Array.from(Array(51).keys()).map(
 
 export const roadDataQ1: roadDataType[] = [
   {
-    title: "Treasury filling period (3 months)",
+    title: "Treasury reserve period",
     desc: (
       <>
-        After minting, releasing royalty fees from Opensea will take a month and
-        8 weeks to fill the Investment Treasury.
+        After minting, will take 8 weeks to fill the Guaranteed Prize Pool with royalty Fees.
       </>
     ),
     size: 2,
-  },
-  {
-    title: "Simultaneous Yield farming on Investment Treasury",
-    desc: <>This will start immediately after receiving the funds.</>,
-    size: 1,
   },
   {
     title: "Multi format PFP for NFT owners to download",
@@ -1408,7 +1402,7 @@ export const roadDataQ1: roadDataType[] = [
   },
   {
     title: "Lottery starts",
-    desc: <>3 months after minting(until the investment Treasury fills).</>,
+    desc: <>2month after minting.</>,
     size: 1,
   },
   {
@@ -1425,48 +1419,42 @@ export const roadDataQ1: roadDataType[] = [
 ];
 export const roadDataQ2: roadDataType[] = [
   {
-    title: "Moving towards becoming a DAO",
+    title: "Integrating Blast native token to prizes",
     desc: (
       <>
-        6 months after minting the Demmortal Treasure NFTs, we will be accepting
-        proposals for accelerating defi gamification ideas based on DD Dao
-        treasures
+        Providing more prizes for users by adding Blast native token as a new prize pool
       </>
     ),
     size: 2.5,
   },
   {
-    title: "Airdrops for the next upcoming collictigame that is being built",
+    title: "Integration of ERC-20s with nft boost option",
     desc: (
       <>
-        To play this game, each player needs to hold 5 cards of the new
-        collection. 3 of which will be airdropped to the owners of Demmortal
-        Treasure collection.
+        Allowing users to participate in new pools by depositing Eth and USDC at first, and more ERC-20 tokens in the future. With capability of boost for nft holders
       </>
     ),
     size: 2.5,
   },
-  // {
-  //   title: "Expanding DDD collictigames to Sandbox platform",
-  //   desc: (
-  //     <>
-  //       This is an ongoing project. This is expected to be released by the end
-  //       of 2022.
-  //     </>
-  //   ),
-  //   size: 1.5,
-  // },
   {
-    title: "Merging other investment DeFi protocols to our existing games",
-    desc: <>To add more diverse funds to the lottery prize.</>,
+    title: "Secure Mint launchpad for external projects",
+    desc: (
+      <>
+        Offering secure mint feature launchpad and various pre-developed smart contract templates for risk-free NFT mints and escrow contracts.
+      </>
+    ),
+    size: 1.5,
+  },
+  {
+    title: "Offering NFTs as new prize pools",
+    desc: <>DT new collections and other projects that uses DT launchpad can offer a share of NFTs to the prize pools as the launching Fee.</>,
     size: 1,
   },
   {
-    title: "Launching accessories marketplace",
+    title: "Integrating new Blast Features to the platform",
     desc: (
       <>
-        Marketplace for collectibles and their accessories like scores, POTLs,
-        POAPs, badges, etc.
+        As Blast ecosystem is growing, DT can integrate some of their new innovative features for improving it’s user experiences
       </>
     ),
     size: 1.5,
