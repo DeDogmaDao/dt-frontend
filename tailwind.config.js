@@ -46,17 +46,17 @@ module.exports = {
       pink: colors.pink,
       rose: colors.rose,
       primary: {
-        50: "#E1FDFF",
-        100: "#D2FBFF",
-        200: "#B4F9FF",
-        300: "#88F5FF",
-        400: "#4CF0FF",
-        500: "#2CEDFF",
-        600: "#03EAFF",
-        700: "#00D9EC",
-        800: "#00C5D7",
-        900: "#00B1C1",
-      },
+          100: "#fffde2",
+          200: "#fffbc5",
+          300: "#fffaa9",
+          400: "#fff88c",
+          500: "#fff66f",
+          600: "#ccc559",
+          700: "#999443",
+          800: "#66622c",
+          900: "#333116"
+},
+
       secondary: {
         50: "#ECE7FC",
         100: "#D0C2F9",
