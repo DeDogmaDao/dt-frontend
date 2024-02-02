@@ -31,8 +31,8 @@ const EconomyFlow: React.FC = () => {
         <span className="text-primary-500">Economy</span> Flow
       </h2>
       <div className="w-full h-[250px] ssm:h-[350px] sm:h-[500px] flex justify-center z-20">
-        <motion.div className={`absolute ssm:top-1/4 md:-top-0 lg:-top-16 xl:-top-1/4 2xl:-top-1/3 duration-500 cursor-pointer
-        ${isActive ? "grayscale-0":"grayscale-0 md:grayscale-70"} ${!isActive? "scale-100 sm:scale-[0.7] md:scale-[0.4] lg:scale-[0.3]":"scale-100"}
+        <motion.div className={`w-[80%] absolute ssm:top-[25%] md:top-[10%] lg:-top-[0%] xl:-top-[0%] 2xl:-top-[10%] duration-500 cursor-pointer
+        ${isActive ? "grayscale-0":"grayscale-0 md:grayscale-70"} ${!isActive? "scale-100 sm:scale-[0.7] md:scale-[0.6] lg:scale-[0.4]":"scale-100"}
         `}  onClick={clickHandler}>
           <Image
             alt="dedogmadao background"
