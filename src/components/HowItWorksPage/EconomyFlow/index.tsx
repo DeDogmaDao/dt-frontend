@@ -1,14 +1,33 @@
 import Image from "next/image";
 import { allBgImg, demmortalBlastFrame } from "../../../store/img";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const EconomyFlow: React.FC = () => {
-  const [isActive,setIsActive] = useState(false);
+  const [isActive, setIsActive] = useState(false);
+  const imageRef = useRef(null);
   const clickHandler = () => {
-    setIsActive(prevState=>!prevState)
-    console.log("hellllllllo");
-  }
+    setIsActive((prevState) => !prevState);
+  };
+  const handleOutsideClick = (event: any) => {
+    if (
+      isActive &&
+      imageRef.current &&
+      // @ts-ignore
+      !imageRef.current.contains(event.target)
+    ) {
+      setIsActive(false);
+    }
+  };
+  useEffect(() => {
+    if (isActive) {
+      document.addEventListener('mousedown', handleOutsideClick);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleOutsideClick);
+    };
+  }, [isActive]);
   return (
     <div
       className="flex flex-col justify-between items-center h-full w-full relative z-100"
@@ -31,9 +50,17 @@ const EconomyFlow: React.FC = () => {
         <span className="text-primary-500">Economy</span> Flow
       </h2>
       <div className="w-full h-[250px] ssm:h-[350px] sm:h-[500px] flex justify-center z-20">
-        <motion.div className={`w-[80%] absolute ssm:top-[25%] md:top-[10%] lg:-top-[0%] xl:-top-[0%] 2xl:-top-[10%] duration-500 cursor-pointer
-        ${isActive ? "grayscale-0":"grayscale-0 md:grayscale-70"} ${!isActive? "scale-100 sm:scale-[0.7] md:scale-[0.6] lg:scale-[0.4]":"scale-100"}
-        `}  onClick={clickHandler}>
+        <motion.div
+          ref={imageRef}
+          className={` w-[80%] absolute ssm:top-[25%] md:top-[10%] lg:-top-[0%] xl:-top-[0%] 2xl:-top-[10%] duration-500 cursor-pointer
+        ${isActive ? "grayscale-0" : "grayscale-0 md:grayscale-70"} ${
+            !isActive
+              ? "scale-100 sm:scale-[0.7] md:scale-[0.6] lg:scale-[0.4]"
+              : "scale-100"
+          }
+        `}
+          onClick={clickHandler}
+        >
           <Image
             alt="dedogmadao background"
             src={demmortalBlastFrame}
