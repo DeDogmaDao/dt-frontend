@@ -327,7 +327,7 @@ export const teamDataLvl2: teamCardType[] = [
     name: "Elahe",
     role: "Head of art",
     image: teamImg[6],
-    desc: "Full-time artist for more than 10 years. Specialised in Illustration, character and motion design in the video production and game industry. On the introverted side, but an amazing teammate. Perhaps she’ll decide to be doxed one day.",
+    desc: "Full-time artist for more than 12 years. Specialised in Illustration, character and motion design in the video production and game industry. Graduated in digital arts from Bowling Green State University.",
     link: [{ href: elaheSocial.site, icon: <WebsiteSVG /> }],
   },
 ];
