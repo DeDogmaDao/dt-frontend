@@ -30,7 +30,7 @@ const EconomyFlow: React.FC = () => {
       <h2 className="z-10 mt-16 text-[1.25rem] ssm:text-[1.75rem] sm:text-[2.375rem] font-bold sm:font-bold">
         <span className="text-primary-500">Economy</span> Flow
       </h2>
-      <div className="w-full h-[250px] ssm:h-[350px] sm:h-[500px] flex z-20">
+      <div className="w-full h-[250px] ssm:h-[350px] sm:h-[500px] flex justify-center z-20">
         <motion.div className={`absolute ssm:top-1/4 md:-top-0 lg:-top-16 xl:-top-1/4 2xl:-top-1/3 duration-500 cursor-pointer
         ${isActive ? "grayscale-0":"grayscale-0 md:grayscale-70"} ${!isActive? "scale-100 sm:scale-[0.7] md:scale-[0.4] lg:scale-[0.3]":"scale-100"}
         `}  onClick={clickHandler}>
