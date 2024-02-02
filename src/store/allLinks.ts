@@ -43,7 +43,7 @@ export const georgeSocial = {
 
 //flokiBB
 export const flokiBBSocial = {
-    twitter:"https://twitter.com/FlokiTheBB",
+    twitter:"https://twitter.com/batenieth",
     github:"https://github.com/FlokiBB/"
 }
 
