@@ -30,8 +30,10 @@ const EconomyFlow: React.FC = () => {
       <h2 className="z-10 mt-16 text-[1.25rem] ssm:text-[1.75rem] sm:text-[2.375rem] font-bold sm:font-bold">
         <span className="text-primary-500">Economy</span> Flow
       </h2>
-      <div className="w-full h-[500px] flex justify-center items-center z-20">
-        <motion.div className="h-10 absolute -mt-56 duration-500" style={{ scale: isActive ? "1":"0.2", filter:`grayscale(${isActive? "0" : "70"})` }} onClick={clickHandler}>
+      <div className="w-full h-[250px] ssm:h-[350px] sm:h-[500px] flex justify-center items-center z-20">
+        <motion.div className={`h-10 absolute -mt-40 ssm:-mt-60 duration-500 cursor-pointer
+        ${isActive ? "grayscale-0":"grayscale-0 md:grayscale-70"} ${!isActive? "scale-100 sm:scale-[0.7] md:scale-[0.3] lg:scale-[0.25]":"scale-100"}
+        `}  onClick={clickHandler}>
           <Image
             alt="dedogmadao background"
             src={demmortalBlastFrame}
