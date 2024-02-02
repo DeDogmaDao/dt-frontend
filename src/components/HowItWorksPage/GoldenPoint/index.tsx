@@ -30,7 +30,11 @@ const GoldenPoint: React.FC = () => {
                     index === 7 ||
                     index === 8) &&
                   "font-semibold"
-                } ${index===6 && "text-[#FCF533]"}`}
+                } ${
+                  index === 6 ||
+                  index === 7 ||
+                  (index === 8 && "text-[#FCF533]")
+                }`}
               >
                 {word}
               </span>
