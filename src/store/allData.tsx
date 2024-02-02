@@ -250,7 +250,8 @@ export const faqData: faqType[] = [
     question: "Wen token?",
     answer: (
       <>
-        We don’t have any tokens. All prizes and benefits of the lottery are in ETH itself. And can be boosted by Blast token in the future
+        We don’t have any tokens. All prizes and benefits of the lottery are in
+        ETH itself. And can be boosted by Blast token in the future
       </>
     ),
   },
@@ -1459,6 +1460,29 @@ export const roadDataQ2: roadDataType[] = [
     ),
     size: 2,
   },
+];
+export const roadDataQ3: roadDataType[] = [
+  {
+    title: "Moving towards becoming a DAO",
+    desc: (
+      <>
+        6 months after minting the Demmortal Treasure NFTs, we will be accepting
+        proposals for accelerating defi gamification ideas based on DD Dao
+        treasures
+      </>
+    ),
+    size: 2.5,
+  },
+  {
+    title: "Launching accessories marketplace",
+    desc: (
+      <>
+        Marketplace for collectibles and their accessories like scores, POTLs,
+        POAPs, badges, etc.
+      </>
+    ),
+    size: 1.5,
+  },
   {
     title: "Integrating new Blast Features to the platform",
     desc: (
@@ -1468,23 +1492,6 @@ export const roadDataQ2: roadDataType[] = [
       </>
     ),
     size: 1.5,
-  },
-];
-export const roadDataQ3: roadDataType[] = [
-  {
-    title: "Platformization of the lottery format for other collectibles",
-    desc: (
-      <>
-        This is possible via fractionalizing to ERC20. DDD will host at least 10
-        lotteries for popular collectibles by the end of 2023.
-      </>
-    ),
-    size: 2,
-  },
-  {
-    title: "Expanding the games and protocols on ethereum layer2 networks",
-    desc: <> Building fully on-chain games with cost efficient fees.</>,
-    size: 1,
   },
   {
     title: "More anti-rug open-sourced features",
