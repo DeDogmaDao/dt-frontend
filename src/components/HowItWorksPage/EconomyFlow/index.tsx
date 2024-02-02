@@ -39,7 +39,7 @@ const EconomyFlow: React.FC = () => {
             height={1169}
             quality={100}
             placeholder="blur"
-            className="z-100"
+            className="z-100 rounded-3xl"
           />
         </motion.div>
       </div>
