@@ -40,8 +40,15 @@ import {
 
 import { teamImg, walletImgData } from "./img";
 
-const { DiscordSVG, YoutubeSVG, Twitter, Github, Instagram, Linkedin,WebsiteSVG } =
-  socialSVGs;
+const {
+  DiscordSVG,
+  YoutubeSVG,
+  Twitter,
+  Github,
+  Instagram,
+  Linkedin,
+  WebsiteSVG,
+} = socialSVGs;
 
 export const footerData: socialType[] = [
   {
@@ -321,7 +328,7 @@ export const teamDataLvl2: teamCardType[] = [
     role: "Head of art",
     image: teamImg[6],
     desc: "Full-time artist for more than 10 years. Specialised in Illustration, character and motion design in the video production and game industry. On the introverted side, but an amazing teammate. Perhaps she’ll decide to be doxed one day.",
-    link: [{ href: elaheSocial.site, icon: <WebsiteSVG />  }],
+    link: [{ href: elaheSocial.site, icon: <WebsiteSVG /> }],
   },
 ];
 
@@ -1510,15 +1517,12 @@ export const benefitsData: benefitType[] = [
     title: "Guaranteed floor price",
     desc: [
       <>
-        The money collected from the minting goes to the{" "}
-        <span className="font-semibold">buyback treasury</span>. This will
-        guarantee the floor price of the NFTs to mint price and can raise by
-        time. Any NFT holder has the right to burn their NFTs and receive their
-        funds back.
+        DT presents secure mint which Guarantees 90% reimbursement on burning
+        and exiting the game.
       </>,
       <>
-        Additionally, part of the money earned from the secondary market sales
-        and yield farming will go to this treasury for refueling.
+        The team takes nothing from mint money and only relies on the 50% of
+        yield generated from Blast.
       </>,
     ],
   },
@@ -1527,31 +1531,27 @@ export const benefitsData: benefitType[] = [
     desc: [
       <>Currently, There are two types of prizes in each game:</>,
       <p>
-        <span className="font-semibold">1- Dynamic</span> prize based on
-        secondary sales (main prize).
+        <span className="font-semibold">1- Active </span> Prize Pool powered by
+        secondary sales and burn tax.
       </p>,
       <p>
-        <span className="font-semibold">2- Guaranteed</span> prize based on
-        yield farming of investment treasury.
+        <span className="font-semibold">2- Guaranteed </span> Prize Pool Fueled
+        by Blast native yield.
       </p>,
       <>
-        Note: The investment treasury is a self-growing pool which can only grow
-        bigger and guarantees a minimum prize.
+        Note: GPP guarantees an ever-growing treasury and a minimum weekly +
+        daily prize.
       </>,
     ],
   },
   {
-    title: "Automated Entry Contest",
+    title: "Automated Draw Entry",
     desc: [
       <>
-        All NFT holders will involuntarily enter{" "}
-        <span className="font-semibold">daily and weekly</span> game{" "}
-        <span className="font-semibold"> of chance</span>. No added fees or actions required unless your NFT wins.
+        NFT holders automatically enter daily and weekly draws, just by holding
+        their cards.
       </>,
-      <>
-        <span className="font-semibold">No extra gas fee</span> or action needed
-        from the holders to join the lottery unless your NFT wins the lottery.
-      </>,
+      <>No added fees or actions required.</>,
     ],
   },
 ];
