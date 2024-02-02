@@ -17,19 +17,20 @@ const GoldenPoint: React.FC = () => {
         animate={controls}
         className="text-[1.25rem] font-extralight flex gap-x-1.5 justify-center flex-wrap"
       >
-        {"It's a self-sustaining economy driven by anti-rug protocols and a daily draw offering assured rewards, all through NFT ownership!"
+        {"It's a no-loss lottery powered by BLAST native yield, offering a self-sustaining economy through NFT ownership!"
           .split(" ")
           .map((word, index) => {
             return (
               <span
                 key={word + index}
                 className={`whitespace-nowrap ${
-                  (index === 6 ||
+                  (index === 2 ||
+                    index === 3 ||
+                    index === 6 ||
                     index === 7 ||
-                    index === 10 ||
-                    index === 11) &&
+                    index === 8) &&
                   "font-semibold"
-                }`}
+                } ${index===6 && "text-[#FCF533]"}`}
               >
                 {word}
               </span>
