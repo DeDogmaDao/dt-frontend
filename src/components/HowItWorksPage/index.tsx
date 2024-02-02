@@ -8,6 +8,7 @@ import GoldenPoint from "./GoldenPoint";
 import Hero from "./hero/Hero";
 import InteroVideo from "./IntroVideo";
 import Tabs from "./Tabs";
+import EconomyFlow from "./EconomyFlow";
 
 const HowItWorksPage: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -23,6 +24,7 @@ const HowItWorksPage: React.FC = () => {
       <Hero />
       <GoldenPoint />
       <Benefits />
+      <EconomyFlow />
       <InteroVideo />
       <Tabs />
       <ToRoadmapAction />
