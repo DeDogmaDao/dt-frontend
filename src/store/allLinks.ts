@@ -22,7 +22,7 @@ export const erc721Link: string = "https://www.azuki.com/erc721a";
 //////// team members contacts
 //Decentral Titan
 export const decentralTitanSocial = {
-  twitter: "https://twitter.com/DecentralTitan",
+  twitter: "https://twitter.com/ETH_Mancer",
 };
 
 //metiEth

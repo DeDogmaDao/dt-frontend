@@ -260,7 +260,7 @@ export const lgData: string[] = ["n"];
 
 export const teamDataLvl1: teamCardType[] = [
   {
-    name: "Decentral Titan",
+    name: "Sepi D Mancer",
     role: "Co-founder and CEO",
     image: teamImg[0],
     desc: "Believer in Decentral Dogma. Explorer of the first titans treasure. Full time defi user and researcher for more than 4 years. NFT market addicted.",
