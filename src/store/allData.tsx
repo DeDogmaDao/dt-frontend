@@ -256,7 +256,7 @@ export const faqData: faqType[] = [
     ),
   },
 ];
-export const lgData: string[] = ["n"];
+export const lgData: string[] = ["n_"];
 
 export const teamDataLvl1: teamCardType[] = [
   {
