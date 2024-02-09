@@ -312,7 +312,7 @@ export const teamDataLvl2: teamCardType[] = [
     image: teamImg[4],
     desc: "Floki BB is a software engineer and has been in the Blockchain filed since 2016. He has worked as a Blockchain integration engineer and have been involved in the Ethereum ecosystem since 2018. An example of his remarkable work is contributing to solidity language compiler and work as DAPP engineer in couple other projects.",
     link: [
-      { href: flokiBBSocial.twitter, icon: <Twitter /> },
+      { href: flokiBBSocial.linkedin, icon: <Linkedin /> },
       { href: flokiBBSocial.github, icon: <Github /> },
     ],
   },
