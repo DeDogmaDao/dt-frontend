@@ -40,7 +40,7 @@ const RoadItem: React.FC<props> = ({
           }`}
         >
           <AngleRightSVG
-            stroke="#2CEDFF"
+            stroke="#FFF66F"
             width={10}
             height={17}
             fill="none"

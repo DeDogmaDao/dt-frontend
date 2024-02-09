@@ -111,7 +111,7 @@ export const gameCardAni: Variants = {
     translateY: "0px",
     rotateY: "180deg",
     transition: {
-      duration: 0.1,
+      duration: 0.5,
       delay: custom.cardIndex * 0.1 + 2,
     },
   }),
