@@ -106,8 +106,6 @@ export const faqData: faqType[] = [
     question: "How to get whitelisted?",
     answer: (
       <>
-        - Blast stakers have priority (more details will be announced soon)
-        <br />
         - By being an active member of our community.
         <br />- Winners of the challenges are announced in DDD discord.
       </>
