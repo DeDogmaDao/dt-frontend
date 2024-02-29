@@ -1420,11 +1420,10 @@ export const roadDataQ1: roadDataType[] = [
 ];
 export const roadDataQ2: roadDataType[] = [
   {
-    title: "Integrating Blast native token to prizes",
+    title: "Integrating boost tokens to prize pools",
     desc: (
       <>
-        Providing more prizes for users by adding Blast native token as a new
-        prize pool
+        Providing more prizes for users by adding native tokens of the chains and grant prizes as a new prize pool
       </>
     ),
     size: 1,
@@ -1526,8 +1525,7 @@ export const benefitsData: benefitType[] = [
         and exiting the game.
       </>,
       <>
-        The team takes nothing from mint money and only relies on the 50% of
-        yield generated from Blast.
+        The team takes nothing from mint money and only relies on the share from generated yields of the pool.
       </>,
     ],
   },
@@ -1540,8 +1538,7 @@ export const benefitsData: benefitType[] = [
         secondary sales and burn tax.
       </p>,
       <p>
-        <span className="font-semibold">2- Guaranteed </span> Prize Pool Fueled
-        by Blast native yield.
+        <span className="font-semibold">2- Guaranteed </span> Prize Pool Fueled by yield system.
       </p>,
       <>
         Note: GPP guarantees an ever-growing treasury and a minimum weekly +

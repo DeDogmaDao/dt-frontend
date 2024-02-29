@@ -17,7 +17,7 @@ const GoldenPoint: React.FC = () => {
         animate={controls}
         className="text-[1.25rem] font-extralight flex gap-x-1.5 justify-center flex-wrap"
       >
-        {"It's a no-loss lottery powered by BLAST native yield, offering a self-sustaining economy through NFT ownership!"
+        {"It's a no-loss lottery powered by anti-rug features, offering a self-sustaining economy through NFT ownership!"
           .split(" ")
           .map((word, index) => {
             return (
