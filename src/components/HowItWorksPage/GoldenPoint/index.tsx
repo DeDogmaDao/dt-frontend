@@ -31,7 +31,7 @@ const GoldenPoint: React.FC = () => {
                   "font-semibold"
                 } ${
                   (index === 9 || index === 10 || index === 19) &&
-                  "text-[#FCF533]"
+                  "text-[#FF0420]"
                 }`}
               >
                 {word}
