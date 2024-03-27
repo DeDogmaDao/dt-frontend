@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { allBgImg, demmortalBlastFrame } from "../../../store/img";
+import { allBgImg, demmortalOPFrame } from "../../../store/img";
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
@@ -31,7 +31,6 @@ const EconomyFlow: React.FC = () => {
   return (
     <div
       className="flex flex-col justify-between items-center h-full w-full relative z-100"
-      id="cards"
     >
       <div className="absolute top-0 left-0 w-full h-[7.5rem] bg-gradient-to-b from-[#04050E] via-transparent to-transparent z-[1]" />
       <div className="absolute bottom-0 left-0 w-full h-[7.5rem] bg-gradient-to-t from-[#04050E] via-transparent to-transparent z-[1]" />
@@ -63,7 +62,7 @@ const EconomyFlow: React.FC = () => {
         >
           <Image
             alt="dedogmadao background"
-            src={demmortalBlastFrame}
+            src={demmortalOPFrame}
             width={1862}
             height={1169}
             quality={100}

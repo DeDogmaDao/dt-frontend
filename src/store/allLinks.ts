@@ -43,8 +43,8 @@ export const georgeSocial = {
 
 //flokiBB
 export const flokiBBSocial = {
-    twitter:"https://twitter.com/batenieth",
-    github:"https://github.com/FlokiBB/"
+    github:"https://github.com/irnb",
+    linkedin:"https://www.linkedin.com/in/irnb/"
 }
 
 //katy

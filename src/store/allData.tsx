@@ -106,8 +106,6 @@ export const faqData: faqType[] = [
     question: "How to get whitelisted?",
     answer: (
       <>
-        - Blast stakers have priority (more details will be announced soon)
-        <br />
         - By being an active member of our community.
         <br />- Winners of the challenges are announced in DDD discord.
       </>
@@ -312,7 +310,7 @@ export const teamDataLvl2: teamCardType[] = [
     image: teamImg[4],
     desc: "Floki BB is a software engineer and has been in the Blockchain filed since 2016. He has worked as a Blockchain integration engineer and have been involved in the Ethereum ecosystem since 2018. An example of his remarkable work is contributing to solidity language compiler and work as DAPP engineer in couple other projects.",
     link: [
-      { href: flokiBBSocial.twitter, icon: <Twitter /> },
+      { href: flokiBBSocial.linkedin, icon: <Linkedin /> },
       { href: flokiBBSocial.github, icon: <Github /> },
     ],
   },
@@ -1420,11 +1418,10 @@ export const roadDataQ1: roadDataType[] = [
 ];
 export const roadDataQ2: roadDataType[] = [
   {
-    title: "Integrating Blast native token to prizes",
+    title: "Integrating boost tokens to prize pools",
     desc: (
       <>
-        Providing more prizes for users by adding Blast native token as a new
-        prize pool
+        Providing more prizes for users by adding native tokens of the chains and grant prizes as a new prize pool
       </>
     ),
     size: 1,
@@ -1526,8 +1523,7 @@ export const benefitsData: benefitType[] = [
         and exiting the game.
       </>,
       <>
-        The team takes nothing from mint money and only relies on the 50% of
-        yield generated from Blast.
+        The team takes nothing from mint money and only relies on the share from generated yields of the pool.
       </>,
     ],
   },
@@ -1540,8 +1536,7 @@ export const benefitsData: benefitType[] = [
         secondary sales and burn tax.
       </p>,
       <p>
-        <span className="font-semibold">2- Guaranteed </span> Prize Pool Fueled
-        by Blast native yield.
+        <span className="font-semibold">2- Guaranteed </span> Prize Pool Fueled by yield system.
       </p>,
       <>
         Note: GPP guarantees an ever-growing treasury and a minimum weekly +

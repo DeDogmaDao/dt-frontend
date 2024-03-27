@@ -36,8 +36,8 @@ const ToRoadmapAction: React.FC = () => {
           <Link href={"/roadmap"} scroll={false}>
             <button
               className="px-5 py-3 mt-11 bg-primary-500 hover:bg-primary-900/80 
-            text-neutral-900 hover:text-neutral-50 rounded-full text-small-bold flex gap-x-2 
-            duration-500 border-2 border-transparent hover:border-primary-500 stroke-black hover:stroke-white"
+            text-neutral-50 hover:text-neutral-50 rounded-full text-small-bold flex gap-x-2 
+            duration-500 border-2 border-transparent hover:border-primary-500 stroke-white hover:stroke-white"
             >
               <span>Roadmap Document</span>
               <span className="animate-bounceX w-2 aspect-[10/17] mt-1">
