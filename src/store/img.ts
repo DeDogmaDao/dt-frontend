@@ -117,5 +117,5 @@ import auctionHera from './images/auctions/hera.png';
 import auctionPoseidon from './images/auctions/poseidon.png';
 export const auctionImgs = [auctionAphrodite, auctionArtemis, auctionHades, auctionHecate, auctionHera, auctionPoseidon, auctionArtemis, auctionAphrodite,auctionHades,auctionHera];
 
-import demmortalBlastFrame from './images/demmortal-mode-frame.png';
-export {demmortalBlastFrame}
+import demmortalOPFrame from './images/demmortal-op-frame.png';
+export {demmortalOPFrame}

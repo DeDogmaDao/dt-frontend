@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { allBgImg, demmortalBlastFrame } from "../../../store/img";
+import { allBgImg, demmortalOPFrame } from "../../../store/img";
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
@@ -62,7 +62,7 @@ const EconomyFlow: React.FC = () => {
         >
           <Image
             alt="dedogmadao background"
-            src={demmortalBlastFrame}
+            src={demmortalOPFrame}
             width={1862}
             height={1169}
             quality={100}
