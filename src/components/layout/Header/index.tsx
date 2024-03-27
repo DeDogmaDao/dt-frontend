@@ -53,7 +53,7 @@ const Header: React.FC = () => {
             return <EachLink key={headLink.ref} headLink={headLink} />;
           })}
         </motion.ul>
-        <a
+        {/* <a
           href={gitbookLink}
           target="_blank"
           className="z-50 pointer-events-auto absolute top-[2rem] right-[16rem] px-2 sm:w-[8.5rem] h-10 rounded-full bg-neutral-600 text-white text-sm font-bold 
@@ -63,7 +63,7 @@ const Header: React.FC = () => {
             <socialSVGs.GitBookSVG width={26} />
           </span>
           <span className="hidden sm:block">Litepaper</span>
-        </a>
+        </a> */}
         <a
           href={discordLink}
           target="_blank"
