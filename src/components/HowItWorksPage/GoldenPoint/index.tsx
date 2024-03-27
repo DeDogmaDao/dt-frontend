@@ -7,7 +7,7 @@ const GoldenPoint: React.FC = () => {
   return (
     <motion.div className="flex flex-col justify-center items-center z-100 px-5 pt-10">
       <motion.h1 className="text-center text-[1.75rem] font-bold">
-      Demmortal Treasure goes beyond a 
+        Demmortal Treasure goes beyond a
         <motion.span className="text-primary-500"> Collectible</motion.span>
       </motion.h1>
       <motion.p
@@ -27,7 +27,10 @@ const GoldenPoint: React.FC = () => {
                   (index === 2 ||
                     index === 3 ||
                     index === 6 ||
-                    index === 7) &&
+                    index === 7 ||
+                    index === 9 ||
+                    index === 10 ||
+                    index === 19) &&
                   "font-semibold"
                 } ${
                   (index === 9 || index === 10 || index === 19) &&
